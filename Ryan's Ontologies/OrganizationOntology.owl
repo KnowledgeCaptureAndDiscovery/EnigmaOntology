@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ryanespiritu/ontologies/2017/8/untitled-ontology-16#"
+     xml:base="http://www.semanticweb.org/ryanespiritu/ontologies/2017/8/untitled-ontology-16"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ryanespiritu/ontologies/2017/8/untitled-ontology-16"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ryanespiritu/ontologies/2017/8/untitled-ontology-16#example -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/ryanespiritu/ontologies/2017/8/untitled-ontology-16#example"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ryanespiritu/ontologies/2017/8/untitled-ontology-16#isAffiliatedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ryanespiritu/ontologies/2017/8/untitled-ontology-16#isAffiliatedWith">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ryanespiritu/ontologies/2017/8/untitled-ontology-16#isAffiliationOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ryanespiritu/ontologies/2017/8/untitled-ontology-16#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ryanespiritu/ontologies/2017/8/untitled-ontology-16#Organization"/>
+        <example>JohnSmith isAffiliatedWith HarvardU</example>
+        <rdfs:comment>describes what organization someone is affiliated with</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ryanespiritu/ontologies/2017/8/untitled-ontology-16#isAffiliationOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ryanespiritu/ontologies/2017/8/untitled-ontology-16#isAffiliationOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ryanespiritu/ontologies/2017/8/untitled-ontology-16#Organization"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ryanespiritu/ontologies/2017/8/untitled-ontology-16#Person"/>
+        <example>HarvardU isAffiliationOf JohnSmith</example>
+        <rdfs:comment>describes the people who are affiliations of an organization</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ryanespiritu/ontologies/2017/8/untitled-ontology-16#hasCity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ryanespiritu/ontologies/2017/8/untitled-ontology-16#hasCity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ryanespiritu/ontologies/2017/8/untitled-ontology-16#Organization"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <example>USC ISI hasCity &quot;Marina del Rey&quot;</example>
+        <rdfs:comment>describes the city in which an organization is located in</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ryanespiritu/ontologies/2017/8/untitled-ontology-16#hasCountry -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ryanespiritu/ontologies/2017/8/untitled-ontology-16#hasCountry">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ryanespiritu/ontologies/2017/8/untitled-ontology-16#Organization"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <example>USC ISI hasCountry &quot;United States&quot;</example>
+        <rdfs:comment>describes the country in which an organization is located in</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ryanespiritu/ontologies/2017/8/untitled-ontology-16#Organization -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ryanespiritu/ontologies/2017/8/untitled-ontology-16#Organization"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ryanespiritu/ontologies/2017/8/untitled-ontology-16#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ryanespiritu/ontologies/2017/8/untitled-ontology-16#Person"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
