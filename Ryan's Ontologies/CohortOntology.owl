@@ -688,18 +688,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#doesNotHaveComorbidity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#doesNotHaveComorbidity">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <owl:propertyDisjointWith rdf:resource="https://w3id.org/enigma#hasComorbidity"/>
+        <vann:example>CohortGroup1 doesNotHaveComorbidity true --&gt; CohortGroup1 excludes people who are comorbid</vann:example>
+        <rdfs:comment>describes if the members of a cohort group do not have a comorbidity</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#doesNotHaveContraindicationToMRI -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#doesNotHaveContraindicationToMRI">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Cohort"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <vann:example>CohortGroup1 doesNotHaveContraindicationToMRI yes --&gt; CohortGroup1 excludes people who do have contraindication to MRI</vann:example>
         <rdfs:comment>describes if people who have contraindication to MRI are excluded</rdfs:comment>
@@ -707,18 +711,34 @@
     
 
 
+    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#doesNotHaveNeurologicalComorbidity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#doesNotHaveNeurologicalComorbidity">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#doesNotHaveComorbidity"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <owl:propertyDisjointWith rdf:resource="https://w3id.org/enigma#hasNeurologicalComorbidity"/>
+        <vann:example>CohortGroup1 doesNotHavePsychiatricComorbidity true --&gt; CohortGroup1 does not include people who have two or more psychiatric disorders</vann:example>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#doesNotHavePsychiatricComorbidity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#doesNotHavePsychiatricComorbidity">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#doesNotHaveComorbidity"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <owl:propertyDisjointWith rdf:resource="https://w3id.org/enigma#hasPsychiatricComorbidity"/>
+        <vann:example>CohortGroup1 doesNotHaveNeurologicalComorbidity true --&gt; CohortGroup1 excludes people who have two or more neurological disorders</vann:example>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#excludesLeftHands -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#excludesLeftHands">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Cohort"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <vann:example>CohortGroup1 excludesLeftHanded true</vann:example>
         <rdfs:comment>describes if left handed people were excluded from the study</rdfs:comment>
@@ -729,55 +749,10 @@
     <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#excludesRightHands -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#excludesRightHands">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Cohort"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <vann:example>CohortGroup1 excludesRightHands true</vann:example>
         <rdfs:comment>describes if right handed people were excluded from the study</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasComorbidity -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasComorbidity">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Cohort"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <vann:example>CohortGroup1 hasComorbidity true --&gt; CohortGroup1 only includes people who are comorbid</vann:example>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasNeurologicalComorbidity -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasNeurologicalComorbidity">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasComorbidity"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Cohort"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <vann:example>CohortGroup1 hasNeurologicalComorbidity true --&gt; CohortGroup1 only includes people who have two or more neurological disorders</vann:example>
     </owl:DatatypeProperty>
     
 
@@ -804,37 +779,10 @@
     <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasPregnantMembers -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasPregnantMembers">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Cohort"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <vann:example>CohortGroup1 hasPregnantMembers &quot;false&quot;</vann:example>
         <rdfs:comment>describes if the cohort has pregnant members</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasPsychiatricComorbidity -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasPsychiatricComorbidity">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasComorbidity"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Cohort"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <vann:example>CohortGroup1 hasPsychiatricComorbidity true --&gt; CohortGroup1 only includes people who have two or more pyschiatric disorders</vann:example>
     </owl:DatatypeProperty>
     
 
@@ -976,15 +924,7 @@
     <!-- https://w3id.org/enigma#doesNotHaveIntellectualDisability -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#doesNotHaveIntellectualDisability">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Cohort"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <vann:example>Cohort1 doesNotHaveIntellectualDisability true</vann:example>
         <rdfs:comment>describes whether a cohort excludes people with an intellectual disability</rdfs:comment>
@@ -1026,6 +966,16 @@ Cohort1 hasAgeRange &quot;21-44&quot;</vann:example>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
         <rdfs:comment>describes the standard deviation of the age of a project cohort</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasComorbidity -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasComorbidity">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <vann:example>CohortGroup1 hasComorbidity true --&gt; CohortGroup1 only includes people who are comorbid</vann:example>
     </owl:DatatypeProperty>
     
 
@@ -1182,6 +1132,17 @@ Cohort1 hasAgeRange &quot;21-44&quot;</vann:example>
     
 
 
+    <!-- https://w3id.org/enigma#hasNeurologicalComorbidity -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNeurologicalComorbidity">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasComorbidity"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <vann:example>CohortGroup1 hasNeurologicalComorbidity true --&gt; CohortGroup1 only includes people who have two or more neurological disorders</vann:example>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/enigma#hasNumberOfFemale -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfFemale">
@@ -1218,18 +1179,21 @@ Cohort1 hasAgeRange &quot;21-44&quot;</vann:example>
     
 
 
+    <!-- https://w3id.org/enigma#hasPsychiatricComorbidity -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasPsychiatricComorbidity">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasComorbidity"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <vann:example>CohortGroup1 hasPsychiatricComorbidity true --&gt; CohortGroup1 only includes people who have two or more pyschiatric disorders</vann:example>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/enigma#hasSexDeterminedGenetically -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasSexDeterminedGenetically">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Cohort"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <vann:example>Cohort1 sexDeterminedGenetically true</vann:example>
         <rdfs:comment>describes whether the sex of a cohort was determined genetically</rdfs:comment>
@@ -1340,17 +1304,6 @@ Cohort1 hasAgeRange &quot;21-44&quot;</vann:example>
     
 
 
-    <!-- https://w3id.org/enigma#isControlGroup -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#isControlGroup">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <vann:example>CohortGroup isControlGroup &quot;false&quot;</vann:example>
-        <rdfs:comment>describes if a CohortGroup is a control group</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- https://w3id.org/enigma#isFamilyBased -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#isFamilyBased">
@@ -1358,17 +1311,6 @@ Cohort1 hasAgeRange &quot;21-44&quot;</vann:example>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <vann:example>Cohort1 isFamilyBased true</vann:example>
         <rdfs:comment>describes if a cohort study was family based</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isPatientGroup -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#isPatientGroup">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <vann:example>CohortGroup isPatientGroup &quot;true&quot;</vann:example>
-        <rdfs:comment>describes if a CohortGroup is a patient group</rdfs:comment>
     </owl:DatatypeProperty>
     
 
