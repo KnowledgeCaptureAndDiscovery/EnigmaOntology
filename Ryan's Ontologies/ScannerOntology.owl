@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#"
-     xml:base="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria"
+<rdf:RDF xmlns="https://w3id.org/enigma#"
+     xml:base="https://w3id.org/enigma"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -41,26 +41,26 @@
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasAcquisitionDirection -->
+    <!-- https://w3id.org/enigma#hasAcquisitionDirection -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasAcquisitionDirection">
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasAcquisitionDirection">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#AcquisitionDirection"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#AcquisitionDirection"/>
         <vann:example>1.5T-GE-Signa hasAcquisitionDirection coronal --&gt; The acquisition direction of this 1.5T-GE-Signa is coronal</vann:example>
         <rdfs:comment>describes the acquisition direction of the scanner</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasAcquisitionProtocol -->
+    <!-- https://w3id.org/enigma#hasAcquisitionProtocol -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasAcquisitionProtocol">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#isAcquisitionProtocolOf"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Cohort"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasAcquisitionProtocol">
+        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isAcquisitionProtocolOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Scanner"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Scanner"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#AcquisitionProtocol"/>
                 </owl:unionOf>
             </owl:Class>
@@ -71,63 +71,63 @@
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasManufacturer -->
+    <!-- https://w3id.org/enigma#hasManufacturer -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasManufacturer">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#isManufacturerOf"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Scanner"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Manufacturer"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasManufacturer">
+        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isManufacturerOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Scanner"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Manufacturer"/>
         <vann:example>1.5T-GE-Signa hasManufacturer GE --&gt; The manufacturer of the 1.5T-GE-Signa is GE</vann:example>
         <rdfs:comment>describes what the manufacturer for the scanner is</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasSequence -->
+    <!-- https://w3id.org/enigma#hasSequence -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasSequence">
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasSequence">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#MRISequence"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#MRISequence"/>
         <vann:example>1.5T-GE-Signa hasSequence T1-weighted_MPRAGE_sequence --&gt; The acquisition protocol for this scanner is T1-weighted MPRAGE sequence</vann:example>
         <rdfs:comment>describes the sequence that the acquisition protocol requires</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#isAcquisitionProtocolOf -->
+    <!-- https://w3id.org/enigma#isAcquisitionProtocolOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#isAcquisitionProtocolOf">
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isAcquisitionProtocolOf">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Scanner"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Scanner"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#AcquisitionProtocol"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
         <vann:example>AcquisitionProtocol isAcquisitionProtocolOf Cohort1</vann:example>
         <rdfs:comment>describes what cohorts were scanned with the acquisition protocol</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#isManufacturerOf -->
+    <!-- https://w3id.org/enigma#isManufacturerOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#isManufacturerOf">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Manufacturer"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Scanner"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isManufacturerOf">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Manufacturer"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Scanner"/>
         <vann:example>GE isManufacturerOf 1.5T-GE-Signa --&gt; GE manufacters the 1.5T-GE-Signa scanner</vann:example>
         <rdfs:comment>describes the scanners that a manufacturer makes</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#usesScannerSoftware -->
+    <!-- https://w3id.org/enigma#usesScannerSoftware -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#usesScannerSoftware">
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#usesScannerSoftware">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#ScannerSoftware"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#ScannerSoftware"/>
         <vann:example>Cohort1 usesScannerSoftware FreeSurfer(5.1.0) --&gt; Cohort1 was scanned with FreeSurfer(5.1.0) software</vann:example>
         <rdfs:comment>describes what the software was used to scan a cohort</rdfs:comment>
         <rdfs:comment>should the domain be scanner or cohort?</rdfs:comment>
@@ -151,7 +151,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasScanner">
         <owl:inverseOf rdf:resource="https://w3id.org/enigma#isScannerOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Scanner"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Scanner"/>
         <vann:example>AcquisitionProtocol1 hasScanner 1.5T-GE-Siemens</vann:example>
         <rdfs:comment>describes the scanner used in the acquisition protocol</rdfs:comment>
     </owl:ObjectProperty>
@@ -161,7 +161,7 @@
     <!-- https://w3id.org/enigma#isScannerOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isScannerOf">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Scanner"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Scanner"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <vann:example>1.5T-GE-Siemens isScannerOf AcquisitionProtocol1</vann:example>
         <rdfs:comment>describes the protocols that the scanner is used for</rdfs:comment>
@@ -180,9 +180,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasDataAcquisitionMatrix -->
+    <!-- https://w3id.org/enigma#hasDataAcquisitionMatrix -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasDataAcquisitionMatrix">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasDataAcquisitionMatrix">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <vann:example>1.5T-GE-Signa hasDataAcquisitionMatrix &quot;256x256&quot; --&gt; The size of the data acquisition matrix is 256x256</vann:example>
@@ -191,10 +191,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasFieldStrength -->
+    <!-- https://w3id.org/enigma#hasFieldStrength -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasFieldStrength">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Scanner"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasFieldStrength">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Scanner"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
         <vann:example>1.5T-GE-Signa hasFieldStrength 1.5 --&gt; The field strength of 1.5T-GE-Signa is 1.5</vann:example>
         <rdfs:comment>describes the field strength of the cohort</rdfs:comment>
@@ -202,9 +202,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasFlipAngle -->
+    <!-- https://w3id.org/enigma#hasFlipAngle -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasFlipAngle">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasFlipAngle">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
         <vann:example>1.5T-GE-Signa hasFlipAngle 7 --&gt; 1.5T-GE-Signa has a flip angle of 7 in degrees</vann:example>
@@ -213,9 +213,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasFoV -->
+    <!-- https://w3id.org/enigma#hasFoV -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasFoV">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasFoV">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <vann:example>1.5T-GE-Signa hasFoV &quot;X*Y*Z&quot;</vann:example>
@@ -224,9 +224,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasNEX -->
+    <!-- https://w3id.org/enigma#hasNEX -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasNEX">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNEX">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
         <vann:example>1.5T-GE-Signa hasNEX 1 --&gt; The acquisition protocol for this scanner had one number of excitations</vann:example>
@@ -235,9 +235,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasNumberOfEchoes -->
+    <!-- https://w3id.org/enigma#hasNumberOfEchoes -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasNumberOfEchoes">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfEchoes">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
         <vann:example>1.5T-GE-Signa hasNumberOfEchoes 2 --&gt; 1.5T-GE-Signa has 2 echoes</vann:example>
@@ -246,9 +246,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasNumberOfSlices -->
+    <!-- https://w3id.org/enigma#hasNumberOfSlices -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasNumberOfSlices">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfSlices">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
         <vann:example>1.5T-GE-Signa hasNumberOfSlices 182 --&gt; This scanner has 182 slices</vann:example>
@@ -257,15 +257,15 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasNumberOfSlices"/>
+            <rdf:Description rdf:about="https://w3id.org/enigma#hasNumberOfSlices"/>
         </owl:members>
     </rdf:Description>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasResolution -->
+    <!-- https://w3id.org/enigma#hasResolution -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasResolution">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasResolution">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <vann:example>1.5T-GE-Signa hasResolution &quot;0.9x0.9&quot; --&gt; The resolution of this scanner is 0.9mm x 0.9mm</vann:example>
@@ -274,9 +274,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasScanTime -->
+    <!-- https://w3id.org/enigma#hasScanTime -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasScanTime">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasScanTime">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
         <vann:example>1.5T-GE-Signa hasScanTime 42 --&gt; The scan time for 1.5T-GE-Signa is 42 seconds</vann:example>
@@ -285,9 +285,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasSliceThickness -->
+    <!-- https://w3id.org/enigma#hasSliceThickness -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasSliceThickness">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasSliceThickness">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
         <vann:example>1.5T-GE-Signa hasSliceThickness 1 --&gt; The slice thickness of this scanner is 1 mm</vann:example>
@@ -296,9 +296,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasTE -->
+    <!-- https://w3id.org/enigma#hasTE -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasTE">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasTE">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
         <vann:example>1.5T-GE-Signa hasTE 4.6 --&gt; 1.5T-GE-Signa has TE of 4.6 ms</vann:example>
@@ -307,9 +307,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasTI -->
+    <!-- https://w3id.org/enigma#hasTI -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasTI">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasTI">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
         <vann:example>1.5T-GE-Signa hasTI 710 --&gt; 1.5T-GE-Signa has a TI of 710 ms</vann:example>
@@ -318,9 +318,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasTR -->
+    <!-- https://w3id.org/enigma#hasTR -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasTR">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasTR">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
         <vann:example>1.5T-GE-Signa hasTR 500 --&gt; 1.5T-GE-Signa has a TR of 500 ms</vann:example>
@@ -329,9 +329,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasVoxelSize -->
+    <!-- https://w3id.org/enigma#hasVoxelSize -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#hasVoxelSize">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasVoxelSize">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <vann:example>1.5T-GE-Signa hasVoxelSize &quot;1x1x1&quot; --&gt; 1.5T-GE-Signa has voxel size of 1x1x1 mm</vann:example>
@@ -340,10 +340,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#isScannerModel -->
+    <!-- https://w3id.org/enigma#isScannerModel -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#isScannerModel">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Scanner"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#isScannerModel">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Scanner"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <vann:example>1.5T-GE-Signa isScannerModel &quot;Signa&quot; --&gt; The scanner model for 1.5T-GE-Signa is Signa</vann:example>
         <rdfs:comment>describes what the scanner model is</rdfs:comment>
@@ -351,9 +351,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#usedBodyCoil -->
+    <!-- https://w3id.org/enigma#usedBodyCoil -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#usedBodyCoil">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#usedBodyCoil">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <vann:example>1.5T-GE-Signa usedBodyCoil true --&gt; This 1.5T-GE-Signa scanner used a body coil to scan</vann:example>
@@ -362,9 +362,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#usedHeadCoil -->
+    <!-- https://w3id.org/enigma#usedHeadCoil -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#usedHeadCoil">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#usedHeadCoil">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <vann:example>1.5T-GE-Signa usedHeadCoil true --&gt; This 1.5T-GE-Signa scanner used a head coil to scan</vann:example>
@@ -384,41 +384,41 @@
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#AcquisitionDirection -->
+    <!-- https://w3id.org/enigma#AcquisitionDirection -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#AcquisitionDirection">
+    <owl:Class rdf:about="https://w3id.org/enigma#AcquisitionDirection">
         <rdfs:comment>the acquisition direction of the scanner</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Cohort -->
+    <!-- https://w3id.org/enigma#Cohort -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Cohort">
+    <owl:Class rdf:about="https://w3id.org/enigma#Cohort">
         <rdfs:comment>A group of people that are studied by a working group. A cohort is limited by certain inclusion and exclusion criteria.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#MRISequence -->
+    <!-- https://w3id.org/enigma#MRISequence -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#MRISequence"/>
+    <owl:Class rdf:about="https://w3id.org/enigma#MRISequence"/>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Manufacturer -->
+    <!-- https://w3id.org/enigma#Manufacturer -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Manufacturer"/>
+    <owl:Class rdf:about="https://w3id.org/enigma#Manufacturer"/>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Scanner -->
+    <!-- https://w3id.org/enigma#Scanner -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Scanner">
+    <owl:Class rdf:about="https://w3id.org/enigma#Scanner">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#isAcquisitionProtocolOf"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Cohort"/>
+                <owl:onProperty rdf:resource="https://w3id.org/enigma#isAcquisitionProtocolOf"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/enigma#Cohort"/>
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:comment>What scanner was used to scan the members of the cohort?</rdfs:comment>
@@ -426,17 +426,17 @@
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#ScannerSoftware -->
+    <!-- https://w3id.org/enigma#ScannerSoftware -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#ScannerSoftware">
+    <owl:Class rdf:about="https://w3id.org/enigma#ScannerSoftware">
         <rdfs:comment>Is this software or segmentation?</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Treatment -->
+    <!-- https://w3id.org/enigma#Treatment -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Treatment">
+    <owl:Class rdf:about="https://w3id.org/enigma#Treatment">
         <rdfs:comment>What treatments were used by the members of the cohort?</rdfs:comment>
     </owl:Class>
     
@@ -467,210 +467,210 @@
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#BipolarBarcelonaControl -->
+    <!-- https://w3id.org/enigma#BipolarBarcelonaControl -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#BipolarBarcelonaControl">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Cohort"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarBarcelonaControl">
+        <rdf:type rdf:resource="https://w3id.org/enigma#Cohort"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#BipolarBarcelonaPatient -->
+    <!-- https://w3id.org/enigma#BipolarBarcelonaPatient -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#BipolarBarcelonaPatient">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Cohort"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarBarcelonaPatient">
+        <rdf:type rdf:resource="https://w3id.org/enigma#Cohort"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#BipolarParisControl -->
+    <!-- https://w3id.org/enigma#BipolarParisControl -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#BipolarParisControl">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Cohort"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarParisControl">
+        <rdf:type rdf:resource="https://w3id.org/enigma#Cohort"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#BipolarParisPatient -->
+    <!-- https://w3id.org/enigma#BipolarParisPatient -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#BipolarParisPatient">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Cohort"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarParisPatient">
+        <rdf:type rdf:resource="https://w3id.org/enigma#Cohort"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#BipolarTulsaPatient -->
+    <!-- https://w3id.org/enigma#BipolarTulsaPatient -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#BipolarTulsaPatient">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Cohort"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarTulsaPatient">
+        <rdf:type rdf:resource="https://w3id.org/enigma#Cohort"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Bruker -->
+    <!-- https://w3id.org/enigma#Bruker -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Bruker">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Manufacturer"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#Bruker">
+        <rdf:type rdf:resource="https://w3id.org/enigma#Manufacturer"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#FEEsequence -->
+    <!-- https://w3id.org/enigma#FEEsequence -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#FEEsequence">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#MRISequence"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#FEEsequence">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#FFEsequence -->
+    <!-- https://w3id.org/enigma#FFEsequence -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#FFEsequence">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#MRISequence"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#FFEsequence">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#FLAIRsequence -->
+    <!-- https://w3id.org/enigma#FLAIRsequence -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#FLAIRsequence">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#MRISequence"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#FLAIRsequence">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#FSEsequence -->
+    <!-- https://w3id.org/enigma#FSEsequence -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#FSEsequence">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#MRISequence"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#FSEsequence">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#FSLFirst4.1.9 -->
+    <!-- https://w3id.org/enigma#FSLFirst4.1.9 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#FSLFirst4.1.9">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#ScannerSoftware"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#FSLFirst4.1.9">
+        <rdf:type rdf:resource="https://w3id.org/enigma#ScannerSoftware"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#FSPGRsequence -->
+    <!-- https://w3id.org/enigma#FSPGRsequence -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#FSPGRsequence">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#MRISequence"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#FSPGRsequence">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#FreeSurfer5.1.0 -->
+    <!-- https://w3id.org/enigma#FreeSurfer5.1.0 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#FreeSurfer5.1.0">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#ScannerSoftware"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#FreeSurfer5.1.0">
+        <rdf:type rdf:resource="https://w3id.org/enigma#ScannerSoftware"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#FreeSurfer5.3 -->
+    <!-- https://w3id.org/enigma#FreeSurfer5.3 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#FreeSurfer5.3">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#ScannerSoftware"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#FreeSurfer5.3">
+        <rdf:type rdf:resource="https://w3id.org/enigma#ScannerSoftware"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#GE -->
+    <!-- https://w3id.org/enigma#GE -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#GE">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Manufacturer"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#GE">
+        <rdf:type rdf:resource="https://w3id.org/enigma#Manufacturer"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#GREsequence -->
+    <!-- https://w3id.org/enigma#GREsequence -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#GREsequence">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#MRISequence"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#GREsequence">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Illumina -->
+    <!-- https://w3id.org/enigma#Illumina -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Illumina">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Manufacturer"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#Illumina">
+        <rdf:type rdf:resource="https://w3id.org/enigma#Manufacturer"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#IlluminaOmniExpress -->
+    <!-- https://w3id.org/enigma#IlluminaOmniExpress -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#IlluminaOmniExpress">
-        <hasManufacturer rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Illumina"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#IlluminaOmniExpress">
+        <hasManufacturer rdf:resource="https://w3id.org/enigma#Illumina"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#MPRAGEsequence -->
+    <!-- https://w3id.org/enigma#MPRAGEsequence -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#MPRAGEsequence">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#MRISequence"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#MPRAGEsequence">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Phillips -->
+    <!-- https://w3id.org/enigma#Phillips -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Phillips">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Manufacturer"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#Phillips">
+        <rdf:type rdf:resource="https://w3id.org/enigma#Manufacturer"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#SEsequence -->
+    <!-- https://w3id.org/enigma#SEsequence -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#SEsequence">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#MRISequence"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#SEsequence">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#SPGRsequence -->
+    <!-- https://w3id.org/enigma#SPGRsequence -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#SPGRsequence">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#MRISequence"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#SPGRsequence">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Siemens -->
+    <!-- https://w3id.org/enigma#Siemens -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Siemens">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Manufacturer"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#Siemens">
+        <rdf:type rdf:resource="https://w3id.org/enigma#Manufacturer"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#axial -->
+    <!-- https://w3id.org/enigma#axial -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#axial">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#AcquisitionDirection"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#axial">
+        <rdf:type rdf:resource="https://w3id.org/enigma#AcquisitionDirection"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#coronal -->
+    <!-- https://w3id.org/enigma#coronal -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#coronal">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#AcquisitionDirection"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#coronal">
+        <rdf:type rdf:resource="https://w3id.org/enigma#AcquisitionDirection"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#sagittal -->
+    <!-- https://w3id.org/enigma#sagittal -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#sagittal">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#AcquisitionDirection"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#sagittal">
+        <rdf:type rdf:resource="https://w3id.org/enigma#AcquisitionDirection"/>
     </owl:NamedIndividual>
     
 
@@ -678,7 +678,7 @@
     <!-- https://w3id.org/enigma#1.5T-GE-Signa -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/enigma#1.5T-GE-Signa">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Scanner"/>
+        <rdf:type rdf:resource="https://w3id.org/enigma#Scanner"/>
     </owl:NamedIndividual>
     
 
@@ -686,7 +686,7 @@
     <!-- https://w3id.org/enigma#1.5T-GE-SignaHDx -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/enigma#1.5T-GE-SignaHDx">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Scanner"/>
+        <rdf:type rdf:resource="https://w3id.org/enigma#Scanner"/>
     </owl:NamedIndividual>
     
 
@@ -694,7 +694,7 @@
     <!-- https://w3id.org/enigma#3.0T-GE-Discovery750 -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/enigma#3.0T-GE-Discovery750">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Scanner"/>
+        <rdf:type rdf:resource="https://w3id.org/enigma#Scanner"/>
     </owl:NamedIndividual>
     
 
@@ -702,7 +702,7 @@
     <!-- https://w3id.org/enigma#3.0T-Phillips-Achieva -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/enigma#3.0T-Phillips-Achieva">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Scanner"/>
+        <rdf:type rdf:resource="https://w3id.org/enigma#Scanner"/>
     </owl:NamedIndividual>
     
 
@@ -710,7 +710,7 @@
     <!-- https://w3id.org/enigma#3.0T-Siemens-TrioTim -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/enigma#3.0T-Siemens-TrioTim">
-        <rdf:type rdf:resource="http://www.semanticweb.org/amyjang/ontologies/2017/5/ExclusionInclusionsCriteria#Scanner"/>
+        <rdf:type rdf:resource="https://w3id.org/enigma#Scanner"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 
