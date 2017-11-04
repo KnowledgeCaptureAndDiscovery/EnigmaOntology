@@ -1,10 +1,8 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://w3id.org/enigma#"
      xml:base="https://w3id.org/enigma"
-     xmlns:enigma="https://w3id.org/enigma#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:CohortOntology="https://w3id.org/enigma#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -160,6 +158,38 @@
     
 
 
+    <!-- https://w3id.org/enigma#hasBrainScanDataType -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasBrainScanDataType">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasDataType"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#BrainScanDataType"/>
+        <vann:example>Cohort1 hasBrainScanDataType expression</vann:example>
+        <rdfs:comment>describes the brain scan data types that were collected for a cohort</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasCohort -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasCohort">
+        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isCohortInProject"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isCohortInWorkingGroup"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#WorkingGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <vann:example>BipolarWorkingGroup hasCohort BipolarAmsterdamCohort --&gt; The Bipolar working group uses data from the Bipolar Amsterdam cohort</vann:example>
+        <rdfs:comment>describes what cohorts are part of a working group</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/enigma#hasCondition -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasCondition">
@@ -171,6 +201,41 @@
     
 
 
+    <!-- https://w3id.org/enigma#hasControlGroup -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasControlGroup">
+        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isControlGroupOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <vann:example>BipolarControl hasControlGroup BipolarControlGroup</vann:example>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasDataType -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDataType">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#DataType"/>
+        <vann:example>Cohort1 hasDataType dataType1</vann:example>
+        <rdfs:comment>The cohorts of a project will automatically have the data types of the project. It can have more but must at least have the data types of the project. I do not know how to implement this.</rdfs:comment>
+        <rdfs:comment>describes the data types that were collected for the cohort</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasDiagnosticGroup -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDiagnosticGroup">
+        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isDiagnosticGroupOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <vann:example>BipolarCohort hasPatientGroup BipolarPatientGroup</vann:example>
+        <rdfs:comment>describes the patient group of a cohort</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/enigma#hasDisorder -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDisorder">
@@ -178,6 +243,29 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#Disorder"/>
         <vann:example>CohortGroup1 hasDisorder Cancer --&gt; CohortGroup1 only includes people who have cancer</vann:example>
         <rdfs:comment>describes what disease(s) the members of the cohort group have</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasDisorderDetails -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDisorderDetails">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#SpecificDisorderInfo"/>
+        <vann:example>CohortGroup1 hasDisorderDetails SZ20938</vann:example>
+        <rdfs:comment>describes the details of a particular disorder that a cohort group has</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasEnigmaContact -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasEnigmaContact">
+        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isEnigmaContactOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example>Cohort1 hasEnigmaContact JohnSmith</vann:example>
+        <rdfs:comment>describes the contact people from ENIGMA of a cohort</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -217,6 +305,42 @@
     
 
 
+    <!-- https://w3id.org/enigma#hasGeneticDataType -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasGeneticDataType">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasDataType"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#GeneticDataType"/>
+        <vann:example>Cohort1 hasGeneticDataType expression</vann:example>
+        <rdfs:comment>describes the genetic data types that were collected for a cohort</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasImageAcquisitionProtocol -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasImageAcquisitionProtocol">
+        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isImageAcquisitionProtocolOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#ImageAcquisitionProtocol"/>
+        <vann:example>Cohort1 hasImageAcquisitionProtocol AcquisitionProtocol1</vann:example>
+        <rdfs:comment>describes the acquisition protocol that was used to scan the cohort</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasInvestigator -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasInvestigator">
+        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isInvestigatorOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example>BipolarCohort hasInvestigator JohnSmith</vann:example>
+        <rdfs:comment>describe the investigators of a cohort</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/enigma#hasLocationOfDataCollection -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasLocationOfDataCollection">
@@ -225,6 +349,44 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#Location"/>
         <vann:example>Cohort1 hasLocationOfDataCollection Toronto</vann:example>
         <rdfs:comment>describes where the data of the cohort was collected</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasMedicalRatingDetails -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasMedicalRatingDetails">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#SpecificMedicalRatingInfo"/>
+        <vann:example>CohortDisorderGroup hasMedicalRatingDetails YMRS3010</vann:example>
+        <rdfs:comment>describes the min and max values of the medical rating criteria</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasMembersWithRecentIssue -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasMembersWithRecentIssue">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Condition"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Disorder"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Treatment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <vann:example>Cohort1TreatmentInfo usesTreatment Benzodiazepine inThePastMonths 6 --&gt; Cohort1 only includes people who used benzodiazepine in the past6 months</vann:example>
+        <rdfs:comment>describes whether or not the members of the cohort had an issue (condition, disorder, or treatment-related)  within the past few months</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -252,6 +414,74 @@
     
 
 
+    <!-- https://w3id.org/enigma#hasPopulationGroup -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasPopulationGroup">
+        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isPopulationGroupOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <vann:example>BipolarCohort hasPopulationGroup USCPopulationGroup</vann:example>
+        <rdfs:comment>describes the population group of a population-based cohort</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasProjectCohort -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasProjectCohort">
+        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isProjectCohortOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
+        <vann:example>BipolarCohort hasProjectCohort BipolarBarcelonaCohort</vann:example>
+        <rdfs:comment>describes the subcohorts that are part of that cohort</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasTreatmentDetails -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasTreatmentDetails">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#SpecificTreatmentInfo"/>
+        <vann:example>CohortGroup hasTreatmentDetails antidepressants42</vann:example>
+        <rdfs:comment>descries the details of the treatment that a cohort group is using</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#isCohortInProject -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isCohortInProject">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
+        <vann:example>Cohort1 isCohortInProject BipolarProject</vann:example>
+        <rdfs:comment>describes what projects a cohort is a part of</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#isCohortInWorkingGroup -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isCohortInWorkingGroup">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+        <vann:example>BipolarAmsterdamCohort isCohortInWorkingGroup BipolarWorkingGroup --&gt; The Bipolar Amsterdam cohort is part of the Bipolar working group</vann:example>
+        <rdfs:comment>describes what working group the cohort is a part of</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#isControlGroupOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isControlGroupOf">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <vann:example>BipolarControlGroup isControlGroupOf BipolarCohort</vann:example>
+        <rdfs:comment>describes the cohort that a control group is a part of</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/enigma#isDiagnosisInstrumentOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isDiagnosisInstrumentOf">
@@ -264,6 +494,39 @@
     
 
 
+    <!-- https://w3id.org/enigma#isDiagnosticGroupOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isDiagnosticGroupOf">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <vann:example>BipolarPatientGroup isPatientGroupOf BipolarCohort</vann:example>
+        <rdfs:comment>describes the cohort that a patient group is a part of</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#isEnigmaContactOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isEnigmaContactOf">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <vann:example>JohnSmith isEnigmaContactOf BipolarCohort</vann:example>
+        <rdfs:comment>describes the cohorts that someone is an Enigma contact of</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#isImageAcquisitionProtocolOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isImageAcquisitionProtocolOf">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#ImageAcquisitionProtocol"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <vann:example>AcquisitionProtocol1 isImageAcquisitionProtocolOf Cohort1</vann:example>
+        <rdfs:comment>describes which cohorts were scanned with a certain acquisition protocol</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/enigma#isInformationObtainmentMethodOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isInformationObtainmentMethodOf">
@@ -272,6 +535,17 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
         <vann:example>selfReport isInformationObtainmentMethodOf Cohort1 --&gt; Self report was used to obtain medical information of the members of Cohort1</vann:example>
         <rdfs:comment>describes what cohorts use that particular information obtainment method</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#isInvestigatorOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isInvestigatorOf">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <vann:example>JohnSmith isInvestigatorOf BipolarProject</vann:example>
+        <rdfs:comment>describes what cohorts someone is an investigator for</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -294,6 +568,28 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
         <vann:example>John isPIOf Cohort1 --&gt; John is the personal investigator of Cohort1</vann:example>
         <rdfs:comment>describes the cohorts that the personal investigator is in charge of</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#isPopulationGroupOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isPopulationGroupOf">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <vann:example>BipolarPopulationGroup isPopulationGroupOf BipolarCohort</vann:example>
+        <rdfs:comment>describes the population group of a cohort of a population-based study</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#isProjectCohortOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isProjectCohortOf">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <vann:example>BipolarBarcelonaCohort isProjectCohortOf BipolarCohort</vann:example>
+        <rdfs:comment>describes the bigger cohort that the project cohort belongs to</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -342,304 +638,6 @@
     
 
 
-    <!-- https://w3id.org/enigma#hasBrainScanDataType -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasBrainScanDataType">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasDataType"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#BrainScanDataType"/>
-        <vann:example>Cohort1 hasBrainScanDataType expression</vann:example>
-        <rdfs:comment>describes the brain scan data types that were collected for a cohort</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasCohort -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasCohort">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isCohortInProject"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isCohortInWorkingGroup"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#WorkingGroup"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <vann:example>BipolarWorkingGroup hasCohort BipolarAmsterdamCohort --&gt; The Bipolar working group uses data from the Bipolar Amsterdam cohort</vann:example>
-        <rdfs:comment>describes what cohorts are part of a working group</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasControlGroup -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasControlGroup">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isControlGroupOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <vann:example>BipolarControl hasControlGroup BipolarControlGroup</vann:example>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasDataType -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDataType">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#DataType"/>
-        <vann:example>Cohort1 hasDataType dataType1</vann:example>
-        <rdfs:comment>The cohorts of a project will automatically have the data types of the project. It can have more but must at least have the data types of the project. I do not know how to implement this.</rdfs:comment>
-        <rdfs:comment>describes the data types that were collected for the cohort</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasDiagnosticGroup -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDiagnosticGroup">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isDiagnosticGroupOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <vann:example>BipolarCohort hasPatientGroup BipolarPatientGroup</vann:example>
-        <rdfs:comment>describes the patient group of a cohort</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasDisorderDetails -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDisorderDetails">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#SpecificDisorderInfo"/>
-        <vann:example>CohortGroup1 hasDisorderDetails SZ20938</vann:example>
-        <rdfs:comment>describes the details of a particular disorder that a cohort group has</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasEnigmaContact -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasEnigmaContact">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isEnigmaContactOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example>Cohort1 hasEnigmaContact JohnSmith</vann:example>
-        <rdfs:comment>describes the contact people from ENIGMA of a cohort</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasGeneticDataType -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasGeneticDataType">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasDataType"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#GeneticDataType"/>
-        <vann:example>Cohort1 hasGeneticDataType expression</vann:example>
-        <rdfs:comment>describes the genetic data types that were collected for a cohort</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasImageAcquisitionProtocol -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasImageAcquisitionProtocol">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isAcquisitionProtocolOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#ImageAcquisitionProtocol"/>
-        <vann:example>Cohort1 hasImageAcquisitionProtocol AcquisitionProtocol1</vann:example>
-        <rdfs:comment>describes the acquisition protocol that was used to scan the cohort</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasInvestigator -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasInvestigator">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isInvestigatorOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example>BipolarCohort hasInvestigator JohnSmith</vann:example>
-        <rdfs:comment>describe the investigators of a cohort</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasMedicalRatingDetails -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasMedicalRatingDetails">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#SpecificMedicalRatingInfo"/>
-        <vann:example>CohortDisorderGroup hasMedicalRatingDetails YMRS3010</vann:example>
-        <rdfs:comment>describes the min and max values of the medical rating criteria</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasMembersWithRecentIssue -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasMembersWithRecentIssue">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Condition"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Disorder"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Treatment"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-        <vann:example>Cohort1TreatmentInfo usesTreatment Benzodiazepine inThePastMonths 6 --&gt; Cohort1 only includes people who used benzodiazepine in the past6 months</vann:example>
-        <rdfs:comment>describes whether or not the members of the cohort had an issue (condition, disorder, or treatment-related)  within the past few months</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasPopulationGroup -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasPopulationGroup">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isPopulationGroupOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <vann:example>BipolarCohort hasPopulationGroup USCPopulationGroup</vann:example>
-        <rdfs:comment>describes the population group of a population-based cohort</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasProjectCohort -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasProjectCohort">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isProjectCohortOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
-        <vann:example>BipolarCohort hasProjectCohort BipolarBarcelonaCohort</vann:example>
-        <rdfs:comment>describes the subcohorts that are part of that cohort</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasTreatmentDetails -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasTreatmentDetails">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#SpecificTreatmentInfo"/>
-        <vann:example>CohortGroup hasTreatmentDetails antidepressants42</vann:example>
-        <rdfs:comment>descries the details of the treatment that a cohort group is using</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isAcquisitionProtocolOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isAcquisitionProtocolOf">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#ImageAcquisitionProtocol"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <vann:example>AcquisitionProtocol1 isAcquisitionProtocolOf Cohort1</vann:example>
-        <rdfs:comment>describes which cohorts were scanned with a certain acquisition protocol</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isCohortInProject -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isCohortInProject">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
-        <vann:example>Cohort1 isCohortInProject BipolarProject</vann:example>
-        <rdfs:comment>describes what projects a cohort is a part of</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isCohortInWorkingGroup -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isCohortInWorkingGroup">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
-        <vann:example>BipolarAmsterdamCohort isCohortInWorkingGroup BipolarWorkingGroup --&gt; The Bipolar Amsterdam cohort is part of the Bipolar working group</vann:example>
-        <rdfs:comment>describes what working group the cohort is a part of</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isControlGroupOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isControlGroupOf">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <vann:example>BipolarControlGroup isControlGroupOf BipolarCohort</vann:example>
-        <rdfs:comment>describes the cohort that a control group is a part of</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isDiagnosticGroupOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isDiagnosticGroupOf">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <vann:example>BipolarPatientGroup isPatientGroupOf BipolarCohort</vann:example>
-        <rdfs:comment>describes the cohort that a patient group is a part of</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isEnigmaContactOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isEnigmaContactOf">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <vann:example>JohnSmith isEnigmaContactOf BipolarCohort</vann:example>
-        <rdfs:comment>describes the cohorts that someone is an Enigma contact of</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isInvestigatorOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isInvestigatorOf">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <vann:example>JohnSmith isInvestigatorOf BipolarProject</vann:example>
-        <rdfs:comment>describes what cohorts someone is an investigator for</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isPopulationGroupOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isPopulationGroupOf">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <vann:example>BipolarPopulationGroup isPopulationGroupOf BipolarCohort</vann:example>
-        <rdfs:comment>describes the population group of a cohort of a population-based study</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isProjectCohortOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isProjectCohortOf">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <vann:example>BipolarBarcelonaCohort isProjectCohortOf BipolarCohort</vann:example>
-        <rdfs:comment>describes the bigger cohort that the project cohort belongs to</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -674,6 +672,17 @@
     
 
 
+    <!-- https://w3id.org/enigma#doesNotHaveIntellectualDisability -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#doesNotHaveIntellectualDisability">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <vann:example>Cohort1 doesNotHaveIntellectualDisability true</vann:example>
+        <rdfs:comment>describes whether a cohort excludes people with an intellectual disability</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/enigma#doesNotHaveNeurologicalComorbidity -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#doesNotHaveNeurologicalComorbidity">
@@ -698,173 +707,6 @@
     
 
 
-    <!-- https://w3id.org/enigma#excludesRightHands -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#excludesRightHands">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <vann:example>CohortGroup1 excludesRightHands true</vann:example>
-        <rdfs:comment>describes if right handed people were excluded from the study</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasNumberOfParticipants -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfParticipants">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
-        <vann:example>Cohort1 hasNumberOfParticipants 500 --&gt; Cohort1 is made up of approximately 500 patients</vann:example>
-        <rdfs:comment>describes the number of participants in the cohort</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasPregnantMembers -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasPregnantMembers">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <vann:example>CohortGroup1 hasPregnantMembers &quot;false&quot;</vann:example>
-        <rdfs:comment>describes if the cohort has pregnant members</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isClinicallyStable -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#isClinicallyStable">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <vann:example>CohortGroup1 isClinicallyStable yes --&gt; CohortGroup1 only includes people who are clinically stable</vann:example>
-        <rdfs:comment>describes if the members of the cohort group are clinically stable, which usually means that vital signs are within 20% of usual readings</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isProficientInLocalLanguage -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#isProficientInLocalLanguage">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <vann:example>CohortGroup1 isProficientInLocalLanguage true</vann:example>
-        <rdfs:comment>describes whether or not the members of the cohort group are proficient in local language</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#withDisorderSeverity -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#withDisorderSeverity">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#SpecificDisorderInfo"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
-        <vann:example>Cohort1DisorderInfo hasDisorderWith DiseaseWith hasDisorder Schizophrenia withDiseaseSeverity 5 --&gt; Cohort1 only includes people with schizophrenia with disease severity 5</vann:example>
-        <rdfs:comment>describes the severity of the disease</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#withMaxAgeOfOnsetOfDisorder -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#withMaxAgeOfOnsetOfDisorder">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#SpecificDisorderInfo"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <vann:example>Cohort1DisorderInfo hasDisorder schizophrenia withMaxAgeOfOnset 18 --&gt; Cohort1 only includes people who had schizophrenia at 18 or younger</vann:example>
-        <rdfs:comment>describes the maximum age of onset of a disease</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#withMaxDurationOfDisorder -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#withMaxDurationOfDisorder">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#SpecificDisorderInfo"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <vann:example>Cohort1DisorderInfo hasDisorder bipolarDisorder withMaxDuration 20 --&gt; Cohort1 only includes people who had bipolar disorder for at most 20 years</vann:example>
-        <rdfs:comment>describes the maximum duration (in years) of a disease</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#withMaxNumber -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#withMaxNumber">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#SpecificMedicalRatingInfo"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <vann:example>Cohort1MedicalRatingInfo isWithin youngManiaRatingScale0to10 withMaxNumber 10 --&gt; Cohort1 only includes people who received a score of at most 10 on the YMRS</vann:example>
-        <rdfs:comment>the last included number in the medical range</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#withMinAgeOfOnsetOfDisorder -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#withMinAgeOfOnsetOfDisorder">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#SpecificDisorderInfo"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <vann:example>Cohort1DisorderInfo hasDisorder schizophrenia withMinAgeOfOnset 10 --&gt; Cohort1 only includes people who had schizophrenia at the age of 10 or older</vann:example>
-        <rdfs:comment>describes the minimum age of onset of a disease</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#withMinDurationOfDisorder -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#withMinDurationOfDisorder">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#SpecificDisorderInfo"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <vann:example>Cohort1DisorderInfo hasDisorder bipolarDisorder withMinDuration 10 --&gt; Cohort1 only includes people had bipolar disorder for at least 10 years</vann:example>
-        <rdfs:comment>describes the minimum duration (in years) of a disease</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#withMinNumber -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#withMinNumber">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#SpecificMedicalRatingInfo"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <vann:example>Cohort1MedicalRatingInfo isWithin youngManiaRatingScale0to10 withMinNumber 0 --&gt; Cohort1 only includes people who scored at least a 0 on the YMRS</vann:example>
-        <rdfs:comment>the first included number in the medical rating</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#doesNotHaveIntellectualDisability -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#doesNotHaveIntellectualDisability">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <vann:example>Cohort1 doesNotHaveIntellectualDisability true</vann:example>
-        <rdfs:comment>describes whether a cohort excludes people with an intellectual disability</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- https://w3id.org/enigma#excludesLeftHands -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#excludesLeftHands">
@@ -872,6 +714,17 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <vann:example>CohortGroup1 excludesLeftHanded true</vann:example>
         <rdfs:comment>describes if left handed people were excluded from the study</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#excludesRightHands -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#excludesRightHands">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <vann:example>CohortGroup1 excludesRightHands true</vann:example>
+        <rdfs:comment>describes if right handed people were excluded from the study</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -1167,6 +1020,36 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
     
 
 
+    <!-- https://w3id.org/enigma#hasNumberOfParticipants -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfParticipants">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+        <vann:example>Cohort1 hasNumberOfParticipants 500 --&gt; Cohort1 is made up of approximately 500 patients</vann:example>
+        <rdfs:comment>describes the number of participants in the cohort</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasPregnantMembers -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasPregnantMembers">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <vann:example>CohortGroup1 hasPregnantMembers &quot;false&quot;</vann:example>
+        <rdfs:comment>describes if the cohort has pregnant members</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/enigma#hasPsychiatricComorbidity -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasPsychiatricComorbidity">
@@ -1292,6 +1175,25 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
     
 
 
+    <!-- https://w3id.org/enigma#isClinicallyStable -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#isClinicallyStable">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <vann:example>CohortGroup1 isClinicallyStable yes --&gt; CohortGroup1 only includes people who are clinically stable</vann:example>
+        <rdfs:comment>describes if the members of the cohort group are clinically stable, which usually means that vital signs are within 20% of usual readings</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/enigma#isFamilyBased -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#isFamilyBased">
@@ -1311,6 +1213,102 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
     
 
 
+    <!-- https://w3id.org/enigma#isProficientInLocalLanguage -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#isProficientInLocalLanguage">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <vann:example>CohortGroup1 isProficientInLocalLanguage true</vann:example>
+        <rdfs:comment>describes whether or not the members of the cohort group are proficient in local language</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#withDisorderSeverity -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#withDisorderSeverity">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#SpecificDisorderInfo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+        <vann:example>Cohort1DisorderInfo hasDisorderWith DiseaseWith hasDisorder Schizophrenia withDiseaseSeverity 5 --&gt; Cohort1 only includes people with schizophrenia with disease severity 5</vann:example>
+        <rdfs:comment>describes the severity of the disease</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#withMaxAgeOfOnsetOfDisorder -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#withMaxAgeOfOnsetOfDisorder">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#SpecificDisorderInfo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <vann:example>Cohort1DisorderInfo hasDisorder schizophrenia withMaxAgeOfOnset 18 --&gt; Cohort1 only includes people who had schizophrenia at 18 or younger</vann:example>
+        <rdfs:comment>describes the maximum age of onset of a disease</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#withMaxDurationOfDisorder -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#withMaxDurationOfDisorder">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#SpecificDisorderInfo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <vann:example>Cohort1DisorderInfo hasDisorder bipolarDisorder withMaxDuration 20 --&gt; Cohort1 only includes people who had bipolar disorder for at most 20 years</vann:example>
+        <rdfs:comment>describes the maximum duration (in years) of a disease</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#withMaxNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#withMaxNumber">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#SpecificMedicalRatingInfo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <vann:example>Cohort1MedicalRatingInfo isWithin youngManiaRatingScale0to10 withMaxNumber 10 --&gt; Cohort1 only includes people who received a score of at most 10 on the YMRS</vann:example>
+        <rdfs:comment>the last included number in the medical range</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#withMinAgeOfOnsetOfDisorder -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#withMinAgeOfOnsetOfDisorder">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#SpecificDisorderInfo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <vann:example>Cohort1DisorderInfo hasDisorder schizophrenia withMinAgeOfOnset 10 --&gt; Cohort1 only includes people who had schizophrenia at the age of 10 or older</vann:example>
+        <rdfs:comment>describes the minimum age of onset of a disease</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#withMinDurationOfDisorder -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#withMinDurationOfDisorder">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#SpecificDisorderInfo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <vann:example>Cohort1DisorderInfo hasDisorder bipolarDisorder withMinDuration 10 --&gt; Cohort1 only includes people had bipolar disorder for at least 10 years</vann:example>
+        <rdfs:comment>describes the minimum duration (in years) of a disease</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#withMinNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#withMinNumber">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#SpecificMedicalRatingInfo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <vann:example>Cohort1MedicalRatingInfo isWithin youngManiaRatingScale0to10 withMinNumber 0 --&gt; Cohort1 only includes people who scored at least a 0 on the YMRS</vann:example>
+        <rdfs:comment>the first included number in the medical rating</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1326,6 +1324,14 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
 
     <owl:Class rdf:about="https://w3id.org/enigma#AnxietyDisorder">
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#BrainScanDataType -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#BrainScanDataType">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#DataType"/>
     </owl:Class>
     
 
@@ -1387,6 +1393,15 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
     
 
 
+    <!-- https://w3id.org/enigma#CohortGroup -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#CohortGroup">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:comment>Patient Group or Control Group</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/enigma#Condition -->
 
     <owl:Class rdf:about="https://w3id.org/enigma#Condition">
@@ -1400,6 +1415,12 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
     <owl:Class rdf:about="https://w3id.org/enigma#Country">
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Location"/>
     </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#DataType -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#DataType"/>
     
 
 
@@ -1433,6 +1454,22 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
     
 
 
+    <!-- https://w3id.org/enigma#GeneticDataType -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#GeneticDataType">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#DataType"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#GeneticDisorder -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#GeneticDisorder">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/enigma#GenotypePlatform -->
 
     <owl:Class rdf:about="https://w3id.org/enigma#GenotypePlatform"/>
@@ -1443,6 +1480,20 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
 
     <owl:Class rdf:about="https://w3id.org/enigma#HamiltonDepressionRatingScale">
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#MedicalRating"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#ImageAcquisitionProtocol -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#ImageAcquisitionProtocol"/>
+    
+
+
+    <!-- https://w3id.org/enigma#InfectiousDisorder -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#InfectiousDisorder">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
     </owl:Class>
     
 
@@ -1507,6 +1558,20 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
     
 
 
+    <!-- https://w3id.org/enigma#Project -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#Project"/>
+    
+
+
+    <!-- https://w3id.org/enigma#ProjectCohort -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#ProjectCohort">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Cohort"/>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/enigma#RespiratoryDisorder -->
 
     <owl:Class rdf:about="https://w3id.org/enigma#RespiratoryDisorder">
@@ -1519,6 +1584,32 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
 
     <owl:Class rdf:about="https://w3id.org/enigma#SignificantGeneralMedicalCondition">
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#SpecificConditionInfo -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#SpecificConditionInfo"/>
+    
+
+
+    <!-- https://w3id.org/enigma#SpecificDisorderInfo -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#SpecificDisorderInfo"/>
+    
+
+
+    <!-- https://w3id.org/enigma#SpecificMedicalRatingInfo -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#SpecificMedicalRatingInfo"/>
+    
+
+
+    <!-- https://w3id.org/enigma#SpecificTreatmentInfo -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#SpecificTreatmentInfo">
+        <rdfs:comment>details of a specific treatment, such as the length of the usage period</rdfs:comment>
     </owl:Class>
     
 
@@ -1555,111 +1646,18 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
     
 
 
-    <!-- https://w3id.org/enigma#YoungManiaRatingScale -->
-
-    <owl:Class rdf:about="https://w3id.org/enigma#YoungManiaRatingScale">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#MedicalRating"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/enigma#BrainScanDataType -->
-
-    <owl:Class rdf:about="https://w3id.org/enigma#BrainScanDataType">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#DataType"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/enigma#CohortGroup -->
-
-    <owl:Class rdf:about="https://w3id.org/enigma#CohortGroup">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:comment>Patient Group or Control Group</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/enigma#DataType -->
-
-    <owl:Class rdf:about="https://w3id.org/enigma#DataType"/>
-    
-
-
-    <!-- https://w3id.org/enigma#GeneticDataType -->
-
-    <owl:Class rdf:about="https://w3id.org/enigma#GeneticDataType">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#DataType"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/enigma#GeneticDisorder -->
-
-    <owl:Class rdf:about="https://w3id.org/enigma#GeneticDisorder">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/enigma#ImageAcquisitionProtocol -->
-
-    <owl:Class rdf:about="https://w3id.org/enigma#ImageAcquisitionProtocol"/>
-    
-
-
-    <!-- https://w3id.org/enigma#InfectiousDisorder -->
-
-    <owl:Class rdf:about="https://w3id.org/enigma#InfectiousDisorder">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/enigma#Project -->
-
-    <owl:Class rdf:about="https://w3id.org/enigma#Project"/>
-    
-
-
-    <!-- https://w3id.org/enigma#ProjectCohort -->
-
-    <owl:Class rdf:about="https://w3id.org/enigma#ProjectCohort">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Cohort"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/enigma#SpecificConditionInfo -->
-
-    <owl:Class rdf:about="https://w3id.org/enigma#SpecificConditionInfo"/>
-    
-
-
-    <!-- https://w3id.org/enigma#SpecificDisorderInfo -->
-
-    <owl:Class rdf:about="https://w3id.org/enigma#SpecificDisorderInfo"/>
-    
-
-
-    <!-- https://w3id.org/enigma#SpecificMedicalRatingInfo -->
-
-    <owl:Class rdf:about="https://w3id.org/enigma#SpecificMedicalRatingInfo"/>
-    
-
-
-    <!-- https://w3id.org/enigma#SpecificTreatmentInfo -->
-
-    <owl:Class rdf:about="https://w3id.org/enigma#SpecificTreatmentInfo">
-        <rdfs:comment>details of a specific treatment, such as the length of the usage period</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/enigma#WorkingGroup -->
 
     <owl:Class rdf:about="https://w3id.org/enigma#WorkingGroup">
         <rdfs:comment>a working group (a group of researchers studying a certain ENIGMA topic) of ENIGMA</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#YoungManiaRatingScale -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#YoungManiaRatingScale">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#MedicalRating"/>
     </owl:Class>
     
 
@@ -1672,398 +1670,6 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- https://w3id.org/enigma#BipolarBarcelonaControl -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarBarcelonaControl">
-        <rdf:type rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <ExclusionInclusionsCriteria:doesNotHaveFirstDegreeRelativeWithDisorder rdf:resource="https://w3id.org/enigma#mentalDisorder"/>
-        <ExclusionInclusionsCriteria:doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#headTrauma"/>
-        <ExclusionInclusionsCriteria:doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#mentalDisorder"/>
-        <ExclusionInclusionsCriteria:doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#neurologicalDisorder"/>
-        <ExclusionInclusionsCriteria:doesNotUseTreatment rdf:resource="https://w3id.org/enigma#psychotropicMedication"/>
-        <ExclusionInclusionsCriteria:excludesRightHands rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ExclusionInclusionsCriteria:excludesRightHands>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#BipolarBarcelonaPatient -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarBarcelonaPatient">
-        <rdf:type rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <ExclusionInclusionsCriteria:doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#headTrauma"/>
-        <ExclusionInclusionsCriteria:doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#neurologicalDisorder"/>
-        <ExclusionInclusionsCriteria:hasDisorder rdf:resource="https://w3id.org/enigma#bipolarDisorder"/>
-        <ExclusionInclusionsCriteria:excludesRightHands rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ExclusionInclusionsCriteria:excludesRightHands>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#BipolarParisControl -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarParisControl">
-        <rdf:type rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <ExclusionInclusionsCriteria:doesNotHaveFirstDegreeRelativeWithDisorder rdf:resource="https://w3id.org/enigma#bipolarDisorder"/>
-        <ExclusionInclusionsCriteria:doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#cardiovascularDisorder"/>
-        <ExclusionInclusionsCriteria:doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#headTraumaWithLossOfConsciousness"/>
-        <ExclusionInclusionsCriteria:doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#mentalDisorder"/>
-        <ExclusionInclusionsCriteria:doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#neurologicalDisorder"/>
-        <ExclusionInclusionsCriteria:doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#substanceAbuse"/>
-        <ExclusionInclusionsCriteria:doesNotHaveContraindicationToMRI rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ExclusionInclusionsCriteria:doesNotHaveContraindicationToMRI>
-        <ExclusionInclusionsCriteria:hasPregnantMembers rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ExclusionInclusionsCriteria:hasPregnantMembers>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#BipolarParisPatient -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarParisPatient">
-        <rdf:type rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <ExclusionInclusionsCriteria:doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#cardiovascularDisorder"/>
-        <ExclusionInclusionsCriteria:doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#headTraumaWithLossOfConsciousness"/>
-        <ExclusionInclusionsCriteria:doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#neurologicalDisorder"/>
-        <ExclusionInclusionsCriteria:doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#substanceAbuse"/>
-        <ExclusionInclusionsCriteria:doesNotHaveContraindicationToMRI rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ExclusionInclusionsCriteria:doesNotHaveContraindicationToMRI>
-        <ExclusionInclusionsCriteria:hasPregnantMembers rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ExclusionInclusionsCriteria:hasPregnantMembers>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#BipolarTulsaPatient -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarTulsaPatient">
-        <rdf:type rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <ExclusionInclusionsCriteria:doesNotHaveDisorder rdf:resource="https://w3id.org/enigma#cardiovascularDisorder"/>
-        <ExclusionInclusionsCriteria:doesNotHaveDisorder rdf:resource="https://w3id.org/enigma#endocrineDisorder"/>
-        <ExclusionInclusionsCriteria:doesNotHaveDisorder rdf:resource="https://w3id.org/enigma#neurologicalDisorder"/>
-        <ExclusionInclusionsCriteria:doesNotHaveDisorder rdf:resource="https://w3id.org/enigma#respiratoryDisorder"/>
-        <ExclusionInclusionsCriteria:doesNotHaveDisorder rdf:resource="https://w3id.org/enigma#suicidality"/>
-        <ExclusionInclusionsCriteria:doesNotHaveContraindicationToMRI rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ExclusionInclusionsCriteria:doesNotHaveContraindicationToMRI>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#Canada -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#Canada">
-        <rdf:type rdf:resource="https://w3id.org/enigma#Country"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#IlluminaOmniExpress -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#IlluminaOmniExpress">
-        <rdf:type rdf:resource="https://w3id.org/enigma#GenotypePlatform"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#Irvine -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#Irvine">
-        <rdf:type rdf:resource="https://w3id.org/enigma#City"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#Toronto -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#Toronto">
-        <rdf:type rdf:resource="https://w3id.org/enigma#City"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#USA -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#USA">
-        <rdf:type rdf:resource="https://w3id.org/enigma#Country"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#anxietyDisorder -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#anxietyDisorder">
-        <rdf:type rdf:resource="https://w3id.org/enigma#AnxietyDisorder"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#autism -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#autism">
-        <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#bipolarDisorder -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#bipolarDisorder">
-        <rdf:type rdf:resource="https://w3id.org/enigma#MoodDisorder"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#cardiovascularDisorder -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#cardiovascularDisorder">
-        <rdf:type rdf:resource="https://w3id.org/enigma#CardiovascularDisorder"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#consensusConsultantDiagnosis -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#consensusConsultantDiagnosis">
-        <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosisInstrument"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#diagnosticInteviewForGeneticStudies -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#diagnosticInteviewForGeneticStudies">
-        <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosisInstrument"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#dsm4 -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#dsm4">
-        <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosticCriteria"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#endocrineDisorder -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#endocrineDisorder">
-        <rdf:type rdf:resource="https://w3id.org/enigma#EndocrineDisorder"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#epilepsy -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#epilepsy">
-        <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#euthymia -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#euthymia">
-        <rdf:type rdf:resource="https://w3id.org/enigma#Condition"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#familyInterviewForGeneticStudies -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#familyInterviewForGeneticStudies">
-        <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosticCriteria"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#fluoxetine -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#fluoxetine"/>
-    
-
-
-    <!-- https://w3id.org/enigma#headTrauma -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#headTrauma">
-        <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#headTraumaWithLossOfConsciousness -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#headTraumaWithLossOfConsciousness">
-        <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#hospitalRecords -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#hospitalRecords">
-        <rdf:type rdf:resource="https://w3id.org/enigma#InformationObtainmentMethod"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#mentalDisorder -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#mentalDisorder">
-        <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#miniInternationalNeuropsychiatricInterview -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#miniInternationalNeuropsychiatricInterview">
-        <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosisInstrument"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#moodDisorder -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#moodDisorder">
-        <rdf:type rdf:resource="https://w3id.org/enigma#MoodDisorder"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#neurologicalDisorder -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#neurologicalDisorder">
-        <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#organicMedicalDisorder -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#organicMedicalDisorder">
-        <rdf:type rdf:resource="https://w3id.org/enigma#OrganicMedicalDisorder"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#patientInterview -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#patientInterview">
-        <rdf:type rdf:resource="https://w3id.org/enigma#InformationObtainmentMethod"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#psychiatricMedication -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#psychiatricMedication"/>
-    
-
-
-    <!-- https://w3id.org/enigma#psychiatristReport -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#psychiatristReport">
-        <rdf:type rdf:resource="https://w3id.org/enigma#InformationObtainmentMethod"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#psychotropicMedication -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#psychotropicMedication"/>
-    
-
-
-    <!-- https://w3id.org/enigma#researchDiagnosticCriteria -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#researchDiagnosticCriteria">
-        <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosticCriteria"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#respiratoryDisorder -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#respiratoryDisorder">
-        <rdf:type rdf:resource="https://w3id.org/enigma#RespiratoryDisorder"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#seizures -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#seizures">
-        <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#selfReport -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#selfReport">
-        <rdf:type rdf:resource="https://w3id.org/enigma#InformationObtainmentMethod"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#significantGeneralMedicalCondition -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#significantGeneralMedicalCondition">
-        <rdf:type rdf:resource="https://w3id.org/enigma#SignificantGeneralMedicalCondition"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#structuredClinicalInstrument -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#structuredClinicalInstrument">
-        <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosisInstrument"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#substanceAbuse -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#substanceAbuse">
-        <rdf:type rdf:resource="https://w3id.org/enigma#SubstanceAbuse"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#substanceDependence -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#substanceDependence">
-        <rdf:type rdf:resource="https://w3id.org/enigma#SubstanceDependence"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#suicidality -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#suicidality">
-        <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#vascularDisorder -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#vascularDisorder">
-        <rdf:type rdf:resource="https://w3id.org/enigma#VascularDisorder"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#youngManiaRatingScale0to10 -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#youngManiaRatingScale0to10">
-        <rdf:type rdf:resource="https://w3id.org/enigma#YoungManiaRatingScale"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#BipolarWG -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarWG">
-        <rdf:type rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
-    </owl:NamedIndividual>
     
 
 
@@ -2091,12 +1697,68 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
     
 
 
+    <!-- https://w3id.org/enigma#BipolarBarcelonaControl -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarBarcelonaControl">
+        <rdf:type rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <doesNotHaveFirstDegreeRelativeWithDisorder rdf:resource="https://w3id.org/enigma#mentalDisorder"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#headTrauma"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#mentalDisorder"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#neurologicalDisorder"/>
+        <doesNotUseTreatment rdf:resource="https://w3id.org/enigma#psychotropicMedication"/>
+        <excludesRightHands rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</excludesRightHands>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#BipolarBarcelonaPatient -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarBarcelonaPatient">
+        <rdf:type rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#headTrauma"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#neurologicalDisorder"/>
+        <hasDisorder rdf:resource="https://w3id.org/enigma#bipolarDisorder"/>
+        <excludesRightHands rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</excludesRightHands>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/enigma#BipolarParis -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarParis">
         <rdf:type rdf:resource="https://w3id.org/enigma#Cohort"/>
         <hasControlGroup rdf:resource="https://w3id.org/enigma#BipolarParisControl"/>
         <hasDiagnosticGroup rdf:resource="https://w3id.org/enigma#BipolarParisPatient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#BipolarParisControl -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarParisControl">
+        <rdf:type rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <doesNotHaveFirstDegreeRelativeWithDisorder rdf:resource="https://w3id.org/enigma#bipolarDisorder"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#cardiovascularDisorder"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#headTraumaWithLossOfConsciousness"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#mentalDisorder"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#neurologicalDisorder"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#substanceAbuse"/>
+        <doesNotHaveContraindicationToMRI rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</doesNotHaveContraindicationToMRI>
+        <hasPregnantMembers rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasPregnantMembers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#BipolarParisPatient -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarParisPatient">
+        <rdf:type rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#cardiovascularDisorder"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#headTraumaWithLossOfConsciousness"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#neurologicalDisorder"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#substanceAbuse"/>
+        <doesNotHaveContraindicationToMRI rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</doesNotHaveContraindicationToMRI>
+        <hasPregnantMembers rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasPregnantMembers>
     </owl:NamedIndividual>
     
 
@@ -2110,10 +1772,40 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
     
 
 
+    <!-- https://w3id.org/enigma#BipolarTulsaPatient -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarTulsaPatient">
+        <rdf:type rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <doesNotHaveDisorder rdf:resource="https://w3id.org/enigma#cardiovascularDisorder"/>
+        <doesNotHaveDisorder rdf:resource="https://w3id.org/enigma#endocrineDisorder"/>
+        <doesNotHaveDisorder rdf:resource="https://w3id.org/enigma#neurologicalDisorder"/>
+        <doesNotHaveDisorder rdf:resource="https://w3id.org/enigma#respiratoryDisorder"/>
+        <doesNotHaveDisorder rdf:resource="https://w3id.org/enigma#suicidality"/>
+        <doesNotHaveContraindicationToMRI rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</doesNotHaveContraindicationToMRI>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#BipolarWG -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarWG">
+        <rdf:type rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/enigma#CNSCancer -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/enigma#CNSCancer">
         <rdf:type rdf:resource="https://w3id.org/enigma#Cancer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#Canada -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#Canada">
+        <rdf:type rdf:resource="https://w3id.org/enigma#Country"/>
     </owl:NamedIndividual>
     
 
@@ -2176,6 +1868,22 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
 
     <owl:NamedIndividual rdf:about="https://w3id.org/enigma#HIV">
         <rdf:type rdf:resource="https://w3id.org/enigma#InfectiousDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#IlluminaOmniExpress -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#IlluminaOmniExpress">
+        <rdf:type rdf:resource="https://w3id.org/enigma#GenotypePlatform"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#Irvine -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#Irvine">
+        <rdf:type rdf:resource="https://w3id.org/enigma#City"/>
     </owl:NamedIndividual>
     
 
@@ -2244,6 +1952,22 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
     
 
 
+    <!-- https://w3id.org/enigma#Toronto -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#Toronto">
+        <rdf:type rdf:resource="https://w3id.org/enigma#City"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#USA -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#USA">
+        <rdf:type rdf:resource="https://w3id.org/enigma#Country"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/enigma#WholeGenome -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/enigma#WholeGenome">
@@ -2276,9 +2000,41 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
     
 
 
+    <!-- https://w3id.org/enigma#anxietyDisorder -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#anxietyDisorder">
+        <rdf:type rdf:resource="https://w3id.org/enigma#AnxietyDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#autism -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#autism">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/enigma#beagle3.3.2 -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/enigma#beagle3.3.2"/>
+    
+
+
+    <!-- https://w3id.org/enigma#bipolarDisorder -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#bipolarDisorder">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MoodDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#cardiovascularDisorder -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#cardiovascularDisorder">
+        <rdf:type rdf:resource="https://w3id.org/enigma#CardiovascularDisorder"/>
+    </owl:NamedIndividual>
     
 
 
@@ -2298,11 +2054,73 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
     
 
 
+    <!-- https://w3id.org/enigma#consensusConsultantDiagnosis -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#consensusConsultantDiagnosis">
+        <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosisInstrument"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#diagnosticInteviewForGeneticStudies -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#diagnosticInteviewForGeneticStudies">
+        <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosisInstrument"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#dsm4 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#dsm4">
+        <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosticCriteria"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/enigma#eatingDisorder -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/enigma#eatingDisorder">
         <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#endocrineDisorder -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#endocrineDisorder">
+        <rdf:type rdf:resource="https://w3id.org/enigma#EndocrineDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#epilepsy -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#epilepsy">
+        <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#euthymia -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#euthymia">
+        <rdf:type rdf:resource="https://w3id.org/enigma#Condition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#familyInterviewForGeneticStudies -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#familyInterviewForGeneticStudies">
+        <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosticCriteria"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#fluoxetine -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#fluoxetine"/>
     
 
 
@@ -2330,10 +2148,34 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
     
 
 
+    <!-- https://w3id.org/enigma#headTrauma -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#headTrauma">
+        <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#headTraumaWithLossOfConsciousness -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#headTraumaWithLossOfConsciousness">
+        <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/enigma#hepC -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/enigma#hepC">
         <rdf:type rdf:resource="https://w3id.org/enigma#InfectiousDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#hospitalRecords -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#hospitalRecords">
+        <rdf:type rdf:resource="https://w3id.org/enigma#InformationObtainmentMethod"/>
     </owl:NamedIndividual>
     
 
@@ -2364,9 +2206,25 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
     
 
 
+    <!-- https://w3id.org/enigma#mentalDisorder -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#mentalDisorder">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/enigma#merlinOffline1.1.2 -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/enigma#merlinOffline1.1.2"/>
+    
+
+
+    <!-- https://w3id.org/enigma#miniInternationalNeuropsychiatricInterview -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#miniInternationalNeuropsychiatricInterview">
+        <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosisInstrument"/>
+    </owl:NamedIndividual>
     
 
 
@@ -2376,10 +2234,42 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
     
 
 
+    <!-- https://w3id.org/enigma#moodDisorder -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#moodDisorder">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MoodDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#neurologicalDisorder -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#neurologicalDisorder">
+        <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#organicMedicalDisorder -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#organicMedicalDisorder">
+        <rdf:type rdf:resource="https://w3id.org/enigma#OrganicMedicalDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/enigma#parkinsons -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/enigma#parkinsons">
         <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#patientInterview -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#patientInterview">
+        <rdf:type rdf:resource="https://w3id.org/enigma#InformationObtainmentMethod"/>
     </owl:NamedIndividual>
     
 
@@ -2396,11 +2286,31 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
     
 
 
+    <!-- https://w3id.org/enigma#psychiatricMedication -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#psychiatricMedication"/>
+    
+
+
+    <!-- https://w3id.org/enigma#psychiatristReport -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#psychiatristReport">
+        <rdf:type rdf:resource="https://w3id.org/enigma#InformationObtainmentMethod"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/enigma#psychosis -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/enigma#psychosis">
         <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#psychotropicMedication -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#psychotropicMedication"/>
     
 
 
@@ -2410,10 +2320,50 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
     
 
 
+    <!-- https://w3id.org/enigma#researchDiagnosticCriteria -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#researchDiagnosticCriteria">
+        <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosticCriteria"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#respiratoryDisorder -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#respiratoryDisorder">
+        <rdf:type rdf:resource="https://w3id.org/enigma#RespiratoryDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/enigma#schizophrenia -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/enigma#schizophrenia">
         <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#seizures -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#seizures">
+        <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#selfReport -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#selfReport">
+        <rdf:type rdf:resource="https://w3id.org/enigma#InformationObtainmentMethod"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#significantGeneralMedicalCondition -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#significantGeneralMedicalCondition">
+        <rdf:type rdf:resource="https://w3id.org/enigma#SignificantGeneralMedicalCondition"/>
     </owl:NamedIndividual>
     
 
@@ -2434,10 +2384,58 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
     
 
 
+    <!-- https://w3id.org/enigma#structuredClinicalInstrument -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#structuredClinicalInstrument">
+        <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosisInstrument"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#substanceAbuse -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#substanceAbuse">
+        <rdf:type rdf:resource="https://w3id.org/enigma#SubstanceAbuse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#substanceDependence -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#substanceDependence">
+        <rdf:type rdf:resource="https://w3id.org/enigma#SubstanceDependence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#suicidality -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#suicidality">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/enigma#tourette -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/enigma#tourette">
         <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#vascularDisorder -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#vascularDisorder">
+        <rdf:type rdf:resource="https://w3id.org/enigma#VascularDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#youngManiaRatingScale0to10 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#youngManiaRatingScale0to10">
+        <rdf:type rdf:resource="https://w3id.org/enigma#YoungManiaRatingScale"/>
     </owl:NamedIndividual>
     
 
