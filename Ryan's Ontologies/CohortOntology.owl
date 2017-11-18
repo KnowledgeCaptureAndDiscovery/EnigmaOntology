@@ -1324,6 +1324,9 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
 
     <owl:Class rdf:about="https://w3id.org/enigma#AnxietyDisorder">
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+        <vann:example xml:lang="en">PTSD</vann:example>
+        <rdfs:comment xml:lang="en">A mental health disorder defined by feelings of anxiety, fear, or worry</rdfs:comment>
+        <rdfs:label xml:lang="en">AnxietyDisorder</rdfs:label>
     </owl:Class>
     
 
@@ -1332,6 +1335,9 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
 
     <owl:Class rdf:about="https://w3id.org/enigma#BrainScanDataType">
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#DataType"/>
+        <vann:example xml:lang="en">EEG</vann:example>
+        <rdfs:comment xml:lang="en">Specifies the kinds of brain scan data collected</rdfs:comment>
+        <rdfs:label xml:lang="en">BrainScanDataType</rdfs:label>
     </owl:Class>
     
 
@@ -1348,6 +1354,9 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
 
     <owl:Class rdf:about="https://w3id.org/enigma#Cancer">
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
+        <vann:example xml:lang="en">CNS Cancer</vann:example>
+        <rdfs:comment xml:lang="en">A disease characterized by abnormal cell division and growth</rdfs:comment>
+        <rdfs:label xml:lang="en">Cancer</rdfs:label>
     </owl:Class>
     
 
@@ -1387,7 +1396,8 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
     <!-- https://w3id.org/enigma#Cohort -->
 
     <owl:Class rdf:about="https://w3id.org/enigma#Cohort">
-        <rdfs:comment xml:lang="en">A group of people that are studied by a working group. A cohort is limited by certain inclusion and exclusion criteria.</rdfs:comment>
+        <vann:example xml:lang="en">ADNI: Alzheimer’s Disease Neuroimaging Initiative</vann:example>
+        <rdfs:comment xml:lang="en">A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria</rdfs:comment>
         <rdfs:label xml:lang="en">Cohort</rdfs:label>
     </owl:Class>
     
@@ -1397,7 +1407,9 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
 
     <owl:Class rdf:about="https://w3id.org/enigma#CohortGroup">
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:comment>Patient Group or Control Group</rdfs:comment>
+        <vann:example xml:lang="en">AMCControlGroup is a control cohort group of the AMC cohort</vann:example>
+        <rdfs:comment xml:lang="en">A subset of Cohort, which either forms the patient group or control group</rdfs:comment>
+        <rdfs:label xml:lang="en">CohortGroup</rdfs:label>
     </owl:Class>
     
 
@@ -1405,7 +1417,9 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
     <!-- https://w3id.org/enigma#Condition -->
 
     <owl:Class rdf:about="https://w3id.org/enigma#Condition">
-        <rdfs:comment>What kind of condition was experienced by the members of the cohort?</rdfs:comment>
+        <vann:example xml:lang="en">Euthymia</vann:example>
+        <rdfs:comment xml:lang="en">A state or mood experienced by the members of a cohort</rdfs:comment>
+        <rdfs:label xml:lang="en">Condition</rdfs:label>
     </owl:Class>
     
 
@@ -1420,20 +1434,29 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
 
     <!-- https://w3id.org/enigma#DataType -->
 
-    <owl:Class rdf:about="https://w3id.org/enigma#DataType"/>
+    <owl:Class rdf:about="https://w3id.org/enigma#DataType">
+        <rdfs:comment xml:lang="en">Specifies the kinds of data collected</rdfs:comment>
+        <rdfs:label xml:lang="en">DataType</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- https://w3id.org/enigma#DiagnosisInstrument -->
 
-    <owl:Class rdf:about="https://w3id.org/enigma#DiagnosisInstrument"/>
+    <owl:Class rdf:about="https://w3id.org/enigma#DiagnosisInstrument">
+        <vann:example xml:lang="en">Consensus Consultant Diagnosis</vann:example>
+        <rdfs:comment xml:lang="en">The method used to diagnosis individuals in a Cohort</rdfs:comment>
+        <rdfs:label xml:lang="en">DiagnosisInstrument</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- https://w3id.org/enigma#DiagnosticCriteria -->
 
     <owl:Class rdf:about="https://w3id.org/enigma#DiagnosticCriteria">
-        <rdfs:comment>With what criteria was the disease diagnosed?</rdfs:comment>
+        <vann:example xml:lang="en">DSM4</vann:example>
+        <rdfs:comment xml:lang="en">The principles and standards used to diagnose a diease or condition</rdfs:comment>
+        <rdfs:label xml:lang="en">DiagnosticCriteria</rdfs:label>
     </owl:Class>
     
 
@@ -1441,7 +1464,8 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
     <!-- https://w3id.org/enigma#Disorder -->
 
     <owl:Class rdf:about="https://w3id.org/enigma#Disorder">
-        <rdfs:comment>What disease do the members in this cohort have?</rdfs:comment>
+        <rdfs:comment xml:lang="en">A disorder/disease experienced by members of a cohort</rdfs:comment>
+        <rdfs:label xml:lang="en">Disorder</rdfs:label>
     </owl:Class>
     
 
@@ -1450,6 +1474,9 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
 
     <owl:Class rdf:about="https://w3id.org/enigma#EndocrineDisorder">
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
+        <vann:example xml:lang="en">Hypothyroidism</vann:example>
+        <rdfs:comment xml:lang="en">Disorders which affect the endocrine system</rdfs:comment>
+        <rdfs:label xml:lang="en">EndocrineDisorder</rdfs:label>
     </owl:Class>
     
 
@@ -1458,6 +1485,9 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
 
     <owl:Class rdf:about="https://w3id.org/enigma#GeneticDataType">
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#DataType"/>
+        <vann:example xml:lang="en">Epigenetic</vann:example>
+        <rdfs:comment xml:lang="en">Specifies the kinds of genetic data collected</rdfs:comment>
+        <rdfs:label xml:lang="en">GeneticDataType</rdfs:label>
     </owl:Class>
     
 
@@ -1466,6 +1496,9 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
 
     <owl:Class rdf:about="https://w3id.org/enigma#GeneticDisorder">
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
+        <vann:example xml:lang="en">Cystic Fibrosis</vann:example>
+        <rdfs:comment xml:lang="en">Disorders which are inherited and caused by abnormalities in the genome</rdfs:comment>
+        <rdfs:label xml:lang="en">GeneticDisorder</rdfs:label>
     </owl:Class>
     
 
@@ -1494,6 +1527,9 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
 
     <owl:Class rdf:about="https://w3id.org/enigma#InfectiousDisorder">
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
+        <vann:example xml:lang="en">HIV</vann:example>
+        <rdfs:comment xml:lang="en">A disease or disorder caused by the invasion of microorganisms</rdfs:comment>
+        <rdfs:label xml:lang="en">InfectiousDisorder</rdfs:label>
     </owl:Class>
     
 
@@ -1522,6 +1558,9 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
 
     <owl:Class rdf:about="https://w3id.org/enigma#MentalHealthDisorder">
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
+        <vann:example xml:lang="en">OCD</vann:example>
+        <rdfs:comment xml:lang="en">Disorders which can affect mood, behavior, and thinking</rdfs:comment>
+        <rdfs:label xml:lang="en">MentalHealthDisorder</rdfs:label>
     </owl:Class>
     
 
@@ -1530,6 +1569,9 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
 
     <owl:Class rdf:about="https://w3id.org/enigma#MoodDisorder">
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+        <vann:example xml:lang="en">Bipolar Disorder</vann:example>
+        <rdfs:comment xml:lang="en">A mental health disorder defined by mood or behavioral swings</rdfs:comment>
+        <rdfs:label xml:lang="en">MoodDisorder</rdfs:label>
     </owl:Class>
     
 
@@ -1568,6 +1610,9 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
 
     <owl:Class rdf:about="https://w3id.org/enigma#ProjectCohort">
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <vann:example xml:lang="en">&quot;Healthy&quot; individuals from the ASRB Cohort were sampled to form a Project Cohort of SZCorticol</vann:example>
+        <rdfs:comment xml:lang="en">The subset of the individuals from a Cohort, which are used as samples for a specific project</rdfs:comment>
+        <rdfs:label xml:lang="en">ProjectCohort</rdfs:label>
     </owl:Class>
     
 
@@ -1618,6 +1663,9 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
 
     <owl:Class rdf:about="https://w3id.org/enigma#SubstanceAbuse">
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+        <vann:example xml:lang="en">Alcoholism</vann:example>
+        <rdfs:comment xml:lang="en">A mental health disorder defined by the overusage or abuse of a substance</rdfs:comment>
+        <rdfs:label xml:lang="en">SubstanceAbuse</rdfs:label>
     </owl:Class>
     
 
@@ -1626,6 +1674,9 @@ Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
 
     <owl:Class rdf:about="https://w3id.org/enigma#SubstanceDependence">
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#SubstanceAbuse"/>
+        <vann:example xml:lang="en">Alcohol Dependence</vann:example>
+        <rdfs:comment xml:lang="en">A subset of substance abuse in which symptoms of withdrawal may appeared after reduction of substance use</rdfs:comment>
+        <rdfs:label xml:lang="en">SubstanceDependence</rdfs:label>
     </owl:Class>
     
 
