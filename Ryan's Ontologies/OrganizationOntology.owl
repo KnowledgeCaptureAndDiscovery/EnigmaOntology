@@ -38,25 +38,25 @@
     
 
 
-    <!-- https://w3id.org/enigma#isAffiliatedWith -->
+    <!-- https://w3id.org/enigma#hasAffiliate -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isAffiliatedWith">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isAffiliationOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Organization"/>
-        <example>JohnSmith isAffiliatedWith HarvardU</example>
-        <rdfs:comment>describes what organization someone is affiliated with</rdfs:comment>
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasAffiliate">
+        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isAffiliatedWith"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Organization"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:comment>describes the organization&apos;s affiliates</rdfs:comment>
+        <example>HarvardU hasAffiliate JohnSmith</example>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/enigma#isAffiliationOf -->
+    <!-- https://w3id.org/enigma#isAffiliatedWith -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isAffiliationOf">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Organization"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <example>HarvardU isAffiliationOf JohnSmith</example>
-        <rdfs:comment>describes the people who are affiliations of an organization</rdfs:comment>
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isAffiliatedWith">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Organization"/>
+        <rdfs:comment>describes what organization someone is affiliated with</rdfs:comment>
+        <example>JohnSmith isAffiliatedWith HarvardU</example>
     </owl:ObjectProperty>
     
 
@@ -77,8 +77,8 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasCity">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Organization"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <example>USC ISI hasCity &quot;Marina del Rey&quot;</example>
         <rdfs:comment>describes the city in which an organization is located in</rdfs:comment>
+        <example>USC ISI hasCity &quot;Marina del Rey&quot;</example>
     </owl:DatatypeProperty>
     
 
@@ -88,8 +88,8 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasCountry">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Organization"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <example>USC ISI hasCountry &quot;United States&quot;</example>
         <rdfs:comment>describes the country in which an organization is located in</rdfs:comment>
+        <example>USC ISI hasCountry &quot;United States&quot;</example>
     </owl:DatatypeProperty>
     
 

@@ -76,6 +76,18 @@
     
 
 
+    <!-- https://w3id.org/enigma#hasAffiliate -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasAffiliate">
+        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isAffiliatedWith"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Organization"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example>HarvardU hasAffiliate JohnSmith</vann:example>
+        <rdfs:comment>describes the people who are affiliations of an organization</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/enigma#hasContributor -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasContributor">
@@ -238,22 +250,10 @@
     <!-- https://w3id.org/enigma#isAffiliatedWith -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isAffiliatedWith">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isAffiliationOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Organization"/>
         <vann:example>JohnSmith isAffiliatedWith HarvardU</vann:example>
         <rdfs:comment>describes what organization someone is affiliated with</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isAffiliationOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isAffiliationOf">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Organization"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example>HarvardU isAffiliationOf JohnSmith</vann:example>
-        <rdfs:comment>describes the people who are affiliations of an organization</rdfs:comment>
     </owl:ObjectProperty>
     
 
