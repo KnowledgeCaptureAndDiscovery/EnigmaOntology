@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>ENIGMA ontology documentation</title>
+    <link rel="stylesheet" href="vocab/themes/blue/style.css" type="text/css" media="print, projection, screen" />
+    <script src="vocab/js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="vocab/js/bootstrap.js"></script>
+    <script type="text/javascript" id="js">
+	    $(document).ready(function() 
+		    { 
+		    	$("#tablesorter-demo").tablesorter(); 
+		    	$("#tablesorter-demo").stickyTableHeaders(); 
+		    	$('[data-toggle="tooltip"]').tooltip(); 
+		    } 
+	    ); 
+    </script>
+
+    <!-- Le styles -->
+    <link href="vocab/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="vocab/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- Jumbotron -->
+      <div class="jumbotron">
+        <h1>ENIGMA Ontology</h1>
+        <p class="lead">In this page you will find the detailed the documentation of all classes, properties, data properties and individuals present in the different modules of the ENIGMA ontology.</p>
+      </div>
+      <hr>
+<div class="row"> 
+</div>
+<br>
+<table id="tablesorter-demo" class="tablesorter table table-hover table-responsive">
+<thead>
+<tr>
+<th class="col-md-3">Ontology</th>
+<th class="col-md-1">Serialization</th>
+<th class="col-md-2">License</th>
+<th class="col-md-6">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr id="tr1">
+    <td><a href = "cohort/1.0.0/index-en.html" target="_blank">The Cohort Ontology</a> </td><td>
+    <a href="cohort/1.0.0/ontology.ttl"><span class="label label-primary">Turtle</span></a>
+    </td>
+    <td><a href="http://creativecommons.org/licenses/by/2.0/" target="_blank"> <span class="label label-success">CC-BY 2.0.</span> </a></td>
+    <td> An ontology to describe cohorts of patients participating in ENIGMA projects</td>
+</tr>
+<tr id="tr2">
+    <td><a href = "organization/1.0.0/index-en.html" target="_blank">The Organization Ontology</a> </td><td>
+    <a href="organization/1.0.0/ontology.ttl"><span class="label label-primary">Turtle</span></a>
+    </td>
+    <td><a href="http://creativecommons.org/licenses/by/2.0/" target="_blank"> <span class="label label-success">CC-BY 2.0.</span> </a></td>
+    <td> An ontology representing organizations that participate in ENIGMA consortium</td>
+</tr>
+<tr id="tr3">
+    <td><a href = "person/1.0.0/index-en.html" target="_blank">The Person Ontology</a> </td><td>
+    <a href="person/1.0.0/ontology.ttl"><span class="label label-primary">Turtle</span></a>
+    </td>
+    <td><a href="http://creativecommons.org/licenses/by/2.0/" target="_blank"> <span class="label label-success">CC-BY 2.0.</span> </a></td>
+    <td> An ontology representing the scientists that participate in ENIGMA projects and their roles</td>
+</tr>
+<tr id="tr4">
+    <td><a href = "project/1.0.0/index-en.html" target="_blank">The Project Ontology</a> </td><td>
+    <a href="project/1.0.0/ontology.ttl"><span class="label label-primary">Turtle</span></a>
+    </td>
+    <td><a href="http://creativecommons.org/licenses/by/2.0/" target="_blank"> <span class="label label-success">CC-BY 2.0.</span> </a></td>
+    <td> An ontology representing projects of ENIGMA </td>
+</tr>
+<tr id="tr5">
+    <td><a href = "scanner/1.0.0/index-en.html" target="_blank">The Scanner Ontology</a> </td><td>
+    <a href="scanner/1.0.0/ontology.ttl"><span class="label label-primary">Turtle</span></a>
+    </td>
+    <td><a href="http://creativecommons.org/licenses/by/2.0/" target="_blank"> <span class="label label-success">CC-BY 2.0.</span> </a></td>
+    <td> An ontology representing scanners and instruments used to make the measurements in ENIGMA</td>
+</tr><tr id="tr6">
+    <td><a href = "core/1.0.0/index-en.html" target="_blank">The Core Upper Level Ontology</a> </td><td>
+    <a href="core/1.0.0/ontology.ttl"><span class="label label-primary">Turtle</span></a>
+    </td>
+    <td><a href="http://creativecommons.org/licenses/by/2.0/" target="_blank"> <span class="label label-success">CC-BY 2.0.</span> </a></td>
+    <td> An ontology representing main concepts of ENIGMA</td>
+</tr>
+<tr id="tr7">
+    <td><a href = "workingGroup/1.0.0/index-en.html" target="_blank">The Working Group Ontology</a> </td><td>
+    <a href="workingGroup/1.0.0/ontology.ttl"><span class="label label-primary">Turtle</span></a>
+    </td>
+    <td><a href="http://creativecommons.org/licenses/by/2.0/" target="_blank"> <span class="label label-success">CC-BY 2.0.</span> </a></td>
+    <td> An ontology representing Working Groups that participate in ENIGMA consortium</td>
+
+</tr></tbody></table>
+<hr>
+
+<!-- CODE GENERATED AUTOMATICALLY -->
+<p><a href="#A">A</a> | <a href="#B">B</a> | <a href="#C">C</a> | <a href="#D">D</a> | <a href="#E">E</a> | <a href="#F">F</a> | <a href="#G">G</a> | <a href="#H">H</a> | <a href="#I">I</a> | <a href="#J">J</a> | <a href="#L">L</a> | <a href="#M">M</a> | <a href="#N">N</a> | <a href="#O">O</a> | <a href="#P">P</a> | <a href="#Q">Q</a> | <a href="#R">R</a> | <a href="#S">S</a> | <a href="#T">T</a> | <a href="#U">U</a> | <a href="#V">V</a> | <a href="#W">W</a> | <a href="#Y">Y</a> | </p>
+
+<h2 id="A">A</h2>
+<h3 id="AcquisitionDirection">AcquisitionDirection</h3>
+<p>the acquisition direction of the scanner</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#AcquisitionDirection">The Scanner Ontology</a></p>
+<h3 id="AcquisitionProtocol">AcquisitionProtocol</h3>
+<p>Defined in: <a href="upper/1.0.0/index-en.html#AcquisitionProtocol">The Core Ontology</a></p>
+<h3 id="ADHD">ADHD</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#ADHD">The Cohort Ontology</a></p>
+<h3 id="alcoholAbuse">alcoholAbuse</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#alcoholAbuse">The Cohort Ontology</a></p>
+<h3 id="alcoholDependence">alcoholDependence</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#alcoholDependence">The Cohort Ontology</a></p>
+<h3 id="ALL1000genomes">ALL1000genomes</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#ALL1000genomes">The Cohort Ontology</a></p>
+<h3 id="alzheimers">alzheimers</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#alzheimers">The Cohort Ontology</a></p>
+<h3 id="AnxietyDisorder">AnxietyDisorder</h3>
+<p>A mental health disorder defined by feelings of anxiety, fear, or worry</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#AnxietyDisorder">The Cohort Ontology</a></p>
+<h3 id="autism">autism</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#autism">The Cohort Ontology</a></p>
+<h3 id="axial">axial</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#axial">The Scanner Ontology</a></p>
+
+<h2 id="B">B</h2>
+<h3 id="beagle3.3.2">beagle3.3.2</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#beagle3.3.2">The Cohort Ontology</a></p>
+<h3 id="BipolarBarcelona">BipolarBarcelona</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#BipolarBarcelona">The Cohort Ontology</a></p>
+<h3 id="BipolarBarcelonaControl">BipolarBarcelonaControl</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#BipolarBarcelonaControl">The Cohort Ontology</a></p>
+<h3 id="BipolarBarcelonaPatient">BipolarBarcelonaPatient</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#BipolarBarcelonaPatient">The Cohort Ontology</a></p>
+<h3 id="bipolarDisorder">bipolarDisorder</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#bipolarDisorder">The Cohort Ontology</a></p>
+<h3 id="BipolarParis">BipolarParis</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#BipolarParis">The Cohort Ontology</a></p>
+<h3 id="BipolarParisControl">BipolarParisControl</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#BipolarParisControl">The Cohort Ontology</a></p>
+<h3 id="BipolarParisPatient">BipolarParisPatient</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#BipolarParisPatient">The Cohort Ontology</a></p>
+<h3 id="BipolarTulsa">BipolarTulsa</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#BipolarTulsa">The Cohort Ontology</a></p>
+<h3 id="BipolarTulsaPatient">BipolarTulsaPatient</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#BipolarTulsaPatient">The Cohort Ontology</a></p>
+<h3 id="BipolarWG">BipolarWG</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#BipolarWG">The Cohort Ontology</a></p>
+<h3 id="BrainScanDataType">BrainScanDataType</h3>
+<p>Specifies the kinds of brain scan data collected</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#BrainScanDataType">The Cohort Ontology</a></p>
+<h3 id="BriefPsychiatricRatingScale">BriefPsychiatricRatingScale</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#BriefPsychiatricRatingScale">The Cohort Ontology</a></p>
+<h3 id="Bruker">Bruker</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#Bruker">The Scanner Ontology</a></p>
+
+<h2 id="C">C</h2>
+<h3 id="Canada">Canada</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#Canada">The Cohort Ontology</a></p>
+<h3 id="Cancer">Cancer</h3>
+<p>A disease characterized by abnormal cell division and growth</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#Cancer">The Cohort Ontology</a></p>
+<h3 id="CardiovascularDisorder">CardiovascularDisorder</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#CardiovascularDisorder">The Cohort Ontology</a></p>
+<h3 id="cerebralAnatomicAnomaly">cerebralAnatomicAnomaly</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#cerebralAnatomicAnomaly">The Cohort Ontology</a></p>
+<h3 id="cerebrovascularDisease">cerebrovascularDisease</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#cerebrovascularDisease">The Cohort Ontology</a></p>
+<h3 id="CerebrovascularDisorder">CerebrovascularDisorder</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#CerebrovascularDisorder">The Cohort Ontology</a></p>
+<h3 id="City">City</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#City">The Cohort Ontology</a></p>
+<h3 id="ClinicalGlobalImpressionsScale">ClinicalGlobalImpressionsScale</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#ClinicalGlobalImpressionsScale">The Cohort Ontology</a></p>
+<h3 id="CNSCancer">CNSCancer</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#CNSCancer">The Cohort Ontology</a></p>
+<h3 id="Cohort">Cohort</h3>
+<p>A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#Cohort">The Cohort Ontology</a></p>
+<h3 id="CohortGroup">CohortGroup</h3>
+<p>A subset of Cohort, which either forms the patient group or control group</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#CohortGroup">The Cohort Ontology</a></p>
+<h3 id="Condition">Condition</h3>
+<p>A state or mood experienced by the members of a cohort</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#Condition">The Cohort Ontology</a></p>
+<h3 id="consensusConsultantDiagnosis">consensusConsultantDiagnosis</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#consensusConsultantDiagnosis">The Cohort Ontology</a></p>
+<h3 id="contributesTo">contributesTo</h3>
+<p>describes the projects that a person contributed to</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#contributesTo">The PersonOntology</a></p>
+<h3 id="coronal">coronal</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#coronal">The Scanner Ontology</a></p>
+<h3 id="Country">Country</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#Country">The Cohort Ontology</a></p>
+
+<h2 id="D">D</h2>
+<h3 id="DataType">DataType</h3>
+<p>Specifies the kinds of data collected</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#DataType">The Cohort Ontology</a></p>
+<h3 id="Degree">Degree</h3>
+<p>Defined in: <a href="person/1.0.0/index-en.html#Degree">The PersonOntology</a></p>
+<h3 id="DiagnosisInstrument">DiagnosisInstrument</h3>
+<p>The method used to diagnosis individuals in a Cohort</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#DiagnosisInstrument">The Cohort Ontology</a></p>
+<h3 id="DiagnosticCriteria">DiagnosticCriteria</h3>
+<p>The principles and standards used to diagnose a diease or condition</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#DiagnosticCriteria">The Cohort Ontology</a></p>
+<h3 id="diagnosticInteviewForGeneticStudies">diagnosticInteviewForGeneticStudies</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#diagnosticInteviewForGeneticStudies">The Cohort Ontology</a></p>
+<h3 id="didNotHaveFirstEpisodeOf">didNotHaveFirstEpisodeOf</h3>
+<p>describes what disease the members of the cohort group did NOT have a first episode of</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#didNotHaveFirstEpisodeOf">The Cohort Ontology</a></p>
+<h3 id="DiffusionMRI">DiffusionMRI</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#DiffusionMRI">The Cohort Ontology</a></p>
+<h3 id="Disorder">Disorder</h3>
+<p>A disorder/disease experienced by members of a cohort</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#Disorder">The Cohort Ontology</a></p>
+<h3 id="doesNotHaveComorbidity">doesNotHaveComorbidity</h3>
+<p>describes if the members of a cohort group do not have a comorbidity</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#doesNotHaveComorbidity">The Cohort Ontology</a></p>
+<h3 id="doesNotHaveCondition">doesNotHaveCondition</h3>
+<p>describes which diease conditions are excluded in a given cohort group</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#doesNotHaveCondition">The Cohort Ontology</a></p>
+<h3 id="doesNotHaveContraindicationToMRI">doesNotHaveContraindicationToMRI</h3>
+<p>describes if people who have contraindication to MRI are excluded</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#doesNotHaveContraindicationToMRI">The Cohort Ontology</a></p>
+<h3 id="doesNotHaveDisorder">doesNotHaveDisorder</h3>
+<p>describes which disorders are excluded in a given cohort group</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#doesNotHaveDisorder">The Cohort Ontology</a></p>
+<h3 id="doesNotHaveFamilyHistoryOf">doesNotHaveFamilyHistoryOf</h3>
+<p>describes what disease the members of the cohort group do NOT have a family history of</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#doesNotHaveFamilyHistoryOf">The Cohort Ontology</a></p>
+<h3 id="doesNotHaveFirstDegreeRelativeWithDisorder">doesNotHaveFirstDegreeRelativeWithDisorder</h3>
+<p>describes what disease(s) the first degree relatives of the members of the cohort group do NOT have</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#doesNotHaveFirstDegreeRelativeWithDisorder">The Cohort Ontology</a></p>
+<h3 id="doesNotHaveIntellectualDisability">doesNotHaveIntellectualDisability</h3>
+<p>describes whether a cohort excludes people with an intellectual disability</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#doesNotHaveIntellectualDisability">The Cohort Ontology</a></p>
+<h3 id="doesNotHaveNeurologicalComorbidity">doesNotHaveNeurologicalComorbidity</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#doesNotHaveNeurologicalComorbidity">The Cohort Ontology</a></p>
+<h3 id="doesNotHavePersonalHistoryOf">doesNotHavePersonalHistoryOf</h3>
+<p>describes the diseases that the members of the cohort groups do NOT have a history of</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#doesNotHavePersonalHistoryOf">The Cohort Ontology</a></p>
+<h3 id="doesNotHavePsychiatricComorbidity">doesNotHavePsychiatricComorbidity</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#doesNotHavePsychiatricComorbidity">The Cohort Ontology</a></p>
+<h3 id="doesNotUseTreatment">doesNotUseTreatment</h3>
+<p>describes which drug(s) or therapy(ies) that the members of the cohort group are NOT using</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#doesNotUseTreatment">The Cohort Ontology</a></p>
+<h3 id="dsm4">dsm4</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#dsm4">The Cohort Ontology</a></p>
+
+<h2 id="E">E</h2>
+<h3 id="eatingDisorder">eatingDisorder</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#eatingDisorder">The Cohort Ontology</a></p>
+<h3 id="EEG">EEG</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#EEG">The Cohort Ontology</a></p>
+<h3 id="endocrineDisorder">endocrineDisorder</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#endocrineDisorder">The Cohort Ontology</a></p>
+<h3 id="ENIGMAPublication">ENIGMAPublication</h3>
+<p>Defined in: <a href="person/1.0.0/index-en.html#ENIGMAPublication">The PersonOntology</a></p>
+<h3 id="Epigenetic">Epigenetic</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#Epigenetic">The Cohort Ontology</a></p>
+<h3 id="epilepsy">epilepsy</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#epilepsy">The Cohort Ontology</a></p>
+<h3 id="EUR1000genomes">EUR1000genomes</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#EUR1000genomes">The Cohort Ontology</a></p>
+<h3 id="euthymia">euthymia</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#euthymia">The Cohort Ontology</a></p>
+<h3 id="example">example</h3>
+<p>Defined in: <a href="organization/1.0.0/index-en.html#example">The Organization Ontology</a></p>
+<h3 id="excludesLeftHands">excludesLeftHands</h3>
+<p>describes if left handed people were excluded from the study</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#excludesLeftHands">The Cohort Ontology</a></p>
+<h3 id="excludesRightHands">excludesRightHands</h3>
+<p>describes if right handed people were excluded from the study</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#excludesRightHands">The Cohort Ontology</a></p>
+<h3 id="Exome">Exome</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#Exome">The Cohort Ontology</a></p>
+<h3 id="Expression">Expression</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#Expression">The Cohort Ontology</a></p>
+<h3 id="Expresssion">Expresssion</h3>
+<p>Defined in: <a href="project/1.0.0/index-en.html#Expresssion">The Project Ontology</a></p>
+
+<h2 id="F">F</h2>
+<h3 id="familyInterviewForGeneticStudies">familyInterviewForGeneticStudies</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#familyInterviewForGeneticStudies">The Cohort Ontology</a></p>
+<h3 id="FEEsequence">FEEsequence</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#FEEsequence">The Scanner Ontology</a></p>
+<h3 id="FFEsequence">FFEsequence</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#FFEsequence">The Scanner Ontology</a></p>
+<h3 id="FLAIRsequence">FLAIRsequence</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#FLAIRsequence">The Scanner Ontology</a></p>
+<h3 id="fluoxetine">fluoxetine</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#fluoxetine">The Cohort Ontology</a></p>
+<h3 id="forDataType">forDataType</h3>
+<p>describes what data type the acquisition protocol was used to obtain</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#forDataType">The Scanner Ontology</a></p>
+<h3 id="fragileX">fragileX</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#fragileX">The Cohort Ontology</a></p>
+<h3 id="FreeSurfer5.1.0">FreeSurfer5.1.0</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#FreeSurfer5.1.0">The Scanner Ontology</a></p>
+<h3 id="FreeSurfer5.3">FreeSurfer5.3</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#FreeSurfer5.3">The Scanner Ontology</a></p>
+<h3 id="frontotemporalDementia">frontotemporalDementia</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#frontotemporalDementia">The Cohort Ontology</a></p>
+<h3 id="FSEsequence">FSEsequence</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#FSEsequence">The Scanner Ontology</a></p>
+<h3 id="FSLFirst4.1.9">FSLFirst4.1.9</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#FSLFirst4.1.9">The Scanner Ontology</a></p>
+<h3 id="FSPGRsequence">FSPGRsequence</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#FSPGRsequence">The Scanner Ontology</a></p>
+<h3 id="fulfillsDiagnosticCriteria">fulfillsDiagnosticCriteria</h3>
+<p>describes the criteria used to diagnose the disorder</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#fulfillsDiagnosticCriteria">The Cohort Ontology</a></p>
+
+<h2 id="G">G</h2>
+<h3 id="GE">GE</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#GE">The Scanner Ontology</a></p>
+<h3 id="GeneReferencePanel">GeneReferencePanel</h3>
+<p>Defined in: <a href="project/1.0.0/index-en.html#GeneReferencePanel">The Project Ontology</a></p>
+<h3 id="GeneticAssociationProtocol">GeneticAssociationProtocol</h3>
+<p>Defined in: <a href="project/1.0.0/index-en.html#GeneticAssociationProtocol">The Project Ontology</a></p>
+<h3 id="GeneticDataType">GeneticDataType</h3>
+<p>Specifies the kinds of genetic data collected</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#GeneticDataType">The Cohort Ontology</a></p>
+<h3 id="GeneticDisorder">GeneticDisorder</h3>
+<p>Disorders which are inherited and caused by abnormalities in the genome</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#GeneticDisorder">The Cohort Ontology</a></p>
+<h3 id="GenomeWide">GenomeWide</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#GenomeWide">The Cohort Ontology</a></p>
+<h3 id="GenotypeImputationProtocol">GenotypeImputationProtocol</h3>
+<p>Defined in: <a href="project/1.0.0/index-en.html#GenotypeImputationProtocol">The Project Ontology</a></p>
+<h3 id="GenotypePlatform">GenotypePlatform</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#GenotypePlatform">The Cohort Ontology</a></p>
+<h3 id="GREsequence">GREsequence</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#GREsequence">The Scanner Ontology</a></p>
+
+<h2 id="H">H</h2>
+<h3 id="HamiltonDepressionRatingScale">HamiltonDepressionRatingScale</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#HamiltonDepressionRatingScale">The Cohort Ontology</a></p>
+<h3 id="hasAcquisitionDirection">hasAcquisitionDirection</h3>
+<p>describes the acquisition direction of the scanner</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#hasAcquisitionDirection">The Scanner Ontology</a></p>
+<h3 id="hasAcquisitionProtocol">hasAcquisitionProtocol</h3>
+<p>describes the acquisition protocol that was used to scan a cohort</p> 
+<p>Defined in: <a href="upper/1.0.0/index-en.html#hasAcquisitionProtocol">The Core Ontology</a></p>
+<h3 id="hasAffiliate">hasAffiliate</h3>
+<p>describes the organization's affiliates</p> 
+<p>Defined in: <a href="organization/1.0.0/index-en.html#hasAffiliate">The Organization Ontology</a></p>
+<h3 id="hasAgeGroup">hasAgeGroup</h3>
+<p>describes a group of people who share a similar age</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasAgeGroup">The Cohort Ontology</a></p>
+<h3 id="hasAgeStandardDeviation">hasAgeStandardDeviation</h3>
+<p>describes the standard deviation of the age of a project cohort</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasAgeStandardDeviation">The Cohort Ontology</a></p>
+<h3 id="hasApprovedProposalForm">hasApprovedProposalForm</h3>
+<p>describes the approved proposal form link of a project</p> 
+<p>Defined in: <a href="project/1.0.0/index-en.html#hasApprovedProposalForm">The Project Ontology</a></p>
+<h3 id="hasBrainScanDataType">hasBrainScanDataType</h3>
+<p>describes the brain scan data types that were collected for a cohort</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasBrainScanDataType">The Cohort Ontology</a></p>
+<h3 id="hasCity">hasCity</h3>
+<p>describes the city in which an organization is located in</p> 
+<p>Defined in: <a href="organization/1.0.0/index-en.html#hasCity">The Organization Ontology</a></p>
+<h3 id="hasCohort">hasCohort</h3>
+<p>describes what cohorts are part of a working group</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasCohort">The Cohort Ontology</a></p>
+<h3 id="hasComorbidity">hasComorbidity</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasComorbidity">The Cohort Ontology</a></p>
+<h3 id="hasCondition">hasCondition</h3>
+<p>describes which diease conditions are included in a given cohort group</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasCondition">The Cohort Ontology</a></p>
+<h3 id="hasContactPerson">hasContactPerson</h3>
+<p>describes who the contact person of the project is</p> 
+<p>Defined in: <a href="project/1.0.0/index-en.html#hasContactPerson">The Project Ontology</a></p>
+<h3 id="hasContributor">hasContributor</h3>
+<p>describes the contributors of a project</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#hasContributor">The PersonOntology</a></p>
+<h3 id="hasControlGroup">hasControlGroup</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasControlGroup">The Cohort Ontology</a></p>
+<h3 id="hasCountry">hasCountry</h3>
+<p>describes the country in which an organization is located in</p> 
+<p>Defined in: <a href="organization/1.0.0/index-en.html#hasCountry">The Organization Ontology</a></p>
+<h3 id="hasDataAcquisitionMatrix">hasDataAcquisitionMatrix</h3>
+<p>describes the size of the data acquisition matrix used</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#hasDataAcquisitionMatrix">The Scanner Ontology</a></p>
+<h3 id="hasDataCollectionPeriodEnd">hasDataCollectionPeriodEnd</h3>
+<p>describes the end year of the data collection period of the cohort</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasDataCollectionPeriodEnd">The Cohort Ontology</a></p>
+<h3 id="hasDataCollectionPeriodStart">hasDataCollectionPeriodStart</h3>
+<p>describes the start year of the data collection period of the cohort</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasDataCollectionPeriodStart">The Cohort Ontology</a></p>
+<h3 id="hasDataType">hasDataType</h3>
+<p>describes the data types that were collected for the cohort</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasDataType">The Cohort Ontology</a></p>
+<h3 id="hasDegree">hasDegree</h3>
+<p>describes what degree a person has</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#hasDegree">The PersonOntology</a></p>
+<h3 id="hasDiagnosticGroup">hasDiagnosticGroup</h3>
+<p>describes the patient group of a cohort</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasDiagnosticGroup">The Cohort Ontology</a></p>
+<h3 id="hasDisorder">hasDisorder</h3>
+<p>describes what disease(s) the members of the cohort group have</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasDisorder">The Cohort Ontology</a></p>
+<h3 id="hasDisorderDetails">hasDisorderDetails</h3>
+<p>describes the details of a particular disorder that a cohort group has</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasDisorderDetails">The Cohort Ontology</a></p>
+<h3 id="hasEmail">hasEmail</h3>
+<p>describes the email contact information of a person</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#hasEmail">The PersonOntology</a></p>
+<h3 id="hasEndDate">hasEndDate</h3>
+<p>describes the end date of a project</p> 
+<p>Defined in: <a href="project/1.0.0/index-en.html#hasEndDate">The Project Ontology</a></p>
+<h3 id="hasEnigmaContact">hasEnigmaContact</h3>
+<p>describes the contact people from ENIGMA of a cohort</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasEnigmaContact">The Cohort Ontology</a></p>
+<h3 id="hasEthnicGroup">hasEthnicGroup</h3>
+<p>describes the ethnic group that the participants of the cohort are in</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasEthnicGroup">The Cohort Ontology</a></p>
+<h3 id="hasFamilialRelations">hasFamilialRelations</h3>
+<p>describes the relations between the individuals of a cohort</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasFamilialRelations">The Cohort Ontology</a></p>
+<h3 id="hasFamilyHistoryOf">hasFamilyHistoryOf</h3>
+<p>describes what disease the members of the cohort group have a family history of</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasFamilyHistoryOf">The Cohort Ontology</a></p>
+<h3 id="hasFieldStrength">hasFieldStrength</h3>
+<p>describes the field strength of the cohort</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#hasFieldStrength">The Scanner Ontology</a></p>
+<h3 id="hasFirstDegreeRelativeWithDisorder">hasFirstDegreeRelativeWithDisorder</h3>
+<p>describes what disease(s) the first degree relatives of the members of the cohort group have</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasFirstDegreeRelativeWithDisorder">The Cohort Ontology</a></p>
+<h3 id="hasFirstEpisodeOf">hasFirstEpisodeOf</h3>
+<p>describes what disease the members of the cohort group had a first episode of</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasFirstEpisodeOf">The Cohort Ontology</a></p>
+<h3 id="hasFirstName">hasFirstName</h3>
+<p>describes first name of a person</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#hasFirstName">The PersonOntology</a></p>
+<h3 id="hasFlipAngle">hasFlipAngle</h3>
+<p>describes the flip angle of a scanner in degrees</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#hasFlipAngle">The Scanner Ontology</a></p>
+<h3 id="hasFoV">hasFoV</h3>
+<p>describes the field of view of the acquisition protocol</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#hasFoV">The Scanner Ontology</a></p>
+<h3 id="hasFundingSource">hasFundingSource</h3>
+<p>describes the funding source of the cohort</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasFundingSource">The Cohort Ontology</a></p>
+<h3 id="hasFuturePublicationInstructions">hasFuturePublicationInstructions</h3>
+<p>describes what to do regarding future publication and authorship of someone</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#hasFuturePublicationInstructions">The PersonOntology</a></p>
+<h3 id="hasGeneReferencePanel">hasGeneReferencePanel</h3>
+<p>describes the gene reference panel used by the project</p> 
+<p>Defined in: <a href="project/1.0.0/index-en.html#hasGeneReferencePanel">The Project Ontology</a></p>
+<h3 id="hasGeneticAssociationProtocol">hasGeneticAssociationProtocol</h3>
+<p>describes the genetic association protocol that is used by the project</p> 
+<p>Defined in: <a href="project/1.0.0/index-en.html#hasGeneticAssociationProtocol">The Project Ontology</a></p>
+<h3 id="hasGeneticDataType">hasGeneticDataType</h3>
+<p>describes the genetic data types that were collected for a cohort</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasGeneticDataType">The Cohort Ontology</a></p>
+<h3 id="hasGenotypeImputationProtocol">hasGenotypeImputationProtocol</h3>
+<p>describes the genotype imputation protocol that is used by the project</p> 
+<p>Defined in: <a href="project/1.0.0/index-en.html#hasGenotypeImputationProtocol">The Project Ontology</a></p>
+<h3 id="hasImageAcquisitionProtocol">hasImageAcquisitionProtocol</h3>
+<p>describes the acquisition protocol that was used to scan the cohort</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasImageAcquisitionProtocol">The Cohort Ontology</a></p>
+<h3 id="hasInvestigator">hasInvestigator</h3>
+<p>describe the investigators of a cohort</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasInvestigator">The Cohort Ontology</a></p>
+<h3 id="hasLastName">hasLastName</h3>
+<p>describes last name of a person</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#hasLastName">The PersonOntology</a></p>
+<h3 id="hasLocationOfDataCollection">hasLocationOfDataCollection</h3>
+<p>describes where the data of the cohort was collected</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasLocationOfDataCollection">The Cohort Ontology</a></p>
+<h3 id="hasLongitudinalTimepoint">hasLongitudinalTimepoint</h3>
+<p>describes the number of times the patient has been examined across time</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasLongitudinalTimepoint">The Cohort Ontology</a></p>
+<h3 id="hasManufacturer">hasManufacturer</h3>
+<p>describes what the manufacturer for the scanner is</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#hasManufacturer">The Scanner Ontology</a></p>
+<h3 id="hasMaxAge">hasMaxAge</h3>
+<p>describes inclusion criteria for maximum age of participants in a CohortGroup</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasMaxAge">The Cohort Ontology</a></p>
+<h3 id="hasMaxIQ">hasMaxIQ</h3>
+<p>describes inclusion criteria for maximum IQ of participants in a CohortGroup</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasMaxIQ">The Cohort Ontology</a></p>
+<h3 id="hasMeanAge">hasMeanAge</h3>
+<p>describes the mean age of the project cohort</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasMeanAge">The Cohort Ontology</a></p>
+<h3 id="hasMedicalRatingDetails">hasMedicalRatingDetails</h3>
+<p>describes the min and max values of the medical rating criteria</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasMedicalRatingDetails">The Cohort Ontology</a></p>
+<h3 id="hasMembersWithRecentIssue">hasMembersWithRecentIssue</h3>
+<p>describes whether or not the members of the cohort had an issue (condition, disorder, or treatment-related)  within the past few months</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasMembersWithRecentIssue">The Cohort Ontology</a></p>
+<h3 id="hasMinAge">hasMinAge</h3>
+<p>describes inclusion criteria for minimum age of participants in a CohortGroup</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasMinAge">The Cohort Ontology</a></p>
+<h3 id="hasMinIQ">hasMinIQ</h3>
+<p>describes inclusion criteria for minimum IQ of participants in a CohortGroup</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasMinIQ">The Cohort Ontology</a></p>
+<h3 id="hasMOU">hasMOU</h3>
+<p>describes the MOU links of the working group</p> 
+<p>Defined in: <a href="workingGroup/1.0.0/index-en.html#hasMOU">The Working Group Ontology</a></p>
+<h3 id="hasNeurologicalComorbidity">hasNeurologicalComorbidity</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasNeurologicalComorbidity">The Cohort Ontology</a></p>
+<h3 id="hasNEX">hasNEX</h3>
+<p>describes the number of excitiations of the acquisition protocol of the scanner</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#hasNEX">The Scanner Ontology</a></p>
+<h3 id="hasNumberOfEchoes">hasNumberOfEchoes</h3>
+<p>describes the number of echoes of the acquisition protocol of a scanner</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#hasNumberOfEchoes">The Scanner Ontology</a></p>
+<h3 id="hasNumberOfFemale">hasNumberOfFemale</h3>
+<p>describes the number of females in the cohort group</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasNumberOfFemale">The Cohort Ontology</a></p>
+<h3 id="hasNumberOfMale">hasNumberOfMale</h3>
+<p>describes the number of males in the cohort group</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasNumberOfMale">The Cohort Ontology</a></p>
+<h3 id="hasNumberOfParticipants">hasNumberOfParticipants</h3>
+<p>describes the number of participants in the cohort</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasNumberOfParticipants">The Cohort Ontology</a></p>
+<h3 id="hasNumberOfSlices">hasNumberOfSlices</h3>
+<p>describes the number of slices of the particular scanner</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#hasNumberOfSlices">The Scanner Ontology</a></p>
+<h3 id="hasPBriefDescription">hasPBriefDescription</h3>
+<p>provides a  brief description of the project</p> 
+<p>Defined in: <a href="project/1.0.0/index-en.html#hasPBriefDescription">The Project Ontology</a></p>
+<h3 id="hasPersonalHistoryOf">hasPersonalHistoryOf</h3>
+<p>describes the disease that the members of the cohort group have a history of</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasPersonalHistoryOf">The Cohort Ontology</a></p>
+<h3 id="hasPI">hasPI</h3>
+<p>describes the personal investigator of the cohort</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasPI">The Cohort Ontology</a></p>
+<h3 id="hasPJuniorLead">hasPJuniorLead</h3>
+<p>describes who the junior leads of a project are</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#hasPJuniorLead">The PersonOntology</a></p>
+<h3 id="hasPopulationGroup">hasPopulationGroup</h3>
+<p>describes the population group of a population-based cohort</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasPopulationGroup">The Cohort Ontology</a></p>
+<h3 id="hasPregnantMembers">hasPregnantMembers</h3>
+<p>describes if the cohort has pregnant members</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasPregnantMembers">The Cohort Ontology</a></p>
+<h3 id="hasProject">hasProject</h3>
+<p>describes the projects that a working group has</p> 
+<p>Defined in: <a href="project/1.0.0/index-en.html#hasProject">The Project Ontology</a></p>
+<h3 id="hasProjectCohort">hasProjectCohort</h3>
+<p>describes the subcohorts that are part of that cohort</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasProjectCohort">The Cohort Ontology</a></p>
+<h3 id="hasPSeniorLead">hasPSeniorLead</h3>
+<p>describes who the senior leads of a project are</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#hasPSeniorLead">The PersonOntology</a></p>
+<h3 id="hasPSpecialContributor">hasPSpecialContributor</h3>
+<p>Defined in: <a href="person/1.0.0/index-en.html#hasPSpecialContributor">The PersonOntology</a></p>
+<h3 id="hasPsychiatricComorbidity">hasPsychiatricComorbidity</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasPsychiatricComorbidity">The Cohort Ontology</a></p>
+<h3 id="hasPublication">hasPublication</h3>
+<p>describes the publications of that person</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#hasPublication">The PersonOntology</a></p>
+<h3 id="hasPublishedPaper">hasPublishedPaper</h3>
+<p>describes the links to published papers or the paper title if the link does not exist for the working group</p> 
+<p>Defined in: <a href="workingGroup/1.0.0/index-en.html#hasPublishedPaper">The Working Group Ontology</a></p>
+<h3 id="hasResearchInterests">hasResearchInterests</h3>
+<p>describes the research interests of a person</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#hasResearchInterests">The PersonOntology</a></p>
+<h3 id="hasResolution">hasResolution</h3>
+<p>describes the in-plane pixel resolution in mm x mm</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#hasResolution">The Scanner Ontology</a></p>
+<h3 id="hasScanner">hasScanner</h3>
+<p>describes the scanner used in the acquisition protocol</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#hasScanner">The Scanner Ontology</a></p>
+<h3 id="hasScanTime">hasScanTime</h3>
+<p>describes the scan time of the acquisition protocol for a scanner in seconds</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#hasScanTime">The Scanner Ontology</a></p>
+<h3 id="hasSequence">hasSequence</h3>
+<p>describes the sequence that the acquisition protocol requires</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#hasSequence">The Scanner Ontology</a></p>
+<h3 id="hasSexDeterminedGenetically">hasSexDeterminedGenetically</h3>
+<p>describes whether the sex of a cohort was determined genetically</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasSexDeterminedGenetically">The Cohort Ontology</a></p>
+<h3 id="hasSliceThickness">hasSliceThickness</h3>
+<p>describes the slice thickness of the scanner in mm</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#hasSliceThickness">The Scanner Ontology</a></p>
+<h3 id="hasStartDate">hasStartDate</h3>
+<p>describes the start date of a project</p> 
+<p>Defined in: <a href="project/1.0.0/index-en.html#hasStartDate">The Project Ontology</a></p>
+<h3 id="hasStatus">hasStatus</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasStatus">The Cohort Ontology</a></p>
+<h3 id="hasStudyDesign">hasStudyDesign</h3>
+<p>this would be inferred from the project that the cohort belongs to. i don't know how to implement this</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasStudyDesign">The Cohort Ontology</a></p>
+<h3 id="hasSubmittedPaper">hasSubmittedPaper</h3>
+<p>describes the titles of the submitted papers of a working group</p> 
+<p>Defined in: <a href="workingGroup/1.0.0/index-en.html#hasSubmittedPaper">The Working Group Ontology</a></p>
+<h3 id="hasTargetDate">hasTargetDate</h3>
+<p>describes the target date of the project</p> 
+<p>Defined in: <a href="project/1.0.0/index-en.html#hasTargetDate">The Project Ontology</a></p>
+<h3 id="hasTE">hasTE</h3>
+<p>describes the TE of a scanner in ms</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#hasTE">The Scanner Ontology</a></p>
+<h3 id="hasTI">hasTI</h3>
+<p>describes the TI of a scanner in ms</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#hasTI">The Scanner Ontology</a></p>
+<h3 id="hasTitle">hasTitle</h3>
+<p>describes the title of the person</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#hasTitle">The PersonOntology</a></p>
+<h3 id="hasTR">hasTR</h3>
+<p>describes the TR of a scanner in ms</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#hasTR">The Scanner Ontology</a></p>
+<h3 id="hasTreatmentDetails">hasTreatmentDetails</h3>
+<p>descries the details of the treatment that a cohort group is using</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hasTreatmentDetails">The Cohort Ontology</a></p>
+<h3 id="hasVoxelSize">hasVoxelSize</h3>
+<p>describes the voxel height of a scanner in mm</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#hasVoxelSize">The Scanner Ontology</a></p>
+<h3 id="hasWebsite">hasWebsite</h3>
+<p>describes the website of a person</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#hasWebsite">The PersonOntology</a></p>
+<h3 id="hasWGBriefDescription">hasWGBriefDescription</h3>
+<p>provides a brief description of the working group</p> 
+<p>Defined in: <a href="workingGroup/1.0.0/index-en.html#hasWGBriefDescription">The Working Group Ontology</a></p>
+<h3 id="hasWGChair">hasWGChair</h3>
+<p>describes who the chairs of a working group are</p> 
+<p>Defined in: <a href="workingGroup/1.0.0/index-en.html#hasWGChair">The Working Group Ontology</a></p>
+<h3 id="hasWGJuniorLead">hasWGJuniorLead</h3>
+<p>describes who the working group junior leads are</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#hasWGJuniorLead">The PersonOntology</a></p>
+<h3 id="hasWGMember">hasWGMember</h3>
+<p>describes who the members are in the working group/project</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#hasWGMember">The PersonOntology</a></p>
+<h3 id="hasWGSeniorLead">hasWGSeniorLead</h3>
+<p>describes who the working group senior leads are</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#hasWGSeniorLead">The PersonOntology</a></p>
+<h3 id="hasWGSpecialContributor">hasWGSpecialContributor</h3>
+<p>describes who the significant contributors of the working group are</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#hasWGSpecialContributor">The PersonOntology</a></p>
+<h3 id="headTrauma">headTrauma</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#headTrauma">The Cohort Ontology</a></p>
+<h3 id="headTraumaWithLossOfConsciousness">headTraumaWithLossOfConsciousness</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#headTraumaWithLossOfConsciousness">The Cohort Ontology</a></p>
+<h3 id="hepC">hepC</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hepC">The Cohort Ontology</a></p>
+<h3 id="HIV">HIV</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#HIV">The Cohort Ontology</a></p>
+<h3 id="hospitalRecords">hospitalRecords</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#hospitalRecords">The Cohort Ontology</a></p>
+
+<h2 id="I">I</h2>
+<h3 id="Illumina">Illumina</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#Illumina">The Scanner Ontology</a></p>
+<h3 id="IlluminaOmniExpress">IlluminaOmniExpress</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#IlluminaOmniExpress">The Cohort Ontology</a></p>
+<h3 id="ImageAcquisitionProtocol">ImageAcquisitionProtocol</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#ImageAcquisitionProtocol">The Cohort Ontology</a></p>
+<h3 id="impute2.2.2">impute2.2.2</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#impute2.2.2">The Cohort Ontology</a></p>
+<h3 id="includesFemale">includesFemale</h3>
+<p>describes whether a cohort includes female participants</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#includesFemale">The Cohort Ontology</a></p>
+<h3 id="includesMale">includesMale</h3>
+<p>describes whether a cohort includes male participants</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#includesMale">The Cohort Ontology</a></p>
+<h3 id="InfectiousDisorder">InfectiousDisorder</h3>
+<p>A disease or disorder caused by the invasion of microorganisms</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#InfectiousDisorder">The Cohort Ontology</a></p>
+<h3 id="InformationObtainmentMethod">InformationObtainmentMethod</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#InformationObtainmentMethod">The Cohort Ontology</a></p>
+<h3 id="Irvine">Irvine</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#Irvine">The Cohort Ontology</a></p>
+<h3 id="isAcquisitionProtocolOf">isAcquisitionProtocolOf</h3>
+<p>describes the cohorts that the acquisition protocol was used for</p> 
+<p>Defined in: <a href="upper/1.0.0/index-en.html#isAcquisitionProtocolOf">The Core Ontology</a></p>
+<h3 id="isAffiliatedWith">isAffiliatedWith</h3>
+<p>describes what organization someone is affiliated with</p> 
+<p>Defined in: <a href="organization/1.0.0/index-en.html#isAffiliatedWith">The Organization Ontology</a></p>
+<h3 id="isAffiliatedWithInstitute">isAffiliatedWithInstitute</h3>
+<p>describes what insitute somone is affiliated with</p> 
+<p>Defined in: <a href="upper/1.0.0/index-en.html#isAffiliatedWithInstitute">The Core Ontology</a></p>
+<h3 id="isAffiliationOf">isAffiliationOf</h3>
+<p>describes the people that are affiliated with that institute</p> 
+<p>Defined in: <a href="upper/1.0.0/index-en.html#isAffiliationOf">The Core Ontology</a></p>
+<h3 id="isChairOfWG">isChairOfWG</h3>
+<p>describes what WorkingGroup a person is chair of</p> 
+<p>Defined in: <a href="workingGroup/1.0.0/index-en.html#isChairOfWG">The Working Group Ontology</a></p>
+<h3 id="isClinicallyStable">isClinicallyStable</h3>
+<p>describes if the members of the cohort group are clinically stable, which usually means that vital signs are within 20% of usual readings</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#isClinicallyStable">The Cohort Ontology</a></p>
+<h3 id="isCohortIn">isCohortIn</h3>
+<p>describes what project the cohort is a part of</p> 
+<p>Defined in: <a href="upper/1.0.0/index-en.html#isCohortIn">The Core Ontology</a></p>
+<h3 id="isCohortInProject">isCohortInProject</h3>
+<p>describes what projects a cohort is a part of</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#isCohortInProject">The Cohort Ontology</a></p>
+<h3 id="isCohortInWorkingGroup">isCohortInWorkingGroup</h3>
+<p>describes what working group the cohort is a part of</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#isCohortInWorkingGroup">The Cohort Ontology</a></p>
+<h3 id="isControlGroupOf">isControlGroupOf</h3>
+<p>describes the cohort that a control group is a part of</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#isControlGroupOf">The Cohort Ontology</a></p>
+<h3 id="isDiagnosisInstrumentOf">isDiagnosisInstrumentOf</h3>
+<p>describes the cohort that used the particular diagnosis instrument</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#isDiagnosisInstrumentOf">The Cohort Ontology</a></p>
+<h3 id="isDiagnosticGroupOf">isDiagnosticGroupOf</h3>
+<p>describes the cohort that a patient group is a part of</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#isDiagnosticGroupOf">The Cohort Ontology</a></p>
+<h3 id="isEnigmaContactOf">isEnigmaContactOf</h3>
+<p>describes the cohorts that someone is an Enigma contact of</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#isEnigmaContactOf">The Cohort Ontology</a></p>
+<h3 id="isFamilyBased">isFamilyBased</h3>
+<p>describes if a cohort study was family based</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#isFamilyBased">The Cohort Ontology</a></p>
+<h3 id="isImageAcquisitionProtocolOf">isImageAcquisitionProtocolOf</h3>
+<p>describes which cohorts were scanned with a certain acquisition protocol</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#isImageAcquisitionProtocolOf">The Cohort Ontology</a></p>
+<h3 id="isInformationObtainmentMethodOf">isInformationObtainmentMethodOf</h3>
+<p>describes what cohorts use that particular information obtainment method</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#isInformationObtainmentMethodOf">The Cohort Ontology</a></p>
+<h3 id="isInvestigatorOf">isInvestigatorOf</h3>
+<p>describes what cohorts someone is an investigator for</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#isInvestigatorOf">The Cohort Ontology</a></p>
+<h3 id="isJuniorLeadOfP">isJuniorLeadOfP</h3>
+<p>describes what project someone is a junior lead of</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#isJuniorLeadOfP">The PersonOntology</a></p>
+<h3 id="isJuniorLeadOfWG">isJuniorLeadOfWG</h3>
+<p>describes the working groups that someone is a junior lead of</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#isJuniorLeadOfWG">The PersonOntology</a></p>
+<h3 id="isLocated">isLocated</h3>
+<p>describes where the person is located</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#isLocated">The PersonOntology</a></p>
+<h3 id="isLocationOfDataCollectionOf">isLocationOfDataCollectionOf</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#isLocationOfDataCollectionOf">The Cohort Ontology</a></p>
+<h3 id="isManufacturerOf">isManufacturerOf</h3>
+<p>describes the scanners that a manufacturer makes</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#isManufacturerOf">The Scanner Ontology</a></p>
+<h3 id="isMemberOfWG">isMemberOfWG</h3>
+<p>describes what working group a person is a member of</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#isMemberOfWG">The PersonOntology</a></p>
+<h3 id="isMemberOfWorkingGroup">isMemberOfWorkingGroup</h3>
+<p>describes what working group a person is a member of</p> 
+<p>Defined in: <a href="upper/1.0.0/index-en.html#isMemberOfWorkingGroup">The Core Ontology</a></p>
+<h3 id="isNoLongerActive">isNoLongerActive</h3>
+<p>describes whether or not a person is not longer active</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#isNoLongerActive">The PersonOntology</a></p>
+<h3 id="isPIOf">isPIOf</h3>
+<p>describes the cohorts that the personal investigator is in charge of</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#isPIOf">The Cohort Ontology</a></p>
+<h3 id="isPopulationGroupOf">isPopulationGroupOf</h3>
+<p>describes the population group of a cohort of a population-based study</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#isPopulationGroupOf">The Cohort Ontology</a></p>
+<h3 id="isProficientInLocalLanguage">isProficientInLocalLanguage</h3>
+<p>describes whether or not the members of the cohort group are proficient in local language</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#isProficientInLocalLanguage">The Cohort Ontology</a></p>
+<h3 id="isProjectCohortOf">isProjectCohortOf</h3>
+<p>describes the bigger cohort that the project cohort belongs to</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#isProjectCohortOf">The Cohort Ontology</a></p>
+<h3 id="isProjectOf">isProjectOf</h3>
+<p>describes what working group a project is part of</p> 
+<p>Defined in: <a href="project/1.0.0/index-en.html#isProjectOf">The Project Ontology</a></p>
+<h3 id="isScannerModel">isScannerModel</h3>
+<p>describes what the scanner model is</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#isScannerModel">The Scanner Ontology</a></p>
+<h3 id="isScannerOf">isScannerOf</h3>
+<p>describes the protocols that the scanner is used for</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#isScannerOf">The Scanner Ontology</a></p>
+<h3 id="isSeniorLeadOfP">isSeniorLeadOfP</h3>
+<p>describes who the senior lead of a project is</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#isSeniorLeadOfP">The PersonOntology</a></p>
+<h3 id="isSeniorLeadOfWG">isSeniorLeadOfWG</h3>
+<p>describes the working groups that someone is a senior lead of</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#isSeniorLeadOfWG">The PersonOntology</a></p>
+<h3 id="isSpecialContributorOfP">isSpecialContributorOfP</h3>
+<p>describes what project someone is a special contributor of</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#isSpecialContributorOfP">The PersonOntology</a></p>
+<h3 id="isSpecialContributorOfWG">isSpecialContributorOfWG</h3>
+<p>describes who the significant contributors of a working group are</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#isSpecialContributorOfWG">The PersonOntology</a></p>
+
+<h2 id="J">J</h2>
+<h3 id="joinedEnigmaInYear">joinedEnigmaInYear</h3>
+<p>describes the year that a person first joined ENIGMA</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#joinedEnigmaInYear">The PersonOntology</a></p>
+
+<h2 id="L">L</h2>
+<h3 id="leftOnDate">leftOnDate</h3>
+<p>describes the date that a person, who is no longer active, left</p> 
+<p>Defined in: <a href="person/1.0.0/index-en.html#leftOnDate">The PersonOntology</a></p>
+<h3 id="Location">Location</h3>
+<p>Where is the cohort located?</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#Location">The Cohort Ontology</a></p>
+
+<h2 id="M">M</h2>
+<h3 id="mach1.0.18.c">mach1.0.18.c</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#mach1.0.18.c">The Cohort Ontology</a></p>
+<h3 id="mach2qtl1.1.2">mach2qtl1.1.2</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#mach2qtl1.1.2">The Cohort Ontology</a></p>
+<h3 id="Manufacturer">Manufacturer</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#Manufacturer">The Scanner Ontology</a></p>
+<h3 id="MDD">MDD</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#MDD">The Cohort Ontology</a></p>
+<h3 id="MedicalRating">MedicalRating</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#MedicalRating">The Cohort Ontology</a></p>
+<h3 id="mentalDisorder">mentalDisorder</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#mentalDisorder">The Cohort Ontology</a></p>
+<h3 id="MentalHealthDisorder">MentalHealthDisorder</h3>
+<p>Disorders which can affect mood, behavior, and thinking</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#MentalHealthDisorder">The Cohort Ontology</a></p>
+<h3 id="merlinOffline1.1.2">merlinOffline1.1.2</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#merlinOffline1.1.2">The Cohort Ontology</a></p>
+<h3 id="miniInternationalNeuropsychiatricInterview">miniInternationalNeuropsychiatricInterview</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#miniInternationalNeuropsychiatricInterview">The Cohort Ontology</a></p>
+<h3 id="minimac2012.05.29">minimac2012.05.29</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#minimac2012.05.29">The Cohort Ontology</a></p>
+<h3 id="moodDisorder">moodDisorder</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#moodDisorder">The Cohort Ontology</a></p>
+<h3 id="MPRAGEsequence">MPRAGEsequence</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#MPRAGEsequence">The Scanner Ontology</a></p>
+<h3 id="MRISequence">MRISequence</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#MRISequence">The Scanner Ontology</a></p>
+
+<h2 id="N">N</h2>
+<h3 id="NeurologicalDisorder">NeurologicalDisorder</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#NeurologicalDisorder">The Cohort Ontology</a></p>
+<h3 id="NonCNSCancer">NonCNSCancer</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#NonCNSCancer">The Cohort Ontology</a></p>
+
+<h2 id="O">O</h2>
+<h3 id="obtainedInformationThrough">obtainedInformationThrough</h3>
+<p>describes what the method for obtaining medical information was</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#obtainedInformationThrough">The Cohort Ontology</a></p>
+<h3 id="OCD">OCD</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#OCD">The Cohort Ontology</a></p>
+<h3 id="organicMedicalDisorder">organicMedicalDisorder</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#organicMedicalDisorder">The Cohort Ontology</a></p>
+<h3 id="Organization">Organization</h3>
+<p>Defined in: <a href="organization/1.0.0/index-en.html#Organization">The Organization Ontology</a></p>
+
+<h2 id="P">P</h2>
+<h3 id="parkinsons">parkinsons</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#parkinsons">The Cohort Ontology</a></p>
+<h3 id="patientInterview">patientInterview</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#patientInterview">The Cohort Ontology</a></p>
+<h3 id="Person">Person</h3>
+<p>Who is involved with the cohort?</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#Person">The Cohort Ontology</a></p>
+<h3 id="Phillips">Phillips</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#Phillips">The Scanner Ontology</a></p>
+<h3 id="plink1.07">plink1.07</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#plink1.07">The Cohort Ontology</a></p>
+<h3 id="probABEL">probABEL</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#probABEL">The Cohort Ontology</a></p>
+<h3 id="Project">Project</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#Project">The Cohort Ontology</a></p>
+<h3 id="ProjectCohort">ProjectCohort</h3>
+<p>The subset of the individuals from a Cohort, which are used as samples for a specific project</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#ProjectCohort">The Cohort Ontology</a></p>
+<h3 id="psychiatricMedication">psychiatricMedication</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#psychiatricMedication">The Cohort Ontology</a></p>
+<h3 id="psychiatristReport">psychiatristReport</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#psychiatristReport">The Cohort Ontology</a></p>
+<h3 id="psychosis">psychosis</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#psychosis">The Cohort Ontology</a></p>
+<h3 id="psychotropicMedication">psychotropicMedication</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#psychotropicMedication">The Cohort Ontology</a></p>
+<h3 id="PTSD">PTSD</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#PTSD">The Cohort Ontology</a></p>
+
+<h2 id="Q">Q</h2>
+<h3 id="qDS">qDS</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#qDS">The Cohort Ontology</a></p>
+<h3 id="quicktest0.95">quicktest0.95</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#quicktest0.95">The Cohort Ontology</a></p>
+
+<h2 id="R">R</h2>
+<h3 id="researchDiagnosticCriteria">researchDiagnosticCriteria</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#researchDiagnosticCriteria">The Cohort Ontology</a></p>
+<h3 id="respiratoryDisorder">respiratoryDisorder</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#respiratoryDisorder">The Cohort Ontology</a></p>
+<h3 id="RestingStateFunctionalMRI">RestingStateFunctionalMRI</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#RestingStateFunctionalMRI">The Cohort Ontology</a></p>
+
+<h2 id="S">S</h2>
+<h3 id="sagittal">sagittal</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#sagittal">The Scanner Ontology</a></p>
+<h3 id="Scanner">Scanner</h3>
+<p>What scanner was used to scan the members of the cohort?</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#Scanner">The Scanner Ontology</a></p>
+<h3 id="ScannerSoftware">ScannerSoftware</h3>
+<p>Is this software or segmentation?</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#ScannerSoftware">The Scanner Ontology</a></p>
+<h3 id="schizophrenia">schizophrenia</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#schizophrenia">The Cohort Ontology</a></p>
+<h3 id="seizures">seizures</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#seizures">The Cohort Ontology</a></p>
+<h3 id="selfReport">selfReport</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#selfReport">The Cohort Ontology</a></p>
+<h3 id="SEsequence">SEsequence</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#SEsequence">The Scanner Ontology</a></p>
+<h3 id="Siemens">Siemens</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#Siemens">The Scanner Ontology</a></p>
+<h3 id="SignificantGeneralMedicalCondition">SignificantGeneralMedicalCondition</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#SignificantGeneralMedicalCondition">The Cohort Ontology</a></p>
+<h3 id="SpecificConditionInfo">SpecificConditionInfo</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#SpecificConditionInfo">The Cohort Ontology</a></p>
+<h3 id="SpecificDisorderInfo">SpecificDisorderInfo</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#SpecificDisorderInfo">The Cohort Ontology</a></p>
+<h3 id="SpecificMedicalRatingInfo">SpecificMedicalRatingInfo</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#SpecificMedicalRatingInfo">The Cohort Ontology</a></p>
+<h3 id="SpecificTreatmentInfo">SpecificTreatmentInfo</h3>
+<p>details of a specific treatment, such as the length of the usage period</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#SpecificTreatmentInfo">The Cohort Ontology</a></p>
+<h3 id="SPGRsequence">SPGRsequence</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#SPGRsequence">The Scanner Ontology</a></p>
+<h3 id="storageDisorder">storageDisorder</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#storageDisorder">The Cohort Ontology</a></p>
+<h3 id="stroke">stroke</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#stroke">The Cohort Ontology</a></p>
+<h3 id="structuredClinicalInstrument">structuredClinicalInstrument</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#structuredClinicalInstrument">The Cohort Ontology</a></p>
+<h3 id="SubstanceAbuse">SubstanceAbuse</h3>
+<p>A mental health disorder defined by the overusage or abuse of a substance</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#SubstanceAbuse">The Cohort Ontology</a></p>
+<h3 id="substanceDependence">substanceDependence</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#substanceDependence">The Cohort Ontology</a></p>
+<h3 id="suicidality">suicidality</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#suicidality">The Cohort Ontology</a></p>
+
+<h2 id="T">T</h2>
+<h3 id="T-GE-Discovery750">T-GE-Discovery750</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#T-GE-Discovery750">The Scanner Ontology</a></p>
+<h3 id="T-GE-Signa">T-GE-Signa</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#T-GE-Signa">The Scanner Ontology</a></p>
+<h3 id="T-GE-SignaHDx">T-GE-SignaHDx</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#T-GE-SignaHDx">The Scanner Ontology</a></p>
+<h3 id="T-Phillips-Achieva">T-Phillips-Achieva</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#T-Phillips-Achieva">The Scanner Ontology</a></p>
+<h3 id="T-Siemens-TrioTim">T-Siemens-TrioTim</h3>
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#T-Siemens-TrioTim">The Scanner Ontology</a></p>
+<h3 id="T1-weightedMRI">T1-weightedMRI</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#T1-weightedMRI">The Cohort Ontology</a></p>
+<h3 id="T2-weightedMRI">T2-weightedMRI</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#T2-weightedMRI">The Cohort Ontology</a></p>
+<h3 id="TaskBasedFunctionalMRI">TaskBasedFunctionalMRI</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#TaskBasedFunctionalMRI">The Cohort Ontology</a></p>
+<h3 id="Toronto">Toronto</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#Toronto">The Cohort Ontology</a></p>
+<h3 id="tourette">tourette</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#tourette">The Cohort Ontology</a></p>
+<h3 id="Treatment">Treatment</h3>
+<p>What treatments were used by the members of the cohort?</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#Treatment">The Cohort Ontology</a></p>
+
+<h2 id="U">U</h2>
+<h3 id="USA">USA</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#USA">The Cohort Ontology</a></p>
+<h3 id="usedBodyCoil">usedBodyCoil</h3>
+<p>describes if a body coil was used to scan by the scanner</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#usedBodyCoil">The Scanner Ontology</a></p>
+<h3 id="usedDiagnosisInstrument">usedDiagnosisInstrument</h3>
+<p>describes what instrument was used to diagnose the members of the cohort</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#usedDiagnosisInstrument">The Cohort Ontology</a></p>
+<h3 id="usedHeadCoil">usedHeadCoil</h3>
+<p>describes if a head coil was used to scan by the scanner</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#usedHeadCoil">The Scanner Ontology</a></p>
+<h3 id="usesGenotypePlatform">usesGenotypePlatform</h3>
+<p>describes what genotype platform was used to analyze the members of the cohort</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#usesGenotypePlatform">The Cohort Ontology</a></p>
+<h3 id="usesScannerSoftware">usesScannerSoftware</h3>
+<p>should the domain be scanner or cohort?</p> 
+<p>Defined in: <a href="scanner/1.0.0/index-en.html#usesScannerSoftware">The Scanner Ontology</a></p>
+<h3 id="usesTreatment">usesTreatment</h3>
+<p>describes which drug(s) or therapy(ies) that the members of the cohort group are using</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#usesTreatment">The Cohort Ontology</a></p>
+
+<h2 id="V">V</h2>
+<h3 id="VascularDisorder">VascularDisorder</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#VascularDisorder">The Cohort Ontology</a></p>
+
+<h2 id="W">W</h2>
+<h3 id="WholeGenome">WholeGenome</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#WholeGenome">The Cohort Ontology</a></p>
+<h3 id="withDisorderSeverity">withDisorderSeverity</h3>
+<p>describes the severity of the disease</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#withDisorderSeverity">The Cohort Ontology</a></p>
+<h3 id="withMaxAgeOfOnsetOfDisorder">withMaxAgeOfOnsetOfDisorder</h3>
+<p>describes the maximum age of onset of a disease</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#withMaxAgeOfOnsetOfDisorder">The Cohort Ontology</a></p>
+<h3 id="withMaxDurationOfDisorder">withMaxDurationOfDisorder</h3>
+<p>describes the maximum duration (in years) of a disease</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#withMaxDurationOfDisorder">The Cohort Ontology</a></p>
+<h3 id="withMaxNumber">withMaxNumber</h3>
+<p>the last included number in the medical range</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#withMaxNumber">The Cohort Ontology</a></p>
+<h3 id="withMinAgeOfOnsetOfDisorder">withMinAgeOfOnsetOfDisorder</h3>
+<p>describes the minimum age of onset of a disease</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#withMinAgeOfOnsetOfDisorder">The Cohort Ontology</a></p>
+<h3 id="withMinDurationOfDisorder">withMinDurationOfDisorder</h3>
+<p>describes the minimum duration (in years) of a disease</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#withMinDurationOfDisorder">The Cohort Ontology</a></p>
+<h3 id="withMinNumber">withMinNumber</h3>
+<p>the first included number in the medical rating</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#withMinNumber">The Cohort Ontology</a></p>
+<h3 id="WorkingGroup">WorkingGroup</h3>
+<p>a working group (a group of researchers studying a certain ENIGMA topic) of ENIGMA</p> 
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#WorkingGroup">The Cohort Ontology</a></p>
+
+<h2 id="Y">Y</h2>
+<h3 id="YoungManiaRatingScale">YoungManiaRatingScale</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#YoungManiaRatingScale">The Cohort Ontology</a></p>
+<h3 id="youngManiaRatingScale0to10">youngManiaRatingScale0to10</h3>
+<p>Defined in: <a href="cohort/1.0.0/index-en.html#youngManiaRatingScale0to10">The Cohort Ontology</a></p>
+
+
+
+    </div> <!-- /container -->

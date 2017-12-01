@@ -1,0 +1,436 @@
+<https://w3id.org/enigma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/enigma/scanner/1.0.0> .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Daniel Garijo" .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Yolanda Gil" .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "Neda Jahanshad" .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "Ryan Espiritu" .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/title> "The Project Ontology" .
+<https://w3id.org/enigma> <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma" .
+<https://w3id.org/enigma> <http://purl.org/vocab/vann/preferredNamespaceUri> <https://w3id.org/enigma#> .
+<https://w3id.org/enigma> <http://www.w3.org/2000/01/rdf-schema#comment> "An ontology that describes scanners and their properties." .
+<https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionInfo> "v1.0.0" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/vocab/vann/example
+<http://purl.org/vocab/vann/example> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/enigma#forDataType
+<https://w3id.org/enigma#forDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#forDataType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#AcquisitionProtocol> .
+<https://w3id.org/enigma#forDataType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#DataType> .
+<https://w3id.org/enigma#forDataType> <http://purl.org/vocab/vann/example> "AcquisitionPro3 forDataType EEG" .
+<https://w3id.org/enigma#forDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "describes what data type the acquisition protocol was used to obtain" .
+# 
+# https://w3id.org/enigma#hasAcquisitionDirection
+<https://w3id.org/enigma#hasAcquisitionDirection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasAcquisitionDirection> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#AcquisitionProtocol> .
+<https://w3id.org/enigma#hasAcquisitionDirection> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#AcquisitionDirection> .
+<https://w3id.org/enigma#hasAcquisitionDirection> <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasAcquisitionDirection coronal --> The acquisition direction of this 1.5T-GE-Signa is coronal" .
+<https://w3id.org/enigma#hasAcquisitionDirection> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the acquisition direction of the scanner" .
+# 
+# https://w3id.org/enigma#hasAcquisitionProtocol
+<https://w3id.org/enigma#hasAcquisitionProtocol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasAcquisitionProtocol> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/enigma#isAcquisitionProtocolOf> .
+<https://w3id.org/enigma#hasAcquisitionProtocol> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cohort> .
+<https://w3id.org/enigma#hasAcquisitionProtocol> <http://www.w3.org/2000/01/rdf-schema#range> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#AcquisitionProtocol> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Scanner> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/enigma#hasAcquisitionProtocol> <http://purl.org/vocab/vann/example> "Cohort1 hasAcquisitionProtocol AcquisitionProtocol1" .
+<https://w3id.org/enigma#hasAcquisitionProtocol> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the acquisition protocol to scan the cohort" .
+# 
+# https://w3id.org/enigma#hasManufacturer
+<https://w3id.org/enigma#hasManufacturer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasManufacturer> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/enigma#isManufacturerOf> .
+<https://w3id.org/enigma#hasManufacturer> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Scanner> .
+<https://w3id.org/enigma#hasManufacturer> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Manufacturer> .
+<https://w3id.org/enigma#hasManufacturer> <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasManufacturer GE --> The manufacturer of the 1.5T-GE-Signa is GE" .
+<https://w3id.org/enigma#hasManufacturer> <http://www.w3.org/2000/01/rdf-schema#comment> "describes what the manufacturer for the scanner is" .
+# 
+# https://w3id.org/enigma#hasScanner
+<https://w3id.org/enigma#hasScanner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasScanner> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/enigma#isScannerOf> .
+<https://w3id.org/enigma#hasScanner> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#AcquisitionProtocol> .
+<https://w3id.org/enigma#hasScanner> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Scanner> .
+<https://w3id.org/enigma#hasScanner> <http://purl.org/vocab/vann/example> "AcquisitionProtocol1 hasScanner 1.5T-GE-Siemens" .
+<https://w3id.org/enigma#hasScanner> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the scanner used in the acquisition protocol" .
+# 
+# https://w3id.org/enigma#hasSequence
+<https://w3id.org/enigma#hasSequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasSequence> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#AcquisitionProtocol> .
+<https://w3id.org/enigma#hasSequence> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#MRISequence> .
+<https://w3id.org/enigma#hasSequence> <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasSequence T1-weighted_MPRAGE_sequence --> The acquisition protocol for this scanner is T1-weighted MPRAGE sequence" .
+<https://w3id.org/enigma#hasSequence> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the sequence that the acquisition protocol requires" .
+# 
+# https://w3id.org/enigma#isAcquisitionProtocolOf
+<https://w3id.org/enigma#isAcquisitionProtocolOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#isAcquisitionProtocolOf> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid4 <http://www.w3.org/2002/07/owl#unionOf> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#AcquisitionProtocol> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Scanner> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/enigma#isAcquisitionProtocolOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Cohort> .
+<https://w3id.org/enigma#isAcquisitionProtocolOf> <http://purl.org/vocab/vann/example> "AcquisitionProtocol isAcquisitionProtocolOf Cohort1" .
+<https://w3id.org/enigma#isAcquisitionProtocolOf> <http://www.w3.org/2000/01/rdf-schema#comment> "describes what cohorts were scanned with the acquisition protocol" .
+# 
+# https://w3id.org/enigma#isManufacturerOf
+<https://w3id.org/enigma#isManufacturerOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#isManufacturerOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Manufacturer> .
+<https://w3id.org/enigma#isManufacturerOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Scanner> .
+<https://w3id.org/enigma#isManufacturerOf> <http://purl.org/vocab/vann/example> "GE isManufacturerOf 1.5T-GE-Signa --> GE manufacters the 1.5T-GE-Signa scanner" .
+<https://w3id.org/enigma#isManufacturerOf> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the scanners that a manufacturer makes" .
+# 
+# https://w3id.org/enigma#isScannerOf
+<https://w3id.org/enigma#isScannerOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#isScannerOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Scanner> .
+<https://w3id.org/enigma#isScannerOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#AcquisitionProtocol> .
+<https://w3id.org/enigma#isScannerOf> <http://purl.org/vocab/vann/example> "1.5T-GE-Siemens isScannerOf AcquisitionProtocol1" .
+<https://w3id.org/enigma#isScannerOf> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the protocols that the scanner is used for" .
+# 
+# https://w3id.org/enigma#usesScannerSoftware
+<https://w3id.org/enigma#usesScannerSoftware> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#usesScannerSoftware> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#AcquisitionProtocol> .
+<https://w3id.org/enigma#usesScannerSoftware> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#ScannerSoftware> .
+<https://w3id.org/enigma#usesScannerSoftware> <http://purl.org/vocab/vann/example> "Cohort1 usesScannerSoftware FreeSurfer(5.1.0) --> Cohort1 was scanned with FreeSurfer(5.1.0) software" .
+<https://w3id.org/enigma#usesScannerSoftware> <http://www.w3.org/2000/01/rdf-schema#comment> "describes what the software was used to scan a cohort" .
+<https://w3id.org/enigma#usesScannerSoftware> <http://www.w3.org/2000/01/rdf-schema#comment> "should the domain be scanner or cohort?" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/enigma#hasDataAcquisitionMatrix
+<https://w3id.org/enigma#hasDataAcquisitionMatrix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasDataAcquisitionMatrix> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#AcquisitionProtocol> .
+<https://w3id.org/enigma#hasDataAcquisitionMatrix> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#hasDataAcquisitionMatrix> <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasDataAcquisitionMatrix \"256x256\" --> The size of the data acquisition matrix is 256x256" .
+<https://w3id.org/enigma#hasDataAcquisitionMatrix> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the size of the data acquisition matrix used" .
+# 
+# https://w3id.org/enigma#hasFieldStrength
+<https://w3id.org/enigma#hasFieldStrength> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasFieldStrength> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Scanner> .
+<https://w3id.org/enigma#hasFieldStrength> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<https://w3id.org/enigma#hasFieldStrength> <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasFieldStrength 1.5 --> The field strength of 1.5T-GE-Signa is 1.5" .
+<https://w3id.org/enigma#hasFieldStrength> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the field strength of the cohort" .
+# 
+# https://w3id.org/enigma#hasFlipAngle
+<https://w3id.org/enigma#hasFlipAngle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasFlipAngle> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#AcquisitionProtocol> .
+<https://w3id.org/enigma#hasFlipAngle> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<https://w3id.org/enigma#hasFlipAngle> <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasFlipAngle 7 --> 1.5T-GE-Signa has a flip angle of 7 in degrees" .
+<https://w3id.org/enigma#hasFlipAngle> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the flip angle of a scanner in degrees" .
+# 
+# https://w3id.org/enigma#hasFoV
+<https://w3id.org/enigma#hasFoV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasFoV> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#AcquisitionProtocol> .
+<https://w3id.org/enigma#hasFoV> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#hasFoV> <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasFoV \"X*Y*Z\"" .
+<https://w3id.org/enigma#hasFoV> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the field of view of the acquisition protocol" .
+# 
+# https://w3id.org/enigma#hasNEX
+<https://w3id.org/enigma#hasNEX> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasNEX> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#AcquisitionProtocol> .
+<https://w3id.org/enigma#hasNEX> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/enigma#hasNEX> <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasNEX 1 --> The acquisition protocol for this scanner had one number of excitations" .
+<https://w3id.org/enigma#hasNEX> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the number of excitiations of the acquisition protocol of the scanner" .
+# 
+# https://w3id.org/enigma#hasNumberOfEchoes
+<https://w3id.org/enigma#hasNumberOfEchoes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasNumberOfEchoes> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#AcquisitionProtocol> .
+<https://w3id.org/enigma#hasNumberOfEchoes> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/enigma#hasNumberOfEchoes> <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasNumberOfEchoes 2 --> 1.5T-GE-Signa has 2 echoes" .
+<https://w3id.org/enigma#hasNumberOfEchoes> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the number of echoes of the acquisition protocol of a scanner" .
+# 
+# https://w3id.org/enigma#hasNumberOfSlices
+<https://w3id.org/enigma#hasNumberOfSlices> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasNumberOfSlices> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#AcquisitionProtocol> .
+<https://w3id.org/enigma#hasNumberOfSlices> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/enigma#hasNumberOfSlices> <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasNumberOfSlices 182 --> This scanner has 182 slices" .
+<https://w3id.org/enigma#hasNumberOfSlices> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the number of slices of the particular scanner" .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointProperties> .
+_:genid7 <http://www.w3.org/2002/07/owl#members> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#hasNumberOfSlices> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# https://w3id.org/enigma#hasResolution
+<https://w3id.org/enigma#hasResolution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasResolution> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#AcquisitionProtocol> .
+<https://w3id.org/enigma#hasResolution> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#hasResolution> <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasResolution \"0.9x0.9\" --> The resolution of this scanner is 0.9mm x 0.9mm" .
+<https://w3id.org/enigma#hasResolution> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the in-plane pixel resolution in mm x mm" .
+# 
+# https://w3id.org/enigma#hasScanTime
+<https://w3id.org/enigma#hasScanTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasScanTime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#AcquisitionProtocol> .
+<https://w3id.org/enigma#hasScanTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<https://w3id.org/enigma#hasScanTime> <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasScanTime 42 --> The scan time for 1.5T-GE-Signa is 42 seconds" .
+<https://w3id.org/enigma#hasScanTime> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the scan time of the acquisition protocol for a scanner in seconds" .
+# 
+# https://w3id.org/enigma#hasSliceThickness
+<https://w3id.org/enigma#hasSliceThickness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasSliceThickness> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#AcquisitionProtocol> .
+<https://w3id.org/enigma#hasSliceThickness> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<https://w3id.org/enigma#hasSliceThickness> <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasSliceThickness 1 --> The slice thickness of this scanner is 1 mm" .
+<https://w3id.org/enigma#hasSliceThickness> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the slice thickness of the scanner in mm" .
+# 
+# https://w3id.org/enigma#hasTE
+<https://w3id.org/enigma#hasTE> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasTE> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#AcquisitionProtocol> .
+<https://w3id.org/enigma#hasTE> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<https://w3id.org/enigma#hasTE> <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasTE 4.6 --> 1.5T-GE-Signa has TE of 4.6 ms" .
+<https://w3id.org/enigma#hasTE> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the TE of a scanner in ms" .
+# 
+# https://w3id.org/enigma#hasTI
+<https://w3id.org/enigma#hasTI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasTI> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#AcquisitionProtocol> .
+<https://w3id.org/enigma#hasTI> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<https://w3id.org/enigma#hasTI> <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasTI 710 --> 1.5T-GE-Signa has a TI of 710 ms" .
+<https://w3id.org/enigma#hasTI> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the TI of a scanner in ms" .
+# 
+# https://w3id.org/enigma#hasTR
+<https://w3id.org/enigma#hasTR> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasTR> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#AcquisitionProtocol> .
+<https://w3id.org/enigma#hasTR> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<https://w3id.org/enigma#hasTR> <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasTR 500 --> 1.5T-GE-Signa has a TR of 500 ms" .
+<https://w3id.org/enigma#hasTR> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the TR of a scanner in ms" .
+# 
+# https://w3id.org/enigma#hasVoxelSize
+<https://w3id.org/enigma#hasVoxelSize> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasVoxelSize> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#AcquisitionProtocol> .
+<https://w3id.org/enigma#hasVoxelSize> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#hasVoxelSize> <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasVoxelSize \"1x1x1\" --> 1.5T-GE-Signa has voxel size of 1x1x1 mm" .
+<https://w3id.org/enigma#hasVoxelSize> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the voxel height of a scanner in mm" .
+# 
+# https://w3id.org/enigma#isScannerModel
+<https://w3id.org/enigma#isScannerModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#isScannerModel> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Scanner> .
+<https://w3id.org/enigma#isScannerModel> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#isScannerModel> <http://purl.org/vocab/vann/example> "1.5T-GE-Signa isScannerModel \"Signa\" --> The scanner model for 1.5T-GE-Signa is Signa" .
+<https://w3id.org/enigma#isScannerModel> <http://www.w3.org/2000/01/rdf-schema#comment> "describes what the scanner model is" .
+# 
+# https://w3id.org/enigma#usedBodyCoil
+<https://w3id.org/enigma#usedBodyCoil> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#usedBodyCoil> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#AcquisitionProtocol> .
+<https://w3id.org/enigma#usedBodyCoil> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#usedBodyCoil> <http://purl.org/vocab/vann/example> "1.5T-GE-Signa usedBodyCoil true --> This 1.5T-GE-Signa scanner used a body coil to scan" .
+<https://w3id.org/enigma#usedBodyCoil> <http://www.w3.org/2000/01/rdf-schema#comment> "describes if a body coil was used to scan by the scanner" .
+# 
+# https://w3id.org/enigma#usedHeadCoil
+<https://w3id.org/enigma#usedHeadCoil> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#usedHeadCoil> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#AcquisitionProtocol> .
+<https://w3id.org/enigma#usedHeadCoil> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#usedHeadCoil> <http://purl.org/vocab/vann/example> "1.5T-GE-Signa usedHeadCoil true --> This 1.5T-GE-Signa scanner used a head coil to scan" .
+<https://w3id.org/enigma#usedHeadCoil> <http://www.w3.org/2000/01/rdf-schema#comment> "describes if a head coil was used to scan by the scanner" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/enigma#AcquisitionDirection
+<https://w3id.org/enigma#AcquisitionDirection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#AcquisitionDirection> <http://www.w3.org/2000/01/rdf-schema#comment> "the acquisition direction of the scanner" .
+# 
+# https://w3id.org/enigma#AcquisitionProtocol
+<https://w3id.org/enigma#AcquisitionProtocol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#AcquisitionProtocol> <http://www.w3.org/2000/01/rdf-schema#comment> "the protocol used to acquire the data types" .
+# 
+# https://w3id.org/enigma#Cohort
+<https://w3id.org/enigma#Cohort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#Cohort> <http://www.w3.org/2000/01/rdf-schema#comment> "A group of people that are studied by a working group. A cohort is limited by certain inclusion and exclusion criteria." .
+# 
+# https://w3id.org/enigma#DataType
+<https://w3id.org/enigma#DataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/enigma#MRISequence
+<https://w3id.org/enigma#MRISequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/enigma#Manufacturer
+<https://w3id.org/enigma#Manufacturer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/enigma#Scanner
+<https://w3id.org/enigma#Scanner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#Scanner> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/enigma#isAcquisitionProtocolOf> .
+_:genid9 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/enigma#Cohort> .
+<https://w3id.org/enigma#Scanner> <http://www.w3.org/2000/01/rdf-schema#comment> "What scanner was used to scan the members of the cohort?" .
+# 
+# https://w3id.org/enigma#ScannerSoftware
+<https://w3id.org/enigma#ScannerSoftware> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#ScannerSoftware> <http://www.w3.org/2000/01/rdf-schema#comment> "Is this software or segmentation?" .
+# 
+# https://w3id.org/enigma#Treatment
+<https://w3id.org/enigma#Treatment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#Treatment> <http://www.w3.org/2000/01/rdf-schema#comment> "What treatments were used by the members of the cohort?" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/enigma#BipolarBarcelonaControl
+<https://w3id.org/enigma#BipolarBarcelonaControl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#BipolarBarcelonaControl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#Cohort> .
+# 
+# https://w3id.org/enigma#BipolarBarcelonaPatient
+<https://w3id.org/enigma#BipolarBarcelonaPatient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#BipolarBarcelonaPatient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#Cohort> .
+# 
+# https://w3id.org/enigma#BipolarParisControl
+<https://w3id.org/enigma#BipolarParisControl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#BipolarParisControl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#Cohort> .
+# 
+# https://w3id.org/enigma#BipolarParisPatient
+<https://w3id.org/enigma#BipolarParisPatient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#BipolarParisPatient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#Cohort> .
+# 
+# https://w3id.org/enigma#BipolarTulsaPatient
+<https://w3id.org/enigma#BipolarTulsaPatient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#BipolarTulsaPatient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#Cohort> .
+# 
+# https://w3id.org/enigma#Bruker
+<https://w3id.org/enigma#Bruker> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#Bruker> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#Manufacturer> .
+# 
+# https://w3id.org/enigma#FEEsequence
+<https://w3id.org/enigma#FEEsequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#FEEsequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#MRISequence> .
+# 
+# https://w3id.org/enigma#FFEsequence
+<https://w3id.org/enigma#FFEsequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#FFEsequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#MRISequence> .
+# 
+# https://w3id.org/enigma#FLAIRsequence
+<https://w3id.org/enigma#FLAIRsequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#FLAIRsequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#MRISequence> .
+# 
+# https://w3id.org/enigma#FSEsequence
+<https://w3id.org/enigma#FSEsequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#FSEsequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#MRISequence> .
+# 
+# https://w3id.org/enigma#FSLFirst4.1.9
+<https://w3id.org/enigma#FSLFirst4.1.9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#FSLFirst4.1.9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#ScannerSoftware> .
+# 
+# https://w3id.org/enigma#FSPGRsequence
+<https://w3id.org/enigma#FSPGRsequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#FSPGRsequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#MRISequence> .
+# 
+# https://w3id.org/enigma#FreeSurfer5.1.0
+<https://w3id.org/enigma#FreeSurfer5.1.0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#FreeSurfer5.1.0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#ScannerSoftware> .
+# 
+# https://w3id.org/enigma#FreeSurfer5.3
+<https://w3id.org/enigma#FreeSurfer5.3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#FreeSurfer5.3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#ScannerSoftware> .
+# 
+# https://w3id.org/enigma#GE
+<https://w3id.org/enigma#GE> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#GE> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#Manufacturer> .
+# 
+# https://w3id.org/enigma#GREsequence
+<https://w3id.org/enigma#GREsequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#GREsequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#MRISequence> .
+# 
+# https://w3id.org/enigma#Illumina
+<https://w3id.org/enigma#Illumina> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#Illumina> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#Manufacturer> .
+# 
+# https://w3id.org/enigma#IlluminaOmniExpress
+<https://w3id.org/enigma#IlluminaOmniExpress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#IlluminaOmniExpress> <https://w3id.org/enigma#hasManufacturer> <https://w3id.org/enigma#Illumina> .
+# 
+# https://w3id.org/enigma#MPRAGEsequence
+<https://w3id.org/enigma#MPRAGEsequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#MPRAGEsequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#MRISequence> .
+# 
+# https://w3id.org/enigma#Phillips
+<https://w3id.org/enigma#Phillips> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#Phillips> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#Manufacturer> .
+# 
+# https://w3id.org/enigma#SEsequence
+<https://w3id.org/enigma#SEsequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#SEsequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#MRISequence> .
+# 
+# https://w3id.org/enigma#SPGRsequence
+<https://w3id.org/enigma#SPGRsequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#SPGRsequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#MRISequence> .
+# 
+# https://w3id.org/enigma#Siemens
+<https://w3id.org/enigma#Siemens> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#Siemens> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#Manufacturer> .
+# 
+# https://w3id.org/enigma#axial
+<https://w3id.org/enigma#axial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#axial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#AcquisitionDirection> .
+# 
+# https://w3id.org/enigma#coronal
+<https://w3id.org/enigma#coronal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#coronal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#AcquisitionDirection> .
+# 
+# https://w3id.org/enigma#sagittal
+<https://w3id.org/enigma#sagittal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#sagittal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#AcquisitionDirection> .
+# 
+# https://w3id.org/enigma#1.5T-GE-Signa
+<https://w3id.org/enigma#1.5T-GE-Signa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#1.5T-GE-Signa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#Scanner> .
+# 
+# https://w3id.org/enigma#1.5T-GE-SignaHDx
+<https://w3id.org/enigma#1.5T-GE-SignaHDx> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#1.5T-GE-SignaHDx> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#Scanner> .
+# 
+# https://w3id.org/enigma#3.0T-GE-Discovery750
+<https://w3id.org/enigma#3.0T-GE-Discovery750> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#3.0T-GE-Discovery750> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#Scanner> .
+# 
+# https://w3id.org/enigma#3.0T-Phillips-Achieva
+<https://w3id.org/enigma#3.0T-Phillips-Achieva> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#3.0T-Phillips-Achieva> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#Scanner> .
+# 
+# https://w3id.org/enigma#3.0T-Siemens-TrioTim
+<https://w3id.org/enigma#3.0T-Siemens-TrioTim> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#3.0T-Siemens-TrioTim> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#Scanner> .
+# 
+# Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

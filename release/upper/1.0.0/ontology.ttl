@@ -1,0 +1,163 @@
+@prefix : <https://w3id.org/enigma#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/enigma> .
+
+<https://w3id.org/enigma> rdf:type owl:Ontology ;
+                           owl:versionIRI <https://w3id.org/enigma/core/1.0.0> ;
+                           <http://purl.org/dc/terms/contributor> "Daniel Garijo"^^xsd:string ,
+                                                                  "Yolanda Gil"^^xsd:string ;
+                           <http://purl.org/dc/terms/creator> "Neda Jahanshad"^^xsd:string ,
+                                                              "Ryan Espiritu"^^xsd:string ;
+                           <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> ;
+                           <http://purl.org/dc/terms/title> "The Project Ontology"^^xsd:string ;
+                           <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma"^^xsd:string ;
+                           <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
+                           rdfs:comment "A core ontology with the main concepts of ENIGMA"^^xsd:string ;
+                           owl:versionInfo "v1.0.0"^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/vocab/vann/example
+<http://purl.org/vocab/vann/example> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/enigma#hasAcquisitionProtocol
+:hasAcquisitionProtocol rdf:type owl:ObjectProperty ;
+                        owl:inverseOf :isAcquisitionProtocolOf ;
+                        rdfs:domain :Cohort ;
+                        rdfs:range :AcquisitionProtocol ;
+                        <http://purl.org/vocab/vann/example> "Cohort1 hasAcquisitionProtocol AcquiPro3"^^xsd:string ;
+                        rdfs:comment "describes the acquisition protocol that was used to scan a cohort"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasCohort
+:hasCohort rdf:type owl:ObjectProperty ;
+           owl:inverseOf :isCohortIn ;
+           rdfs:domain :Project ;
+           rdfs:range :Cohort ;
+           <http://purl.org/vocab/vann/example> "BipolarProject hasCohort AmsterdamBipolarCohort --> Bipolar Project includes the Amsterdam Bipolar Cohort"^^xsd:string ;
+           rdfs:comment "describes what cohorts are part of the project"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasPI
+:hasPI rdf:type owl:ObjectProperty ;
+       owl:inverseOf :isPIof ;
+       rdfs:domain :Cohort ;
+       rdfs:range :Person ;
+       <http://purl.org/vocab/vann/example> "Cohort1 hasPI JohnSmith"^^xsd:string ;
+       rdfs:comment "describes who the PI of the project is"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasProject
+:hasProject rdf:type owl:ObjectProperty ;
+            owl:inverseOf :isProjectOf ;
+            rdfs:domain :WorkingGroup ;
+            rdfs:range :Project ;
+            <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasProject BipolarCorticolProject --> The Bipolar Working Group is working on the Bipolar Corticol Project"^^xsd:string ;
+            rdfs:comment "describes what projects are worked on by a specific working group"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasWGMember
+:hasWGMember rdf:type owl:ObjectProperty ;
+             owl:inverseOf :isMemberOfWorkingGroup ;
+             rdfs:domain :WorkingGroup ;
+             rdfs:range :Person ;
+             <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasMember JohnSmith --> The bipolar working group has John Smith as a member"^^xsd:string .
+
+
+###  https://w3id.org/enigma#isAcquisitionProtocolOf
+:isAcquisitionProtocolOf rdf:type owl:ObjectProperty ;
+                         rdfs:domain :AcquisitionProtocol ;
+                         rdfs:range :Cohort ;
+                         <http://purl.org/vocab/vann/example> "AcquiPro3 isAcquisitionProtocolOf Cohort3"^^xsd:string ;
+                         rdfs:comment "describes the cohorts that the acquisition protocol was used for"^^xsd:string .
+
+
+###  https://w3id.org/enigma#isAffiliatedWithInstitute
+:isAffiliatedWithInstitute rdf:type owl:ObjectProperty ;
+                           owl:inverseOf :isAffiliationOf ;
+                           rdfs:domain :Person ;
+                           rdfs:range :Organization ;
+                           <http://purl.org/vocab/vann/example> "JohnSmith isAffiliatedWithInstitute HarvardU --> John Smith is associated with Harvard"^^xsd:string ;
+                           rdfs:comment "describes what insitute somone is affiliated with"^^xsd:string .
+
+
+###  https://w3id.org/enigma#isAffiliationOf
+:isAffiliationOf rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Organization ;
+                 rdfs:range :Person ;
+                 <http://purl.org/vocab/vann/example> "HarvardU isAffiliationOf JohnSmith --> Harvard is the affiliated institue of JohnSmith"^^xsd:string ;
+                 rdfs:comment "describes the people that are affiliated with that institute"^^xsd:string .
+
+
+###  https://w3id.org/enigma#isCohortIn
+:isCohortIn rdf:type owl:ObjectProperty ;
+            rdfs:domain :Cohort ;
+            rdfs:range :Project ;
+            <http://purl.org/vocab/vann/example> "AmsterdamBipolarCohort isCohortIn BipolarProject --> The Amsterdam Bipolar Cohort is part of the Bipolar Project"^^xsd:string ;
+            rdfs:comment "describes what project the cohort is a part of"^^xsd:string .
+
+
+###  https://w3id.org/enigma#isMemberOfWorkingGroup
+:isMemberOfWorkingGroup rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Person ;
+                        rdfs:range :WorkingGroup ;
+                        <http://purl.org/vocab/vann/example> "JohnSmith isMemberOfWorkingGroup BipolarWorkingGroup --> John Smith is a member of the bipolar working group"^^xsd:string ;
+                        rdfs:comment "describes what working group a person is a member of"^^xsd:string .
+
+
+###  https://w3id.org/enigma#isPIof
+:isPIof rdf:type owl:ObjectProperty ;
+        rdfs:domain :Person ;
+        rdfs:range :Cohort ;
+        <http://purl.org/vocab/vann/example> "JohnSmith isPIof Cohort1"^^xsd:string ;
+        rdfs:comment "describes which cohorts someone is the PI of"^^xsd:string .
+
+
+###  https://w3id.org/enigma#isProjectOf
+:isProjectOf rdf:type owl:ObjectProperty ;
+             rdfs:domain :Project ;
+             rdfs:range :WorkingGroup ;
+             <http://purl.org/vocab/vann/example> "BipolarCorticolProject isProjectOf BipolarWorkingGroup --> The Bipolar Corticol Project is a project of the Bipolar Working Group"^^xsd:string ;
+             rdfs:comment "describes what working group a project is part of"^^xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/enigma#AcquisitionProtocol
+:AcquisitionProtocol rdf:type owl:Class .
+
+
+###  https://w3id.org/enigma#Cohort
+:Cohort rdf:type owl:Class .
+
+
+###  https://w3id.org/enigma#Organization
+:Organization rdf:type owl:Class .
+
+
+###  https://w3id.org/enigma#Person
+:Person rdf:type owl:Class .
+
+
+###  https://w3id.org/enigma#Project
+:Project rdf:type owl:Class .
+
+
+###  https://w3id.org/enigma#WorkingGroup
+:WorkingGroup rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

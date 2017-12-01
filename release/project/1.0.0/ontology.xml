@@ -1,0 +1,672 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/enigma#"
+     xml:base="https://w3id.org/enigma"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/">
+    <owl:Ontology rdf:about="https://w3id.org/enigma">
+        <owl:versionIRI rdf:resource="https://w3id.org/enigma/project/1.0.0"/>
+        <terms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Daniel Garijo</terms:contributor>
+        <terms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yolanda Gil</terms:contributor>
+        <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Neda Jahanshad</terms:creator>
+        <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ryan Espiritu</terms:creator>
+        <terms:license rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
+        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Project Ontology</terms:title>
+        <vann:preferredNamespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string">enigma</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri rdf:resource="https://w3id.org/enigma#"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An ontology that describes projects and their properties.</rdfs:comment>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">v1.0.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/vocab/vann/example -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/example"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/enigma#contributesTo -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#contributesTo">
+        <owl:inverseOf rdf:resource="https://w3id.org/enigma#hasContributor"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith contributesTo BipolarLateralityProject</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what projects someone contributes to</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasBrainScanDataType -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasBrainScanDataType">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasDataType"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#WorkingGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#BrainScanDataType"/>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasBrainScanDataType DiffusionMRI</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes which brain scan data types a project has</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasCohort -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasCohort">
+        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isCohortInProject"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasCohort AmsterdamBipolarCohort</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what cohorts are part of the project</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasContactPerson -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasContactPerson">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasContributor"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarCorticolProject hasContactPerson JohnSmith</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes who the contact person of the project is</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasContributor -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasContributor">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarLateralityProject hasContributor JohnSmith</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes who contributed to the project</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasDataType -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDataType">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#WorkingGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#DataType"/>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasDataType MRIImage</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the data types that the project collected</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasGeneReferencePanel -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasGeneReferencePanel">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#GeneReferencePanel"/>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasGeneReferencePanel [instance of gene reference panel]</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the gene reference panel used by the project</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasGeneticAssociationProtocol -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasGeneticAssociationProtocol">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#GeneticAssociationProtocol"/>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasGeneticAssociationProtocol [instance of genetic association protocol]</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the genetic association protocol that is used by the project</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasGeneticDataType -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasGeneticDataType">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasDataType"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#WorkingGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#GeneticDataType"/>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasGeneticDataType Exome</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the genetic data types that a project has</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasGenotypeImputationProtocol -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasGenotypeImputationProtocol">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#GenotypeImputationProtocol"/>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasGenotypeImputationProtocol [instance of genotype imputation protocol]</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the genotype imputation protocol that is used by the project</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasPJuniorLead -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasPJuniorLead">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasContributor"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isJuniorLeadOfP"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasJuniorLead JohnSmith</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes who the junior leads of a project are</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasPSeniorLead -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasPSeniorLead">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasContributor"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isSeniorLeadOfP"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasSeniorLead JohnSmith</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes who the senior leads of a project are</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasPSpecialContributor -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasPSpecialContributor">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasContributor"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isSpecialContributorOfP"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasSpecialContributor JohnSmith</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes who the special contributors of a project are</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasProject -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasProject">
+        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isProjectOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarWorkingGroup hasProject BipolarCorticolProject</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the projects that a working group has</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#isCohortInProject -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isCohortInProject">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AmsterdamBipolarCohort isCohortIn BipolarProject</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what project the cohort is a part of</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#isJuniorLeadOfP -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isJuniorLeadOfP">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributesTo"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isJuniorLeadOf BipolarProject</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what projects someone is a junior lead of</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#isProjectOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isProjectOf">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarCorticolProject isProjectOf BipolarWorkingGroup</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what working group a project is part of</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#isSeniorLeadOfP -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isSeniorLeadOfP">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributesTo"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isSeniorLeadOf BipolarProject</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what project the person is a senior lead of</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#isSpecialContributorOfP -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isSpecialContributorOfP">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributesTo"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isSpecialContributorOf BipolarProject</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the project that a person is a special contributor of</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/enigma#hasApprovedProposalForm -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasApprovedProposalForm">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Project1 hasApprovedProposalForm www.proposalformexample.com</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the approved proposal form link of a project</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasEndDate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasEndDate">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasStartDate 2018-06-23</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the end date of a project</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasPBriefDescription -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasPBriefDescription">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ProjectSZ hasBriefDescription &quot;reports effect size for corticol thickness&quot;</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">provides a  brief description of the project</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasStartDate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasStartDate">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasStartDate 2017-06-23</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the start date of a project</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasStatus -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasStatus">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gathering participants</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protocol preparation</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">published</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">revision</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ProjectSZ hasStatus &quot;published&quot;</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the status of the project</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasStudyDesign -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasStudyDesign">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Case-control</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Population-based</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Project1 hasStudyDesign &quot;Case-control&quot;</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the study design of the project</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasTargetDate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasTargetDate">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasTargetDate 2020-03-12</vann:example>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the target date of the project</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/enigma#BrainScanDataType -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#BrainScanDataType">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#DataType"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#Cohort -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#Cohort"/>
+    
+
+
+    <!-- https://w3id.org/enigma#DataType -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#DataType"/>
+    
+
+
+    <!-- https://w3id.org/enigma#GeneReferencePanel -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#GeneReferencePanel"/>
+    
+
+
+    <!-- https://w3id.org/enigma#GeneticAssociationProtocol -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#GeneticAssociationProtocol"/>
+    
+
+
+    <!-- https://w3id.org/enigma#GeneticDataType -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#GeneticDataType">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#DataType"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#GenotypeImputationProtocol -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#GenotypeImputationProtocol"/>
+    
+
+
+    <!-- https://w3id.org/enigma#Person -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#Person"/>
+    
+
+
+    <!-- https://w3id.org/enigma#Project -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#Project"/>
+    
+
+
+    <!-- https://w3id.org/enigma#WorkingGroup -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#WorkingGroup"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/enigma#EEG -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#EEG">
+        <rdf:type rdf:resource="https://w3id.org/enigma#BrainScanDataType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#Epigenetic -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#Epigenetic">
+        <rdf:type rdf:resource="https://w3id.org/enigma#GeneticDataType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#Exome -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#Exome">
+        <rdf:type rdf:resource="https://w3id.org/enigma#GeneticDataType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#Expresssion -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#Expresssion">
+        <rdf:type rdf:resource="https://w3id.org/enigma#GeneticDataType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#GenomeWide -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#GenomeWide">
+        <rdf:type rdf:resource="https://w3id.org/enigma#GeneticDataType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#RestingStateFunctionalMRI -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#RestingStateFunctionalMRI">
+        <rdf:type rdf:resource="https://w3id.org/enigma#BrainScanDataType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#T1-weightedMRI -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#T1-weightedMRI">
+        <rdf:type rdf:resource="https://w3id.org/enigma#BrainScanDataType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#T2-weightedMRI -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#T2-weightedMRI">
+        <rdf:type rdf:resource="https://w3id.org/enigma#BrainScanDataType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#TaskBasedFunctionalMRI -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#TaskBasedFunctionalMRI">
+        <rdf:type rdf:resource="https://w3id.org/enigma#BrainScanDataType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#WholeGenome -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#WholeGenome">
+        <rdf:type rdf:resource="https://w3id.org/enigma#GeneticDataType"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/ -->
+
+
