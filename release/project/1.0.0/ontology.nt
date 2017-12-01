@@ -1,0 +1,388 @@
+<https://w3id.org/enigma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/enigma/project/1.0.0> .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Daniel Garijo" .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Yolanda Gil" .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "Neda Jahanshad" .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "Ryan Espiritu" .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/title> "The Project Ontology" .
+<https://w3id.org/enigma> <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma" .
+<https://w3id.org/enigma> <http://purl.org/vocab/vann/preferredNamespaceUri> <https://w3id.org/enigma#> .
+<https://w3id.org/enigma> <http://www.w3.org/2000/01/rdf-schema#comment> "An ontology that describes projects and their properties." .
+<https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionInfo> "v1.0.0" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/vocab/vann/example
+<http://purl.org/vocab/vann/example> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/enigma#contributesTo
+<https://w3id.org/enigma#contributesTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#contributesTo> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/enigma#hasContributor> .
+<https://w3id.org/enigma#contributesTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#contributesTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#contributesTo> <http://purl.org/vocab/vann/example> "JohnSmith contributesTo BipolarLateralityProject" .
+<https://w3id.org/enigma#contributesTo> <http://www.w3.org/2000/01/rdf-schema#comment> "describes what projects someone contributes to" .
+# 
+# https://w3id.org/enigma#hasBrainScanDataType
+<https://w3id.org/enigma#hasBrainScanDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasBrainScanDataType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#hasDataType> .
+<https://w3id.org/enigma#hasBrainScanDataType> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Project> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#WorkingGroup> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/enigma#hasBrainScanDataType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#BrainScanDataType> .
+<https://w3id.org/enigma#hasBrainScanDataType> <http://purl.org/vocab/vann/example> "BipolarProject hasBrainScanDataType DiffusionMRI" .
+<https://w3id.org/enigma#hasBrainScanDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "describes which brain scan data types a project has" .
+# 
+# https://w3id.org/enigma#hasCohort
+<https://w3id.org/enigma#hasCohort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasCohort> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/enigma#isCohortInProject> .
+<https://w3id.org/enigma#hasCohort> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasCohort> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Cohort> .
+<https://w3id.org/enigma#hasCohort> <http://purl.org/vocab/vann/example> "BipolarProject hasCohort AmsterdamBipolarCohort" .
+<https://w3id.org/enigma#hasCohort> <http://www.w3.org/2000/01/rdf-schema#comment> "describes what cohorts are part of the project" .
+# 
+# https://w3id.org/enigma#hasContactPerson
+<https://w3id.org/enigma#hasContactPerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasContactPerson> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#hasContributor> .
+<https://w3id.org/enigma#hasContactPerson> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasContactPerson> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#hasContactPerson> <http://purl.org/vocab/vann/example> "BipolarCorticolProject hasContactPerson JohnSmith" .
+<https://w3id.org/enigma#hasContactPerson> <http://www.w3.org/2000/01/rdf-schema#comment> "describes who the contact person of the project is" .
+# 
+# https://w3id.org/enigma#hasContributor
+<https://w3id.org/enigma#hasContributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasContributor> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasContributor> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#hasContributor> <http://purl.org/vocab/vann/example> "BipolarLateralityProject hasContributor JohnSmith" .
+<https://w3id.org/enigma#hasContributor> <http://www.w3.org/2000/01/rdf-schema#comment> "describes who contributed to the project" .
+# 
+# https://w3id.org/enigma#hasDataType
+<https://w3id.org/enigma#hasDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasDataType> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid4 <http://www.w3.org/2002/07/owl#unionOf> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Project> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#WorkingGroup> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/enigma#hasDataType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#DataType> .
+<https://w3id.org/enigma#hasDataType> <http://purl.org/vocab/vann/example> "BipolarProject hasDataType MRIImage" .
+<https://w3id.org/enigma#hasDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the data types that the project collected" .
+# 
+# https://w3id.org/enigma#hasGeneReferencePanel
+<https://w3id.org/enigma#hasGeneReferencePanel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasGeneReferencePanel> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasGeneReferencePanel> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#GeneReferencePanel> .
+<https://w3id.org/enigma#hasGeneReferencePanel> <http://purl.org/vocab/vann/example> "BipolarProject hasGeneReferencePanel [instance of gene reference panel]" .
+<https://w3id.org/enigma#hasGeneReferencePanel> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the gene reference panel used by the project" .
+# 
+# https://w3id.org/enigma#hasGeneticAssociationProtocol
+<https://w3id.org/enigma#hasGeneticAssociationProtocol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasGeneticAssociationProtocol> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasGeneticAssociationProtocol> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#GeneticAssociationProtocol> .
+<https://w3id.org/enigma#hasGeneticAssociationProtocol> <http://purl.org/vocab/vann/example> "BipolarProject hasGeneticAssociationProtocol [instance of genetic association protocol]" .
+<https://w3id.org/enigma#hasGeneticAssociationProtocol> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the genetic association protocol that is used by the project" .
+# 
+# https://w3id.org/enigma#hasGeneticDataType
+<https://w3id.org/enigma#hasGeneticDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasGeneticDataType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#hasDataType> .
+<https://w3id.org/enigma#hasGeneticDataType> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid7 <http://www.w3.org/2002/07/owl#unionOf> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Project> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#WorkingGroup> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/enigma#hasGeneticDataType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#GeneticDataType> .
+<https://w3id.org/enigma#hasGeneticDataType> <http://purl.org/vocab/vann/example> "BipolarProject hasGeneticDataType Exome" .
+<https://w3id.org/enigma#hasGeneticDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the genetic data types that a project has" .
+# 
+# https://w3id.org/enigma#hasGenotypeImputationProtocol
+<https://w3id.org/enigma#hasGenotypeImputationProtocol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasGenotypeImputationProtocol> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasGenotypeImputationProtocol> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#GenotypeImputationProtocol> .
+<https://w3id.org/enigma#hasGenotypeImputationProtocol> <http://purl.org/vocab/vann/example> "BipolarProject hasGenotypeImputationProtocol [instance of genotype imputation protocol]" .
+<https://w3id.org/enigma#hasGenotypeImputationProtocol> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the genotype imputation protocol that is used by the project" .
+# 
+# https://w3id.org/enigma#hasPJuniorLead
+<https://w3id.org/enigma#hasPJuniorLead> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasPJuniorLead> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#hasContributor> .
+<https://w3id.org/enigma#hasPJuniorLead> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/enigma#isJuniorLeadOfP> .
+<https://w3id.org/enigma#hasPJuniorLead> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasPJuniorLead> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#hasPJuniorLead> <http://purl.org/vocab/vann/example> "BipolarProject hasJuniorLead JohnSmith" .
+<https://w3id.org/enigma#hasPJuniorLead> <http://www.w3.org/2000/01/rdf-schema#comment> "describes who the junior leads of a project are" .
+# 
+# https://w3id.org/enigma#hasPSeniorLead
+<https://w3id.org/enigma#hasPSeniorLead> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasPSeniorLead> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#hasContributor> .
+<https://w3id.org/enigma#hasPSeniorLead> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/enigma#isSeniorLeadOfP> .
+<https://w3id.org/enigma#hasPSeniorLead> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasPSeniorLead> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#hasPSeniorLead> <http://purl.org/vocab/vann/example> "BipolarProject hasSeniorLead JohnSmith" .
+<https://w3id.org/enigma#hasPSeniorLead> <http://www.w3.org/2000/01/rdf-schema#comment> "describes who the senior leads of a project are" .
+# 
+# https://w3id.org/enigma#hasPSpecialContributor
+<https://w3id.org/enigma#hasPSpecialContributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasPSpecialContributor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#hasContributor> .
+<https://w3id.org/enigma#hasPSpecialContributor> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/enigma#isSpecialContributorOfP> .
+<https://w3id.org/enigma#hasPSpecialContributor> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasPSpecialContributor> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#hasPSpecialContributor> <http://purl.org/vocab/vann/example> "BipolarProject hasSpecialContributor JohnSmith" .
+<https://w3id.org/enigma#hasPSpecialContributor> <http://www.w3.org/2000/01/rdf-schema#comment> "describes who the special contributors of a project are" .
+# 
+# https://w3id.org/enigma#hasProject
+<https://w3id.org/enigma#hasProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasProject> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/enigma#isProjectOf> .
+<https://w3id.org/enigma#hasProject> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#WorkingGroup> .
+<https://w3id.org/enigma#hasProject> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasProject> <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasProject BipolarCorticolProject" .
+<https://w3id.org/enigma#hasProject> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the projects that a working group has" .
+# 
+# https://w3id.org/enigma#isCohortInProject
+<https://w3id.org/enigma#isCohortInProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#isCohortInProject> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cohort> .
+<https://w3id.org/enigma#isCohortInProject> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#isCohortInProject> <http://purl.org/vocab/vann/example> "AmsterdamBipolarCohort isCohortIn BipolarProject" .
+<https://w3id.org/enigma#isCohortInProject> <http://www.w3.org/2000/01/rdf-schema#comment> "describes what project the cohort is a part of" .
+# 
+# https://w3id.org/enigma#isJuniorLeadOfP
+<https://w3id.org/enigma#isJuniorLeadOfP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#isJuniorLeadOfP> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#contributesTo> .
+<https://w3id.org/enigma#isJuniorLeadOfP> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#isJuniorLeadOfP> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#isJuniorLeadOfP> <http://purl.org/vocab/vann/example> "JohnSmith isJuniorLeadOf BipolarProject" .
+<https://w3id.org/enigma#isJuniorLeadOfP> <http://www.w3.org/2000/01/rdf-schema#comment> "describes what projects someone is a junior lead of" .
+# 
+# https://w3id.org/enigma#isProjectOf
+<https://w3id.org/enigma#isProjectOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#isProjectOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#isProjectOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#WorkingGroup> .
+<https://w3id.org/enigma#isProjectOf> <http://purl.org/vocab/vann/example> "BipolarCorticolProject isProjectOf BipolarWorkingGroup" .
+<https://w3id.org/enigma#isProjectOf> <http://www.w3.org/2000/01/rdf-schema#comment> "describes what working group a project is part of" .
+# 
+# https://w3id.org/enigma#isSeniorLeadOfP
+<https://w3id.org/enigma#isSeniorLeadOfP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#isSeniorLeadOfP> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#contributesTo> .
+<https://w3id.org/enigma#isSeniorLeadOfP> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#isSeniorLeadOfP> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#isSeniorLeadOfP> <http://purl.org/vocab/vann/example> "JohnSmith isSeniorLeadOf BipolarProject" .
+<https://w3id.org/enigma#isSeniorLeadOfP> <http://www.w3.org/2000/01/rdf-schema#comment> "describes what project the person is a senior lead of" .
+# 
+# https://w3id.org/enigma#isSpecialContributorOfP
+<https://w3id.org/enigma#isSpecialContributorOfP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#isSpecialContributorOfP> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#contributesTo> .
+<https://w3id.org/enigma#isSpecialContributorOfP> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#isSpecialContributorOfP> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#isSpecialContributorOfP> <http://purl.org/vocab/vann/example> "JohnSmith isSpecialContributorOf BipolarProject" .
+<https://w3id.org/enigma#isSpecialContributorOfP> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the project that a person is a special contributor of" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/enigma#hasApprovedProposalForm
+<https://w3id.org/enigma#hasApprovedProposalForm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasApprovedProposalForm> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasApprovedProposalForm> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#hasApprovedProposalForm> <http://purl.org/vocab/vann/example> "Project1 hasApprovedProposalForm www.proposalformexample.com" .
+<https://w3id.org/enigma#hasApprovedProposalForm> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the approved proposal form link of a project" .
+# 
+# https://w3id.org/enigma#hasEndDate
+<https://w3id.org/enigma#hasEndDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasEndDate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasEndDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/enigma#hasEndDate> <http://purl.org/vocab/vann/example> "BipolarProject hasStartDate 2018-06-23" .
+<https://w3id.org/enigma#hasEndDate> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the end date of a project" .
+# 
+# https://w3id.org/enigma#hasPBriefDescription
+<https://w3id.org/enigma#hasPBriefDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasPBriefDescription> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasPBriefDescription> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#hasPBriefDescription> <http://purl.org/vocab/vann/example> "ProjectSZ hasBriefDescription \"reports effect size for corticol thickness\"" .
+<https://w3id.org/enigma#hasPBriefDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "provides a  brief description of the project" .
+# 
+# https://w3id.org/enigma#hasStartDate
+<https://w3id.org/enigma#hasStartDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasStartDate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasStartDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/enigma#hasStartDate> <http://www.w3.org/2000/01/rdf-schema#comment> "BipolarProject hasStartDate 2017-06-23" .
+<https://w3id.org/enigma#hasStartDate> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the start date of a project" .
+# 
+# https://w3id.org/enigma#hasStatus
+<https://w3id.org/enigma#hasStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasStatus> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasStatus> <http://www.w3.org/2000/01/rdf-schema#range> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+_:genid10 <http://www.w3.org/2002/07/owl#oneOf> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "gathering participants" .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "protocol preparation" .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "published" .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "revision" .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/enigma#hasStatus> <http://purl.org/vocab/vann/example> "ProjectSZ hasStatus \"published\"" .
+<https://w3id.org/enigma#hasStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the status of the project" .
+# 
+# https://w3id.org/enigma#hasStudyDesign
+<https://w3id.org/enigma#hasStudyDesign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasStudyDesign> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasStudyDesign> <http://www.w3.org/2000/01/rdf-schema#range> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+_:genid15 <http://www.w3.org/2002/07/owl#oneOf> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "Case-control" .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "Population-based" .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/enigma#hasStudyDesign> <http://purl.org/vocab/vann/example> "Project1 hasStudyDesign \"Case-control\"" .
+<https://w3id.org/enigma#hasStudyDesign> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the study design of the project" .
+# 
+# https://w3id.org/enigma#hasTargetDate
+<https://w3id.org/enigma#hasTargetDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasTargetDate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasTargetDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/enigma#hasTargetDate> <http://purl.org/vocab/vann/example> "BipolarProject hasTargetDate 2020-03-12" .
+<https://w3id.org/enigma#hasTargetDate> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the target date of the project" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/enigma#BrainScanDataType
+<https://w3id.org/enigma#BrainScanDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#BrainScanDataType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/enigma#DataType> .
+# 
+# https://w3id.org/enigma#Cohort
+<https://w3id.org/enigma#Cohort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/enigma#DataType
+<https://w3id.org/enigma#DataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/enigma#GeneReferencePanel
+<https://w3id.org/enigma#GeneReferencePanel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/enigma#GeneticAssociationProtocol
+<https://w3id.org/enigma#GeneticAssociationProtocol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/enigma#GeneticDataType
+<https://w3id.org/enigma#GeneticDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#GeneticDataType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/enigma#DataType> .
+# 
+# https://w3id.org/enigma#GenotypeImputationProtocol
+<https://w3id.org/enigma#GenotypeImputationProtocol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/enigma#Person
+<https://w3id.org/enigma#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/enigma#Project
+<https://w3id.org/enigma#Project> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/enigma#WorkingGroup
+<https://w3id.org/enigma#WorkingGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/enigma#EEG
+<https://w3id.org/enigma#EEG> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#EEG> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#BrainScanDataType> .
+# 
+# https://w3id.org/enigma#Epigenetic
+<https://w3id.org/enigma#Epigenetic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#Epigenetic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#GeneticDataType> .
+# 
+# https://w3id.org/enigma#Exome
+<https://w3id.org/enigma#Exome> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#Exome> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#GeneticDataType> .
+# 
+# https://w3id.org/enigma#Expresssion
+<https://w3id.org/enigma#Expresssion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#Expresssion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#GeneticDataType> .
+# 
+# https://w3id.org/enigma#GenomeWide
+<https://w3id.org/enigma#GenomeWide> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#GenomeWide> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#GeneticDataType> .
+# 
+# https://w3id.org/enigma#RestingStateFunctionalMRI
+<https://w3id.org/enigma#RestingStateFunctionalMRI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#RestingStateFunctionalMRI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#BrainScanDataType> .
+# 
+# https://w3id.org/enigma#T1-weightedMRI
+<https://w3id.org/enigma#T1-weightedMRI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#T1-weightedMRI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#BrainScanDataType> .
+# 
+# https://w3id.org/enigma#T2-weightedMRI
+<https://w3id.org/enigma#T2-weightedMRI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#T2-weightedMRI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#BrainScanDataType> .
+# 
+# https://w3id.org/enigma#TaskBasedFunctionalMRI
+<https://w3id.org/enigma#TaskBasedFunctionalMRI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#TaskBasedFunctionalMRI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#BrainScanDataType> .
+# 
+# https://w3id.org/enigma#WholeGenome
+<https://w3id.org/enigma#WholeGenome> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma#WholeGenome> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/enigma#GeneticDataType> .
+# 
+# Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

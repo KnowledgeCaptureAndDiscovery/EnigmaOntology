@@ -1,0 +1,90 @@
+<https://w3id.org/enigma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/enigma/organization/1.0.0> .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Yolanda Gil" .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "Daniel Garijo" .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "Neda Jahanshad" .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "Ryan Espiritu" .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/title> "The Organization Ontology" .
+<https://w3id.org/enigma> <http://purl.org/vocab/vann/preferredNamespacePrefix> <https://w3id.org/enigma> .
+<https://w3id.org/enigma> <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma" .
+<https://w3id.org/enigma> <http://www.w3.org/2000/01/rdf-schema#comment> "An ontology for describing ENIGMA organizations." .
+<https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionInfo> "v1.0.0" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/vocab/vann/example
+<http://purl.org/vocab/vann/example> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://w3id.org/enigma#vann:example
+<https://w3id.org/enigma#vann:example> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/enigma#hasAffiliate
+<https://w3id.org/enigma#hasAffiliate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasAffiliate> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/enigma#isAffiliatedWith> .
+<https://w3id.org/enigma#hasAffiliate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Organization> .
+<https://w3id.org/enigma#hasAffiliate> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#hasAffiliate> <http://purl.org/vocab/vann/example> "HarvardU hasAffiliate JohnSmith" .
+<https://w3id.org/enigma#hasAffiliate> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the organization's affiliates" .
+# 
+# https://w3id.org/enigma#isAffiliatedWith
+<https://w3id.org/enigma#isAffiliatedWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#isAffiliatedWith> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#isAffiliatedWith> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Organization> .
+<https://w3id.org/enigma#isAffiliatedWith> <http://purl.org/vocab/vann/example> "JohnSmith isAffiliatedWith HarvardU" .
+<https://w3id.org/enigma#isAffiliatedWith> <http://www.w3.org/2000/01/rdf-schema#comment> "describes what organization someone is affiliated with" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/enigma#hasCity
+<https://w3id.org/enigma#hasCity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasCity> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Organization> .
+<https://w3id.org/enigma#hasCity> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#hasCity> <http://purl.org/vocab/vann/example> "USC ISI hasCity \"Marina del Rey\"" .
+<https://w3id.org/enigma#hasCity> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the city in which an organization is located in" .
+# 
+# https://w3id.org/enigma#hasCountry
+<https://w3id.org/enigma#hasCountry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasCountry> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Organization> .
+<https://w3id.org/enigma#hasCountry> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#hasCountry> <http://purl.org/vocab/vann/example> "USC ISI hasCountry \"United States\"" .
+<https://w3id.org/enigma#hasCountry> <http://www.w3.org/2000/01/rdf-schema#comment> "describes the country in which an organization is located in" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/enigma#Organization
+<https://w3id.org/enigma#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/enigma#Person
+<https://w3id.org/enigma#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

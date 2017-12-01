@@ -1,0 +1,480 @@
+@prefix : <https://w3id.org/enigma#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/enigma> .
+
+<https://w3id.org/enigma> rdf:type owl:Ontology ;
+                           owl:versionIRI <https://w3id.org/enigma/scanner/1.0.0> ;
+                           <http://purl.org/dc/terms/contributor> "Daniel Garijo"^^xsd:string ,
+                                                                  "Yolanda Gil"^^xsd:string ;
+                           <http://purl.org/dc/terms/creator> "Neda Jahanshad"^^xsd:string ,
+                                                              "Ryan Espiritu"^^xsd:string ;
+                           <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> ;
+                           <http://purl.org/dc/terms/title> "The Project Ontology"^^xsd:string ;
+                           <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma"^^xsd:string ;
+                           <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
+                           rdfs:comment "An ontology that describes scanners and their properties."^^xsd:string ;
+                           owl:versionInfo "v1.0.0"^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/vocab/vann/example
+<http://purl.org/vocab/vann/example> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/enigma#forDataType
+:forDataType rdf:type owl:ObjectProperty ;
+             rdfs:domain :AcquisitionProtocol ;
+             rdfs:range :DataType ;
+             <http://purl.org/vocab/vann/example> "AcquisitionPro3 forDataType EEG"^^xsd:string ;
+             rdfs:comment "describes what data type the acquisition protocol was used to obtain"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasAcquisitionDirection
+:hasAcquisitionDirection rdf:type owl:ObjectProperty ;
+                         rdfs:domain :AcquisitionProtocol ;
+                         rdfs:range :AcquisitionDirection ;
+                         <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasAcquisitionDirection coronal --> The acquisition direction of this 1.5T-GE-Signa is coronal"^^xsd:string ;
+                         rdfs:comment "describes the acquisition direction of the scanner"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasAcquisitionProtocol
+:hasAcquisitionProtocol rdf:type owl:ObjectProperty ;
+                        owl:inverseOf :isAcquisitionProtocolOf ;
+                        rdfs:domain :Cohort ;
+                        rdfs:range [ rdf:type owl:Class ;
+                                     owl:unionOf ( :AcquisitionProtocol
+                                                   :Scanner
+                                                 )
+                                   ] ;
+                        <http://purl.org/vocab/vann/example> "Cohort1 hasAcquisitionProtocol AcquisitionProtocol1"^^xsd:string ;
+                        rdfs:comment "describes the acquisition protocol to scan the cohort"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasManufacturer
+:hasManufacturer rdf:type owl:ObjectProperty ;
+                 owl:inverseOf :isManufacturerOf ;
+                 rdfs:domain :Scanner ;
+                 rdfs:range :Manufacturer ;
+                 <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasManufacturer GE --> The manufacturer of the 1.5T-GE-Signa is GE"^^xsd:string ;
+                 rdfs:comment "describes what the manufacturer for the scanner is"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasScanner
+:hasScanner rdf:type owl:ObjectProperty ;
+            owl:inverseOf :isScannerOf ;
+            rdfs:domain :AcquisitionProtocol ;
+            rdfs:range :Scanner ;
+            <http://purl.org/vocab/vann/example> "AcquisitionProtocol1 hasScanner 1.5T-GE-Siemens"^^xsd:string ;
+            rdfs:comment "describes the scanner used in the acquisition protocol"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasSequence
+:hasSequence rdf:type owl:ObjectProperty ;
+             rdfs:domain :AcquisitionProtocol ;
+             rdfs:range :MRISequence ;
+             <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasSequence T1-weighted_MPRAGE_sequence --> The acquisition protocol for this scanner is T1-weighted MPRAGE sequence"^^xsd:string ;
+             rdfs:comment "describes the sequence that the acquisition protocol requires"^^xsd:string .
+
+
+###  https://w3id.org/enigma#isAcquisitionProtocolOf
+:isAcquisitionProtocolOf rdf:type owl:ObjectProperty ;
+                         rdfs:domain [ rdf:type owl:Class ;
+                                       owl:unionOf ( :AcquisitionProtocol
+                                                     :Scanner
+                                                   )
+                                     ] ;
+                         rdfs:range :Cohort ;
+                         <http://purl.org/vocab/vann/example> "AcquisitionProtocol isAcquisitionProtocolOf Cohort1"^^xsd:string ;
+                         rdfs:comment "describes what cohorts were scanned with the acquisition protocol"^^xsd:string .
+
+
+###  https://w3id.org/enigma#isManufacturerOf
+:isManufacturerOf rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Manufacturer ;
+                  rdfs:range :Scanner ;
+                  <http://purl.org/vocab/vann/example> "GE isManufacturerOf 1.5T-GE-Signa --> GE manufacters the 1.5T-GE-Signa scanner"^^xsd:string ;
+                  rdfs:comment "describes the scanners that a manufacturer makes"^^xsd:string .
+
+
+###  https://w3id.org/enigma#isScannerOf
+:isScannerOf rdf:type owl:ObjectProperty ;
+             rdfs:domain :Scanner ;
+             rdfs:range :AcquisitionProtocol ;
+             <http://purl.org/vocab/vann/example> "1.5T-GE-Siemens isScannerOf AcquisitionProtocol1"^^xsd:string ;
+             rdfs:comment "describes the protocols that the scanner is used for"^^xsd:string .
+
+
+###  https://w3id.org/enigma#usesScannerSoftware
+:usesScannerSoftware rdf:type owl:ObjectProperty ;
+                     rdfs:domain :AcquisitionProtocol ;
+                     rdfs:range :ScannerSoftware ;
+                     <http://purl.org/vocab/vann/example> "Cohort1 usesScannerSoftware FreeSurfer(5.1.0) --> Cohort1 was scanned with FreeSurfer(5.1.0) software"^^xsd:string ;
+                     rdfs:comment "describes what the software was used to scan a cohort"^^xsd:string ,
+                                  "should the domain be scanner or cohort?"^^xsd:string .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/enigma#hasDataAcquisitionMatrix
+:hasDataAcquisitionMatrix rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :AcquisitionProtocol ;
+                          rdfs:range xsd:string ;
+                          <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasDataAcquisitionMatrix \"256x256\" --> The size of the data acquisition matrix is 256x256"^^xsd:string ;
+                          rdfs:comment "describes the size of the data acquisition matrix used"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasFieldStrength
+:hasFieldStrength rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Scanner ;
+                  rdfs:range xsd:double ;
+                  <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasFieldStrength 1.5 --> The field strength of 1.5T-GE-Signa is 1.5"^^xsd:string ;
+                  rdfs:comment "describes the field strength of the cohort"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasFlipAngle
+:hasFlipAngle rdf:type owl:DatatypeProperty ;
+              rdfs:domain :AcquisitionProtocol ;
+              rdfs:range xsd:double ;
+              <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasFlipAngle 7 --> 1.5T-GE-Signa has a flip angle of 7 in degrees"^^xsd:string ;
+              rdfs:comment "describes the flip angle of a scanner in degrees"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasFoV
+:hasFoV rdf:type owl:DatatypeProperty ;
+        rdfs:domain :AcquisitionProtocol ;
+        rdfs:range xsd:string ;
+        <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasFoV \"X*Y*Z\""^^xsd:string ;
+        rdfs:comment "describes the field of view of the acquisition protocol"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasNEX
+:hasNEX rdf:type owl:DatatypeProperty ;
+        rdfs:domain :AcquisitionProtocol ;
+        rdfs:range xsd:nonNegativeInteger ;
+        <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasNEX 1 --> The acquisition protocol for this scanner had one number of excitations"^^xsd:string ;
+        rdfs:comment "describes the number of excitiations of the acquisition protocol of the scanner"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasNumberOfEchoes
+:hasNumberOfEchoes rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :AcquisitionProtocol ;
+                   rdfs:range xsd:nonNegativeInteger ;
+                   <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasNumberOfEchoes 2 --> 1.5T-GE-Signa has 2 echoes"^^xsd:string ;
+                   rdfs:comment "describes the number of echoes of the acquisition protocol of a scanner"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasNumberOfSlices
+:hasNumberOfSlices rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :AcquisitionProtocol ;
+                   rdfs:range xsd:nonNegativeInteger ;
+                   <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasNumberOfSlices 182 --> This scanner has 182 slices"^^xsd:string ;
+                   rdfs:comment "describes the number of slices of the particular scanner"^^xsd:string .
+
+[ rdf:type owl:AllDisjointProperties ;
+   owl:members ( :hasNumberOfSlices
+               )
+ ] .
+
+
+###  https://w3id.org/enigma#hasResolution
+:hasResolution rdf:type owl:DatatypeProperty ;
+               rdfs:domain :AcquisitionProtocol ;
+               rdfs:range xsd:string ;
+               <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasResolution \"0.9x0.9\" --> The resolution of this scanner is 0.9mm x 0.9mm"^^xsd:string ;
+               rdfs:comment "describes the in-plane pixel resolution in mm x mm"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasScanTime
+:hasScanTime rdf:type owl:DatatypeProperty ;
+             rdfs:domain :AcquisitionProtocol ;
+             rdfs:range xsd:double ;
+             <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasScanTime 42 --> The scan time for 1.5T-GE-Signa is 42 seconds"^^xsd:string ;
+             rdfs:comment "describes the scan time of the acquisition protocol for a scanner in seconds"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasSliceThickness
+:hasSliceThickness rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :AcquisitionProtocol ;
+                   rdfs:range xsd:double ;
+                   <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasSliceThickness 1 --> The slice thickness of this scanner is 1 mm"^^xsd:string ;
+                   rdfs:comment "describes the slice thickness of the scanner in mm"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasTE
+:hasTE rdf:type owl:DatatypeProperty ;
+       rdfs:domain :AcquisitionProtocol ;
+       rdfs:range xsd:double ;
+       <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasTE 4.6 --> 1.5T-GE-Signa has TE of 4.6 ms"^^xsd:string ;
+       rdfs:comment "describes the TE of a scanner in ms"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasTI
+:hasTI rdf:type owl:DatatypeProperty ;
+       rdfs:domain :AcquisitionProtocol ;
+       rdfs:range xsd:double ;
+       <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasTI 710 --> 1.5T-GE-Signa has a TI of 710 ms"^^xsd:string ;
+       rdfs:comment "describes the TI of a scanner in ms"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasTR
+:hasTR rdf:type owl:DatatypeProperty ;
+       rdfs:domain :AcquisitionProtocol ;
+       rdfs:range xsd:double ;
+       <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasTR 500 --> 1.5T-GE-Signa has a TR of 500 ms"^^xsd:string ;
+       rdfs:comment "describes the TR of a scanner in ms"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasVoxelSize
+:hasVoxelSize rdf:type owl:DatatypeProperty ;
+              rdfs:domain :AcquisitionProtocol ;
+              rdfs:range xsd:string ;
+              <http://purl.org/vocab/vann/example> "1.5T-GE-Signa hasVoxelSize \"1x1x1\" --> 1.5T-GE-Signa has voxel size of 1x1x1 mm"^^xsd:string ;
+              rdfs:comment "describes the voxel height of a scanner in mm"^^xsd:string .
+
+
+###  https://w3id.org/enigma#isScannerModel
+:isScannerModel rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Scanner ;
+                rdfs:range xsd:string ;
+                <http://purl.org/vocab/vann/example> "1.5T-GE-Signa isScannerModel \"Signa\" --> The scanner model for 1.5T-GE-Signa is Signa"^^xsd:string ;
+                rdfs:comment "describes what the scanner model is"^^xsd:string .
+
+
+###  https://w3id.org/enigma#usedBodyCoil
+:usedBodyCoil rdf:type owl:DatatypeProperty ;
+              rdfs:domain :AcquisitionProtocol ;
+              rdfs:range xsd:boolean ;
+              <http://purl.org/vocab/vann/example> "1.5T-GE-Signa usedBodyCoil true --> This 1.5T-GE-Signa scanner used a body coil to scan"^^xsd:string ;
+              rdfs:comment "describes if a body coil was used to scan by the scanner"^^xsd:string .
+
+
+###  https://w3id.org/enigma#usedHeadCoil
+:usedHeadCoil rdf:type owl:DatatypeProperty ;
+              rdfs:domain :AcquisitionProtocol ;
+              rdfs:range xsd:boolean ;
+              <http://purl.org/vocab/vann/example> "1.5T-GE-Signa usedHeadCoil true --> This 1.5T-GE-Signa scanner used a head coil to scan"^^xsd:string ;
+              rdfs:comment "describes if a head coil was used to scan by the scanner"^^xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/enigma#AcquisitionDirection
+:AcquisitionDirection rdf:type owl:Class ;
+                      rdfs:comment "the acquisition direction of the scanner"^^xsd:string .
+
+
+###  https://w3id.org/enigma#AcquisitionProtocol
+:AcquisitionProtocol rdf:type owl:Class ;
+                     rdfs:comment "the protocol used to acquire the data types"^^xsd:string .
+
+
+###  https://w3id.org/enigma#Cohort
+:Cohort rdf:type owl:Class ;
+        rdfs:comment "A group of people that are studied by a working group. A cohort is limited by certain inclusion and exclusion criteria."^^xsd:string .
+
+
+###  https://w3id.org/enigma#DataType
+:DataType rdf:type owl:Class .
+
+
+###  https://w3id.org/enigma#MRISequence
+:MRISequence rdf:type owl:Class .
+
+
+###  https://w3id.org/enigma#Manufacturer
+:Manufacturer rdf:type owl:Class .
+
+
+###  https://w3id.org/enigma#Scanner
+:Scanner rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :isAcquisitionProtocolOf ;
+                               owl:someValuesFrom :Cohort
+                             ] ;
+         rdfs:comment "What scanner was used to scan the members of the cohort?"^^xsd:string .
+
+
+###  https://w3id.org/enigma#ScannerSoftware
+:ScannerSoftware rdf:type owl:Class ;
+                 rdfs:comment "Is this software or segmentation?"^^xsd:string .
+
+
+###  https://w3id.org/enigma#Treatment
+:Treatment rdf:type owl:Class ;
+           rdfs:comment "What treatments were used by the members of the cohort?"^^xsd:string .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/enigma#BipolarBarcelonaControl
+:BipolarBarcelonaControl rdf:type owl:NamedIndividual ,
+                                  :Cohort .
+
+
+###  https://w3id.org/enigma#BipolarBarcelonaPatient
+:BipolarBarcelonaPatient rdf:type owl:NamedIndividual ,
+                                  :Cohort .
+
+
+###  https://w3id.org/enigma#BipolarParisControl
+:BipolarParisControl rdf:type owl:NamedIndividual ,
+                              :Cohort .
+
+
+###  https://w3id.org/enigma#BipolarParisPatient
+:BipolarParisPatient rdf:type owl:NamedIndividual ,
+                              :Cohort .
+
+
+###  https://w3id.org/enigma#BipolarTulsaPatient
+:BipolarTulsaPatient rdf:type owl:NamedIndividual ,
+                              :Cohort .
+
+
+###  https://w3id.org/enigma#Bruker
+:Bruker rdf:type owl:NamedIndividual ,
+                 :Manufacturer .
+
+
+###  https://w3id.org/enigma#FEEsequence
+:FEEsequence rdf:type owl:NamedIndividual ,
+                      :MRISequence .
+
+
+###  https://w3id.org/enigma#FFEsequence
+:FFEsequence rdf:type owl:NamedIndividual ,
+                      :MRISequence .
+
+
+###  https://w3id.org/enigma#FLAIRsequence
+:FLAIRsequence rdf:type owl:NamedIndividual ,
+                        :MRISequence .
+
+
+###  https://w3id.org/enigma#FSEsequence
+:FSEsequence rdf:type owl:NamedIndividual ,
+                      :MRISequence .
+
+
+###  https://w3id.org/enigma#FSLFirst4.1.9
+:FSLFirst4.1.9 rdf:type owl:NamedIndividual ,
+                        :ScannerSoftware .
+
+
+###  https://w3id.org/enigma#FSPGRsequence
+:FSPGRsequence rdf:type owl:NamedIndividual ,
+                        :MRISequence .
+
+
+###  https://w3id.org/enigma#FreeSurfer5.1.0
+:FreeSurfer5.1.0 rdf:type owl:NamedIndividual ,
+                          :ScannerSoftware .
+
+
+###  https://w3id.org/enigma#FreeSurfer5.3
+:FreeSurfer5.3 rdf:type owl:NamedIndividual ,
+                        :ScannerSoftware .
+
+
+###  https://w3id.org/enigma#GE
+:GE rdf:type owl:NamedIndividual ,
+             :Manufacturer .
+
+
+###  https://w3id.org/enigma#GREsequence
+:GREsequence rdf:type owl:NamedIndividual ,
+                      :MRISequence .
+
+
+###  https://w3id.org/enigma#Illumina
+:Illumina rdf:type owl:NamedIndividual ,
+                   :Manufacturer .
+
+
+###  https://w3id.org/enigma#IlluminaOmniExpress
+:IlluminaOmniExpress rdf:type owl:NamedIndividual ;
+                     :hasManufacturer :Illumina .
+
+
+###  https://w3id.org/enigma#MPRAGEsequence
+:MPRAGEsequence rdf:type owl:NamedIndividual ,
+                         :MRISequence .
+
+
+###  https://w3id.org/enigma#Phillips
+:Phillips rdf:type owl:NamedIndividual ,
+                   :Manufacturer .
+
+
+###  https://w3id.org/enigma#SEsequence
+:SEsequence rdf:type owl:NamedIndividual ,
+                     :MRISequence .
+
+
+###  https://w3id.org/enigma#SPGRsequence
+:SPGRsequence rdf:type owl:NamedIndividual ,
+                       :MRISequence .
+
+
+###  https://w3id.org/enigma#Siemens
+:Siemens rdf:type owl:NamedIndividual ,
+                  :Manufacturer .
+
+
+###  https://w3id.org/enigma#axial
+:axial rdf:type owl:NamedIndividual ,
+                :AcquisitionDirection .
+
+
+###  https://w3id.org/enigma#coronal
+:coronal rdf:type owl:NamedIndividual ,
+                  :AcquisitionDirection .
+
+
+###  https://w3id.org/enigma#sagittal
+:sagittal rdf:type owl:NamedIndividual ,
+                   :AcquisitionDirection .
+
+
+###  https://w3id.org/enigma#1.5T-GE-Signa
+:T-GE-Signa rdf:type owl:NamedIndividual ,
+                     :Scanner .
+
+
+###  https://w3id.org/enigma#1.5T-GE-SignaHDx
+:T-GE-SignaHDx rdf:type owl:NamedIndividual ,
+                        :Scanner .
+
+
+###  https://w3id.org/enigma#3.0T-GE-Discovery750
+:T-GE-Discovery750 rdf:type owl:NamedIndividual ,
+                            :Scanner .
+
+
+###  https://w3id.org/enigma#3.0T-Phillips-Achieva
+:T-Phillips-Achieva rdf:type owl:NamedIndividual ,
+                             :Scanner .
+
+
+###  https://w3id.org/enigma#3.0T-Siemens-TrioTim
+:T-Siemens-TrioTim rdf:type owl:NamedIndividual ,
+                            :Scanner .
+
+
+###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

@@ -1,0 +1,235 @@
+@prefix : <https://w3id.org/enigma#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/enigma> .
+
+<https://w3id.org/enigma> rdf:type owl:Ontology ;
+                           owl:versionIRI <https://w3id.org/enigma/wg/1.0.0> ;
+                           <http://purl.org/dc/terms/contributor> "Daniel Garijo"^^xsd:string ,
+                                                                  "Yolanda Gil"^^xsd:string ;
+                           <http://purl.org/dc/terms/creator> "Neda Jahanshad"^^xsd:string ,
+                                                              "Ryan Espiritu"^^xsd:string ;
+                           <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> ;
+                           <http://purl.org/dc/terms/title> "The Workging Group Ontology"^^xsd:string ;
+                           <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma"^^xsd:string ;
+                           <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
+                           rdfs:comment "An ontology for describing working groups."^^xsd:string ;
+                           owl:versionInfo "v1.0.0"^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/vocab/vann/example
+<http://purl.org/vocab/vann/example> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/enigma#hasCohort
+:hasCohort rdf:type owl:ObjectProperty ;
+           owl:inverseOf :isCohortInWorkingGroup ;
+           rdfs:domain :WorkingGroup ;
+           rdfs:range :Cohort ;
+           <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasCohort AmsterdamBipolarCohort --> Bipolar Working Group includes the Amsterdam Bipolar Cohort"^^xsd:string ;
+           rdfs:comment "describes what cohorts are part of the working group"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasProject
+:hasProject rdf:type owl:ObjectProperty ;
+            owl:inverseOf :isProjectOf ;
+            rdfs:domain :WorkingGroup ;
+            rdfs:range :Project ;
+            <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasProject BipolarCorticolProject --> The Bipolar Working Group is working on the Bipolar Corticol Project"^^xsd:string ;
+            rdfs:comment "describes what projects are worked on by a specific working group"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasWGChair
+:hasWGChair rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :hasWGMember ;
+            owl:inverseOf :isChairOfWG ;
+            rdfs:domain :WorkingGroup ;
+            rdfs:range :Person ;
+            <http://purl.org/vocab/vann/example> "SZWorkingGroup hasWGChair JohnSmith"^^xsd:string ;
+            rdfs:comment "describes who the chairs of a working group are"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasWGJuniorLead
+:hasWGJuniorLead rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :hasWGMember ;
+                 owl:inverseOf :isJuniorLeadOfWG ;
+                 rdfs:domain :WorkingGroup ;
+                 rdfs:range :Person ;
+                 <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasJuniorLead JohnSmith"^^xsd:string ;
+                 rdfs:comment "describes who the junior leads of a working group are"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasWGMember
+:hasWGMember rdf:type owl:ObjectProperty ;
+             owl:inverseOf :isMemberOfWG ;
+             rdfs:domain :WorkingGroup ;
+             rdfs:range :Person ;
+             <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasMember JohnSmith --> The bipolar working group has John Smith as a member"^^xsd:string ;
+             rdfs:comment "describes who the members of the working group are"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasWGSeniorLead
+:hasWGSeniorLead rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :hasWGMember ;
+                 owl:inverseOf :isSeniorLeadOfWG ;
+                 rdfs:domain :WorkingGroup ;
+                 rdfs:range :Person ;
+                 <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasSeniorLead JohnSmith"^^xsd:string ;
+                 rdfs:comment "describes who the senior leads of a working group are"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasWGSpecialContributor
+:hasWGSpecialContributor rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :hasWGMember ;
+                         owl:inverseOf :isSpecialContributorOfWG ;
+                         rdfs:domain :WorkingGroup ;
+                         rdfs:range :Person ;
+                         <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasSpecialContributor JohnSmith"^^xsd:string ;
+                         rdfs:comment "describes who the special contributors of a working group are"^^xsd:string .
+
+
+###  https://w3id.org/enigma#isChairOfWG
+:isChairOfWG rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :isMemberOfWG ;
+             rdfs:domain :Person ;
+             rdfs:range :WorkingGroup ;
+             <http://purl.org/vocab/vann/example> "JohnSmith isChairOfWG SZWorkingGroup"^^xsd:string ;
+             rdfs:comment "describes what WorkingGroup a person is chair of"^^xsd:string .
+
+
+###  https://w3id.org/enigma#isCohortInWorkingGroup
+:isCohortInWorkingGroup rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Cohort ;
+                        rdfs:range :WorkingGroup ;
+                        <http://purl.org/vocab/vann/example> "AmsterdamBipolarCohort isCohortIn BipolarWorkingGroup --> The Amsterdam Bipolar Cohort is part of the Bipolar Working Group"^^xsd:string ;
+                        rdfs:comment "describes what working the cohort is a part of"^^xsd:string .
+
+
+###  https://w3id.org/enigma#isJuniorLeadOfWG
+:isJuniorLeadOfWG rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :isMemberOfWG ;
+                  rdfs:domain :Person ;
+                  rdfs:range :WorkingGroup ;
+                  <http://purl.org/vocab/vann/example> "JohnSmith isJuniorLeadOf BipolarWorkingGroup"^^xsd:string ;
+                  rdfs:comment "describes what working group someone is a junior lead of"^^xsd:string .
+
+
+###  https://w3id.org/enigma#isMemberOfWG
+:isMemberOfWG rdf:type owl:ObjectProperty ;
+              rdfs:domain :Person ;
+              rdfs:range :WorkingGroup ;
+              <http://purl.org/vocab/vann/example> "JohnSmith isMemberOfWorkingGroup BipolarWorkingGroup --> John Smith is a member of the bipolar working group"^^xsd:string ;
+              rdfs:comment "describes what working group a person is a member of"^^xsd:string .
+
+
+###  https://w3id.org/enigma#isProjectOf
+:isProjectOf rdf:type owl:ObjectProperty ;
+             rdfs:domain :Project ;
+             rdfs:range :WorkingGroup ;
+             <http://purl.org/vocab/vann/example> "BipolarCorticolProject isProjectOf BipolarWorkingGroup --> The Bipolar Corticol Project is a project of the Bipolar Working Group"^^xsd:string ;
+             rdfs:comment "describes what working group a project is part of"^^xsd:string .
+
+
+###  https://w3id.org/enigma#isSeniorLeadOfWG
+:isSeniorLeadOfWG rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :isMemberOfWG ;
+                  rdfs:domain :Person ;
+                  rdfs:range :WorkingGroup ;
+                  <http://purl.org/vocab/vann/example> "JohnSmith isSeniorLeadOf WorkingGroup"^^xsd:string ;
+                  rdfs:comment "describes what working group the person is a senior lead of"^^xsd:string .
+
+
+###  https://w3id.org/enigma#isSpecialContributorOfWG
+:isSpecialContributorOfWG rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf :isMemberOfWG ;
+                          rdfs:domain :Person ;
+                          rdfs:range :WorkingGroup ;
+                          <http://purl.org/vocab/vann/example> "JohnSmith isSpecialContributorOf BipolarWorkingGroup"^^xsd:string ;
+                          rdfs:comment "describes the working group that a person is a special contributor of"^^xsd:string .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/enigma#hasMOU
+:hasMOU rdf:type owl:DatatypeProperty ;
+        rdfs:domain :WorkingGroup ;
+        rdfs:range xsd:string ;
+        <http://purl.org/vocab/vann/example> "WorkingGroup1 hasMOU www.mouexample.com"^^xsd:string ;
+        rdfs:comment "describes the MOU links of the working group"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasPublishedPaper
+:hasPublishedPaper rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain :WorkingGroup ;
+                   rdfs:range xsd:string ;
+                   <http://purl.org/vocab/vann/example> "WorkingGroup1 hasPublishedPaper www.publishedpaperexample.com"^^xsd:string ,
+                                                        "WorkingGroup2 hasPublishedPaper \"Article Title\""^^xsd:string ;
+                   rdfs:comment "describes the links to published papers or the paper title if the link does not exist for the working group"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasStartDate
+:hasStartDate rdf:type owl:DatatypeProperty ;
+              rdfs:domain :WorkingGroup ;
+              rdfs:range xsd:date ;
+              <http://purl.org/vocab/vann/example> "WorkingGroup1 hasStartDate 2004-09-13"^^xsd:string ;
+              rdfs:comment "describes the start date of a working group"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasSubmittedPaper
+:hasSubmittedPaper rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :WorkingGroup ;
+                   rdfs:range xsd:string ;
+                   <http://purl.org/vocab/vann/example> "WorkingGroup1 hasSubmittedPaper \"Paper title\""^^xsd:string ;
+                   rdfs:comment "describes the titles of the submitted papers of a working group"^^xsd:string .
+
+
+###  https://w3id.org/enigma#hasWGBriefDescription
+:hasWGBriefDescription rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :WorkingGroup ;
+                       rdfs:range xsd:string ;
+                       <http://purl.org/vocab/vann/example> "SZWG hasWGBriefDescription \"finds correlations between schizophrenia and other conditions\""^^xsd:string ;
+                       rdfs:comment "provides a brief description of the working group"^^xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/enigma#Cohort
+:Cohort rdf:type owl:Class .
+
+
+###  https://w3id.org/enigma#Person
+:Person rdf:type owl:Class .
+
+
+###  https://w3id.org/enigma#Project
+:Project rdf:type owl:Class .
+
+
+###  https://w3id.org/enigma#WorkingGroup
+:WorkingGroup rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/
