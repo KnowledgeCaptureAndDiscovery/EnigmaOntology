@@ -1,0 +1,2606 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="http://purl.org/dc/terms/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:j.1="http://purl.org/vocab/vann/"
+    xmlns="https://w3id.org/enigma#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#" > 
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasFirstDegreeRelativeWithDisorder">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what disease(s) the first degree relatives of the members of the cohort group have</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 hasFirstDegreeRelativeWithDisorder Psychosis --&gt; CohortGroup1 only includes people who have a first degree relative with psychosis</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Disorder"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasFamilyHistoryOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#SpecificDisorderInfo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#doesNotHaveIntellectualDisability">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes whether a cohort excludes people with an intellectual disability</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 doesNotHaveIntellectualDisability true</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#fragileX">
+    <rdf:type rdf:resource="https://w3id.org/enigma#GeneticDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#includesMale">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes whether a cohort includes male participants</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 includesMale true</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:nodeID="A0"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A1">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A2">
+    <owl:unionOf rdf:nodeID="A3"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasPBriefDescription">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">provides a  brief description of the project</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ProjectSZ hasBriefDescription "reports effect size for corticol thickness"</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A4">
+    <rdf:rest rdf:nodeID="A5"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#Project"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasResearchInterests">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the research interests of a person</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith hasReasearchInterests "bipolar disorder, schizophrenia"</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#RespiratoryDisorder">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasMaxAge">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes inclusion criteria for maximum age of participants in a CohortGroup</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 hasMaxAge 60</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#withMaxDurationOfDisorder">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the maximum duration (in years) of a disease</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1DisorderInfo hasDisorder bipolarDisorder withMaxDuration 20 --&gt; Cohort1 only includes people who had bipolar disorder for at most 20 years</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#SpecificDisorderInfo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isCohortInWorkingGroup">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what working the cohort is a part of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AmsterdamBipolarCohort isCohortIn BipolarWorkingGroup --&gt; The Amsterdam Bipolar Cohort is part of the Bipolar Working Group</j.1:example>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what working group the cohort is a part of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarAmsterdamCohort isCohortInWorkingGroup BipolarWorkingGroup --&gt; The Bipolar Amsterdam cohort is part of the Bipolar working group</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A6">
+    <rdf:rest rdf:nodeID="A1"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#Manufacturer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A7">
+    <owl:unionOf rdf:nodeID="A4"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#FLAIRsequence">
+    <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#psychiatricMedication">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasWebsite">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the website of a person</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith hasWebsite "http://enigma.usc.edu"</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#cerebrovascularDisease">
+    <rdf:type rdf:resource="https://w3id.org/enigma#CerebrovascularDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#quicktest0.95">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasFamilyHistoryOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what disease the members of the cohort group have a family history of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 hasFamilyHistoryOf CardiovascularDisease --&gt; CohortGroup1 only includes people who have a family history of cardiovascular diseases</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Disorder"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#ScannerSoftware">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Is this software or segmentation?</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasWGSeniorLead">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes who the senior leads of a working group are</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarWorkingGroup hasSeniorLead JohnSmith</j.1:example>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes who the working group senior leads are</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarWorkingGroup hasWGSeniorLead JohnSmith</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#isSeniorLeadOfWG"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasWGMember"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A8">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasDisorderDetails">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the details of a particular disorder that a cohort group has</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 hasDisorderDetails SZ20938</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#SpecificDisorderInfo"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasPJuniorLead">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes who the junior leads of a project are</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasJuniorLead JohnSmith</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#isJuniorLeadOfP"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasContributor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A9">
+    <owl:unionOf rdf:nodeID="A10"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A11">
+    <rdf:rest rdf:nodeID="A12"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#Cohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#T-Phillips-Achieva">
+    <rdf:type rdf:resource="https://w3id.org/enigma#Scanner"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasDataAcquisitionMatrix">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the size of the data acquisition matrix used</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasDataAcquisitionMatrix "256x256" --&gt; The size of the data acquisition matrix is 256x256</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isSpecialContributorOfWG">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the working group that a person is a special contributor of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isSpecialContributorOf BipolarWorkingGroup</j.1:example>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes who the significant contributors of a working group are</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isSpecialContributorOfWG BipolarWorkingGroup</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#isMemberOfWG"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#withMinDurationOfDisorder">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the minimum duration (in years) of a disease</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1DisorderInfo hasDisorder bipolarDisorder withMinDuration 10 --&gt; Cohort1 only includes people had bipolar disorder for at least 10 years</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#SpecificDisorderInfo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#beagle3.3.2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#Condition">
+    <rdfs:label xml:lang="en">Condition</rdfs:label>
+    <rdfs:comment xml:lang="en">A state or mood experienced by the members of a cohort</rdfs:comment>
+    <j.1:example xml:lang="en">Euthymia</j.1:example>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasPublishedPaper">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the links to published papers or the paper title if the link does not exist for the working group</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WorkingGroup2 hasPublishedPaper "Article Title"</j.1:example>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WorkingGroup1 hasPublishedPaper www.publishedpaperexample.com</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A3">
+    <rdf:rest rdf:nodeID="A8"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#Project"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A13">
+    <owl:unionOf rdf:nodeID="A11"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasAcquisitionProtocol">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the acquisition protocol to scan the cohort</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 hasAcquisitionProtocol AcquisitionProtocol1</j.1:example>
+    <rdfs:range rdf:nodeID="A14"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#isAcquisitionProtocolOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A5">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasLongitudinalTimepoint">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the number of times the patient has been examined across time</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarCorticolCohort hasLongitudinalTimepoint 3</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#euthymia">
+    <rdf:type rdf:resource="https://w3id.org/enigma#Condition"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasStudyDesign">
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+    <rdfs:range rdf:nodeID="A15"/>
+    <rdfs:range rdf:nodeID="A16"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">this would be inferred from the project that the cohort belongs to. i don't know how to implement this</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Project1 hasStudyDesign "Case-control"</j.1:example>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the study design of the project</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the study design of the cohort</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 hasStudyDesign "Case-controlled"</j.1:example>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasGeneticDataType">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the genetic data types that a project has</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasGeneticDataType Exome</j.1:example>
+    <rdfs:domain rdf:nodeID="A17"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the genetic data types that were collected for a cohort</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 hasGeneticDataType expression</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#GeneticDataType"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasDataType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#MentalHealthDisorder">
+    <rdfs:label xml:lang="en">MentalHealthDisorder</rdfs:label>
+    <rdfs:comment xml:lang="en">Disorders which can affect mood, behavior, and thinking</rdfs:comment>
+    <j.1:example xml:lang="en">OCD</j.1:example>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#FFEsequence">
+    <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#GREsequence">
+    <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#doesNotHaveFirstDegreeRelativeWithDisorder">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what disease(s) the first degree relatives of the members of the cohort group do NOT have</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 doesNotHaveFirstDegreeRelativeWithDisorder BipolarDisorder --&gt; CohortGroup1 excludes people who have a first degree relative with bipolar disorder</j.1:example>
+    <owl:propertyDisjointWith rdf:resource="https://w3id.org/enigma#hasFirstDegreeRelativeWithDisorder"/>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Disorder"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#doesNotHaveFamilyHistoryOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#Expresssion">
+    <rdf:type rdf:resource="https://w3id.org/enigma#GeneticDataType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#NeurologicalDisorder">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#SubstanceAbuse">
+    <rdfs:label xml:lang="en">SubstanceAbuse</rdfs:label>
+    <rdfs:comment xml:lang="en">A mental health disorder defined by the overusage or abuse of a substance</rdfs:comment>
+    <j.1:example xml:lang="en">Alcoholism</j.1:example>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A18">
+    <rdf:rest rdf:nodeID="A19"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#Cohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A20">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasAcquisitionDirection">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the acquisition direction of the scanner</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasAcquisitionDirection coronal --&gt; The acquisition direction of this 1.5T-GE-Signa is coronal</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#AcquisitionDirection"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#MPRAGEsequence">
+    <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasContactPerson">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes who the contact person of the project is</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarCorticolProject hasContactPerson JohnSmith</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasContributor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A21">
+    <rdf:rest rdf:nodeID="A22"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">published</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasFieldStrength">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the field strength of the cohort</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasFieldStrength 1.5 --&gt; The field strength of 1.5T-GE-Signa is 1.5</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Scanner"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasWGJuniorLead">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes who the junior leads of a working group are</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarWorkingGroup hasJuniorLead JohnSmith</j.1:example>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes who the working group junior leads are</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarWorkingGroup hasWGJuniorLead JohnSmith</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#isJuniorLeadOfWG"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasWGMember"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#doesNotHaveFamilyHistoryOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what disease the members of the cohort group do NOT have a family history of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 doesNotHaveFamilyHistoryOf Schizophrenia --&gt; CohortGroup1 excludes people who have a family history of schizophrenia</j.1:example>
+    <owl:propertyDisjointWith rdf:resource="https://w3id.org/enigma#hasFamilyHistoryOf"/>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Disorder"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#usedDiagnosisInstrument">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what instrument was used to diagnose the members of the cohort</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 usedDiagnosisInstrument miniInternationalNeuropychiatricInterview --&gt; The members of Cohort1 were diagnosted with Mini International Neuropychiatric Interview</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#DiagnosisInstrument"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#AcquisitionProtocol">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the protocol used to acquire the data types</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasCountry">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the country in which an organization is located in</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">USC ISI hasCountry "United States"</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A23">
+    <rdf:rest rdf:nodeID="A21"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protocol preparation</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A24">
+    <owl:unionOf rdf:nodeID="A18"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A25">
+    <rdf:rest rdf:nodeID="A20"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#GeneticAssociationProtocol">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#usesTreatment">
+    <rdfs:comment xml:lang="en">describes which drug(s) or therapy(ies) that the members of the cohort group are using</rdfs:comment>
+    <j.1:example xml:lang="en">CohortGroup1 usesTreatment Antidepressants --&gt; CohortGroup1 only includes people who currently use antidepressants</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Treatment"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#DiagnosticCriteria">
+    <rdfs:label xml:lang="en">DiagnosticCriteria</rdfs:label>
+    <rdfs:comment xml:lang="en">The principles and standards used to diagnose a diease or condition</rdfs:comment>
+    <j.1:example xml:lang="en">DSM4</j.1:example>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#IlluminaOmniExpress">
+    <hasManufacturer rdf:resource="https://w3id.org/enigma#Illumina"/>
+    <rdf:type rdf:resource="https://w3id.org/enigma#GenotypePlatform"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#BipolarTulsaPatient">
+    <rdf:type rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <doesNotHaveContraindicationToMRI rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</doesNotHaveContraindicationToMRI>
+    <doesNotHaveDisorder rdf:resource="https://w3id.org/enigma#suicidality"/>
+    <doesNotHaveDisorder rdf:resource="https://w3id.org/enigma#respiratoryDisorder"/>
+    <doesNotHaveDisorder rdf:resource="https://w3id.org/enigma#neurologicalDisorder"/>
+    <doesNotHaveDisorder rdf:resource="https://w3id.org/enigma#endocrineDisorder"/>
+    <doesNotHaveDisorder rdf:resource="https://w3id.org/enigma#cardiovascularDisorder"/>
+    <rdf:type rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#SPGRsequence">
+    <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#DataType">
+    <rdfs:label xml:lang="en">DataType</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the kinds of data collected</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#minimac2012.05.29">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#mach2qtl1.1.2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#infectiousDisorder">
+    <rdf:type rdf:resource="https://w3id.org/enigma#InfectiousDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#MedicalRating">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#YoungManiaRatingScale">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#MedicalRating"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#TaskBasedFunctionalMRI">
+    <rdf:type rdf:resource="https://w3id.org/enigma#BrainScanDataType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#OrganicMedicalDisorder">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A26">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/contributor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A27">
+    <rdf:rest rdf:nodeID="A6"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#Cohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#FSLFirst4.1.9">
+    <rdf:type rdf:resource="https://w3id.org/enigma#ScannerSoftware"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#GE">
+    <rdf:type rdf:resource="https://w3id.org/enigma#Manufacturer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#vascularDisorder">
+    <rdf:type rdf:resource="https://w3id.org/enigma#VascularDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#BrainScanDataType">
+    <rdfs:label xml:lang="en">BrainScanDataType</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the kinds of brain scan data collected</rdfs:comment>
+    <j.1:example xml:lang="en">EEG</j.1:example>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#DataType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasPSeniorLead">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes who the senior leads of a project are</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasSeniorLead JohnSmith</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#isSeniorLeadOfP"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasContributor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isProjectCohortOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the bigger cohort that the project cohort belongs to</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarBarcelonaCohort isProjectCohortOf BipolarCohort</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#usedBodyCoil">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes if a body coil was used to scan by the scanner</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa usedBodyCoil true --&gt; This 1.5T-GE-Signa scanner used a body coil to scan</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A28">
+    <owl:unionOf rdf:nodeID="A27"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#ImageAcquisitionProtocol">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#schizophrenia">
+    <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#date">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#BipolarBarcelonaPatient">
+    <rdf:type rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <excludesRightHands rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</excludesRightHands>
+    <hasDisorder rdf:resource="https://w3id.org/enigma#bipolarDisorder"/>
+    <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#neurologicalDisorder"/>
+    <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#headTrauma"/>
+    <rdf:type rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasPregnantMembers">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes if the cohort has pregnant members</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 hasPregnantMembers "false"</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasEndDate">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the end date of a project</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasStartDate 2018-06-23</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isPIOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes which cohrots somone is the PI of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isPIof Cohort1</j.1:example>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the cohorts that the personal investigator is in charge of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">John isPIOf Cohort1 --&gt; John is the personal investigator of Cohort1</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A19">
+    <rdf:rest rdf:nodeID="A26"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#stroke">
+    <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isImageAcquisitionProtocolOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes which cohorts were scanned with a certain acquisition protocol</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AcquisitionProtocol1 isImageAcquisitionProtocolOf Cohort1</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#ImageAcquisitionProtocol"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#merlinOffline1.1.2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#Exome">
+    <rdf:type rdf:resource="https://w3id.org/enigma#GeneticDataType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A29">
+    <owl:oneOf rdf:nodeID="A30"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A31">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A32">
+    <rdf:rest rdf:nodeID="A33"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#Cohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#T-GE-SignaHDx">
+    <rdf:type rdf:resource="https://w3id.org/enigma#Scanner"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A34">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#headTrauma">
+    <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#includesFemale">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes whether a cohort includes female participants</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 includesFemale true</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:nodeID="A35"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasEmail">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the email contact information of a person</rdfs:comment>
+    <j.1:example xml:lang="en">JohnSmith hasEmail "johnsmith1234@gmail.com"</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#Canada">
+    <rdf:type rdf:resource="https://w3id.org/enigma#Country"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A36">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">revision</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#anxietyDisorder">
+    <rdf:type rdf:resource="https://w3id.org/enigma#AnxietyDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#Epigenetic">
+    <rdf:type rdf:resource="https://w3id.org/enigma#GeneticDataType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#OCD">
+    <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#withMinAgeOfOnsetOfDisorder">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the minimum age of onset of a disease</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1DisorderInfo hasDisorder schizophrenia withMinAgeOfOnset 10 --&gt; Cohort1 only includes people who had schizophrenia at the age of 10 or older</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#SpecificDisorderInfo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isScannerOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the protocols that the scanner is used for</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Siemens isScannerOf AcquisitionProtocol1</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Scanner"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasInvestigator">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the investigators of the cohort</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describe the investigators of a cohort</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarCohort hasInvestigator JohnSmith</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#isInvestigatorOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#cardiovascularDisorder">
+    <rdf:type rdf:resource="https://w3id.org/enigma#CardiovascularDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#AcquisitionDirection">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the acquisition direction of the scanner</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#GenotypeImputationProtocol">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A37">
+    <rdf:rest rdf:nodeID="A38"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">African American</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A39">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A40">
+    <rdf:rest rdf:nodeID="A31"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A35">
+    <owl:unionOf rdf:nodeID="A32"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A41">
+    <rdf:rest rdf:nodeID="A36"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">published</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isScannerModel">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what the scanner model is</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa isScannerModel "Signa" --&gt; The scanner model for 1.5T-GE-Signa is Signa</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Scanner"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#epilepsy">
+    <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasStatus">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the status of the project</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ProjectSZ hasStatus "published"</j.1:example>
+    <rdfs:range rdf:nodeID="A29"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+    <rdfs:range rdf:nodeID="A42"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#BriefPsychiatricRatingScale">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#MedicalRating"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#T-GE-Signa">
+    <rdf:type rdf:resource="https://w3id.org/enigma#Scanner"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasSliceThickness">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the slice thickness of the scanner in mm</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasSliceThickness 1 --&gt; The slice thickness of this scanner is 1 mm</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#sagittal">
+    <rdf:type rdf:resource="https://w3id.org/enigma#AcquisitionDirection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A43">
+    <rdf:rest rdf:nodeID="A34"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A44">
+    <owl:oneOf rdf:nodeID="A37"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A45">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A46">
+    <rdf:rest rdf:nodeID="A47"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#Cohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A48">
+    <rdf:rest rdf:nodeID="A49"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">European</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A50">
+    <rdf:rest rdf:nodeID="A51"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#Cohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#doesNotHavePsychiatricComorbidity">
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 doesNotHaveNeurologicalComorbidity true --&gt; CohortGroup1 excludes people who have two or more neurological disorders</j.1:example>
+    <owl:propertyDisjointWith rdf:resource="https://w3id.org/enigma#hasPsychiatricComorbidity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#doesNotHaveComorbidity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A52">
+    <rdf:rest rdf:nodeID="A53"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Assistant professor</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isManufacturerOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the scanners that a manufacturer makes</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GE isManufacturerOf 1.5T-GE-Signa --&gt; GE manufacters the 1.5T-GE-Signa scanner</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Scanner"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Manufacturer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A54">
+    <rdf:rest rdf:nodeID="A55"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Case-control</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isClinicallyStable">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes if the members of the cohort group are clinically stable, which usually means that vital signs are within 20% of usual readings</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 isClinicallyStable yes --&gt; CohortGroup1 only includes people who are clinically stable</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:nodeID="A56"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hospitalRecords">
+    <rdf:type rdf:resource="https://w3id.org/enigma#InformationObtainmentMethod"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#EndocrineDisorder">
+    <rdfs:label xml:lang="en">EndocrineDisorder</rdfs:label>
+    <rdfs:comment xml:lang="en">Disorders which affect the endocrine system</rdfs:comment>
+    <j.1:example xml:lang="en">Hypothyroidism</j.1:example>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasMembersWithRecentIssue">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes whether or not the members of the cohort had an issue (condition, disorder, or treatment-related)  within the past few months</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1TreatmentInfo usesTreatment Benzodiazepine inThePastMonths 6 --&gt; Cohort1 only includes people who used benzodiazepine in the past6 months</j.1:example>
+    <rdfs:range rdf:nodeID="A57"/>
+    <rdfs:domain rdf:nodeID="A58"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasSubmittedPaper">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the titles of the submitted papers of a working group</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WorkingGroup1 hasSubmittedPaper "Paper title"</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isAffiliatedWith">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what organization someone is affiliated with</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isAffiliatedWith HarvardU</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Organization"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#miniInternationalNeuropsychiatricInterview">
+    <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosisInstrument"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A59">
+    <owl:oneOf rdf:nodeID="A52"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A33">
+    <rdf:rest rdf:nodeID="A45"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#autism">
+    <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A60">
+    <owl:unionOf rdf:nodeID="A46"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A38">
+    <rdf:rest rdf:nodeID="A48"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Asian</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A15">
+    <owl:oneOf rdf:nodeID="A54"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#BipolarParis">
+    <hasDiagnosticGroup rdf:resource="https://w3id.org/enigma#BipolarParisPatient"/>
+    <hasControlGroup rdf:resource="https://w3id.org/enigma#BipolarParisControl"/>
+    <rdf:type rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasPSpecialContributor">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes who the special contributors of a project are</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes who the special contributors of a project are</j.1:example>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasSpecialContributor JohnSmith</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#isSpecialContributorOfP"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasContributor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasFoV">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the field of view of the acquisition protocol</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasFoV "X*Y*Z"</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#doesNotHaveComorbidity">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes if the members of a cohort group do not have a comorbidity</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 doesNotHaveComorbidity true --&gt; CohortGroup1 excludes people who are comorbid</j.1:example>
+    <owl:propertyDisjointWith rdf:resource="https://w3id.org/enigma#hasComorbidity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#substanceAbuse">
+    <rdf:type rdf:resource="https://w3id.org/enigma#SubstanceAbuse"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#SEsequence">
+    <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#RestingStateFunctionalMRI">
+    <rdf:type rdf:resource="https://w3id.org/enigma#BrainScanDataType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasAgeStandardDeviation">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the standard deviation of the age of a project cohort</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    <rdfs:domain rdf:nodeID="A28"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#ClinicalGlobalImpressionsScale">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#MedicalRating"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A58">
+    <owl:unionOf rdf:nodeID="A50"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasDataCollectionPeriodEnd">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the end year of the data collection period of the cohort</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 hasDataCollectionPeriodEnd 2008</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#EEG">
+    <rdf:type rdf:resource="https://w3id.org/enigma#BrainScanDataType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasGeneReferencePanel">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the gene reference panel used by the project</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasGeneReferencePanel [instance of gene reference panel]</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#GeneReferencePanel"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isDiagnosticGroupOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the cohort that a patient group is a part of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarPatientGroup isPatientGroupOf BipolarCohort</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#doesNotUseTreatment">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes which drug(s) or therapy(ies) that the members of the cohort group are NOT using</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 doesNotUseTreatment Antidepressants --&gt; CohortGroup1 excludes people who use antidepressants</j.1:example>
+    <owl:propertyDisjointWith rdf:resource="https://w3id.org/enigma#usesTreatment"/>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Treatment"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#neurologicalDisorder">
+    <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasPersonalHistoryOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the disease that the members of the cohort group have a history of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 hasHistoryOf NeurologicalDisease --&gt; CohortGroup1 only includes people who have history of neurological disorders</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Disorder"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasTR">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the TR of a scanner in ms</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasTR 500 --&gt; 1.5T-GE-Signa has a TR of 500 ms</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#respiratoryDisorder">
+    <rdf:type rdf:resource="https://w3id.org/enigma#RespiratoryDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isProjectOf">
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarCorticolProject isProjectOf BipolarWorkingGroup --&gt; The Bipolar Corticol Project is a project of the Bipolar Working Group</j.1:example>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what working group a project is part of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarCorticolProject isProjectOf BipolarWorkingGroup</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isProficientInLocalLanguage">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes whether or not the members of the cohort group are proficient in local language</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 isProficientInLocalLanguage true</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:nodeID="A61"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasPI">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 hasPI JohnSmith</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes who the PI of the project is</j.1:example>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the personal investigator of the cohort</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 hasPI John --&gt; the principal investigator of Cohort1 is John</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#isPIOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasFamilialRelations">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the relations between the individuals of a cohort</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortA hasRelations "Twins"</j.1:example>
+    <rdfs:range rdf:nodeID="A62"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#frontotemporalDementia">
+    <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasCity">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the city in which an organization is located in</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">USC ISI hasCity "Marina del Rey"</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A63">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A64">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A16">
+    <owl:oneOf rdf:nodeID="A65"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasPopulationGroup">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the population group of a population-based cohort</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarCohort hasPopulationGroup USCPopulationGroup</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#isPopulationGroupOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#DiffusionMRI">
+    <rdf:type rdf:resource="https://w3id.org/enigma#BrainScanDataType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isSpecialContributorOfP">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the project that a person is a special contributor of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isSpecialContributorOf BipolarProject</j.1:example>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what project someone is a special contributor of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isSpecialContributorOfP BipolarProject</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributesTo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#usedHeadCoil">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes if a head coil was used to scan by the scanner</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa usedHeadCoil true --&gt; This 1.5T-GE-Signa scanner used a head coil to scan</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isNoLongerActive">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes whether or not a person is not longer active</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isNoLongerActive true</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasEnigmaContact">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the contact of the cohort</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarCohort hasEnigmaContact JohnSmith</j.1:example>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the contact people from ENIGMA of a cohort</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 hasEnigmaContact JohnSmith</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#isEnigmaContactOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#CerebrovascularDisorder">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#VascularDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#dsm4">
+    <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosticCriteria"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#Expression">
+    <rdf:type rdf:resource="https://w3id.org/enigma#GeneticDataType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasBrainScanDataType">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes which brain scan data types a project has</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasBrainScanDataType DiffusionMRI</j.1:example>
+    <rdfs:domain rdf:nodeID="A7"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the brain scan data types that were collected for a cohort</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 hasBrainScanDataType expression</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#BrainScanDataType"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasDataType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#GeneticDisorder">
+    <rdfs:label xml:lang="en">GeneticDisorder</rdfs:label>
+    <rdfs:comment xml:lang="en">Disorders which are inherited and caused by abnormalities in the genome</rdfs:comment>
+    <j.1:example xml:lang="en">Cystic Fibrosis</j.1:example>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#BipolarParisControl">
+    <doesNotHaveFirstDegreeRelativeWithDisorder rdf:resource="https://w3id.org/enigma#bipolarDisorder"/>
+    <doesNotHaveContraindicationToMRI rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</doesNotHaveContraindicationToMRI>
+    <rdf:type rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#headTraumaWithLossOfConsciousness"/>
+    <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#substanceAbuse"/>
+    <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#cardiovascularDisorder"/>
+    <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#mentalDisorder"/>
+    <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#neurologicalDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <hasPregnantMembers rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasPregnantMembers>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#Project">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A10">
+    <rdf:rest rdf:nodeID="A63"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#Project"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasWGMember">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes who the members of the working group are</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarWorkingGroup hasMember JohnSmith --&gt; The bipolar working group has John Smith as a member</j.1:example>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes who the members are in the working group/project</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarWorkingGroup hasMember JohnSmith</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#isMemberOfWG"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A12">
+    <rdf:rest rdf:nodeID="A64"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/license">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/title">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A22">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">revision</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#Country">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Location"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasManufacturer">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what the manufacturer for the scanner is</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasManufacturer GE --&gt; The manufacturer of the 1.5T-GE-Signa is GE</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Manufacturer"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Scanner"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#isManufacturerOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A66">
+    <rdf:rest rdf:nodeID="A39"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#Project"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A67">
+    <rdf:rest rdf:nodeID="A40"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#Cohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A68">
+    <rdf:rest rdf:nodeID="A41"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protocol preparation</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasWGChair">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes who the chairs of a working group are</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SZWorkingGroup hasWGChair JohnSmith</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#isChairOfWG"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasWGMember"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isLocationOfDataCollectionOf">
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the cohorts that collected data at that location</j.1:example>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Irvine isLocationOfDataCollectionOf Cohort1 --&gt; Irvine is the location of Cohort1</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Location"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasNeurologicalComorbidity">
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 hasNeurologicalComorbidity true --&gt; CohortGroup1 only includes people who have two or more neurological disorders</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasComorbidity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isFamilyBased">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes if a cohort study was family based</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 isFamilyBased true</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:nodeID="A13"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasNumberOfSlices">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the number of slices of the particular scanner</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasNumberOfSlices 182 --&gt; This scanner has 182 slices</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A69">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Population-based</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#InformationObtainmentMethod">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A70">
+    <rdf:rest rdf:nodeID="A43"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#Cohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#excludesRightHands">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes if right handed people were excluded from the study</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 excludesRightHands true</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#psychotropicMedication">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A17">
+    <owl:unionOf rdf:nodeID="A66"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#headTraumaWithLossOfConsciousness">
+    <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A30">
+    <rdf:rest rdf:nodeID="A68"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gathering participants</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#Scanner">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What scanner was used to scan the members of the cohort?</rdfs:comment>
+    <owl:equivalentClass rdf:nodeID="A71"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#FSEsequence">
+    <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isJuniorLeadOfP">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what projects someone is a junior lead of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isJuniorLeadOf BipolarProject</j.1:example>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what project someone is a junior lead of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isJuniorLeadOfP BipolarProject</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributesTo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A61">
+    <owl:unionOf rdf:nodeID="A67"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A65">
+    <rdf:rest rdf:nodeID="A69"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Case-control</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A72">
+    <owl:unionOf rdf:nodeID="A70"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#alzheimers">
+    <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasPsychiatricComorbidity">
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 hasPsychiatricComorbidity true --&gt; CohortGroup1 only includes people who have two or more pyschiatric disorders</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasComorbidity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasResolution">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the in-plane pixel resolution in mm x mm</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasResolution "0.9x0.9" --&gt; The resolution of this scanner is 0.9mm x 0.9mm</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasStartDate">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the start date of a working group</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WorkingGroup1 hasStartDate 2004-09-13</j.1:example>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the start date of a project</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasStartDate 2017-06-23</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A73">
+    <rdf:rest rdf:nodeID="A74"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Siblings</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A75">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#Treatment"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasCohort">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what cohorts are part of a working group</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#isCohortInProject"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarWorkingGroup hasCohort AmsterdamBipolarCohort --&gt; Bipolar Working Group includes the Amsterdam Bipolar Cohort</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what cohorts are part of the project</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarWorkingGroup hasCohort BipolarAmsterdamCohort --&gt; The Bipolar working group uses data from the Bipolar Amsterdam cohort</j.1:example>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what cohorts are part of the working group</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasCohort AmsterdamBipolarCohort</j.1:example>
+    <rdfs:domain rdf:nodeID="A2"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#isCohortInWorkingGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#NonCNSCancer">
+    <rdf:type rdf:resource="https://w3id.org/enigma#Cancer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#doesNotHaveDisorder">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes which disorders are excluded in a given cohort group</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 doesNotHaveDisorder Cancer --&gt; CohortGroup1 excludes people who have cancer</j.1:example>
+    <owl:propertyDisjointWith rdf:resource="https://w3id.org/enigma#hasDisorder"/>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Disorder"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasMaxIQ">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes inclusion criteria for maximum IQ of participants in a CohortGroup</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 hasMaxIQ 120</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A55">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Population-based</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasFundingSource">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the funding source of the cohort</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 hasFundingSource "NIMH, 5P50MH080272"</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasNumberOfFemale">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the number of females in the cohort group</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:domain rdf:nodeID="A72"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#ALL1000genomes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#usesGenotypePlatform">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what genotype platform was used to analyze the members of the cohort</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 analyzedWithGenotypePlatform IllumniaOnmiExpress --&gt; Illumina OnmiExpress was used to analyze cohort1</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#GenotypePlatform"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#geneticDisorder">
+    <rdf:type rdf:resource="https://w3id.org/enigma#GeneticDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#MDD">
+    <rdf:type rdf:resource="https://w3id.org/enigma#MoodDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasTE">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the TE of a scanner in ms</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasTE 4.6 --&gt; 1.5T-GE-Signa has TE of 4.6 ms</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#GeneticDataType">
+    <rdfs:label xml:lang="en">GeneticDataType</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the kinds of genetic data collected</rdfs:comment>
+    <j.1:example xml:lang="en">Epigenetic</j.1:example>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#DataType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasMinIQ">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes inclusion criteria for minimum IQ of participants in a CohortGroup</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 hasMinIQ 70</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasAgeGroup">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes a group of people who share a similar age</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 hasAgeGroup "Infants"
+Cohort1 hasAgeGroup "Seniors"</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:nodeID="A76"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A77">
+    <rdf:rest rdf:nodeID="A73"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pedigree</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#Toronto">
+    <rdf:type rdf:resource="https://w3id.org/enigma#City"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A78">
+    <rdf:rest rdf:nodeID="A75"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#Disorder"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#Organization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasDiagnosticGroup">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the patient group of a cohort</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarCohort hasPatientGroup BipolarPatientGroup</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#isDiagnosticGroupOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#withMinNumber">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the first included number in the medical rating</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1MedicalRatingInfo isWithin youngManiaRatingScale0to10 withMinNumber 0 --&gt; Cohort1 only includes people who scored at least a 0 on the YMRS</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#SpecificMedicalRatingInfo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#alcoholDependence">
+    <rdf:type rdf:resource="https://w3id.org/enigma#SubstanceDependence"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#substanceDependence">
+    <rdf:type rdf:resource="https://w3id.org/enigma#SubstanceDependence"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasDisorder">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what disease(s) the members of the cohort group have</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 hasDisorder Cancer --&gt; CohortGroup1 only includes people who have cancer</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Disorder"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#T2-weightedMRI">
+    <rdf:type rdf:resource="https://w3id.org/enigma#BrainScanDataType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#BipolarWG">
+    <rdf:type rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isJuniorLeadOfWG">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what working group someone is a junior lead of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isJuniorLeadOf BipolarWorkingGroup</j.1:example>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the working groups that someone is a junior lead of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isJuniorLeadOfWG BipolarWorkingGroup</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#isMemberOfWG"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#excludesLeftHands">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes if left handed people were excluded from the study</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 excludesLeftHanded true</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">v1.0.0</owl:versionInfo>
+    <j.0:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Cohort Ontology</j.0:title>
+    <j.0:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yolanda Gil</j.0:contributor>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An ontology that describes scanners and their properties.</rdfs:comment>
+    <owl:versionIRI rdf:resource="https://w3id.org/enigma/wg/1.0.0"/>
+    <j.0:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Organization Ontology</j.0:title>
+    <j.1:preferredNamespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string">enigma</j.1:preferredNamespacePrefix>
+    <owl:versionIRI rdf:resource="https://w3id.org/enigma/scanner/1.0.0"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cohort ontology that describes cohorts and their properties.</rdfs:comment>
+    <owl:versionIRI rdf:resource="https://w3id.org/enigma/project/1.0.0"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An ontology that describes projects and their properties.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <j.0:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Daniel Garijo</j.0:creator>
+    <owl:versionIRI rdf:resource="https://w3id.org/enigma/organization/1.0.0"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An ontology for describing working groups.</rdfs:comment>
+    <j.0:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Project Ontology</j.0:title>
+    <j.0:license rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
+    <owl:versionIRI rdf:resource="https://w3id.org/enigma/cohort/1.0.0"/>
+    <j.0:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Daniel Garijo</j.0:contributor>
+    <j.0:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Neda Jahanshad</j.0:creator>
+    <j.0:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Workging Group Ontology</j.0:title>
+    <j.0:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ryan Espiritu</j.0:creator>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An ontology for describing ENIGMA organizations.</rdfs:comment>
+    <j.1:preferredNamespaceUri rdf:resource="https://w3id.org/enigma#"/>
+    <owl:versionIRI rdf:resource="https://w3id.org/enigma/person/1.0.0"/>
+    <j.1:preferredNamespacePrefix rdf:resource="https://w3id.org/enigma"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A79">
+    <rdf:rest rdf:nodeID="A25"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#Cohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#doesNotHaveContraindicationToMRI">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes if people who have contraindication to MRI are excluded</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 doesNotHaveContraindicationToMRI yes --&gt; CohortGroup1 excludes people who do have contraindication to MRI</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#MoodDisorder">
+    <rdfs:label xml:lang="en">MoodDisorder</rdfs:label>
+    <rdfs:comment xml:lang="en">A mental health disorder defined by mood or behavioral swings</rdfs:comment>
+    <j.1:example xml:lang="en">Bipolar Disorder</j.1:example>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#withDisorderSeverity">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the severity of the disease</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1DisorderInfo hasDisorderWith DiseaseWith hasDisorder Schizophrenia withDiseaseSeverity 5 --&gt; Cohort1 only includes people with schizophrenia with disease severity 5</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#SpecificDisorderInfo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#familyInterviewForGeneticStudies">
+    <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosticCriteria"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A80">
+    <rdf:rest rdf:nodeID="A81"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasMeanAge">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the mean age of the project cohort</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    <rdfs:domain rdf:nodeID="A24"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasPublication">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the publications of that person</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith hasPublication ENIGMAPublication</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#ENIGMAPublication"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isSeniorLeadOfWG">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what working group the person is a senior lead of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isSeniorLeadOf WorkingGroup</j.1:example>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the working groups that someone is a senior lead of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isSeniorLeadOfWG BipolarWorkingGroup</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#isMemberOfWG"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isPopulationGroupOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the population group of a cohort of a population-based study</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarPopulationGroup isPopulationGroupOf BipolarCohort</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A76">
+    <owl:unionOf rdf:nodeID="A79"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#mentalDisorder">
+    <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasTitle">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the title of the person</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith hasTitle "Undergraduate"</j.1:example>
+    <rdfs:range rdf:nodeID="A59"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#Location">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Where is the cohort located?</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isAcquisitionProtocolOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what cohorts were scanned with the acquisition protocol</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AcquisitionProtocol isAcquisitionProtocolOf Cohort1</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdfs:domain rdf:nodeID="A82"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#GeneReferencePanel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasScanner">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the scanner used in the acquisition protocol</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AcquisitionProtocol1 hasScanner 1.5T-GE-Siemens</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Scanner"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#isScannerOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasCondition">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes which diease conditions are included in a given cohort group</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 hasCondition euthymia</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Condition"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A14">
+    <owl:unionOf rdf:nodeID="A80"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#leftOnDate">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the date that a person, who is no longer active, left</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith leftOnDate 2008-07-13</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A83">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Two or More Races</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A84">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#impute2.2.2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#FreeSurfer5.3">
+    <rdf:type rdf:resource="https://w3id.org/enigma#ScannerSoftware"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasTargetDate">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the target date of the project</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasTargetDate 2020-03-12</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A85">
+    <rdf:rest rdf:nodeID="A86"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#Cohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#City">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Location"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A87">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#SubstanceDependence">
+    <rdfs:label xml:lang="en">SubstanceDependence</rdfs:label>
+    <rdfs:comment xml:lang="en">A subset of substance abuse in which symptoms of withdrawal may appeared after reduction of substance use</rdfs:comment>
+    <j.1:example xml:lang="en">Alcohol Dependence</j.1:example>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#SubstanceAbuse"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#selfReport">
+    <rdf:type rdf:resource="https://w3id.org/enigma#InformationObtainmentMethod"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasWGBriefDescription">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">provides a brief description of the working group</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SZWG hasWGBriefDescription "finds correlations between schizophrenia and other conditions"</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasTI">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the TI of a scanner in ms</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasTI 710 --&gt; 1.5T-GE-Signa has a TI of 710 ms</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#forDataType">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what data type the acquisition protocol was used to obtain</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AcquisitionPro3 forDataType EEG</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#DataType"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasWGSpecialContributor">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes who the special contributors of a working group are</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarWorkingGroup hasSpecialContributor JohnSmith</j.1:example>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes who the significant contributors of the working group are</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarWorkingGroup hasWGSpecialContributor JohnSmith</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#isSpecialContributorOfWG"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasWGMember"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#moodDisorder">
+    <rdf:type rdf:resource="https://w3id.org/enigma#MoodDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#eatingDisorder">
+    <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasSequence">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the sequence that the acquisition protocol requires</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasSequence T1-weighted_MPRAGE_sequence --&gt; The acquisition protocol for this scanner is T1-weighted MPRAGE sequence</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#MRISequence"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isInvestigatorOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the cohort that someone is investigator of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isInvestigatorOf BipolarCohort</j.1:example>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what cohorts someone is an investigator for</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isInvestigatorOf BipolarProject</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#patientInterview">
+    <rdf:type rdf:resource="https://w3id.org/enigma#InformationObtainmentMethod"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A47">
+    <rdf:rest rdf:nodeID="A87"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A49">
+    <rdf:rest rdf:nodeID="A83"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Latino</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A51">
+    <rdf:rest rdf:nodeID="A84"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#MRISequence">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A0">
+    <owl:unionOf rdf:nodeID="A85"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#WholeGenome">
+    <rdf:type rdf:resource="https://w3id.org/enigma#GeneticDataType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#WorkingGroup">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a working group (a group of researchers studying a certain ENIGMA topic) of ENIGMA</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#storageDisorder">
+    <rdf:type rdf:resource="https://w3id.org/enigma#GeneticDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasFirstEpisodeOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what disease the members of the cohort group had a first episode of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 hasFirstEpisodeOf Psychosis --&gt; CohortGroup1 only includes people who had a first episode of psychosis</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Disorder"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasPersonalHistoryOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#AnxietyDisorder">
+    <rdfs:label xml:lang="en">AnxietyDisorder</rdfs:label>
+    <rdfs:comment xml:lang="en">A mental health disorder defined by feelings of anxiety, fear, or worry</rdfs:comment>
+    <j.1:example xml:lang="en">PTSD</j.1:example>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#ENIGMAPublication">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#gYear">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#withMaxAgeOfOnsetOfDisorder">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the maximum age of onset of a disease</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1DisorderInfo hasDisorder schizophrenia withMaxAgeOfOnset 18 --&gt; Cohort1 only includes people who had schizophrenia at 18 or younger</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#SpecificDisorderInfo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#psychosis">
+    <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#BipolarBarcelona">
+    <hasDiagnosticGroup rdf:resource="https://w3id.org/enigma#BipolarBarcelonaPatient"/>
+    <hasControlGroup rdf:resource="https://w3id.org/enigma#BipolarBarcelonaControl"/>
+    <rdf:type rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#ADHD">
+    <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#coronal">
+    <rdf:type rdf:resource="https://w3id.org/enigma#AcquisitionDirection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasNumberOfParticipants">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the number of participants in the cohort</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 hasNumberOfParticipants 500 --&gt; Cohort1 is made up of approximately 500 patients</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    <rdfs:domain rdf:nodeID="A88"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#Treatment">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What treatments were used by the members of the cohort?</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#T1-weightedMRI">
+    <rdf:type rdf:resource="https://w3id.org/enigma#BrainScanDataType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasDegree">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what degree a person has</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith hasDegree PhD</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Degree"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A89">
+    <rdf:rest rdf:nodeID="A90"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#Cohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A91">
+    <rdf:rest rdf:nodeID="A77"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No Relations</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A92">
+    <rdf:rest rdf:nodeID="A78"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#Condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#Irvine">
+    <rdf:type rdf:resource="https://w3id.org/enigma#City"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasMOU">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the MOU links of the working group</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WorkingGroup1 hasMOU www.mouexample.com</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isMemberOfWG">
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isMemberOfWorkingGroup BipolarWorkingGroup --&gt; John Smith is a member of the bipolar working group</j.1:example>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what working group a person is a member of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isMemberOfWorkingGroup BipolarWorkingGroup</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#researchDiagnosticCriteria">
+    <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosticCriteria"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isSeniorLeadOfP">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what project the person is a senior lead of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isSeniorLeadOf BipolarProject</j.1:example>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes who the senior lead of a project is</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isSeniorLeadOfP BipolarProject</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributesTo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#Bruker">
+    <rdf:type rdf:resource="https://w3id.org/enigma#Manufacturer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A57">
+    <owl:unionOf rdf:nodeID="A92"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#plink1.07">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A88">
+    <owl:unionOf rdf:nodeID="A89"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A62">
+    <owl:oneOf rdf:nodeID="A91"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#FEEsequence">
+    <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#SpecificConditionInfo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#probABEL">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#DiagnosisInstrument">
+    <rdfs:label xml:lang="en">DiagnosisInstrument</rdfs:label>
+    <rdfs:comment xml:lang="en">The method used to diagnosis individuals in a Cohort</rdfs:comment>
+    <j.1:example xml:lang="en">Consensus Consultant Diagnosis</j.1:example>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#FSPGRsequence">
+    <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#withMaxNumber">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the last included number in the medical range</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1MedicalRatingInfo isWithin youngManiaRatingScale0to10 withMaxNumber 10 --&gt; Cohort1 only includes people who received a score of at most 10 on the YMRS</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#SpecificMedicalRatingInfo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#T-Siemens-TrioTim">
+    <rdf:type rdf:resource="https://w3id.org/enigma#Scanner"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasTreatmentDetails">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">descries the details of the treatment that a cohort group is using</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup hasTreatmentDetails antidepressants42</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#SpecificTreatmentInfo"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isLocated">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes where the person is located</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isLocated Boston</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Location"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isInformationObtainmentMethodOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what cohorts use that particular information obtainment method</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">selfReport isInformationObtainmentMethodOf Cohort1 --&gt; Self report was used to obtain medical information of the members of Cohort1</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#InformationObtainmentMethod"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#obtainedInformationThrough"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup">
+    <rdfs:label xml:lang="en">CohortGroup</rdfs:label>
+    <rdfs:comment xml:lang="en">A subset of Cohort, which either forms the patient group or control group</rdfs:comment>
+    <j.1:example xml:lang="en">AMCControlGroup is a control cohort group of the AMC cohort</j.1:example>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A90">
+    <rdf:rest rdf:nodeID="A93"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#psychiatristReport">
+    <rdf:type rdf:resource="https://w3id.org/enigma#InformationObtainmentMethod"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#fluoxetine">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#qDS">
+    <rdf:type rdf:resource="https://w3id.org/enigma#GeneticDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A94">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Undergraduate</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A95">
+    <rdf:rest rdf:nodeID="A96"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#Cohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#Phillips">
+    <rdf:type rdf:resource="https://w3id.org/enigma#Manufacturer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A93">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#Disorder">
+    <rdfs:label xml:lang="en">Disorder</rdfs:label>
+    <rdfs:comment xml:lang="en">A disorder/disease experienced by members of a cohort</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hepC">
+    <rdf:type rdf:resource="https://w3id.org/enigma#InfectiousDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#doesNotHaveCondition">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes which diease conditions are excluded in a given cohort group</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 doesNotHaveCondition euthymia</j.1:example>
+    <owl:propertyDisjointWith rdf:resource="https://w3id.org/enigma#hasCondition"/>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Condition"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isCohortInProject">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what project the cohort is a part of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AmsterdamBipolarCohort isCohortIn BipolarProject</j.1:example>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what projects a cohort is a part of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 isCohortInProject BipolarProject</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A97">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#hasNumberOfSlices"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasNEX">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the number of excitiations of the acquisition protocol of the scanner</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasNEX 1 --&gt; The acquisition protocol for this scanner had one number of excitations</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#structuredClinicalInstrument">
+    <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosisInstrument"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#didNotHaveFirstEpisodeOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what disease the members of the cohort group did NOT have a first episode of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 didNotHaveFirstEpisodeOf Psychosis --&gt; CohortGroup1 excludes people who had a first episode of psychosis</j.1:example>
+    <owl:propertyDisjointWith rdf:resource="https://w3id.org/enigma#hasFirstEpisodeOf"/>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Disorder"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#doesNotHavePersonalHistoryOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasProject">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what projects are worked on by a specific working group</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarWorkingGroup hasProject BipolarCorticolProject --&gt; The Bipolar Working Group is working on the Bipolar Corticol Project</j.1:example>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the projects that a working group has</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarWorkingGroup hasProject BipolarCorticolProject</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#isProjectOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#Siemens">
+    <rdf:type rdf:resource="https://w3id.org/enigma#Manufacturer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#CardiovascularDisorder">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#VascularDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#GenotypePlatform">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isControlGroupOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the cohort that a control group is a part of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarControlGroup isControlGroupOf BipolarCohort</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#fulfillsDiagnosticCriteria">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the criteria used to diagnose the disorder</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bipolarDisorder fulfillsDiagnosticCriteria diagnosticAndStatisticalManualOfMentalDisorders --&gt; The diagnosis of bipolar disorder fulfills the criteria of the DSM</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#DiagnosticCriteria"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Disorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#cerebralAnatomicAnomaly">
+    <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#FreeSurfer5.1.0">
+    <rdf:type rdf:resource="https://w3id.org/enigma#ScannerSoftware"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#USA">
+    <rdf:type rdf:resource="https://w3id.org/enigma#Country"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A98">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#GenomeWide">
+    <rdf:type rdf:resource="https://w3id.org/enigma#GeneticDataType"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#BipolarTulsa">
+    <hasDiagnosticGroup rdf:resource="https://w3id.org/enigma#BipolarTulsaPatient"/>
+    <rdf:type rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#BipolarBarcelonaControl">
+    <rdf:type rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <excludesRightHands rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</excludesRightHands>
+    <doesNotUseTreatment rdf:resource="https://w3id.org/enigma#psychotropicMedication"/>
+    <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#neurologicalDisorder"/>
+    <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#mentalDisorder"/>
+    <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#headTrauma"/>
+    <doesNotHaveFirstDegreeRelativeWithDisorder rdf:resource="https://w3id.org/enigma#mentalDisorder"/>
+    <rdf:type rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A99">
+    <rdf:rest rdf:nodeID="A94"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Research assistant</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A56">
+    <owl:unionOf rdf:nodeID="A95"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#Illumina">
+    <rdf:type rdf:resource="https://w3id.org/enigma#Manufacturer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#diagnosticInteviewForGeneticStudies">
+    <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosisInstrument"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/vann/example">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A100">
+    <owl:members rdf:nodeID="A97"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#InfectiousDisorder">
+    <rdfs:label xml:lang="en">InfectiousDisorder</rdfs:label>
+    <rdfs:comment xml:lang="en">A disease or disorder caused by the invasion of microorganisms</rdfs:comment>
+    <j.1:example xml:lang="en">HIV</j.1:example>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#doesNotHavePersonalHistoryOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the diseases that the members of the cohort groups do NOT have a history of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 doesNotHaveHistoryOf NeurologicalDisease --&gt; CohortGroup1 excludes people who have neurological disease</j.1:example>
+    <owl:propertyDisjointWith rdf:resource="https://w3id.org/enigma#hasPersonalHistoryOf"/>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Disorder"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#SpecificTreatmentInfo">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">details of a specific treatment, such as the length of the usage period</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#PTSD">
+    <rdf:type rdf:resource="https://w3id.org/enigma#AnxietyDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#example">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasImageAcquisitionProtocol">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the acquisition protocol that was used to scan the cohort</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 hasImageAcquisitionProtocol AcquisitionProtocol1</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#ImageAcquisitionProtocol"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#isImageAcquisitionProtocolOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasAffiliate">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the people who are affiliations of an organization</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the organization's affiliates</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HarvardU hasAffiliate JohnSmith</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Organization"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#isAffiliatedWith"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#HamiltonDepressionRatingScale">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#MedicalRating"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#SpecificMedicalRatingInfo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#BipolarParisPatient">
+    <rdf:type rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <hasPregnantMembers rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasPregnantMembers>
+    <doesNotHaveContraindicationToMRI rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</doesNotHaveContraindicationToMRI>
+    <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#substanceAbuse"/>
+    <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#neurologicalDisorder"/>
+    <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#headTraumaWithLossOfConsciousness"/>
+    <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#cardiovascularDisorder"/>
+    <rdf:type rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasSexDeterminedGenetically">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes whether the sex of a cohort was determined genetically</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 sexDeterminedGenetically true</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A101">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#youngManiaRatingScale0to10">
+    <rdf:type rdf:resource="https://w3id.org/enigma#YoungManiaRatingScale"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A102">
+    <rdf:rest rdf:nodeID="A23"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gathering participants</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A103">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Twins</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasEthnicGroup">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the ethnic group that the participants of the cohort are in</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 hasEthnicGroup "European"</j.1:example>
+    <rdfs:range rdf:nodeID="A44"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasGenotypeImputationProtocol">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the genotype imputation protocol that is used by the project</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasGenotypeImputationProtocol [instance of genotype imputation protocol]</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#GenotypeImputationProtocol"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#EUR1000genomes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#SignificantGeneralMedicalCondition">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#VascularDisorder">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#usesScannerSoftware">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">should the domain be scanner or cohort?</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what the software was used to scan a cohort</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 usesScannerSoftware FreeSurfer(5.1.0) --&gt; Cohort1 was scanned with FreeSurfer(5.1.0) software</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#ScannerSoftware"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasFlipAngle">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the flip angle of a scanner in degrees</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasFlipAngle 7 --&gt; 1.5T-GE-Signa has a flip angle of 7 in degrees</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasVoxelSize">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the voxel height of a scanner in mm</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasVoxelSize "1x1x1" --&gt; 1.5T-GE-Signa has voxel size of 1x1x1 mm</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#organicMedicalDisorder">
+    <rdf:type rdf:resource="https://w3id.org/enigma#OrganicMedicalDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A96">
+    <rdf:rest rdf:nodeID="A101"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A42">
+    <owl:oneOf rdf:nodeID="A102"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#HIV">
+    <rdf:type rdf:resource="https://w3id.org/enigma#InfectiousDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A74">
+    <rdf:rest rdf:nodeID="A103"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Singletons</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#obtainedInformationThrough">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what the method for obtaining medical information was</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 obtainedInformationThrough selfReport --&gt; The information of the members of Cohort1 was obtained through self report</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#InformationObtainmentMethod"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A71">
+    <owl:someValuesFrom rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <owl:onProperty rdf:resource="https://w3id.org/enigma#isAcquisitionProtocolOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#T-GE-Discovery750">
+    <rdf:type rdf:resource="https://w3id.org/enigma#Scanner"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasDataCollectionPeriodStart">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the start year of the data collection period of the cohort</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 hasDataCollectionPeriodStart 2005</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#Cohort">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A group of people that are studied by a working group. A cohort is limited by certain inclusion and exclusion criteria.</rdfs:comment>
+    <rdfs:label xml:lang="en">Cohort</rdfs:label>
+    <rdfs:comment xml:lang="en">A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria</rdfs:comment>
+    <j.1:example xml:lang="en">ADNI: Alzheimerâ€™s Disease Neuroimaging Initiative</j.1:example>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#endocrineDisorder">
+    <rdf:type rdf:resource="https://w3id.org/enigma#EndocrineDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasLocationOfDataCollection">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes where the data of the cohort was collected</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 hasLocationOfDataCollection Toronto</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Location"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#isLocationOfDataCollectionOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#tourette">
+    <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#alcoholAbuse">
+    <rdf:type rdf:resource="https://w3id.org/enigma#SubstanceAbuse"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A53">
+    <rdf:rest rdf:nodeID="A104"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Graduate student</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasComorbidity">
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 hasComorbidity true --&gt; CohortGroup1 only includes people who are comorbid</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasDataType">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the data types that the project collected</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasDataType MRIImage</j.1:example>
+    <rdfs:domain rdf:nodeID="A9"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the data types that were collected for the cohort</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The cohorts of a project will automatically have the data types of the project. It can have more but must at least have the data types of the project. I do not know how to implement this.</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 hasDataType dataType1</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#DataType"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A82">
+    <owl:unionOf rdf:nodeID="A105"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#doesNotHaveNeurologicalComorbidity">
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 doesNotHavePsychiatricComorbidity true --&gt; CohortGroup1 does not include people who have two or more psychiatric disorders</j.1:example>
+    <owl:propertyDisjointWith rdf:resource="https://w3id.org/enigma#hasNeurologicalComorbidity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#doesNotHaveComorbidity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isDiagnosisInstrumentOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the cohort that used the particular diagnosis instrument</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">miniInternationalNeuropyschiatricInterview isDiagnosisInstrumentOf Cohort1 --&gt; Mini International Neuropyschiatric Interview was used as the diagnosis instrument of Cohort1</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#DiagnosisInstrument"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#usedDiagnosisInstrument"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasFirstName">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes first name of a person</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith hasFirstName "John"</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasControlGroup">
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarControl hasControlGroup BipolarControlGroup</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#isControlGroupOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#parkinsons">
+    <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasScanTime">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the scan time of the acquisition protocol for a scanner in seconds</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasScanTime 42 --&gt; The scan time for 1.5T-GE-Signa is 42 seconds</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#contributesTo">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what projects someone contributes to</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith contributesTo BipolarLateralityProject</j.1:example>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the projects that a person contributed to</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith contributedTo BipolarProject</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#hasContributor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#Degree">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#Person">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Who is involved with the cohort?</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasFuturePublicationInstructions">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what to do regarding future publication and authorship of someone</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith hasFuturePublicationInstructions "call Bob"</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasMinAge">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes inclusion criteria for minimum age of participants in a CohortGroup</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 hasMinAge 12</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasApprovedProposalForm">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the approved proposal form link of a project</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Project1 hasApprovedProposalForm www.proposalformexample.com</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A81">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#Scanner"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasLastName">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes last name of a person</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith hasLastName "John"</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#axial">
+    <rdf:type rdf:resource="https://w3id.org/enigma#AcquisitionDirection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#seizures">
+    <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#Cancer">
+    <rdfs:label xml:lang="en">Cancer</rdfs:label>
+    <rdfs:comment xml:lang="en">A disease characterized by abnormal cell division and growth</rdfs:comment>
+    <j.1:example xml:lang="en">CNS Cancer</j.1:example>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasContributor">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes who contributed to the project</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarLateralityProject hasContributor JohnSmith</j.1:example>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the contributors of a project</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasContributor JohnSmith</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasNumberOfMale">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the number of males in the cohort group</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:domain rdf:nodeID="A60"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A106">
+    <rdf:rest rdf:nodeID="A107"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Postdoctoral researcher</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isEnigmaContactOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the cohort that a person is the contact of</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the cohorts that someone is an Enigma contact of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isEnigmaContactOf BipolarCohort</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A86">
+    <rdf:rest rdf:nodeID="A98"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#bipolarDisorder">
+    <rdf:type rdf:resource="https://w3id.org/enigma#MoodDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#consensusConsultantDiagnosis">
+    <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosisInstrument"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A107">
+    <rdf:rest rdf:nodeID="A99"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Professor</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/creator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A108">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#Scanner"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasProjectCohort">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the subcohorts that are part of that cohort</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarCohort hasProjectCohort BipolarBarcelonaCohort</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/enigma#isProjectCohortOf"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort">
+    <rdfs:label xml:lang="en">ProjectCohort</rdfs:label>
+    <rdfs:comment xml:lang="en">The subset of the individuals from a Cohort, which are used as samples for a specific project</rdfs:comment>
+    <j.1:example xml:lang="en">"Healthy" individuals from the ASRB Cohort were sampled to form a Project Cohort of SZCorticol</j.1:example>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#significantGeneralMedicalCondition">
+    <rdf:type rdf:resource="https://w3id.org/enigma#SignificantGeneralMedicalCondition"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#joinedEnigmaInYear">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the year that a person first joined ENIGMA</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith joinedEnigmaInYear 2005</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#isChairOfWG">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what WorkingGroup a person is chair of</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JohnSmith isChairOfWG SZWorkingGroup</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#isMemberOfWG"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasNumberOfEchoes">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the number of echoes of the acquisition protocol of a scanner</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasNumberOfEchoes 2 --&gt; 1.5T-GE-Signa has 2 echoes</j.1:example>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A104">
+    <rdf:rest rdf:nodeID="A106"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Other</rdf:first>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasGeneticAssociationProtocol">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the genetic association protocol that is used by the project</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BipolarProject hasGeneticAssociationProtocol [instance of genetic association protocol]</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#GeneticAssociationProtocol"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A105">
+    <rdf:rest rdf:nodeID="A108"/>
+    <rdf:first rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#mach1.0.18.c">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#suicidality">
+    <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#CNSCancer">
+    <rdf:type rdf:resource="https://w3id.org/enigma#Cancer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/enigma#hasMedicalRatingDetails">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the min and max values of the medical rating criteria</rdfs:comment>
+    <j.1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortDisorderGroup hasMedicalRatingDetails YMRS3010</j.1:example>
+    <rdfs:range rdf:resource="https://w3id.org/enigma#SpecificMedicalRatingInfo"/>
+    <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+</rdf:RDF>
