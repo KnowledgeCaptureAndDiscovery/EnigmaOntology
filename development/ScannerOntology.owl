@@ -74,45 +74,13 @@
     
 
 
-    <!-- https://w3id.org/enigma#hasAcquisitionProtocol -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasAcquisitionProtocol">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isAcquisitionProtocolOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#AcquisitionProtocol"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Scanner"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-        <vann:example xml:lang="en">Cohort1 hasAcquisitionProtocol AcquisitionProtocol1</vann:example>
-        <rdfs:comment xml:lang="en">Describes the acquisition protocol to scan the cohort</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/enigma#hasManufacturer -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasManufacturer">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isManufacturerOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Scanner"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Manufacturer"/>
         <vann:example xml:lang="en">1.5T-GE-Signa hasManufacturer GE --&gt; The manufacturer of the 1.5T-GE-Signa is GE</vann:example>
         <rdfs:comment xml:lang="en">Describes what the manufacturer for the scanner is</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasScanner -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasScanner">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isScannerOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Scanner"/>
-        <vann:example xml:lang="en">AcquisitionProtocol1 hasScanner 1.5T-GE-Siemens</vann:example>
-        <rdfs:comment xml:lang="en">Describes the scanner used in the acquisition protocol</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -142,17 +110,6 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
         <vann:example xml:lang="en">AcquisitionProtocol isAcquisitionProtocolOf Cohort1</vann:example>
         <rdfs:comment xml:lang="en">Describes what cohorts were scanned with the acquisition protocol</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isManufacturerOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isManufacturerOf">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Manufacturer"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Scanner"/>
-        <vann:example xml:lang="en">GE isManufacturerOf 1.5T-GE-Signa --&gt; GE manufacters the 1.5T-GE-Signa scanner</vann:example>
-        <rdfs:comment xml:lang="en">Describes the scanners that a manufacturer makes</rdfs:comment>
     </owl:ObjectProperty>
     
 

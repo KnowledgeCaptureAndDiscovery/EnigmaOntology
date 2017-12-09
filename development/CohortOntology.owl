@@ -214,26 +214,6 @@
     
 
 
-    <!-- https://w3id.org/enigma#hasCohort -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasCohort">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isCohortInProject"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isCohortInWorkingGroup"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#WorkingGroup"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <vann:example xml:lang="en">BipolarWorkingGroup hasCohort BipolarAmsterdamCohort --&gt; The Bipolar working group uses data from the Bipolar Amsterdam cohort</vann:example>
-        <rdfs:comment xml:lang="en">Describes what cohorts are part of a working group or project</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/enigma#hasCondition -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasCondition">
@@ -248,7 +228,6 @@
     <!-- https://w3id.org/enigma#hasControlGroup -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasControlGroup">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isControlGroupOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#CohortGroup"/>
         <vann:example xml:lang="en">BipolarCohort hasControlGroup BipolarControlGroup</vann:example>
@@ -271,7 +250,6 @@
     <!-- https://w3id.org/enigma#hasDiagnosticGroup -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDiagnosticGroup">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isDiagnosticGroupOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#CohortGroup"/>
         <vann:example xml:lang="en">BipolarCohort hasPatientGroup BipolarPatientGroup</vann:example>
@@ -305,7 +283,6 @@
     <!-- https://w3id.org/enigma#hasEnigmaContact -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasEnigmaContact">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isEnigmaContactOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
         <vann:example xml:lang="en">Cohort1 hasEnigmaContact JohnSmith</vann:example>
@@ -364,7 +341,6 @@
     <!-- https://w3id.org/enigma#hasImageAcquisitionProtocol -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasImageAcquisitionProtocol">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isImageAcquisitionProtocolOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#ImageAcquisitionProtocol"/>
         <vann:example xml:lang="en">Cohort1 hasImageAcquisitionProtocol AcquisitionProtocol1</vann:example>
@@ -376,7 +352,6 @@
     <!-- https://w3id.org/enigma#hasInvestigator -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasInvestigator">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isInvestigatorOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
         <vann:example xml:lang="en">BipolarCohort hasInvestigator JohnSmith</vann:example>
@@ -388,7 +363,6 @@
     <!-- https://w3id.org/enigma#hasLocationOfDataCollection -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasLocationOfDataCollection">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isLocationOfDataCollectionOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Location"/>
         <vann:example xml:lang="en">Cohort1 hasLocationOfDataCollection Toronto</vann:example>
@@ -438,7 +412,6 @@
     <!-- https://w3id.org/enigma#hasPI -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasPI">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isPIOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
         <vann:example xml:lang="en">Cohort1 hasPI John --&gt; the principal investigator of Cohort1 is John</vann:example>
@@ -461,7 +434,6 @@
     <!-- https://w3id.org/enigma#hasPopulationGroup -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasPopulationGroup">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isPopulationGroupOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#CohortGroup"/>
         <vann:example xml:lang="en">BipolarCohort hasPopulationGroup USCPopulationGroup</vann:example>
@@ -473,7 +445,6 @@
     <!-- https://w3id.org/enigma#hasProjectCohort -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasProjectCohort">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isProjectCohortOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
         <vann:example xml:lang="en">BipolarCohort hasProjectCohort BipolarBarcelonaCohort</vann:example>
@@ -511,129 +482,6 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
         <vann:example xml:lang="en">BipolarAmsterdamCohort isCohortInWorkingGroup BipolarWorkingGroup --&gt; The Bipolar Amsterdam cohort is part of the Bipolar working group</vann:example>
         <rdfs:comment xml:lang="en">Describes what working group the cohort is a part of</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isControlGroupOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isControlGroupOf">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <vann:example xml:lang="en">BipolarControlGroup isControlGroupOf BipolarCohort</vann:example>
-        <rdfs:comment xml:lang="en">Describes the cohort that a control group is a part of</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isDiagnosisInstrumentOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isDiagnosisInstrumentOf">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#usedDiagnosisInstrument"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#DiagnosisInstrument"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <vann:example xml:lang="en">miniInternationalNeuropyschiatricInterview isDiagnosisInstrumentOf Cohort1 --&gt; Mini International Neuropyschiatric Interview was used as the diagnosis instrument of Cohort1</vann:example>
-        <rdfs:comment xml:lang="en">Describes the cohort that used the particular diagnosis instrument</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isDiagnosticGroupOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isDiagnosticGroupOf">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <vann:example xml:lang="en">BipolarPatientGroup isPatientGroupOf BipolarCohort</vann:example>
-        <rdfs:comment xml:lang="en">Describes the cohort that a patient group is a part of</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isEnigmaContactOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isEnigmaContactOf">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <vann:example xml:lang="en">JohnSmith isEnigmaContactOf BipolarCohort</vann:example>
-        <rdfs:comment xml:lang="en">Describes the cohorts that someone is an Enigma contact of</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isImageAcquisitionProtocolOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isImageAcquisitionProtocolOf">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#ImageAcquisitionProtocol"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <vann:example xml:lang="en">AcquisitionProtocol1 isImageAcquisitionProtocolOf Cohort1</vann:example>
-        <rdfs:comment xml:lang="en">Describes which cohorts had data scanned with a certain acquisition protocol</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isInformationObtainmentMethodOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isInformationObtainmentMethodOf">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#obtainedInformationThrough"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#InformationObtainmentMethod"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <vann:example xml:lang="en">selfReport isInformationObtainmentMethodOf Cohort1 --&gt; Self report was used to obtain medical information of the members of Cohort1</vann:example>
-        <rdfs:comment xml:lang="en">Describes what cohorts use that particular information obtainment method</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isInvestigatorOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isInvestigatorOf">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <vann:example xml:lang="en">JohnSmith isInvestigatorOf BipolarProject</vann:example>
-        <rdfs:comment xml:lang="en">Describes what cohorts someone is an investigator for</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isLocationOfDataCollectionOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isLocationOfDataCollectionOf">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Location"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <vann:example xml:lang="en">Describes the cohorts that collected data at a given location</vann:example>
-        <vann:example xml:lang="en">Irvine isLocationOfDataCollectionOf Cohort1 --&gt; Irvine is the location of Cohort1</vann:example>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isPIOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isPIOf">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <vann:example xml:lang="en">John isPIOf Cohort1 --&gt; John is the personal investigator of Cohort1</vann:example>
-        <rdfs:comment xml:lang="en">Fescribes the cohorts that the principal investigator is in charge of</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isPopulationGroupOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isPopulationGroupOf">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <vann:example xml:lang="en">BipolarPopulationGroup isPopulationGroupOf BipolarCohort</vann:example>
-        <rdfs:comment xml:lang="en">Describes the cohort of a certain population group</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isProjectCohortOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isProjectCohortOf">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <vann:example xml:lang="en">BipolarBarcelonaCohort isProjectCohortOf BipolarCohort</vann:example>
-        <rdfs:comment xml:lang="en">Describes the cohort that the project cohort belongs to</rdfs:comment>
     </owl:ObjectProperty>
     
 
