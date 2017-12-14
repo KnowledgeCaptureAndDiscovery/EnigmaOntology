@@ -129,6 +129,7 @@
     <!-- https://w3id.org/enigma#isDataAnalystOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isDataAnalystOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributesTo"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#ENIGMAPublication"/>
         <vann:example xml:lang="en">JohnSmith isDataAnalystOf ENIGMAPublication1</vann:example>
@@ -391,28 +392,46 @@
                         <rdf:rest>
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                <rdf:first>Graduate student</rdf:first>
+                                <rdf:first>Associate professor</rdf:first>
                                 <rdf:rest>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                        <rdf:first>Other</rdf:first>
+                                        <rdf:first>Graduate student</rdf:first>
                                         <rdf:rest>
                                             <rdf:Description>
                                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                <rdf:first>Postdoctoral researcher</rdf:first>
+                                                <rdf:first>Other</rdf:first>
                                                 <rdf:rest>
                                                     <rdf:Description>
                                                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                        <rdf:first>Professor</rdf:first>
+                                                        <rdf:first>Postdoctoral researcher</rdf:first>
                                                         <rdf:rest>
                                                             <rdf:Description>
                                                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                                <rdf:first>Research assistant</rdf:first>
+                                                                <rdf:first>Professor</rdf:first>
                                                                 <rdf:rest>
                                                                     <rdf:Description>
                                                                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                                        <rdf:first>Undergraduate</rdf:first>
-                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                        <rdf:first>Program director</rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                <rdf:first>Program manager</rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                        <rdf:first>Research assistant</rdf:first>
+                                                                                        <rdf:rest>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                                                <rdf:first>Undergraduate</rdf:first>
+                                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:rest>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
                                                                     </rdf:Description>
                                                                 </rdf:rest>
                                                             </rdf:Description>
