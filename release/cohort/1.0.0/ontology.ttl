@@ -8,9 +8,11 @@
 
 <https://w3id.org/enigma> rdf:type owl:Ontology ;
                            owl:versionIRI <https://w3id.org/enigma/cohort/1.0.0> ;
-                           <http://purl.org/dc/terms/contributor> "Daniel Garijo"^^xsd:string ,
+                           <http://purl.org/dc/terms/contributor> "Agnes McMahon"^^xsd:string ,
+                                                                  "Daniel Garijo"^^xsd:string ,
                                                                   "Yolanda Gil"^^xsd:string ;
-                           <http://purl.org/dc/terms/creator> "Neda Jahanshad"^^xsd:string ,
+                           <http://purl.org/dc/terms/creator> "MiHyun Jang"^^xsd:string ,
+                                                              "Neda Jahanshad"^^xsd:string ,
                                                               "Ryan Espiritu"^^xsd:string ;
                            <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> ;
                            <http://purl.org/dc/terms/title> "The Cohort Ontology"^^xsd:string ;
@@ -69,8 +71,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                           rdfs:domain :CohortGroup ;
                           rdfs:range :Disorder ;
                           owl:propertyDisjointWith :hasFirstEpisodeOf ;
-                          <http://purl.org/vocab/vann/example> "CohortGroup1 didNotHaveFirstEpisodeOf Psychosis --> CohortGroup1 excludes people who had a first episode of psychosis"^^xsd:string ;
-                          rdfs:comment "describes what disease the members of the cohort group did NOT have a first episode of"^^xsd:string .
+                          <http://purl.org/vocab/vann/example> "CohortGroup1 didNotHaveFirstEpisodeOf Psychosis --> CohortGroup1 excludes people who had a first episode of psychosis"@en ;
+                          rdfs:comment "Describes which diseases the cohort group members did NOT have a first episode of"@en .
 
 
 ###  https://w3id.org/enigma#doesNotHaveCondition
@@ -78,8 +80,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                       rdfs:domain :CohortGroup ;
                       rdfs:range :Condition ;
                       owl:propertyDisjointWith :hasCondition ;
-                      <http://purl.org/vocab/vann/example> "Cohort1 doesNotHaveCondition euthymia"^^xsd:string ;
-                      rdfs:comment "describes which diease conditions are excluded in a given cohort group"^^xsd:string .
+                      <http://purl.org/vocab/vann/example> "Cohort1 doesNotHaveCondition euthymia"@en ;
+                      rdfs:comment "Describes which disease conditions are excluded in a given cohort group"@en .
 
 
 ###  https://w3id.org/enigma#doesNotHaveDisorder
@@ -87,8 +89,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                      rdfs:domain :CohortGroup ;
                      rdfs:range :Disorder ;
                      owl:propertyDisjointWith :hasDisorder ;
-                     <http://purl.org/vocab/vann/example> "CohortGroup1 doesNotHaveDisorder Cancer --> CohortGroup1 excludes people who have cancer"^^xsd:string ;
-                     rdfs:comment "describes which disorders are excluded in a given cohort group"^^xsd:string .
+                     <http://purl.org/vocab/vann/example> "CohortGroup1 doesNotHaveDisorder Cancer --> CohortGroup1 excludes people who have cancer"@en ;
+                     rdfs:comment "Describes which disorders are excluded in a given cohort group"@en .
 
 
 ###  https://w3id.org/enigma#doesNotHaveFamilyHistoryOf
@@ -96,8 +98,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                             rdfs:domain :CohortGroup ;
                             rdfs:range :Disorder ;
                             owl:propertyDisjointWith :hasFamilyHistoryOf ;
-                            <http://purl.org/vocab/vann/example> "CohortGroup1 doesNotHaveFamilyHistoryOf Schizophrenia --> CohortGroup1 excludes people who have a family history of schizophrenia"^^xsd:string ;
-                            rdfs:comment "describes what disease the members of the cohort group do NOT have a family history of"^^xsd:string .
+                            <http://purl.org/vocab/vann/example> "CohortGroup1 doesNotHaveFamilyHistoryOf Schizophrenia --> CohortGroup1 excludes people who have a family history of schizophrenia"@en ;
+                            rdfs:comment "Describes which diseases the cohort group members do NOT have a family history of"@en .
 
 
 ###  https://w3id.org/enigma#doesNotHaveFirstDegreeRelativeWithDisorder
@@ -106,8 +108,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                             rdfs:domain :CohortGroup ;
                                             rdfs:range :Disorder ;
                                             owl:propertyDisjointWith :hasFirstDegreeRelativeWithDisorder ;
-                                            <http://purl.org/vocab/vann/example> "CohortGroup1 doesNotHaveFirstDegreeRelativeWithDisorder BipolarDisorder --> CohortGroup1 excludes people who have a first degree relative with bipolar disorder"^^xsd:string ;
-                                            rdfs:comment "describes what disease(s) the first degree relatives of the members of the cohort group do NOT have"^^xsd:string .
+                                            <http://purl.org/vocab/vann/example> "CohortGroup1 doesNotHaveFirstDegreeRelativeWithDisorder BipolarDisorder --> CohortGroup1 excludes people who have a first degree relative with bipolar disorder"@en ;
+                                            rdfs:comment "Describes which diseases the first degree relatives of cohort group members do NOT have"@en .
 
 
 ###  https://w3id.org/enigma#doesNotHavePersonalHistoryOf
@@ -115,8 +117,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                               rdfs:domain :CohortGroup ;
                               rdfs:range :Disorder ;
                               owl:propertyDisjointWith :hasPersonalHistoryOf ;
-                              <http://purl.org/vocab/vann/example> "CohortGroup1 doesNotHaveHistoryOf NeurologicalDisease --> CohortGroup1 excludes people who have neurological disease"^^xsd:string ;
-                              rdfs:comment "describes the diseases that the members of the cohort groups do NOT have a history of"^^xsd:string .
+                              <http://purl.org/vocab/vann/example> "CohortGroup1 doesNotHaveHistoryOf NeurologicalDisease --> CohortGroup1 excludes people who have neurological disease"@en ;
+                              rdfs:comment "Describes the diseases that the cohort group members do NOT have a history of"@en .
 
 
 ###  https://w3id.org/enigma#doesNotUseTreatment
@@ -124,16 +126,16 @@ xsd:gYear rdf:type rdfs:Datatype .
                      rdfs:domain :CohortGroup ;
                      rdfs:range :Treatment ;
                      owl:propertyDisjointWith :usesTreatment ;
-                     <http://purl.org/vocab/vann/example> "CohortGroup1 doesNotUseTreatment Antidepressants --> CohortGroup1 excludes people who use antidepressants"^^xsd:string ;
-                     rdfs:comment "describes which drug(s) or therapy(ies) that the members of the cohort group are NOT using"^^xsd:string .
+                     <http://purl.org/vocab/vann/example> "CohortGroup1 doesNotUseTreatment Antidepressants --> CohortGroup1 excludes people who use antidepressants"@en ;
+                     rdfs:comment "Describes which drugs or therapies that the cohort group members are NOT using"@en .
 
 
 ###  https://w3id.org/enigma#fulfillsDiagnosticCriteria
 :fulfillsDiagnosticCriteria rdf:type owl:ObjectProperty ;
                             rdfs:domain :Disorder ;
                             rdfs:range :DiagnosticCriteria ;
-                            <http://purl.org/vocab/vann/example> "bipolarDisorder fulfillsDiagnosticCriteria diagnosticAndStatisticalManualOfMentalDisorders --> The diagnosis of bipolar disorder fulfills the criteria of the DSM"^^xsd:string ;
-                            rdfs:comment "describes the criteria used to diagnose the disorder"^^xsd:string .
+                            <http://purl.org/vocab/vann/example> "bipolarDisorder fulfillsDiagnosticCriteria diagnosticAndStatisticalManualOfMentalDisorders --> The diagnosis of bipolar disorder fulfills the criteria of the DSM"@en ;
+                            rdfs:comment "Describes the criteria used to diagnose the disorder"@en .
 
 
 ###  https://w3id.org/enigma#hasBrainScanDataType
@@ -141,89 +143,72 @@ xsd:gYear rdf:type rdfs:Datatype .
                       rdfs:subPropertyOf :hasDataType ;
                       rdfs:domain :Cohort ;
                       rdfs:range :BrainScanDataType ;
-                      <http://purl.org/vocab/vann/example> "Cohort1 hasBrainScanDataType expression"^^xsd:string ;
-                      rdfs:comment "describes the brain scan data types that were collected for a cohort"^^xsd:string .
-
-
-###  https://w3id.org/enigma#hasCohort
-:hasCohort rdf:type owl:ObjectProperty ;
-           owl:inverseOf :isCohortInProject ,
-                         :isCohortInWorkingGroup ;
-           rdfs:domain [ rdf:type owl:Class ;
-                         owl:unionOf ( :Project
-                                       :WorkingGroup
-                                     )
-                       ] ;
-           rdfs:range :Cohort ;
-           <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasCohort BipolarAmsterdamCohort --> The Bipolar working group uses data from the Bipolar Amsterdam cohort"^^xsd:string ;
-           rdfs:comment "describes what cohorts are part of a working group"^^xsd:string .
+                      <http://purl.org/vocab/vann/example> "Cohort1 hasBrainScanDataType MRI"@en ;
+                      rdfs:comment "Describes the brain scan data types that were collected for a cohort"@en .
 
 
 ###  https://w3id.org/enigma#hasCondition
 :hasCondition rdf:type owl:ObjectProperty ;
               rdfs:domain :CohortGroup ;
               rdfs:range :Condition ;
-              <http://purl.org/vocab/vann/example> "Cohort1 hasCondition euthymia"^^xsd:string ;
-              rdfs:comment "describes which diease conditions are included in a given cohort group"^^xsd:string .
+              <http://purl.org/vocab/vann/example> "Cohort1 hasCondition euthymia"@en ;
+              rdfs:comment "describes which diease conditions are included in a given cohort group"@en .
 
 
 ###  https://w3id.org/enigma#hasControlGroup
 :hasControlGroup rdf:type owl:ObjectProperty ;
-                 owl:inverseOf :isControlGroupOf ;
                  rdfs:domain :Cohort ;
                  rdfs:range :CohortGroup ;
-                 <http://purl.org/vocab/vann/example> "BipolarControl hasControlGroup BipolarControlGroup"^^xsd:string .
+                 <http://purl.org/vocab/vann/example> "BipolarCohort hasControlGroup BipolarControlGroup"@en ;
+                 rdfs:comment "Describes the control group of a cohort"@en .
 
 
 ###  https://w3id.org/enigma#hasDataType
 :hasDataType rdf:type owl:ObjectProperty ;
              rdfs:domain :Cohort ;
              rdfs:range :DataType ;
-             <http://purl.org/vocab/vann/example> "Cohort1 hasDataType dataType1"^^xsd:string ;
-             rdfs:comment "The cohorts of a project will automatically have the data types of the project. It can have more but must at least have the data types of the project. I do not know how to implement this."^^xsd:string ,
-                          "describes the data types that were collected for the cohort"^^xsd:string .
+             <http://purl.org/vocab/vann/example> "Cohort1 hasDataType dataType1"@en ;
+             rdfs:comment "Describes the data types that were collected for the cohort"@en .
 
 
 ###  https://w3id.org/enigma#hasDiagnosticGroup
 :hasDiagnosticGroup rdf:type owl:ObjectProperty ;
-                    owl:inverseOf :isDiagnosticGroupOf ;
                     rdfs:domain :Cohort ;
                     rdfs:range :CohortGroup ;
-                    <http://purl.org/vocab/vann/example> "BipolarCohort hasPatientGroup BipolarPatientGroup"^^xsd:string ;
-                    rdfs:comment "describes the patient group of a cohort"^^xsd:string .
+                    <http://purl.org/vocab/vann/example> "BipolarCohort hasPatientGroup BipolarPatientGroup"@en ;
+                    rdfs:comment "Describes the patient group of a cohort"@en .
 
 
 ###  https://w3id.org/enigma#hasDisorder
 :hasDisorder rdf:type owl:ObjectProperty ;
              rdfs:domain :CohortGroup ;
              rdfs:range :Disorder ;
-             <http://purl.org/vocab/vann/example> "CohortGroup1 hasDisorder Cancer --> CohortGroup1 only includes people who have cancer"^^xsd:string ;
-             rdfs:comment "describes what disease(s) the members of the cohort group have"^^xsd:string .
+             <http://purl.org/vocab/vann/example> "CohortGroup1 hasDisorder Cancer --> CohortGroup1 only includes people who have cancer"@en ;
+             rdfs:comment "Describes what disease(s) the members of the cohort group have"@en .
 
 
 ###  https://w3id.org/enigma#hasDisorderDetails
 :hasDisorderDetails rdf:type owl:ObjectProperty ;
                     rdfs:domain :CohortGroup ;
                     rdfs:range :SpecificDisorderInfo ;
-                    <http://purl.org/vocab/vann/example> "CohortGroup1 hasDisorderDetails SZ20938"^^xsd:string ;
-                    rdfs:comment "describes the details of a particular disorder that a cohort group has"^^xsd:string .
+                    <http://purl.org/vocab/vann/example> "CohortGroup1 hasDisorderDetails SZ20938"@en ;
+                    rdfs:comment "Describes the details of a particular disorder that a cohort group has"@en .
 
 
 ###  https://w3id.org/enigma#hasEnigmaContact
 :hasEnigmaContact rdf:type owl:ObjectProperty ;
-                  owl:inverseOf :isEnigmaContactOf ;
                   rdfs:domain :Cohort ;
                   rdfs:range :Person ;
-                  <http://purl.org/vocab/vann/example> "Cohort1 hasEnigmaContact JohnSmith"^^xsd:string ;
-                  rdfs:comment "describes the contact people from ENIGMA of a cohort"^^xsd:string .
+                  <http://purl.org/vocab/vann/example> "Cohort1 hasEnigmaContact JohnSmith"@en ;
+                  rdfs:comment "Describes the contact people from ENIGMA of a cohort"@en .
 
 
 ###  https://w3id.org/enigma#hasFamilyHistoryOf
 :hasFamilyHistoryOf rdf:type owl:ObjectProperty ;
                     rdfs:domain :CohortGroup ;
                     rdfs:range :Disorder ;
-                    <http://purl.org/vocab/vann/example> "CohortGroup1 hasFamilyHistoryOf CardiovascularDisease --> CohortGroup1 only includes people who have a family history of cardiovascular diseases"^^xsd:string ;
-                    rdfs:comment "describes what disease the members of the cohort group have a family history of"^^xsd:string .
+                    <http://purl.org/vocab/vann/example> "CohortGroup1 hasFamilyHistoryOf CardiovascularDisease --> CohortGroup1 only includes people who have a family history of cardiovascular diseases"@en ;
+                    rdfs:comment "Describes what diseases the members of the cohort group have a family history of"@en .
 
 
 ###  https://w3id.org/enigma#hasFirstDegreeRelativeWithDisorder
@@ -231,8 +216,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                     rdfs:subPropertyOf :hasFamilyHistoryOf ;
                                     rdfs:domain :CohortGroup ;
                                     rdfs:range :Disorder ;
-                                    <http://purl.org/vocab/vann/example> "CohortGroup1 hasFirstDegreeRelativeWithDisorder Psychosis --> CohortGroup1 only includes people who have a first degree relative with psychosis"^^xsd:string ;
-                                    rdfs:comment "describes what disease(s) the first degree relatives of the members of the cohort group have"^^xsd:string .
+                                    <http://purl.org/vocab/vann/example> "CohortGroup1 hasFirstDegreeRelativeWithDisorder Psychosis --> CohortGroup1 only includes people who have a first degree relative with psychosis"@en ;
+                                    rdfs:comment "Describes what diseases the first degree relatives of the members of the cohort group have"@en .
 
 
 ###  https://w3id.org/enigma#hasFirstEpisodeOf
@@ -240,8 +225,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                    rdfs:subPropertyOf :hasPersonalHistoryOf ;
                    rdfs:domain :CohortGroup ;
                    rdfs:range :Disorder ;
-                   <http://purl.org/vocab/vann/example> "CohortGroup1 hasFirstEpisodeOf Psychosis --> CohortGroup1 only includes people who had a first episode of psychosis"^^xsd:string ;
-                   rdfs:comment "describes what disease the members of the cohort group had a first episode of"^^xsd:string .
+                   <http://purl.org/vocab/vann/example> "CohortGroup1 hasFirstEpisodeOf Psychosis --> CohortGroup1 only includes people who had a first episode of psychosis"@en ;
+                   rdfs:comment "Describes what disease the members of the cohort group had a first episode of"@en .
 
 
 ###  https://w3id.org/enigma#hasGeneticDataType
@@ -249,43 +234,40 @@ xsd:gYear rdf:type rdfs:Datatype .
                     rdfs:subPropertyOf :hasDataType ;
                     rdfs:domain :Cohort ;
                     rdfs:range :GeneticDataType ;
-                    <http://purl.org/vocab/vann/example> "Cohort1 hasGeneticDataType expression"^^xsd:string ;
-                    rdfs:comment "describes the genetic data types that were collected for a cohort"^^xsd:string .
+                    <http://purl.org/vocab/vann/example> "Cohort1 hasGeneticDataType epigenetic"@en ;
+                    rdfs:comment "Describes the genetic data types that were collected for a cohort"@en .
 
 
 ###  https://w3id.org/enigma#hasImageAcquisitionProtocol
 :hasImageAcquisitionProtocol rdf:type owl:ObjectProperty ;
-                             owl:inverseOf :isImageAcquisitionProtocolOf ;
                              rdfs:domain :Cohort ;
                              rdfs:range :ImageAcquisitionProtocol ;
-                             <http://purl.org/vocab/vann/example> "Cohort1 hasImageAcquisitionProtocol AcquisitionProtocol1"^^xsd:string ;
-                             rdfs:comment "describes the acquisition protocol that was used to scan the cohort"^^xsd:string .
+                             <http://purl.org/vocab/vann/example> "Cohort1 hasImageAcquisitionProtocol AcquisitionProtocol1"@en ;
+                             rdfs:comment "Describes the acquisition protocol that was used to scan the data of a cohort"@en .
 
 
 ###  https://w3id.org/enigma#hasInvestigator
 :hasInvestigator rdf:type owl:ObjectProperty ;
-                 owl:inverseOf :isInvestigatorOf ;
                  rdfs:domain :Cohort ;
                  rdfs:range :Person ;
-                 <http://purl.org/vocab/vann/example> "BipolarCohort hasInvestigator JohnSmith"^^xsd:string ;
-                 rdfs:comment "describe the investigators of a cohort"^^xsd:string .
+                 <http://purl.org/vocab/vann/example> "BipolarCohort hasInvestigator JohnSmith"@en ;
+                 rdfs:comment "Describe the investigators of a cohort"@en .
 
 
 ###  https://w3id.org/enigma#hasLocationOfDataCollection
 :hasLocationOfDataCollection rdf:type owl:ObjectProperty ;
-                             owl:inverseOf :isLocationOfDataCollectionOf ;
                              rdfs:domain :Cohort ;
                              rdfs:range :Location ;
-                             <http://purl.org/vocab/vann/example> "Cohort1 hasLocationOfDataCollection Toronto"^^xsd:string ;
-                             rdfs:comment "describes where the data of the cohort was collected"^^xsd:string .
+                             <http://purl.org/vocab/vann/example> "Cohort1 hasLocationOfDataCollection Toronto"@en ;
+                             rdfs:comment "Describes where the data of the cohort was collected"@en .
 
 
 ###  https://w3id.org/enigma#hasMedicalRatingDetails
 :hasMedicalRatingDetails rdf:type owl:ObjectProperty ;
                          rdfs:domain :CohortGroup ;
                          rdfs:range :SpecificMedicalRatingInfo ;
-                         <http://purl.org/vocab/vann/example> "CohortDisorderGroup hasMedicalRatingDetails YMRS3010"^^xsd:string ;
-                         rdfs:comment "describes the min and max values of the medical rating criteria"^^xsd:string .
+                         <http://purl.org/vocab/vann/example> "CohortDisorderGroup hasMedicalRatingDetails YMRS3010"@en ;
+                         rdfs:comment "Describes the min and max values of the medical rating criteria"@en .
 
 
 ###  https://w3id.org/enigma#hasMembersWithRecentIssue
@@ -302,181 +284,88 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                       :Treatment
                                                     )
                                       ] ;
-                           <http://purl.org/vocab/vann/example> "Cohort1TreatmentInfo usesTreatment Benzodiazepine inThePastMonths 6 --> Cohort1 only includes people who used benzodiazepine in the past6 months"^^xsd:string ;
-                           rdfs:comment "describes whether or not the members of the cohort had an issue (condition, disorder, or treatment-related)  within the past few months"^^xsd:string .
+                           <http://purl.org/vocab/vann/example> "Cohort1TreatmentInfo usesTreatment Benzodiazepine inThePastMonths 6 --> Cohort1 only includes people who used benzodiazepine in the past6 months"@en ;
+                           rdfs:comment "Describes whether or not the members of the cohort had an issue (condition, disorder, or treatment-related)  within the past few months"@en .
 
 
 ###  https://w3id.org/enigma#hasPI
 :hasPI rdf:type owl:ObjectProperty ;
-       owl:inverseOf :isPIOf ;
        rdfs:domain :Cohort ;
        rdfs:range :Person ;
-       <http://purl.org/vocab/vann/example> "Cohort1 hasPI John --> the principal investigator of Cohort1 is John"^^xsd:string ;
-       rdfs:comment "describes the personal investigator of the cohort"^^xsd:string .
+       <http://purl.org/vocab/vann/example> "Cohort1 hasPI John --> the principal investigator of Cohort1 is John"@en ;
+       rdfs:comment "Describes the principal investigator of the cohort"@en .
 
 
 ###  https://w3id.org/enigma#hasPersonalHistoryOf
 :hasPersonalHistoryOf rdf:type owl:ObjectProperty ;
                       rdfs:domain :CohortGroup ;
                       rdfs:range :Disorder ;
-                      <http://purl.org/vocab/vann/example> "CohortGroup1 hasHistoryOf NeurologicalDisease --> CohortGroup1 only includes people who have history of neurological disorders"^^xsd:string ;
-                      rdfs:comment "describes the disease that the members of the cohort group have a history of"^^xsd:string .
+                      <http://purl.org/vocab/vann/example> "CohortGroup1 hasHistoryOf NeurologicalDisease --> CohortGroup1 only includes people who have history of neurological disorders"@en ;
+                      rdfs:comment "Describes the disease that the members of the cohort group have a history of"@en .
 
 
 ###  https://w3id.org/enigma#hasPopulationGroup
 :hasPopulationGroup rdf:type owl:ObjectProperty ;
-                    owl:inverseOf :isPopulationGroupOf ;
                     rdfs:domain :Cohort ;
                     rdfs:range :CohortGroup ;
-                    <http://purl.org/vocab/vann/example> "BipolarCohort hasPopulationGroup USCPopulationGroup"^^xsd:string ;
-                    rdfs:comment "describes the population group of a population-based cohort"^^xsd:string .
+                    <http://purl.org/vocab/vann/example> "BipolarCohort hasPopulationGroup USCPopulationGroup"@en ;
+                    rdfs:comment "Describes the population group of a population-based cohort"@en .
 
 
 ###  https://w3id.org/enigma#hasProjectCohort
 :hasProjectCohort rdf:type owl:ObjectProperty ;
-                  owl:inverseOf :isProjectCohortOf ;
                   rdfs:domain :Cohort ;
                   rdfs:range :ProjectCohort ;
-                  <http://purl.org/vocab/vann/example> "BipolarCohort hasProjectCohort BipolarBarcelonaCohort"^^xsd:string ;
-                  rdfs:comment "describes the subcohorts that are part of that cohort"^^xsd:string .
+                  <http://purl.org/vocab/vann/example> "BipolarCohort hasProjectCohort BipolarBarcelonaCohort"@en ;
+                  rdfs:comment "Describes the subcohorts, specific to a given project, that are part of that cohort"@en .
 
 
 ###  https://w3id.org/enigma#hasTreatmentDetails
 :hasTreatmentDetails rdf:type owl:ObjectProperty ;
                      rdfs:domain :CohortGroup ;
                      rdfs:range :SpecificTreatmentInfo ;
-                     <http://purl.org/vocab/vann/example> "CohortGroup hasTreatmentDetails antidepressants42"^^xsd:string ;
-                     rdfs:comment "descries the details of the treatment that a cohort group is using"^^xsd:string .
+                     <http://purl.org/vocab/vann/example> "CohortGroup hasTreatmentDetails antidepressants42"@en ;
+                     rdfs:comment "Describes the details of the treatment that a cohort group is using"@en .
 
 
 ###  https://w3id.org/enigma#isCohortInProject
 :isCohortInProject rdf:type owl:ObjectProperty ;
                    rdfs:domain :Cohort ;
                    rdfs:range :Project ;
-                   <http://purl.org/vocab/vann/example> "Cohort1 isCohortInProject BipolarProject"^^xsd:string ;
-                   rdfs:comment "describes what projects a cohort is a part of"^^xsd:string .
+                   <http://purl.org/vocab/vann/example> "Cohort1 isCohortInProject BipolarProject"@en ;
+                   rdfs:comment "Describes what projects a cohort is a part of"@en .
 
 
 ###  https://w3id.org/enigma#isCohortInWorkingGroup
 :isCohortInWorkingGroup rdf:type owl:ObjectProperty ;
                         rdfs:domain :Cohort ;
                         rdfs:range :WorkingGroup ;
-                        <http://purl.org/vocab/vann/example> "BipolarAmsterdamCohort isCohortInWorkingGroup BipolarWorkingGroup --> The Bipolar Amsterdam cohort is part of the Bipolar working group"^^xsd:string ;
-                        rdfs:comment "describes what working group the cohort is a part of"^^xsd:string .
-
-
-###  https://w3id.org/enigma#isControlGroupOf
-:isControlGroupOf rdf:type owl:ObjectProperty ;
-                  rdfs:domain :CohortGroup ;
-                  rdfs:range :Cohort ;
-                  <http://purl.org/vocab/vann/example> "BipolarControlGroup isControlGroupOf BipolarCohort"^^xsd:string ;
-                  rdfs:comment "describes the cohort that a control group is a part of"^^xsd:string .
-
-
-###  https://w3id.org/enigma#isDiagnosisInstrumentOf
-:isDiagnosisInstrumentOf rdf:type owl:ObjectProperty ;
-                         owl:inverseOf :usedDiagnosisInstrument ;
-                         rdfs:domain :DiagnosisInstrument ;
-                         rdfs:range :Cohort ;
-                         <http://purl.org/vocab/vann/example> "miniInternationalNeuropyschiatricInterview isDiagnosisInstrumentOf Cohort1 --> Mini International Neuropyschiatric Interview was used as the diagnosis instrument of Cohort1"^^xsd:string ;
-                         rdfs:comment "describes the cohort that used the particular diagnosis instrument"^^xsd:string .
-
-
-###  https://w3id.org/enigma#isDiagnosticGroupOf
-:isDiagnosticGroupOf rdf:type owl:ObjectProperty ;
-                     rdfs:domain :CohortGroup ;
-                     rdfs:range :Cohort ;
-                     <http://purl.org/vocab/vann/example> "BipolarPatientGroup isPatientGroupOf BipolarCohort"^^xsd:string ;
-                     rdfs:comment "describes the cohort that a patient group is a part of"^^xsd:string .
-
-
-###  https://w3id.org/enigma#isEnigmaContactOf
-:isEnigmaContactOf rdf:type owl:ObjectProperty ;
-                   rdfs:domain :Person ;
-                   rdfs:range :Cohort ;
-                   <http://purl.org/vocab/vann/example> "JohnSmith isEnigmaContactOf BipolarCohort"^^xsd:string ;
-                   rdfs:comment "describes the cohorts that someone is an Enigma contact of"^^xsd:string .
-
-
-###  https://w3id.org/enigma#isImageAcquisitionProtocolOf
-:isImageAcquisitionProtocolOf rdf:type owl:ObjectProperty ;
-                              rdfs:domain :ImageAcquisitionProtocol ;
-                              rdfs:range :Cohort ;
-                              <http://purl.org/vocab/vann/example> "AcquisitionProtocol1 isImageAcquisitionProtocolOf Cohort1"^^xsd:string ;
-                              rdfs:comment "describes which cohorts were scanned with a certain acquisition protocol"^^xsd:string .
-
-
-###  https://w3id.org/enigma#isInformationObtainmentMethodOf
-:isInformationObtainmentMethodOf rdf:type owl:ObjectProperty ;
-                                 owl:inverseOf :obtainedInformationThrough ;
-                                 rdfs:domain :InformationObtainmentMethod ;
-                                 rdfs:range :Cohort ;
-                                 <http://purl.org/vocab/vann/example> "selfReport isInformationObtainmentMethodOf Cohort1 --> Self report was used to obtain medical information of the members of Cohort1"^^xsd:string ;
-                                 rdfs:comment "describes what cohorts use that particular information obtainment method"^^xsd:string .
-
-
-###  https://w3id.org/enigma#isInvestigatorOf
-:isInvestigatorOf rdf:type owl:ObjectProperty ;
-                  rdfs:domain :Person ;
-                  rdfs:range :Cohort ;
-                  <http://purl.org/vocab/vann/example> "JohnSmith isInvestigatorOf BipolarProject"^^xsd:string ;
-                  rdfs:comment "describes what cohorts someone is an investigator for"^^xsd:string .
-
-
-###  https://w3id.org/enigma#isLocationOfDataCollectionOf
-:isLocationOfDataCollectionOf rdf:type owl:ObjectProperty ;
-                              rdfs:domain :Location ;
-                              rdfs:range :Cohort ;
-                              <http://purl.org/vocab/vann/example> "Irvine isLocationOfDataCollectionOf Cohort1 --> Irvine is the location of Cohort1"^^xsd:string ,
-                                                                   "describes the cohorts that collected data at that location"^^xsd:string .
-
-
-###  https://w3id.org/enigma#isPIOf
-:isPIOf rdf:type owl:ObjectProperty ;
-        rdfs:domain :Person ;
-        rdfs:range :Cohort ;
-        <http://purl.org/vocab/vann/example> "John isPIOf Cohort1 --> John is the personal investigator of Cohort1"^^xsd:string ;
-        rdfs:comment "describes the cohorts that the personal investigator is in charge of"^^xsd:string .
-
-
-###  https://w3id.org/enigma#isPopulationGroupOf
-:isPopulationGroupOf rdf:type owl:ObjectProperty ;
-                     rdfs:domain :CohortGroup ;
-                     rdfs:range :Cohort ;
-                     <http://purl.org/vocab/vann/example> "BipolarPopulationGroup isPopulationGroupOf BipolarCohort"^^xsd:string ;
-                     rdfs:comment "describes the population group of a cohort of a population-based study"^^xsd:string .
-
-
-###  https://w3id.org/enigma#isProjectCohortOf
-:isProjectCohortOf rdf:type owl:ObjectProperty ;
-                   rdfs:domain :ProjectCohort ;
-                   rdfs:range :Cohort ;
-                   <http://purl.org/vocab/vann/example> "BipolarBarcelonaCohort isProjectCohortOf BipolarCohort"^^xsd:string ;
-                   rdfs:comment "describes the bigger cohort that the project cohort belongs to"^^xsd:string .
+                        <http://purl.org/vocab/vann/example> "BipolarAmsterdamCohort isCohortInWorkingGroup BipolarWorkingGroup --> The Bipolar Amsterdam cohort is part of the Bipolar working group"@en ;
+                        rdfs:comment "Describes what working group the cohort is a part of"@en .
 
 
 ###  https://w3id.org/enigma#obtainedInformationThrough
 :obtainedInformationThrough rdf:type owl:ObjectProperty ;
                             rdfs:domain :Cohort ;
                             rdfs:range :InformationObtainmentMethod ;
-                            <http://purl.org/vocab/vann/example> "Cohort1 obtainedInformationThrough selfReport --> The information of the members of Cohort1 was obtained through self report"^^xsd:string ;
-                            rdfs:comment "describes what the method for obtaining medical information was"^^xsd:string .
+                            <http://purl.org/vocab/vann/example> "Cohort1 obtainedInformationThrough selfReport --> The information of the members of Cohort1 was obtained through self report"@en ;
+                            rdfs:comment "Describes the method for obtaining the medical information of a cohort"@en .
 
 
 ###  https://w3id.org/enigma#usedDiagnosisInstrument
 :usedDiagnosisInstrument rdf:type owl:ObjectProperty ;
                          rdfs:domain :Cohort ;
                          rdfs:range :DiagnosisInstrument ;
-                         <http://purl.org/vocab/vann/example> "Cohort1 usedDiagnosisInstrument miniInternationalNeuropychiatricInterview --> The members of Cohort1 were diagnosted with Mini International Neuropychiatric Interview"^^xsd:string ;
-                         rdfs:comment "describes what instrument was used to diagnose the members of the cohort"^^xsd:string .
+                         <http://purl.org/vocab/vann/example> "Cohort1 usedDiagnosisInstrument miniInternationalNeuropychiatricInterview --> The members of Cohort1 were diagnosted with Mini International Neuropychiatric Interview"@en ;
+                         rdfs:comment "Describes what instrument was used to diagnose the members of the cohort"@en .
 
 
 ###  https://w3id.org/enigma#usesGenotypePlatform
 :usesGenotypePlatform rdf:type owl:ObjectProperty ;
                       rdfs:domain :Cohort ;
                       rdfs:range :GenotypePlatform ;
-                      <http://purl.org/vocab/vann/example> "Cohort1 analyzedWithGenotypePlatform IllumniaOnmiExpress --> Illumina OnmiExpress was used to analyze cohort1"^^xsd:string ;
-                      rdfs:comment "describes what genotype platform was used to analyze the members of the cohort"^^xsd:string .
+                      <http://purl.org/vocab/vann/example> "Cohort1 analyzedWithGenotypePlatform IllumniaOnmiExpress --> Illumina OnmiExpress was used to analyze cohort1"@en ;
+                      rdfs:comment "Describes what genotype platform was used to analyze the members of the cohort"@en .
 
 
 ###  https://w3id.org/enigma#usesTreatment
@@ -484,7 +373,7 @@ xsd:gYear rdf:type rdfs:Datatype .
                rdfs:domain :CohortGroup ;
                rdfs:range :Treatment ;
                <http://purl.org/vocab/vann/example> "CohortGroup1 usesTreatment Antidepressants --> CohortGroup1 only includes people who currently use antidepressants"@en ;
-               rdfs:comment "describes which drug(s) or therapy(ies) that the members of the cohort group are using"@en .
+               rdfs:comment "Describes which drugs or therapies that the members of the cohort group are using"@en .
 
 
 #################################################################
@@ -496,24 +385,24 @@ xsd:gYear rdf:type rdfs:Datatype .
                         rdfs:domain :CohortGroup ;
                         rdfs:range xsd:boolean ;
                         owl:propertyDisjointWith :hasComorbidity ;
-                        <http://purl.org/vocab/vann/example> "CohortGroup1 doesNotHaveComorbidity true --> CohortGroup1 excludes people who are comorbid"^^xsd:string ;
-                        rdfs:comment "describes if the members of a cohort group do not have a comorbidity"^^xsd:string .
+                        <http://purl.org/vocab/vann/example> "CohortGroup1 doesNotHaveComorbidity true --> CohortGroup1 excludes people who are comorbid"@en ;
+                        rdfs:comment "Describes if the members of a cohort group do not have a comorbidity"@en .
 
 
 ###  https://w3id.org/enigma#doesNotHaveContraindicationToMRI
 :doesNotHaveContraindicationToMRI rdf:type owl:DatatypeProperty ;
                                   rdfs:domain :CohortGroup ;
                                   rdfs:range xsd:boolean ;
-                                  <http://purl.org/vocab/vann/example> "CohortGroup1 doesNotHaveContraindicationToMRI yes --> CohortGroup1 excludes people who do have contraindication to MRI"^^xsd:string ;
-                                  rdfs:comment "describes if people who have contraindication to MRI are excluded"^^xsd:string .
+                                  <http://purl.org/vocab/vann/example> "CohortGroup1 doesNotHaveContraindicationToMRI yes --> CohortGroup1 excludes people who do have contraindication to MRI"@en ;
+                                  rdfs:comment "Describes if individuals who have contraindication to MRI are excluded"@en .
 
 
 ###  https://w3id.org/enigma#doesNotHaveIntellectualDisability
 :doesNotHaveIntellectualDisability rdf:type owl:DatatypeProperty ;
                                    rdfs:domain :CohortGroup ;
                                    rdfs:range xsd:boolean ;
-                                   <http://purl.org/vocab/vann/example> "Cohort1 doesNotHaveIntellectualDisability true"^^xsd:string ;
-                                   rdfs:comment "describes whether a cohort excludes people with an intellectual disability"^^xsd:string .
+                                   <http://purl.org/vocab/vann/example> "Cohort1 doesNotHaveIntellectualDisability true"@en ;
+                                   rdfs:comment "Describes whether a cohort excludes people with an intellectual disability"@en .
 
 
 ###  https://w3id.org/enigma#doesNotHaveNeurologicalComorbidity
@@ -522,7 +411,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                     rdfs:domain :CohortGroup ;
                                     rdfs:range xsd:boolean ;
                                     owl:propertyDisjointWith :hasNeurologicalComorbidity ;
-                                    <http://purl.org/vocab/vann/example> "CohortGroup1 doesNotHavePsychiatricComorbidity true --> CohortGroup1 does not include people who have two or more psychiatric disorders"^^xsd:string .
+                                    <http://purl.org/vocab/vann/example> "CohortGroup1 doesNotHaveNeurologicalComorbidity true --> CohortGroup1 does not include people who have two or more neurological disorders"@en ;
+                                    rdfs:comment "Describes if the members of a cohort group do not have a neurological comorbidity"@en .
 
 
 ###  https://w3id.org/enigma#doesNotHavePsychiatricComorbidity
@@ -531,23 +421,24 @@ xsd:gYear rdf:type rdfs:Datatype .
                                    rdfs:domain :CohortGroup ;
                                    rdfs:range xsd:boolean ;
                                    owl:propertyDisjointWith :hasPsychiatricComorbidity ;
-                                   <http://purl.org/vocab/vann/example> "CohortGroup1 doesNotHaveNeurologicalComorbidity true --> CohortGroup1 excludes people who have two or more neurological disorders"^^xsd:string .
+                                   <http://purl.org/vocab/vann/example> "CohortGroup1 doesNotHavePsychiatricComorbidity true --> CohortGroup1 does not include people who have two or more psychiatric disorders"^^xsd:string ;
+                                   rdfs:comment "Describes if the members of a cohort group do not have a psychiatric comorbidity"^^xsd:string .
 
 
 ###  https://w3id.org/enigma#excludesLeftHands
 :excludesLeftHands rdf:type owl:DatatypeProperty ;
                    rdfs:domain :CohortGroup ;
                    rdfs:range xsd:boolean ;
-                   <http://purl.org/vocab/vann/example> "CohortGroup1 excludesLeftHanded true"^^xsd:string ;
-                   rdfs:comment "describes if left handed people were excluded from the study"^^xsd:string .
+                   <http://purl.org/vocab/vann/example> "CohortGroup1 excludesLeftHanded true"@en ;
+                   rdfs:comment "Describes if left handed people were excluded from the study"@en .
 
 
 ###  https://w3id.org/enigma#excludesRightHands
 :excludesRightHands rdf:type owl:DatatypeProperty ;
                     rdfs:domain :CohortGroup ;
                     rdfs:range xsd:boolean ;
-                    <http://purl.org/vocab/vann/example> "CohortGroup1 excludesRightHands true"^^xsd:string ;
-                    rdfs:comment "describes if right handed people were excluded from the study"^^xsd:string .
+                    <http://purl.org/vocab/vann/example> "CohortGroup1 excludesRightHands true"@en ;
+                    rdfs:comment "Describes if right handed people were excluded from the study"@en .
 
 
 ###  https://w3id.org/enigma#hasAgeGroup
@@ -560,8 +451,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                          ] ;
              rdfs:range xsd:string ;
              <http://purl.org/vocab/vann/example> """Cohort1 hasAgeGroup \"Infants\"
-Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
-             rdfs:comment "describes a group of people who share a similar age"^^xsd:string .
+Cohort1 hasAgeGroup \"Seniors\""""@en ;
+             rdfs:comment "Describes a group of people who share a similar age"@en .
 
 
 ###  https://w3id.org/enigma#hasAgeStandardDeviation
@@ -573,30 +464,32 @@ Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
                                                    )
                                      ] ;
                          rdfs:range xsd:double ;
-                         rdfs:comment "describes the standard deviation of the age of a project cohort"^^xsd:string .
+                         <http://purl.org/vocab/vann/example> "Cohort1 hasAgeStandardDeviation 5.0"@en ;
+                         rdfs:comment "Describes the standard deviation of the age of a cohort"@en .
 
 
 ###  https://w3id.org/enigma#hasComorbidity
 :hasComorbidity rdf:type owl:DatatypeProperty ;
                 rdfs:domain :CohortGroup ;
                 rdfs:range xsd:boolean ;
-                <http://purl.org/vocab/vann/example> "CohortGroup1 hasComorbidity true --> CohortGroup1 only includes people who are comorbid"^^xsd:string .
+                <http://purl.org/vocab/vann/example> "CohortGroup1 hasComorbidity true --> CohortGroup1 only includes people who are comorbid"@en ;
+                rdfs:comment "Describes if the members of a cohort group have a comorbidity"@en .
 
 
 ###  https://w3id.org/enigma#hasDataCollectionPeriodEnd
 :hasDataCollectionPeriodEnd rdf:type owl:DatatypeProperty ;
                             rdfs:domain :Cohort ;
                             rdfs:range xsd:gYear ;
-                            <http://purl.org/vocab/vann/example> "Cohort1 hasDataCollectionPeriodEnd 2008"^^xsd:string ;
-                            rdfs:comment "describes the end year of the data collection period of the cohort"^^xsd:string .
+                            <http://purl.org/vocab/vann/example> "Cohort1 hasDataCollectionPeriodEnd 2008"@en ;
+                            rdfs:comment "Describes the end year of the data collection period of the cohort"@en .
 
 
 ###  https://w3id.org/enigma#hasDataCollectionPeriodStart
 :hasDataCollectionPeriodStart rdf:type owl:DatatypeProperty ;
                               rdfs:domain :Cohort ;
                               rdfs:range xsd:gYear ;
-                              <http://purl.org/vocab/vann/example> "Cohort1 hasDataCollectionPeriodStart 2005"^^xsd:string ;
-                              rdfs:comment "describes the start year of the data collection period of the cohort"^^xsd:string .
+                              <http://purl.org/vocab/vann/example> "Cohort1 hasDataCollectionPeriodStart 2005"@en ;
+                              rdfs:comment "Describes the start year of the data collection period of the cohort"@en .
 
 
 ###  https://w3id.org/enigma#hasEthnicGroup
@@ -620,8 +513,8 @@ Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
                                                   ]
                                        ]
                            ] ;
-                <http://purl.org/vocab/vann/example> "Cohort1 hasEthnicGroup \"European\""^^xsd:string ;
-                rdfs:comment "describes the ethnic group that the participants of the cohort are in"^^xsd:string .
+                <http://purl.org/vocab/vann/example> "Cohort1 hasEthnicGroup \"European\""@en ;
+                rdfs:comment "Describes the ethnic group that the participants of the cohort are in"@en .
 
 
 ###  https://w3id.org/enigma#hasFamilialRelations
@@ -645,40 +538,40 @@ Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
                                                         ]
                                              ]
                                  ] ;
-                      <http://purl.org/vocab/vann/example> "CohortA hasRelations \"Twins\""^^xsd:string ;
-                      rdfs:comment "describes the relations between the individuals of a cohort"^^xsd:string .
+                      <http://purl.org/vocab/vann/example> "CohortA hasRelations \"Twins\""@en ;
+                      rdfs:comment "Describes the relations between the individuals of a cohort"@en .
 
 
 ###  https://w3id.org/enigma#hasFundingSource
 :hasFundingSource rdf:type owl:DatatypeProperty ;
                   rdfs:domain :Cohort ;
                   rdfs:range xsd:string ;
-                  <http://purl.org/vocab/vann/example> "Cohort1 hasFundingSource \"NIMH, 5P50MH080272\""^^xsd:string ;
-                  rdfs:comment "describes the funding source of the cohort"^^xsd:string .
+                  <http://purl.org/vocab/vann/example> "Cohort1 hasFundingSource \"NIMH, 5P50MH080272\""@en ;
+                  rdfs:comment "Describes the funding source of the cohort"@en .
 
 
 ###  https://w3id.org/enigma#hasLongitudinalTimepoint
 :hasLongitudinalTimepoint rdf:type owl:DatatypeProperty ;
                           rdfs:domain :Cohort ;
                           rdfs:range xsd:nonNegativeInteger ;
-                          <http://purl.org/vocab/vann/example> "BipolarCorticolCohort hasLongitudinalTimepoint 3"^^xsd:string ;
-                          rdfs:comment "describes the number of times the patient has been examined across time"^^xsd:string .
+                          <http://purl.org/vocab/vann/example> "BipolarCorticolCohort hasLongitudinalTimepoint 3"@en ;
+                          rdfs:comment "Describes the number of times a patient has been examined across time"@en .
 
 
 ###  https://w3id.org/enigma#hasMaxAge
 :hasMaxAge rdf:type owl:DatatypeProperty ;
            rdfs:domain :CohortGroup ;
            rdfs:range xsd:positiveInteger ;
-           <http://purl.org/vocab/vann/example> "CohortGroup1 hasMaxAge 60"^^xsd:string ;
-           rdfs:comment "describes inclusion criteria for maximum age of participants in a CohortGroup"^^xsd:string .
+           <http://purl.org/vocab/vann/example> "CohortGroup1 hasMaxAge 60"@en ;
+           rdfs:comment "Describes inclusion criteria for maximum age of participants in a CohortGroup"@en .
 
 
 ###  https://w3id.org/enigma#hasMaxIQ
 :hasMaxIQ rdf:type owl:DatatypeProperty ;
           rdfs:domain :CohortGroup ;
           rdfs:range xsd:positiveInteger ;
-          <http://purl.org/vocab/vann/example> "CohortGroup1 hasMaxIQ 120"^^xsd:string ;
-          rdfs:comment "describes inclusion criteria for maximum IQ of participants in a CohortGroup"^^xsd:string .
+          <http://purl.org/vocab/vann/example> "CohortGroup1 hasMaxIQ 120"@en ;
+          rdfs:comment "Describes inclusion criteria for maximum IQ of participants in a CohortGroup"@en .
 
 
 ###  https://w3id.org/enigma#hasMeanAge
@@ -689,24 +582,25 @@ Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
                                         :ProjectCohort
                                       )
                         ] ;
-            rdfs:range xsd:double ;
-            rdfs:comment "describes the mean age of the project cohort"^^xsd:string .
+            rdfs:range xsd:positiveInteger ;
+            <http://purl.org/vocab/vann/example> "Cohort1 hasMeanAge 21"@en ;
+            rdfs:comment "Describes the mean age of the project cohort"@en .
 
 
 ###  https://w3id.org/enigma#hasMinAge
 :hasMinAge rdf:type owl:DatatypeProperty ;
            rdfs:domain :CohortGroup ;
            rdfs:range xsd:positiveInteger ;
-           <http://purl.org/vocab/vann/example> "CohortGroup1 hasMinAge 12"^^xsd:string ;
-           rdfs:comment "describes inclusion criteria for minimum age of participants in a CohortGroup"^^xsd:string .
+           <http://purl.org/vocab/vann/example> "CohortGroup1 hasMinAge 12"@en ;
+           rdfs:comment "Describes inclusion criteria for minimum age of participants in a CohortGroup"@en .
 
 
 ###  https://w3id.org/enigma#hasMinIQ
 :hasMinIQ rdf:type owl:DatatypeProperty ;
           rdfs:domain :CohortGroup ;
           rdfs:range xsd:positiveInteger ;
-          <http://purl.org/vocab/vann/example> "CohortGroup1 hasMinIQ 70"^^xsd:string ;
-          rdfs:comment "describes inclusion criteria for minimum IQ of participants in a CohortGroup"^^xsd:string .
+          <http://purl.org/vocab/vann/example> "CohortGroup1 hasMinIQ 70"@en ;
+          rdfs:comment "Describes inclusion criteria for minimum IQ of participants in a CohortGroup"@en .
 
 
 ###  https://w3id.org/enigma#hasNeurologicalComorbidity
@@ -714,7 +608,8 @@ Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
                             rdfs:subPropertyOf :hasComorbidity ;
                             rdfs:domain :CohortGroup ;
                             rdfs:range xsd:boolean ;
-                            <http://purl.org/vocab/vann/example> "CohortGroup1 hasNeurologicalComorbidity true --> CohortGroup1 only includes people who have two or more neurological disorders"^^xsd:string .
+                            <http://purl.org/vocab/vann/example> "CohortGroup1 hasNeurologicalComorbidity true --> CohortGroup1 only includes people who have two or more neurological disorders"@en ;
+                            rdfs:comment "Describes if the members of a cohort group have a neurological comorbidity"@en .
 
 
 ###  https://w3id.org/enigma#hasNumberOfFemale
@@ -726,7 +621,8 @@ Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
                                              )
                                ] ;
                    rdfs:range xsd:nonNegativeInteger ;
-                   rdfs:comment "describes the number of females in the cohort group"^^xsd:string .
+                   <http://purl.org/vocab/vann/example> "Cohort1 hasNumberOfFemale 50"@en ;
+                   rdfs:comment "Describes the number of female participants in a cohort group"@en .
 
 
 ###  https://w3id.org/enigma#hasNumberOfMale
@@ -738,7 +634,8 @@ Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
                                            )
                              ] ;
                  rdfs:range xsd:nonNegativeInteger ;
-                 rdfs:comment "describes the number of males in the cohort group"^^xsd:string .
+                 <http://purl.org/vocab/vann/example> "Cohort1 hasNumberOfMale 50"@en ;
+                 rdfs:comment "Describes the number of males in the cohort group"@en .
 
 
 ###  https://w3id.org/enigma#hasNumberOfParticipants
@@ -750,16 +647,16 @@ Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
                                                    )
                                      ] ;
                          rdfs:range xsd:positiveInteger ;
-                         <http://purl.org/vocab/vann/example> "Cohort1 hasNumberOfParticipants 500 --> Cohort1 is made up of approximately 500 patients"^^xsd:string ;
-                         rdfs:comment "describes the number of participants in the cohort"^^xsd:string .
+                         <http://purl.org/vocab/vann/example> "Cohort1 hasNumberOfParticipants 500 --> Cohort1 is made up of approximately 500 patients"@en ;
+                         rdfs:comment "Describes the number of participants in the cohort"@en .
 
 
 ###  https://w3id.org/enigma#hasPregnantMembers
 :hasPregnantMembers rdf:type owl:DatatypeProperty ;
                     rdfs:domain :CohortGroup ;
                     rdfs:range xsd:boolean ;
-                    <http://purl.org/vocab/vann/example> "CohortGroup1 hasPregnantMembers \"false\""^^xsd:string ;
-                    rdfs:comment "describes if the cohort has pregnant members"^^xsd:string .
+                    <http://purl.org/vocab/vann/example> "CohortGroup1 hasPregnantMembers false"@en ;
+                    rdfs:comment "Describes if the cohort has pregnant members"@en .
 
 
 ###  https://w3id.org/enigma#hasPsychiatricComorbidity
@@ -767,15 +664,16 @@ Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
                            rdfs:subPropertyOf :hasComorbidity ;
                            rdfs:domain :CohortGroup ;
                            rdfs:range xsd:boolean ;
-                           <http://purl.org/vocab/vann/example> "CohortGroup1 hasPsychiatricComorbidity true --> CohortGroup1 only includes people who have two or more pyschiatric disorders"^^xsd:string .
+                           <http://purl.org/vocab/vann/example> "CohortGroup1 hasPsychiatricComorbidity true --> CohortGroup1 only includes people who have two or more pyschiatric disorders"@en ;
+                           rdfs:comment "Describes if the members of a cohort group have a psychiatric comorbidity"@en .
 
 
 ###  https://w3id.org/enigma#hasSexDeterminedGenetically
 :hasSexDeterminedGenetically rdf:type owl:DatatypeProperty ;
                              rdfs:domain :CohortGroup ;
                              rdfs:range xsd:boolean ;
-                             <http://purl.org/vocab/vann/example> "Cohort1 sexDeterminedGenetically true"^^xsd:string ;
-                             rdfs:comment "describes whether the sex of a cohort was determined genetically"^^xsd:string .
+                             <http://purl.org/vocab/vann/example> "Cohort1 sexDeterminedGenetically true"@en ;
+                             rdfs:comment "Describes whether the genders of cohort group members were determined genetically"@en .
 
 
 ###  https://w3id.org/enigma#hasStatus
@@ -795,7 +693,9 @@ Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
                                                         ]
                                              ]
                                   ]
-                      ] .
+                      ] ;
+           <http://purl.org/vocab/vann/example> "CohortGroup1 hasStatus published"@en ;
+           rdfs:comment "Describes the current status of a cohort"@en .
 
 
 ###  https://w3id.org/enigma#hasStudyDesign
@@ -803,16 +703,15 @@ Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
                 rdfs:domain :Cohort ;
                 rdfs:range [ rdf:type rdfs:Datatype ;
                              owl:oneOf [ rdf:type rdf:List ;
-                                         rdf:first "Case-control"^^xsd:string ;
+                                         rdf:first "Case-Control"^^xsd:string ;
                                          rdf:rest [ rdf:type rdf:List ;
-                                                    rdf:first "Population-based"^^xsd:string ;
+                                                    rdf:first "Population-Based"^^xsd:string ;
                                                     rdf:rest rdf:nil
                                                   ]
                                        ]
                            ] ;
-                <http://purl.org/vocab/vann/example> "Cohort1 hasStudyDesign \"Case-controlled\""^^xsd:string ;
-                rdfs:comment "describes the study design of the cohort"^^xsd:string ,
-                             "this would be inferred from the project that the cohort belongs to. i don't know how to implement this"^^xsd:string .
+                <http://purl.org/vocab/vann/example> "Cohort1 hasStudyDesign Case-Control"@en ;
+                rdfs:comment "Describes the study design of the cohort"@en .
 
 
 ###  https://w3id.org/enigma#includesFemale
@@ -824,8 +723,8 @@ Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
                                           )
                             ] ;
                 rdfs:range xsd:boolean ;
-                <http://purl.org/vocab/vann/example> "Cohort1 includesFemale true"^^xsd:string ;
-                rdfs:comment "describes whether a cohort includes female participants"^^xsd:string .
+                <http://purl.org/vocab/vann/example> "Cohort1 includesFemale true"@en ;
+                rdfs:comment "Describes whether a cohort includes female participants"@en .
 
 
 ###  https://w3id.org/enigma#includesMale
@@ -837,8 +736,8 @@ Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
                                         )
                           ] ;
               rdfs:range xsd:boolean ;
-              <http://purl.org/vocab/vann/example> "Cohort1 includesMale true"^^xsd:string ;
-              rdfs:comment "describes whether a cohort includes male participants"^^xsd:string .
+              <http://purl.org/vocab/vann/example> "Cohort1 includesMale true"@en ;
+              rdfs:comment "Describes whether a cohort includes male participants"@en .
 
 
 ###  https://w3id.org/enigma#isClinicallyStable
@@ -850,8 +749,8 @@ Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
                                               )
                                 ] ;
                     rdfs:range xsd:boolean ;
-                    <http://purl.org/vocab/vann/example> "CohortGroup1 isClinicallyStable yes --> CohortGroup1 only includes people who are clinically stable"^^xsd:string ;
-                    rdfs:comment "describes if the members of the cohort group are clinically stable, which usually means that vital signs are within 20% of usual readings"^^xsd:string .
+                    <http://purl.org/vocab/vann/example> "CohortGroup1 isClinicallyStable yes --> CohortGroup1 only includes people who are clinically stable"@en ;
+                    rdfs:comment "Describes if the members of the cohort group are clinically stable (typically indicated by vital signs within 20% of usual readings)"@en .
 
 
 ###  https://w3id.org/enigma#isFamilyBased
@@ -863,8 +762,8 @@ Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
                                          )
                            ] ;
                rdfs:range xsd:boolean ;
-               <http://purl.org/vocab/vann/example> "Cohort1 isFamilyBased true"^^xsd:string ;
-               rdfs:comment "describes if a cohort study was family based"^^xsd:string .
+               <http://purl.org/vocab/vann/example> "Cohort1 isFamilyBased true"@en ;
+               rdfs:comment "Describes if a cohort study was family based"@en .
 
 
 ###  https://w3id.org/enigma#isProficientInLocalLanguage
@@ -876,64 +775,85 @@ Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
                                                        )
                                          ] ;
                              rdfs:range xsd:boolean ;
-                             <http://purl.org/vocab/vann/example> "CohortGroup1 isProficientInLocalLanguage true"^^xsd:string ;
-                             rdfs:comment "describes whether or not the members of the cohort group are proficient in local language"^^xsd:string .
+                             <http://purl.org/vocab/vann/example> "CohortGroup1 isProficientInLocalLanguage true"@en ;
+                             rdfs:comment "Describes whether or not the members of the cohort group are proficient in local language"@en .
 
 
 ###  https://w3id.org/enigma#withDisorderSeverity
 :withDisorderSeverity rdf:type owl:DatatypeProperty ;
                       rdfs:domain :SpecificDisorderInfo ;
                       rdfs:range xsd:positiveInteger ;
-                      <http://purl.org/vocab/vann/example> "Cohort1DisorderInfo hasDisorderWith DiseaseWith hasDisorder Schizophrenia withDiseaseSeverity 5 --> Cohort1 only includes people with schizophrenia with disease severity 5"^^xsd:string ;
-                      rdfs:comment "describes the severity of the disease"^^xsd:string .
+                      <http://purl.org/vocab/vann/example> """CohortGroup1 hasDisorderDetails Schizophrenia
+Schizophrenia withDisorderSeverity 5
+
+--> CohortGroup1 only includes people with schizophrenia with disease severity 5"""@en ;
+                      rdfs:comment "Describes the severity of the disease"@en .
 
 
 ###  https://w3id.org/enigma#withMaxAgeOfOnsetOfDisorder
 :withMaxAgeOfOnsetOfDisorder rdf:type owl:DatatypeProperty ;
                              rdfs:domain :SpecificDisorderInfo ;
                              rdfs:range xsd:nonNegativeInteger ;
-                             <http://purl.org/vocab/vann/example> "Cohort1DisorderInfo hasDisorder schizophrenia withMaxAgeOfOnset 18 --> Cohort1 only includes people who had schizophrenia at 18 or younger"^^xsd:string ;
-                             rdfs:comment "describes the maximum age of onset of a disease"^^xsd:string .
+                             <http://purl.org/vocab/vann/example> """CohortGroup1 hasDisorderDetails Schizophrenia
+Schizophrenia withMaxAgeOfOnsetOfDisorder 18
+
+--> CohortGroup1 only includes people who had schizophrenia at 18 or younger"""@en ;
+                             rdfs:comment "Describes the maximum age of onset of a disease"@en .
 
 
 ###  https://w3id.org/enigma#withMaxDurationOfDisorder
 :withMaxDurationOfDisorder rdf:type owl:DatatypeProperty ;
                            rdfs:domain :SpecificDisorderInfo ;
                            rdfs:range xsd:nonNegativeInteger ;
-                           <http://purl.org/vocab/vann/example> "Cohort1DisorderInfo hasDisorder bipolarDisorder withMaxDuration 20 --> Cohort1 only includes people who had bipolar disorder for at most 20 years"^^xsd:string ;
-                           rdfs:comment "describes the maximum duration (in years) of a disease"^^xsd:string .
+                           <http://purl.org/vocab/vann/example> """CohortGroup1 hasDisorderDetails Schizophrenia
+Schizophrenia withMaxDurationOfDisorder 20
+
+--> CohortGroup1 only includes people who had bipolar disorder for at most 20 years"""@en ;
+                           rdfs:comment "Describes the maximum duration (in years) of a disease"@en .
 
 
 ###  https://w3id.org/enigma#withMaxNumber
 :withMaxNumber rdf:type owl:DatatypeProperty ;
                rdfs:domain :SpecificMedicalRatingInfo ;
                rdfs:range xsd:nonNegativeInteger ;
-               <http://purl.org/vocab/vann/example> "Cohort1MedicalRatingInfo isWithin youngManiaRatingScale0to10 withMaxNumber 10 --> Cohort1 only includes people who received a score of at most 10 on the YMRS"^^xsd:string ;
-               rdfs:comment "the last included number in the medical range"^^xsd:string .
+               <http://purl.org/vocab/vann/example> """CohortGroup1 hasMedicalRatingDetails YoungManiaRatingScale
+YoungManiaRatingScale withMaxDurationOfDisorder 10
+
+--> CohortGroup1 only includes people who received a score of at most 10 on the YMRS"""@en ;
+               rdfs:comment "Describes the maximum medical rating score of individuals included in a cohort group"@en .
 
 
 ###  https://w3id.org/enigma#withMinAgeOfOnsetOfDisorder
 :withMinAgeOfOnsetOfDisorder rdf:type owl:DatatypeProperty ;
                              rdfs:domain :SpecificDisorderInfo ;
                              rdfs:range xsd:nonNegativeInteger ;
-                             <http://purl.org/vocab/vann/example> "Cohort1DisorderInfo hasDisorder schizophrenia withMinAgeOfOnset 10 --> Cohort1 only includes people who had schizophrenia at the age of 10 or older"^^xsd:string ;
-                             rdfs:comment "describes the minimum age of onset of a disease"^^xsd:string .
+                             <http://purl.org/vocab/vann/example> """CohortGroup1 hasDisorderDetails Schizophrenia
+Schizophrenia withMinAgeOfOnsetOfDisorder 10
+
+--> CohortGroup1 only includes people who had schizophrenia at 10 or older"""@en ;
+                             rdfs:comment "Describes the minimum age of onset of a disease"@en .
 
 
 ###  https://w3id.org/enigma#withMinDurationOfDisorder
 :withMinDurationOfDisorder rdf:type owl:DatatypeProperty ;
                            rdfs:domain :SpecificDisorderInfo ;
                            rdfs:range xsd:nonNegativeInteger ;
-                           <http://purl.org/vocab/vann/example> "Cohort1DisorderInfo hasDisorder bipolarDisorder withMinDuration 10 --> Cohort1 only includes people had bipolar disorder for at least 10 years"^^xsd:string ;
-                           rdfs:comment "describes the minimum duration (in years) of a disease"^^xsd:string .
+                           <http://purl.org/vocab/vann/example> """CohortGroup1 hasDisorderDetails Schizophrenia
+Schizophrenia withMinDurationOfDisorder 10
+
+--> CohortGroup1 only includes people had bipolar disorder for at least 10 years"""@en ;
+                           rdfs:comment "Describes the minimum duration (in years) of a disease"@en .
 
 
 ###  https://w3id.org/enigma#withMinNumber
 :withMinNumber rdf:type owl:DatatypeProperty ;
                rdfs:domain :SpecificMedicalRatingInfo ;
                rdfs:range xsd:nonNegativeInteger ;
-               <http://purl.org/vocab/vann/example> "Cohort1MedicalRatingInfo isWithin youngManiaRatingScale0to10 withMinNumber 0 --> Cohort1 only includes people who scored at least a 0 on the YMRS"^^xsd:string ;
-               rdfs:comment "the first included number in the medical rating"^^xsd:string .
+               <http://purl.org/vocab/vann/example> """CohortGroup1 hasMedicalRatingDetails YoungManiaRatingScale
+YoungManiaRatingScale withMaxDurationOfDisorder 0
+
+--> CohortGroup1 only includes people who scored at least a 0 on the YMRS"""@en ;
+               rdfs:comment "Describes the minimum medical rating score of individuals included in a cohort group"@en .
 
 
 #################################################################
@@ -958,7 +878,9 @@ Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
 
 ###  https://w3id.org/enigma#BriefPsychiatricRatingScale
 :BriefPsychiatricRatingScale rdf:type owl:Class ;
-                             rdfs:subClassOf :MedicalRating .
+                             rdfs:subClassOf :MedicalRating ;
+                             rdfs:comment "Rating scale used to measure psychiatric symptoms among cohort members"@en ;
+                             rdfs:label "BriefPsychiatricRatingScale"@en .
 
 
 ###  https://w3id.org/enigma#Cancer
@@ -971,22 +893,33 @@ Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
 
 ###  https://w3id.org/enigma#CardiovascularDisorder
 :CardiovascularDisorder rdf:type owl:Class ;
-                        rdfs:subClassOf :VascularDisorder .
+                        rdfs:subClassOf :VascularDisorder ;
+                        <http://purl.org/vocab/vann/example> "Coronary Artery Disease"@en ;
+                        rdfs:comment "A subset of vascular disorders affecting the heart"@en ;
+                        rdfs:label "CardiovascularDisorder"@en .
 
 
 ###  https://w3id.org/enigma#CerebrovascularDisorder
 :CerebrovascularDisorder rdf:type owl:Class ;
-                         rdfs:subClassOf :VascularDisorder .
+                         rdfs:subClassOf :VascularDisorder ;
+                         <http://purl.org/vocab/vann/example> "Stroke"@en ;
+                         rdfs:comment "A subset of vascular disorders affecting blood vessels of the brain and cerebral circulation"@en ;
+                         rdfs:label "CerebrovascularDisorder"@en .
 
 
 ###  https://w3id.org/enigma#City
 :City rdf:type owl:Class ;
-      rdfs:subClassOf :Location .
+      rdfs:subClassOf :Location ;
+      <http://purl.org/vocab/vann/example> "Los Angeles"@en ;
+      rdfs:comment "City in which a cohort is located"@en ;
+      rdfs:label "City"@en .
 
 
 ###  https://w3id.org/enigma#ClinicalGlobalImpressionsScale
 :ClinicalGlobalImpressionsScale rdf:type owl:Class ;
-                                rdfs:subClassOf :MedicalRating .
+                                rdfs:subClassOf :MedicalRating ;
+                                rdfs:comment "Rating scale used to measure mental disorder symptom severity and treaments"@en ;
+                                rdfs:label "ClinicalGlobalImpressionScale"@en .
 
 
 ###  https://w3id.org/enigma#Cohort
@@ -1013,7 +946,10 @@ Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
 
 ###  https://w3id.org/enigma#Country
 :Country rdf:type owl:Class ;
-         rdfs:subClassOf :Location .
+         rdfs:subClassOf :Location ;
+         <http://purl.org/vocab/vann/example> "United States"@en ;
+         rdfs:comment "Country in which a cohort is located"@en ;
+         rdfs:label "Country"@en .
 
 
 ###  https://w3id.org/enigma#DataType
@@ -1067,16 +1003,24 @@ Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
 
 
 ###  https://w3id.org/enigma#GenotypePlatform
-:GenotypePlatform rdf:type owl:Class .
+:GenotypePlatform rdf:type owl:Class ;
+                  <http://purl.org/vocab/vann/example> "IlluminaOmniExpress"@en ;
+                  rdfs:comment "Software tools used for genotyping within a cohort"@en ;
+                  rdfs:label "GenotypePlatform"@en .
 
 
 ###  https://w3id.org/enigma#HamiltonDepressionRatingScale
 :HamiltonDepressionRatingScale rdf:type owl:Class ;
-                               rdfs:subClassOf :MedicalRating .
+                               rdfs:subClassOf :MedicalRating ;
+                               rdfs:comment "Questionnaire used to measure the severity of depression"@en ;
+                               rdfs:label "HamiltonDepressionRatingScale"@en .
 
 
 ###  https://w3id.org/enigma#ImageAcquisitionProtocol
-:ImageAcquisitionProtocol rdf:type owl:Class .
+:ImageAcquisitionProtocol rdf:type owl:Class ;
+                          <http://purl.org/vocab/vann/example> "ENIGMA-Sulci"@en ;
+                          rdfs:comment "Procedure used to collect image data within the cohort"@en ;
+                          rdfs:label "ImageAcquisitionProtocol"@en .
 
 
 ###  https://w3id.org/enigma#InfectiousDisorder
@@ -1088,16 +1032,24 @@ Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
 
 
 ###  https://w3id.org/enigma#InformationObtainmentMethod
-:InformationObtainmentMethod rdf:type owl:Class .
+:InformationObtainmentMethod rdf:type owl:Class ;
+                             <http://purl.org/vocab/vann/example> "Hospital Records"@en ;
+                             rdfs:comment "Method used to receive information about cohort subjects"@en ;
+                             rdfs:label "InformationObtainmentMethod"@en .
 
 
 ###  https://w3id.org/enigma#Location
 :Location rdf:type owl:Class ;
-          rdfs:comment "Where is the cohort located?"^^xsd:string .
+          <http://purl.org/vocab/vann/example> "Los Angeles, California"@en ;
+          rdfs:comment "Geographic location of the cohort"@en ;
+          rdfs:label "Location"@en .
 
 
 ###  https://w3id.org/enigma#MedicalRating
-:MedicalRating rdf:type owl:Class .
+:MedicalRating rdf:type owl:Class ;
+               <http://purl.org/vocab/vann/example> "ClincalGlobalImpressionsScale"@en ;
+               rdfs:comment "Systems or scales used to measure the severity of a medical condition"@en ;
+               rdfs:label "MedicalRating"@en .
 
 
 ###  https://w3id.org/enigma#MentalHealthDisorder
@@ -1118,21 +1070,32 @@ Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
 
 ###  https://w3id.org/enigma#NeurologicalDisorder
 :NeurologicalDisorder rdf:type owl:Class ;
-                      rdfs:subClassOf :Disorder .
+                      rdfs:subClassOf :Disorder ;
+                      <http://purl.org/vocab/vann/example> "Epilepsy"@en ;
+                      rdfs:comment "Disorders which affect the nervous system"@en ;
+                      rdfs:label "NeurologicalDisorder"@en .
 
 
 ###  https://w3id.org/enigma#OrganicMedicalDisorder
 :OrganicMedicalDisorder rdf:type owl:Class ;
-                        rdfs:subClassOf :Disorder .
+                        rdfs:subClassOf :Disorder ;
+                        <http://purl.org/vocab/vann/example> "Delirium"@en ;
+                        rdfs:comment "Disorder characterized by decreased mental function due to a medical or physical disease"@en ;
+                        rdfs:label "OrganicMedicalDisorder"@en .
 
 
 ###  https://w3id.org/enigma#Person
 :Person rdf:type owl:Class ;
-        rdfs:comment "Who is involved with the cohort?"^^xsd:string .
+        <http://purl.org/vocab/vann/example> "Theo van Erp"@en ;
+        rdfs:comment "Individual involved with the cohort"@en ;
+        rdfs:label "Person"@en .
 
 
 ###  https://w3id.org/enigma#Project
-:Project rdf:type owl:Class .
+:Project rdf:type owl:Class ;
+         <http://purl.org/vocab/vann/example> "SZPositiveSymptoms"@en ;
+         rdfs:comment "Project associated with the cohort"@en ;
+         rdfs:label "Project"@en .
 
 
 ###  https://w3id.org/enigma#ProjectCohort
@@ -1145,29 +1108,46 @@ Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
 
 ###  https://w3id.org/enigma#RespiratoryDisorder
 :RespiratoryDisorder rdf:type owl:Class ;
-                     rdfs:subClassOf :Disorder .
+                     rdfs:subClassOf :Disorder ;
+                     <http://purl.org/vocab/vann/example> "Asthma"@en ;
+                     rdfs:comment "Disorders which affect the respiratory system"@en ;
+                     rdfs:label "RespiratoryDisorder"@en .
 
 
 ###  https://w3id.org/enigma#SignificantGeneralMedicalCondition
 :SignificantGeneralMedicalCondition rdf:type owl:Class ;
-                                    rdfs:subClassOf :Disorder .
+                                    rdfs:subClassOf :Disorder ;
+                                    <http://purl.org/vocab/vann/example> "Cancer"@en ;
+                                    rdfs:comment "Blanket term ecompassing serious medical condtions"@en ;
+                                    rdfs:label "SignificantGeneralMedicalCondition"@en .
 
 
 ###  https://w3id.org/enigma#SpecificConditionInfo
-:SpecificConditionInfo rdf:type owl:Class .
+:SpecificConditionInfo rdf:type owl:Class ;
+                       <http://purl.org/vocab/vann/example> "Severity of a condition"@en ;
+                       rdfs:comment "Details unique to a given condition of the cohort"@en ;
+                       rdfs:label "SpecificConditionInfo"@en .
 
 
 ###  https://w3id.org/enigma#SpecificDisorderInfo
-:SpecificDisorderInfo rdf:type owl:Class .
+:SpecificDisorderInfo rdf:type owl:Class ;
+                      <http://purl.org/vocab/vann/example> "Severity of a disorder"@en ;
+                      rdfs:comment "Details unique to a given disorder of the cohort"@en ;
+                      rdfs:label "SpecificDisorderInfo"@en .
 
 
 ###  https://w3id.org/enigma#SpecificMedicalRatingInfo
-:SpecificMedicalRatingInfo rdf:type owl:Class .
+:SpecificMedicalRatingInfo rdf:type owl:Class ;
+                           <http://purl.org/vocab/vann/example> "Specifc scale used for medical rating"@en ;
+                           rdfs:comment "Details unique to a given medical rating of the cohort"@en ;
+                           rdfs:label "SpecificMedicalRatingInfo"@en .
 
 
 ###  https://w3id.org/enigma#SpecificTreatmentInfo
 :SpecificTreatmentInfo rdf:type owl:Class ;
-                       rdfs:comment "details of a specific treatment, such as the length of the usage period"^^xsd:string .
+                       <http://purl.org/vocab/vann/example> "The length of the treatment usage period"@en ;
+                       rdfs:comment "Details of a specific treatment of the cohort"@en ;
+                       rdfs:label "SpecificTreatmentInfo"@en .
 
 
 ###  https://w3id.org/enigma#SubstanceAbuse
@@ -1188,22 +1168,31 @@ Cohort1 hasAgeGroup \"Seniors\""""^^xsd:string ;
 
 ###  https://w3id.org/enigma#Treatment
 :Treatment rdf:type owl:Class ;
-           rdfs:comment "What treatments were used by the members of the cohort?"^^xsd:string .
+           <http://purl.org/vocab/vann/example> "Antidepressants"@en ;
+           rdfs:comment "Treatments used on the members of the cohort"@en ;
+           rdfs:label "Treatment"@en .
 
 
 ###  https://w3id.org/enigma#VascularDisorder
 :VascularDisorder rdf:type owl:Class ;
-                  rdfs:subClassOf :Disorder .
+                  rdfs:subClassOf :Disorder ;
+                  <http://purl.org/vocab/vann/example> "Coronary Artery Disease"@en ;
+                  rdfs:comment "Disorder which affects the body's network of blood vessels"@en ;
+                  rdfs:label "VascularDisorder"@en .
 
 
 ###  https://w3id.org/enigma#WorkingGroup
 :WorkingGroup rdf:type owl:Class ;
-              rdfs:comment "a working group (a group of researchers studying a certain ENIGMA topic) of ENIGMA"^^xsd:string .
+              <http://purl.org/vocab/vann/example> "BipolarWG"@en ;
+              rdfs:comment "Group of researchers studying a certain topic/disease"@en ;
+              rdfs:label "WorkingGroup"@en .
 
 
 ###  https://w3id.org/enigma#YoungManiaRatingScale
 :YoungManiaRatingScale rdf:type owl:Class ;
-                       rdfs:subClassOf :MedicalRating .
+                       rdfs:subClassOf :MedicalRating ;
+                       rdfs:comment "Rating scale used to measure the severity of manic episodes in children and young adults"@en ;
+                       rdfs:label "YoungManiaRatingScale"@en .
 
 
 #################################################################
