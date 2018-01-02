@@ -15,13 +15,13 @@
         <terms:contributor>Yolanda Gil</terms:contributor>
         <terms:title>The Project Ontology</terms:title>
         <rdfs:comment>An ontology that describes projects and their properties.</rdfs:comment>
+        <terms:contributor>Agnes McMahon</terms:contributor>
         <terms:creator>Ryan Espiritu</terms:creator>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
         <vann:preferredNamespaceUri rdf:resource="https://w3id.org/enigma#"/>
         <terms:creator>Neda Jahanshad</terms:creator>
-        <terms:contributor>Daniel Garijo</terms:contributor>
         <terms:creator>MiHyun Jang</terms:creator>
-        <terms:contributor>Agnes McMahon</terms:contributor>
+        <terms:contributor>Daniel Garijo</terms:contributor>
     </owl:Ontology>
     
 
@@ -230,13 +230,13 @@
     
 
 
-    <!-- https://w3id.org/enigma#isProjectOf -->
+    <!-- https://w3id.org/enigma#hasProject -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isProjectOf">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
-        <vann:example xml:lang="en">BipolarCorticolProject isProjectOf BipolarWorkingGroup</vann:example>
-        <rdfs:comment xml:lang="en">Describes what working group a project is part of</rdfs:comment>
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasProject">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
+        <vann:example xml:lang="en">BipolarWorkingGroup hasProject BipolarCorticolProject --&gt; The Bipolar Working Group is working on the Bipolar Corticol Project</vann:example>
+        <rdfs:comment xml:lang="en">Describes what projects are worked on by a specific working group</rdfs:comment>
     </owl:ObjectProperty>
     
 
