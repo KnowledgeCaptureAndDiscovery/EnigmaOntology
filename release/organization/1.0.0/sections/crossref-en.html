@@ -1,16 +1,59 @@
 <h2  id="crossreference" class="list">Cross reference for The Organization Ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 This section provides details for each class and property defined by The Organization Ontology.
-<div id="objectproperties">
+<div id="classes">
+   <h3 id="classes" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#Organization" title="https://w3id.org/enigma#Organization">Organization</a>
+      </li>
+      <li>
+         <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+      </li>
+   </ul>
+   <div class="entity" id="Organization">
+      <h3>Organization<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#Organization</p>
+      <div class="comment">
+         <span class="markdown">An organization contributing to a given ENIGMA project</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasAffiliate" title="https://w3id.org/enigma#hasAffiliate">has affiliate</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasCity" title="https://w3id.org/enigma#hasCity">has city</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasCountry" title="https://w3id.org/enigma#hasCountry">has country</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Person">
+      <h3>Person<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#Person</p>
+      <div class="comment">
+         <span class="markdown">A person associated with a given organization</span>
+      </div>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasAffiliate" title="https://w3id.org/enigma#hasAffiliate">has affiliate</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div id="objectproperties">
    <h3 id="properties" class="list">Object Properties</h3>
    <ul class="hlist">
       <li>
          <a href="#hasAffiliate" title="https://w3id.org/enigma#hasAffiliate">
             <span>has affiliate</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isAffiliatedWith" title="https://w3id.org/enigma#isAffiliatedWith">
-            <span>is affiliated with</span>
          </a>
       </li>
    </ul>
@@ -22,7 +65,7 @@ This section provides details for each class and property defined by The Organiz
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasAffiliate</p>
       <div class="comment">
-         <span class="markdown">describes the organization's affiliates</span>
+         <span class="markdown">Describes the organization's affiliates</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -34,54 +77,13 @@ This section provides details for each class and property defined by The Organiz
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Organization">organization</span>
+               <a href="#Organization" title="https://w3id.org/enigma#Organization">Organization</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Person">person</span>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
                <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#isAffiliatedWith" title="https://w3id.org/enigma#isAffiliatedWith">is affiliated with</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isAffiliatedWith">
-      <h3>is affiliated with<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isAffiliatedWith</p>
-      <div class="comment">
-         <span class="markdown">describes what organization someone is affiliated with</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isAffiliatedWith HarvardU</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Person">person</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Organization">organization</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#hasAffiliate" title="https://w3id.org/enigma#hasAffiliate">has affiliate</a>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -108,7 +110,7 @@ This section provides details for each class and property defined by The Organiz
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasCity</p>
       <div class="comment">
-         <span class="markdown">describes the city in which an organization is located in</span>
+         <span class="markdown">Describes the city in which an organization is located in</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -120,7 +122,7 @@ This section provides details for each class and property defined by The Organiz
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Organization">organization</span>
+               <a href="#Organization" title="https://w3id.org/enigma#Organization">Organization</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -138,7 +140,7 @@ This section provides details for each class and property defined by The Organiz
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasCountry</p>
       <div class="comment">
-         <span class="markdown">describes the country in which an organization is located in</span>
+         <span class="markdown">Describes the country in which an organization is located in</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -150,7 +152,7 @@ This section provides details for each class and property defined by The Organiz
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Organization">organization</span>
+               <a href="#Organization" title="https://w3id.org/enigma#Organization">Organization</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>

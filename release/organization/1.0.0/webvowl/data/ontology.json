@@ -1,14 +1,14 @@
 {
   "_comment" : "Created with OWL2VOWL (version 0.3.2-SNAPSHOT), http://vowl.visualdataweb.org",
   "header" : {
-    "languages" : [ "undefined" ],
-    "baseIris" : [ "https://w3id.org/enigma", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema" ],
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "https://w3id.org/enigma", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema" ],
     "title" : {
       "undefined" : "The Organization Ontology"
     },
     "iri" : "https://w3id.org/enigma",
     "version" : "v1.0.0",
-    "author" : [ "Neda Jahanshad", "Ryan Espiritu", "Daniel Garijo" ],
+    "author" : [ "MiHyun Jang", "Neda Jahanshad", "Ryan Espiritu", "Daniel Garijo" ],
     "comments" : {
       "undefined" : "An ontology for describing ENIGMA organizations."
     },
@@ -27,12 +27,17 @@
       }, {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Daniel Garijo",
+        "value" : "Ryan Espiritu",
         "type" : "label"
       }, {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Ryan Espiritu",
+        "value" : "MiHyun Jang",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Daniel Garijo",
         "type" : "label"
       } ],
       "contributor" : [ {
@@ -40,17 +45,22 @@
         "language" : "undefined",
         "value" : "Yolanda Gil",
         "type" : "label"
+      }, {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Agnes McMahon",
+        "type" : "label"
       } ],
       "preferredNamespacePrefix" : [ {
         "identifier" : "preferredNamespacePrefix",
         "language" : "undefined",
-        "value" : "enigma",
-        "type" : "label"
+        "value" : "https://w3id.org/enigma",
+        "type" : "iri"
       }, {
         "identifier" : "preferredNamespacePrefix",
         "language" : "undefined",
-        "value" : "https://w3id.org/enigma",
-        "type" : "iri"
+        "value" : "enigma",
+        "type" : "label"
       } ],
       "versionInfo" : [ {
         "identifier" : "versionInfo",
@@ -69,12 +79,12 @@
   "namespace" : [ ],
   "metrics" : {
     "classCount" : 2,
-    "objectPropertyCount" : 2,
+    "objectPropertyCount" : 1,
     "datatypePropertyCount" : 2,
     "individualCount" : 0
   },
   "class" : [ {
-    "id" : "0",
+    "id" : "1",
     "type" : "owl:Class"
   }, {
     "id" : "2",
@@ -90,10 +100,22 @@
     "iri" : "https://w3id.org/enigma#Organization",
     "baseIri" : "https://w3id.org/enigma",
     "instances" : 0,
-    "label" : {
-      "IRI-based" : "Organization"
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "Information Science Institute",
+        "type" : "label"
+      } ]
     },
-    "id" : "0"
+    "label" : {
+      "IRI-based" : "Organization",
+      "en" : "Organization"
+    },
+    "comment" : {
+      "en" : "An organization contributing to a given ENIGMA project"
+    },
+    "id" : "1"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
@@ -112,22 +134,31 @@
     "iri" : "https://w3id.org/enigma#Person",
     "baseIri" : "https://w3id.org/enigma",
     "instances" : 0,
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "Theo van Erp",
+        "type" : "label"
+      } ]
+    },
     "label" : {
-      "IRI-based" : "Person"
+      "IRI-based" : "Person",
+      "en" : "Person"
+    },
+    "comment" : {
+      "en" : "A person associated with a given organization"
     },
     "id" : "6"
   } ],
   "property" : [ {
-    "id" : "1",
+    "id" : "0",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "3",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "5",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "7",
     "type" : "owl:objectProperty"
   } ],
   "propertyAttribute" : [ {
@@ -137,7 +168,7 @@
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "USC ISI hasCity \"Marina del Rey\"",
         "type" : "label"
       } ]
@@ -145,12 +176,12 @@
     "label" : {
       "IRI-based" : "hasCity"
     },
-    "domain" : "0",
+    "domain" : "1",
     "comment" : {
-      "undefined" : "describes the city in which an organization is located in"
+      "en" : "Describes the city in which an organization is located in"
     },
     "attributes" : [ "datatype" ],
-    "id" : "1"
+    "id" : "0"
   }, {
     "iri" : "https://w3id.org/enigma#hasCountry",
     "baseIri" : "https://w3id.org/enigma",
@@ -158,7 +189,7 @@
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "USC ISI hasCountry \"United States\"",
         "type" : "label"
       } ]
@@ -166,21 +197,20 @@
     "label" : {
       "IRI-based" : "hasCountry"
     },
-    "domain" : "0",
+    "domain" : "1",
     "comment" : {
-      "undefined" : "describes the country in which an organization is located in"
+      "en" : "Describes the country in which an organization is located in"
     },
     "attributes" : [ "datatype" ],
     "id" : "3"
   }, {
     "iri" : "https://w3id.org/enigma#hasAffiliate",
-    "inverse" : "7",
     "baseIri" : "https://w3id.org/enigma",
     "range" : "6",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "HarvardU hasAffiliate JohnSmith",
         "type" : "label"
       } ]
@@ -188,32 +218,11 @@
     "label" : {
       "IRI-based" : "hasAffiliate"
     },
-    "domain" : "0",
+    "domain" : "1",
     "comment" : {
-      "undefined" : "describes the organization's affiliates"
+      "en" : "Describes the organization's affiliates"
     },
     "attributes" : [ "object" ],
     "id" : "5"
-  }, {
-    "iri" : "https://w3id.org/enigma#isAffiliatedWith",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "0",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "JohnSmith isAffiliatedWith HarvardU",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "isAffiliatedWith"
-    },
-    "domain" : "6",
-    "comment" : {
-      "undefined" : "describes what organization someone is affiliated with"
-    },
-    "attributes" : [ "object" ],
-    "id" : "7"
   } ]
 }
