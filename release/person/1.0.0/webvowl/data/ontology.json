@@ -4,13 +4,13 @@
     "languages" : [ "en", "undefined" ],
     "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "https://w3id.org/enigma", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema" ],
     "title" : {
-      "undefined" : "The Cohort Ontology"
+      "undefined" : "The Person Ontology"
     },
     "iri" : "https://w3id.org/enigma",
     "version" : "v1.0.0",
-    "author" : [ "Neda Jahanshad", "Ryan Espiritu" ],
+    "author" : [ "MiHyun Jang", "Neda Jahanshad", "Ryan Espiritu" ],
     "comments" : {
-      "undefined" : "A cohort ontology that describes cohorts and their properties."
+      "undefined" : "A cohort ontology that describes persons participating in ENIGMA and their properties."
     },
     "other" : {
       "license" : [ {
@@ -22,12 +22,17 @@
       "creator" : [ {
         "identifier" : "creator",
         "language" : "undefined",
+        "value" : "Ryan Espiritu",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
         "value" : "Neda Jahanshad",
         "type" : "label"
       }, {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Ryan Espiritu",
+        "value" : "MiHyun Jang",
         "type" : "label"
       } ],
       "contributor" : [ {
@@ -39,6 +44,11 @@
         "identifier" : "contributor",
         "language" : "undefined",
         "value" : "Yolanda Gil",
+        "type" : "label"
+      }, {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Agnes McMahon",
         "type" : "label"
       } ],
       "preferredNamespacePrefix" : [ {
@@ -62,7 +72,7 @@
       "title" : [ {
         "identifier" : "title",
         "language" : "undefined",
-        "value" : "The Cohort Ontology",
+        "value" : "The Person Ontology",
         "type" : "label"
       } ]
     }
@@ -70,7 +80,7 @@
   "namespace" : [ ],
   "metrics" : {
     "classCount" : 8,
-    "objectPropertyCount" : 27,
+    "objectPropertyCount" : 20,
     "datatypePropertyCount" : 10,
     "individualCount" : 0
   },
@@ -87,100 +97,172 @@
     "id" : "8",
     "type" : "owl:Class"
   }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "27",
+    "type" : "owl:Class"
+  }, {
     "id" : "21",
-    "type" : "owl:Class"
-  }, {
-    "id" : "10",
-    "type" : "owl:Class"
-  }, {
-    "id" : "23",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "2",
     "type" : "rdfs:Datatype"
   }, {
+    "id" : "38",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "39",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "35",
+    "type" : "rdfs:Datatype"
+  }, {
     "id" : "40",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "44",
+    "id" : "23",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "37",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "46",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "27",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "47",
+    "id" : "41",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "34",
+    "id" : "11",
     "type" : "owl:Class"
   }, {
-    "id" : "29",
+    "id" : "25",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "32",
+    "id" : "30",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "16",
+    "id" : "17",
     "type" : "owl:Class"
   } ],
   "classAttribute" : [ {
     "iri" : "https://w3id.org/enigma#Degree",
     "baseIri" : "https://w3id.org/enigma",
     "instances" : 0,
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "PhD",
+        "type" : "label"
+      } ]
+    },
     "label" : {
-      "IRI-based" : "Degree"
+      "IRI-based" : "Degree",
+      "en" : "Degree"
+    },
+    "comment" : {
+      "en" : "An individual's highest academic degree"
     },
     "id" : "3"
   }, {
     "iri" : "https://w3id.org/enigma#Project",
     "baseIri" : "https://w3id.org/enigma",
     "instances" : 0,
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "SZPositiveSymptoms",
+        "type" : "label"
+      } ]
+    },
     "label" : {
-      "IRI-based" : "Project"
+      "IRI-based" : "Project",
+      "en" : "Project"
+    },
+    "comment" : {
+      "en" : "Project encompassing cohort"
     },
     "id" : "5"
   }, {
     "iri" : "https://w3id.org/enigma#Person",
     "baseIri" : "https://w3id.org/enigma",
     "instances" : 0,
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "Theo van Erp",
+        "type" : "label"
+      } ]
+    },
     "label" : {
-      "IRI-based" : "Person"
+      "IRI-based" : "Person",
+      "en" : "Person"
+    },
+    "comment" : {
+      "en" : "Individual involved with the cohort"
     },
     "id" : "1"
   }, {
     "iri" : "https://w3id.org/enigma#Location",
     "baseIri" : "https://w3id.org/enigma",
     "instances" : 0,
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "Los Angeles, California",
+        "type" : "label"
+      } ]
+    },
     "label" : {
-      "IRI-based" : "Location"
+      "IRI-based" : "Location",
+      "en" : "Location"
+    },
+    "comment" : {
+      "en" : "Geographic location of the cohort"
     },
     "id" : "8"
   }, {
     "iri" : "https://w3id.org/enigma#Organization",
     "baseIri" : "https://w3id.org/enigma",
     "instances" : 0,
-    "label" : {
-      "IRI-based" : "Organization"
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "Information Science Institute",
+        "type" : "label"
+      } ]
     },
-    "id" : "21"
+    "label" : {
+      "IRI-based" : "Organization",
+      "en" : "Organization"
+    },
+    "comment" : {
+      "en" : "An organization contributing to a given ENIGMA project"
+    },
+    "id" : "15"
   }, {
     "iri" : "https://w3id.org/enigma#WorkingGroup",
     "baseIri" : "https://w3id.org/enigma",
     "instances" : 0,
-    "label" : {
-      "IRI-based" : "WorkingGroup"
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "BipolarWG",
+        "type" : "label"
+      } ]
     },
-    "id" : "10"
+    "label" : {
+      "IRI-based" : "WorkingGroup",
+      "en" : "WorkingGroup"
+    },
+    "comment" : {
+      "en" : "Group of researchers studying a certain topic/disease"
+    },
+    "id" : "27"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "23",
+    "id" : "21",
     "label" : {
       "IRI-based" : "string"
     }
@@ -194,41 +276,41 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "40",
+    "id" : "38",
     "label" : {
       "IRI-based" : "string"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "44",
+    "id" : "39",
     "label" : {
       "IRI-based" : "string"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "37",
+    "id" : "35",
     "label" : {
       "IRI-based" : "boolean"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#gYear",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "46",
+    "id" : "40",
     "label" : {
       "IRI-based" : "gYear"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#date",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "27",
+    "id" : "23",
     "label" : {
       "IRI-based" : "date"
     }
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "47",
+    "id" : "41",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
@@ -237,21 +319,33 @@
     "iri" : "https://w3id.org/enigma#ENIGMAPublication",
     "baseIri" : "https://w3id.org/enigma",
     "instances" : 0,
-    "label" : {
-      "IRI-based" : "ENIGMAPublication"
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "Do Candidate Genes Affect the Brain's White Matter Microstructure? Large-Scale Evaluation of 6,165 Diffusion MRI Scans",
+        "type" : "label"
+      } ]
     },
-    "id" : "34"
+    "label" : {
+      "IRI-based" : "ENIGMAPublication",
+      "en" : "ENIGMAPublication"
+    },
+    "comment" : {
+      "en" : "A publication associated with a given ENGIMA project"
+    },
+    "id" : "11"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "29",
+    "id" : "25",
     "label" : {
       "IRI-based" : "string"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "32",
+    "id" : "30",
     "label" : {
       "IRI-based" : "string"
     }
@@ -259,10 +353,22 @@
     "iri" : "https://w3id.org/enigma#Cohort",
     "baseIri" : "https://w3id.org/enigma",
     "instances" : 0,
-    "label" : {
-      "IRI-based" : "Cohort"
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "ADNI: Alzheimer’s Disease Neuroimaging Initiative",
+        "type" : "label"
+      } ]
     },
-    "id" : "16"
+    "label" : {
+      "IRI-based" : "Cohort",
+      "en" : "Cohort"
+    },
+    "comment" : {
+      "en" : "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria"
+    },
+    "id" : "17"
   } ],
   "property" : [ {
     "id" : "0",
@@ -277,100 +383,79 @@
     "id" : "9",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "15",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "18",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "13",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "20",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "22",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "17",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "24",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "26",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "28",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "30",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "31",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "33",
+    "id" : "10",
     "type" : "owl:objectProperty"
   }, {
     "id" : "14",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "11",
+    "id" : "16",
     "type" : "owl:objectProperty"
+  }, {
+    "id" : "20",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "22",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "24",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "26",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "29",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "31",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "28",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "18",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "34",
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "36",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "37",
     "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "38",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "39",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "41",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "43",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "25",
-    "type" : "owl:objectProperty"
   }, {
     "id" : "19",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "12",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "48",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "49",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "50",
+    "id" : "33",
     "type" : "owl:objectProperty"
   }, {
     "id" : "42",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "35",
+    "id" : "12",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "51",
-    "type" : "owl:datatypeProperty"
+    "id" : "43",
+    "type" : "owl:objectProperty"
   }, {
-    "id" : "52",
-    "type" : "owl:datatypeProperty"
+    "id" : "44",
+    "type" : "owl:objectProperty"
   }, {
-    "id" : "53",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "54",
+    "id" : "32",
     "type" : "owl:objectProperty"
   }, {
     "id" : "45",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "46",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "47",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "13",
     "type" : "owl:objectProperty"
   }, {
     "id" : "6",
@@ -383,7 +468,7 @@
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "JohnSmith hasLastName \"John\"",
         "type" : "label"
       } ]
@@ -393,7 +478,7 @@
     },
     "domain" : "1",
     "comment" : {
-      "undefined" : "describes last name of a person"
+      "en" : "Describes last name of a person"
     },
     "attributes" : [ "datatype" ],
     "id" : "0"
@@ -404,7 +489,7 @@
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "JohnSmith isJuniorLeadOfP BipolarProject",
         "type" : "label"
       } ]
@@ -415,7 +500,7 @@
     "superproperty" : [ "6" ],
     "domain" : "1",
     "comment" : {
-      "undefined" : "describes what project someone is a junior lead of"
+      "en" : "Describes what project someone is a junior lead of"
     },
     "attributes" : [ "object" ],
     "id" : "4"
@@ -426,7 +511,7 @@
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "JohnSmith isLocated Boston",
         "type" : "label"
       } ]
@@ -436,55 +521,10 @@
     },
     "domain" : "1",
     "comment" : {
-      "undefined" : "describes where the person is located"
+      "en" : "Describes where the person is located"
     },
     "attributes" : [ "object" ],
     "id" : "7"
-  }, {
-    "iri" : "https://w3id.org/enigma#hasWGMember",
-    "inverse" : "11",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "1",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "BipolarWorkingGroup hasMember JohnSmith",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasWGMember"
-    },
-    "domain" : "10",
-    "subproperty" : [ "12", "13", "14" ],
-    "comment" : {
-      "undefined" : "describes who the members are in the working group/project"
-    },
-    "attributes" : [ "object" ],
-    "id" : "9"
-  }, {
-    "iri" : "https://w3id.org/enigma#hasPI",
-    "inverse" : "17",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "1",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "describes who the PI of the project is",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasPI"
-    },
-    "domain" : "16",
-    "comment" : {
-      "undefined" : "Cohort1 hasPI JohnSmith"
-    },
-    "attributes" : [ "object" ],
-    "id" : "15"
   }, {
     "iri" : "https://w3id.org/enigma#hasDegree",
     "baseIri" : "https://w3id.org/enigma",
@@ -492,7 +532,7 @@
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "JohnSmith hasDegree PhD",
         "type" : "label"
       } ]
@@ -502,41 +542,41 @@
     },
     "domain" : "1",
     "comment" : {
-      "undefined" : "describes what degree a person has"
+      "en" : "Describes what degree a person has"
     },
     "attributes" : [ "object" ],
-    "id" : "18"
+    "id" : "9"
   }, {
-    "iri" : "https://w3id.org/enigma#hasWGSpecialContributor",
-    "inverse" : "19",
+    "iri" : "https://w3id.org/enigma#isDataAnalystOf",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "1",
+    "range" : "11",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
-        "value" : "BipolarWorkingGroup hasWGSpecialContributor JohnSmith",
+        "language" : "en",
+        "value" : "JohnSmith isDataAnalystOf ENIGMAPublication1",
         "type" : "label"
       } ]
     },
     "label" : {
-      "IRI-based" : "hasWGSpecialContributor"
+      "IRI-based" : "isDataAnalystOf"
     },
-    "superproperty" : [ "9" ],
-    "domain" : "10",
+    "superproperty" : [ "6" ],
+    "domain" : "1",
+    "subproperty" : [ "12", "13" ],
     "comment" : {
-      "undefined" : "describes who the significant contributors of the working group are"
+      "en" : "Describes what publication someone is a data analyst of"
     },
     "attributes" : [ "object" ],
-    "id" : "13"
+    "id" : "10"
   }, {
     "iri" : "https://w3id.org/enigma#isAffiliatedWith",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "21",
+    "range" : "15",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "JohnSmith isAffiliatedWith HarvardU",
         "type" : "label"
       } ]
@@ -546,39 +586,18 @@
     },
     "domain" : "1",
     "comment" : {
-      "undefined" : "describes what organization someone is affiliated with"
+      "en" : "Describes what organization someone is affiliated with"
     },
     "attributes" : [ "object" ],
-    "id" : "20"
-  }, {
-    "iri" : "https://w3id.org/enigma#hasFuturePublicationInstructions",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "23",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "JohnSmith hasFuturePublicationInstructions \"call Bob\"",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasFuturePublicationInstructions"
-    },
-    "domain" : "1",
-    "comment" : {
-      "undefined" : "describes what to do regarding future publication and authorship of someone"
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "22"
+    "id" : "14"
   }, {
     "iri" : "https://w3id.org/enigma#isPIOf",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "16",
+    "range" : "17",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "JohnSmith isPIof Cohort1",
         "type" : "label"
       } ]
@@ -587,42 +606,41 @@
       "IRI-based" : "isPIOf"
     },
     "domain" : "1",
+    "subproperty" : [ "18", "19" ],
     "comment" : {
-      "undefined" : "describes which cohrots somone is the PI of"
+      "en" : "Describes which cohorts somone is the PI of"
     },
     "attributes" : [ "object" ],
-    "id" : "17"
+    "id" : "16"
   }, {
-    "iri" : "https://w3id.org/enigma#hasPJuniorLead",
-    "inverse" : "4",
+    "iri" : "https://w3id.org/enigma#hasFuturePublicationInstructions",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "1",
+    "range" : "21",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
-        "value" : "BipolarProject hasJuniorLead JohnSmith",
+        "language" : "en",
+        "value" : "JohnSmith hasFuturePublicationInstructions \"grant Bob Johnson authorship\"",
         "type" : "label"
       } ]
     },
     "label" : {
-      "IRI-based" : "hasPJuniorLead"
+      "IRI-based" : "hasFuturePublicationInstructions"
     },
-    "superproperty" : [ "25" ],
-    "domain" : "5",
+    "domain" : "1",
     "comment" : {
-      "undefined" : "describes who the junior leads of a project are"
+      "en" : "Describes what to do regarding future publication and authorship of someone"
     },
-    "attributes" : [ "object" ],
-    "id" : "24"
+    "attributes" : [ "datatype" ],
+    "id" : "20"
   }, {
     "iri" : "https://w3id.org/enigma#leftOnDate",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "27",
+    "range" : "23",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "JohnSmith leftOnDate 2008-07-13",
         "type" : "label"
       } ]
@@ -632,14 +650,14 @@
     },
     "domain" : "1",
     "comment" : {
-      "undefined" : "describes the date that a person, who is no longer active, left"
+      "en" : "Describes the date that a person, who is no longer active, left"
     },
     "attributes" : [ "datatype" ],
-    "id" : "26"
+    "id" : "22"
   }, {
     "iri" : "https://w3id.org/enigma#hasEmail",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "29",
+    "range" : "25",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
@@ -653,18 +671,18 @@
     },
     "domain" : "1",
     "comment" : {
-      "undefined" : "describes the email contact information of a person"
+      "en" : "Describes the email contact information of a person"
     },
     "attributes" : [ "datatype" ],
-    "id" : "28"
+    "id" : "24"
   }, {
     "iri" : "https://w3id.org/enigma#isSeniorLeadOfWG",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "10",
+    "range" : "27",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "JohnSmith isSeniorLeadOfWG BipolarWorkingGroup",
         "type" : "label"
       } ]
@@ -672,21 +690,21 @@
     "label" : {
       "IRI-based" : "isSeniorLeadOfWG"
     },
-    "superproperty" : [ "11" ],
+    "superproperty" : [ "28" ],
     "domain" : "1",
     "comment" : {
-      "undefined" : "describes the working groups that someone is a senior lead of"
+      "en" : "Describes the working groups that someone is a senior lead of"
     },
     "attributes" : [ "object" ],
-    "id" : "30"
+    "id" : "26"
   }, {
     "iri" : "https://w3id.org/enigma#hasFirstName",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "32",
+    "range" : "30",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "JohnSmith hasFirstName \"John\"",
         "type" : "label"
       } ]
@@ -696,18 +714,18 @@
     },
     "domain" : "1",
     "comment" : {
-      "undefined" : "describes first name of a person"
+      "en" : "Describes first name of a person"
     },
     "attributes" : [ "datatype" ],
-    "id" : "31"
+    "id" : "29"
   }, {
     "iri" : "https://w3id.org/enigma#hasPublication",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "34",
+    "range" : "11",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "JohnSmith hasPublication ENIGMAPublication",
         "type" : "label"
       } ]
@@ -717,41 +735,18 @@
     },
     "domain" : "1",
     "comment" : {
-      "undefined" : "describes the publications of that person"
+      "en" : "Describes the publications of a person"
     },
     "attributes" : [ "object" ],
-    "id" : "33"
-  }, {
-    "iri" : "https://w3id.org/enigma#hasWGSeniorLead",
-    "inverse" : "30",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "1",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "BipolarWorkingGroup hasWGSeniorLead JohnSmith",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasWGSeniorLead"
-    },
-    "superproperty" : [ "9" ],
-    "domain" : "10",
-    "comment" : {
-      "undefined" : "describes who the working group senior leads are"
-    },
-    "attributes" : [ "object" ],
-    "id" : "14"
+    "id" : "31"
   }, {
     "iri" : "https://w3id.org/enigma#isMemberOfWG",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "10",
+    "range" : "27",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "JohnSmith isMemberOfWorkingGroup BipolarWorkingGroup",
         "type" : "label"
       } ]
@@ -760,20 +755,42 @@
       "IRI-based" : "isMemberOfWG"
     },
     "domain" : "1",
-    "subproperty" : [ "35", "30", "19" ],
+    "subproperty" : [ "32", "26", "33" ],
     "comment" : {
-      "undefined" : "describes what working group a person is a member of"
+      "en" : "Describes what working group a person is a member of"
     },
     "attributes" : [ "object" ],
-    "id" : "11"
+    "id" : "28"
   }, {
-    "iri" : "https://w3id.org/enigma#isNoLongerActive",
+    "iri" : "https://w3id.org/enigma#isMainPIOf",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "37",
+    "range" : "17",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
+        "value" : "JohnSmith isMainPIof Cohort1",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isMainPIOf"
+    },
+    "superproperty" : [ "16" ],
+    "domain" : "1",
+    "comment" : {
+      "en" : "Describes which cohorts somone is a main PI of"
+    },
+    "attributes" : [ "object" ],
+    "id" : "18"
+  }, {
+    "iri" : "https://w3id.org/enigma#isNoLongerActive",
+    "baseIri" : "https://w3id.org/enigma",
+    "range" : "35",
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
         "value" : "JohnSmith isNoLongerActive true",
         "type" : "label"
       } ]
@@ -783,18 +800,18 @@
     },
     "domain" : "1",
     "comment" : {
-      "undefined" : "describes whether or not a person is not longer active"
+      "en" : "Describes whether or not a person is not longer active in ENIGMA"
     },
     "attributes" : [ "datatype" ],
-    "id" : "36"
+    "id" : "34"
   }, {
     "iri" : "https://w3id.org/enigma#isEnigmaContactOf",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "16",
+    "range" : "17",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "JohnSmith isEnigmaContactOf BipolarCohort",
         "type" : "label"
       } ]
@@ -804,18 +821,18 @@
     },
     "domain" : "1",
     "comment" : {
-      "undefined" : "describes the cohort that a person is the contact of"
+      "en" : "Describes the cohort that a person is the contact of"
     },
     "attributes" : [ "object" ],
-    "id" : "38"
+    "id" : "36"
   }, {
     "iri" : "https://w3id.org/enigma#hasResearchInterests",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "40",
+    "range" : "38",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "JohnSmith hasReasearchInterests \"bipolar disorder, schizophrenia\"",
         "type" : "label"
       } ]
@@ -825,85 +842,40 @@
     },
     "domain" : "1",
     "comment" : {
-      "undefined" : "describes the research interests of a person"
+      "en" : "Describes the research interests of a person"
     },
     "attributes" : [ "datatype" ],
-    "id" : "39"
+    "id" : "37"
   }, {
-    "iri" : "https://w3id.org/enigma#hasPSeniorLead",
-    "inverse" : "42",
+    "iri" : "https://w3id.org/enigma#isMinorPIOf",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "1",
+    "range" : "17",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
-        "value" : "BipolarProject hasSeniorLead JohnSmith",
+        "language" : "en",
+        "value" : "JohnSmith isMinorPIof Cohort1",
         "type" : "label"
       } ]
     },
     "label" : {
-      "IRI-based" : "hasPSeniorLead"
+      "IRI-based" : "isMinorPIOf"
     },
-    "superproperty" : [ "25" ],
-    "domain" : "5",
+    "superproperty" : [ "16" ],
+    "domain" : "1",
     "comment" : {
-      "undefined" : "describes who the senior leads of a project are"
+      "en" : "Describes which cohorts somone is a minor PI of"
     },
     "attributes" : [ "object" ],
-    "id" : "41"
-  }, {
-    "iri" : "https://w3id.org/enigma#hasEnigmaContact",
-    "inverse" : "38",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "1",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "BipolarCohort hasEnigmaContact JohnSmith",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasEnigmaContact"
-    },
-    "domain" : "16",
-    "comment" : {
-      "undefined" : "describes the contact of the cohort"
-    },
-    "attributes" : [ "object" ],
-    "id" : "43"
-  }, {
-    "iri" : "https://w3id.org/enigma#hasContributor",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "1",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "BipolarProject hasContributor JohnSmith",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasContributor"
-    },
-    "domain" : "5",
-    "subproperty" : [ "41", "24", "45" ],
-    "comment" : {
-      "undefined" : "describes the contributors of a project"
-    },
-    "attributes" : [ "object" ],
-    "id" : "25"
+    "id" : "19"
   }, {
     "iri" : "https://w3id.org/enigma#isSpecialContributorOfWG",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "10",
+    "range" : "27",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "JohnSmith isSpecialContributorOfWG BipolarWorkingGroup",
         "type" : "label"
       } ]
@@ -911,36 +883,13 @@
     "label" : {
       "IRI-based" : "isSpecialContributorOfWG"
     },
-    "superproperty" : [ "11" ],
+    "superproperty" : [ "28" ],
     "domain" : "1",
     "comment" : {
-      "undefined" : "describes who the significant contributors of a working group are"
+      "en" : "Describes who the significant contributors of a working group are"
     },
     "attributes" : [ "object" ],
-    "id" : "19"
-  }, {
-    "iri" : "https://w3id.org/enigma#hasWGJuniorLead",
-    "inverse" : "35",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "1",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "BipolarWorkingGroup hasWGJuniorLead JohnSmith",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasWGJuniorLead"
-    },
-    "superproperty" : [ "9" ],
-    "domain" : "10",
-    "comment" : {
-      "undefined" : "describes who the working group junior leads are"
-    },
-    "attributes" : [ "object" ],
-    "id" : "12"
+    "id" : "33"
   }, {
     "iri" : "https://w3id.org/enigma#isSpecialContributorOfP",
     "baseIri" : "https://w3id.org/enigma",
@@ -948,7 +897,7 @@
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "JohnSmith isSpecialContributorOfP BipolarProject",
         "type" : "label"
       } ]
@@ -959,40 +908,40 @@
     "superproperty" : [ "6" ],
     "domain" : "1",
     "comment" : {
-      "undefined" : "describes what project someone is a special contributor of"
+      "en" : "Describes what project someone is a special contributor of"
     },
     "attributes" : [ "object" ],
-    "id" : "48"
+    "id" : "42"
   }, {
-    "iri" : "https://w3id.org/enigma#hasAffiliate",
-    "inverse" : "20",
+    "iri" : "https://w3id.org/enigma#isMajorDataAnalystOf",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "1",
+    "range" : "11",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
-        "value" : "HarvardU hasAffiliate JohnSmith",
+        "language" : "en",
+        "value" : "JohnSmith isMajorDataAnalystOf ENIGMAPublication1",
         "type" : "label"
       } ]
     },
     "label" : {
-      "IRI-based" : "hasAffiliate"
+      "IRI-based" : "isMajorDataAnalystOf"
     },
-    "domain" : "21",
+    "superproperty" : [ "10" ],
+    "domain" : "1",
     "comment" : {
-      "undefined" : "describes the people who are affiliations of an organization"
+      "en" : "Describes what publication someone is a major data analyst of"
     },
     "attributes" : [ "object" ],
-    "id" : "49"
+    "id" : "12"
   }, {
     "iri" : "https://w3id.org/enigma#isInvestigatorOf",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "16",
+    "range" : "17",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "JohnSmith isInvestigatorOf BipolarCohort",
         "type" : "label"
       } ]
@@ -1002,10 +951,10 @@
     },
     "domain" : "1",
     "comment" : {
-      "undefined" : "describes the cohort that someone is investigator of"
+      "en" : "Describes the cohort that someone is investigator of"
     },
     "attributes" : [ "object" ],
-    "id" : "50"
+    "id" : "43"
   }, {
     "iri" : "https://w3id.org/enigma#isSeniorLeadOfP",
     "baseIri" : "https://w3id.org/enigma",
@@ -1013,7 +962,7 @@
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "JohnSmith isSeniorLeadOfP BipolarProject",
         "type" : "label"
       } ]
@@ -1024,18 +973,18 @@
     "superproperty" : [ "6" ],
     "domain" : "1",
     "comment" : {
-      "undefined" : "describes who the senior lead of a project is"
+      "en" : "Describes who the senior lead of a project is"
     },
     "attributes" : [ "object" ],
-    "id" : "42"
+    "id" : "44"
   }, {
     "iri" : "https://w3id.org/enigma#isJuniorLeadOfWG",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "10",
+    "range" : "27",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "JohnSmith isJuniorLeadOfWG BipolarWorkingGroup",
         "type" : "label"
       } ]
@@ -1043,34 +992,34 @@
     "label" : {
       "IRI-based" : "isJuniorLeadOfWG"
     },
-    "superproperty" : [ "11" ],
+    "superproperty" : [ "28" ],
     "domain" : "1",
     "comment" : {
-      "undefined" : "describes the working groups that someone is a junior lead of"
+      "en" : "Describes the working groups that someone is a junior lead of"
     },
     "attributes" : [ "object" ],
-    "id" : "35"
+    "id" : "32"
   }, {
     "iri" : "https://w3id.org/enigma#hasWebsite",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "44",
+    "range" : "39",
     "label" : {
       "IRI-based" : "hasWebsite"
     },
     "domain" : "1",
     "comment" : {
-      "undefined" : "describes the website of a person"
+      "en" : "JohnSmith hasWebsite \"http://enigma.usc.edu\""
     },
     "attributes" : [ "datatype" ],
-    "id" : "51"
+    "id" : "45"
   }, {
     "iri" : "https://w3id.org/enigma#joinedEnigmaInYear",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "46",
+    "range" : "40",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "JohnSmith joinedEnigmaInYear 2005",
         "type" : "label"
       } ]
@@ -1080,18 +1029,18 @@
     },
     "domain" : "1",
     "comment" : {
-      "undefined" : "describes the year that a person first joined ENIGMA"
+      "en" : "Describes the year that a person first joined ENIGMA"
     },
     "attributes" : [ "datatype" ],
-    "id" : "52"
+    "id" : "46"
   }, {
     "iri" : "https://w3id.org/enigma#hasTitle",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "47",
+    "range" : "41",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "JohnSmith hasTitle \"Undergraduate\"",
         "type" : "label"
       } ]
@@ -1101,66 +1050,40 @@
     },
     "domain" : "1",
     "comment" : {
-      "undefined" : "describes the title of the person"
+      "en" : "Describes the title of the person"
     },
     "attributes" : [ "datatype" ],
-    "id" : "53"
+    "id" : "47"
   }, {
-    "iri" : "https://w3id.org/enigma#hasInvestigator",
-    "inverse" : "50",
+    "iri" : "https://w3id.org/enigma#isMinorDataAnalystOf",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "1",
+    "range" : "11",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
-        "value" : "BipolarCohort hasInvestigator JohnSmith",
+        "language" : "en",
+        "value" : "JohnSmith isMinorDataAnalystOf ENIGMAPublication1",
         "type" : "label"
       } ]
     },
     "label" : {
-      "IRI-based" : "hasInvestigator"
+      "IRI-based" : "isMinorDataAnalystOf"
     },
-    "domain" : "16",
+    "superproperty" : [ "10" ],
+    "domain" : "1",
     "comment" : {
-      "undefined" : "describes the investigators of the cohort"
+      "en" : "Describes what publication someone is a minor data analyst of"
     },
     "attributes" : [ "object" ],
-    "id" : "54"
-  }, {
-    "iri" : "https://w3id.org/enigma#hasPSpecialContributor",
-    "inverse" : "48",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "1",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "describes who the special contributors of a project are",
-        "type" : "label"
-      }, {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "BipolarProject hasSpecialContributor JohnSmith",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasPSpecialContributor"
-    },
-    "superproperty" : [ "25" ],
-    "domain" : "5",
-    "attributes" : [ "object" ],
-    "id" : "45"
+    "id" : "13"
   }, {
     "iri" : "https://w3id.org/enigma#contributesTo",
-    "inverse" : "25",
     "baseIri" : "https://w3id.org/enigma",
     "range" : "5",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "JohnSmith contributedTo BipolarProject",
         "type" : "label"
       } ]
@@ -1169,9 +1092,9 @@
       "IRI-based" : "contributesTo"
     },
     "domain" : "1",
-    "subproperty" : [ "4", "42", "48" ],
+    "subproperty" : [ "4", "44", "42", "10" ],
     "comment" : {
-      "undefined" : "describes the projects that a person contributed to"
+      "en" : "Describes the projects that a person contributed to"
     },
     "attributes" : [ "object" ],
     "id" : "6"

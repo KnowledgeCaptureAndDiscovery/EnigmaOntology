@@ -1,6 +1,133 @@
-<h2  id="crossreference" class="list">Cross reference for working group classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-This section provides details for each class and property defined by working group.
-<div id="objectproperties">
+<h2  id="crossreference" class="list">Cross reference for the Working Group Ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by the Working Group Ontology.
+<div id="classes">
+   <h3 id="classes" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
+      </li>
+      <li>
+         <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+      </li>
+      <li>
+         <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
+      </li>
+      <li>
+         <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">WorkingGroup</a>
+      </li>
+   </ul>
+   <div class="entity" id="Cohort">
+      <h3>Cohort<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#Cohort</p>
+      <div class="comment">
+         <span class="markdown">A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>ADNI: Alzheimer’s Disease Neuroimaging Initiative</pre>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasCohort" title="https://w3id.org/enigma#hasCohort">has cohort</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Person">
+      <h3>Person<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#Person</p>
+      <div class="comment">
+         <span class="markdown">Individual involved with the cohort</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>Theo van Erp</pre>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasWGChair" title="https://w3id.org/enigma#hasWGChair">has w g chair</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasWGJuniorLead" title="https://w3id.org/enigma#hasWGJuniorLead">has w g junior lead</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasWGMember" title="https://w3id.org/enigma#hasWGMember">has w g member</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasWGSeniorLead" title="https://w3id.org/enigma#hasWGSeniorLead">has w g senior lead</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasWGSpecialContributor" title="https://w3id.org/enigma#hasWGSpecialContributor">has w g special contributor</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Project">
+      <h3>Project<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#Project</p>
+      <div class="comment">
+         <span class="markdown">Project associated with the cohort</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>SZPositiveSymptoms</pre>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasProject" title="https://w3id.org/enigma#hasProject">has project</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="WorkingGroup">
+      <h3>WorkingGroup<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#WorkingGroup</p>
+      <div class="comment">
+         <span class="markdown">Group of researchers studying a certain topic/disease</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>BipolarWG</pre>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasCohort" title="https://w3id.org/enigma#hasCohort">has cohort</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasMOU" title="https://w3id.org/enigma#hasMOU">has m o u</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasProject" title="https://w3id.org/enigma#hasProject">has project</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasPublishedPaper" title="https://w3id.org/enigma#hasPublishedPaper">has published paper</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasStartDate" title="https://w3id.org/enigma#hasStartDate">has start date</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasSubmittedPaper" title="https://w3id.org/enigma#hasSubmittedPaper">has submitted paper</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasWGBriefDescription" title="https://w3id.org/enigma#hasWGBriefDescription">has w g brief description</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasWGChair" title="https://w3id.org/enigma#hasWGChair">has w g chair</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasWGJuniorLead" title="https://w3id.org/enigma#hasWGJuniorLead">has w g junior lead</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasWGMember" title="https://w3id.org/enigma#hasWGMember">has w g member</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasWGSeniorLead" title="https://w3id.org/enigma#hasWGSeniorLead">has w g senior lead</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasWGSpecialContributor" title="https://w3id.org/enigma#hasWGSpecialContributor">has w g special contributor</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div id="objectproperties">
    <h3 id="properties" class="list">Object Properties</h3>
    <ul class="hlist">
       <li>
@@ -38,41 +165,6 @@ This section provides details for each class and property defined by working gro
             <span>has w g special contributor</span>
          </a>
       </li>
-      <li>
-         <a href="#isChairOfWG" title="https://w3id.org/enigma#isChairOfWG">
-            <span>is chair of w g</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isCohortInWorkingGroup" title="https://w3id.org/enigma#isCohortInWorkingGroup">
-            <span>is cohort in working group</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isJuniorLeadOfWG" title="https://w3id.org/enigma#isJuniorLeadOfWG">
-            <span>is junior lead of w g</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isMemberOfWG" title="https://w3id.org/enigma#isMemberOfWG">
-            <span>is member of w g</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isProjectOf" title="https://w3id.org/enigma#isProjectOf">
-            <span>is project of</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isSeniorLeadOfWG" title="https://w3id.org/enigma#isSeniorLeadOfWG">
-            <span>is senior lead of w g</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isSpecialContributorOfWG" title="https://w3id.org/enigma#isSpecialContributorOfWG">
-            <span>is special contributor of w g</span>
-         </a>
-      </li>
    </ul>
    <div class="entity" id="hasCohort">
       <h3>has cohort<sup class="type-op" title="object property">op</sup>
@@ -82,7 +174,7 @@ This section provides details for each class and property defined by working gro
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasCohort</p>
       <div class="comment">
-         <span class="markdown">describes what cohorts are part of the working group</span>
+         <span class="markdown">Describes what cohorts are part of the working group</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -94,18 +186,13 @@ This section provides details for each class and property defined by working gro
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#WorkingGroup">working group</span>
+               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">WorkingGroup</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Cohort">cohort</span>
+               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
                <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#isCohortInWorkingGroup" title="https://w3id.org/enigma#isCohortInWorkingGroup">is cohort in working group</a>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -118,7 +205,7 @@ This section provides details for each class and property defined by working gro
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasProject</p>
       <div class="comment">
-         <span class="markdown">describes what projects are worked on by a specific working group</span>
+         <span class="markdown">Describes what projects are worked on by a specific working group</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -130,18 +217,13 @@ This section provides details for each class and property defined by working gro
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#WorkingGroup">working group</span>
+               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">WorkingGroup</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#isProjectOf" title="https://w3id.org/enigma#isProjectOf">is project of</a>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -154,7 +236,7 @@ This section provides details for each class and property defined by working gro
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasWGChair</p>
       <div class="comment">
-         <span class="markdown">describes who the chairs of a working group are</span>
+         <span class="markdown">Describes who the chairs of a working group are</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -171,18 +253,13 @@ This section provides details for each class and property defined by working gro
             </dd>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#WorkingGroup">working group</span>
+               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">WorkingGroup</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Person">person</span>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
                <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#isChairOfWG" title="https://w3id.org/enigma#isChairOfWG">is chair of w g</a>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -195,7 +272,7 @@ This section provides details for each class and property defined by working gro
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasWGJuniorLead</p>
       <div class="comment">
-         <span class="markdown">describes who the junior leads of a working group are</span>
+         <span class="markdown">Describes who the junior leads of a working group are</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -212,18 +289,13 @@ This section provides details for each class and property defined by working gro
             </dd>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#WorkingGroup">working group</span>
+               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">WorkingGroup</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Person">person</span>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
                <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#isJuniorLeadOfWG" title="https://w3id.org/enigma#isJuniorLeadOfWG">is junior lead of w g</a>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -236,7 +308,7 @@ This section provides details for each class and property defined by working gro
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasWGMember</p>
       <div class="comment">
-         <span class="markdown">describes who the members of the working group are</span>
+         <span class="markdown">Describes who the members of the working group are</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -256,18 +328,13 @@ This section provides details for each class and property defined by working gro
             </dd>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#WorkingGroup">working group</span>
+               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">WorkingGroup</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Person">person</span>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
                <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#isMemberOfWG" title="https://w3id.org/enigma#isMemberOfWG">is member of w g</a>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -280,7 +347,7 @@ This section provides details for each class and property defined by working gro
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasWGSeniorLead</p>
       <div class="comment">
-         <span class="markdown">describes who the senior leads of a working group are</span>
+         <span class="markdown">Describes who the senior leads of a working group are</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -297,18 +364,13 @@ This section provides details for each class and property defined by working gro
             </dd>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#WorkingGroup">working group</span>
+               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">WorkingGroup</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Person">person</span>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
                <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#isSeniorLeadOfWG" title="https://w3id.org/enigma#isSeniorLeadOfWG">is senior lead of w g</a>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -321,7 +383,7 @@ This section provides details for each class and property defined by working gro
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasWGSpecialContributor</p>
       <div class="comment">
-         <span class="markdown">describes who the special contributors of a working group are</span>
+         <span class="markdown">Describes who the special contributors of a working group are</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -338,298 +400,13 @@ This section provides details for each class and property defined by working gro
             </dd>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#WorkingGroup">working group</span>
+               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">WorkingGroup</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Person">person</span>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
                <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#isSpecialContributorOfWG" title="https://w3id.org/enigma#isSpecialContributorOfWG">is special contributor of w g</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isChairOfWG">
-      <h3>is chair of w g<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isChairOfWG</p>
-      <div class="comment">
-         <span class="markdown">describes what WorkingGroup a person is chair of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isChairOfWG SZWorkingGroup</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#isMemberOfWG" title="https://w3id.org/enigma#isMemberOfWG">is member of w g</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Person">person</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#WorkingGroup">working group</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#hasWGChair" title="https://w3id.org/enigma#hasWGChair">has w g chair</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isCohortInWorkingGroup">
-      <h3>is cohort in working group<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isCohortInWorkingGroup</p>
-      <div class="comment">
-         <span class="markdown">describes what working the cohort is a part of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>AmsterdamBipolarCohort isCohortIn BipolarWorkingGroup --&gt; The Amsterdam Bipolar Cohort is part of the Bipolar Working Group</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Cohort">cohort</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#WorkingGroup">working group</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#hasCohort" title="https://w3id.org/enigma#hasCohort">has cohort</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isJuniorLeadOfWG">
-      <h3>is junior lead of w g<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isJuniorLeadOfWG</p>
-      <div class="comment">
-         <span class="markdown">describes what working group someone is a junior lead of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isJuniorLeadOf BipolarWorkingGroup</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#isMemberOfWG" title="https://w3id.org/enigma#isMemberOfWG">is member of w g</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Person">person</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#WorkingGroup">working group</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#hasWGJuniorLead" title="https://w3id.org/enigma#hasWGJuniorLead">has w g junior lead</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isMemberOfWG">
-      <h3>is member of w g<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isMemberOfWG</p>
-      <div class="comment">
-         <span class="markdown">describes what working group a person is a member of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isMemberOfWorkingGroup BipolarWorkingGroup --&gt; John Smith is a member of the bipolar working group</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has sub-properties</dt>
-            <dd>
-               <a href="#isChairOfWG" title="https://w3id.org/enigma#isChairOfWG">is chair of w g</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#isJuniorLeadOfWG" title="https://w3id.org/enigma#isJuniorLeadOfWG">is junior lead of w g</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#isSeniorLeadOfWG" title="https://w3id.org/enigma#isSeniorLeadOfWG">is senior lead of w g</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#isSpecialContributorOfWG" title="https://w3id.org/enigma#isSpecialContributorOfWG">is special contributor of w g</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Person">person</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#WorkingGroup">working group</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#hasWGMember" title="https://w3id.org/enigma#hasWGMember">has w g member</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isProjectOf">
-      <h3>is project of<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isProjectOf</p>
-      <div class="comment">
-         <span class="markdown">describes what working group a project is part of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>BipolarCorticolProject isProjectOf BipolarWorkingGroup --&gt; The Bipolar Corticol Project is a project of the Bipolar Working Group</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#WorkingGroup">working group</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#hasProject" title="https://w3id.org/enigma#hasProject">has project</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isSeniorLeadOfWG">
-      <h3>is senior lead of w g<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isSeniorLeadOfWG</p>
-      <div class="comment">
-         <span class="markdown">describes what working group the person is a senior lead of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isSeniorLeadOf WorkingGroup</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#isMemberOfWG" title="https://w3id.org/enigma#isMemberOfWG">is member of w g</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Person">person</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#WorkingGroup">working group</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#hasWGSeniorLead" title="https://w3id.org/enigma#hasWGSeniorLead">has w g senior lead</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isSpecialContributorOfWG">
-      <h3>is special contributor of w g<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isSpecialContributorOfWG</p>
-      <div class="comment">
-         <span class="markdown">describes the working group that a person is a special contributor of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isSpecialContributorOf BipolarWorkingGroup</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#isMemberOfWG" title="https://w3id.org/enigma#isMemberOfWG">is member of w g</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Person">person</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#WorkingGroup">working group</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#hasWGSpecialContributor" title="https://w3id.org/enigma#hasWGSpecialContributor">has w g special contributor</a>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -671,7 +448,7 @@ This section provides details for each class and property defined by working gro
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasMOU</p>
       <div class="comment">
-         <span class="markdown">describes the MOU links of the working group</span>
+         <span class="markdown">Describes the MOU links of the working group</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -683,7 +460,7 @@ This section provides details for each class and property defined by working gro
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#WorkingGroup">working group</span>
+               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">WorkingGroup</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -701,7 +478,7 @@ This section provides details for each class and property defined by working gro
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasPublishedPaper</p>
       <div class="comment">
-         <span class="markdown">describes the links to published papers or the paper title if the link does not exist for the working group</span>
+         <span class="markdown">Describes the links to published papers or the paper title (if link does not exist) for the working group</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -720,7 +497,7 @@ This section provides details for each class and property defined by working gro
             </dd>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#WorkingGroup">working group</span>
+               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">WorkingGroup</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -738,7 +515,7 @@ This section provides details for each class and property defined by working gro
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasStartDate</p>
       <div class="comment">
-         <span class="markdown">describes the start date of a working group</span>
+         <span class="markdown">Describes the start date of a working group</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -750,7 +527,7 @@ This section provides details for each class and property defined by working gro
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#WorkingGroup">working group</span>
+               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">WorkingGroup</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -768,7 +545,7 @@ This section provides details for each class and property defined by working gro
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasSubmittedPaper</p>
       <div class="comment">
-         <span class="markdown">describes the titles of the submitted papers of a working group</span>
+         <span class="markdown">Describes the titles of the submitted papers of a working group</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -780,7 +557,7 @@ This section provides details for each class and property defined by working gro
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#WorkingGroup">working group</span>
+               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">WorkingGroup</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -798,7 +575,7 @@ This section provides details for each class and property defined by working gro
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasWGBriefDescription</p>
       <div class="comment">
-         <span class="markdown">provides a brief description of the working group</span>
+         <span class="markdown">Provides a brief description of the working group</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -810,7 +587,7 @@ This section provides details for each class and property defined by working gro
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#WorkingGroup">working group</span>
+               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">WorkingGroup</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>

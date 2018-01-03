@@ -1,30 +1,61 @@
-<h2  id="crossreference" class="list">Cross reference for Project classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-This section provides details for each class and property defined by Project.
+<h2  id="crossreference" class="list">Cross reference for The Project Ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by The Project Ontology.
 <div id="classes">
    <h3 id="classes" class="list">Classes</h3>
    <ul class="hlist">
       <li>
-         <a href="#BrainScanDataType" title="https://w3id.org/enigma#BrainScanDataType">
-            <span>brain scan data type</span>
-         </a>
+         <a href="#BrainScanDataType" title="https://w3id.org/enigma#BrainScanDataType">BrainScanDataType</a>
       </li>
       <li>
-         <a href="#GeneticDataType" title="https://w3id.org/enigma#GeneticDataType">
-            <span>genetic data type</span>
-         </a>
+         <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
+      </li>
+      <li>
+         <a href="#DataType" title="https://w3id.org/enigma#DataType">DataType</a>
+      </li>
+      <li>
+         <a href="#GeneReferencePanel" title="https://w3id.org/enigma#GeneReferencePanel">GeneReferencePanel</a>
+      </li>
+      <li>
+         <a href="#GeneticAssociationProtocol"
+            title="https://w3id.org/enigma#GeneticAssociationProtocol">GeneticAssociationProtocol</a>
+      </li>
+      <li>
+         <a href="#GeneticDataType" title="https://w3id.org/enigma#GeneticDataType">GeneticDataType</a>
+      </li>
+      <li>
+         <a href="#GenotypeImputationProtocol"
+            title="https://w3id.org/enigma#GenotypeImputationProtocol">GenotypeImputationProtocol</a>
+      </li>
+      <li>
+         <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+      </li>
+      <li>
+         <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
+      </li>
+      <li>
+         <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">WorkingGroup</a>
       </li>
    </ul>
    <div class="entity" id="BrainScanDataType">
-      <h3>brain scan data type<sup class="type-c" title="class">c</sup>
+      <h3>BrainScanDataType<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#BrainScanDataType</p>
+      <div class="comment">
+         <span class="markdown">Specifies the kinds of brain scan data collected</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>EEG</pre>
+         </dd>
+      </dl>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <span class="dotted" title="https://w3id.org/enigma#DataType">data type</span>
+            <a href="#DataType" title="https://w3id.org/enigma#DataType">DataType</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in range of</dt>
@@ -44,17 +75,114 @@ This section provides details for each class and property defined by Project.
          </dd>
       </dl>
    </div>
+   <div class="entity" id="Cohort">
+      <h3>Cohort<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#Cohort</p>
+      <div class="comment">
+         <span class="markdown">A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>ADNI: Alzheimer’s Disease Neuroimaging Initiative</pre>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasCohort" title="https://w3id.org/enigma#hasCohort">has cohort</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DataType">
+      <h3>DataType<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#DataType</p>
+      <div class="comment">
+         <span class="markdown">Specifies the kinds of data collected</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#BrainScanDataType" title="https://w3id.org/enigma#BrainScanDataType">BrainScanDataType</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#GeneticDataType" title="https://w3id.org/enigma#GeneticDataType">GeneticDataType</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasDataType" title="https://w3id.org/enigma#hasDataType">has data type</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="GeneReferencePanel">
+      <h3>GeneReferencePanel<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#GeneReferencePanel</p>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasGeneReferencePanel" title="https://w3id.org/enigma#hasGeneReferencePanel">has gene reference panel</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="GeneticAssociationProtocol">
+      <h3>GeneticAssociationProtocol<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#GeneticAssociationProtocol</p>
+      <div class="comment">
+         <span class="markdown">ENIGMA Protocols for genetic associations</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>ENIGMA3 – GWAS Meta Analysis of Cortical Thickness and Surface Area - Association Protocol</pre>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasGeneticAssociationProtocol"
+               title="https://w3id.org/enigma#hasGeneticAssociationProtocol">has genetic association protocol</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="GeneticDataType">
-      <h3>genetic data type<sup class="type-c" title="class">c</sup>
+      <h3>GeneticDataType<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#GeneticDataType</p>
+      <div class="comment">
+         <span class="markdown">Specifies the kinds of genetic data collected</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>Epigenetic</pre>
+         </dd>
+      </dl>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <span class="dotted" title="https://w3id.org/enigma#DataType">data type</span>
+            <a href="#DataType" title="https://w3id.org/enigma#DataType">DataType</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in range of</dt>
@@ -73,14 +201,132 @@ This section provides details for each class and property defined by Project.
          </dd>
       </dl>
    </div>
+   <div class="entity" id="GenotypeImputationProtocol">
+      <h3>GenotypeImputationProtocol<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#GenotypeImputationProtocol</p>
+      <div class="comment">
+         <span class="markdown">ENIGMA Protocols for genetic imputations</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>ENIGMA3 – GWAS Meta Analysis of Cortical Thickness and Surface Area - Imputation Protocol</pre>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasGenotypeImputationProtocol"
+               title="https://w3id.org/enigma#hasGenotypeImputationProtocol">has genotype imputation protocol</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Person">
+      <h3>Person<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#Person</p>
+      <div class="comment">
+         <span class="markdown">Individual involved with the cohort</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>Theo van Erp</pre>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasContactPerson" title="https://w3id.org/enigma#hasContactPerson">has contact person</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasContributor" title="https://w3id.org/enigma#hasContributor">has contributor</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasPJuniorLead" title="https://w3id.org/enigma#hasPJuniorLead">has p junior lead</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasPSeniorLead" title="https://w3id.org/enigma#hasPSeniorLead">has p senior lead</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasPSpecialContributor" title="https://w3id.org/enigma#hasPSpecialContributor">has p special contributor</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Project">
+      <h3>Project<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#Project</p>
+      <div class="comment">
+         <span class="markdown">Project associated with the cohort</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>SZPositiveSymptoms</pre>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasApprovedProposalForm" title="https://w3id.org/enigma#hasApprovedProposalForm">has approved proposal form</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasCohort" title="https://w3id.org/enigma#hasCohort">has cohort</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasContactPerson" title="https://w3id.org/enigma#hasContactPerson">has contact person</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasContributor" title="https://w3id.org/enigma#hasContributor">has contributor</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasEndDate" title="https://w3id.org/enigma#hasEndDate">has end date</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasGeneReferencePanel" title="https://w3id.org/enigma#hasGeneReferencePanel">has gene reference panel</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasGeneticAssociationProtocol"
+               title="https://w3id.org/enigma#hasGeneticAssociationProtocol">has genetic association protocol</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasGenotypeImputationProtocol"
+               title="https://w3id.org/enigma#hasGenotypeImputationProtocol">has genotype imputation protocol</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasPBriefDescription" title="https://w3id.org/enigma#hasPBriefDescription">has p brief description</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasPJuniorLead" title="https://w3id.org/enigma#hasPJuniorLead">has p junior lead</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasPSeniorLead" title="https://w3id.org/enigma#hasPSeniorLead">has p senior lead</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasPSpecialContributor" title="https://w3id.org/enigma#hasPSpecialContributor">has p special contributor</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasStartDate" title="https://w3id.org/enigma#hasStartDate">has start date</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasStatus" title="https://w3id.org/enigma#hasStatus">has status</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasStudyDesign" title="https://w3id.org/enigma#hasStudyDesign">has study design</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasTargetDate" title="https://w3id.org/enigma#hasTargetDate">has target date</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasProject" title="https://w3id.org/enigma#hasProject">has project</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="WorkingGroup">
+      <h3>WorkingGroup<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#WorkingGroup</p>
+      <div class="comment">
+         <span class="markdown">Group of researchers studying a certain topic/disease</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>BipolarWG</pre>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasProject" title="https://w3id.org/enigma#hasProject">has project</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
 </div><div id="objectproperties">
    <h3 id="properties" class="list">Object Properties</h3>
    <ul class="hlist">
-      <li>
-         <a href="#contributesTo" title="https://w3id.org/enigma#contributesTo">
-            <span>contributes to</span>
-         </a>
-      </li>
       <li>
          <a href="#hasBrainScanDataType" title="https://w3id.org/enigma#hasBrainScanDataType">
             <span>has brain scan data type</span>
@@ -148,75 +394,7 @@ This section provides details for each class and property defined by Project.
             <span>has project</span>
          </a>
       </li>
-      <li>
-         <a href="#isCohortInProject" title="https://w3id.org/enigma#isCohortInProject">
-            <span>is cohort in project</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isJuniorLeadOfP" title="https://w3id.org/enigma#isJuniorLeadOfP">
-            <span>is junior lead of p</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isProjectOf" title="https://w3id.org/enigma#isProjectOf">
-            <span>is project of</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isSeniorLeadOfP" title="https://w3id.org/enigma#isSeniorLeadOfP">
-            <span>is senior lead of p</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isSpecialContributorOfP" title="https://w3id.org/enigma#isSpecialContributorOfP">
-            <span>is special contributor of p</span>
-         </a>
-      </li>
    </ul>
-   <div class="entity" id="contributesTo">
-      <h3>contributes to<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#contributesTo</p>
-      <div class="comment">
-         <span class="markdown">describes what projects someone contributes to</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith contributesTo BipolarLateralityProject</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has sub-properties</dt>
-            <dd>
-               <a href="#isJuniorLeadOfP" title="https://w3id.org/enigma#isJuniorLeadOfP">is junior lead of p</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#isSeniorLeadOfP" title="https://w3id.org/enigma#isSeniorLeadOfP">is senior lead of p</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#isSpecialContributorOfP" title="https://w3id.org/enigma#isSpecialContributorOfP">is special contributor of p</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Person">person</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#hasContributor" title="https://w3id.org/enigma#hasContributor">has contributor</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
    <div class="entity" id="hasBrainScanDataType">
       <h3>has brain scan data type<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -225,7 +403,7 @@ This section provides details for each class and property defined by Project.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasBrainScanDataType</p>
       <div class="comment">
-         <span class="markdown">describes which brain scan data types a project has</span>
+         <span class="markdown">Describes which brain scan data types a project has</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -242,15 +420,15 @@ This section provides details for each class and property defined by Project.
             </dd>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup> 
                <span class="logic">or</span> 
-               <span class="dotted" title="https://w3id.org/enigma#WorkingGroup">working group</span>
+               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">WorkingGroup</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#BrainScanDataType" title="https://w3id.org/enigma#BrainScanDataType">brain scan data type</a>
+               <a href="#BrainScanDataType" title="https://w3id.org/enigma#BrainScanDataType">BrainScanDataType</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -264,7 +442,7 @@ This section provides details for each class and property defined by Project.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasCohort</p>
       <div class="comment">
-         <span class="markdown">describes what cohorts are part of the project</span>
+         <span class="markdown">Describes what cohorts are part of the project</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -276,18 +454,13 @@ This section provides details for each class and property defined by Project.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Cohort">cohort</span>
+               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
                <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#isCohortInProject" title="https://w3id.org/enigma#isCohortInProject">is cohort in project</a>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -300,7 +473,7 @@ This section provides details for each class and property defined by Project.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasContactPerson</p>
       <div class="comment">
-         <span class="markdown">describes who the contact person of the project is</span>
+         <span class="markdown">Describes who the contact person of the project is</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -317,12 +490,12 @@ This section provides details for each class and property defined by Project.
             </dd>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Person">person</span>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -336,7 +509,7 @@ This section provides details for each class and property defined by Project.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasContributor</p>
       <div class="comment">
-         <span class="markdown">describes who contributed to the project</span>
+         <span class="markdown">Describes who contributed to the project</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -356,18 +529,13 @@ This section provides details for each class and property defined by Project.
             </dd>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Person">person</span>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
                <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#contributesTo" title="https://w3id.org/enigma#contributesTo">contributes to</a>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -380,7 +548,7 @@ This section provides details for each class and property defined by Project.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasDataType</p>
       <div class="comment">
-         <span class="markdown">describes the data types that the project collected</span>
+         <span class="markdown">Describes the data types that the project collected</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -398,15 +566,15 @@ This section provides details for each class and property defined by Project.
             </dd>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup> 
                <span class="logic">or</span> 
-               <span class="dotted" title="https://w3id.org/enigma#WorkingGroup">working group</span>
+               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">WorkingGroup</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#DataType">data type</span>
+               <a href="#DataType" title="https://w3id.org/enigma#DataType">DataType</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -420,7 +588,7 @@ This section provides details for each class and property defined by Project.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasGeneReferencePanel</p>
       <div class="comment">
-         <span class="markdown">describes the gene reference panel used by the project</span>
+         <span class="markdown">Describes the gene reference panel used by the project</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -432,12 +600,12 @@ This section provides details for each class and property defined by Project.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#GeneReferencePanel">gene reference panel</span>
+               <a href="#GeneReferencePanel" title="https://w3id.org/enigma#GeneReferencePanel">GeneReferencePanel</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -451,7 +619,7 @@ This section provides details for each class and property defined by Project.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasGeneticAssociationProtocol</p>
       <div class="comment">
-         <span class="markdown">describes the genetic association protocol that is used by the project</span>
+         <span class="markdown">Describes the genetic association protocol that is used by the project</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -463,13 +631,13 @@ This section provides details for each class and property defined by Project.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted"
-                     title="https://w3id.org/enigma#GeneticAssociationProtocol">genetic association protocol</span>
+               <a href="#GeneticAssociationProtocol"
+                  title="https://w3id.org/enigma#GeneticAssociationProtocol">GeneticAssociationProtocol</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -483,7 +651,7 @@ This section provides details for each class and property defined by Project.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasGeneticDataType</p>
       <div class="comment">
-         <span class="markdown">describes the genetic data types that a project has</span>
+         <span class="markdown">Describes the genetic data types that a project has</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -500,15 +668,15 @@ This section provides details for each class and property defined by Project.
             </dd>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup> 
                <span class="logic">or</span> 
-               <span class="dotted" title="https://w3id.org/enigma#WorkingGroup">working group</span>
+               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">WorkingGroup</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#GeneticDataType" title="https://w3id.org/enigma#GeneticDataType">genetic data type</a>
+               <a href="#GeneticDataType" title="https://w3id.org/enigma#GeneticDataType">GeneticDataType</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -522,7 +690,7 @@ This section provides details for each class and property defined by Project.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasGenotypeImputationProtocol</p>
       <div class="comment">
-         <span class="markdown">describes the genotype imputation protocol that is used by the project</span>
+         <span class="markdown">Describes the genotype imputation protocol that is used by the project</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -534,13 +702,13 @@ This section provides details for each class and property defined by Project.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted"
-                     title="https://w3id.org/enigma#GenotypeImputationProtocol">genotype imputation protocol</span>
+               <a href="#GenotypeImputationProtocol"
+                  title="https://w3id.org/enigma#GenotypeImputationProtocol">GenotypeImputationProtocol</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -554,7 +722,7 @@ This section provides details for each class and property defined by Project.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasPJuniorLead</p>
       <div class="comment">
-         <span class="markdown">describes who the junior leads of a project are</span>
+         <span class="markdown">Describes who the junior leads of a project are</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -571,18 +739,13 @@ This section provides details for each class and property defined by Project.
             </dd>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Person">person</span>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
                <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#isJuniorLeadOfP" title="https://w3id.org/enigma#isJuniorLeadOfP">is junior lead of p</a>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -595,7 +758,7 @@ This section provides details for each class and property defined by Project.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasPSeniorLead</p>
       <div class="comment">
-         <span class="markdown">describes who the senior leads of a project are</span>
+         <span class="markdown">Describes who the senior leads of a project are</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -612,18 +775,13 @@ This section provides details for each class and property defined by Project.
             </dd>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Person">person</span>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
                <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#isSeniorLeadOfP" title="https://w3id.org/enigma#isSeniorLeadOfP">is senior lead of p</a>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -636,7 +794,7 @@ This section provides details for each class and property defined by Project.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasPSpecialContributor</p>
       <div class="comment">
-         <span class="markdown">describes who the special contributors of a project are</span>
+         <span class="markdown">Describes who the special contributors of a project are</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -653,18 +811,13 @@ This section provides details for each class and property defined by Project.
             </dd>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Person">person</span>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
                <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#isSpecialContributorOfP" title="https://w3id.org/enigma#isSpecialContributorOfP">is special contributor of p</a>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -677,225 +830,25 @@ This section provides details for each class and property defined by Project.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasProject</p>
       <div class="comment">
-         <span class="markdown">describes the projects that a working group has</span>
+         <span class="markdown">Describes what projects are worked on by a specific working group</span>
       </div>
       <dl>
          <dt>Example</dt>
          <dd>
-            <pre>BipolarWorkingGroup hasProject BipolarCorticolProject</pre>
+            <pre>BipolarWorkingGroup hasProject BipolarCorticolProject --&gt; The Bipolar Working Group is working on the Bipolar Corticol Project</pre>
          </dd>
       </dl>
       <div class="description">
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#WorkingGroup">working group</span>
+               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">WorkingGroup</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#isProjectOf" title="https://w3id.org/enigma#isProjectOf">is project of</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isCohortInProject">
-      <h3>is cohort in project<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isCohortInProject</p>
-      <div class="comment">
-         <span class="markdown">describes what project the cohort is a part of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>AmsterdamBipolarCohort isCohortIn BipolarProject</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Cohort">cohort</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#hasCohort" title="https://w3id.org/enigma#hasCohort">has cohort</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isJuniorLeadOfP">
-      <h3>is junior lead of p<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isJuniorLeadOfP</p>
-      <div class="comment">
-         <span class="markdown">describes what projects someone is a junior lead of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isJuniorLeadOf BipolarProject</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#contributesTo" title="https://w3id.org/enigma#contributesTo">contributes to</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Person">person</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#hasPJuniorLead" title="https://w3id.org/enigma#hasPJuniorLead">has p junior lead</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isProjectOf">
-      <h3>is project of<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isProjectOf</p>
-      <div class="comment">
-         <span class="markdown">describes what working group a project is part of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>BipolarCorticolProject isProjectOf BipolarWorkingGroup</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#WorkingGroup">working group</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#hasProject" title="https://w3id.org/enigma#hasProject">has project</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isSeniorLeadOfP">
-      <h3>is senior lead of p<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isSeniorLeadOfP</p>
-      <div class="comment">
-         <span class="markdown">describes what project the person is a senior lead of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isSeniorLeadOf BipolarProject</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#contributesTo" title="https://w3id.org/enigma#contributesTo">contributes to</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Person">person</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#hasPSeniorLead" title="https://w3id.org/enigma#hasPSeniorLead">has p senior lead</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isSpecialContributorOfP">
-      <h3>is special contributor of p<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isSpecialContributorOfP</p>
-      <div class="comment">
-         <span class="markdown">describes the project that a person is a special contributor of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isSpecialContributorOf BipolarProject</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#contributesTo" title="https://w3id.org/enigma#contributesTo">contributes to</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Person">person</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#hasPSpecialContributor" title="https://w3id.org/enigma#hasPSpecialContributor">has p special contributor</a>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -947,7 +900,7 @@ This section provides details for each class and property defined by Project.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasApprovedProposalForm</p>
       <div class="comment">
-         <span class="markdown">describes the approved proposal form link of a project</span>
+         <span class="markdown">Describes the approved proposal form link of a project</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -959,7 +912,7 @@ This section provides details for each class and property defined by Project.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -977,7 +930,7 @@ This section provides details for each class and property defined by Project.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasEndDate</p>
       <div class="comment">
-         <span class="markdown">describes the end date of a project</span>
+         <span class="markdown">Describes the end date of a project</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -989,7 +942,7 @@ This section provides details for each class and property defined by Project.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1007,7 +960,7 @@ This section provides details for each class and property defined by Project.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasPBriefDescription</p>
       <div class="comment">
-         <span class="markdown">provides a  brief description of the project</span>
+         <span class="markdown">Provides a brief description of the project</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -1019,7 +972,7 @@ This section provides details for each class and property defined by Project.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1037,13 +990,19 @@ This section provides details for each class and property defined by Project.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasStartDate</p>
       <div class="comment">
-         <span class="markdown">BipolarProject hasStartDate 2017-06-23</span>
+         <span class="markdown">Describes the start date of a project</span>
       </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>BipolarProject hasStartDate 2017-06-23</pre>
+         </dd>
+      </dl>
       <div class="description">
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1061,7 +1020,7 @@ This section provides details for each class and property defined by Project.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasStatus</p>
       <div class="comment">
-         <span class="markdown">describes the status of the project</span>
+         <span class="markdown">Describes the status of the project</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -1073,7 +1032,7 @@ This section provides details for each class and property defined by Project.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1089,7 +1048,7 @@ This section provides details for each class and property defined by Project.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasStudyDesign</p>
       <div class="comment">
-         <span class="markdown">describes the study design of the project</span>
+         <span class="markdown">Describes the study design of the project</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -1101,7 +1060,7 @@ This section provides details for each class and property defined by Project.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1117,7 +1076,7 @@ This section provides details for each class and property defined by Project.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasTargetDate</p>
       <div class="comment">
-         <span class="markdown">describes the target date of the project</span>
+         <span class="markdown">Describes the target date of the project</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -1129,7 +1088,7 @@ This section provides details for each class and property defined by Project.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Project">project</span>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1204,7 +1163,7 @@ This section provides details for each class and property defined by Project.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#BrainScanDataType" title="https://w3id.org/enigma#BrainScanDataType">brain scan data type</a>
+            <a href="#BrainScanDataType" title="https://w3id.org/enigma#BrainScanDataType">BrainScanDataType</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1219,7 +1178,7 @@ This section provides details for each class and property defined by Project.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#GeneticDataType" title="https://w3id.org/enigma#GeneticDataType">genetic data type</a>
+            <a href="#GeneticDataType" title="https://w3id.org/enigma#GeneticDataType">GeneticDataType</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1234,7 +1193,7 @@ This section provides details for each class and property defined by Project.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#GeneticDataType" title="https://w3id.org/enigma#GeneticDataType">genetic data type</a>
+            <a href="#GeneticDataType" title="https://w3id.org/enigma#GeneticDataType">GeneticDataType</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1249,7 +1208,7 @@ This section provides details for each class and property defined by Project.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#GeneticDataType" title="https://w3id.org/enigma#GeneticDataType">genetic data type</a>
+            <a href="#GeneticDataType" title="https://w3id.org/enigma#GeneticDataType">GeneticDataType</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1264,7 +1223,7 @@ This section provides details for each class and property defined by Project.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#GeneticDataType" title="https://w3id.org/enigma#GeneticDataType">genetic data type</a>
+            <a href="#GeneticDataType" title="https://w3id.org/enigma#GeneticDataType">GeneticDataType</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1279,7 +1238,7 @@ This section provides details for each class and property defined by Project.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#BrainScanDataType" title="https://w3id.org/enigma#BrainScanDataType">brain scan data type</a>
+            <a href="#BrainScanDataType" title="https://w3id.org/enigma#BrainScanDataType">BrainScanDataType</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1294,7 +1253,7 @@ This section provides details for each class and property defined by Project.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#BrainScanDataType" title="https://w3id.org/enigma#BrainScanDataType">brain scan data type</a>
+            <a href="#BrainScanDataType" title="https://w3id.org/enigma#BrainScanDataType">BrainScanDataType</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1309,7 +1268,7 @@ This section provides details for each class and property defined by Project.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#BrainScanDataType" title="https://w3id.org/enigma#BrainScanDataType">brain scan data type</a>
+            <a href="#BrainScanDataType" title="https://w3id.org/enigma#BrainScanDataType">BrainScanDataType</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1324,7 +1283,7 @@ This section provides details for each class and property defined by Project.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#BrainScanDataType" title="https://w3id.org/enigma#BrainScanDataType">brain scan data type</a>
+            <a href="#BrainScanDataType" title="https://w3id.org/enigma#BrainScanDataType">BrainScanDataType</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1339,7 +1298,7 @@ This section provides details for each class and property defined by Project.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#GeneticDataType" title="https://w3id.org/enigma#GeneticDataType">genetic data type</a>
+            <a href="#GeneticDataType" title="https://w3id.org/enigma#GeneticDataType">GeneticDataType</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>

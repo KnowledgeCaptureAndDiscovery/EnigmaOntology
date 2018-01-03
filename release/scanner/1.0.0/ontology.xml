@@ -11,12 +11,14 @@
      xmlns:vann="http://purl.org/vocab/vann/">
     <owl:Ontology rdf:about="https://w3id.org/enigma">
         <owl:versionIRI rdf:resource="https://w3id.org/enigma/scanner/1.0.0"/>
+        <terms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Agnes McMahon</terms:contributor>
         <terms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Daniel Garijo</terms:contributor>
         <terms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yolanda Gil</terms:contributor>
+        <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MiHyun Jang</terms:creator>
         <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Neda Jahanshad</terms:creator>
         <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ryan Espiritu</terms:creator>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Project Ontology</terms:title>
+        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Scanner Ontology</terms:title>
         <vann:preferredNamespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string">enigma</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:resource="https://w3id.org/enigma#"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An ontology that describes scanners and their properties.</rdfs:comment>
@@ -62,8 +64,8 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#forDataType">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#DataType"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AcquisitionPro3 forDataType EEG</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what data type the acquisition protocol was used to obtain</rdfs:comment>
+        <vann:example xml:lang="en">AcquisitionPro3 forDataType EEG</vann:example>
+        <rdfs:comment xml:lang="en">Describes what data type the acquisition protocol was used to obtain</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -74,28 +76,8 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasAcquisitionDirection">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#AcquisitionDirection"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasAcquisitionDirection coronal --&gt; The acquisition direction of this 1.5T-GE-Signa is coronal</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the acquisition direction of the scanner</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasAcquisitionProtocol -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasAcquisitionProtocol">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isAcquisitionProtocolOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#AcquisitionProtocol"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Scanner"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 hasAcquisitionProtocol AcquisitionProtocol1</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the acquisition protocol to scan the cohort</rdfs:comment>
+        <vann:example xml:lang="en">1.5T-GE-Signa hasAcquisitionDirection coronal --&gt; The acquisition direction of this 1.5T-GE-Signa is coronal</vann:example>
+        <rdfs:comment xml:lang="en">Describes the acquisition direction of the scanner</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -104,24 +86,10 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasManufacturer">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isManufacturerOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Scanner"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Manufacturer"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasManufacturer GE --&gt; The manufacturer of the 1.5T-GE-Signa is GE</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what the manufacturer for the scanner is</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasScanner -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasScanner">
-        <owl:inverseOf rdf:resource="https://w3id.org/enigma#isScannerOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Scanner"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AcquisitionProtocol1 hasScanner 1.5T-GE-Siemens</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the scanner used in the acquisition protocol</rdfs:comment>
+        <vann:example xml:lang="en">1.5T-GE-Signa hasManufacturer GE --&gt; The manufacturer of the 1.5T-GE-Signa is GE</vann:example>
+        <rdfs:comment xml:lang="en">Describes what the manufacturer for the scanner is</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -132,8 +100,8 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasSequence">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#MRISequence"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasSequence T1-weighted_MPRAGE_sequence --&gt; The acquisition protocol for this scanner is T1-weighted MPRAGE sequence</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the sequence that the acquisition protocol requires</rdfs:comment>
+        <vann:example xml:lang="en">1.5T-GE-Signa hasSequence T1-weighted_MPRAGE_sequence --&gt; The acquisition protocol for this scanner is T1-weighted MPRAGE sequence</vann:example>
+        <rdfs:comment xml:lang="en">Describes the sequence that the acquisition protocol requires</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -151,20 +119,8 @@
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AcquisitionProtocol isAcquisitionProtocolOf Cohort1</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what cohorts were scanned with the acquisition protocol</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isManufacturerOf -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isManufacturerOf">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Manufacturer"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Scanner"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GE isManufacturerOf 1.5T-GE-Signa --&gt; GE manufacters the 1.5T-GE-Signa scanner</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the scanners that a manufacturer makes</rdfs:comment>
+        <vann:example xml:lang="en">AcquisitionProtocol isAcquisitionProtocolOf Cohort1</vann:example>
+        <rdfs:comment xml:lang="en">Describes what cohorts were scanned with the acquisition protocol</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -175,8 +131,8 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isScannerOf">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Scanner"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Siemens isScannerOf AcquisitionProtocol1</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the protocols that the scanner is used for</rdfs:comment>
+        <vann:example xml:lang="en">1.5T-GE-Siemens isScannerOf AcquisitionProtocol1</vann:example>
+        <rdfs:comment xml:lang="en">Describes the protocols that the scanner is used for</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -188,8 +144,7 @@
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#ScannerSoftware"/>
         <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cohort1 usesScannerSoftware FreeSurfer(5.1.0) --&gt; Cohort1 was scanned with FreeSurfer(5.1.0) software</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what the software was used to scan a cohort</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">should the domain be scanner or cohort?</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Describes what the software was used for a given scanner</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -212,8 +167,8 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasDataAcquisitionMatrix">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasDataAcquisitionMatrix &quot;256x256&quot; --&gt; The size of the data acquisition matrix is 256x256</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the size of the data acquisition matrix used</rdfs:comment>
+        <vann:example xml:lang="en">1.5T-GE-Signa hasDataAcquisitionMatrix &quot;256x256&quot; --&gt; The size of the data acquisition matrix is 256x256</vann:example>
+        <rdfs:comment xml:lang="en">Describes the size of the data acquisition matrix used</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -224,8 +179,8 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasFieldStrength">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Scanner"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasFieldStrength 1.5 --&gt; The field strength of 1.5T-GE-Signa is 1.5</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the field strength of the cohort</rdfs:comment>
+        <vann:example xml:lang="en">1.5T-GE-Signa hasFieldStrength 1.5 --&gt; The field strength of 1.5T-GE-Signa is 1.5</vann:example>
+        <rdfs:comment xml:lang="en">Describes the field strength of the cohort</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -236,8 +191,8 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasFlipAngle">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasFlipAngle 7 --&gt; 1.5T-GE-Signa has a flip angle of 7 in degrees</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the flip angle of a scanner in degrees</rdfs:comment>
+        <vann:example xml:lang="en">1.5T-GE-Signa hasFlipAngle 7 --&gt; 1.5T-GE-Signa has a flip angle of 7 in degrees</vann:example>
+        <rdfs:comment xml:lang="en">Describes the flip angle of a scanner in degrees</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -248,8 +203,8 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasFoV">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasFoV &quot;X*Y*Z&quot;</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the field of view of the acquisition protocol</rdfs:comment>
+        <vann:example xml:lang="en">1.5T-GE-Signa hasFoV &quot;X*Y*Z&quot;</vann:example>
+        <rdfs:comment xml:lang="en">Describes the field of view of the acquisition protocol</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -260,8 +215,8 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNEX">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasNEX 1 --&gt; The acquisition protocol for this scanner had one number of excitations</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the number of excitiations of the acquisition protocol of the scanner</rdfs:comment>
+        <vann:example xml:lang="en">1.5T-GE-Signa hasNEX 1 --&gt; The acquisition protocol for this scanner had one number of excitations</vann:example>
+        <rdfs:comment xml:lang="en">Describes the number of excitiations of the acquisition protocol of the scanner</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -272,8 +227,8 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfEchoes">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasNumberOfEchoes 2 --&gt; 1.5T-GE-Signa has 2 echoes</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the number of echoes of the acquisition protocol of a scanner</rdfs:comment>
+        <vann:example xml:lang="en">1.5T-GE-Signa hasNumberOfEchoes 2 --&gt; 1.5T-GE-Signa has 2 echoes</vann:example>
+        <rdfs:comment xml:lang="en">Describes the number of echoes of the acquisition protocol of a scanner</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -284,8 +239,8 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfSlices">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasNumberOfSlices 182 --&gt; This scanner has 182 slices</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the number of slices of the particular scanner</rdfs:comment>
+        <vann:example xml:lang="en">1.5T-GE-Signa hasNumberOfSlices 182 --&gt; This scanner has 182 slices</vann:example>
+        <rdfs:comment xml:lang="en">Describes the number of slices of the particular scanner</rdfs:comment>
     </owl:DatatypeProperty>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
@@ -302,8 +257,8 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasResolution">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasResolution &quot;0.9x0.9&quot; --&gt; The resolution of this scanner is 0.9mm x 0.9mm</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the in-plane pixel resolution in mm x mm</rdfs:comment>
+        <vann:example xml:lang="en">1.5T-GE-Signa hasResolution &quot;0.9x0.9&quot; --&gt; The resolution of this scanner is 0.9mm x 0.9mm</vann:example>
+        <rdfs:comment xml:lang="en">Describes the in-plane pixel resolution in mm x mm</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -314,8 +269,8 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasScanTime">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasScanTime 42 --&gt; The scan time for 1.5T-GE-Signa is 42 seconds</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the scan time of the acquisition protocol for a scanner in seconds</rdfs:comment>
+        <vann:example xml:lang="en">1.5T-GE-Signa hasScanTime 42 --&gt; The scan time for 1.5T-GE-Signa is 42 seconds</vann:example>
+        <rdfs:comment xml:lang="en">Describes the scan time of the acquisition protocol for a scanner in seconds</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -326,8 +281,8 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasSliceThickness">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasSliceThickness 1 --&gt; The slice thickness of this scanner is 1 mm</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the slice thickness of the scanner in mm</rdfs:comment>
+        <vann:example xml:lang="en">1.5T-GE-Signa hasSliceThickness 1 --&gt; The slice thickness of this scanner is 1 mm</vann:example>
+        <rdfs:comment xml:lang="en">Describes the slice thickness of the scanner in mm</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -338,8 +293,8 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasTE">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasTE 4.6 --&gt; 1.5T-GE-Signa has TE of 4.6 ms</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the TE of a scanner in ms</rdfs:comment>
+        <vann:example xml:lang="en">1.5T-GE-Signa hasTE 4.6 --&gt; 1.5T-GE-Signa has TE of 4.6 ms</vann:example>
+        <rdfs:comment xml:lang="en">Describes the TE of a scanner in ms</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -350,8 +305,8 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasTI">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasTI 710 --&gt; 1.5T-GE-Signa has a TI of 710 ms</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the TI of a scanner in ms</rdfs:comment>
+        <vann:example xml:lang="en">1.5T-GE-Signa hasTI 710 --&gt; 1.5T-GE-Signa has a TI of 710 ms</vann:example>
+        <rdfs:comment xml:lang="en">Describes the TI of a scanner in ms</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -362,8 +317,8 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasTR">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasTR 500 --&gt; 1.5T-GE-Signa has a TR of 500 ms</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the TR of a scanner in ms</rdfs:comment>
+        <vann:example xml:lang="en">1.5T-GE-Signa hasTR 500 --&gt; 1.5T-GE-Signa has a TR of 500 ms</vann:example>
+        <rdfs:comment xml:lang="en">Describes the TR of a scanner in ms</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -374,8 +329,8 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasVoxelSize">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa hasVoxelSize &quot;1x1x1&quot; --&gt; 1.5T-GE-Signa has voxel size of 1x1x1 mm</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes the voxel height of a scanner in mm</rdfs:comment>
+        <vann:example xml:lang="en">1.5T-GE-Signa hasVoxelSize &quot;1x1x1&quot; --&gt; 1.5T-GE-Signa has voxel size of 1x1x1 mm</vann:example>
+        <rdfs:comment xml:lang="en">Describes the voxel height of a scanner in mm</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -386,8 +341,8 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#isScannerModel">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Scanner"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa isScannerModel &quot;Signa&quot; --&gt; The scanner model for 1.5T-GE-Signa is Signa</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes what the scanner model is</rdfs:comment>
+        <vann:example xml:lang="en">1.5T-GE-Signa isScannerModel &quot;Signa&quot; --&gt; The scanner model for 1.5T-GE-Signa is Signa</vann:example>
+        <rdfs:comment xml:lang="en">Describes what the scanner model is</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -398,8 +353,8 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#usedBodyCoil">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa usedBodyCoil true --&gt; This 1.5T-GE-Signa scanner used a body coil to scan</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes if a body coil was used to scan by the scanner</rdfs:comment>
+        <vann:example xml:lang="en">1.5T-GE-Signa usedBodyCoil true --&gt; This 1.5T-GE-Signa scanner used a body coil to scan</vann:example>
+        <rdfs:comment xml:lang="en">Describes if a body coil was used to scan by the scanner</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -410,8 +365,8 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#usedHeadCoil">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.5T-GE-Signa usedHeadCoil true --&gt; This 1.5T-GE-Signa scanner used a head coil to scan</vann:example>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes if a head coil was used to scan by the scanner</rdfs:comment>
+        <vann:example xml:lang="en">1.5T-GE-Signa usedHeadCoil true --&gt; This 1.5T-GE-Signa scanner used a head coil to scan</vann:example>
+        <rdfs:comment xml:lang="en">Describes if a head coil was used to scan by the scanner</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -432,7 +387,9 @@
 
 
     <owl:Class rdf:about="https://w3id.org/enigma#AcquisitionDirection">
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the acquisition direction of the scanner</rdfs:comment>
+        <vann:example xml:lang="en">Axial</vann:example>
+        <rdfs:comment xml:lang="en">The acquisition direction of a scanner</rdfs:comment>
+        <rdfs:label xml:lang="en">AcquisitionDirection</rdfs:label>
     </owl:Class>
     
 
@@ -441,7 +398,9 @@
 
 
     <owl:Class rdf:about="https://w3id.org/enigma#AcquisitionProtocol">
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the protocol used to acquire the data types</rdfs:comment>
+        <vann:example xml:lang="en">ENIGMA-Sulci</vann:example>
+        <rdfs:comment xml:lang="en">The protocol used to acquire the scanner data types</rdfs:comment>
+        <rdfs:label xml:lang="en">AcquisitionProtocol</rdfs:label>
     </owl:Class>
     
 
@@ -450,7 +409,9 @@
 
 
     <owl:Class rdf:about="https://w3id.org/enigma#Cohort">
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A group of people that are studied by a working group. A cohort is limited by certain inclusion and exclusion criteria.</rdfs:comment>
+        <vann:example xml:lang="en">ADNI: Alzheimer’s Disease Neuroimaging Initiative</vann:example>
+        <rdfs:comment xml:lang="en">A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria</rdfs:comment>
+        <rdfs:label xml:lang="en">Cohort</rdfs:label>
     </owl:Class>
     
 
@@ -458,21 +419,32 @@
     <!-- https://w3id.org/enigma#DataType -->
 
 
-    <owl:Class rdf:about="https://w3id.org/enigma#DataType"/>
+    <owl:Class rdf:about="https://w3id.org/enigma#DataType">
+        <rdfs:comment xml:lang="en">Specifies the kinds of data collected</rdfs:comment>
+        <rdfs:label xml:lang="en">DataType</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- https://w3id.org/enigma#MRISequence -->
 
 
-    <owl:Class rdf:about="https://w3id.org/enigma#MRISequence"/>
+    <owl:Class rdf:about="https://w3id.org/enigma#MRISequence">
+        <vann:example xml:lang="en">FEEsequence</vann:example>
+        <rdfs:comment xml:lang="en">A particular setting of pulse sequences and pulsed field gradients within an MRI</rdfs:comment>
+        <rdfs:label xml:lang="en">MRISequence</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- https://w3id.org/enigma#Manufacturer -->
 
 
-    <owl:Class rdf:about="https://w3id.org/enigma#Manufacturer"/>
+    <owl:Class rdf:about="https://w3id.org/enigma#Manufacturer">
+        <vann:example xml:lang="en">Siemens</vann:example>
+        <rdfs:comment xml:lang="en">Manufacturer of the scanner</rdfs:comment>
+        <rdfs:label xml:lang="en">Manufacturer</rdfs:label>
+    </owl:Class>
     
 
 
@@ -486,7 +458,9 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/enigma#Cohort"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What scanner was used to scan the members of the cohort?</rdfs:comment>
+        <vann:example xml:lang="en">1.5T-GE-Signa</vann:example>
+        <rdfs:comment xml:lang="en">Scanner used to scan the members of the cohort</rdfs:comment>
+        <rdfs:label xml:lang="en">Scanner</rdfs:label>
     </owl:Class>
     
 
@@ -495,7 +469,9 @@
 
 
     <owl:Class rdf:about="https://w3id.org/enigma#ScannerSoftware">
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Is this software or segmentation?</rdfs:comment>
+        <vann:example xml:lang="en">FreeSurfer5.1.0</vann:example>
+        <rdfs:comment xml:lang="en">The software associated with a given scanner</rdfs:comment>
+        <rdfs:label xml:lang="en">ScannerSoftware</rdfs:label>
     </owl:Class>
     
 
@@ -504,7 +480,9 @@
 
 
     <owl:Class rdf:about="https://w3id.org/enigma#Treatment">
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What treatments were used by the members of the cohort?</rdfs:comment>
+        <vann:example xml:lang="en">Antidepressants</vann:example>
+        <rdfs:comment xml:lang="en">Treatments used on the members of the cohort</rdfs:comment>
+        <rdfs:label xml:lang="en">Treatment</rdfs:label>
     </owl:Class>
     
 

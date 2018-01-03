@@ -1,49 +1,52 @@
-<h2  id="crossreference" class="list">Cross reference for scanner classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-This section provides details for each class and property defined by scanner.
+<h2  id="crossreference" class="list">Cross reference for The Scanner Ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by The Scanner Ontology.
 <div id="classes">
    <h3 id="classes" class="list">Classes</h3>
    <ul class="hlist">
       <li>
-         <a href="#AcquisitionDirection" title="https://w3id.org/enigma#AcquisitionDirection">
-            <span>acquisition direction</span>
-         </a>
+         <a href="#AcquisitionDirection" title="https://w3id.org/enigma#AcquisitionDirection">AcquisitionDirection</a>
       </li>
       <li>
-         <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">
-            <span>acquisition protocol</span>
-         </a>
+         <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">AcquisitionProtocol</a>
       </li>
       <li>
-         <a href="#Cohort" title="https://w3id.org/enigma#Cohort">
-            <span>cohort</span>
-         </a>
+         <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
       </li>
       <li>
-         <a href="#Scanner" title="https://w3id.org/enigma#Scanner">
-            <span>scanner</span>
-         </a>
+         <a href="#DataType" title="https://w3id.org/enigma#DataType">DataType</a>
       </li>
       <li>
-         <a href="#ScannerSoftware" title="https://w3id.org/enigma#ScannerSoftware">
-            <span>scanner software</span>
-         </a>
+         <a href="#Manufacturer" title="https://w3id.org/enigma#Manufacturer">Manufacturer</a>
       </li>
       <li>
-         <a href="#Treatment" title="https://w3id.org/enigma#Treatment">
-            <span>treatment</span>
-         </a>
+         <a href="#MRISequence" title="https://w3id.org/enigma#MRISequence">MRISequence</a>
+      </li>
+      <li>
+         <a href="#Scanner" title="https://w3id.org/enigma#Scanner">Scanner</a>
+      </li>
+      <li>
+         <a href="#ScannerSoftware" title="https://w3id.org/enigma#ScannerSoftware">ScannerSoftware</a>
+      </li>
+      <li>
+         <a href="#Treatment" title="https://w3id.org/enigma#Treatment">Treatment</a>
       </li>
    </ul>
    <div class="entity" id="AcquisitionDirection">
-      <h3>acquisition direction<sup class="type-c" title="class">c</sup>
+      <h3>AcquisitionDirection<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#AcquisitionDirection</p>
       <div class="comment">
-         <span class="markdown">the acquisition direction of the scanner</span>
+         <span class="markdown">The acquisition direction of a scanner</span>
       </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>Axial</pre>
+         </dd>
+      </dl>
       <dl class="description">
          <dt>is in range of</dt>
          <dd>
@@ -60,15 +63,21 @@ This section provides details for each class and property defined by scanner.
       </dl>
    </div>
    <div class="entity" id="AcquisitionProtocol">
-      <h3>acquisition protocol<sup class="type-c" title="class">c</sup>
+      <h3>AcquisitionProtocol<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#AcquisitionProtocol</p>
       <div class="comment">
-         <span class="markdown">the protocol used to acquire the data types</span>
+         <span class="markdown">The protocol used to acquire the scanner data types</span>
       </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>ENIGMA-Sulci</pre>
+         </dd>
+      </dl>
       <dl class="description">
          <dt>is in domain of</dt>
          <dd>
@@ -82,8 +91,7 @@ This section provides details for each class and property defined by scanner.
             <sup class="type-dp" title="data property">dp</sup>, <a href="#hasNumberOfSlices" title="https://w3id.org/enigma#hasNumberOfSlices">has number of slices</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#hasResolution" title="https://w3id.org/enigma#hasResolution">has resolution</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#hasScanTime" title="https://w3id.org/enigma#hasScanTime">has scan time</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasScanner" title="https://w3id.org/enigma#hasScanner">has scanner</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasSequence" title="https://w3id.org/enigma#hasSequence">has sequence</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasSequence" title="https://w3id.org/enigma#hasSequence">has sequence</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasSliceThickness" title="https://w3id.org/enigma#hasSliceThickness">has slice thickness</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#hasTE" title="https://w3id.org/enigma#hasTE">has t e</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#hasTI" title="https://w3id.org/enigma#hasTI">has t i</a>
@@ -102,21 +110,22 @@ This section provides details for each class and property defined by scanner.
       </dl>
    </div>
    <div class="entity" id="Cohort">
-      <h3>cohort<sup class="type-c" title="class">c</sup>
+      <h3>Cohort<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#Cohort</p>
       <div class="comment">
-         <span class="markdown">A group of people that are studied by a working group. A cohort is limited by certain inclusion and exclusion criteria.</span>
+         <span class="markdown">A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria</span>
       </div>
-      <dl class="description">
-         <dt>is in domain of</dt>
+      <dl>
+         <dt>Example</dt>
          <dd>
-            <a href="#hasAcquisitionProtocol" title="https://w3id.org/enigma#hasAcquisitionProtocol">has acquisition protocol</a>
-            <sup class="type-op" title="object property">op</sup>
+            <pre>ADNI: Alzheimer’s Disease Neuroimaging Initiative</pre>
          </dd>
+      </dl>
+      <dl class="description">
          <dt>is in range of</dt>
          <dd>
             <a href="#isAcquisitionProtocolOf" title="https://w3id.org/enigma#isAcquisitionProtocolOf">is acquisition protocol of</a>
@@ -133,23 +142,117 @@ This section provides details for each class and property defined by scanner.
          </dd>
       </dl>
    </div>
+   <div class="entity" id="DataType">
+      <h3>DataType<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#DataType</p>
+      <div class="comment">
+         <span class="markdown">Specifies the kinds of data collected</span>
+      </div>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#forDataType" title="https://w3id.org/enigma#forDataType">for data type</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Manufacturer">
+      <h3>Manufacturer<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#Manufacturer</p>
+      <div class="comment">
+         <span class="markdown">Manufacturer of the scanner</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>Siemens</pre>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasManufacturer" title="https://w3id.org/enigma#hasManufacturer">has manufacturer</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#Bruker" title="https://w3id.org/enigma#Bruker">bruker</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#GE" title="https://w3id.org/enigma#GE">g e</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Illumina" title="https://w3id.org/enigma#Illumina">illumina</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Phillips" title="https://w3id.org/enigma#Phillips">phillips</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Siemens" title="https://w3id.org/enigma#Siemens">siemens</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MRISequence">
+      <h3>MRISequence<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#MRISequence</p>
+      <div class="comment">
+         <span class="markdown">A particular setting of pulse sequences and pulsed field gradients within an MRI</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>FEEsequence</pre>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasSequence" title="https://w3id.org/enigma#hasSequence">has sequence</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#FEEsequence" title="https://w3id.org/enigma#FEEsequence">f e esequence</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#FFEsequence" title="https://w3id.org/enigma#FFEsequence">f f esequence</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#FLAIRsequence" title="https://w3id.org/enigma#FLAIRsequence">f l a i rsequence</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#FSEsequence" title="https://w3id.org/enigma#FSEsequence">f s esequence</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#FSPGRsequence" title="https://w3id.org/enigma#FSPGRsequence">f s p g rsequence</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#GREsequence" title="https://w3id.org/enigma#GREsequence">g r esequence</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#MPRAGEsequence" title="https://w3id.org/enigma#MPRAGEsequence">m p r a g esequence</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#SEsequence" title="https://w3id.org/enigma#SEsequence">s esequence</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#SPGRsequence" title="https://w3id.org/enigma#SPGRsequence">s p g rsequence</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="Scanner">
-      <h3>scanner<sup class="type-c" title="class">c</sup>
+      <h3>Scanner<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#Scanner</p>
       <div class="comment">
-         <span class="markdown">What scanner was used to scan the members of the cohort?</span>
+         <span class="markdown">Scanner used to scan the members of the cohort</span>
       </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>1.5T-GE-Signa</pre>
+         </dd>
+      </dl>
       <dl class="description">
          <dt>is equivalent to</dt>
          <dd>
             <a href="#isAcquisitionProtocolOf" title="https://w3id.org/enigma#isAcquisitionProtocolOf">is acquisition protocol of</a>
             <sup class="type-op" title="object property">op</sup> 
             <span class="logic">some</span> 
-            <a href="#Cohort" title="https://w3id.org/enigma#Cohort">cohort</a>
+            <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
@@ -158,12 +261,6 @@ This section provides details for each class and property defined by scanner.
             <sup class="type-dp" title="data property">dp</sup>, <a href="#hasManufacturer" title="https://w3id.org/enigma#hasManufacturer">has manufacturer</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isScannerModel" title="https://w3id.org/enigma#isScannerModel">is scanner model</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#isScannerOf" title="https://w3id.org/enigma#isScannerOf">is scanner of</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#hasScanner" title="https://w3id.org/enigma#hasScanner">has scanner</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isManufacturerOf" title="https://w3id.org/enigma#isManufacturerOf">is manufacturer of</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>has members</dt>
@@ -178,15 +275,21 @@ This section provides details for each class and property defined by scanner.
       </dl>
    </div>
    <div class="entity" id="ScannerSoftware">
-      <h3>scanner software<sup class="type-c" title="class">c</sup>
+      <h3>ScannerSoftware<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#ScannerSoftware</p>
       <div class="comment">
-         <span class="markdown">Is this software or segmentation?</span>
+         <span class="markdown">The software associated with a given scanner</span>
       </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>FreeSurfer5.1.0</pre>
+         </dd>
+      </dl>
       <dl class="description">
          <dt>is in range of</dt>
          <dd>
@@ -203,15 +306,21 @@ This section provides details for each class and property defined by scanner.
       </dl>
    </div>
    <div class="entity" id="Treatment">
-      <h3>treatment<sup class="type-c" title="class">c</sup>
+      <h3>Treatment<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#Treatment</p>
       <div class="comment">
-         <span class="markdown">What treatments were used by the members of the cohort?</span>
+         <span class="markdown">Treatments used on the members of the cohort</span>
       </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>Antidepressants</pre>
+         </dd>
+      </dl>
    </div>
 </div><div id="objectproperties">
    <h3 id="properties" class="list">Object Properties</h3>
@@ -227,18 +336,8 @@ This section provides details for each class and property defined by scanner.
          </a>
       </li>
       <li>
-         <a href="#hasAcquisitionProtocol" title="https://w3id.org/enigma#hasAcquisitionProtocol">
-            <span>has acquisition protocol</span>
-         </a>
-      </li>
-      <li>
          <a href="#hasManufacturer" title="https://w3id.org/enigma#hasManufacturer">
             <span>has manufacturer</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasScanner" title="https://w3id.org/enigma#hasScanner">
-            <span>has scanner</span>
          </a>
       </li>
       <li>
@@ -249,11 +348,6 @@ This section provides details for each class and property defined by scanner.
       <li>
          <a href="#isAcquisitionProtocolOf" title="https://w3id.org/enigma#isAcquisitionProtocolOf">
             <span>is acquisition protocol of</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isManufacturerOf" title="https://w3id.org/enigma#isManufacturerOf">
-            <span>is manufacturer of</span>
          </a>
       </li>
       <li>
@@ -275,7 +369,7 @@ This section provides details for each class and property defined by scanner.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#forDataType</p>
       <div class="comment">
-         <span class="markdown">describes what data type the acquisition protocol was used to obtain</span>
+         <span class="markdown">Describes what data type the acquisition protocol was used to obtain</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -287,12 +381,12 @@ This section provides details for each class and property defined by scanner.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">acquisition protocol</a>
+               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">AcquisitionProtocol</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#DataType">data type</span>
+               <a href="#DataType" title="https://w3id.org/enigma#DataType">DataType</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -306,7 +400,7 @@ This section provides details for each class and property defined by scanner.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasAcquisitionDirection</p>
       <div class="comment">
-         <span class="markdown">describes the acquisition direction of the scanner</span>
+         <span class="markdown">Describes the acquisition direction of the scanner</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -318,52 +412,13 @@ This section provides details for each class and property defined by scanner.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">acquisition protocol</a>
+               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">AcquisitionProtocol</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#AcquisitionDirection" title="https://w3id.org/enigma#AcquisitionDirection">acquisition direction</a>
+               <a href="#AcquisitionDirection" title="https://w3id.org/enigma#AcquisitionDirection">AcquisitionDirection</a>
                <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasAcquisitionProtocol">
-      <h3>has acquisition protocol<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#hasAcquisitionProtocol</p>
-      <div class="comment">
-         <span class="markdown">describes the acquisition protocol to scan the cohort</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>Cohort1 hasAcquisitionProtocol AcquisitionProtocol1</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">cohort</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">acquisition protocol</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#Scanner" title="https://w3id.org/enigma#Scanner">scanner</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#isAcquisitionProtocolOf" title="https://w3id.org/enigma#isAcquisitionProtocolOf">is acquisition protocol of</a>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -376,7 +431,7 @@ This section provides details for each class and property defined by scanner.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasManufacturer</p>
       <div class="comment">
-         <span class="markdown">describes what the manufacturer for the scanner is</span>
+         <span class="markdown">Describes what the manufacturer for the scanner is</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -388,54 +443,13 @@ This section provides details for each class and property defined by scanner.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#Scanner" title="https://w3id.org/enigma#Scanner">scanner</a>
+               <a href="#Scanner" title="https://w3id.org/enigma#Scanner">Scanner</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Manufacturer">manufacturer</span>
+               <a href="#Manufacturer" title="https://w3id.org/enigma#Manufacturer">Manufacturer</a>
                <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#isManufacturerOf" title="https://w3id.org/enigma#isManufacturerOf">is manufacturer of</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasScanner">
-      <h3>has scanner<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#hasScanner</p>
-      <div class="comment">
-         <span class="markdown">describes the scanner used in the acquisition protocol</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>AcquisitionProtocol1 hasScanner 1.5T-GE-Siemens</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">acquisition protocol</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Scanner" title="https://w3id.org/enigma#Scanner">scanner</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#isScannerOf" title="https://w3id.org/enigma#isScannerOf">is scanner of</a>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -448,7 +462,7 @@ This section provides details for each class and property defined by scanner.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasSequence</p>
       <div class="comment">
-         <span class="markdown">describes the sequence that the acquisition protocol requires</span>
+         <span class="markdown">Describes the sequence that the acquisition protocol requires</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -460,12 +474,12 @@ This section provides details for each class and property defined by scanner.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">acquisition protocol</a>
+               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">AcquisitionProtocol</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="https://w3id.org/enigma#MRISequence">m r i sequence</span>
+               <a href="#MRISequence" title="https://w3id.org/enigma#MRISequence">MRISequence</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -479,7 +493,7 @@ This section provides details for each class and property defined by scanner.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#isAcquisitionProtocolOf</p>
       <div class="comment">
-         <span class="markdown">describes what cohorts were scanned with the acquisition protocol</span>
+         <span class="markdown">Describes what cohorts were scanned with the acquisition protocol</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -491,57 +505,16 @@ This section provides details for each class and property defined by scanner.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">acquisition protocol</a>
+               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">AcquisitionProtocol</a>
                <sup class="type-c" title="class">c</sup> 
                <span class="logic">or</span> 
-               <a href="#Scanner" title="https://w3id.org/enigma#Scanner">scanner</a>
+               <a href="#Scanner" title="https://w3id.org/enigma#Scanner">Scanner</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">cohort</a>
+               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
                <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#hasAcquisitionProtocol" title="https://w3id.org/enigma#hasAcquisitionProtocol">has acquisition protocol</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isManufacturerOf">
-      <h3>is manufacturer of<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isManufacturerOf</p>
-      <div class="comment">
-         <span class="markdown">describes the scanners that a manufacturer makes</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>GE isManufacturerOf 1.5T-GE-Signa --&gt; GE manufacters the 1.5T-GE-Signa scanner</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <span class="dotted" title="https://w3id.org/enigma#Manufacturer">manufacturer</span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Scanner" title="https://w3id.org/enigma#Scanner">scanner</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#hasManufacturer" title="https://w3id.org/enigma#hasManufacturer">has manufacturer</a>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -554,7 +527,7 @@ This section provides details for each class and property defined by scanner.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#isScannerOf</p>
       <div class="comment">
-         <span class="markdown">describes the protocols that the scanner is used for</span>
+         <span class="markdown">Describes the protocols that the scanner is used for</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -566,18 +539,13 @@ This section provides details for each class and property defined by scanner.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#Scanner" title="https://w3id.org/enigma#Scanner">scanner</a>
+               <a href="#Scanner" title="https://w3id.org/enigma#Scanner">Scanner</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">acquisition protocol</a>
+               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">AcquisitionProtocol</a>
                <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>is inverse of</dt>
-            <dd>
-               <a href="#hasScanner" title="https://w3id.org/enigma#hasScanner">has scanner</a>
-               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -590,7 +558,7 @@ This section provides details for each class and property defined by scanner.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#usesScannerSoftware</p>
       <div class="comment">
-         <span class="markdown">describes what the software was used to scan a cohort</span>
+         <span class="markdown">Describes what the software was used for a given scanner</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -602,12 +570,12 @@ This section provides details for each class and property defined by scanner.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">acquisition protocol</a>
+               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">AcquisitionProtocol</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#ScannerSoftware" title="https://w3id.org/enigma#ScannerSoftware">scanner software</a>
+               <a href="#ScannerSoftware" title="https://w3id.org/enigma#ScannerSoftware">ScannerSoftware</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -710,7 +678,7 @@ This section provides details for each class and property defined by scanner.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasDataAcquisitionMatrix</p>
       <div class="comment">
-         <span class="markdown">describes the size of the data acquisition matrix used</span>
+         <span class="markdown">Describes the size of the data acquisition matrix used</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -722,7 +690,7 @@ This section provides details for each class and property defined by scanner.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">acquisition protocol</a>
+               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">AcquisitionProtocol</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -740,7 +708,7 @@ This section provides details for each class and property defined by scanner.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasFieldStrength</p>
       <div class="comment">
-         <span class="markdown">describes the field strength of the cohort</span>
+         <span class="markdown">Describes the field strength of the cohort</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -752,7 +720,7 @@ This section provides details for each class and property defined by scanner.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#Scanner" title="https://w3id.org/enigma#Scanner">scanner</a>
+               <a href="#Scanner" title="https://w3id.org/enigma#Scanner">Scanner</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -770,7 +738,7 @@ This section provides details for each class and property defined by scanner.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasFlipAngle</p>
       <div class="comment">
-         <span class="markdown">describes the flip angle of a scanner in degrees</span>
+         <span class="markdown">Describes the flip angle of a scanner in degrees</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -782,7 +750,7 @@ This section provides details for each class and property defined by scanner.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">acquisition protocol</a>
+               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">AcquisitionProtocol</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -800,7 +768,7 @@ This section provides details for each class and property defined by scanner.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasFoV</p>
       <div class="comment">
-         <span class="markdown">describes the field of view of the acquisition protocol</span>
+         <span class="markdown">Describes the field of view of the acquisition protocol</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -812,7 +780,7 @@ This section provides details for each class and property defined by scanner.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">acquisition protocol</a>
+               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">AcquisitionProtocol</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -830,7 +798,7 @@ This section provides details for each class and property defined by scanner.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasNEX</p>
       <div class="comment">
-         <span class="markdown">describes the number of excitiations of the acquisition protocol of the scanner</span>
+         <span class="markdown">Describes the number of excitiations of the acquisition protocol of the scanner</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -842,7 +810,7 @@ This section provides details for each class and property defined by scanner.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">acquisition protocol</a>
+               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">AcquisitionProtocol</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -861,7 +829,7 @@ This section provides details for each class and property defined by scanner.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasNumberOfEchoes</p>
       <div class="comment">
-         <span class="markdown">describes the number of echoes of the acquisition protocol of a scanner</span>
+         <span class="markdown">Describes the number of echoes of the acquisition protocol of a scanner</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -873,7 +841,7 @@ This section provides details for each class and property defined by scanner.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">acquisition protocol</a>
+               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">AcquisitionProtocol</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -892,7 +860,7 @@ This section provides details for each class and property defined by scanner.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasNumberOfSlices</p>
       <div class="comment">
-         <span class="markdown">describes the number of slices of the particular scanner</span>
+         <span class="markdown">Describes the number of slices of the particular scanner</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -904,7 +872,7 @@ This section provides details for each class and property defined by scanner.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">acquisition protocol</a>
+               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">AcquisitionProtocol</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -923,7 +891,7 @@ This section provides details for each class and property defined by scanner.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasResolution</p>
       <div class="comment">
-         <span class="markdown">describes the in-plane pixel resolution in mm x mm</span>
+         <span class="markdown">Describes the in-plane pixel resolution in mm x mm</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -935,7 +903,7 @@ This section provides details for each class and property defined by scanner.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">acquisition protocol</a>
+               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">AcquisitionProtocol</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -953,7 +921,7 @@ This section provides details for each class and property defined by scanner.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasScanTime</p>
       <div class="comment">
-         <span class="markdown">describes the scan time of the acquisition protocol for a scanner in seconds</span>
+         <span class="markdown">Describes the scan time of the acquisition protocol for a scanner in seconds</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -965,7 +933,7 @@ This section provides details for each class and property defined by scanner.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">acquisition protocol</a>
+               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">AcquisitionProtocol</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -983,7 +951,7 @@ This section provides details for each class and property defined by scanner.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasSliceThickness</p>
       <div class="comment">
-         <span class="markdown">describes the slice thickness of the scanner in mm</span>
+         <span class="markdown">Describes the slice thickness of the scanner in mm</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -995,7 +963,7 @@ This section provides details for each class and property defined by scanner.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">acquisition protocol</a>
+               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">AcquisitionProtocol</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1013,7 +981,7 @@ This section provides details for each class and property defined by scanner.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasTE</p>
       <div class="comment">
-         <span class="markdown">describes the TE of a scanner in ms</span>
+         <span class="markdown">Describes the TE of a scanner in ms</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -1025,7 +993,7 @@ This section provides details for each class and property defined by scanner.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">acquisition protocol</a>
+               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">AcquisitionProtocol</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1043,7 +1011,7 @@ This section provides details for each class and property defined by scanner.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasTI</p>
       <div class="comment">
-         <span class="markdown">describes the TI of a scanner in ms</span>
+         <span class="markdown">Describes the TI of a scanner in ms</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -1055,7 +1023,7 @@ This section provides details for each class and property defined by scanner.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">acquisition protocol</a>
+               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">AcquisitionProtocol</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1073,7 +1041,7 @@ This section provides details for each class and property defined by scanner.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasTR</p>
       <div class="comment">
-         <span class="markdown">describes the TR of a scanner in ms</span>
+         <span class="markdown">Describes the TR of a scanner in ms</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -1085,7 +1053,7 @@ This section provides details for each class and property defined by scanner.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">acquisition protocol</a>
+               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">AcquisitionProtocol</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1103,7 +1071,7 @@ This section provides details for each class and property defined by scanner.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasVoxelSize</p>
       <div class="comment">
-         <span class="markdown">describes the voxel height of a scanner in mm</span>
+         <span class="markdown">Describes the voxel height of a scanner in mm</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -1115,7 +1083,7 @@ This section provides details for each class and property defined by scanner.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">acquisition protocol</a>
+               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">AcquisitionProtocol</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1133,7 +1101,7 @@ This section provides details for each class and property defined by scanner.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#isScannerModel</p>
       <div class="comment">
-         <span class="markdown">describes what the scanner model is</span>
+         <span class="markdown">Describes what the scanner model is</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -1145,7 +1113,7 @@ This section provides details for each class and property defined by scanner.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#Scanner" title="https://w3id.org/enigma#Scanner">scanner</a>
+               <a href="#Scanner" title="https://w3id.org/enigma#Scanner">Scanner</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1163,7 +1131,7 @@ This section provides details for each class and property defined by scanner.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#usedBodyCoil</p>
       <div class="comment">
-         <span class="markdown">describes if a body coil was used to scan by the scanner</span>
+         <span class="markdown">Describes if a body coil was used to scan by the scanner</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -1175,7 +1143,7 @@ This section provides details for each class and property defined by scanner.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">acquisition protocol</a>
+               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">AcquisitionProtocol</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1193,7 +1161,7 @@ This section provides details for each class and property defined by scanner.
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#usedHeadCoil</p>
       <div class="comment">
-         <span class="markdown">describes if a head coil was used to scan by the scanner</span>
+         <span class="markdown">Describes if a head coil was used to scan by the scanner</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -1205,7 +1173,7 @@ This section provides details for each class and property defined by scanner.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">acquisition protocol</a>
+               <a href="#AcquisitionProtocol" title="https://w3id.org/enigma#AcquisitionProtocol">AcquisitionProtocol</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1384,7 +1352,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#Scanner" title="https://w3id.org/enigma#Scanner">scanner</a>
+            <a href="#Scanner" title="https://w3id.org/enigma#Scanner">Scanner</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1399,7 +1367,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#Scanner" title="https://w3id.org/enigma#Scanner">scanner</a>
+            <a href="#Scanner" title="https://w3id.org/enigma#Scanner">Scanner</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1414,7 +1382,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#Scanner" title="https://w3id.org/enigma#Scanner">scanner</a>
+            <a href="#Scanner" title="https://w3id.org/enigma#Scanner">Scanner</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1429,7 +1397,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#Scanner" title="https://w3id.org/enigma#Scanner">scanner</a>
+            <a href="#Scanner" title="https://w3id.org/enigma#Scanner">Scanner</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1444,7 +1412,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#Scanner" title="https://w3id.org/enigma#Scanner">scanner</a>
+            <a href="#Scanner" title="https://w3id.org/enigma#Scanner">Scanner</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1459,7 +1427,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#AcquisitionDirection" title="https://w3id.org/enigma#AcquisitionDirection">acquisition direction</a>
+            <a href="#AcquisitionDirection" title="https://w3id.org/enigma#AcquisitionDirection">AcquisitionDirection</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1474,7 +1442,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#Cohort" title="https://w3id.org/enigma#Cohort">cohort</a>
+            <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1489,7 +1457,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#Cohort" title="https://w3id.org/enigma#Cohort">cohort</a>
+            <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1504,7 +1472,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#Cohort" title="https://w3id.org/enigma#Cohort">cohort</a>
+            <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1519,7 +1487,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#Cohort" title="https://w3id.org/enigma#Cohort">cohort</a>
+            <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1534,7 +1502,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#Cohort" title="https://w3id.org/enigma#Cohort">cohort</a>
+            <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1549,7 +1517,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <span class="dotted" title="https://w3id.org/enigma#Manufacturer">manufacturer</span>
+            <a href="#Manufacturer" title="https://w3id.org/enigma#Manufacturer">Manufacturer</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1564,7 +1532,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#AcquisitionDirection" title="https://w3id.org/enigma#AcquisitionDirection">acquisition direction</a>
+            <a href="#AcquisitionDirection" title="https://w3id.org/enigma#AcquisitionDirection">AcquisitionDirection</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1579,7 +1547,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <span class="dotted" title="https://w3id.org/enigma#MRISequence">m r i sequence</span>
+            <a href="#MRISequence" title="https://w3id.org/enigma#MRISequence">MRISequence</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1594,7 +1562,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <span class="dotted" title="https://w3id.org/enigma#MRISequence">m r i sequence</span>
+            <a href="#MRISequence" title="https://w3id.org/enigma#MRISequence">MRISequence</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1609,7 +1577,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <span class="dotted" title="https://w3id.org/enigma#MRISequence">m r i sequence</span>
+            <a href="#MRISequence" title="https://w3id.org/enigma#MRISequence">MRISequence</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1624,7 +1592,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <span class="dotted" title="https://w3id.org/enigma#MRISequence">m r i sequence</span>
+            <a href="#MRISequence" title="https://w3id.org/enigma#MRISequence">MRISequence</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1639,7 +1607,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#ScannerSoftware" title="https://w3id.org/enigma#ScannerSoftware">scanner software</a>
+            <a href="#ScannerSoftware" title="https://w3id.org/enigma#ScannerSoftware">ScannerSoftware</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1654,7 +1622,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <span class="dotted" title="https://w3id.org/enigma#MRISequence">m r i sequence</span>
+            <a href="#MRISequence" title="https://w3id.org/enigma#MRISequence">MRISequence</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1669,7 +1637,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#ScannerSoftware" title="https://w3id.org/enigma#ScannerSoftware">scanner software</a>
+            <a href="#ScannerSoftware" title="https://w3id.org/enigma#ScannerSoftware">ScannerSoftware</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1684,7 +1652,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#ScannerSoftware" title="https://w3id.org/enigma#ScannerSoftware">scanner software</a>
+            <a href="#ScannerSoftware" title="https://w3id.org/enigma#ScannerSoftware">ScannerSoftware</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1699,7 +1667,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <span class="dotted" title="https://w3id.org/enigma#Manufacturer">manufacturer</span>
+            <a href="#Manufacturer" title="https://w3id.org/enigma#Manufacturer">Manufacturer</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1714,7 +1682,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <span class="dotted" title="https://w3id.org/enigma#MRISequence">m r i sequence</span>
+            <a href="#MRISequence" title="https://w3id.org/enigma#MRISequence">MRISequence</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1729,7 +1697,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <span class="dotted" title="https://w3id.org/enigma#Manufacturer">manufacturer</span>
+            <a href="#Manufacturer" title="https://w3id.org/enigma#Manufacturer">Manufacturer</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1760,7 +1728,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <span class="dotted" title="https://w3id.org/enigma#MRISequence">m r i sequence</span>
+            <a href="#MRISequence" title="https://w3id.org/enigma#MRISequence">MRISequence</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1775,7 +1743,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <span class="dotted" title="https://w3id.org/enigma#Manufacturer">manufacturer</span>
+            <a href="#Manufacturer" title="https://w3id.org/enigma#Manufacturer">Manufacturer</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1790,7 +1758,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <span class="dotted" title="https://w3id.org/enigma#MRISequence">m r i sequence</span>
+            <a href="#MRISequence" title="https://w3id.org/enigma#MRISequence">MRISequence</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1805,7 +1773,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <span class="dotted" title="https://w3id.org/enigma#MRISequence">m r i sequence</span>
+            <a href="#MRISequence" title="https://w3id.org/enigma#MRISequence">MRISequence</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1820,7 +1788,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#AcquisitionDirection" title="https://w3id.org/enigma#AcquisitionDirection">acquisition direction</a>
+            <a href="#AcquisitionDirection" title="https://w3id.org/enigma#AcquisitionDirection">AcquisitionDirection</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1835,7 +1803,7 @@ This section provides details for each class and property defined by scanner.
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <span class="dotted" title="https://w3id.org/enigma#Manufacturer">manufacturer</span>
+            <a href="#Manufacturer" title="https://w3id.org/enigma#Manufacturer">Manufacturer</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>

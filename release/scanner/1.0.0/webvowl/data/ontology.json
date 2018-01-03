@@ -1,14 +1,14 @@
 {
   "_comment" : "Created with OWL2VOWL (version 0.3.2-SNAPSHOT), http://vowl.visualdataweb.org",
   "header" : {
-    "languages" : [ "undefined" ],
-    "baseIris" : [ "https://w3id.org/enigma", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema" ],
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "https://w3id.org/enigma", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema" ],
     "title" : {
-      "undefined" : "The Project Ontology"
+      "undefined" : "The Scanner Ontology"
     },
     "iri" : "https://w3id.org/enigma",
     "version" : "v1.0.0",
-    "author" : [ "Neda Jahanshad", "Ryan Espiritu" ],
+    "author" : [ "MiHyun Jang", "Neda Jahanshad", "Ryan Espiritu" ],
     "comments" : {
       "undefined" : "An ontology that describes scanners and their properties."
     },
@@ -27,6 +27,11 @@
       }, {
         "identifier" : "creator",
         "language" : "undefined",
+        "value" : "MiHyun Jang",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
         "value" : "Neda Jahanshad",
         "type" : "label"
       } ],
@@ -34,6 +39,11 @@
         "identifier" : "contributor",
         "language" : "undefined",
         "value" : "Yolanda Gil",
+        "type" : "label"
+      }, {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Agnes McMahon",
         "type" : "label"
       }, {
         "identifier" : "contributor",
@@ -47,22 +57,22 @@
         "value" : "enigma",
         "type" : "label"
       } ],
-      "preferredNamespaceUri" : [ {
-        "identifier" : "preferredNamespaceUri",
-        "language" : "undefined",
-        "value" : "https://w3id.org/enigma#",
-        "type" : "iri"
-      } ],
       "versionInfo" : [ {
         "identifier" : "versionInfo",
         "language" : "undefined",
         "value" : "v1.0.0",
         "type" : "label"
       } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://w3id.org/enigma#",
+        "type" : "iri"
+      } ],
       "title" : [ {
         "identifier" : "title",
         "language" : "undefined",
-        "value" : "The Project Ontology",
+        "value" : "The Scanner Ontology",
         "type" : "label"
       } ]
     }
@@ -70,7 +80,7 @@
   "namespace" : [ ],
   "metrics" : {
     "classCount" : 9,
-    "objectPropertyCount" : 10,
+    "objectPropertyCount" : 7,
     "datatypePropertyCount" : 17,
     "individualCount" : 31
   },
@@ -90,73 +100,70 @@
     "id" : "13",
     "type" : "owl:Class"
   }, {
-    "id" : "34",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "35",
+    "id" : "32",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "33",
     "type" : "rdfs:Datatype"
   }, {
+    "id" : "16",
+    "type" : "rdfs:Datatype"
+  }, {
     "id" : "5",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "3",
+    "id" : "36",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "8",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "17",
+    "id" : "37",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "19",
+    "id" : "3",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "40",
+    "id" : "39",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "42",
+    "id" : "24",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "27",
-    "type" : "owl:unionOf"
-  }, {
-    "id" : "25",
+    "id" : "43",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "46",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "23",
+    "id" : "22",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "10",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "47",
-    "type" : "rdfs:Datatype"
-  }, {
     "id" : "44",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "37",
+    "id" : "41",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "39",
+    "id" : "35",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "18",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "26",
     "type" : "owl:unionOf"
   }, {
-    "id" : "21",
+    "id" : "20",
     "type" : "owl:Class"
   }, {
     "id" : "2",
     "type" : "owl:Class"
   }, {
-    "id" : "30",
+    "id" : "29",
     "type" : "owl:Class"
   }, {
-    "id" : "28",
+    "id" : "27",
     "type" : "owl:Class"
   } ],
   "classAttribute" : [ {
@@ -164,15 +171,28 @@
     "baseIri" : "https://w3id.org/enigma",
     "instances" : 0,
     "label" : {
-      "IRI-based" : "DataType"
+      "IRI-based" : "DataType",
+      "en" : "DataType"
+    },
+    "comment" : {
+      "en" : "Specifies the kinds of data collected"
     },
     "id" : "0"
   }, {
     "iri" : "https://w3id.org/enigma#AcquisitionDirection",
     "baseIri" : "https://w3id.org/enigma",
     "instances" : 0,
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "Axial",
+        "type" : "label"
+      } ]
+    },
     "label" : {
-      "IRI-based" : "AcquisitionDirection"
+      "IRI-based" : "AcquisitionDirection",
+      "en" : "AcquisitionDirection"
     },
     "individuals" : [ {
       "iri" : "https://w3id.org/enigma#sagittal",
@@ -194,26 +214,44 @@
       }
     } ],
     "comment" : {
-      "undefined" : "the acquisition direction of the scanner"
+      "en" : "The acquisition direction of a scanner"
     },
     "id" : "6"
   }, {
     "iri" : "https://w3id.org/enigma#Treatment",
     "baseIri" : "https://w3id.org/enigma",
     "instances" : 0,
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "Antidepressants",
+        "type" : "label"
+      } ]
+    },
     "label" : {
-      "IRI-based" : "Treatment"
+      "IRI-based" : "Treatment",
+      "en" : "Treatment"
     },
     "comment" : {
-      "undefined" : "What treatments were used by the members of the cohort?"
+      "en" : "Treatments used on the members of the cohort"
     },
     "id" : "11"
   }, {
     "iri" : "https://w3id.org/enigma#Manufacturer",
     "baseIri" : "https://w3id.org/enigma",
     "instances" : 0,
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "Siemens",
+        "type" : "label"
+      } ]
+    },
     "label" : {
-      "IRI-based" : "Manufacturer"
+      "IRI-based" : "Manufacturer",
+      "en" : "Manufacturer"
     },
     "individuals" : [ {
       "iri" : "https://w3id.org/enigma#Bruker",
@@ -246,13 +284,25 @@
         "IRI-based" : "GE"
       }
     } ],
+    "comment" : {
+      "en" : "Manufacturer of the scanner"
+    },
     "id" : "14"
   }, {
     "iri" : "https://w3id.org/enigma#Scanner",
     "baseIri" : "https://w3id.org/enigma",
     "instances" : 0,
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "1.5T-GE-Signa",
+        "type" : "label"
+      } ]
+    },
     "label" : {
-      "IRI-based" : "Scanner"
+      "IRI-based" : "Scanner",
+      "en" : "Scanner"
     },
     "individuals" : [ {
       "iri" : "https://w3id.org/enigma#3.0T-Phillips-Achieva",
@@ -286,22 +336,15 @@
       }
     } ],
     "comment" : {
-      "undefined" : "What scanner was used to scan the members of the cohort?"
+      "en" : "Scanner used to scan the members of the cohort"
     },
     "id" : "13"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "34",
+    "id" : "32",
     "label" : {
       "IRI-based" : "boolean"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "35",
-    "label" : {
-      "IRI-based" : "string"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
@@ -313,16 +356,23 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#double",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "5",
+    "id" : "16",
     "label" : {
       "IRI-based" : "double"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#double",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "3",
+    "id" : "5",
     "label" : {
       "IRI-based" : "double"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "36",
+    "label" : {
+      "IRI-based" : "string"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
@@ -334,54 +384,42 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#double",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "17",
+    "id" : "37",
+    "label" : {
+      "IRI-based" : "double"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#double",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "3",
+    "label" : {
+      "IRI-based" : "double"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#double",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "39",
     "label" : {
       "IRI-based" : "double"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "19",
+    "id" : "24",
     "label" : {
       "IRI-based" : "string"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#double",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "40",
+    "id" : "43",
     "label" : {
       "IRI-based" : "double"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#double",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "42",
-    "label" : {
-      "IRI-based" : "double"
-    }
-  }, {
-    "instances" : 0,
-    "union" : [ "2", "13" ],
-    "attributes" : [ "union", "anonymous" ],
-    "id" : "27"
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "25",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#double",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "46",
-    "label" : {
-      "IRI-based" : "double"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#double",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "23",
+    "id" : "22",
     "label" : {
       "IRI-based" : "double"
     }
@@ -395,13 +433,6 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "47",
-    "label" : {
-      "IRI-based" : "nonNegativeInteger"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
     "id" : "44",
     "label" : {
       "IRI-based" : "nonNegativeInteger"
@@ -409,21 +440,44 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "37",
+    "id" : "41",
     "label" : {
       "IRI-based" : "nonNegativeInteger"
     }
   }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "35",
+    "label" : {
+      "IRI-based" : "nonNegativeInteger"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "18",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
     "instances" : 0,
     "union" : [ "2", "13" ],
-    "attributes" : [ "union", "anonymous" ],
-    "id" : "39"
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "26"
   }, {
     "iri" : "https://w3id.org/enigma#MRISequence",
     "baseIri" : "https://w3id.org/enigma",
     "instances" : 0,
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "FEEsequence",
+        "type" : "label"
+      } ]
+    },
     "label" : {
-      "IRI-based" : "MRISequence"
+      "IRI-based" : "MRISequence",
+      "en" : "MRISequence"
     },
     "individuals" : [ {
       "iri" : "https://w3id.org/enigma#FFEsequence",
@@ -480,24 +534,45 @@
         "IRI-based" : "FEEsequence"
       }
     } ],
-    "id" : "21"
+    "comment" : {
+      "en" : "A particular setting of pulse sequences and pulsed field gradients within an MRI"
+    },
+    "id" : "20"
   }, {
     "iri" : "https://w3id.org/enigma#AcquisitionProtocol",
     "baseIri" : "https://w3id.org/enigma",
     "instances" : 0,
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "ENIGMA-Sulci",
+        "type" : "label"
+      } ]
+    },
     "label" : {
-      "IRI-based" : "AcquisitionProtocol"
+      "IRI-based" : "AcquisitionProtocol",
+      "en" : "AcquisitionProtocol"
     },
     "comment" : {
-      "undefined" : "the protocol used to acquire the data types"
+      "en" : "The protocol used to acquire the scanner data types"
     },
     "id" : "2"
   }, {
     "iri" : "https://w3id.org/enigma#ScannerSoftware",
     "baseIri" : "https://w3id.org/enigma",
     "instances" : 0,
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "FreeSurfer5.1.0",
+        "type" : "label"
+      } ]
+    },
     "label" : {
-      "IRI-based" : "ScannerSoftware"
+      "IRI-based" : "ScannerSoftware",
+      "en" : "ScannerSoftware"
     },
     "individuals" : [ {
       "iri" : "https://w3id.org/enigma#FreeSurfer5.3",
@@ -519,15 +594,24 @@
       }
     } ],
     "comment" : {
-      "undefined" : "Is this software or segmentation?"
+      "en" : "The software associated with a given scanner"
     },
-    "id" : "30"
+    "id" : "29"
   }, {
     "iri" : "https://w3id.org/enigma#Cohort",
     "baseIri" : "https://w3id.org/enigma",
     "instances" : 0,
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "ADNI: Alzheimer’s Disease Neuroimaging Initiative",
+        "type" : "label"
+      } ]
+    },
     "label" : {
-      "IRI-based" : "Cohort"
+      "IRI-based" : "Cohort",
+      "en" : "Cohort"
     },
     "individuals" : [ {
       "iri" : "https://w3id.org/enigma#BipolarParisPatient",
@@ -561,9 +645,9 @@
       }
     } ],
     "comment" : {
-      "undefined" : "A group of people that are studied by a working group. A cohort is limited by certain inclusion and exclusion criteria."
+      "en" : "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria"
     },
-    "id" : "28"
+    "id" : "27"
   } ],
   "property" : [ {
     "id" : "1",
@@ -581,73 +665,64 @@
     "id" : "12",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "16",
+    "id" : "15",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "18",
+    "id" : "17",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "20",
+    "id" : "19",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "22",
+    "id" : "21",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "24",
+    "id" : "23",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "26",
+    "id" : "25",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "29",
+    "id" : "28",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "30",
     "type" : "owl:objectProperty"
   }, {
     "id" : "31",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "32",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "36",
+    "id" : "34",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "38",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "41",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "43",
+    "id" : "40",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "42",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "45",
     "type" : "owl:datatypeProperty"
   }, {
+    "id" : "46",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "47",
+    "type" : "owl:objectProperty"
+  }, {
     "id" : "48",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "49",
-    "type" : "owl:someValuesFrom"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "50",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "52",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "15",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "53",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "54",
-    "type" : "owl:datatypeProperty"
-  }, {
     "id" : "51",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "55",
     "type" : "owl:datatypeProperty"
   } ],
   "propertyAttribute" : [ {
@@ -657,7 +732,7 @@
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "1.5T-GE-Signa hasTE 4.6 --> 1.5T-GE-Signa has TE of 4.6 ms",
         "type" : "label"
       } ]
@@ -667,7 +742,7 @@
     },
     "domain" : "2",
     "comment" : {
-      "undefined" : "describes the TE of a scanner in ms"
+      "en" : "Describes the TE of a scanner in ms"
     },
     "attributes" : [ "datatype" ],
     "id" : "1"
@@ -678,7 +753,7 @@
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "1.5T-GE-Signa hasTI 710 --> 1.5T-GE-Signa has a TI of 710 ms",
         "type" : "label"
       } ]
@@ -688,7 +763,7 @@
     },
     "domain" : "2",
     "comment" : {
-      "undefined" : "describes the TI of a scanner in ms"
+      "en" : "Describes the TI of a scanner in ms"
     },
     "attributes" : [ "datatype" ],
     "id" : "4"
@@ -699,7 +774,7 @@
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "1.5T-GE-Signa hasVoxelSize \"1x1x1\" --> 1.5T-GE-Signa has voxel size of 1x1x1 mm",
         "type" : "label"
       } ]
@@ -709,7 +784,7 @@
     },
     "domain" : "2",
     "comment" : {
-      "undefined" : "describes the voxel height of a scanner in mm"
+      "en" : "Describes the voxel height of a scanner in mm"
     },
     "attributes" : [ "datatype" ],
     "id" : "7"
@@ -720,7 +795,7 @@
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "1.5T-GE-Signa hasFoV \"X*Y*Z\"",
         "type" : "label"
       } ]
@@ -730,19 +805,18 @@
     },
     "domain" : "2",
     "comment" : {
-      "undefined" : "describes the field of view of the acquisition protocol"
+      "en" : "Describes the field of view of the acquisition protocol"
     },
     "attributes" : [ "datatype" ],
     "id" : "9"
   }, {
     "iri" : "https://w3id.org/enigma#hasManufacturer",
-    "inverse" : "15",
     "baseIri" : "https://w3id.org/enigma",
     "range" : "14",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "1.5T-GE-Signa hasManufacturer GE --> The manufacturer of the 1.5T-GE-Signa is GE",
         "type" : "label"
       } ]
@@ -752,18 +826,18 @@
     },
     "domain" : "13",
     "comment" : {
-      "undefined" : "describes what the manufacturer for the scanner is"
+      "en" : "Describes what the manufacturer for the scanner is"
     },
     "attributes" : [ "object" ],
     "id" : "12"
   }, {
     "iri" : "https://w3id.org/enigma#hasTR",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "17",
+    "range" : "16",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "1.5T-GE-Signa hasTR 500 --> 1.5T-GE-Signa has a TR of 500 ms",
         "type" : "label"
       } ]
@@ -773,18 +847,18 @@
     },
     "domain" : "2",
     "comment" : {
-      "undefined" : "describes the TR of a scanner in ms"
+      "en" : "Describes the TR of a scanner in ms"
     },
     "attributes" : [ "datatype" ],
-    "id" : "16"
+    "id" : "15"
   }, {
     "iri" : "https://w3id.org/enigma#hasResolution",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "19",
+    "range" : "18",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "1.5T-GE-Signa hasResolution \"0.9x0.9\" --> The resolution of this scanner is 0.9mm x 0.9mm",
         "type" : "label"
       } ]
@@ -794,18 +868,18 @@
     },
     "domain" : "2",
     "comment" : {
-      "undefined" : "describes the in-plane pixel resolution in mm x mm"
+      "en" : "Describes the in-plane pixel resolution in mm x mm"
     },
     "attributes" : [ "datatype" ],
-    "id" : "18"
+    "id" : "17"
   }, {
     "iri" : "https://w3id.org/enigma#hasSequence",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "21",
+    "range" : "20",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "1.5T-GE-Signa hasSequence T1-weighted_MPRAGE_sequence --> The acquisition protocol for this scanner is T1-weighted MPRAGE sequence",
         "type" : "label"
       } ]
@@ -815,18 +889,18 @@
     },
     "domain" : "2",
     "comment" : {
-      "undefined" : "describes the sequence that the acquisition protocol requires"
+      "en" : "Describes the sequence that the acquisition protocol requires"
     },
     "attributes" : [ "object" ],
-    "id" : "20"
+    "id" : "19"
   }, {
     "iri" : "https://w3id.org/enigma#hasFlipAngle",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "23",
+    "range" : "22",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "1.5T-GE-Signa hasFlipAngle 7 --> 1.5T-GE-Signa has a flip angle of 7 in degrees",
         "type" : "label"
       } ]
@@ -836,18 +910,18 @@
     },
     "domain" : "2",
     "comment" : {
-      "undefined" : "describes the flip angle of a scanner in degrees"
+      "en" : "Describes the flip angle of a scanner in degrees"
     },
     "attributes" : [ "datatype" ],
-    "id" : "22"
+    "id" : "21"
   }, {
     "iri" : "https://w3id.org/enigma#hasDataAcquisitionMatrix",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "25",
+    "range" : "24",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "1.5T-GE-Signa hasDataAcquisitionMatrix \"256x256\" --> The size of the data acquisition matrix is 256x256",
         "type" : "label"
       } ]
@@ -857,18 +931,18 @@
     },
     "domain" : "2",
     "comment" : {
-      "undefined" : "describes the size of the data acquisition matrix used"
+      "en" : "Describes the size of the data acquisition matrix used"
     },
     "attributes" : [ "datatype" ],
-    "id" : "24"
+    "id" : "23"
   }, {
     "iri" : "https://w3id.org/enigma#isAcquisitionProtocolOf",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "28",
+    "range" : "27",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "AcquisitionProtocol isAcquisitionProtocolOf Cohort1",
         "type" : "label"
       } ]
@@ -876,16 +950,16 @@
     "label" : {
       "IRI-based" : "isAcquisitionProtocolOf"
     },
-    "domain" : "27",
+    "domain" : "26",
     "comment" : {
-      "undefined" : "describes what cohorts were scanned with the acquisition protocol"
+      "en" : "Describes what cohorts were scanned with the acquisition protocol"
     },
     "attributes" : [ "object" ],
-    "id" : "26"
+    "id" : "25"
   }, {
     "iri" : "https://w3id.org/enigma#usesScannerSoftware",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "30",
+    "range" : "29",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
@@ -899,10 +973,10 @@
     },
     "domain" : "2",
     "comment" : {
-      "undefined" : "describes what the software was used to scan a cohort"
+      "undefined" : "Describes what the software was used for a given scanner"
     },
     "attributes" : [ "object" ],
-    "id" : "29"
+    "id" : "28"
   }, {
     "iri" : "https://w3id.org/enigma#forDataType",
     "baseIri" : "https://w3id.org/enigma",
@@ -910,7 +984,7 @@
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "AcquisitionPro3 forDataType EEG",
         "type" : "label"
       } ]
@@ -920,18 +994,18 @@
     },
     "domain" : "2",
     "comment" : {
-      "undefined" : "describes what data type the acquisition protocol was used to obtain"
+      "en" : "Describes what data type the acquisition protocol was used to obtain"
     },
     "attributes" : [ "object" ],
-    "id" : "31"
+    "id" : "30"
   }, {
     "iri" : "https://w3id.org/enigma#usedHeadCoil",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "33",
+    "range" : "32",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "1.5T-GE-Signa usedHeadCoil true --> This 1.5T-GE-Signa scanner used a head coil to scan",
         "type" : "label"
       } ]
@@ -941,18 +1015,18 @@
     },
     "domain" : "2",
     "comment" : {
-      "undefined" : "describes if a head coil was used to scan by the scanner"
+      "en" : "Describes if a head coil was used to scan by the scanner"
     },
     "attributes" : [ "datatype" ],
-    "id" : "32"
+    "id" : "31"
   }, {
     "iri" : "https://w3id.org/enigma#hasNumberOfSlices",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "37",
+    "range" : "35",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "1.5T-GE-Signa hasNumberOfSlices 182 --> This scanner has 182 slices",
         "type" : "label"
       } ]
@@ -962,40 +1036,18 @@
     },
     "domain" : "2",
     "comment" : {
-      "undefined" : "describes the number of slices of the particular scanner"
+      "en" : "Describes the number of slices of the particular scanner"
     },
     "attributes" : [ "datatype" ],
-    "id" : "36"
+    "id" : "34"
   }, {
-    "iri" : "https://w3id.org/enigma#hasAcquisitionProtocol",
-    "inverse" : "26",
+    "iri" : "https://w3id.org/enigma#hasSliceThickness",
     "baseIri" : "https://w3id.org/enigma",
     "range" : "39",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
-        "value" : "Cohort1 hasAcquisitionProtocol AcquisitionProtocol1",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasAcquisitionProtocol"
-    },
-    "domain" : "28",
-    "comment" : {
-      "undefined" : "describes the acquisition protocol to scan the cohort"
-    },
-    "attributes" : [ "object" ],
-    "id" : "38"
-  }, {
-    "iri" : "https://w3id.org/enigma#hasSliceThickness",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "40",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "1.5T-GE-Signa hasSliceThickness 1 --> The slice thickness of this scanner is 1 mm",
         "type" : "label"
       } ]
@@ -1005,18 +1057,18 @@
     },
     "domain" : "2",
     "comment" : {
-      "undefined" : "describes the slice thickness of the scanner in mm"
+      "en" : "Describes the slice thickness of the scanner in mm"
     },
     "attributes" : [ "datatype" ],
-    "id" : "41"
+    "id" : "38"
   }, {
     "iri" : "https://w3id.org/enigma#hasNumberOfEchoes",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "44",
+    "range" : "41",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "1.5T-GE-Signa hasNumberOfEchoes 2 --> 1.5T-GE-Signa has 2 echoes",
         "type" : "label"
       } ]
@@ -1026,18 +1078,18 @@
     },
     "domain" : "2",
     "comment" : {
-      "undefined" : "describes the number of echoes of the acquisition protocol of a scanner"
+      "en" : "Describes the number of echoes of the acquisition protocol of a scanner"
     },
     "attributes" : [ "datatype" ],
-    "id" : "43"
+    "id" : "40"
   }, {
     "iri" : "https://w3id.org/enigma#hasScanTime",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "42",
+    "range" : "37",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "1.5T-GE-Signa hasScanTime 42 --> The scan time for 1.5T-GE-Signa is 42 seconds",
         "type" : "label"
       } ]
@@ -1047,18 +1099,18 @@
     },
     "domain" : "2",
     "comment" : {
-      "undefined" : "describes the scan time of the acquisition protocol for a scanner in seconds"
+      "en" : "Describes the scan time of the acquisition protocol for a scanner in seconds"
     },
     "attributes" : [ "datatype" ],
-    "id" : "45"
+    "id" : "42"
   }, {
     "iri" : "https://w3id.org/enigma#isScannerModel",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "35",
+    "range" : "36",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "1.5T-GE-Signa isScannerModel \"Signa\" --> The scanner model for 1.5T-GE-Signa is Signa",
         "type" : "label"
       } ]
@@ -1068,18 +1120,18 @@
     },
     "domain" : "13",
     "comment" : {
-      "undefined" : "describes what the scanner model is"
+      "en" : "Describes what the scanner model is"
     },
     "attributes" : [ "datatype" ],
-    "id" : "48"
+    "id" : "45"
   }, {
     "iri" : "https://w3id.org/enigma#isAcquisitionProtocolOf",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "28",
+    "range" : "27",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "AcquisitionProtocol isAcquisitionProtocolOf Cohort1",
         "type" : "label"
       } ]
@@ -1089,32 +1141,10 @@
     },
     "domain" : "13",
     "comment" : {
-      "undefined" : "describes what cohorts were scanned with the acquisition protocol"
+      "en" : "Describes what cohorts were scanned with the acquisition protocol"
     },
-    "attributes" : [ "object", "someValues" ],
-    "id" : "49"
-  }, {
-    "iri" : "https://w3id.org/enigma#hasScanner",
-    "inverse" : "51",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "13",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "AcquisitionProtocol1 hasScanner 1.5T-GE-Siemens",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasScanner"
-    },
-    "domain" : "2",
-    "comment" : {
-      "undefined" : "describes the scanner used in the acquisition protocol"
-    },
-    "attributes" : [ "object" ],
-    "id" : "50"
+    "attributes" : [ "someValues", "object" ],
+    "id" : "46"
   }, {
     "iri" : "https://w3id.org/enigma#hasAcquisitionDirection",
     "baseIri" : "https://w3id.org/enigma",
@@ -1122,7 +1152,7 @@
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "1.5T-GE-Signa hasAcquisitionDirection coronal --> The acquisition direction of this 1.5T-GE-Signa is coronal",
         "type" : "label"
       } ]
@@ -1132,39 +1162,18 @@
     },
     "domain" : "2",
     "comment" : {
-      "undefined" : "describes the acquisition direction of the scanner"
+      "en" : "Describes the acquisition direction of the scanner"
     },
     "attributes" : [ "object" ],
-    "id" : "52"
-  }, {
-    "iri" : "https://w3id.org/enigma#isManufacturerOf",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "13",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "undefined",
-        "value" : "GE isManufacturerOf 1.5T-GE-Signa --> GE manufacters the 1.5T-GE-Signa scanner",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "isManufacturerOf"
-    },
-    "domain" : "14",
-    "comment" : {
-      "undefined" : "describes the scanners that a manufacturer makes"
-    },
-    "attributes" : [ "object" ],
-    "id" : "15"
+    "id" : "47"
   }, {
     "iri" : "https://w3id.org/enigma#usedBodyCoil",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "34",
+    "range" : "33",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "1.5T-GE-Signa usedBodyCoil true --> This 1.5T-GE-Signa scanner used a body coil to scan",
         "type" : "label"
       } ]
@@ -1174,18 +1183,18 @@
     },
     "domain" : "2",
     "comment" : {
-      "undefined" : "describes if a body coil was used to scan by the scanner"
+      "en" : "Describes if a body coil was used to scan by the scanner"
     },
     "attributes" : [ "datatype" ],
-    "id" : "53"
+    "id" : "48"
   }, {
     "iri" : "https://w3id.org/enigma#hasFieldStrength",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "46",
+    "range" : "43",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "1.5T-GE-Signa hasFieldStrength 1.5 --> The field strength of 1.5T-GE-Signa is 1.5",
         "type" : "label"
       } ]
@@ -1195,10 +1204,10 @@
     },
     "domain" : "13",
     "comment" : {
-      "undefined" : "describes the field strength of the cohort"
+      "en" : "Describes the field strength of the cohort"
     },
     "attributes" : [ "datatype" ],
-    "id" : "54"
+    "id" : "49"
   }, {
     "iri" : "https://w3id.org/enigma#isScannerOf",
     "baseIri" : "https://w3id.org/enigma",
@@ -1206,7 +1215,7 @@
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "1.5T-GE-Siemens isScannerOf AcquisitionProtocol1",
         "type" : "label"
       } ]
@@ -1216,18 +1225,18 @@
     },
     "domain" : "13",
     "comment" : {
-      "undefined" : "describes the protocols that the scanner is used for"
+      "en" : "Describes the protocols that the scanner is used for"
     },
     "attributes" : [ "object" ],
-    "id" : "51"
+    "id" : "50"
   }, {
     "iri" : "https://w3id.org/enigma#hasNEX",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "47",
+    "range" : "44",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "undefined",
+        "language" : "en",
         "value" : "1.5T-GE-Signa hasNEX 1 --> The acquisition protocol for this scanner had one number of excitations",
         "type" : "label"
       } ]
@@ -1237,9 +1246,9 @@
     },
     "domain" : "2",
     "comment" : {
-      "undefined" : "describes the number of excitiations of the acquisition protocol of the scanner"
+      "en" : "Describes the number of excitiations of the acquisition protocol of the scanner"
     },
     "attributes" : [ "datatype" ],
-    "id" : "55"
+    "id" : "51"
   } ]
 }
