@@ -123,7 +123,7 @@
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Organization"/>
         <vann:example xml:lang="en">JohnSmith isAffiliatedWith HarvardU</vann:example>
-        <rdfs:comment xml:lang="en">Describes what organization someone is affiliated with</rdfs:comment>
+        <rdfs:comment xml:lang="en">Describes what organization someone IS affiliated with</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -311,6 +311,17 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
         <vann:example xml:lang="en">JohnSmith isSpecialContributorOfWG BipolarWorkingGroup</vann:example>
         <rdfs:comment xml:lang="en">Describes who the significant contributors of a working group are</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#wasAffiliatedWith -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#wasAffiliatedWith">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Organization"/>
+        <rdfs:comment>Describes what organization someone WAS affiliated with</rdfs:comment>
+        <vann1:example>JohnSmith wasAffiliatedWith ISI</vann1:example>
     </owl:ObjectProperty>
     
 
