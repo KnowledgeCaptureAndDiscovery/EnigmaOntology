@@ -77,15 +77,15 @@
 <https://w3id.org/enigma#isAffiliatedWith> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Person> .
 <https://w3id.org/enigma#isAffiliatedWith> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Organization> .
 <https://w3id.org/enigma#isAffiliatedWith> <http://purl.org/vocab/vann/example> "JohnSmith isAffiliatedWith HarvardU"@en .
-<https://w3id.org/enigma#isAffiliatedWith> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what organization someone is affiliated with"@en .
+<https://w3id.org/enigma#isAffiliatedWith> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what organization someone IS affiliated with"@en .
 # 
 # https://w3id.org/enigma#isDataAnalystOf
 <https://w3id.org/enigma#isDataAnalystOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/enigma#isDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#contributesTo> .
 <https://w3id.org/enigma#isDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Person> .
-<https://w3id.org/enigma#isDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#ENIGMAPublication> .
-<https://w3id.org/enigma#isDataAnalystOf> <http://purl.org/vocab/vann/example> "JohnSmith isDataAnalystOf ENIGMAPublication1"@en .
-<https://w3id.org/enigma#isDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what publication someone is a data analyst of"@en .
+<https://w3id.org/enigma#isDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#isDataAnalystOf> <http://purl.org/vocab/vann/example> "JohnSmith isDataAnalystOf BipolarProject"@en .
+<https://w3id.org/enigma#isDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what project someone is a data analyst of"@en .
 # 
 # https://w3id.org/enigma#isEnigmaContactOf
 <https://w3id.org/enigma#isEnigmaContactOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -93,6 +93,38 @@
 <https://w3id.org/enigma#isEnigmaContactOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Cohort> .
 <https://w3id.org/enigma#isEnigmaContactOf> <http://purl.org/vocab/vann/example> "JohnSmith isEnigmaContactOf BipolarCohort"@en .
 <https://w3id.org/enigma#isEnigmaContactOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the cohort that a person is the contact of"@en .
+# 
+# https://w3id.org/enigma#isGeneticDataAnalystOf
+<https://w3id.org/enigma#isGeneticDataAnalystOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#isGeneticDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#isDataAnalystOf> .
+<https://w3id.org/enigma#isGeneticDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#isGeneticDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#isGeneticDataAnalystOf> <http://purl.org/vocab/vann/example> "JohnSmith isGeneticDataAnalystOf BipolarProject"@en .
+<https://w3id.org/enigma#isGeneticDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what project someone is a genetic data analyst of"@en .
+# 
+# https://w3id.org/enigma#isGeneticDataCollectorOf
+<https://w3id.org/enigma#isGeneticDataCollectorOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#isGeneticDataCollectorOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#contributesTo> .
+<https://w3id.org/enigma#isGeneticDataCollectorOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#isGeneticDataCollectorOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#isGeneticDataCollectorOf> <http://purl.org/vocab/vann/example> "JohnSmith isGeneticDataCollectorOf BipolarProject"@en .
+<https://w3id.org/enigma#isGeneticDataCollectorOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what project someone collected genetic data for"@en .
+# 
+# https://w3id.org/enigma#isImagingDataAnalystOf
+<https://w3id.org/enigma#isImagingDataAnalystOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#isImagingDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#isDataAnalystOf> .
+<https://w3id.org/enigma#isImagingDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#isImagingDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#isImagingDataAnalystOf> <http://purl.org/vocab/vann/example> "JohnSmith isImagingDataAnalystOf BipolarProject"@en .
+<https://w3id.org/enigma#isImagingDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what project someone is an imaging data analyst of"@en .
+# 
+# https://w3id.org/enigma#isImagingDataCollectorOf
+<https://w3id.org/enigma#isImagingDataCollectorOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#isImagingDataCollectorOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#contributesTo> .
+<https://w3id.org/enigma#isImagingDataCollectorOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#isImagingDataCollectorOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#isImagingDataCollectorOf> <http://purl.org/vocab/vann/example> "JohnSmith isImagingDataCollectorOf BipolarProject"@en .
+<https://w3id.org/enigma#isImagingDataCollectorOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what project someone collected imaging data for"@en .
 # 
 # https://w3id.org/enigma#isInvestigatorOf
 <https://w3id.org/enigma#isInvestigatorOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -136,9 +168,9 @@
 <https://w3id.org/enigma#isMajorDataAnalystOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/enigma#isMajorDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#isDataAnalystOf> .
 <https://w3id.org/enigma#isMajorDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Person> .
-<https://w3id.org/enigma#isMajorDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#ENIGMAPublication> .
-<https://w3id.org/enigma#isMajorDataAnalystOf> <http://purl.org/vocab/vann/example> "JohnSmith isMajorDataAnalystOf ENIGMAPublication1"@en .
-<https://w3id.org/enigma#isMajorDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what publication someone is a major data analyst of"@en .
+<https://w3id.org/enigma#isMajorDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#isMajorDataAnalystOf> <http://purl.org/vocab/vann/example> "JohnSmith isMajorDataAnalystOf BipolarProject"@en .
+<https://w3id.org/enigma#isMajorDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what project someone is a major data analyst of"@en .
 # 
 # https://w3id.org/enigma#isMemberOfWG
 <https://w3id.org/enigma#isMemberOfWG> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -151,9 +183,9 @@
 <https://w3id.org/enigma#isMinorDataAnalystOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/enigma#isMinorDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#isDataAnalystOf> .
 <https://w3id.org/enigma#isMinorDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Person> .
-<https://w3id.org/enigma#isMinorDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#ENIGMAPublication> .
-<https://w3id.org/enigma#isMinorDataAnalystOf> <http://purl.org/vocab/vann/example> "JohnSmith isMinorDataAnalystOf ENIGMAPublication1"@en .
-<https://w3id.org/enigma#isMinorDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what publication someone is a minor data analyst of"@en .
+<https://w3id.org/enigma#isMinorDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#isMinorDataAnalystOf> <http://purl.org/vocab/vann/example> "JohnSmith isMinorDataAnalystOf BipolarProject"@en .
+<https://w3id.org/enigma#isMinorDataAnalystOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what project someone is a minor data analyst of"@en .
 # 
 # https://w3id.org/enigma#isMinorPIOf
 <https://w3id.org/enigma#isMinorPIOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -170,13 +202,21 @@
 <https://w3id.org/enigma#isPIOf> <http://purl.org/vocab/vann/example> "JohnSmith isPIof Cohort1"@en .
 <https://w3id.org/enigma#isPIOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes which cohorts somone is the PI of"@en .
 # 
+# https://w3id.org/enigma#isProjectDeveloperOf
+<https://w3id.org/enigma#isProjectDeveloperOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#isProjectDeveloperOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#contributesTo> .
+<https://w3id.org/enigma#isProjectDeveloperOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#isProjectDeveloperOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#isProjectDeveloperOf> <http://purl.org/vocab/vann/example> "JohnSmith isProjectDeveloperOf BipolarProject"@en .
+<https://w3id.org/enigma#isProjectDeveloperOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what project someone is a project developer of"@en .
+# 
 # https://w3id.org/enigma#isSeniorLeadOfP
 <https://w3id.org/enigma#isSeniorLeadOfP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/enigma#isSeniorLeadOfP> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#contributesTo> .
 <https://w3id.org/enigma#isSeniorLeadOfP> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Person> .
 <https://w3id.org/enigma#isSeniorLeadOfP> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Project> .
 <https://w3id.org/enigma#isSeniorLeadOfP> <http://purl.org/vocab/vann/example> "JohnSmith isSeniorLeadOfP BipolarProject"@en .
-<https://w3id.org/enigma#isSeniorLeadOfP> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes who the senior lead of a project is"@en .
+<https://w3id.org/enigma#isSeniorLeadOfP> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what project someone is a senior lead of"@en .
 # 
 # https://w3id.org/enigma#isSeniorLeadOfWG
 <https://w3id.org/enigma#isSeniorLeadOfWG> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -201,6 +241,13 @@
 <https://w3id.org/enigma#isSpecialContributorOfWG> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#WorkingGroup> .
 <https://w3id.org/enigma#isSpecialContributorOfWG> <http://purl.org/vocab/vann/example> "JohnSmith isSpecialContributorOfWG BipolarWorkingGroup"@en .
 <https://w3id.org/enigma#isSpecialContributorOfWG> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes who the significant contributors of a working group are"@en .
+# 
+# https://w3id.org/enigma#wasAffiliatedWith
+<https://w3id.org/enigma#wasAffiliatedWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#wasAffiliatedWith> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#wasAffiliatedWith> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Organization> .
+<https://w3id.org/enigma#wasAffiliatedWith> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what organization someone WAS affiliated with" .
+<https://w3id.org/enigma#wasAffiliatedWith> <https://w3id.org/enigma#vann:example> "JohnSmith wasAffiliatedWith ISI" .
 # 
 # 
 # 
@@ -238,6 +285,13 @@
 <https://w3id.org/enigma#hasLastName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/enigma#hasLastName> <http://purl.org/vocab/vann/example> "JohnSmith hasLastName \"John\""@en .
 <https://w3id.org/enigma#hasLastName> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes last name of a person"@en .
+# 
+# https://w3id.org/enigma#hasMiddleInitial
+<https://w3id.org/enigma#hasMiddleInitial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasMiddleInitial> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#hasMiddleInitial> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#hasMiddleInitial> <http://purl.org/vocab/vann/example> "JohnASmith hasMiddleInitial \"A\"" .
+<https://w3id.org/enigma#hasMiddleInitial> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes middle initial of a person" .
 # 
 # https://w3id.org/enigma#hasResearchInterests
 <https://w3id.org/enigma#hasResearchInterests> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .

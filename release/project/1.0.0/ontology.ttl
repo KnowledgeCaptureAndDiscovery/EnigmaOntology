@@ -79,6 +79,15 @@ xsd:date rdf:type rdfs:Datatype .
                 rdfs:comment "Describes who contributed to the project"@en .
 
 
+###  https://w3id.org/enigma#hasDataAnalyst
+:hasDataAnalyst rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasContributor ;
+                rdfs:domain :Project ;
+                rdfs:range :Person ;
+                <http://purl.org/vocab/vann/example> "BipolarCorticolProject hasDataAnalyst JohnSmith"@en ;
+                rdfs:comment "Describes who the data analyst of the project is"@en .
+
+
 ###  https://w3id.org/enigma#hasDataType
 :hasDataType rdf:type owl:ObjectProperty ;
              rdfs:domain [ rdf:type owl:Class ;
@@ -107,6 +116,24 @@ xsd:date rdf:type rdfs:Datatype .
                                rdfs:comment "Describes the genetic association protocol that is used by the project"@en .
 
 
+###  https://w3id.org/enigma#hasGeneticDataAnalyst
+:hasGeneticDataAnalyst rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :hasDataAnalyst ;
+                       rdfs:domain :Project ;
+                       rdfs:range :Person ;
+                       <http://purl.org/vocab/vann/example> "BipolarCorticolProject hasGeneticDataAnalyst JohnSmith"@en ;
+                       rdfs:comment "Describes who the genetic data analyst of the project is"@en .
+
+
+###  https://w3id.org/enigma#hasGeneticDataCollector
+:hasGeneticDataCollector rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :hasContributor ;
+                         rdfs:domain :Project ;
+                         rdfs:range :Person ;
+                         <http://purl.org/vocab/vann/example> "BipolarCorticolProject hasGeneticDataCollector JohnSmith"@en ;
+                         rdfs:comment "Describes who the genetic data collector of the project is"@en .
+
+
 ###  https://w3id.org/enigma#hasGeneticDataType
 :hasGeneticDataType rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf :hasDataType ;
@@ -126,6 +153,24 @@ xsd:date rdf:type rdfs:Datatype .
                                rdfs:range :GenotypeImputationProtocol ;
                                <http://purl.org/vocab/vann/example> "BipolarProject hasGenotypeImputationProtocol [instance of genotype imputation protocol]"@en ;
                                rdfs:comment "Describes the genotype imputation protocol that is used by the project"@en .
+
+
+###  https://w3id.org/enigma#hasImagingDataAnalyst
+:hasImagingDataAnalyst rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :hasDataAnalyst ;
+                       rdfs:domain :Project ;
+                       rdfs:range :Person ;
+                       <http://purl.org/vocab/vann/example> "BipolarCorticolProject hasImagingDataAnalyst JohnSmith"@en ;
+                       rdfs:comment "Describes who the imaging data analyst of the project is"@en .
+
+
+###  https://w3id.org/enigma#hasImagingDataCollector
+:hasImagingDataCollector rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :hasContributor ;
+                         rdfs:domain :Project ;
+                         rdfs:range :Person ;
+                         <http://purl.org/vocab/vann/example> "BipolarCorticolProject hasImagingDataCollector JohnSmith"@en ;
+                         rdfs:comment "Describes who the imaging data collector of the project is"@en .
 
 
 ###  https://w3id.org/enigma#hasPJuniorLead
@@ -161,6 +206,15 @@ xsd:date rdf:type rdfs:Datatype .
             rdfs:range :Project ;
             <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasProject BipolarCorticolProject --> The Bipolar Working Group is working on the Bipolar Corticol Project"@en ;
             rdfs:comment "Describes what projects are worked on by a specific working group"@en .
+
+
+###  https://w3id.org/enigma#hasProjectDeveloper
+:hasProjectDeveloper rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :hasContributor ;
+                     rdfs:domain :Project ;
+                     rdfs:range :Person ;
+                     <http://purl.org/vocab/vann/example> "BipolarCorticolProject hasProjectDeveloper JohnSmith"@en ;
+                     rdfs:comment "Describes who the project developer of the project is"@en .
 
 
 #################################################################

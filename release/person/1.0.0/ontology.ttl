@@ -78,16 +78,16 @@ xsd:gYear rdf:type rdfs:Datatype .
                   rdfs:domain :Person ;
                   rdfs:range :Organization ;
                   <http://purl.org/vocab/vann/example> "JohnSmith isAffiliatedWith HarvardU"@en ;
-                  rdfs:comment "Describes what organization someone is affiliated with"@en .
+                  rdfs:comment "Describes what organization someone IS affiliated with"@en .
 
 
 ###  https://w3id.org/enigma#isDataAnalystOf
 :isDataAnalystOf rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf :contributesTo ;
                  rdfs:domain :Person ;
-                 rdfs:range :ENIGMAPublication ;
-                 <http://purl.org/vocab/vann/example> "JohnSmith isDataAnalystOf ENIGMAPublication1"@en ;
-                 rdfs:comment "Describes what publication someone is a data analyst of"@en .
+                 rdfs:range :Project ;
+                 <http://purl.org/vocab/vann/example> "JohnSmith isDataAnalystOf BipolarProject"@en ;
+                 rdfs:comment "Describes what project someone is a data analyst of"@en .
 
 
 ###  https://w3id.org/enigma#isEnigmaContactOf
@@ -96,6 +96,42 @@ xsd:gYear rdf:type rdfs:Datatype .
                    rdfs:range :Cohort ;
                    <http://purl.org/vocab/vann/example> "JohnSmith isEnigmaContactOf BipolarCohort"@en ;
                    rdfs:comment "Describes the cohort that a person is the contact of"@en .
+
+
+###  https://w3id.org/enigma#isGeneticDataAnalystOf
+:isGeneticDataAnalystOf rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :isDataAnalystOf ;
+                        rdfs:domain :Person ;
+                        rdfs:range :Project ;
+                        <http://purl.org/vocab/vann/example> "JohnSmith isGeneticDataAnalystOf BipolarProject"@en ;
+                        rdfs:comment "Describes what project someone is a genetic data analyst of"@en .
+
+
+###  https://w3id.org/enigma#isGeneticDataCollectorOf
+:isGeneticDataCollectorOf rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf :contributesTo ;
+                          rdfs:domain :Person ;
+                          rdfs:range :Project ;
+                          <http://purl.org/vocab/vann/example> "JohnSmith isGeneticDataCollectorOf BipolarProject"@en ;
+                          rdfs:comment "Describes what project someone collected genetic data for"@en .
+
+
+###  https://w3id.org/enigma#isImagingDataAnalystOf
+:isImagingDataAnalystOf rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :isDataAnalystOf ;
+                        rdfs:domain :Person ;
+                        rdfs:range :Project ;
+                        <http://purl.org/vocab/vann/example> "JohnSmith isImagingDataAnalystOf BipolarProject"@en ;
+                        rdfs:comment "Describes what project someone is an imaging data analyst of"@en .
+
+
+###  https://w3id.org/enigma#isImagingDataCollectorOf
+:isImagingDataCollectorOf rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf :contributesTo ;
+                          rdfs:domain :Person ;
+                          rdfs:range :Project ;
+                          <http://purl.org/vocab/vann/example> "JohnSmith isImagingDataCollectorOf BipolarProject"@en ;
+                          rdfs:comment "Describes what project someone collected imaging data for"@en .
 
 
 ###  https://w3id.org/enigma#isInvestigatorOf
@@ -145,9 +181,9 @@ xsd:gYear rdf:type rdfs:Datatype .
 :isMajorDataAnalystOf rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf :isDataAnalystOf ;
                       rdfs:domain :Person ;
-                      rdfs:range :ENIGMAPublication ;
-                      <http://purl.org/vocab/vann/example> "JohnSmith isMajorDataAnalystOf ENIGMAPublication1"@en ;
-                      rdfs:comment "Describes what publication someone is a major data analyst of"@en .
+                      rdfs:range :Project ;
+                      <http://purl.org/vocab/vann/example> "JohnSmith isMajorDataAnalystOf BipolarProject"@en ;
+                      rdfs:comment "Describes what project someone is a major data analyst of"@en .
 
 
 ###  https://w3id.org/enigma#isMemberOfWG
@@ -162,9 +198,9 @@ xsd:gYear rdf:type rdfs:Datatype .
 :isMinorDataAnalystOf rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf :isDataAnalystOf ;
                       rdfs:domain :Person ;
-                      rdfs:range :ENIGMAPublication ;
-                      <http://purl.org/vocab/vann/example> "JohnSmith isMinorDataAnalystOf ENIGMAPublication1"@en ;
-                      rdfs:comment "Describes what publication someone is a minor data analyst of"@en .
+                      rdfs:range :Project ;
+                      <http://purl.org/vocab/vann/example> "JohnSmith isMinorDataAnalystOf BipolarProject"@en ;
+                      rdfs:comment "Describes what project someone is a minor data analyst of"@en .
 
 
 ###  https://w3id.org/enigma#isMinorPIOf
@@ -184,13 +220,22 @@ xsd:gYear rdf:type rdfs:Datatype .
         rdfs:comment "Describes which cohorts somone is the PI of"@en .
 
 
+###  https://w3id.org/enigma#isProjectDeveloperOf
+:isProjectDeveloperOf rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :contributesTo ;
+                      rdfs:domain :Person ;
+                      rdfs:range :Project ;
+                      <http://purl.org/vocab/vann/example> "JohnSmith isProjectDeveloperOf BipolarProject"@en ;
+                      rdfs:comment "Describes what project someone is a project developer of"@en .
+
+
 ###  https://w3id.org/enigma#isSeniorLeadOfP
 :isSeniorLeadOfP rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf :contributesTo ;
                  rdfs:domain :Person ;
                  rdfs:range :Project ;
                  <http://purl.org/vocab/vann/example> "JohnSmith isSeniorLeadOfP BipolarProject"@en ;
-                 rdfs:comment "Describes who the senior lead of a project is"@en .
+                 rdfs:comment "Describes what project someone is a senior lead of"@en .
 
 
 ###  https://w3id.org/enigma#isSeniorLeadOfWG
@@ -218,6 +263,14 @@ xsd:gYear rdf:type rdfs:Datatype .
                           rdfs:range :WorkingGroup ;
                           <http://purl.org/vocab/vann/example> "JohnSmith isSpecialContributorOfWG BipolarWorkingGroup"@en ;
                           rdfs:comment "Describes who the significant contributors of a working group are"@en .
+
+
+###  https://w3id.org/enigma#wasAffiliatedWith
+:wasAffiliatedWith rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Person ;
+                   rdfs:range :Organization ;
+                   rdfs:comment "Describes what organization someone WAS affiliated with"^^xsd:string ;
+                   :example "JohnSmith wasAffiliatedWith ISI"^^xsd:string .
 
 
 #################################################################
@@ -254,6 +307,14 @@ xsd:gYear rdf:type rdfs:Datatype .
              rdfs:range xsd:string ;
              <http://purl.org/vocab/vann/example> "JohnSmith hasLastName \"John\""@en ;
              rdfs:comment "Describes last name of a person"@en .
+
+
+###  https://w3id.org/enigma#hasMiddleInitial
+:hasMiddleInitial rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Person ;
+                  rdfs:range xsd:string ;
+                  <http://purl.org/vocab/vann/example> "JohnASmith hasMiddleInitial \"A\""^^xsd:string ;
+                  rdfs:comment "Describes middle initial of a person"^^xsd:string .
 
 
 ###  https://w3id.org/enigma#hasResearchInterests

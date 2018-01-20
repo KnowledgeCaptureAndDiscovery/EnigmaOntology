@@ -83,6 +83,14 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/enigma#hasContributor> <http://purl.org/vocab/vann/example> "BipolarLateralityProject hasContributor JohnSmith"@en .
 <https://w3id.org/enigma#hasContributor> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes who contributed to the project"@en .
 # 
+# https://w3id.org/enigma#hasDataAnalyst
+<https://w3id.org/enigma#hasDataAnalyst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasDataAnalyst> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#hasContributor> .
+<https://w3id.org/enigma#hasDataAnalyst> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasDataAnalyst> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#hasDataAnalyst> <http://purl.org/vocab/vann/example> "BipolarCorticolProject hasDataAnalyst JohnSmith"@en .
+<https://w3id.org/enigma#hasDataAnalyst> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes who the data analyst of the project is"@en .
+# 
 # https://w3id.org/enigma#hasDataType
 <https://w3id.org/enigma#hasDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/enigma#hasDataType> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid4 .
@@ -112,6 +120,22 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/enigma#hasGeneticAssociationProtocol> <http://purl.org/vocab/vann/example> "BipolarProject hasGeneticAssociationProtocol [instance of genetic association protocol]"@en .
 <https://w3id.org/enigma#hasGeneticAssociationProtocol> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the genetic association protocol that is used by the project"@en .
 # 
+# https://w3id.org/enigma#hasGeneticDataAnalyst
+<https://w3id.org/enigma#hasGeneticDataAnalyst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasGeneticDataAnalyst> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#hasDataAnalyst> .
+<https://w3id.org/enigma#hasGeneticDataAnalyst> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasGeneticDataAnalyst> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#hasGeneticDataAnalyst> <http://purl.org/vocab/vann/example> "BipolarCorticolProject hasGeneticDataAnalyst JohnSmith"@en .
+<https://w3id.org/enigma#hasGeneticDataAnalyst> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes who the genetic data analyst of the project is"@en .
+# 
+# https://w3id.org/enigma#hasGeneticDataCollector
+<https://w3id.org/enigma#hasGeneticDataCollector> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasGeneticDataCollector> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#hasContributor> .
+<https://w3id.org/enigma#hasGeneticDataCollector> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasGeneticDataCollector> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#hasGeneticDataCollector> <http://purl.org/vocab/vann/example> "BipolarCorticolProject hasGeneticDataCollector JohnSmith"@en .
+<https://w3id.org/enigma#hasGeneticDataCollector> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes who the genetic data collector of the project is"@en .
+# 
 # https://w3id.org/enigma#hasGeneticDataType
 <https://w3id.org/enigma#hasGeneticDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/enigma#hasGeneticDataType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#hasDataType> .
@@ -134,6 +158,22 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/enigma#hasGenotypeImputationProtocol> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#GenotypeImputationProtocol> .
 <https://w3id.org/enigma#hasGenotypeImputationProtocol> <http://purl.org/vocab/vann/example> "BipolarProject hasGenotypeImputationProtocol [instance of genotype imputation protocol]"@en .
 <https://w3id.org/enigma#hasGenotypeImputationProtocol> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the genotype imputation protocol that is used by the project"@en .
+# 
+# https://w3id.org/enigma#hasImagingDataAnalyst
+<https://w3id.org/enigma#hasImagingDataAnalyst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasImagingDataAnalyst> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#hasDataAnalyst> .
+<https://w3id.org/enigma#hasImagingDataAnalyst> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasImagingDataAnalyst> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#hasImagingDataAnalyst> <http://purl.org/vocab/vann/example> "BipolarCorticolProject hasImagingDataAnalyst JohnSmith"@en .
+<https://w3id.org/enigma#hasImagingDataAnalyst> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes who the imaging data analyst of the project is"@en .
+# 
+# https://w3id.org/enigma#hasImagingDataCollector
+<https://w3id.org/enigma#hasImagingDataCollector> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasImagingDataCollector> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#hasContributor> .
+<https://w3id.org/enigma#hasImagingDataCollector> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasImagingDataCollector> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#hasImagingDataCollector> <http://purl.org/vocab/vann/example> "BipolarCorticolProject hasImagingDataCollector JohnSmith"@en .
+<https://w3id.org/enigma#hasImagingDataCollector> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes who the imaging data collector of the project is"@en .
 # 
 # https://w3id.org/enigma#hasPJuniorLead
 <https://w3id.org/enigma#hasPJuniorLead> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -165,6 +205,14 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/enigma#hasProject> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Project> .
 <https://w3id.org/enigma#hasProject> <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasProject BipolarCorticolProject --> The Bipolar Working Group is working on the Bipolar Corticol Project"@en .
 <https://w3id.org/enigma#hasProject> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what projects are worked on by a specific working group"@en .
+# 
+# https://w3id.org/enigma#hasProjectDeveloper
+<https://w3id.org/enigma#hasProjectDeveloper> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasProjectDeveloper> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#hasContributor> .
+<https://w3id.org/enigma#hasProjectDeveloper> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasProjectDeveloper> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#hasProjectDeveloper> <http://purl.org/vocab/vann/example> "BipolarCorticolProject hasProjectDeveloper JohnSmith"@en .
+<https://w3id.org/enigma#hasProjectDeveloper> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes who the project developer of the project is"@en .
 # 
 # 
 # 
