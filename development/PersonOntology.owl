@@ -128,6 +128,18 @@
     
 
 
+    <!-- https://w3id.org/enigma#isChairOfWG -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isChairOfWG">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#isMemberOfWG"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+        <vann:example xml:lang="en">JohnSmith isChairOfWG BipolarWorkingGroup</vann:example>
+        <rdfs:comment xml:lang="en">Describes the working groups that someone is a chair of</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/enigma#isDataAnalystOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isDataAnalystOf">
@@ -206,30 +218,6 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
         <vann:example xml:lang="en">JohnSmith isInvestigatorOf BipolarCohort</vann:example>
         <rdfs:comment xml:lang="en">Describes the cohort that someone is investigator of</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isJuniorLeadOfP -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isJuniorLeadOfP">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributesTo"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
-        <vann:example xml:lang="en">JohnSmith isJuniorLeadOfP BipolarProject</vann:example>
-        <rdfs:comment xml:lang="en">Describes what project someone is a junior lead of</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isJuniorLeadOfWG -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isJuniorLeadOfWG">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#isMemberOfWG"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
-        <vann:example xml:lang="en">JohnSmith isJuniorLeadOfWG BipolarWorkingGroup</vann:example>
-        <rdfs:comment xml:lang="en">Describes the working groups that someone is a junior lead of</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -327,50 +315,14 @@
     
 
 
-    <!-- https://w3id.org/enigma#isSeniorLeadOfP -->
+    <!-- https://w3id.org/enigma#isProjectLeadOf -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isSeniorLeadOfP">
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isProjectLeadOf">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributesTo"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
-        <vann:example xml:lang="en">JohnSmith isSeniorLeadOfP BipolarProject</vann:example>
-        <rdfs:comment xml:lang="en">Describes what project someone is a senior lead of</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isSeniorLeadOfWG -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isSeniorLeadOfWG">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#isMemberOfWG"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
-        <vann:example xml:lang="en">JohnSmith isSeniorLeadOfWG BipolarWorkingGroup</vann:example>
-        <rdfs:comment xml:lang="en">Describes the working groups that someone is a senior lead of</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isSpecialContributorOfP -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isSpecialContributorOfP">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributesTo"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
-        <vann:example xml:lang="en">JohnSmith isSpecialContributorOfP BipolarProject</vann:example>
-        <rdfs:comment xml:lang="en">Describes what project someone is a special contributor of</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isSpecialContributorOfWG -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isSpecialContributorOfWG">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#isMemberOfWG"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
-        <vann:example xml:lang="en">JohnSmith isSpecialContributorOfWG BipolarWorkingGroup</vann:example>
-        <rdfs:comment xml:lang="en">Describes who the significant contributors of a working group are</rdfs:comment>
+        <vann:example xml:lang="en">JohnSmith isProjectLeadOf BipolarProject</vann:example>
+        <rdfs:comment xml:lang="en">Describes what project someone is a project lead of</rdfs:comment>
     </owl:ObjectProperty>
     
 

@@ -11,17 +11,17 @@
     <owl:Ontology rdf:about="https://w3id.org/enigma">
         <owl:versionIRI rdf:resource="https://w3id.org/enigma/wg/1.0.0"/>
         <owl:versionInfo>v1.0.0</owl:versionInfo>
-        <terms:title>The Working Group Ontology</terms:title>
         <rdfs:comment>An ontology for describing working groups.</rdfs:comment>
         <vann:preferredNamespacePrefix>enigma</vann:preferredNamespacePrefix>
         <terms:contributor>Yolanda Gil</terms:contributor>
+        <terms:contributor>Agnes McMahon</terms:contributor>
+        <terms:title>The Working Group Ontology</terms:title>
         <terms:creator>Ryan Espiritu</terms:creator>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
         <vann:preferredNamespaceUri rdf:resource="https://w3id.org/enigma#"/>
         <terms:creator>Neda Jahanshad</terms:creator>
-        <terms:contributor>Daniel Garijo</terms:contributor>
         <terms:creator>MiHyun Jang</terms:creator>
-        <terms:contributor>Agnes McMahon</terms:contributor>
+        <terms:contributor>Daniel Garijo</terms:contributor>
     </owl:Ontology>
     
 
@@ -105,18 +105,6 @@
     
 
 
-    <!-- https://w3id.org/enigma#hasWGJuniorLead -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasWGJuniorLead">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasWGMember"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">BipolarWorkingGroup hasJuniorLead JohnSmith</vann:example>
-        <rdfs:comment xml:lang="en">Describes who the junior leads of a working group are</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/enigma#hasWGMember -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasWGMember">
@@ -124,30 +112,6 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
         <vann:example xml:lang="en">BipolarWorkingGroup hasMember JohnSmith --&gt; The bipolar working group has John Smith as a member</vann:example>
         <rdfs:comment xml:lang="en">Describes who the members of the working group are</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasWGSeniorLead -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasWGSeniorLead">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasWGMember"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">BipolarWorkingGroup hasSeniorLead JohnSmith</vann:example>
-        <rdfs:comment xml:lang="en">Describes who the senior leads of a working group are</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasWGSpecialContributor -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasWGSpecialContributor">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasWGMember"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">BipolarWorkingGroup hasSpecialContributor JohnSmith</vann:example>
-        <rdfs:comment xml:lang="en">Describes who the special contributors of a working group are</rdfs:comment>
     </owl:ObjectProperty>
     
 
