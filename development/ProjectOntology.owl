@@ -136,6 +136,18 @@
     
 
 
+    <!-- https://w3id.org/enigma#hasDataCollector -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDataCollector">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasContributor"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example xml:lang="en">BipolarCorticolProject hasDataCollector JohnSmith</vann:example>
+        <rdfs:comment xml:lang="en">Describes who the data collector of the project is</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/enigma#hasDataType -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDataType">
@@ -191,7 +203,7 @@
     <!-- https://w3id.org/enigma#hasGeneticDataCollector -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasGeneticDataCollector">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasContributor"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasDataCollector"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
         <vann:example xml:lang="en">BipolarCorticolProject hasGeneticDataCollector JohnSmith</vann:example>
@@ -245,7 +257,7 @@
     <!-- https://w3id.org/enigma#hasImagingDataCollector -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasImagingDataCollector">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasContributor"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasDataCollector"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
         <vann:example xml:lang="en">BipolarCorticolProject hasImagingDataCollector JohnSmith</vann:example>

@@ -152,6 +152,18 @@
     
 
 
+    <!-- https://w3id.org/enigma#isDataCollectorOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isDataCollectorOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributesTo"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
+        <vann:example xml:lang="en">JohnSmith isDataCollectorOf BipolarProject</vann:example>
+        <rdfs:comment xml:lang="en">Describes what project someone collected data for</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/enigma#isEnigmaContactOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isEnigmaContactOf">
@@ -178,7 +190,7 @@
     <!-- https://w3id.org/enigma#isGeneticDataCollectorOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isGeneticDataCollectorOf">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributesTo"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#isDataCollectorOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
         <vann:example xml:lang="en">JohnSmith isGeneticDataCollectorOf BipolarProject</vann:example>
@@ -202,7 +214,7 @@
     <!-- https://w3id.org/enigma#isImagingDataCollectorOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isImagingDataCollectorOf">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributesTo"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#isDataCollectorOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
         <vann:example xml:lang="en">JohnSmith isImagingDataCollectorOf BipolarProject</vann:example>
@@ -245,18 +257,6 @@
     
 
 
-    <!-- https://w3id.org/enigma#isMajorDataAnalystOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isMajorDataAnalystOf">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#isDataAnalystOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
-        <vann:example xml:lang="en">JohnSmith isMajorDataAnalystOf BipolarProject</vann:example>
-        <rdfs:comment xml:lang="en">Describes what project someone is a major data analyst of</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/enigma#isMemberOfWG -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isMemberOfWG">
@@ -264,18 +264,6 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
         <vann:example xml:lang="en">JohnSmith isMemberOfWorkingGroup BipolarWorkingGroup</vann:example>
         <rdfs:comment xml:lang="en">Describes what working group a person is a member of</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isMinorDataAnalystOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isMinorDataAnalystOf">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#isDataAnalystOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
-        <vann:example xml:lang="en">JohnSmith isMinorDataAnalystOf BipolarProject</vann:example>
-        <rdfs:comment xml:lang="en">Describes what project someone is a minor data analyst of</rdfs:comment>
     </owl:ObjectProperty>
     
 
