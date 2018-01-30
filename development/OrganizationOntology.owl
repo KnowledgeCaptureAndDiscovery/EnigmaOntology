@@ -83,6 +83,27 @@
     
 
 
+    <!-- https://w3id.org/enigma#isOfType -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isOfType">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Organization"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#College"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Consortium"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Hospital"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Institute"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#University"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <vann:example xml:lang="en">USC ISI isOfType Institute</vann:example>
+        <rdfs:comment xml:lang="en">Describes the specific type of an organization</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
