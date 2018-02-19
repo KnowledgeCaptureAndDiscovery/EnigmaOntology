@@ -84,6 +84,18 @@
     
 
 
+    <!-- http://www.w3.org/2006/vcard/ns#hasAddress -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2006/vcard/ns#hasAddress">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
+        <rdfs:comment xml:lang="en">To specify the components of the address for the object</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/vcard/ns"/>
+        <rdfs:label xml:lang="en">has address</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/enigma#contributesTo -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#contributesTo">
@@ -110,7 +122,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDepartment">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Department"/>
+        <rdfs:range rdf:resource="http://vivoweb.org/ontology/core#Department"/>
         <vann:example xml:lang="en">Person hasDepartment Department of Psychology</vann:example>
         <rdfs:comment xml:lang="en">Describes the department associated with a person</rdfs:comment>
     </owl:ObjectProperty>
@@ -132,7 +144,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isAffiliatedWith">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Organization"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
         <vann:example xml:lang="en">JohnSmith isAffiliatedWith HarvardU</vann:example>
         <rdfs:comment xml:lang="en">Describes what organization someone IS affiliated with</rdfs:comment>
     </owl:ObjectProperty>
@@ -245,17 +257,6 @@
     
 
 
-    <!-- https://w3id.org/enigma#isLocated -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isLocated">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Location"/>
-        <vann:example xml:lang="en">JohnSmith isLocated Boston</vann:example>
-        <rdfs:comment xml:lang="en">Describes where the person is located</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/enigma#isMainPIOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isMainPIOf">
@@ -331,7 +332,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#wasAffiliatedWith">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Organization"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
         <rdfs:comment>Describes what organization someone WAS affiliated with</rdfs:comment>
         <vann1:example>JohnSmith wasAffiliatedWith ISI</vann1:example>
     </owl:ObjectProperty>
@@ -346,6 +347,66 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://www.w3.org/2006/vcard/ns#country-name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/vcard/ns#country-name">
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The country name associated with the address of the object</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/vcard/ns"/>
+        <rdfs:label xml:lang="en">country name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/vcard/ns#locality -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/vcard/ns#locality">
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The locality (e.g. city or town) associated with the address of the object</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/vcard/ns"/>
+        <rdfs:label xml:lang="en">locality</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/vcard/ns#postal-code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/vcard/ns#postal-code">
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The postal code associated with the address of the object</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/vcard/ns"/>
+        <rdfs:label xml:lang="en">postal code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/vcard/ns#region -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/vcard/ns#region">
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The region (e.g. state or province) associated with the address of the object</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/vcard/ns"/>
+        <rdfs:label xml:lang="en">region</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/vcard/ns#street-address -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/vcard/ns#street-address">
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The street address associated with the address of the object</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/vcard/ns"/>
+        <rdfs:label xml:lang="en">street address</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
@@ -534,6 +595,99 @@
     
 
 
+    <!-- http://vivoweb.org/ontology/core#College -->
+
+    <owl:Class rdf:about="http://vivoweb.org/ontology/core#College">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <vann:example xml:lang="en">Los Angeles City College</vann:example>
+        <rdfs:comment xml:lang="en">A college contributing to a given ENIGMA project</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vivoweb.org/ontology/core"/>
+        <rdfs:label xml:lang="en">College</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://vivoweb.org/ontology/core#Consortium -->
+
+    <owl:Class rdf:about="http://vivoweb.org/ontology/core#Consortium">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <vann:example xml:lang="en">ENIGMA</vann:example>
+        <rdfs:comment xml:lang="en">A consortium contributing to a given ENIGMA project</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vivoweb.org/ontology/core"/>
+        <rdfs:label xml:lang="en">Consortium</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://vivoweb.org/ontology/core#Department -->
+
+    <owl:Class rdf:about="http://vivoweb.org/ontology/core#Department">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <vann:example xml:lang="en">Department of Psychology, USC</vann:example>
+        <rdfs:comment xml:lang="en">A department contributing to a given ENIGMA project</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vivoweb.org/ontology/core"/>
+        <rdfs:label xml:lang="en">Department</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://vivoweb.org/ontology/core#Hospital -->
+
+    <owl:Class rdf:about="http://vivoweb.org/ontology/core#Hospital">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <vann:example xml:lang="en">Children&apos;s Hospital Los Angeles</vann:example>
+        <rdfs:comment xml:lang="en">A hospital contributing to a given ENIGMA project</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vivoweb.org/ontology/core"/>
+        <rdfs:label xml:lang="en">Hospital</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://vivoweb.org/ontology/core#Institute -->
+
+    <owl:Class rdf:about="http://vivoweb.org/ontology/core#Institute">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <vann:example xml:lang="en">Information Sciences Institute</vann:example>
+        <rdfs:comment xml:lang="en">An institute contributing to a given ENIGMA project</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vivoweb.org/ontology/core"/>
+        <rdfs:label xml:lang="en">Institute</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://vivoweb.org/ontology/core#University -->
+
+    <owl:Class rdf:about="http://vivoweb.org/ontology/core#University">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <vann:example xml:lang="en">USC</vann:example>
+        <rdfs:comment xml:lang="en">A university contributing to a given ENIGMA project</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://vivoweb.org/ontology/core"/>
+        <rdfs:label xml:lang="en">University</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2006/vcard/ns#Address -->
+
+    <owl:Class rdf:about="http://www.w3.org/2006/vcard/ns#Address">
+        <rdfs:comment xml:lang="en">To specify the components of the delivery address for the object</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/vcard/ns"/>
+        <rdfs:label xml:lang="en">Address</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Organization -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Organization">
+        <vann:example xml:lang="en">Information Sciences Institute</vann:example>
+        <rdfs:comment xml:lang="en">An organization contributing to a given ENIGMA project</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1"/>
+        <rdfs:label xml:lang="en">Organization</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/enigma#Cohort -->
 
     <owl:Class rdf:about="https://w3id.org/enigma#Cohort">
@@ -554,42 +708,12 @@
     
 
 
-    <!-- https://w3id.org/enigma#Department -->
-
-    <owl:Class rdf:about="https://w3id.org/enigma#Department">
-        <vann:example xml:lang="en">Department of Psychology</vann:example>
-        <rdfs:comment xml:lang="en">Describes the department associated with an organization</rdfs:comment>
-        <rdfs:label xml:lang="en">Department</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/enigma#ENIGMAPublication -->
 
     <owl:Class rdf:about="https://w3id.org/enigma#ENIGMAPublication">
         <vann:example xml:lang="en">Do Candidate Genes Affect the Brain&apos;s White Matter Microstructure? Large-Scale Evaluation of 6,165 Diffusion MRI Scans</vann:example>
         <rdfs:comment xml:lang="en">A publication associated with a given ENGIMA project</rdfs:comment>
         <rdfs:label xml:lang="en">ENIGMAPublication</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/enigma#Location -->
-
-    <owl:Class rdf:about="https://w3id.org/enigma#Location">
-        <vann:example xml:lang="en">Los Angeles, California</vann:example>
-        <rdfs:comment xml:lang="en">Geographic location of the cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">Location</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/enigma#Organization -->
-
-    <owl:Class rdf:about="https://w3id.org/enigma#Organization">
-        <rdfs:comment xml:lang="en">An organization contributing to a given ENIGMA project</rdfs:comment>
-        <rdfs:label xml:lang="en">Organization</rdfs:label>
-        <vann1:example xml:lang="en">Information Science Institute</vann1:example>
     </owl:Class>
     
 
