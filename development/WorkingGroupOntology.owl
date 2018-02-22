@@ -71,6 +71,14 @@
     
 
 
+    <!-- http://xmlns.com/foaf/0.1/member -->
+
+    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/member">
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/enigma#hasCohort -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasCohort">
@@ -93,24 +101,25 @@
     
 
 
-    <!-- https://w3id.org/enigma#hasWGChair -->
+    <!-- https://w3id.org/enigma#hasWorkingGroupChair -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasWGChair">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasWGMember"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasWorkingGroupChair">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasWorkingGroupMember"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">SZWorkingGroup hasWGChair JohnSmith</vann:example>
+        <vann:example xml:lang="en">SZWorkingGroup hasWorkingGroupChair JohnSmith</vann:example>
         <rdfs:comment xml:lang="en">Describes who the chairs of a working group are</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasWGMember -->
+    <!-- https://w3id.org/enigma#hasWorkingGroupMember -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasWGMember">
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasWorkingGroupMember">
+        <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/member"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">BipolarWorkingGroup hasMember JohnSmith --&gt; The bipolar working group has John Smith as a member</vann:example>
+        <vann:example xml:lang="en">BipolarWorkingGroup hasWorkingGroupMember JohnSmith</vann:example>
         <rdfs:comment xml:lang="en">Describes who the members of the working group are</rdfs:comment>
     </owl:ObjectProperty>
     
