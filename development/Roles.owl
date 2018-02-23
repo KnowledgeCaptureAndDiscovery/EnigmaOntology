@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/enigma#"
+     xml:base="https://w3id.org/enigma"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:vann1="https://w3id.org/enigma#vann:"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/">
+    <owl:Ontology rdf:about="https://w3id.org/enigma">
+        <owl:versionIRI rdf:resource="https://w3id.org/enigma/roles/1.0.0"/>
+        <owl:versionInfo>v1.0.0</owl:versionInfo>
+        <vann:preferredNamespacePrefix>enigma</vann:preferredNamespacePrefix>
+        <terms:contributor>Yolanda Gil</terms:contributor>
+        <rdfs:comment>An ontology for describing people&apos;s roles in ENIGMA projects.</rdfs:comment>
+        <terms:contributor>Agnes McMahon</terms:contributor>
+        <terms:creator>Ryan Espiritu</terms:creator>
+        <terms:title>The Enigma Roles Ontology</terms:title>
+        <terms:license rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
+        <vann:preferredNamespaceUri rdf:resource="https://w3id.org/enigma#"/>
+        <terms:creator>Neda Jahanshad</terms:creator>
+        <terms:creator>MiHyun Jang</terms:creator>
+        <terms:contributor>Daniel Garijo</terms:contributor>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/vocab/vann/example -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/example"/>
+    
+
+
+    <!-- https://w3id.org/enigma#vann:example -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/enigma#vann:example"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#gYear -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#gYear"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/enigma#isDataAnalystOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isDataAnalystOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
+        <vann:example xml:lang="en">JohnSmith isDataAnalystOf BipolarProject</vann:example>
+        <rdfs:comment xml:lang="en">Describes what project someone is a data analyst of</rdfs:comment>
+        <rdfs:label xml:lang="en">is data analyst of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#isDataCollectorOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isDataCollectorOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
+        <vann:example xml:lang="en">JohnSmith isDataCollectorOf BipolarProject</vann:example>
+        <rdfs:comment xml:lang="en">Describes what project someone collected data for</rdfs:comment>
+        <rdfs:label xml:lang="en">is data collector of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#isGeneticDataAnalystOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isGeneticDataAnalystOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#isDataAnalystOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
+        <vann:example xml:lang="en">JohnSmith isGeneticDataAnalystOf BipolarProject</vann:example>
+        <rdfs:comment xml:lang="en">Describes what project someone is a genetic data analyst of</rdfs:comment>
+        <rdfs:label xml:lang="en">is genetic data analyst of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#isGeneticDataCollectorOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isGeneticDataCollectorOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#isDataCollectorOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
+        <vann:example xml:lang="en">JohnSmith isGeneticDataCollectorOf BipolarProject</vann:example>
+        <rdfs:comment xml:lang="en">Describes what project someone collected genetic data for</rdfs:comment>
+        <rdfs:label xml:lang="en">is genetic data collector of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#isImagingDataAnalystOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isImagingDataAnalystOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#isDataAnalystOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
+        <vann:example xml:lang="en">JohnSmith isImagingDataAnalystOf BipolarProject</vann:example>
+        <rdfs:comment xml:lang="en">Describes what project someone is an imaging data analyst of</rdfs:comment>
+        <rdfs:label xml:lang="en">is imaging data analyst of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#isImagingDataCollectorOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isImagingDataCollectorOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#isDataCollectorOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
+        <vann:example xml:lang="en">JohnSmith isImagingDataCollectorOf BipolarProject</vann:example>
+        <rdfs:comment xml:lang="en">Describes what project someone collected imaging data for</rdfs:comment>
+        <rdfs:label xml:lang="en">is imaging data collector of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#isProjectDeveloperOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isProjectDeveloperOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
+        <vann:example xml:lang="en">JohnSmith isProjectDeveloperOf BipolarProject</vann:example>
+        <rdfs:comment xml:lang="en">Describes what project someone is a project developer of</rdfs:comment>
+        <rdfs:label xml:lang="en">is project developer of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+        <owl:equivalentClass rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:isDefinedBy xml:lang="en">http://xmlns.com/foaf/0.1/</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#Person -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#Person">
+        <vann:example xml:lang="en">Theo van Erp</vann:example>
+        <rdfs:comment xml:lang="en">Individual involved with the cohort</rdfs:comment>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#Project -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#Project">
+        <vann:example xml:lang="en">SZPositiveSymptoms</vann:example>
+        <rdfs:comment xml:lang="en">Project encompassing cohort</rdfs:comment>
+        <rdfs:label xml:lang="en">Project</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
