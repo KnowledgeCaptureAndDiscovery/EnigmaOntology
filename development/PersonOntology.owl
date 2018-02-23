@@ -87,6 +87,7 @@
     <!-- http://vivoweb.org/ontology/core#orcidId -->
 
     <owl:ObjectProperty rdf:about="http://vivoweb.org/ontology/core#orcidId">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is now an object property where the object value is a resource of the form &lt;http://orcid.org/NNNN-NNNN-NNNN-NNNN&gt;.  This is to support connecting VIVO and ORCID in the linked data web.   Note: a person can have multiple ORCID iDs.</rdfs:comment>
         <rdfs:isDefinedBy xml:lang="en">http://vivoweb.org/ontology/core#</rdfs:isDefinedBy>
     </owl:ObjectProperty>
@@ -125,12 +126,10 @@
     
 
 
-    <!-- https://w3id.org/enigma#ENIGMARoles -->
+    <!-- http://xmlns.com/foaf/0.1/member -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#ENIGMARoles">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
-        <rdfs:comment xml:lang="en">Describes the roles a person can have within an ENIGMA project</rdfs:comment>
+    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/member">
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/member"/>
     </owl:ObjectProperty>
     
 
@@ -149,10 +148,20 @@
     <!-- https://w3id.org/enigma#forOrganization -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#forOrganization">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#QualifiedAffiliationRelationship"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#QualifiedAffiliation"/>
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
-        <vann:example xml:lang="en">JohnSmith hasQualifiedAffiliationRelationship &quot;QualifiedAffiliationRelationship&quot; forOrganization USC</vann:example>
+        <vann:example xml:lang="en">JohnSmith hasQualifiedAffiliationRelationship &quot;QualifiedAffiliation&quot; forOrganization USC</vann:example>
         <rdfs:comment xml:lang="en">Describes the organization associated with the qualified affiliation relationship</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasAffiliate -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasAffiliate">
+        <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/member"/>
+        <vann:example xml:lang="en">HarvardU hasAffiliate JohnSmith</vann:example>
+        <rdfs:comment xml:lang="en">Describes the organization&apos;s affiliates</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -169,13 +178,37 @@
     
 
 
-    <!-- https://w3id.org/enigma#hasQualifiedAffiliationRelationship -->
+    <!-- https://w3id.org/enigma#hasQualifiedAffiliation -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasQualifiedAffiliationRelationship">
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasQualifiedAffiliation">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#QualifiedAffiliationRelationship"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#QualifiedAffiliation"/>
         <vann:example xml:lang="en">JohnSmith hasQualifiedAffiliationRelationship &quot;QualifiedAffiliationRelationship&quot; forOrganization USC</vann:example>
         <rdfs:comment xml:lang="en">Describes the qualified affiliation relationship of a person. Used to specify additional detailes regarding an indvidual&apos;s affiliation with an organization (i.e. start and end dates)</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasWorkingGroupChair -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasWorkingGroupChair">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasWorkingGroupMember"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example xml:lang="en">BipolarWorkingGroup hasWorkingGroupChair JohnSmith</vann:example>
+        <rdfs:comment xml:lang="en">Describes the working groups that someone is a chair of</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasWorkingGroupMember -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasWorkingGroupMember">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasAffiliate"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example xml:lang="en">BipolarWorkingGroup hasWorkingGroupMember JohnSmith</vann:example>
+        <rdfs:comment xml:lang="en">Describes what working group a person is a member of</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -187,18 +220,6 @@
         <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
         <vann:example xml:lang="en">JohnSmith isAffiliatedWith HarvardU</vann:example>
         <rdfs:comment xml:lang="en">Describes what organization someone is affiliated with</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isChairOfWorkingGroup -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isChairOfWorkingGroup">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#isMemberOfWorkingGroup"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
-        <vann:example xml:lang="en">JohnSmith isChairOfWorkingGroup BipolarWorkingGroup</vann:example>
-        <rdfs:comment xml:lang="en">Describes the working groups that someone is a chair of</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -217,7 +238,7 @@
     <!-- https://w3id.org/enigma#isDataAnalystOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isDataAnalystOf">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#ENIGMARoles"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributesTo"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
         <vann:example xml:lang="en">JohnSmith isDataAnalystOf BipolarProject</vann:example>
@@ -229,7 +250,7 @@
     <!-- https://w3id.org/enigma#isDataCollectorOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isDataCollectorOf">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#ENIGMARoles"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributesTo"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
         <vann:example xml:lang="en">JohnSmith isDataCollectorOf BipolarProject</vann:example>
@@ -297,25 +318,14 @@
     
 
 
-    <!-- https://w3id.org/enigma#isMainPIOf -->
+    <!-- https://w3id.org/enigma#isMainPricipalInvestigatorOf -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isMainPIOf">
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isMainPricipalInvestigatorOf">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#isPrincipalInvestigatorOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <vann:example xml:lang="en">JohnSmith isMainPIof Cohort1</vann:example>
+        <vann:example xml:lang="en">JohnSmith isMainPrincipalInvestigatorof Cohort1</vann:example>
         <rdfs:comment xml:lang="en">Describes which cohorts somone is a main PI of</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isMemberOfWorkingGroup -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isMemberOfWorkingGroup">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
-        <vann:example xml:lang="en">JohnSmith isMemberOfWorkingGroup BipolarWorkingGroup</vann:example>
-        <rdfs:comment xml:lang="en">Describes what working group a person is a member of</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -347,7 +357,7 @@
     <!-- https://w3id.org/enigma#isProjectDeveloperOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isProjectDeveloperOf">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#ENIGMARoles"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributesTo"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
         <vann:example xml:lang="en">JohnSmith isProjectDeveloperOf BipolarProject</vann:example>
@@ -470,9 +480,9 @@
     <!-- https://w3id.org/enigma#hasEndDate -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasEndDate">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#QualifiedAffiliationRelationship"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#QualifiedAffiliation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-        <vann:example xml:lang="en">JohnSmith hasQualifiedAffiliationRelationship &quot;QualifiedAffiliationRelationship&quot; hasEndDate &quot;2018-07-13&quot;</vann:example>
+        <vann:example xml:lang="en">JohnSmith hasQualifiedAffiliationRelationship &quot;QualifiedAffiliation&quot; hasEndDate &quot;2018-07-13&quot;</vann:example>
         <rdfs:comment xml:lang="en">Describes the end date of a person at a given organization</rdfs:comment>
     </owl:DatatypeProperty>
     
@@ -514,9 +524,9 @@
     <!-- https://w3id.org/enigma#hasStartDate -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasStartDate">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#QualifiedAffiliationRelationship"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#QualifiedAffiliation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-        <vann:example xml:lang="en">JohnSmith hasQualifiedAffiliationRelationship &quot;QualifiedAffiliationRelationship&quot; hasStartDate &quot;2008-07-13&quot;</vann:example>
+        <vann:example xml:lang="en">JohnSmith hasQualifiedAffiliation &quot;QualifiedAffiliation&quot; hasStartDate &quot;2008-07-13&quot;</vann:example>
         <rdfs:comment xml:lang="en">Describes the start date of a person at a given organization</rdfs:comment>
     </owl:DatatypeProperty>
     
@@ -525,7 +535,7 @@
     <!-- https://w3id.org/enigma#hasStatus -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasStatus">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#QualifiedAffiliationRelationship"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#QualifiedAffiliation"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -549,7 +559,7 @@
                 </owl:oneOf>
             </rdfs:Datatype>
         </rdfs:range>
-        <vann:example xml:lang="en">JohnSmith hasQualifiedAffiliationRelationship &quot;QualifiedAffiliationRelationship&quot; hasStatus &quot;Inactive&quot;</vann:example>
+        <vann:example xml:lang="en">JohnSmith hasQualifiedAffiliationRelationship &quot;QualifiedAffiliation&quot; hasStatus &quot;Inactive&quot;</vann:example>
         <rdfs:comment xml:lang="en">Describes the current activity status of a person at a given organization. &quot;Active&quot; specifies that one is currently active within an organization. &quot;Inactive&quot; specifies that one is currently still part of an organization but not currently active. &quot;Left Organization&quot; specifies that one is no longer a part of an organization.</rdfs:comment>
     </owl:DatatypeProperty>
     
@@ -637,11 +647,11 @@
     
 
 
-    <!-- https://w3id.org/enigma#QualifiedAffiliationRelationship -->
+    <!-- https://w3id.org/enigma#QualifiedAffiliation -->
 
-    <owl:Class rdf:about="https://w3id.org/enigma#QualifiedAffiliationRelationship">
-        <rdfs:comment xml:lang="en">Used to specify additional details regarding an indvidual&apos;s affiliation with an organization (i.e. start and end dates)</rdfs:comment>
-        <rdfs:label xml:lang="en">QualifiedAffiliationRelationship</rdfs:label>
+    <owl:Class rdf:about="https://w3id.org/enigma#QualifiedAffiliation">
+        <rdfs:comment xml:lang="en">Used to specify additional details regarding an indvidual&apos;s affiliation with an organization (i.e. start and end dates, roles, etc.)</rdfs:comment>
+        <rdfs:label xml:lang="en">Qualified affiliation</rdfs:label>
     </owl:Class>
     
 
