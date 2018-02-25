@@ -75,7 +75,6 @@
 
     <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/member">
         <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
-        <rdfs:label xml:lang="en">has member</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -141,6 +140,26 @@
     
 
 
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasBriefDescription -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasBriefDescription">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <vann:example xml:lang="en">SZWG hasBriefDescription &quot;finds correlations between schizophrenia and other conditions&quot;</vann:example>
+        <rdfs:comment xml:lang="en">Provides a brief description of the working group</rdfs:comment>
+        <rdfs:label xml:lang="en">has brief description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/enigma#hasMemorandumOfUnderstanding -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasMemorandumOfUnderstanding">
@@ -170,10 +189,10 @@
     <!-- https://w3id.org/enigma#hasStartDate -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasStartDate">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
         <vann:example xml:lang="en">WorkingGroup1 hasStartDate 2004-09-13</vann:example>
-        <rdfs:comment xml:lang="en">Describes the start date of a working group</rdfs:comment>
+        <rdfs:comment xml:lang="en">Describes the start date of the described resource (a working group, a person in an organizaiton, etc.)</rdfs:comment>
         <rdfs:label xml:lang="en">has start date</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -191,14 +210,14 @@
     
 
 
-    <!-- https://w3id.org/enigma#hasWGBriefDescription -->
+    <!-- https://w3id.org/enigma#shortName -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasWGBriefDescription">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#shortName">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/title"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <vann:example xml:lang="en">SZWG hasWGBriefDescription &quot;finds correlations between schizophrenia and other conditions&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Provides a brief description of the working group</rdfs:comment>
-        <rdfs:label xml:lang="en">has working group brief description</rdfs:label>
+        <rdfs:comment xml:lang="en">A short name for the working group, in case the working group name is too long</rdfs:comment>
+        <rdfs:label xml:lang="en">short name</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -214,12 +233,52 @@
     
 
 
+    <!-- https://w3id.org/enigma#ClinicalPopulation -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#ClinicalPopulation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+        <rdfs:comment xml:lang="en">Working groups that study clinical populations</rdfs:comment>
+        <rdfs:label xml:lang="en">Clinical Population</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/enigma#Cohort -->
 
     <owl:Class rdf:about="https://w3id.org/enigma#Cohort">
         <vann:example xml:lang="en">ADNI: Alzheimer’s Disease Neuroimaging Initiative</vann:example>
         <rdfs:comment xml:lang="en">A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria</rdfs:comment>
         <rdfs:label xml:lang="en">Cohort</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#GeneticStudy -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#GeneticStudy">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+        <rdfs:comment xml:lang="en">Working groups dedicated to genetic analysis</rdfs:comment>
+        <rdfs:label xml:lang="en">Genetic study</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#HealthyVariation -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#HealthyVariation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+        <rdfs:comment xml:lang="en">Working groups that are not disease focused</rdfs:comment>
+        <rdfs:label xml:lang="en">Healthy Variation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#Methodology -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#Methodology">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+        <rdfs:comment xml:lang="en">Working groups that develop protocols (imaging or genetics)</rdfs:comment>
+        <rdfs:label xml:lang="en">Methodology</rdfs:label>
     </owl:Class>
     
 
@@ -251,6 +310,20 @@
         <rdfs:comment xml:lang="en">Group of researchers studying a certain topic/disease</rdfs:comment>
         <rdfs:label xml:lang="en">Working Group</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://purl.org/dc/terms/title">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/title"/>
+    </rdf:Description>
 </rdf:RDF>
 
 

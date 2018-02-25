@@ -76,10 +76,10 @@
     <!-- https://w3id.org/enigma#hasAffiliate -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasAffiliate">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Organization"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">Harvad hasAffiliate JohnSmith</vann:example>
-        <rdfs:comment xml:lang="en">Describes what person is an affiliate of an organization</rdfs:comment>
+        <vann:example xml:lang="en">Harvard hasAffiliate JohnSmith</vann:example>
+        <rdfs:comment xml:lang="en">Points to the person who is an affiliate of an organization</rdfs:comment>
         <rdfs:label xml:lang="en">has affiliate</rdfs:label>
     </owl:ObjectProperty>
     
@@ -102,7 +102,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasPrincipalInvestigator">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">Project1 hasPrincipalInvestigator JohnSmith</vann:example>
+        <vann:example xml:lang="en">Cohort1 hasPrincipalInvestigator JohnSmith</vann:example>
         <rdfs:comment xml:lang="en">Describes who the principal investigator of the cohort is</rdfs:comment>
         <rdfs:label xml:lang="en">has principal investigator</rdfs:label>
     </owl:ObjectProperty>
@@ -144,6 +144,14 @@
     
 
 
+    <!-- http://xmlns.com/foaf/0.1/Organization -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Organization">
+        <rdfs:comment rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/enigma#AcquisitionProtocol -->
 
     <owl:Class rdf:about="https://w3id.org/enigma#AcquisitionProtocol">
@@ -160,16 +168,6 @@
         <vann:example xml:lang="en">ADNI: Alzheimer’s Disease Neuroimaging Initiative</vann:example>
         <rdfs:comment xml:lang="en">A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria</rdfs:comment>
         <rdfs:label xml:lang="en">Cohort</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/enigma#Organization -->
-
-    <owl:Class rdf:about="https://w3id.org/enigma#Organization">
-        <rdfs:comment xml:lang="en">An organization contributing to a given ENIGMA project</rdfs:comment>
-        <rdfs:label xml:lang="en">Organization</rdfs:label>
-        <vann1:example xml:lang="en">Information Science Institute</vann1:example>
     </owl:Class>
     
 
