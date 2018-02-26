@@ -80,6 +80,17 @@
     
 
 
+    <!-- https://w3id.org/enigma#forPublication -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#forPublication">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#ConflictOfInterest"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#AcademicArticle"/>
+        <rdfs:comment xml:lang="en">Property that links the conflict of interest of an author to the publication which the author has the conflict of interest with.</rdfs:comment>
+        <rdfs:label xml:lang="en">for publication</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/enigma#hasBrainScanDataType -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasBrainScanDataType">
@@ -108,6 +119,17 @@
         <vann:example xml:lang="en">BipolarProject hasCohort AmsterdamBipolarCohort</vann:example>
         <rdfs:comment xml:lang="en">Describes what cohorts are part of the project</rdfs:comment>
         <rdfs:label xml:lang="en">has cohort</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasConflictOfInterest -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasConflictOfInterest">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#ConflictOfInterest"/>
+        <rdfs:comment xml:lang="en">Property linking an author with a conflict of interest that the author has on a paper</rdfs:comment>
+        <rdfs:label xml:lang="en">has coflict of interest</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -226,14 +248,13 @@
     
 
 
-    <!-- https://w3id.org/enigma#isProjectOf -->
+    <!-- https://w3id.org/enigma#hasPublication -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isProjectOf">
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasPublication">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
-        <vann:example xml:lang="en">BipolarCorticolProject isProjectOf BipolarWorkingGroup</vann:example>
-        <rdfs:comment xml:lang="en">Describes what working group the project belongs to</rdfs:comment>
-        <rdfs:label xml:lang="en">is project of</rdfs:label>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#AcademicArticle"/>
+        <rdfs:comment xml:lang="en">Property that links a project to a publication that resulted from it.</rdfs:comment>
+        <rdfs:label xml:lang="en">has publication</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -249,6 +270,42 @@
     
 
 
+    <!-- http://purl.org/dc/terms/date -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/date">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/identifier">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/identifier"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/spatial -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/spatial">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/spatial"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
     <!-- https://w3id.org/enigma#hasApprovedProposalForm -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasApprovedProposalForm">
@@ -261,45 +318,51 @@
     
 
 
+    <!-- https://w3id.org/enigma#hasArticleStatus -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasArticleStatus">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#AcademicArticle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The status of the paper (submitted, on review, accepted, etc.)</rdfs:comment>
+        <rdfs:label xml:lang="en">has article status</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasBriefDescription -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasBriefDescription">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#WorkingGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <vann:example xml:lang="en">ProjectSZ hasBriefDescription &quot;reports effect size for corticol thickness&quot;</vann:example>
+        <rdfs:comment xml:lang="en">Provides a brief description of the working group or project</rdfs:comment>
+        <rdfs:label xml:lang="en">has brief description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/enigma#hasEndDate -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasEndDate">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
         <vann:example xml:lang="en">BipolarProject hasStartDate 2018-06-23</vann:example>
-        <rdfs:comment xml:lang="en">Describes the end date of a project</rdfs:comment>
+        <rdfs:comment xml:lang="en">Describes the end date of the described resource (a working group, a person in an organizaiton, etc.)</rdfs:comment>
         <rdfs:label xml:lang="en">has end date</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasPBriefDescription -->
+    <!-- https://w3id.org/enigma#hasProjectStatus -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasPBriefDescription">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <vann:example xml:lang="en">ProjectSZ hasBriefDescription &quot;reports effect size for corticol thickness&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Provides a brief description of the project</rdfs:comment>
-        <rdfs:label xml:lang="en">has project brief description</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasStartDate -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasStartDate">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-        <vann:example xml:lang="en">BipolarProject hasStartDate 2017-06-23</vann:example>
-        <rdfs:comment xml:lang="en">Describes the start date of a project</rdfs:comment>
-        <rdfs:label xml:lang="en">has start date</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasStatus -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasStatus">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasProjectStatus">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -332,7 +395,19 @@
         </rdfs:range>
         <vann:example xml:lang="en">ProjectSZ hasStatus &quot;published&quot;</vann:example>
         <rdfs:comment xml:lang="en">Describes the status of the project</rdfs:comment>
-        <rdfs:label xml:lang="en">has status</rdfs:label>
+        <rdfs:label xml:lang="en">has project status</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasStartDate -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasStartDate">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <vann:example xml:lang="en">BipolarProject hasStartDate 2017-06-23</vann:example>
+        <rdfs:comment xml:lang="en">Describes the start date of the described resource (a working group, a person in an organizaiton, etc.)</rdfs:comment>
+        <rdfs:label xml:lang="en">has start date</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -373,6 +448,29 @@
         <vann:example xml:lang="en">BipolarProject hasTargetDate 2020-03-12</vann:example>
         <rdfs:comment xml:lang="en">Describes the target date of the project</rdfs:comment>
         <rdfs:label xml:lang="en">has target date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasVenue -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasVenue">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#AcademicArticle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Data property that can be used to link an article to the conference where it was presented. The target conference is represented as text.</rdfs:comment>
+        <rdfs:label xml:lang="en">has venue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#location -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#location">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/spatial"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#AcademicArticle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The location where the article was presented</rdfs:comment>
+        <rdfs:label xml:lang="en">location</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -423,6 +521,15 @@
         <vann:example xml:lang="en">ADNI: Alzheimer’s Disease Neuroimaging Initiative</vann:example>
         <rdfs:comment xml:lang="en">A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria</rdfs:comment>
         <rdfs:label xml:lang="en">Cohort</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#ConflictOfInterest -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#ConflictOfInterest">
+        <rdfs:comment xml:lang="en">Concept used to represent a conflict of interest of an author in a paper</rdfs:comment>
+        <rdfs:label xml:lang="en">Conflict of interest</rdfs:label>
     </owl:Class>
     
 
@@ -515,6 +622,9 @@
 
     <rdf:Description rdf:about="http://purl.org/dc/terms/contributor">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/contributor"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/terms/title">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/title"/>
     </rdf:Description>
 </rdf:RDF>
 
