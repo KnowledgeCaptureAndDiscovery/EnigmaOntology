@@ -49,391 +49,348 @@ xsd:gYear rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-###  https://w3id.org/enigma#contributesTo
-:contributesTo rdf:type owl:ObjectProperty ;
-               rdfs:domain :Person ;
-               rdfs:range :Project ;
-               <http://purl.org/vocab/vann/example> "JohnSmith contributedTo BipolarProject"@en ;
-               rdfs:comment "Describes the projects that a person contributed to"@en .
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:ObjectProperty ;
+                                       rdfs:range :Project .
 
 
-###  https://w3id.org/enigma#hasDegree
-:hasDegree rdf:type owl:ObjectProperty ;
-           rdfs:domain :Person ;
-           rdfs:range :Degree ;
-           <http://purl.org/vocab/vann/example> "JohnSmith hasDegree PhD"@en ;
-           rdfs:comment "Describes what degree a person has"@en .
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:ObjectProperty ;
+                                   rdfs:subPropertyOf <http://purl.org/dc/terms/contributor> .
 
 
-###  https://w3id.org/enigma#hasPublication
-:hasPublication rdf:type owl:ObjectProperty ;
-                rdfs:domain :Person ;
-                rdfs:range :ENIGMAPublication ;
-                <http://purl.org/vocab/vann/example> "JohnSmith hasPublication ENIGMAPublication"@en ;
-                rdfs:comment "Describes the publications of a person"@en .
+###  http://vivoweb.org/ontology/core#orcidId
+<http://vivoweb.org/ontology/core#orcidId> rdf:type owl:ObjectProperty ;
+                                           rdfs:domain :Person ;
+                                           rdfs:comment "This is now an object property where the object value is a resource of the form <http://orcid.org/NNNN-NNNN-NNNN-NNNN>.  This is to support connecting VIVO and ORCID in the linked data web.   Note: a person can have multiple ORCID iDs."^^xsd:string ;
+                                           rdfs:isDefinedBy "http://vivoweb.org/ontology/core#"@en .
 
 
-###  https://w3id.org/enigma#isAffiliatedWith
-:isAffiliatedWith rdf:type owl:ObjectProperty ;
-                  rdfs:domain :Person ;
-                  rdfs:range :Organization ;
-                  <http://purl.org/vocab/vann/example> "JohnSmith isAffiliatedWith HarvardU"@en ;
-                  rdfs:comment "Describes what organization someone IS affiliated with"@en .
+###  http://www.w3.org/2006/vcard/ns#hasAddress
+<http://www.w3.org/2006/vcard/ns#hasAddress> rdf:type owl:ObjectProperty ;
+                                             rdfs:range <http://www.w3.org/2006/vcard/ns#Address> ;
+                                             rdfs:comment "To specify the components of the address for the object"@en ;
+                                             rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> .
 
 
-###  https://w3id.org/enigma#isDataAnalystOf
-:isDataAnalystOf rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf :contributesTo ;
-                 rdfs:domain :Person ;
-                 rdfs:range :Project ;
-                 <http://purl.org/vocab/vann/example> "JohnSmith isDataAnalystOf BipolarProject"@en ;
-                 rdfs:comment "Describes what project someone is a data analyst of"@en .
+###  http://xmlns.com/foaf/0.1/homepage
+<http://xmlns.com/foaf/0.1/homepage> rdf:type owl:ObjectProperty ;
+                                     rdfs:domain :Person ;
+                                     rdfs:comment "A homepage for some thing."^^xsd:string ;
+                                     rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
 
 
-###  https://w3id.org/enigma#isEnigmaContactOf
-:isEnigmaContactOf rdf:type owl:ObjectProperty ;
+###  http://xmlns.com/foaf/0.1/mbox
+<http://xmlns.com/foaf/0.1/mbox> rdf:type owl:ObjectProperty ;
+                                 rdfs:domain :Person ;
+                                 rdfs:range owl:Thing ;
+                                 rdfs:comment "A  personal mailbox, ie. an Internet mailbox associated with exactly one owner, the first owner of this mailbox. This is a 'static inverse functional property', in that  there is (across time and change) at most one individual that ever has any particular value for foaf:mbox."^^xsd:string ;
+                                 rdfs:isDefinedBy "http://xmlns.com/foaf/0.1/"@en .
+
+
+###  http://xmlns.com/foaf/0.1/member
+<http://xmlns.com/foaf/0.1/member> rdf:type owl:ObjectProperty ;
+                                   rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/member> .
+
+
+###  https://w3id.org/enigma#author
+:author rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf <http://purl.org/dc/terms/creator> ;
+        rdfs:domain :AcademicArticle ;
+        rdfs:range :Person ;
+        rdfs:comment "Property to describe the author of a publication in the context of an ENIGMA project"@en ;
+        rdfs:label "author"@en .
+
+
+###  https://w3id.org/enigma#forOrganization
+:forOrganization rdf:type owl:ObjectProperty ;
+                 rdfs:domain :QualifiedAffiliation ;
+                 rdfs:range <http://xmlns.com/foaf/0.1/Organization> ;
+                 <http://purl.org/vocab/vann/example> "JohnSmith hasQualifiedAffiliation \"QualifiedAffiliation\" forOrganization USC"@en ;
+                 rdfs:comment "Describes the organization associated with the qualified affiliation"@en ;
+                 rdfs:label "for organization"@en .
+
+
+###  https://w3id.org/enigma#hasAffiliate
+:hasAffiliate rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/member> ;
+              rdfs:domain <http://xmlns.com/foaf/0.1/Organization> ;
+              rdfs:range :Person ;
+              <http://purl.org/vocab/vann/example> "HarvardU hasAffiliate JohnSmith"@en ;
+              rdfs:comment "Describes the organization's affiliates"@en ;
+              rdfs:label "has affiliate"@en .
+
+
+###  https://w3id.org/enigma#hasContact
+:hasContact rdf:type owl:ObjectProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :Cohort
+                                        :Project
+                                      )
+                        ] ;
+            rdfs:range :Person ;
+            <http://purl.org/vocab/vann/example> "BipolarCohort hasContact JohnSmith"@en ;
+            rdfs:comment "Property that points to the person that is a contact for the project or cohort"@en ;
+            rdfs:label "has contact"@en .
+
+
+###  https://w3id.org/enigma#hasInvestigator
+:hasInvestigator rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Cohort ;
+                 rdfs:range :Person ;
+                 <http://purl.org/vocab/vann/example> "BipolarCohort hasInvestigator JohnSmith"@en ;
+                 rdfs:comment "Describes the cohort that someone is investigator of"@en ;
+                 rdfs:label "has investigator"@en .
+
+
+###  https://w3id.org/enigma#hasMainPrincipalInvestigator
+:hasMainPrincipalInvestigator rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf :hasPrincipalInvestigator ;
+                              rdfs:domain :Cohort ;
+                              rdfs:range :Person ;
+                              <http://purl.org/vocab/vann/example> "Cohort1 hasMainPrincipalInvestigatorof JohnSmith"@en ;
+                              rdfs:comment "Describes which cohorts somone is a main PI of"@en ;
+                              rdfs:label "has main principal investigator"@en .
+
+
+###  https://w3id.org/enigma#hasPrimaryAddress
+:hasPrimaryAddress rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf <http://www.w3.org/2006/vcard/ns#hasAddress> ;
                    rdfs:domain :Person ;
-                   rdfs:range :Cohort ;
-                   <http://purl.org/vocab/vann/example> "JohnSmith isEnigmaContactOf BipolarCohort"@en ;
-                   rdfs:comment "Describes the cohort that a person is the contact of"@en .
+                   rdfs:range <http://www.w3.org/2006/vcard/ns#Address> ;
+                   <http://purl.org/vocab/vann/example> "JohnSmith hasPrimaryAddress \"Address\""@en ;
+                   rdfs:comment "Describes the primary address of a person"@en ;
+                   rdfs:label "has primary address"@en .
 
 
-###  https://w3id.org/enigma#isGeneticDataAnalystOf
-:isGeneticDataAnalystOf rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf :isDataAnalystOf ;
-                        rdfs:domain :Person ;
-                        rdfs:range :Project ;
-                        <http://purl.org/vocab/vann/example> "JohnSmith isGeneticDataAnalystOf BipolarProject"@en ;
-                        rdfs:comment "Describes what project someone is a genetic data analyst of"@en .
+###  https://w3id.org/enigma#hasPrincipalInvestigator
+:hasPrincipalInvestigator rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf :hasInvestigator ;
+                          rdfs:domain :Cohort ;
+                          rdfs:range :Person ;
+                          <http://purl.org/vocab/vann/example> "Cohort1 hasPrincipalInvestigator JohnSmith"@en ;
+                          rdfs:comment "Describes which cohorts somone is the principal investigator of"@en ;
+                          rdfs:label "has principal investigator"@en .
 
 
-###  https://w3id.org/enigma#isGeneticDataCollectorOf
-:isGeneticDataCollectorOf rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf :contributesTo ;
-                          rdfs:domain :Person ;
-                          rdfs:range :Project ;
-                          <http://purl.org/vocab/vann/example> "JohnSmith isGeneticDataCollectorOf BipolarProject"@en ;
-                          rdfs:comment "Describes what project someone collected genetic data for"@en .
+###  https://w3id.org/enigma#hasProjectLead
+:hasProjectLead rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf <http://purl.org/dc/terms/contributor> ;
+                rdfs:domain :Project ;
+                rdfs:range :Person ;
+                <http://purl.org/vocab/vann/example> "BipolarProject hasProjectLead JohnSmith"@en ;
+                rdfs:comment "Describes what project someone is a project lead of"@en ;
+                rdfs:label "has project lead"@en .
 
 
-###  https://w3id.org/enigma#isImagingDataAnalystOf
-:isImagingDataAnalystOf rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf :isDataAnalystOf ;
-                        rdfs:domain :Person ;
-                        rdfs:range :Project ;
-                        <http://purl.org/vocab/vann/example> "JohnSmith isImagingDataAnalystOf BipolarProject"@en ;
-                        rdfs:comment "Describes what project someone is an imaging data analyst of"@en .
-
-
-###  https://w3id.org/enigma#isImagingDataCollectorOf
-:isImagingDataCollectorOf rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf :contributesTo ;
-                          rdfs:domain :Person ;
-                          rdfs:range :Project ;
-                          <http://purl.org/vocab/vann/example> "JohnSmith isImagingDataCollectorOf BipolarProject"@en ;
-                          rdfs:comment "Describes what project someone collected imaging data for"@en .
-
-
-###  https://w3id.org/enigma#isInvestigatorOf
-:isInvestigatorOf rdf:type owl:ObjectProperty ;
-                  rdfs:domain :Person ;
-                  rdfs:range :Cohort ;
-                  <http://purl.org/vocab/vann/example> "JohnSmith isInvestigatorOf BipolarCohort"@en ;
-                  rdfs:comment "Describes the cohort that someone is investigator of"@en .
-
-
-###  https://w3id.org/enigma#isJuniorLeadOfP
-:isJuniorLeadOfP rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf :contributesTo ;
-                 rdfs:domain :Person ;
-                 rdfs:range :Project ;
-                 <http://purl.org/vocab/vann/example> "JohnSmith isJuniorLeadOfP BipolarProject"@en ;
-                 rdfs:comment "Describes what project someone is a junior lead of"@en .
-
-
-###  https://w3id.org/enigma#isJuniorLeadOfWG
-:isJuniorLeadOfWG rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf :isMemberOfWG ;
-                  rdfs:domain :Person ;
-                  rdfs:range :WorkingGroup ;
-                  <http://purl.org/vocab/vann/example> "JohnSmith isJuniorLeadOfWG BipolarWorkingGroup"@en ;
-                  rdfs:comment "Describes the working groups that someone is a junior lead of"@en .
-
-
-###  https://w3id.org/enigma#isLocated
-:isLocated rdf:type owl:ObjectProperty ;
-           rdfs:domain :Person ;
-           rdfs:range :Location ;
-           <http://purl.org/vocab/vann/example> "JohnSmith isLocated Boston"@en ;
-           rdfs:comment "Describes where the person is located"@en .
-
-
-###  https://w3id.org/enigma#isMainPIOf
-:isMainPIOf rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf :isPIOf ;
-            rdfs:domain :Person ;
-            rdfs:range :Cohort ;
-            <http://purl.org/vocab/vann/example> "JohnSmith isMainPIof Cohort1"@en ;
-            rdfs:comment "Describes which cohorts somone is a main PI of"@en .
-
-
-###  https://w3id.org/enigma#isMajorDataAnalystOf
-:isMajorDataAnalystOf rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf :isDataAnalystOf ;
-                      rdfs:domain :Person ;
-                      rdfs:range :Project ;
-                      <http://purl.org/vocab/vann/example> "JohnSmith isMajorDataAnalystOf BipolarProject"@en ;
-                      rdfs:comment "Describes what project someone is a major data analyst of"@en .
-
-
-###  https://w3id.org/enigma#isMemberOfWG
-:isMemberOfWG rdf:type owl:ObjectProperty ;
-              rdfs:domain :Person ;
-              rdfs:range :WorkingGroup ;
-              <http://purl.org/vocab/vann/example> "JohnSmith isMemberOfWorkingGroup BipolarWorkingGroup"@en ;
-              rdfs:comment "Describes what working group a person is a member of"@en .
-
-
-###  https://w3id.org/enigma#isMinorDataAnalystOf
-:isMinorDataAnalystOf rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf :isDataAnalystOf ;
-                      rdfs:domain :Person ;
-                      rdfs:range :Project ;
-                      <http://purl.org/vocab/vann/example> "JohnSmith isMinorDataAnalystOf BipolarProject"@en ;
-                      rdfs:comment "Describes what project someone is a minor data analyst of"@en .
-
-
-###  https://w3id.org/enigma#isMinorPIOf
-:isMinorPIOf rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf :isPIOf ;
-             rdfs:domain :Person ;
-             rdfs:range :Cohort ;
-             <http://purl.org/vocab/vann/example> "JohnSmith isMinorPIof Cohort1"@en ;
-             rdfs:comment "Describes which cohorts somone is a minor PI of"@en .
-
-
-###  https://w3id.org/enigma#isPIOf
-:isPIOf rdf:type owl:ObjectProperty ;
-        rdfs:domain :Person ;
-        rdfs:range :Cohort ;
-        <http://purl.org/vocab/vann/example> "JohnSmith isPIof Cohort1"@en ;
-        rdfs:comment "Describes which cohorts somone is the PI of"@en .
-
-
-###  https://w3id.org/enigma#isProjectDeveloperOf
-:isProjectDeveloperOf rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf :contributesTo ;
-                      rdfs:domain :Person ;
-                      rdfs:range :Project ;
-                      <http://purl.org/vocab/vann/example> "JohnSmith isProjectDeveloperOf BipolarProject"@en ;
-                      rdfs:comment "Describes what project someone is a project developer of"@en .
-
-
-###  https://w3id.org/enigma#isSeniorLeadOfP
-:isSeniorLeadOfP rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf :contributesTo ;
-                 rdfs:domain :Person ;
-                 rdfs:range :Project ;
-                 <http://purl.org/vocab/vann/example> "JohnSmith isSeniorLeadOfP BipolarProject"@en ;
-                 rdfs:comment "Describes what project someone is a senior lead of"@en .
-
-
-###  https://w3id.org/enigma#isSeniorLeadOfWG
-:isSeniorLeadOfWG rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf :isMemberOfWG ;
-                  rdfs:domain :Person ;
-                  rdfs:range :WorkingGroup ;
-                  <http://purl.org/vocab/vann/example> "JohnSmith isSeniorLeadOfWG BipolarWorkingGroup"@en ;
-                  rdfs:comment "Describes the working groups that someone is a senior lead of"@en .
-
-
-###  https://w3id.org/enigma#isSpecialContributorOfP
-:isSpecialContributorOfP rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf :contributesTo ;
+###  https://w3id.org/enigma#hasQualifiedAffiliation
+:hasQualifiedAffiliation rdf:type owl:ObjectProperty ;
                          rdfs:domain :Person ;
-                         rdfs:range :Project ;
-                         <http://purl.org/vocab/vann/example> "JohnSmith isSpecialContributorOfP BipolarProject"@en ;
-                         rdfs:comment "Describes what project someone is a special contributor of"@en .
+                         rdfs:range :QualifiedAffiliation ;
+                         <http://purl.org/vocab/vann/example> "JohnSmith hasQualifiedAffiliation \"QualifiedAffiliation\" forOrganization USC"@en ;
+                         rdfs:comment "Describes the qualified affiliation of a person. Used to specify additional detailes regarding an indvidual's affiliation with an organization (i.e. start and end dates)"@en ;
+                         rdfs:label "has qualified affiliation"@en .
 
 
-###  https://w3id.org/enigma#isSpecialContributorOfWG
-:isSpecialContributorOfWG rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf :isMemberOfWG ;
-                          rdfs:domain :Person ;
-                          rdfs:range :WorkingGroup ;
-                          <http://purl.org/vocab/vann/example> "JohnSmith isSpecialContributorOfWG BipolarWorkingGroup"@en ;
-                          rdfs:comment "Describes who the significant contributors of a working group are"@en .
+###  https://w3id.org/enigma#hasWorkingGroupChair
+:hasWorkingGroupChair rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :hasWorkingGroupMember ;
+                      rdfs:domain :WorkingGroup ;
+                      rdfs:range :Person ;
+                      <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasWorkingGroupChair JohnSmith"@en ;
+                      rdfs:comment "Describes the working groups that someone is a chair of"@en ;
+                      rdfs:label "has working group chair"@en .
 
 
-###  https://w3id.org/enigma#wasAffiliatedWith
-:wasAffiliatedWith rdf:type owl:ObjectProperty ;
-                   rdfs:domain :Person ;
-                   rdfs:range :Organization ;
-                   rdfs:comment "Describes what organization someone WAS affiliated with"^^xsd:string ;
-                   :example "JohnSmith wasAffiliatedWith ISI"^^xsd:string .
+###  https://w3id.org/enigma#hasWorkingGroupMember
+:hasWorkingGroupMember rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :hasAffiliate ;
+                       rdfs:domain :WorkingGroup ;
+                       rdfs:range :Person ;
+                       <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasWorkingGroupMember JohnSmith"@en ;
+                       rdfs:comment "Describes what working group a person is a member of"@en ;
+                       rdfs:label "has working group member"@en .
 
 
 #################################################################
 #    Data properties
 #################################################################
 
-###  https://w3id.org/enigma#hasEmail
-:hasEmail rdf:type owl:DatatypeProperty ;
+###  http://www.w3.org/2006/vcard/ns#country-name
+<http://www.w3.org/2006/vcard/ns#country-name> rdf:type owl:DatatypeProperty ;
+                                               rdfs:domain <http://www.w3.org/2006/vcard/ns#Address> ;
+                                               rdfs:range xsd:string ;
+                                               rdfs:comment "The country name associated with the address of the object"@en ;
+                                               rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> .
+
+
+###  http://www.w3.org/2006/vcard/ns#locality
+<http://www.w3.org/2006/vcard/ns#locality> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain <http://www.w3.org/2006/vcard/ns#Address> ;
+                                           rdfs:range xsd:string ;
+                                           rdfs:comment "The locality (e.g. city or town) associated with the address of the object"@en ;
+                                           rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> .
+
+
+###  http://www.w3.org/2006/vcard/ns#postal-code
+<http://www.w3.org/2006/vcard/ns#postal-code> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain <http://www.w3.org/2006/vcard/ns#Address> ;
+                                              rdfs:range xsd:string ;
+                                              rdfs:comment "The postal code associated with the address of the object"@en ;
+                                              rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> .
+
+
+###  http://www.w3.org/2006/vcard/ns#region
+<http://www.w3.org/2006/vcard/ns#region> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <http://www.w3.org/2006/vcard/ns#Address> ;
+                                         rdfs:range xsd:string ;
+                                         rdfs:comment "The region (e.g. state or province) associated with the address of the object"@en ;
+                                         rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> .
+
+
+###  http://www.w3.org/2006/vcard/ns#street-address
+<http://www.w3.org/2006/vcard/ns#street-address> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <http://www.w3.org/2006/vcard/ns#Address> ;
+                                                 rdfs:range xsd:string ;
+                                                 rdfs:comment "The street address associated with the address of the object"@en ;
+                                                 rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> .
+
+
+###  http://xmlns.com/foaf/0.1/familyName
+<http://xmlns.com/foaf/0.1/familyName> rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+                                       rdfs:range xsd:string ;
+                                       rdfs:comment "The family name of some person."^^xsd:string ;
+                                       rdfs:isDefinedBy "http://xmlns.com/foaf/0.1/"@en .
+
+
+###  http://xmlns.com/foaf/0.1/givenName
+<http://xmlns.com/foaf/0.1/givenName> rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+                                      rdfs:range xsd:string ;
+                                      rdfs:comment "The given name of some person."^^xsd:string ;
+                                      rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
+###  https://w3id.org/enigma#currentJobTitle
+:currentJobTitle rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Person ;
+                 rdfs:range xsd:string ;
+                 <http://purl.org/vocab/vann/example> "JohnSmith currentJobTitle \"Postdoc\""@en ;
+                 rdfs:comment "Data property that aims to capture the current job title of a person. Examples are student, faculty, staff, postdoc, etc."@en ;
+                 rdfs:label "current job title"@en .
+
+
+###  https://w3id.org/enigma#hasDegree
+:hasDegree rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Person ;
+           rdfs:range xsd:string ;
+           <http://purl.org/vocab/vann/example> "JohnSmith hasDegree PhD"@en ;
+           rdfs:comment "Describes what degree a person has (e.g., BsC, PhD, etc.)"@en ;
+           rdfs:label "has degree"@en .
+
+
+###  https://w3id.org/enigma#hasEndDate
+:hasEndDate rdf:type owl:DatatypeProperty ;
+            rdfs:domain owl:Thing ;
+            rdfs:range xsd:date ;
+            <http://purl.org/vocab/vann/example> "JohnSmith hasQualifiedAffiliationRelationship \"QualifiedAffiliation\" hasEndDate \"2018-07-13\""@en ;
+            rdfs:comment "Describes the end date of the described resource (a working group, a person in an organizaiton, etc.)"@en ;
+            rdfs:label "has end date"@en .
+
+
+###  https://w3id.org/enigma#hasGrant
+:hasGrant rdf:type owl:DatatypeProperty ;
           rdfs:domain :Person ;
           rdfs:range xsd:string ;
-          <http://purl.org/vocab/vann/example> "JohnSmith hasEmail \"johnsmith1234@gmail.com\""@en ;
-          rdfs:comment "Describes the email contact information of a person"@en .
-
-
-###  https://w3id.org/enigma#hasFirstName
-:hasFirstName rdf:type owl:DatatypeProperty ;
-              rdfs:domain :Person ;
-              rdfs:range xsd:string ;
-              <http://purl.org/vocab/vann/example> "JohnSmith hasFirstName \"John\""@en ;
-              rdfs:comment "Describes first name of a person"@en .
-
-
-###  https://w3id.org/enigma#hasFuturePublicationInstructions
-:hasFuturePublicationInstructions rdf:type owl:DatatypeProperty ;
-                                  rdfs:domain :Person ;
-                                  rdfs:range xsd:string ;
-                                  <http://purl.org/vocab/vann/example> "JohnSmith hasFuturePublicationInstructions \"grant Bob Johnson authorship\""@en ;
-                                  rdfs:comment "Describes what to do regarding future publication and authorship of someone"@en .
-
-
-###  https://w3id.org/enigma#hasLastName
-:hasLastName rdf:type owl:DatatypeProperty ;
-             rdfs:domain :Person ;
-             rdfs:range xsd:string ;
-             <http://purl.org/vocab/vann/example> "JohnSmith hasLastName \"John\""@en ;
-             rdfs:comment "Describes last name of a person"@en .
+          <http://purl.org/vocab/vann/example> "John Smith hasGrant \"U54EB020403 (NIH)\""@en ;
+          rdfs:comment "Data property that aims to capture the grants that have been obtained by a person, in order to properly list them in the acknowledgements of the corresponding publication"@en ;
+          rdfs:label "has grant"@en .
 
 
 ###  https://w3id.org/enigma#hasMiddleInitial
 :hasMiddleInitial rdf:type owl:DatatypeProperty ;
                   rdfs:domain :Person ;
                   rdfs:range xsd:string ;
-                  <http://purl.org/vocab/vann/example> "JohnASmith hasMiddleInitial \"A\""^^xsd:string ;
-                  rdfs:comment "Describes middle initial of a person"^^xsd:string .
+                  <http://purl.org/vocab/vann/example> "John A Smith hasMiddleInitial \"A\""^^xsd:string ;
+                  rdfs:comment "Describes middle initial of a person"^^xsd:string ;
+                  rdfs:label "has middle initial"@en .
 
 
-###  https://w3id.org/enigma#hasResearchInterests
-:hasResearchInterests rdf:type owl:DatatypeProperty ;
-                      rdfs:domain :Person ;
-                      rdfs:range xsd:string ;
-                      <http://purl.org/vocab/vann/example> "JohnSmith hasReasearchInterests \"bipolar disorder, schizophrenia\""@en ;
-                      rdfs:comment "Describes the research interests of a person"@en .
+###  https://w3id.org/enigma#hasResearchInterest
+:hasResearchInterest rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Person ;
+                     rdfs:range xsd:string ;
+                     <http://purl.org/vocab/vann/example> "JohnSmith hasReasearchInterest \"bipolar disorder\", \"schizophrenia\""@en ;
+                     rdfs:comment "Describes a research interest of a person"@en ;
+                     rdfs:label "has research interest"@en .
 
 
-###  https://w3id.org/enigma#hasTitle
-:hasTitle rdf:type owl:DatatypeProperty ;
-          rdfs:domain :Person ;
-          rdfs:range [ rdf:type rdfs:Datatype ;
-                       owl:oneOf [ rdf:type rdf:List ;
-                                   rdf:first "Assistant professor"^^xsd:string ;
-                                   rdf:rest [ rdf:type rdf:List ;
-                                              rdf:first "Associate professor"^^xsd:string ;
-                                              rdf:rest [ rdf:type rdf:List ;
-                                                         rdf:first "Graduate student"^^xsd:string ;
-                                                         rdf:rest [ rdf:type rdf:List ;
-                                                                    rdf:first "Other"^^xsd:string ;
-                                                                    rdf:rest [ rdf:type rdf:List ;
-                                                                               rdf:first "Postdoctoral researcher"^^xsd:string ;
-                                                                               rdf:rest [ rdf:type rdf:List ;
-                                                                                          rdf:first "Professor"^^xsd:string ;
-                                                                                          rdf:rest [ rdf:type rdf:List ;
-                                                                                                     rdf:first "Program director"^^xsd:string ;
-                                                                                                     rdf:rest [ rdf:type rdf:List ;
-                                                                                                                rdf:first "Program manager"^^xsd:string ;
-                                                                                                                rdf:rest [ rdf:type rdf:List ;
-                                                                                                                           rdf:first "Research assistant"^^xsd:string ;
-                                                                                                                           rdf:rest [ rdf:type rdf:List ;
-                                                                                                                                      rdf:first "Undergraduate"^^xsd:string ;
-                                                                                                                                      rdf:rest rdf:nil
-                                                                                                                                    ]
-                                                                                                                         ]
-                                                                                                              ]
-                                                                                                   ]
-                                                                                        ]
-                                                                             ]
-                                                                  ]
-                                                       ]
-                                            ]
-                                 ]
-                     ] ;
-          <http://purl.org/vocab/vann/example> "JohnSmith hasTitle \"Undergraduate\""@en ;
-          rdfs:comment "Describes the title of the person"@en .
+###  https://w3id.org/enigma#hasStartDate
+:hasStartDate rdf:type owl:DatatypeProperty ;
+              rdfs:domain owl:Thing ;
+              rdfs:range xsd:date ;
+              <http://purl.org/vocab/vann/example> "JohnSmith hasQualifiedAffiliation \"QualifiedAffiliation\" hasStartDate \"2008-07-13\""@en ;
+              rdfs:comment "Describes the start date of the described resource (a working group, a person in an organizaiton, etc.)"@en ;
+              rdfs:label "has start date"@en .
 
 
-###  https://w3id.org/enigma#hasWebsite
-:hasWebsite rdf:type owl:DatatypeProperty ;
-            rdfs:domain :Person ;
-            rdfs:range xsd:string ;
-            rdfs:comment "Describes the website of a person"@en ,
-                         "JohnSmith hasWebsite \"http://enigma.usc.edu\""@en .
-
-
-###  https://w3id.org/enigma#isNoLongerActive
-:isNoLongerActive rdf:type owl:DatatypeProperty ;
-                  rdfs:domain :Person ;
-                  rdfs:range xsd:boolean ;
-                  <http://purl.org/vocab/vann/example> "JohnSmith isNoLongerActive true"@en ;
-                  rdfs:comment "Describes whether or not a person is not longer active in ENIGMA"@en .
-
-
-###  https://w3id.org/enigma#joinedEnigmaInYear
-:joinedEnigmaInYear rdf:type owl:DatatypeProperty ;
-                    rdfs:domain :Person ;
-                    rdfs:range xsd:gYear ;
-                    <http://purl.org/vocab/vann/example> "JohnSmith joinedEnigmaInYear 2005"@en ;
-                    rdfs:comment "Describes the year that a person first joined ENIGMA"@en .
-
-
-###  https://w3id.org/enigma#leftOnDate
-:leftOnDate rdf:type owl:DatatypeProperty ;
-            rdfs:domain :Person ;
-            rdfs:range xsd:date ;
-            <http://purl.org/vocab/vann/example> "JohnSmith leftOnDate 2008-07-13"@en ;
-            rdfs:comment "Describes the date that a person, who is no longer active, left"@en .
+###  https://w3id.org/enigma#hasStatus
+:hasStatus rdf:type owl:DatatypeProperty ;
+           rdfs:domain :QualifiedAffiliation ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:oneOf [ rdf:type rdf:List ;
+                                    rdf:first "Active"^^xsd:string ;
+                                    rdf:rest [ rdf:type rdf:List ;
+                                               rdf:first "Inactive"^^xsd:string ;
+                                               rdf:rest [ rdf:type rdf:List ;
+                                                          rdf:first "Left Organization"^^xsd:string ;
+                                                          rdf:rest rdf:nil
+                                                        ]
+                                             ]
+                                  ]
+                      ] ;
+           <http://purl.org/vocab/vann/example> "JohnSmith hasQualifiedAffiliationRelationship \"QualifiedAffiliation\" hasStatus \"Inactive\""@en ;
+           rdfs:comment "Describes the current activity status of a person at a given organization. \"Active\" specifies that one is currently active within an organization. \"Inactive\" specifies that one is currently still part of an organization but not currently active. \"Left Organization\" specifies that one is no longer a part of an organization."@en ;
+           rdfs:label "has status"@en .
 
 
 #################################################################
 #    Classes
 #################################################################
 
+###  http://www.w3.org/2006/vcard/ns#Address
+<http://www.w3.org/2006/vcard/ns#Address> rdf:type owl:Class ;
+                                          rdfs:comment "To specify the components of the delivery address for the object"@en ;
+                                          rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
+                                          rdfs:label "Address"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+<http://xmlns.com/foaf/0.1/Organization> rdf:type owl:Class ;
+                                         <http://purl.org/vocab/vann/example> "Information Sciences Institute"@en ;
+                                         rdfs:comment "An organization contributing to a given ENIGMA project"@en ;
+                                         rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> ;
+                                         rdfs:label "Organization"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
+                                   owl:equivalentClass :Person ;
+                                   rdfs:isDefinedBy "http://xmlns.com/foaf/0.1/"@en .
+
+
+###  https://w3id.org/enigma#AcademicArticle
+:AcademicArticle rdf:type owl:Class ;
+                 rdfs:comment "An academic article, submitted as a result of the work in an ENIGMA project"@en ;
+                 rdfs:label "Academic article"@en .
+
+
 ###  https://w3id.org/enigma#Cohort
 :Cohort rdf:type owl:Class ;
         <http://purl.org/vocab/vann/example> "ADNI: Alzheimer’s Disease Neuroimaging Initiative"@en ;
         rdfs:comment "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria"@en ;
         rdfs:label "Cohort"@en .
-
-
-###  https://w3id.org/enigma#Degree
-:Degree rdf:type owl:Class ;
-        <http://purl.org/vocab/vann/example> "PhD"@en ;
-        rdfs:comment "An individual's highest academic degree"@en ;
-        rdfs:label "Degree"@en .
-
-
-###  https://w3id.org/enigma#ENIGMAPublication
-:ENIGMAPublication rdf:type owl:Class ;
-                   <http://purl.org/vocab/vann/example> "Do Candidate Genes Affect the Brain's White Matter Microstructure? Large-Scale Evaluation of 6,165 Diffusion MRI Scans"@en ;
-                   rdfs:comment "A publication associated with a given ENGIMA project"@en ;
-                   rdfs:label "ENIGMAPublication"@en .
-
-
-###  https://w3id.org/enigma#Location
-:Location rdf:type owl:Class ;
-          <http://purl.org/vocab/vann/example> "Los Angeles, California"@en ;
-          rdfs:comment "Geographic location of the cohort"@en ;
-          rdfs:label "Location"@en .
-
-
-###  https://w3id.org/enigma#Organization
-:Organization rdf:type owl:Class ;
-              rdfs:comment "An organization contributing to a given ENIGMA project"@en ;
-              rdfs:label "Organization"@en ;
-              :example "Information Science Institute"@en .
 
 
 ###  https://w3id.org/enigma#Person
@@ -450,11 +407,27 @@ xsd:gYear rdf:type rdfs:Datatype .
          rdfs:label "Project"@en .
 
 
+###  https://w3id.org/enigma#QualifiedAffiliation
+:QualifiedAffiliation rdf:type owl:Class ;
+                      rdfs:comment "Used to specify additional details regarding an indvidual's affiliation with an organization (i.e. start and end dates, roles, etc.)"@en ;
+                      rdfs:label "Qualified Affiliation"@en .
+
+
 ###  https://w3id.org/enigma#WorkingGroup
 :WorkingGroup rdf:type owl:Class ;
               <http://purl.org/vocab/vann/example> "BipolarWG"@en ;
               rdfs:comment "Group of researchers studying a certain topic/disease"@en ;
-              rdfs:label "WorkingGroup"@en .
+              rdfs:label "Working Group"@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://purl.org/dc/terms/contributor> rdfs:isDefinedBy <http://purl.org/dc/terms/contributor> .
+
+
+<http://purl.org/dc/terms/creator> rdfs:isDefinedBy <http://purl.org/dc/terms/creator> .
 
 
 ###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

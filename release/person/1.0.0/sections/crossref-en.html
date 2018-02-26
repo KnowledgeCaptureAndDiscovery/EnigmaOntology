@@ -4,19 +4,21 @@ This section provides details for each class and property defined by The Person 
    <h3 id="classes" class="list">Classes</h3>
    <ul class="hlist">
       <li>
+         <a href="#AcademicArticle" title="https://w3id.org/enigma#AcademicArticle">Academic article</a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/2006/vcard/ns#Address" title="http://www.w3.org/2006/vcard/ns#Address">Address</a>
+      </li>
+      <li>
          <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
       </li>
       <li>
-         <a href="#Degree" title="https://w3id.org/enigma#Degree">Degree</a>
+         <a href="#http://xmlns.com/foaf/0.1/Organization" title="http://xmlns.com/foaf/0.1/Organization">Organization</a>
       </li>
       <li>
-         <a href="#ENIGMAPublication" title="https://w3id.org/enigma#ENIGMAPublication">ENIGMAPublication</a>
-      </li>
-      <li>
-         <a href="#Location" title="https://w3id.org/enigma#Location">Location</a>
-      </li>
-      <li>
-         <a href="#Organization" title="https://w3id.org/enigma#Organization">Organization</a>
+         <a href="#http://xmlns.com/foaf/0.1/Person" title="http://xmlns.com/foaf/0.1/Person">
+            <span>person</span>
+         </a>
       </li>
       <li>
          <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
@@ -25,9 +27,64 @@ This section provides details for each class and property defined by The Person 
          <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
       </li>
       <li>
-         <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">WorkingGroup</a>
+         <a href="#QualifiedAffiliation" title="https://w3id.org/enigma#QualifiedAffiliation">Qualified Affiliation</a>
+      </li>
+      <li>
+         <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">Working Group</a>
       </li>
    </ul>
+   <div class="entity" id="AcademicArticle">
+      <h3>Academic article<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#AcademicArticle</p>
+      <div class="comment">
+         <span class="markdown">An academic article, submitted as a result of the work in an ENIGMA project</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#author" title="https://w3id.org/enigma#author">author</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.w3.org/2006/vcard/ns#Address">
+      <h3>Address<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2006/vcard/ns#Address</p>
+      <div class="comment">
+         <span class="markdown">To specify the components of the delivery address for the object</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://www.w3.org/2006/vcard/ns">http://www.w3.org/2006/vcard/ns</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#http://www.w3.org/2006/vcard/ns#country-name" title="http://www.w3.org/2006/vcard/ns#country-name">country name</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#http://www.w3.org/2006/vcard/ns#locality" title="http://www.w3.org/2006/vcard/ns#locality">locality</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#http://www.w3.org/2006/vcard/ns#postal-code" title="http://www.w3.org/2006/vcard/ns#postal-code">postal code</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#http://www.w3.org/2006/vcard/ns#region" title="http://www.w3.org/2006/vcard/ns#region">region</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#http://www.w3.org/2006/vcard/ns#street-address" title="http://www.w3.org/2006/vcard/ns#street-address">street address</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://www.w3.org/2006/vcard/ns#hasAddress" title="http://www.w3.org/2006/vcard/ns#hasAddress">has address</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasPrimaryAddress" title="https://w3id.org/enigma#hasPrimaryAddress">has primary address</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="Cohort">
       <h3>Cohort<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -45,105 +102,73 @@ This section provides details for each class and property defined by The Person 
          </dd>
       </dl>
       <dl class="description">
-         <dt>is in range of</dt>
+         <dt>is in domain of</dt>
          <dd>
-            <a href="#isEnigmaContactOf" title="https://w3id.org/enigma#isEnigmaContactOf">is enigma contact of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isInvestigatorOf" title="https://w3id.org/enigma#isInvestigatorOf">is investigator of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isMainPIOf" title="https://w3id.org/enigma#isMainPIOf">is main p i of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isMinorPIOf" title="https://w3id.org/enigma#isMinorPIOf">is minor p i of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isPIOf" title="https://w3id.org/enigma#isPIOf">is p i of</a>
+            <a href="#hasInvestigator" title="https://w3id.org/enigma#hasInvestigator">has investigator</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasMainPrincipalInvestigator"
+               title="https://w3id.org/enigma#hasMainPrincipalInvestigator">has main principal investigator</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasPrincipalInvestigator" title="https://w3id.org/enigma#hasPrincipalInvestigator">has principal investigator</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
-   <div class="entity" id="Degree">
-      <h3>Degree<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#Degree</p>
-      <div class="comment">
-         <span class="markdown">An individual's highest academic degree</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>PhD</pre>
-         </dd>
-      </dl>
-      <dl class="description">
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#hasDegree" title="https://w3id.org/enigma#hasDegree">has degree</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="ENIGMAPublication">
-      <h3>ENIGMAPublication<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#ENIGMAPublication</p>
-      <div class="comment">
-         <span class="markdown">A publication associated with a given ENGIMA project</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>Do Candidate Genes Affect the Brain's White Matter Microstructure? Large-Scale Evaluation of 6,165 Diffusion MRI Scans</pre>
-         </dd>
-      </dl>
-      <dl class="description">
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#hasPublication" title="https://w3id.org/enigma#hasPublication">has publication</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Location">
-      <h3>Location<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#Location</p>
-      <div class="comment">
-         <span class="markdown">Geographic location of the cohort</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>Los Angeles, California</pre>
-         </dd>
-      </dl>
-      <dl class="description">
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#isLocated" title="https://w3id.org/enigma#isLocated">is located</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Organization">
+   <div class="entity" id="http://xmlns.com/foaf/0.1/Organization">
       <h3>Organization<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#Organization</p>
+         <strong>IRI:</strong> http://xmlns.com/foaf/0.1/Organization</p>
       <div class="comment">
          <span class="markdown">An organization contributing to a given ENIGMA project</span>
       </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://xmlns.com/foaf/0.1">http://xmlns.com/foaf/0.1</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>Information Sciences Institute</pre>
+         </dd>
+      </dl>
       <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasAffiliate" title="https://w3id.org/enigma#hasAffiliate">has affiliate</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#isAffiliatedWith" title="https://w3id.org/enigma#isAffiliatedWith">is affiliated with</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#wasAffiliatedWith" title="https://w3id.org/enigma#wasAffiliatedWith">was affiliated with</a>
+            <a href="#forOrganization" title="https://w3id.org/enigma#forOrganization">for organization</a>
             <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://xmlns.com/foaf/0.1/Person">
+      <h3>person<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://xmlns.com/foaf/0.1/Person</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/enigma</dd>
+      </dl>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#http://xmlns.com/foaf/0.1/familyName" title="http://xmlns.com/foaf/0.1/familyName">family name</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#http://xmlns.com/foaf/0.1/givenName" title="http://xmlns.com/foaf/0.1/givenName">given name</a>
+            <sup class="type-dp" title="data property">dp</sup>
          </dd>
       </dl>
    </div>
@@ -166,44 +191,30 @@ This section provides details for each class and property defined by The Person 
       <dl class="description">
          <dt>is in domain of</dt>
          <dd>
-            <a href="#contributesTo" title="https://w3id.org/enigma#contributesTo">contributes to</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasDegree" title="https://w3id.org/enigma#hasDegree">has degree</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasEmail" title="https://w3id.org/enigma#hasEmail">has email</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasFirstName" title="https://w3id.org/enigma#hasFirstName">has first name</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasFuturePublicationInstructions"
-               title="https://w3id.org/enigma#hasFuturePublicationInstructions">has future publication instructions</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasLastName" title="https://w3id.org/enigma#hasLastName">has last name</a>
+            <a href="#currentJobTitle" title="https://w3id.org/enigma#currentJobTitle">current job title</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasDegree" title="https://w3id.org/enigma#hasDegree">has degree</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasGrant" title="https://w3id.org/enigma#hasGrant">has grant</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#hasMiddleInitial" title="https://w3id.org/enigma#hasMiddleInitial">has middle initial</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasPublication" title="https://w3id.org/enigma#hasPublication">has publication</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasResearchInterests" title="https://w3id.org/enigma#hasResearchInterests">has research interests</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasTitle" title="https://w3id.org/enigma#hasTitle">has title</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasWebsite" title="https://w3id.org/enigma#hasWebsite">has website</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#isAffiliatedWith" title="https://w3id.org/enigma#isAffiliatedWith">is affiliated with</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isDataAnalystOf" title="https://w3id.org/enigma#isDataAnalystOf">is data analyst of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isEnigmaContactOf" title="https://w3id.org/enigma#isEnigmaContactOf">is enigma contact of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isGeneticDataAnalystOf" title="https://w3id.org/enigma#isGeneticDataAnalystOf">is genetic data analyst of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isGeneticDataCollectorOf" title="https://w3id.org/enigma#isGeneticDataCollectorOf">is genetic data collector of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isImagingDataAnalystOf" title="https://w3id.org/enigma#isImagingDataAnalystOf">is imaging data analyst of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isImagingDataCollectorOf" title="https://w3id.org/enigma#isImagingDataCollectorOf">is imaging data collector of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isInvestigatorOf" title="https://w3id.org/enigma#isInvestigatorOf">is investigator of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isJuniorLeadOfP" title="https://w3id.org/enigma#isJuniorLeadOfP">is junior lead of p</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isJuniorLeadOfWG" title="https://w3id.org/enigma#isJuniorLeadOfWG">is junior lead of w g</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isLocated" title="https://w3id.org/enigma#isLocated">is located</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isMainPIOf" title="https://w3id.org/enigma#isMainPIOf">is main p i of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isMajorDataAnalystOf" title="https://w3id.org/enigma#isMajorDataAnalystOf">is major data analyst of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isMemberOfWG" title="https://w3id.org/enigma#isMemberOfWG">is member of w g</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isMinorDataAnalystOf" title="https://w3id.org/enigma#isMinorDataAnalystOf">is minor data analyst of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isMinorPIOf" title="https://w3id.org/enigma#isMinorPIOf">is minor p i of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isNoLongerActive" title="https://w3id.org/enigma#isNoLongerActive">is no longer active</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#isPIOf" title="https://w3id.org/enigma#isPIOf">is p i of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isProjectDeveloperOf" title="https://w3id.org/enigma#isProjectDeveloperOf">is project developer of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isSeniorLeadOfP" title="https://w3id.org/enigma#isSeniorLeadOfP">is senior lead of p</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isSeniorLeadOfWG" title="https://w3id.org/enigma#isSeniorLeadOfWG">is senior lead of w g</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isSpecialContributorOfP" title="https://w3id.org/enigma#isSpecialContributorOfP">is special contributor of p</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isSpecialContributorOfWG" title="https://w3id.org/enigma#isSpecialContributorOfWG">is special contributor of w g</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#joinedEnigmaInYear" title="https://w3id.org/enigma#joinedEnigmaInYear">joined enigma in year</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#leftOnDate" title="https://w3id.org/enigma#leftOnDate">left on date</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#wasAffiliatedWith" title="https://w3id.org/enigma#wasAffiliatedWith">was affiliated with</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasPrimaryAddress" title="https://w3id.org/enigma#hasPrimaryAddress">has primary address</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasQualifiedAffiliation" title="https://w3id.org/enigma#hasQualifiedAffiliation">has qualified affiliation</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasResearchInterest" title="https://w3id.org/enigma#hasResearchInterest">has research interest</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#http://xmlns.com/foaf/0.1/homepage" title="http://xmlns.com/foaf/0.1/homepage">homepage</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://xmlns.com/foaf/0.1/mbox" title="http://xmlns.com/foaf/0.1/mbox">mbox</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://vivoweb.org/ontology/core#orcidId" title="http://vivoweb.org/ontology/core#orcidId">orcid id</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#author" title="https://w3id.org/enigma#author">author</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasAffiliate" title="https://w3id.org/enigma#hasAffiliate">has affiliate</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasContact" title="https://w3id.org/enigma#hasContact">has contact</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasInvestigator" title="https://w3id.org/enigma#hasInvestigator">has investigator</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasMainPrincipalInvestigator"
+               title="https://w3id.org/enigma#hasMainPrincipalInvestigator">has main principal investigator</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasPrincipalInvestigator" title="https://w3id.org/enigma#hasPrincipalInvestigator">has principal investigator</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasProjectLead" title="https://w3id.org/enigma#hasProjectLead">has project lead</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasWorkingGroupChair" title="https://w3id.org/enigma#hasWorkingGroupChair">has working group chair</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasWorkingGroupMember" title="https://w3id.org/enigma#hasWorkingGroupMember">has working group member</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -225,26 +236,44 @@ This section provides details for each class and property defined by The Person 
          </dd>
       </dl>
       <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasProjectLead" title="https://w3id.org/enigma#hasProjectLead">has project lead</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#contributesTo" title="https://w3id.org/enigma#contributesTo">contributes to</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isDataAnalystOf" title="https://w3id.org/enigma#isDataAnalystOf">is data analyst of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isGeneticDataAnalystOf" title="https://w3id.org/enigma#isGeneticDataAnalystOf">is genetic data analyst of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isGeneticDataCollectorOf" title="https://w3id.org/enigma#isGeneticDataCollectorOf">is genetic data collector of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isImagingDataAnalystOf" title="https://w3id.org/enigma#isImagingDataAnalystOf">is imaging data analyst of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isImagingDataCollectorOf" title="https://w3id.org/enigma#isImagingDataCollectorOf">is imaging data collector of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isJuniorLeadOfP" title="https://w3id.org/enigma#isJuniorLeadOfP">is junior lead of p</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isMajorDataAnalystOf" title="https://w3id.org/enigma#isMajorDataAnalystOf">is major data analyst of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isMinorDataAnalystOf" title="https://w3id.org/enigma#isMinorDataAnalystOf">is minor data analyst of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isProjectDeveloperOf" title="https://w3id.org/enigma#isProjectDeveloperOf">is project developer of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isSeniorLeadOfP" title="https://w3id.org/enigma#isSeniorLeadOfP">is senior lead of p</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isSpecialContributorOfP" title="https://w3id.org/enigma#isSpecialContributorOfP">is special contributor of p</a>
+            <a href="#http://purl.org/dc/terms/contributor" title="http://purl.org/dc/terms/contributor">contributor</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="QualifiedAffiliation">
+      <h3>Qualified Affiliation<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#QualifiedAffiliation</p>
+      <div class="comment">
+         <span class="markdown">Used to specify additional details regarding an indvidual's affiliation with an organization (i.e. start and end dates, roles, etc.)</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#forOrganization" title="https://w3id.org/enigma#forOrganization">for organization</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasStatus" title="https://w3id.org/enigma#hasStatus">has status</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasQualifiedAffiliation" title="https://w3id.org/enigma#hasQualifiedAffiliation">has qualified affiliation</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
    <div class="entity" id="WorkingGroup">
-      <h3>WorkingGroup<sup class="type-c" title="class">c</sup>
+      <h3>Working Group<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
@@ -260,12 +289,10 @@ This section provides details for each class and property defined by The Person 
          </dd>
       </dl>
       <dl class="description">
-         <dt>is in range of</dt>
+         <dt>is in domain of</dt>
          <dd>
-            <a href="#isJuniorLeadOfWG" title="https://w3id.org/enigma#isJuniorLeadOfWG">is junior lead of w g</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isMemberOfWG" title="https://w3id.org/enigma#isMemberOfWG">is member of w g</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isSeniorLeadOfWG" title="https://w3id.org/enigma#isSeniorLeadOfWG">is senior lead of w g</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isSpecialContributorOfWG" title="https://w3id.org/enigma#isSpecialContributorOfWG">is special contributor of w g</a>
+            <a href="#hasWorkingGroupChair" title="https://w3id.org/enigma#hasWorkingGroupChair">has working group chair</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasWorkingGroupMember" title="https://w3id.org/enigma#hasWorkingGroupMember">has working group member</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -274,169 +301,122 @@ This section provides details for each class and property defined by The Person 
    <h3 id="properties" class="list">Object Properties</h3>
    <ul class="hlist">
       <li>
-         <a href="#contributesTo" title="https://w3id.org/enigma#contributesTo">
-            <span>contributes to</span>
+         <a href="#author" title="https://w3id.org/enigma#author">author</a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/terms/contributor" title="http://purl.org/dc/terms/contributor">
+            <span>contributor</span>
          </a>
       </li>
       <li>
-         <a href="#hasDegree" title="https://w3id.org/enigma#hasDegree">
-            <span>has degree</span>
+         <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">
+            <span>creator</span>
          </a>
       </li>
       <li>
-         <a href="#hasPublication" title="https://w3id.org/enigma#hasPublication">
-            <span>has publication</span>
+         <a href="#forOrganization" title="https://w3id.org/enigma#forOrganization">for organization</a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/2006/vcard/ns#hasAddress" title="http://www.w3.org/2006/vcard/ns#hasAddress">
+            <span>has address</span>
          </a>
       </li>
       <li>
-         <a href="#isAffiliatedWith" title="https://w3id.org/enigma#isAffiliatedWith">
-            <span>is affiliated with</span>
+         <a href="#hasAffiliate" title="https://w3id.org/enigma#hasAffiliate">has affiliate</a>
+      </li>
+      <li>
+         <a href="#hasContact" title="https://w3id.org/enigma#hasContact">has contact</a>
+      </li>
+      <li>
+         <a href="#hasInvestigator" title="https://w3id.org/enigma#hasInvestigator">has investigator</a>
+      </li>
+      <li>
+         <a href="#hasMainPrincipalInvestigator"
+            title="https://w3id.org/enigma#hasMainPrincipalInvestigator">has main principal investigator</a>
+      </li>
+      <li>
+         <a href="#hasPrimaryAddress" title="https://w3id.org/enigma#hasPrimaryAddress">has primary address</a>
+      </li>
+      <li>
+         <a href="#hasPrincipalInvestigator" title="https://w3id.org/enigma#hasPrincipalInvestigator">has principal investigator</a>
+      </li>
+      <li>
+         <a href="#hasProjectLead" title="https://w3id.org/enigma#hasProjectLead">has project lead</a>
+      </li>
+      <li>
+         <a href="#hasQualifiedAffiliation" title="https://w3id.org/enigma#hasQualifiedAffiliation">has qualified affiliation</a>
+      </li>
+      <li>
+         <a href="#hasWorkingGroupChair" title="https://w3id.org/enigma#hasWorkingGroupChair">has working group chair</a>
+      </li>
+      <li>
+         <a href="#hasWorkingGroupMember" title="https://w3id.org/enigma#hasWorkingGroupMember">has working group member</a>
+      </li>
+      <li>
+         <a href="#http://xmlns.com/foaf/0.1/homepage" title="http://xmlns.com/foaf/0.1/homepage">
+            <span>homepage</span>
          </a>
       </li>
       <li>
-         <a href="#isDataAnalystOf" title="https://w3id.org/enigma#isDataAnalystOf">
-            <span>is data analyst of</span>
+         <a href="#http://xmlns.com/foaf/0.1/mbox" title="http://xmlns.com/foaf/0.1/mbox">
+            <span>mbox</span>
          </a>
       </li>
       <li>
-         <a href="#isEnigmaContactOf" title="https://w3id.org/enigma#isEnigmaContactOf">
-            <span>is enigma contact of</span>
+         <a href="#http://xmlns.com/foaf/0.1/member" title="http://xmlns.com/foaf/0.1/member">
+            <span>member</span>
          </a>
       </li>
       <li>
-         <a href="#isGeneticDataAnalystOf" title="https://w3id.org/enigma#isGeneticDataAnalystOf">
-            <span>is genetic data analyst of</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isGeneticDataCollectorOf" title="https://w3id.org/enigma#isGeneticDataCollectorOf">
-            <span>is genetic data collector of</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isImagingDataAnalystOf" title="https://w3id.org/enigma#isImagingDataAnalystOf">
-            <span>is imaging data analyst of</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isImagingDataCollectorOf" title="https://w3id.org/enigma#isImagingDataCollectorOf">
-            <span>is imaging data collector of</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isInvestigatorOf" title="https://w3id.org/enigma#isInvestigatorOf">
-            <span>is investigator of</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isJuniorLeadOfP" title="https://w3id.org/enigma#isJuniorLeadOfP">
-            <span>is junior lead of p</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isJuniorLeadOfWG" title="https://w3id.org/enigma#isJuniorLeadOfWG">
-            <span>is junior lead of w g</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isLocated" title="https://w3id.org/enigma#isLocated">
-            <span>is located</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isMainPIOf" title="https://w3id.org/enigma#isMainPIOf">
-            <span>is main p i of</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isMajorDataAnalystOf" title="https://w3id.org/enigma#isMajorDataAnalystOf">
-            <span>is major data analyst of</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isMemberOfWG" title="https://w3id.org/enigma#isMemberOfWG">
-            <span>is member of w g</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isMinorDataAnalystOf" title="https://w3id.org/enigma#isMinorDataAnalystOf">
-            <span>is minor data analyst of</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isMinorPIOf" title="https://w3id.org/enigma#isMinorPIOf">
-            <span>is minor p i of</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isPIOf" title="https://w3id.org/enigma#isPIOf">
-            <span>is p i of</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isProjectDeveloperOf" title="https://w3id.org/enigma#isProjectDeveloperOf">
-            <span>is project developer of</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isSeniorLeadOfP" title="https://w3id.org/enigma#isSeniorLeadOfP">
-            <span>is senior lead of p</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isSeniorLeadOfWG" title="https://w3id.org/enigma#isSeniorLeadOfWG">
-            <span>is senior lead of w g</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isSpecialContributorOfP" title="https://w3id.org/enigma#isSpecialContributorOfP">
-            <span>is special contributor of p</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isSpecialContributorOfWG" title="https://w3id.org/enigma#isSpecialContributorOfWG">
-            <span>is special contributor of w g</span>
-         </a>
-      </li>
-      <li>
-         <a href="#wasAffiliatedWith" title="https://w3id.org/enigma#wasAffiliatedWith">
-            <span>was affiliated with</span>
+         <a href="#http://vivoweb.org/ontology/core#orcidId" title="http://vivoweb.org/ontology/core#orcidId">
+            <span>orcid id</span>
          </a>
       </li>
    </ul>
-   <div class="entity" id="contributesTo">
-      <h3>contributes to<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="author">
+      <h3>author<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#contributesTo</p>
+         <strong>IRI:</strong> https://w3id.org/enigma#author</p>
       <div class="comment">
-         <span class="markdown">Describes the projects that a person contributed to</span>
+         <span class="markdown">Property to describe the author of a publication in the context of an ENIGMA project</span>
       </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith contributedTo BipolarProject</pre>
-         </dd>
-      </dl>
       <div class="description">
          <dl>
-            <dt>has sub-properties</dt>
+            <dt>has super-properties</dt>
             <dd>
-               <a href="#isDataAnalystOf" title="https://w3id.org/enigma#isDataAnalystOf">is data analyst of</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#isGeneticDataCollectorOf" title="https://w3id.org/enigma#isGeneticDataCollectorOf">is genetic data collector of</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#isImagingDataCollectorOf" title="https://w3id.org/enigma#isImagingDataCollectorOf">is imaging data collector of</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#isJuniorLeadOfP" title="https://w3id.org/enigma#isJuniorLeadOfP">is junior lead of p</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#isProjectDeveloperOf" title="https://w3id.org/enigma#isProjectDeveloperOf">is project developer of</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#isSeniorLeadOfP" title="https://w3id.org/enigma#isSeniorLeadOfP">is senior lead of p</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#isSpecialContributorOfP" title="https://w3id.org/enigma#isSpecialContributorOfP">is special contributor of p</a>
+               <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">creator</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
             <dd>
+               <a href="#AcademicArticle" title="https://w3id.org/enigma#AcademicArticle">Academic article</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
                <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
                <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://purl.org/dc/terms/contributor">
+      <h3>contributor<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/contributor</p>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">creator</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#hasProjectLead" title="https://w3id.org/enigma#hasProjectLead">has project lead</a>
+               <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has range</dt>
             <dd>
@@ -446,15 +426,751 @@ This section provides details for each class and property defined by The Person 
          </dl>
       </div>
    </div>
-   <div class="entity" id="hasDegree">
-      <h3>has degree<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="http://purl.org/dc/terms/creator">
+      <h3>creator<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/creator</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#http://purl.org/dc/terms/contributor" title="http://purl.org/dc/terms/contributor">contributor</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#author" title="https://w3id.org/enigma#author">author</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="forOrganization">
+      <h3>for organization<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#forOrganization</p>
+      <div class="comment">
+         <span class="markdown">Describes the organization associated with the qualified affiliation</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>JohnSmith hasQualifiedAffiliation "QualifiedAffiliation" forOrganization USC</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#QualifiedAffiliation" title="https://w3id.org/enigma#QualifiedAffiliation">Qualified Affiliation</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://xmlns.com/foaf/0.1/Organization" title="http://xmlns.com/foaf/0.1/Organization">Organization</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.w3.org/2006/vcard/ns#hasAddress">
+      <h3>has address<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2006/vcard/ns#hasAddress</p>
+      <div class="comment">
+         <span class="markdown">To specify the components of the address for the object</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://www.w3.org/2006/vcard/ns">http://www.w3.org/2006/vcard/ns</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#hasPrimaryAddress" title="https://w3id.org/enigma#hasPrimaryAddress">has primary address</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.w3.org/2006/vcard/ns#Address" title="http://www.w3.org/2006/vcard/ns#Address">Address</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasAffiliate">
+      <h3>has affiliate<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasAffiliate</p>
+      <div class="comment">
+         <span class="markdown">Describes the organization's affiliates</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>HarvardU hasAffiliate JohnSmith</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#http://xmlns.com/foaf/0.1/member" title="http://xmlns.com/foaf/0.1/member">member</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#hasWorkingGroupMember" title="https://w3id.org/enigma#hasWorkingGroupMember">has working group member</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://xmlns.com/foaf/0.1/Organization" title="http://xmlns.com/foaf/0.1/Organization">Organization</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasContact">
+      <h3>has contact<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasContact</p>
+      <div class="comment">
+         <span class="markdown">Property that points to the person that is a contact for the project or cohort</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>BipolarCohort hasContact JohnSmith</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasInvestigator">
+      <h3>has investigator<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasInvestigator</p>
+      <div class="comment">
+         <span class="markdown">Describes the cohort that someone is investigator of</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>BipolarCohort hasInvestigator JohnSmith</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#hasPrincipalInvestigator" title="https://w3id.org/enigma#hasPrincipalInvestigator">has principal investigator</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasMainPrincipalInvestigator">
+      <h3>has main principal investigator<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasMainPrincipalInvestigator</p>
+      <div class="comment">
+         <span class="markdown">Describes which cohorts somone is a main PI of</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>Cohort1 hasMainPrincipalInvestigatorof JohnSmith</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#hasPrincipalInvestigator" title="https://w3id.org/enigma#hasPrincipalInvestigator">has principal investigator</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasPrimaryAddress">
+      <h3>has primary address<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasPrimaryAddress</p>
+      <div class="comment">
+         <span class="markdown">Describes the primary address of a person</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>JohnSmith hasPrimaryAddress "Address"</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#http://www.w3.org/2006/vcard/ns#hasAddress" title="http://www.w3.org/2006/vcard/ns#hasAddress">has address</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.w3.org/2006/vcard/ns#Address" title="http://www.w3.org/2006/vcard/ns#Address">Address</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasPrincipalInvestigator">
+      <h3>has principal investigator<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasPrincipalInvestigator</p>
+      <div class="comment">
+         <span class="markdown">Describes which cohorts somone is the principal investigator of</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>Cohort1 hasPrincipalInvestigator JohnSmith</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#hasInvestigator" title="https://w3id.org/enigma#hasInvestigator">has investigator</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#hasMainPrincipalInvestigator"
+                  title="https://w3id.org/enigma#hasMainPrincipalInvestigator">has main principal investigator</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasProjectLead">
+      <h3>has project lead<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasProjectLead</p>
+      <div class="comment">
+         <span class="markdown">Describes what project someone is a project lead of</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>BipolarProject hasProjectLead JohnSmith</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#http://purl.org/dc/terms/contributor" title="http://purl.org/dc/terms/contributor">contributor</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasQualifiedAffiliation">
+      <h3>has qualified affiliation<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasQualifiedAffiliation</p>
+      <div class="comment">
+         <span class="markdown">Describes the qualified affiliation of a person. Used to specify additional detailes regarding an indvidual's affiliation with an organization (i.e. start and end dates)</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>JohnSmith hasQualifiedAffiliation "QualifiedAffiliation" forOrganization USC</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#QualifiedAffiliation" title="https://w3id.org/enigma#QualifiedAffiliation">Qualified Affiliation</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasWorkingGroupChair">
+      <h3>has working group chair<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasWorkingGroupChair</p>
+      <div class="comment">
+         <span class="markdown">Describes the working groups that someone is a chair of</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>BipolarWorkingGroup hasWorkingGroupChair JohnSmith</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#hasWorkingGroupMember" title="https://w3id.org/enigma#hasWorkingGroupMember">has working group member</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">Working Group</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasWorkingGroupMember">
+      <h3>has working group member<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasWorkingGroupMember</p>
+      <div class="comment">
+         <span class="markdown">Describes what working group a person is a member of</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>BipolarWorkingGroup hasWorkingGroupMember JohnSmith</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#hasAffiliate" title="https://w3id.org/enigma#hasAffiliate">has affiliate</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#hasWorkingGroupChair" title="https://w3id.org/enigma#hasWorkingGroupChair">has working group chair</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">Working Group</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://xmlns.com/foaf/0.1/homepage">
+      <h3>homepage<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://xmlns.com/foaf/0.1/homepage</p>
+      <div class="comment">
+         <span class="markdown">A homepage for some thing.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://xmlns.com/foaf/0.1/">http://xmlns.com/foaf/0.1/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://xmlns.com/foaf/0.1/mbox">
+      <h3>mbox<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://xmlns.com/foaf/0.1/mbox</p>
+      <div class="comment">
+         <span class="markdown">A  personal mailbox, ie. an Internet mailbox associated with exactly one owner, the first owner of this mailbox. This is a 'static inverse functional property', in that  there is (across time and change) at most one individual that ever has any particular value for foaf:mbox.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/enigma</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2002/07/owl#Thing">thing</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://xmlns.com/foaf/0.1/member">
+      <h3>member<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://xmlns.com/foaf/0.1/member</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://xmlns.com/foaf/0.1/member">http://xmlns.com/foaf/0.1/member</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#hasAffiliate" title="https://w3id.org/enigma#hasAffiliate">has affiliate</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://vivoweb.org/ontology/core#orcidId">
+      <h3>orcid id<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vivoweb.org/ontology/core#orcidId</p>
+      <div class="comment">
+         <span class="markdown">This is now an object property where the object value is a resource of the form &lt;http://orcid.org/NNNN-NNNN-NNNN-NNNN&gt;.  This is to support connecting VIVO and ORCID in the linked data web.   Note: a person can have multiple ORCID iDs.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/enigma</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="dataproperties">
+   <h3 id="dataproperties" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#http://www.w3.org/2006/vcard/ns#country-name" title="http://www.w3.org/2006/vcard/ns#country-name">
+            <span>country name</span>
+         </a>
+      </li>
+      <li>
+         <a href="#currentJobTitle" title="https://w3id.org/enigma#currentJobTitle">current job title</a>
+      </li>
+      <li>
+         <a href="#http://xmlns.com/foaf/0.1/familyName" title="http://xmlns.com/foaf/0.1/familyName">
+            <span>family name</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://xmlns.com/foaf/0.1/givenName" title="http://xmlns.com/foaf/0.1/givenName">
+            <span>given name</span>
+         </a>
+      </li>
+      <li>
+         <a href="#hasDegree" title="https://w3id.org/enigma#hasDegree">has degree</a>
+      </li>
+      <li>
+         <a href="#hasEndDate" title="https://w3id.org/enigma#hasEndDate">has end date</a>
+      </li>
+      <li>
+         <a href="#hasGrant" title="https://w3id.org/enigma#hasGrant">has grant</a>
+      </li>
+      <li>
+         <a href="#hasMiddleInitial" title="https://w3id.org/enigma#hasMiddleInitial">has middle initial</a>
+      </li>
+      <li>
+         <a href="#hasResearchInterest" title="https://w3id.org/enigma#hasResearchInterest">has research interest</a>
+      </li>
+      <li>
+         <a href="#hasStartDate" title="https://w3id.org/enigma#hasStartDate">has start date</a>
+      </li>
+      <li>
+         <a href="#hasStatus" title="https://w3id.org/enigma#hasStatus">has status</a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/2006/vcard/ns#locality" title="http://www.w3.org/2006/vcard/ns#locality">
+            <span>locality</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/2006/vcard/ns#postal-code" title="http://www.w3.org/2006/vcard/ns#postal-code">
+            <span>postal code</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/2006/vcard/ns#region" title="http://www.w3.org/2006/vcard/ns#region">
+            <span>region</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/2006/vcard/ns#street-address" title="http://www.w3.org/2006/vcard/ns#street-address">
+            <span>street address</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="http://www.w3.org/2006/vcard/ns#country-name">
+      <h3>country name<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2006/vcard/ns#country-name</p>
+      <div class="comment">
+         <span class="markdown">The country name associated with the address of the object</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://www.w3.org/2006/vcard/ns">http://www.w3.org/2006/vcard/ns</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://www.w3.org/2006/vcard/ns#Address" title="http://www.w3.org/2006/vcard/ns#Address">Address</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="currentJobTitle">
+      <h3>current job title<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#currentJobTitle</p>
+      <div class="comment">
+         <span class="markdown">Data property that aims to capture the current job title of a person. Examples are student, faculty, staff, postdoc, etc.</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>JohnSmith currentJobTitle "Postdoc"</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://xmlns.com/foaf/0.1/familyName">
+      <h3>family name<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://xmlns.com/foaf/0.1/familyName</p>
+      <div class="comment">
+         <span class="markdown">The family name of some person.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>https://w3id.org/enigma</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://xmlns.com/foaf/0.1/Person" title="http://xmlns.com/foaf/0.1/Person">person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://xmlns.com/foaf/0.1/givenName">
+      <h3>given name<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://xmlns.com/foaf/0.1/givenName</p>
+      <div class="comment">
+         <span class="markdown">The given name of some person.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://xmlns.com/foaf/0.1/">http://xmlns.com/foaf/0.1/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://xmlns.com/foaf/0.1/Person" title="http://xmlns.com/foaf/0.1/Person">person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasDegree">
+      <h3>has degree<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasDegree</p>
       <div class="comment">
-         <span class="markdown">Describes what degree a person has</span>
+         <span class="markdown">Describes what degree a person has (e.g., BsC, PhD, etc.)</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -471,1015 +1187,55 @@ This section provides details for each class and property defined by The Person 
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#Degree" title="https://w3id.org/enigma#Degree">Degree</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasPublication">
-      <h3>has publication<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#hasPublication</p>
-      <div class="comment">
-         <span class="markdown">Describes the publications of a person</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith hasPublication ENIGMAPublication</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#ENIGMAPublication" title="https://w3id.org/enigma#ENIGMAPublication">ENIGMAPublication</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isAffiliatedWith">
-      <h3>is affiliated with<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isAffiliatedWith</p>
-      <div class="comment">
-         <span class="markdown">Describes what organization someone IS affiliated with</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isAffiliatedWith HarvardU</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Organization" title="https://w3id.org/enigma#Organization">Organization</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isDataAnalystOf">
-      <h3>is data analyst of<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isDataAnalystOf</p>
-      <div class="comment">
-         <span class="markdown">Describes what project someone is a data analyst of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isDataAnalystOf BipolarProject</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#contributesTo" title="https://w3id.org/enigma#contributesTo">contributes to</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has sub-properties</dt>
-            <dd>
-               <a href="#isGeneticDataAnalystOf" title="https://w3id.org/enigma#isGeneticDataAnalystOf">is genetic data analyst of</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#isImagingDataAnalystOf" title="https://w3id.org/enigma#isImagingDataAnalystOf">is imaging data analyst of</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#isMajorDataAnalystOf" title="https://w3id.org/enigma#isMajorDataAnalystOf">is major data analyst of</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#isMinorDataAnalystOf" title="https://w3id.org/enigma#isMinorDataAnalystOf">is minor data analyst of</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isEnigmaContactOf">
-      <h3>is enigma contact of<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isEnigmaContactOf</p>
-      <div class="comment">
-         <span class="markdown">Describes the cohort that a person is the contact of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isEnigmaContactOf BipolarCohort</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isGeneticDataAnalystOf">
-      <h3>is genetic data analyst of<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isGeneticDataAnalystOf</p>
-      <div class="comment">
-         <span class="markdown">Describes what project someone is a genetic data analyst of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isGeneticDataAnalystOf BipolarProject</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#isDataAnalystOf" title="https://w3id.org/enigma#isDataAnalystOf">is data analyst of</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isGeneticDataCollectorOf">
-      <h3>is genetic data collector of<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isGeneticDataCollectorOf</p>
-      <div class="comment">
-         <span class="markdown">Describes what project someone collected genetic data for</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isGeneticDataCollectorOf BipolarProject</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#contributesTo" title="https://w3id.org/enigma#contributesTo">contributes to</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isImagingDataAnalystOf">
-      <h3>is imaging data analyst of<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isImagingDataAnalystOf</p>
-      <div class="comment">
-         <span class="markdown">Describes what project someone is an imaging data analyst of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isImagingDataAnalystOf BipolarProject</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#isDataAnalystOf" title="https://w3id.org/enigma#isDataAnalystOf">is data analyst of</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isImagingDataCollectorOf">
-      <h3>is imaging data collector of<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isImagingDataCollectorOf</p>
-      <div class="comment">
-         <span class="markdown">Describes what project someone collected imaging data for</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isImagingDataCollectorOf BipolarProject</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#contributesTo" title="https://w3id.org/enigma#contributesTo">contributes to</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isInvestigatorOf">
-      <h3>is investigator of<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isInvestigatorOf</p>
-      <div class="comment">
-         <span class="markdown">Describes the cohort that someone is investigator of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isInvestigatorOf BipolarCohort</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isJuniorLeadOfP">
-      <h3>is junior lead of p<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isJuniorLeadOfP</p>
-      <div class="comment">
-         <span class="markdown">Describes what project someone is a junior lead of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isJuniorLeadOfP BipolarProject</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#contributesTo" title="https://w3id.org/enigma#contributesTo">contributes to</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isJuniorLeadOfWG">
-      <h3>is junior lead of w g<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isJuniorLeadOfWG</p>
-      <div class="comment">
-         <span class="markdown">Describes the working groups that someone is a junior lead of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isJuniorLeadOfWG BipolarWorkingGroup</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#isMemberOfWG" title="https://w3id.org/enigma#isMemberOfWG">is member of w g</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">WorkingGroup</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isLocated">
-      <h3>is located<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isLocated</p>
-      <div class="comment">
-         <span class="markdown">Describes where the person is located</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isLocated Boston</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Location" title="https://w3id.org/enigma#Location">Location</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isMainPIOf">
-      <h3>is main p i of<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isMainPIOf</p>
-      <div class="comment">
-         <span class="markdown">Describes which cohorts somone is a main PI of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isMainPIof Cohort1</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#isPIOf" title="https://w3id.org/enigma#isPIOf">is p i of</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isMajorDataAnalystOf">
-      <h3>is major data analyst of<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isMajorDataAnalystOf</p>
-      <div class="comment">
-         <span class="markdown">Describes what project someone is a major data analyst of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isMajorDataAnalystOf BipolarProject</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#isDataAnalystOf" title="https://w3id.org/enigma#isDataAnalystOf">is data analyst of</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isMemberOfWG">
-      <h3>is member of w g<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isMemberOfWG</p>
-      <div class="comment">
-         <span class="markdown">Describes what working group a person is a member of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isMemberOfWorkingGroup BipolarWorkingGroup</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has sub-properties</dt>
-            <dd>
-               <a href="#isJuniorLeadOfWG" title="https://w3id.org/enigma#isJuniorLeadOfWG">is junior lead of w g</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#isSeniorLeadOfWG" title="https://w3id.org/enigma#isSeniorLeadOfWG">is senior lead of w g</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#isSpecialContributorOfWG" title="https://w3id.org/enigma#isSpecialContributorOfWG">is special contributor of w g</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">WorkingGroup</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isMinorDataAnalystOf">
-      <h3>is minor data analyst of<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isMinorDataAnalystOf</p>
-      <div class="comment">
-         <span class="markdown">Describes what project someone is a minor data analyst of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isMinorDataAnalystOf BipolarProject</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#isDataAnalystOf" title="https://w3id.org/enigma#isDataAnalystOf">is data analyst of</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isMinorPIOf">
-      <h3>is minor p i of<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isMinorPIOf</p>
-      <div class="comment">
-         <span class="markdown">Describes which cohorts somone is a minor PI of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isMinorPIof Cohort1</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#isPIOf" title="https://w3id.org/enigma#isPIOf">is p i of</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isPIOf">
-      <h3>is p i of<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isPIOf</p>
-      <div class="comment">
-         <span class="markdown">Describes which cohorts somone is the PI of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isPIof Cohort1</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has sub-properties</dt>
-            <dd>
-               <a href="#isMainPIOf" title="https://w3id.org/enigma#isMainPIOf">is main p i of</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#isMinorPIOf" title="https://w3id.org/enigma#isMinorPIOf">is minor p i of</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isProjectDeveloperOf">
-      <h3>is project developer of<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isProjectDeveloperOf</p>
-      <div class="comment">
-         <span class="markdown">Describes what project someone is a project developer of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isProjectDeveloperOf BipolarProject</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#contributesTo" title="https://w3id.org/enigma#contributesTo">contributes to</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isSeniorLeadOfP">
-      <h3>is senior lead of p<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isSeniorLeadOfP</p>
-      <div class="comment">
-         <span class="markdown">Describes what project someone is a senior lead of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isSeniorLeadOfP BipolarProject</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#contributesTo" title="https://w3id.org/enigma#contributesTo">contributes to</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isSeniorLeadOfWG">
-      <h3>is senior lead of w g<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isSeniorLeadOfWG</p>
-      <div class="comment">
-         <span class="markdown">Describes the working groups that someone is a senior lead of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isSeniorLeadOfWG BipolarWorkingGroup</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#isMemberOfWG" title="https://w3id.org/enigma#isMemberOfWG">is member of w g</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">WorkingGroup</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isSpecialContributorOfP">
-      <h3>is special contributor of p<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isSpecialContributorOfP</p>
-      <div class="comment">
-         <span class="markdown">Describes what project someone is a special contributor of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isSpecialContributorOfP BipolarProject</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#contributesTo" title="https://w3id.org/enigma#contributesTo">contributes to</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isSpecialContributorOfWG">
-      <h3>is special contributor of w g<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isSpecialContributorOfWG</p>
-      <div class="comment">
-         <span class="markdown">Describes who the significant contributors of a working group are</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isSpecialContributorOfWG BipolarWorkingGroup</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#isMemberOfWG" title="https://w3id.org/enigma#isMemberOfWG">is member of w g</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">WorkingGroup</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="wasAffiliatedWith">
-      <h3>was affiliated with<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#wasAffiliatedWith</p>
-      <div class="comment">
-         <span class="markdown">Describes what organization someone WAS affiliated with</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Organization" title="https://w3id.org/enigma#Organization">Organization</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-</div><div id="dataproperties">
-   <h3 id="dataproperties" class="list">Data Properties</h3>
-   <ul class="hlist">
-      <li>
-         <a href="#hasEmail" title="https://w3id.org/enigma#hasEmail">
-            <span>has email</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasFirstName" title="https://w3id.org/enigma#hasFirstName">
-            <span>has first name</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasFuturePublicationInstructions"
-            title="https://w3id.org/enigma#hasFuturePublicationInstructions">
-            <span>has future publication instructions</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasLastName" title="https://w3id.org/enigma#hasLastName">
-            <span>has last name</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasMiddleInitial" title="https://w3id.org/enigma#hasMiddleInitial">
-            <span>has middle initial</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasResearchInterests" title="https://w3id.org/enigma#hasResearchInterests">
-            <span>has research interests</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasTitle" title="https://w3id.org/enigma#hasTitle">
-            <span>has title</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasWebsite" title="https://w3id.org/enigma#hasWebsite">
-            <span>has website</span>
-         </a>
-      </li>
-      <li>
-         <a href="#isNoLongerActive" title="https://w3id.org/enigma#isNoLongerActive">
-            <span>is no longer active</span>
-         </a>
-      </li>
-      <li>
-         <a href="#joinedEnigmaInYear" title="https://w3id.org/enigma#joinedEnigmaInYear">
-            <span>joined enigma in year</span>
-         </a>
-      </li>
-      <li>
-         <a href="#leftOnDate" title="https://w3id.org/enigma#leftOnDate">
-            <span>left on date</span>
-         </a>
-      </li>
-   </ul>
-   <div class="entity" id="hasEmail">
-      <h3>has email<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#hasEmail</p>
-      <div class="comment">
-         <span class="markdown">Describes the email contact information of a person</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith hasEmail "johnsmith1234@gmail.com"</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
                <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
             </dd>
          </dl>
       </div>
    </div>
-   <div class="entity" id="hasFirstName">
-      <h3>has first name<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="hasEndDate">
+      <h3>has end date<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#hasFirstName</p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasEndDate</p>
       <div class="comment">
-         <span class="markdown">Describes first name of a person</span>
+         <span class="markdown">Describes the end date of the described resource (a working group, a person in an organizaiton, etc.)</span>
       </div>
       <dl>
          <dt>Example</dt>
          <dd>
-            <pre>JohnSmith hasFirstName "John"</pre>
+            <pre>JohnSmith hasQualifiedAffiliationRelationship "QualifiedAffiliation" hasEndDate "2018-07-13"</pre>
          </dd>
       </dl>
       <div class="description">
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+               <span class="dotted" title="http://www.w3.org/2002/07/owl#Thing">thing</span>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#date">date</span>
             </dd>
          </dl>
       </div>
    </div>
-   <div class="entity" id="hasFuturePublicationInstructions">
-      <h3>has future publication instructions<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="hasGrant">
+      <h3>has grant<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#hasFuturePublicationInstructions</p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasGrant</p>
       <div class="comment">
-         <span class="markdown">Describes what to do regarding future publication and authorship of someone</span>
+         <span class="markdown">Data property that aims to capture the grants that have been obtained by a person, in order to properly list them in the acknowledgements of the corresponding publication</span>
       </div>
       <dl>
          <dt>Example</dt>
          <dd>
-            <pre>JohnSmith hasFuturePublicationInstructions "grant Bob Johnson authorship"</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasLastName">
-      <h3>has last name<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#hasLastName</p>
-      <div class="comment">
-         <span class="markdown">Describes last name of a person</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith hasLastName "John"</pre>
+            <pre>John Smith hasGrant "U54EB020403 (NIH)"</pre>
          </dd>
       </dl>
       <div class="description">
@@ -1509,7 +1265,7 @@ This section provides details for each class and property defined by The Person 
       <dl>
          <dt>Example</dt>
          <dd>
-            <pre>JohnASmith hasMiddleInitial "A"</pre>
+            <pre>John A Smith hasMiddleInitial "A"</pre>
          </dd>
       </dl>
       <div class="description">
@@ -1526,20 +1282,20 @@ This section provides details for each class and property defined by The Person 
          </dl>
       </div>
    </div>
-   <div class="entity" id="hasResearchInterests">
-      <h3>has research interests<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="hasResearchInterest">
+      <h3>has research interest<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#hasResearchInterests</p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasResearchInterest</p>
       <div class="comment">
-         <span class="markdown">Describes the research interests of a person</span>
+         <span class="markdown">Describes a research interest of a person</span>
       </div>
       <dl>
          <dt>Example</dt>
          <dd>
-            <pre>JohnSmith hasReasearchInterests "bipolar disorder, schizophrenia"</pre>
+            <pre>JohnSmith hasReasearchInterest "bipolar disorder", "schizophrenia"</pre>
          </dd>
       </dl>
       <div class="description">
@@ -1556,144 +1312,180 @@ This section provides details for each class and property defined by The Person 
          </dl>
       </div>
    </div>
-   <div class="entity" id="hasTitle">
-      <h3>has title<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="hasStartDate">
+      <h3>has start date<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#hasTitle</p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasStartDate</p>
       <div class="comment">
-         <span class="markdown">Describes the title of the person</span>
+         <span class="markdown">Describes the start date of the described resource (a working group, a person in an organizaiton, etc.)</span>
       </div>
       <dl>
          <dt>Example</dt>
          <dd>
-            <pre>JohnSmith hasTitle "Undergraduate"</pre>
+            <pre>JohnSmith hasQualifiedAffiliation "QualifiedAffiliation" hasStartDate "2008-07-13"</pre>
          </dd>
       </dl>
       <div class="description">
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>{ "Assistant professor" , "Associate professor" , "Graduate student" , "Other" , "Postdoctoral researcher" , "Professor" , "Program director" , "Program manager" , "Research assistant" , "Undergraduate" }</dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasWebsite">
-      <h3>has website<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#hasWebsite</p>
-      <div class="comment">
-         <span class="markdown">Describes the website of a person</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="isNoLongerActive">
-      <h3>is no longer active<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#isNoLongerActive</p>
-      <div class="comment">
-         <span class="markdown">Describes whether or not a person is not longer active in ENIGMA</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith isNoLongerActive true</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="joinedEnigmaInYear">
-      <h3>joined enigma in year<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#joinedEnigmaInYear</p>
-      <div class="comment">
-         <span class="markdown">Describes the year that a person first joined ENIGMA</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith joinedEnigmaInYear 2005</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#gYear">g year</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="leftOnDate">
-      <h3>left on date<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#leftOnDate</p>
-      <div class="comment">
-         <span class="markdown">Describes the date that a person, who is no longer active, left</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>JohnSmith leftOnDate 2008-07-13</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+               <span class="dotted" title="http://www.w3.org/2002/07/owl#Thing">thing</span>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
                <span class="dotted" title="http://www.w3.org/2001/XMLSchema#date">date</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasStatus">
+      <h3>has status<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasStatus</p>
+      <div class="comment">
+         <span class="markdown">Describes the current activity status of a person at a given organization. "Active" specifies that one is currently active within an organization. "Inactive" specifies that one is currently still part of an organization but not currently active. "Left Organization" specifies that one is no longer a part of an organization.</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>JohnSmith hasQualifiedAffiliationRelationship "QualifiedAffiliation" hasStatus "Inactive"</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#QualifiedAffiliation" title="https://w3id.org/enigma#QualifiedAffiliation">Qualified Affiliation</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>{ "Active" , "Inactive" , "Left Organization" }</dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.w3.org/2006/vcard/ns#locality">
+      <h3>locality<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2006/vcard/ns#locality</p>
+      <div class="comment">
+         <span class="markdown">The locality (e.g. city or town) associated with the address of the object</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://www.w3.org/2006/vcard/ns">http://www.w3.org/2006/vcard/ns</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://www.w3.org/2006/vcard/ns#Address" title="http://www.w3.org/2006/vcard/ns#Address">Address</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.w3.org/2006/vcard/ns#postal-code">
+      <h3>postal code<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2006/vcard/ns#postal-code</p>
+      <div class="comment">
+         <span class="markdown">The postal code associated with the address of the object</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://www.w3.org/2006/vcard/ns">http://www.w3.org/2006/vcard/ns</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://www.w3.org/2006/vcard/ns#Address" title="http://www.w3.org/2006/vcard/ns#Address">Address</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.w3.org/2006/vcard/ns#region">
+      <h3>region<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2006/vcard/ns#region</p>
+      <div class="comment">
+         <span class="markdown">The region (e.g. state or province) associated with the address of the object</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://www.w3.org/2006/vcard/ns">http://www.w3.org/2006/vcard/ns</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://www.w3.org/2006/vcard/ns#Address" title="http://www.w3.org/2006/vcard/ns#Address">Address</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.w3.org/2006/vcard/ns#street-address">
+      <h3>street address<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2006/vcard/ns#street-address</p>
+      <div class="comment">
+         <span class="markdown">The street address associated with the address of the object</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://www.w3.org/2006/vcard/ns">http://www.w3.org/2006/vcard/ns</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://www.w3.org/2006/vcard/ns#Address" title="http://www.w3.org/2006/vcard/ns#Address">Address</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
             </dd>
          </dl>
       </div>

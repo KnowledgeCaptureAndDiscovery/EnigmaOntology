@@ -7,7 +7,6 @@
 <https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "Neda Jahanshad" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "Ryan Espiritu" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> .
-<https://w3id.org/enigma> <http://purl.org/dc/terms/title> "The Worging Group Ontology" .
 <https://w3id.org/enigma> <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma" .
 <https://w3id.org/enigma> <http://purl.org/vocab/vann/preferredNamespaceUri> <https://w3id.org/enigma#> .
 <https://w3id.org/enigma> <http://www.w3.org/2000/01/rdf-schema#comment> "An ontology for describing working groups." .
@@ -45,12 +44,17 @@
 # #################################################################
 # 
 # 
+# http://xmlns.com/foaf/0.1/member
+<http://xmlns.com/foaf/0.1/member> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://xmlns.com/foaf/0.1/member> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+# 
 # https://w3id.org/enigma#hasCohort
 <https://w3id.org/enigma#hasCohort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/enigma#hasCohort> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#WorkingGroup> .
 <https://w3id.org/enigma#hasCohort> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Cohort> .
 <https://w3id.org/enigma#hasCohort> <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasCohort AmsterdamBipolarCohort --> Bipolar Working Group includes the Amsterdam Bipolar Cohort"@en .
 <https://w3id.org/enigma#hasCohort> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what cohorts are part of the working group"@en .
+<https://w3id.org/enigma#hasCohort> <http://www.w3.org/2000/01/rdf-schema#label> "has cohort"@en .
 # 
 # https://w3id.org/enigma#hasProject
 <https://w3id.org/enigma#hasProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -58,45 +62,25 @@
 <https://w3id.org/enigma#hasProject> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Project> .
 <https://w3id.org/enigma#hasProject> <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasProject BipolarCorticolProject --> The Bipolar Working Group is working on the Bipolar Corticol Project"@en .
 <https://w3id.org/enigma#hasProject> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what projects are worked on by a specific working group"@en .
+<https://w3id.org/enigma#hasProject> <http://www.w3.org/2000/01/rdf-schema#label> "has project"@en .
 # 
-# https://w3id.org/enigma#hasWGChair
-<https://w3id.org/enigma#hasWGChair> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#hasWGChair> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#hasWGMember> .
-<https://w3id.org/enigma#hasWGChair> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#WorkingGroup> .
-<https://w3id.org/enigma#hasWGChair> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
-<https://w3id.org/enigma#hasWGChair> <http://purl.org/vocab/vann/example> "SZWorkingGroup hasWGChair JohnSmith"@en .
-<https://w3id.org/enigma#hasWGChair> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes who the chairs of a working group are"@en .
+# https://w3id.org/enigma#hasWorkingGroupChair
+<https://w3id.org/enigma#hasWorkingGroupChair> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasWorkingGroupChair> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#hasWorkingGroupMember> .
+<https://w3id.org/enigma#hasWorkingGroupChair> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#WorkingGroup> .
+<https://w3id.org/enigma#hasWorkingGroupChair> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#hasWorkingGroupChair> <http://purl.org/vocab/vann/example> "SZWorkingGroup hasWorkingGroupChair JohnSmith"@en .
+<https://w3id.org/enigma#hasWorkingGroupChair> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes who the chairs of a working group are"@en .
+<https://w3id.org/enigma#hasWorkingGroupChair> <http://www.w3.org/2000/01/rdf-schema#label> "has working group chair"@en .
 # 
-# https://w3id.org/enigma#hasWGJuniorLead
-<https://w3id.org/enigma#hasWGJuniorLead> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#hasWGJuniorLead> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#hasWGMember> .
-<https://w3id.org/enigma#hasWGJuniorLead> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#WorkingGroup> .
-<https://w3id.org/enigma#hasWGJuniorLead> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
-<https://w3id.org/enigma#hasWGJuniorLead> <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasJuniorLead JohnSmith"@en .
-<https://w3id.org/enigma#hasWGJuniorLead> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes who the junior leads of a working group are"@en .
-# 
-# https://w3id.org/enigma#hasWGMember
-<https://w3id.org/enigma#hasWGMember> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#hasWGMember> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#WorkingGroup> .
-<https://w3id.org/enigma#hasWGMember> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
-<https://w3id.org/enigma#hasWGMember> <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasMember JohnSmith --> The bipolar working group has John Smith as a member"@en .
-<https://w3id.org/enigma#hasWGMember> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes who the members of the working group are"@en .
-# 
-# https://w3id.org/enigma#hasWGSeniorLead
-<https://w3id.org/enigma#hasWGSeniorLead> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#hasWGSeniorLead> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#hasWGMember> .
-<https://w3id.org/enigma#hasWGSeniorLead> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#WorkingGroup> .
-<https://w3id.org/enigma#hasWGSeniorLead> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
-<https://w3id.org/enigma#hasWGSeniorLead> <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasSeniorLead JohnSmith"@en .
-<https://w3id.org/enigma#hasWGSeniorLead> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes who the senior leads of a working group are"@en .
-# 
-# https://w3id.org/enigma#hasWGSpecialContributor
-<https://w3id.org/enigma#hasWGSpecialContributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#hasWGSpecialContributor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#hasWGMember> .
-<https://w3id.org/enigma#hasWGSpecialContributor> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#WorkingGroup> .
-<https://w3id.org/enigma#hasWGSpecialContributor> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
-<https://w3id.org/enigma#hasWGSpecialContributor> <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasSpecialContributor JohnSmith"@en .
-<https://w3id.org/enigma#hasWGSpecialContributor> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes who the special contributors of a working group are"@en .
+# https://w3id.org/enigma#hasWorkingGroupMember
+<https://w3id.org/enigma#hasWorkingGroupMember> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasWorkingGroupMember> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://xmlns.com/foaf/0.1/member> .
+<https://w3id.org/enigma#hasWorkingGroupMember> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#WorkingGroup> .
+<https://w3id.org/enigma#hasWorkingGroupMember> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#hasWorkingGroupMember> <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasWorkingGroupMember JohnSmith"@en .
+<https://w3id.org/enigma#hasWorkingGroupMember> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes who the members of the working group are"@en .
+<https://w3id.org/enigma#hasWorkingGroupMember> <http://www.w3.org/2000/01/rdf-schema#label> "has working group member"@en .
 # 
 # 
 # 
@@ -107,12 +91,34 @@
 # #################################################################
 # 
 # 
-# https://w3id.org/enigma#hasMOU
-<https://w3id.org/enigma#hasMOU> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasMOU> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#WorkingGroup> .
-<https://w3id.org/enigma#hasMOU> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/enigma#hasMOU> <http://purl.org/vocab/vann/example> "WorkingGroup1 hasMOU www.mouexample.com"@en .
-<https://w3id.org/enigma#hasMOU> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the MOU links of the working group"@en .
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/dc/terms/title> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://purl.org/dc/terms/title> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/title> .
+# 
+# https://w3id.org/enigma#hasBriefDescription
+<https://w3id.org/enigma#hasBriefDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasBriefDescription> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Project> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#WorkingGroup> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/enigma#hasBriefDescription> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#hasBriefDescription> <http://purl.org/vocab/vann/example> "SZWG hasBriefDescription \"finds correlations between schizophrenia and other conditions\""@en .
+<https://w3id.org/enigma#hasBriefDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "Provides a brief description of the working group or project"@en .
+<https://w3id.org/enigma#hasBriefDescription> <http://www.w3.org/2000/01/rdf-schema#label> "has brief description"@en .
+# 
+# https://w3id.org/enigma#hasMemorandumOfUnderstanding
+<https://w3id.org/enigma#hasMemorandumOfUnderstanding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasMemorandumOfUnderstanding> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#WorkingGroup> .
+<https://w3id.org/enigma#hasMemorandumOfUnderstanding> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#hasMemorandumOfUnderstanding> <http://purl.org/vocab/vann/example> "WorkingGroup1 hasMemorandumOfUnderstanding www.mouexample.com"@en .
+<https://w3id.org/enigma#hasMemorandumOfUnderstanding> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the memorandum of understanding links of the working group"@en .
+<https://w3id.org/enigma#hasMemorandumOfUnderstanding> <http://www.w3.org/2000/01/rdf-schema#label> "has memorandum of understanding"@en .
 # 
 # https://w3id.org/enigma#hasPublishedPaper
 <https://w3id.org/enigma#hasPublishedPaper> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -122,13 +128,15 @@
 <https://w3id.org/enigma#hasPublishedPaper> <http://purl.org/vocab/vann/example> "WorkingGroup1 hasPublishedPaper www.publishedpaperexample.com"@en .
 <https://w3id.org/enigma#hasPublishedPaper> <http://purl.org/vocab/vann/example> "WorkingGroup2 hasPublishedPaper \"Article Title\""@en .
 <https://w3id.org/enigma#hasPublishedPaper> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the links to published papers or the paper title (if link does not exist) for the working group"@en .
+<https://w3id.org/enigma#hasPublishedPaper> <http://www.w3.org/2000/01/rdf-schema#label> "has published paper"@en .
 # 
 # https://w3id.org/enigma#hasStartDate
 <https://w3id.org/enigma#hasStartDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasStartDate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#WorkingGroup> .
+<https://w3id.org/enigma#hasStartDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> .
 <https://w3id.org/enigma#hasStartDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/enigma#hasStartDate> <http://purl.org/vocab/vann/example> "WorkingGroup1 hasStartDate 2004-09-13"@en .
-<https://w3id.org/enigma#hasStartDate> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the start date of a working group"@en .
+<https://w3id.org/enigma#hasStartDate> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the start date of the described resource (a working group, a person in an organizaiton, etc.)"@en .
+<https://w3id.org/enigma#hasStartDate> <http://www.w3.org/2000/01/rdf-schema#label> "has start date"@en .
 # 
 # https://w3id.org/enigma#hasSubmittedPaper
 <https://w3id.org/enigma#hasSubmittedPaper> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -136,13 +144,15 @@
 <https://w3id.org/enigma#hasSubmittedPaper> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/enigma#hasSubmittedPaper> <http://purl.org/vocab/vann/example> "WorkingGroup1 hasSubmittedPaper \"Paper title\""@en .
 <https://w3id.org/enigma#hasSubmittedPaper> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the titles of the submitted papers of a working group"@en .
+<https://w3id.org/enigma#hasSubmittedPaper> <http://www.w3.org/2000/01/rdf-schema#label> "has submitted paper"@en .
 # 
-# https://w3id.org/enigma#hasWGBriefDescription
-<https://w3id.org/enigma#hasWGBriefDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasWGBriefDescription> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#WorkingGroup> .
-<https://w3id.org/enigma#hasWGBriefDescription> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/enigma#hasWGBriefDescription> <http://purl.org/vocab/vann/example> "SZWG hasWGBriefDescription \"finds correlations between schizophrenia and other conditions\""@en .
-<https://w3id.org/enigma#hasWGBriefDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "Provides a brief description of the working group"@en .
+# https://w3id.org/enigma#shortName
+<https://w3id.org/enigma#shortName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#shortName> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/title> .
+<https://w3id.org/enigma#shortName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#WorkingGroup> .
+<https://w3id.org/enigma#shortName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#shortName> <http://www.w3.org/2000/01/rdf-schema#comment> "A short name for the working group, in case the working group name is too long"@en .
+<https://w3id.org/enigma#shortName> <http://www.w3.org/2000/01/rdf-schema#label> "short name"@en .
 # 
 # 
 # 
@@ -153,11 +163,35 @@
 # #################################################################
 # 
 # 
+# https://w3id.org/enigma#ClinicalPopulation
+<https://w3id.org/enigma#ClinicalPopulation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#ClinicalPopulation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/enigma#WorkingGroup> .
+<https://w3id.org/enigma#ClinicalPopulation> <http://www.w3.org/2000/01/rdf-schema#comment> "Working groups that study clinical populations"@en .
+<https://w3id.org/enigma#ClinicalPopulation> <http://www.w3.org/2000/01/rdf-schema#label> "Clinical Population"@en .
+# 
 # https://w3id.org/enigma#Cohort
 <https://w3id.org/enigma#Cohort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/enigma#Cohort> <http://purl.org/vocab/vann/example> "ADNI: Alzheimer\u2019s Disease Neuroimaging Initiative"@en .
 <https://w3id.org/enigma#Cohort> <http://www.w3.org/2000/01/rdf-schema#comment> "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria"@en .
 <https://w3id.org/enigma#Cohort> <http://www.w3.org/2000/01/rdf-schema#label> "Cohort"@en .
+# 
+# https://w3id.org/enigma#GeneticStudy
+<https://w3id.org/enigma#GeneticStudy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#GeneticStudy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/enigma#WorkingGroup> .
+<https://w3id.org/enigma#GeneticStudy> <http://www.w3.org/2000/01/rdf-schema#comment> "Working groups dedicated to genetic analysis"@en .
+<https://w3id.org/enigma#GeneticStudy> <http://www.w3.org/2000/01/rdf-schema#label> "Genetic study"@en .
+# 
+# https://w3id.org/enigma#HealthyVariation
+<https://w3id.org/enigma#HealthyVariation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#HealthyVariation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/enigma#WorkingGroup> .
+<https://w3id.org/enigma#HealthyVariation> <http://www.w3.org/2000/01/rdf-schema#comment> "Working groups that are not disease focused"@en .
+<https://w3id.org/enigma#HealthyVariation> <http://www.w3.org/2000/01/rdf-schema#label> "Healthy Variation"@en .
+# 
+# https://w3id.org/enigma#Methodology
+<https://w3id.org/enigma#Methodology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#Methodology> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/enigma#WorkingGroup> .
+<https://w3id.org/enigma#Methodology> <http://www.w3.org/2000/01/rdf-schema#comment> "Working groups that develop protocols (imaging or genetics)"@en .
+<https://w3id.org/enigma#Methodology> <http://www.w3.org/2000/01/rdf-schema#label> "Methodology"@en .
 # 
 # https://w3id.org/enigma#Person
 <https://w3id.org/enigma#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -175,6 +209,19 @@
 <https://w3id.org/enigma#WorkingGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/enigma#WorkingGroup> <http://purl.org/vocab/vann/example> "BipolarWG"@en .
 <https://w3id.org/enigma#WorkingGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "Group of researchers studying a certain topic/disease"@en .
-<https://w3id.org/enigma#WorkingGroup> <http://www.w3.org/2000/01/rdf-schema#label> "WorkingGroup"@en .
+<https://w3id.org/enigma#WorkingGroup> <http://www.w3.org/2000/01/rdf-schema#label> "Working Group"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/enigma
+<https://w3id.org/enigma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/title> "The Working Group Ontology" .
 # 
 # Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

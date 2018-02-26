@@ -15,7 +15,6 @@
                                                               "Neda Jahanshad"^^xsd:string ,
                                                               "Ryan Espiritu"^^xsd:string ;
                            <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> ;
-                           <http://purl.org/dc/terms/title> "The Worging Group Ontology"^^xsd:string ;
                            <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma"^^xsd:string ;
                            <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
                            rdfs:comment "An ontology for describing working groups."^^xsd:string ;
@@ -41,12 +40,18 @@ xsd:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
+###  http://xmlns.com/foaf/0.1/member
+<http://xmlns.com/foaf/0.1/member> rdf:type owl:ObjectProperty ;
+                                   rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
 ###  https://w3id.org/enigma#hasCohort
 :hasCohort rdf:type owl:ObjectProperty ;
            rdfs:domain :WorkingGroup ;
            rdfs:range :Cohort ;
            <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasCohort AmsterdamBipolarCohort --> Bipolar Working Group includes the Amsterdam Bipolar Cohort"@en ;
-           rdfs:comment "Describes what cohorts are part of the working group"@en .
+           rdfs:comment "Describes what cohorts are part of the working group"@en ;
+           rdfs:label "has cohort"@en .
 
 
 ###  https://w3id.org/enigma#hasProject
@@ -54,63 +59,60 @@ xsd:date rdf:type rdfs:Datatype .
             rdfs:domain :WorkingGroup ;
             rdfs:range :Project ;
             <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasProject BipolarCorticolProject --> The Bipolar Working Group is working on the Bipolar Corticol Project"@en ;
-            rdfs:comment "Describes what projects are worked on by a specific working group"@en .
+            rdfs:comment "Describes what projects are worked on by a specific working group"@en ;
+            rdfs:label "has project"@en .
 
 
-###  https://w3id.org/enigma#hasWGChair
-:hasWGChair rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf :hasWGMember ;
-            rdfs:domain :WorkingGroup ;
-            rdfs:range :Person ;
-            <http://purl.org/vocab/vann/example> "SZWorkingGroup hasWGChair JohnSmith"@en ;
-            rdfs:comment "Describes who the chairs of a working group are"@en .
+###  https://w3id.org/enigma#hasWorkingGroupChair
+:hasWorkingGroupChair rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :hasWorkingGroupMember ;
+                      rdfs:domain :WorkingGroup ;
+                      rdfs:range :Person ;
+                      <http://purl.org/vocab/vann/example> "SZWorkingGroup hasWorkingGroupChair JohnSmith"@en ;
+                      rdfs:comment "Describes who the chairs of a working group are"@en ;
+                      rdfs:label "has working group chair"@en .
 
 
-###  https://w3id.org/enigma#hasWGJuniorLead
-:hasWGJuniorLead rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf :hasWGMember ;
-                 rdfs:domain :WorkingGroup ;
-                 rdfs:range :Person ;
-                 <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasJuniorLead JohnSmith"@en ;
-                 rdfs:comment "Describes who the junior leads of a working group are"@en .
-
-
-###  https://w3id.org/enigma#hasWGMember
-:hasWGMember rdf:type owl:ObjectProperty ;
-             rdfs:domain :WorkingGroup ;
-             rdfs:range :Person ;
-             <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasMember JohnSmith --> The bipolar working group has John Smith as a member"@en ;
-             rdfs:comment "Describes who the members of the working group are"@en .
-
-
-###  https://w3id.org/enigma#hasWGSeniorLead
-:hasWGSeniorLead rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf :hasWGMember ;
-                 rdfs:domain :WorkingGroup ;
-                 rdfs:range :Person ;
-                 <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasSeniorLead JohnSmith"@en ;
-                 rdfs:comment "Describes who the senior leads of a working group are"@en .
-
-
-###  https://w3id.org/enigma#hasWGSpecialContributor
-:hasWGSpecialContributor rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf :hasWGMember ;
-                         rdfs:domain :WorkingGroup ;
-                         rdfs:range :Person ;
-                         <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasSpecialContributor JohnSmith"@en ;
-                         rdfs:comment "Describes who the special contributors of a working group are"@en .
+###  https://w3id.org/enigma#hasWorkingGroupMember
+:hasWorkingGroupMember rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/member> ;
+                       rdfs:domain :WorkingGroup ;
+                       rdfs:range :Person ;
+                       <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasWorkingGroupMember JohnSmith"@en ;
+                       rdfs:comment "Describes who the members of the working group are"@en ;
+                       rdfs:label "has working group member"@en .
 
 
 #################################################################
 #    Data properties
 #################################################################
 
-###  https://w3id.org/enigma#hasMOU
-:hasMOU rdf:type owl:DatatypeProperty ;
-        rdfs:domain :WorkingGroup ;
-        rdfs:range xsd:string ;
-        <http://purl.org/vocab/vann/example> "WorkingGroup1 hasMOU www.mouexample.com"@en ;
-        rdfs:comment "Describes the MOU links of the working group"@en .
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:DatatypeProperty ;
+                                 rdfs:range rdfs:Literal ;
+                                 rdfs:isDefinedBy <http://purl.org/dc/terms/title> .
+
+
+###  https://w3id.org/enigma#hasBriefDescription
+:hasBriefDescription rdf:type owl:DatatypeProperty ;
+                     rdfs:domain [ rdf:type owl:Class ;
+                                   owl:unionOf ( :Project
+                                                 :WorkingGroup
+                                               )
+                                 ] ;
+                     rdfs:range xsd:string ;
+                     <http://purl.org/vocab/vann/example> "SZWG hasBriefDescription \"finds correlations between schizophrenia and other conditions\""@en ;
+                     rdfs:comment "Provides a brief description of the working group or project"@en ;
+                     rdfs:label "has brief description"@en .
+
+
+###  https://w3id.org/enigma#hasMemorandumOfUnderstanding
+:hasMemorandumOfUnderstanding rdf:type owl:DatatypeProperty ;
+                              rdfs:domain :WorkingGroup ;
+                              rdfs:range xsd:string ;
+                              <http://purl.org/vocab/vann/example> "WorkingGroup1 hasMemorandumOfUnderstanding www.mouexample.com"@en ;
+                              rdfs:comment "Describes the memorandum of understanding links of the working group"@en ;
+                              rdfs:label "has memorandum of understanding"@en .
 
 
 ###  https://w3id.org/enigma#hasPublishedPaper
@@ -120,15 +122,17 @@ xsd:date rdf:type rdfs:Datatype .
                    rdfs:range xsd:string ;
                    <http://purl.org/vocab/vann/example> "WorkingGroup1 hasPublishedPaper www.publishedpaperexample.com"@en ,
                                                         "WorkingGroup2 hasPublishedPaper \"Article Title\""@en ;
-                   rdfs:comment "Describes the links to published papers or the paper title (if link does not exist) for the working group"@en .
+                   rdfs:comment "Describes the links to published papers or the paper title (if link does not exist) for the working group"@en ;
+                   rdfs:label "has published paper"@en .
 
 
 ###  https://w3id.org/enigma#hasStartDate
 :hasStartDate rdf:type owl:DatatypeProperty ;
-              rdfs:domain :WorkingGroup ;
+              rdfs:domain owl:Thing ;
               rdfs:range xsd:date ;
               <http://purl.org/vocab/vann/example> "WorkingGroup1 hasStartDate 2004-09-13"@en ;
-              rdfs:comment "Describes the start date of a working group"@en .
+              rdfs:comment "Describes the start date of the described resource (a working group, a person in an organizaiton, etc.)"@en ;
+              rdfs:label "has start date"@en .
 
 
 ###  https://w3id.org/enigma#hasSubmittedPaper
@@ -136,26 +140,56 @@ xsd:date rdf:type rdfs:Datatype .
                    rdfs:domain :WorkingGroup ;
                    rdfs:range xsd:string ;
                    <http://purl.org/vocab/vann/example> "WorkingGroup1 hasSubmittedPaper \"Paper title\""@en ;
-                   rdfs:comment "Describes the titles of the submitted papers of a working group"@en .
+                   rdfs:comment "Describes the titles of the submitted papers of a working group"@en ;
+                   rdfs:label "has submitted paper"@en .
 
 
-###  https://w3id.org/enigma#hasWGBriefDescription
-:hasWGBriefDescription rdf:type owl:DatatypeProperty ;
-                       rdfs:domain :WorkingGroup ;
-                       rdfs:range xsd:string ;
-                       <http://purl.org/vocab/vann/example> "SZWG hasWGBriefDescription \"finds correlations between schizophrenia and other conditions\""@en ;
-                       rdfs:comment "Provides a brief description of the working group"@en .
+###  https://w3id.org/enigma#shortName
+:shortName rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf <http://purl.org/dc/terms/title> ;
+           rdfs:domain :WorkingGroup ;
+           rdfs:range xsd:string ;
+           rdfs:comment "A short name for the working group, in case the working group name is too long"@en ;
+           rdfs:label "short name"@en .
 
 
 #################################################################
 #    Classes
 #################################################################
 
+###  https://w3id.org/enigma#ClinicalPopulation
+:ClinicalPopulation rdf:type owl:Class ;
+                    rdfs:subClassOf :WorkingGroup ;
+                    rdfs:comment "Working groups that study clinical populations"@en ;
+                    rdfs:label "Clinical Population"@en .
+
+
 ###  https://w3id.org/enigma#Cohort
 :Cohort rdf:type owl:Class ;
         <http://purl.org/vocab/vann/example> "ADNI: Alzheimer’s Disease Neuroimaging Initiative"@en ;
         rdfs:comment "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria"@en ;
         rdfs:label "Cohort"@en .
+
+
+###  https://w3id.org/enigma#GeneticStudy
+:GeneticStudy rdf:type owl:Class ;
+              rdfs:subClassOf :WorkingGroup ;
+              rdfs:comment "Working groups dedicated to genetic analysis"@en ;
+              rdfs:label "Genetic study"@en .
+
+
+###  https://w3id.org/enigma#HealthyVariation
+:HealthyVariation rdf:type owl:Class ;
+                  rdfs:subClassOf :WorkingGroup ;
+                  rdfs:comment "Working groups that are not disease focused"@en ;
+                  rdfs:label "Healthy Variation"@en .
+
+
+###  https://w3id.org/enigma#Methodology
+:Methodology rdf:type owl:Class ;
+             rdfs:subClassOf :WorkingGroup ;
+             rdfs:comment "Working groups that develop protocols (imaging or genetics)"@en ;
+             rdfs:label "Methodology"@en .
 
 
 ###  https://w3id.org/enigma#Person
@@ -176,7 +210,16 @@ xsd:date rdf:type rdfs:Datatype .
 :WorkingGroup rdf:type owl:Class ;
               <http://purl.org/vocab/vann/example> "BipolarWG"@en ;
               rdfs:comment "Group of researchers studying a certain topic/disease"@en ;
-              rdfs:label "WorkingGroup"@en .
+              rdfs:label "Working Group"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/enigma
+<https://w3id.org/enigma> rdf:type owl:NamedIndividual ;
+                          <http://purl.org/dc/terms/title> "The Working Group Ontology"^^xsd:string .
 
 
 ###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

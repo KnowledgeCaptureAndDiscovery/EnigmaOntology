@@ -15,7 +15,6 @@
                                                               "Neda Jahanshad"^^xsd:string ,
                                                               "Ryan Espiritu"^^xsd:string ;
                            <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> ;
-                           <http://purl.org/dc/terms/title> "The Project Ontology"^^xsd:string ;
                            <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma"^^xsd:string ;
                            <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
                            rdfs:comment "An ontology that describes projects and their properties."^^xsd:string ;
@@ -41,6 +40,20 @@ xsd:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:ObjectProperty ;
+                                       rdfs:domain :Project ;
+                                       rdfs:range :Person .
+
+
+###  https://w3id.org/enigma#forPublication
+:forPublication rdf:type owl:ObjectProperty ;
+                rdfs:domain :ConflictOfInterest ;
+                rdfs:range :AcademicArticle ;
+                rdfs:comment "Property that links the conflict of interest of an author to the publication which the author has the conflict of interest with."@en ;
+                rdfs:label "for publication"@en .
+
+
 ###  https://w3id.org/enigma#hasBrainScanDataType
 :hasBrainScanDataType rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf :hasDataType ;
@@ -51,7 +64,8 @@ xsd:date rdf:type rdfs:Datatype .
                                   ] ;
                       rdfs:range :BrainScanDataType ;
                       <http://purl.org/vocab/vann/example> "BipolarProject hasBrainScanDataType DiffusionMRI"@en ;
-                      rdfs:comment "Describes which brain scan data types a project has"@en .
+                      rdfs:comment "Describes which brain scan data types a project has"@en ;
+                      rdfs:label "has brain scan data type"@en .
 
 
 ###  https://w3id.org/enigma#hasCohort
@@ -59,45 +73,39 @@ xsd:date rdf:type rdfs:Datatype .
            rdfs:domain :Project ;
            rdfs:range :Cohort ;
            <http://purl.org/vocab/vann/example> "BipolarProject hasCohort AmsterdamBipolarCohort"@en ;
-           rdfs:comment "Describes what cohorts are part of the project"@en .
+           rdfs:comment "Describes what cohorts are part of the project"@en ;
+           rdfs:label "has cohort"@en .
 
 
-###  https://w3id.org/enigma#hasContactPerson
-:hasContactPerson rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf :hasContributor ;
-                  rdfs:domain :Project ;
-                  rdfs:range :Person ;
-                  <http://purl.org/vocab/vann/example> "BipolarCorticolProject hasContactPerson JohnSmith"@en ;
-                  rdfs:comment "Describes who the contact person of the project is"@en .
+###  https://w3id.org/enigma#hasConflictOfInterest
+:hasConflictOfInterest rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Person ;
+                       rdfs:range :ConflictOfInterest ;
+                       rdfs:comment "Property linking an author with a conflict of interest that the author has on a paper"@en ;
+                       rdfs:label "has coflict of interest"@en .
 
 
-###  https://w3id.org/enigma#hasContributor
-:hasContributor rdf:type owl:ObjectProperty ;
-                rdfs:domain :Project ;
-                rdfs:range :Person ;
-                <http://purl.org/vocab/vann/example> "BipolarLateralityProject hasContributor JohnSmith"@en ;
-                rdfs:comment "Describes who contributed to the project"@en .
-
-
-###  https://w3id.org/enigma#hasDataAnalyst
-:hasDataAnalyst rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf :hasContributor ;
-                rdfs:domain :Project ;
-                rdfs:range :Person ;
-                <http://purl.org/vocab/vann/example> "BipolarCorticolProject hasDataAnalyst JohnSmith"@en ;
-                rdfs:comment "Describes who the data analyst of the project is"@en .
+###  https://w3id.org/enigma#hasContact
+:hasContact rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :Cohort
+                                        :Project
+                                      )
+                        ] ;
+            rdfs:range :Person ;
+            <http://purl.org/vocab/vann/example> "BipolarCohort hasContact JohnSmith"@en ;
+            rdfs:comment "Property that points to the person that is a contact for the project or cohort"@en ;
+            rdfs:label "has contact person"@en .
 
 
 ###  https://w3id.org/enigma#hasDataType
 :hasDataType rdf:type owl:ObjectProperty ;
-             rdfs:domain [ rdf:type owl:Class ;
-                           owl:unionOf ( :Project
-                                         :WorkingGroup
-                                       )
-                         ] ;
+             rdfs:domain :Project ;
              rdfs:range :DataType ;
              <http://purl.org/vocab/vann/example> "BipolarProject hasDataType MRIImage"@en ;
-             rdfs:comment "Describes the data types that the project collected"@en .
+             rdfs:comment "Describes the data types that the project collected"@en ;
+             rdfs:label "has data type"@en .
 
 
 ###  https://w3id.org/enigma#hasGeneReferencePanel
@@ -105,7 +113,8 @@ xsd:date rdf:type rdfs:Datatype .
                        rdfs:domain :Project ;
                        rdfs:range :GeneReferencePanel ;
                        <http://purl.org/vocab/vann/example> "BipolarProject hasGeneReferencePanel [instance of gene reference panel]"@en ;
-                       rdfs:comment "Describes the gene reference panel used by the project"@en .
+                       rdfs:comment "Describes the gene reference panel used by the project"@en ;
+                       rdfs:label "has gene reference panel"@en .
 
 
 ###  https://w3id.org/enigma#hasGeneticAssociationProtocol
@@ -113,25 +122,8 @@ xsd:date rdf:type rdfs:Datatype .
                                rdfs:domain :Project ;
                                rdfs:range :GeneticAssociationProtocol ;
                                <http://purl.org/vocab/vann/example> "BipolarProject hasGeneticAssociationProtocol [instance of genetic association protocol]"@en ;
-                               rdfs:comment "Describes the genetic association protocol that is used by the project"@en .
-
-
-###  https://w3id.org/enigma#hasGeneticDataAnalyst
-:hasGeneticDataAnalyst rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf :hasDataAnalyst ;
-                       rdfs:domain :Project ;
-                       rdfs:range :Person ;
-                       <http://purl.org/vocab/vann/example> "BipolarCorticolProject hasGeneticDataAnalyst JohnSmith"@en ;
-                       rdfs:comment "Describes who the genetic data analyst of the project is"@en .
-
-
-###  https://w3id.org/enigma#hasGeneticDataCollector
-:hasGeneticDataCollector rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf :hasContributor ;
-                         rdfs:domain :Project ;
-                         rdfs:range :Person ;
-                         <http://purl.org/vocab/vann/example> "BipolarCorticolProject hasGeneticDataCollector JohnSmith"@en ;
-                         rdfs:comment "Describes who the genetic data collector of the project is"@en .
+                               rdfs:comment "Describes the genetic association protocol that is used by the project"@en ;
+                               rdfs:label "has genetic association protocol"@en .
 
 
 ###  https://w3id.org/enigma#hasGeneticDataType
@@ -144,7 +136,8 @@ xsd:date rdf:type rdfs:Datatype .
                                 ] ;
                     rdfs:range :GeneticDataType ;
                     <http://purl.org/vocab/vann/example> "BipolarProject hasGeneticDataType Exome"@en ;
-                    rdfs:comment "Describes the genetic data types that a project has"@en .
+                    rdfs:comment "Describes the genetic data types that a project has"@en ;
+                    rdfs:label "has genetic data type"@en .
 
 
 ###  https://w3id.org/enigma#hasGenotypeImputationProtocol
@@ -152,127 +145,135 @@ xsd:date rdf:type rdfs:Datatype .
                                rdfs:domain :Project ;
                                rdfs:range :GenotypeImputationProtocol ;
                                <http://purl.org/vocab/vann/example> "BipolarProject hasGenotypeImputationProtocol [instance of genotype imputation protocol]"@en ;
-                               rdfs:comment "Describes the genotype imputation protocol that is used by the project"@en .
-
-
-###  https://w3id.org/enigma#hasImagingDataAnalyst
-:hasImagingDataAnalyst rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf :hasDataAnalyst ;
-                       rdfs:domain :Project ;
-                       rdfs:range :Person ;
-                       <http://purl.org/vocab/vann/example> "BipolarCorticolProject hasImagingDataAnalyst JohnSmith"@en ;
-                       rdfs:comment "Describes who the imaging data analyst of the project is"@en .
-
-
-###  https://w3id.org/enigma#hasImagingDataCollector
-:hasImagingDataCollector rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf :hasContributor ;
-                         rdfs:domain :Project ;
-                         rdfs:range :Person ;
-                         <http://purl.org/vocab/vann/example> "BipolarCorticolProject hasImagingDataCollector JohnSmith"@en ;
-                         rdfs:comment "Describes who the imaging data collector of the project is"@en .
-
-
-###  https://w3id.org/enigma#hasPJuniorLead
-:hasPJuniorLead rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf :hasContributor ;
-                rdfs:domain :Project ;
-                rdfs:range :Person ;
-                <http://purl.org/vocab/vann/example> "BipolarProject hasJuniorLead JohnSmith"@en ;
-                rdfs:comment "Describes who the junior leads of a project are"@en .
-
-
-###  https://w3id.org/enigma#hasPSeniorLead
-:hasPSeniorLead rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf :hasContributor ;
-                rdfs:domain :Project ;
-                rdfs:range :Person ;
-                <http://purl.org/vocab/vann/example> "BipolarProject hasSeniorLead JohnSmith"@en ;
-                rdfs:comment "Describes who the senior leads of a project are"@en .
-
-
-###  https://w3id.org/enigma#hasPSpecialContributor
-:hasPSpecialContributor rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf :hasContributor ;
-                        rdfs:domain :Project ;
-                        rdfs:range :Person ;
-                        <http://purl.org/vocab/vann/example> "BipolarProject hasSpecialContributor JohnSmith"@en ;
-                        rdfs:comment "Describes who the special contributors of a project are"@en .
-
-
-###  https://w3id.org/enigma#hasProject
-:hasProject rdf:type owl:ObjectProperty ;
-            rdfs:domain :WorkingGroup ;
-            rdfs:range :Project ;
-            <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasProject BipolarCorticolProject --> The Bipolar Working Group is working on the Bipolar Corticol Project"@en ;
-            rdfs:comment "Describes what projects are worked on by a specific working group"@en .
+                               rdfs:comment "Describes the genotype imputation protocol that is used by the project"@en ;
+                               rdfs:label "has genotype imputation protocol"@en .
 
 
 ###  https://w3id.org/enigma#hasProjectDeveloper
 :hasProjectDeveloper rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf :hasContributor ;
+                     rdfs:subPropertyOf <http://purl.org/dc/terms/contributor> ;
                      rdfs:domain :Project ;
                      rdfs:range :Person ;
                      <http://purl.org/vocab/vann/example> "BipolarCorticolProject hasProjectDeveloper JohnSmith"@en ;
-                     rdfs:comment "Describes who the project developer of the project is"@en .
+                     rdfs:comment "Describes who the project developer of the project is"@en ;
+                     rdfs:label "has project developer"@en .
+
+
+###  https://w3id.org/enigma#hasProjectLead
+:hasProjectLead rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf <http://purl.org/dc/terms/contributor> ;
+                rdfs:domain :Project ;
+                rdfs:range :Person ;
+                <http://purl.org/vocab/vann/example> "BipolarProject hasProjectLead JohnSmith"@en ;
+                rdfs:comment "Describes who the leads of a project are"@en ;
+                rdfs:label "has project lead"@en .
+
+
+###  https://w3id.org/enigma#hasPublication
+:hasPublication rdf:type owl:ObjectProperty ;
+                rdfs:domain :Project ;
+                rdfs:range :AcademicArticle ;
+                rdfs:comment "Property that links a project to a publication that resulted from it."@en ;
+                rdfs:label "has publication"@en .
 
 
 #################################################################
 #    Data properties
 #################################################################
 
+###  http://purl.org/dc/terms/date
+<http://purl.org/dc/terms/date> rdf:type owl:DatatypeProperty ;
+                                rdfs:isDefinedBy <http://purl.org/dc/terms/date> .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/dc/terms/identifier
+<http://purl.org/dc/terms/identifier> rdf:type owl:DatatypeProperty ;
+                                      rdfs:isDefinedBy <http://purl.org/dc/terms/identifier> .
+
+
+###  http://purl.org/dc/terms/spatial
+<http://purl.org/dc/terms/spatial> rdf:type owl:DatatypeProperty ;
+                                   rdfs:isDefinedBy <http://purl.org/dc/terms/spatial> .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:DatatypeProperty ;
+                                 rdfs:isDefinedBy <http://purl.org/dc/terms/title> .
+
+
 ###  https://w3id.org/enigma#hasApprovedProposalForm
 :hasApprovedProposalForm rdf:type owl:DatatypeProperty ;
                          rdfs:domain :Project ;
                          rdfs:range xsd:string ;
                          <http://purl.org/vocab/vann/example> "Project1 hasApprovedProposalForm www.proposalformexample.com"@en ;
-                         rdfs:comment "Describes the approved proposal form link of a project"@en .
+                         rdfs:comment "Describes the approved proposal form link of a project"@en ;
+                         rdfs:label "has approved proposal form"@en .
+
+
+###  https://w3id.org/enigma#hasArticleStatus
+:hasArticleStatus rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :AcademicArticle ;
+                  rdfs:range xsd:string ;
+                  rdfs:comment "The status of the paper (submitted, on review, accepted, etc.)"@en ;
+                  rdfs:label "has article status"@en .
+
+
+###  https://w3id.org/enigma#hasBriefDescription
+:hasBriefDescription rdf:type owl:DatatypeProperty ;
+                     rdfs:domain [ rdf:type owl:Class ;
+                                   owl:unionOf ( :Project
+                                                 :WorkingGroup
+                                               )
+                                 ] ;
+                     rdfs:range xsd:string ;
+                     <http://purl.org/vocab/vann/example> "ProjectSZ hasBriefDescription \"reports effect size for corticol thickness\""@en ;
+                     rdfs:comment "Provides a brief description of the working group or project"@en ;
+                     rdfs:label "has brief description"@en .
 
 
 ###  https://w3id.org/enigma#hasEndDate
 :hasEndDate rdf:type owl:DatatypeProperty ;
-            rdfs:domain :Project ;
+            rdfs:domain owl:Thing ;
             rdfs:range xsd:date ;
             <http://purl.org/vocab/vann/example> "BipolarProject hasStartDate 2018-06-23"@en ;
-            rdfs:comment "Describes the end date of a project"@en .
+            rdfs:comment "Describes the end date of the described resource (a working group, a person in an organizaiton, etc.)"@en ;
+            rdfs:label "has end date"@en .
 
 
-###  https://w3id.org/enigma#hasPBriefDescription
-:hasPBriefDescription rdf:type owl:DatatypeProperty ;
-                      rdfs:domain :Project ;
-                      rdfs:range xsd:string ;
-                      <http://purl.org/vocab/vann/example> "ProjectSZ hasBriefDescription \"reports effect size for corticol thickness\""@en ;
-                      rdfs:comment "Provides a brief description of the project"@en .
+###  https://w3id.org/enigma#hasProjectStatus
+:hasProjectStatus rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Project ;
+                  rdfs:range [ rdf:type rdfs:Datatype ;
+                               owl:oneOf [ rdf:type rdf:List ;
+                                           rdf:first "gathering participants"^^xsd:string ;
+                                           rdf:rest [ rdf:type rdf:List ;
+                                                      rdf:first "protocol preparation"^^xsd:string ;
+                                                      rdf:rest [ rdf:type rdf:List ;
+                                                                 rdf:first "published"^^xsd:string ;
+                                                                 rdf:rest [ rdf:type rdf:List ;
+                                                                            rdf:first "revision"^^xsd:string ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ]
+                             ] ;
+                  <http://purl.org/vocab/vann/example> "ProjectSZ hasStatus \"published\""@en ;
+                  rdfs:comment "Describes the status of the project"@en ;
+                  rdfs:label "has project status"@en .
 
 
 ###  https://w3id.org/enigma#hasStartDate
 :hasStartDate rdf:type owl:DatatypeProperty ;
-              rdfs:domain :Project ;
+              rdfs:domain owl:Thing ;
               rdfs:range xsd:date ;
               <http://purl.org/vocab/vann/example> "BipolarProject hasStartDate 2017-06-23"@en ;
-              rdfs:comment "Describes the start date of a project"@en .
-
-
-###  https://w3id.org/enigma#hasStatus
-:hasStatus rdf:type owl:DatatypeProperty ;
-           rdfs:domain :Project ;
-           rdfs:range [ rdf:type rdfs:Datatype ;
-                        owl:oneOf [ rdf:type rdf:List ;
-                                    rdf:first "gathering participants"^^xsd:string ;
-                                    rdf:rest [ rdf:type rdf:List ;
-                                               rdf:first "protocol preparation"^^xsd:string ;
-                                               rdf:rest [ rdf:type rdf:List ;
-                                                          rdf:first "published"^^xsd:string ;
-                                                          rdf:rest [ rdf:type rdf:List ;
-                                                                     rdf:first "revision"^^xsd:string ;
-                                                                     rdf:rest rdf:nil
-                                                                   ]
-                                                        ]
-                                             ]
-                                  ]
-                      ] ;
-           <http://purl.org/vocab/vann/example> "ProjectSZ hasStatus \"published\""@en ;
-           rdfs:comment "Describes the status of the project"@en .
+              rdfs:comment "Describes the start date of the described resource (a working group, a person in an organizaiton, etc.)"@en ;
+              rdfs:label "has start date"@en .
 
 
 ###  https://w3id.org/enigma#hasStudyDesign
@@ -288,7 +289,8 @@ xsd:date rdf:type rdfs:Datatype .
                                        ]
                            ] ;
                 <http://purl.org/vocab/vann/example> "Project1 hasStudyDesign \"Case-control\""@en ;
-                rdfs:comment "Describes the study design of the project"@en .
+                rdfs:comment "Describes the study design of the project"@en ;
+                rdfs:label "has study design"@en .
 
 
 ###  https://w3id.org/enigma#hasTargetDate
@@ -296,19 +298,49 @@ xsd:date rdf:type rdfs:Datatype .
                rdfs:domain :Project ;
                rdfs:range xsd:date ;
                <http://purl.org/vocab/vann/example> "BipolarProject hasTargetDate 2020-03-12"@en ;
-               rdfs:comment "Describes the target date of the project"@en .
+               rdfs:comment "Describes the target date of the project"@en ;
+               rdfs:label "has target date"@en .
+
+
+###  https://w3id.org/enigma#hasVenue
+:hasVenue rdf:type owl:DatatypeProperty ;
+          rdfs:domain :AcademicArticle ;
+          rdfs:range xsd:string ;
+          rdfs:comment "Data property that can be used to link an article to the conference where it was presented. The target conference is represented as text."@en ;
+          rdfs:label "has venue"@en .
+
+
+###  https://w3id.org/enigma#location
+:location rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf <http://purl.org/dc/terms/spatial> ;
+          rdfs:domain :AcademicArticle ;
+          rdfs:range xsd:string ;
+          rdfs:comment "The location where the article was presented"@en ;
+          rdfs:label "location"@en .
 
 
 #################################################################
 #    Classes
 #################################################################
 
+###  http://purl.org/ontology/bibo/AcademicArticle
+<http://purl.org/ontology/bibo/AcademicArticle> rdf:type owl:Class ;
+                                                owl:equivalentClass :AcademicArticle ;
+                                                rdfs:isDefinedBy <http://purl.org/ontology/bibo/AcademicArticle> .
+
+
+###  https://w3id.org/enigma#AcademicArticle
+:AcademicArticle rdf:type owl:Class ;
+                 rdfs:comment "An academic article, submitted as a result of the work in an ENIGMA project"@en ;
+                 rdfs:label "Academic article"@en .
+
+
 ###  https://w3id.org/enigma#BrainScanDataType
 :BrainScanDataType rdf:type owl:Class ;
                    rdfs:subClassOf :DataType ;
                    <http://purl.org/vocab/vann/example> "EEG"@en ;
                    rdfs:comment "Specifies the kinds of brain scan data collected"@en ;
-                   rdfs:label "BrainScanDataType"@en .
+                   rdfs:label "Brain Scan Data Type"@en .
 
 
 ###  https://w3id.org/enigma#Cohort
@@ -318,22 +350,28 @@ xsd:date rdf:type rdfs:Datatype .
         rdfs:label "Cohort"@en .
 
 
+###  https://w3id.org/enigma#ConflictOfInterest
+:ConflictOfInterest rdf:type owl:Class ;
+                    rdfs:comment "Concept used to represent a conflict of interest of an author in a paper"@en ;
+                    rdfs:label "Conflict of interest"@en .
+
+
 ###  https://w3id.org/enigma#DataType
 :DataType rdf:type owl:Class ;
           rdfs:comment "Specifies the kinds of data collected"@en ;
-          rdfs:label "DataType"@en .
+          rdfs:label "Data Type"@en .
 
 
 ###  https://w3id.org/enigma#GeneReferencePanel
 :GeneReferencePanel rdf:type owl:Class ;
-                    rdfs:label "GeneReferencePanel"@en .
+                    rdfs:label "Gene Reference Panel"@en .
 
 
 ###  https://w3id.org/enigma#GeneticAssociationProtocol
 :GeneticAssociationProtocol rdf:type owl:Class ;
                             <http://purl.org/vocab/vann/example> "ENIGMA3 – GWAS Meta Analysis of Cortical Thickness and Surface Area - Association Protocol"@en ;
                             rdfs:comment "ENIGMA Protocols for genetic associations"@en ;
-                            rdfs:label "GeneticAssociationProtocol"@en .
+                            rdfs:label "Genetic Association Protocol"@en .
 
 
 ###  https://w3id.org/enigma#GeneticDataType
@@ -341,14 +379,14 @@ xsd:date rdf:type rdfs:Datatype .
                  rdfs:subClassOf :DataType ;
                  <http://purl.org/vocab/vann/example> "Epigenetic"@en ;
                  rdfs:comment "Specifies the kinds of genetic data collected"@en ;
-                 rdfs:label "GeneticDataType"@en .
+                 rdfs:label "Genetic Data Type"@en .
 
 
 ###  https://w3id.org/enigma#GenotypeImputationProtocol
 :GenotypeImputationProtocol rdf:type owl:Class ;
                             <http://purl.org/vocab/vann/example> "ENIGMA3 – GWAS Meta Analysis of Cortical Thickness and Surface Area - Imputation Protocol"@en ;
                             rdfs:comment "ENIGMA Protocols for genetic imputations"@en ;
-                            rdfs:label "GenotypeImputationProtocol"@en .
+                            rdfs:label "Genotype Imputation Protocol"@en .
 
 
 ###  https://w3id.org/enigma#Person
@@ -369,61 +407,23 @@ xsd:date rdf:type rdfs:Datatype .
 :WorkingGroup rdf:type owl:Class ;
               <http://purl.org/vocab/vann/example> "BipolarWG"@en ;
               rdfs:comment "Group of researchers studying a certain topic/disease"@en ;
-              rdfs:label "WorkingGroup"@en .
+              rdfs:label "Working Group"@en .
 
 
 #################################################################
 #    Individuals
 #################################################################
 
-###  https://w3id.org/enigma#EEG
-:EEG rdf:type owl:NamedIndividual ,
-              :BrainScanDataType .
+###  https://w3id.org/enigma
+<https://w3id.org/enigma> rdf:type owl:NamedIndividual ;
+                          <http://purl.org/dc/terms/title> "The Project Ontology"^^xsd:string .
 
 
-###  https://w3id.org/enigma#Epigenetic
-:Epigenetic rdf:type owl:NamedIndividual ,
-                     :GeneticDataType .
+#################################################################
+#    Annotations
+#################################################################
 
-
-###  https://w3id.org/enigma#Exome
-:Exome rdf:type owl:NamedIndividual ,
-                :GeneticDataType .
-
-
-###  https://w3id.org/enigma#Expresssion
-:Expresssion rdf:type owl:NamedIndividual ,
-                      :GeneticDataType .
-
-
-###  https://w3id.org/enigma#GenomeWide
-:GenomeWide rdf:type owl:NamedIndividual ,
-                     :GeneticDataType .
-
-
-###  https://w3id.org/enigma#RestingStateFunctionalMRI
-:RestingStateFunctionalMRI rdf:type owl:NamedIndividual ,
-                                    :BrainScanDataType .
-
-
-###  https://w3id.org/enigma#T1-weightedMRI
-:T1-weightedMRI rdf:type owl:NamedIndividual ,
-                         :BrainScanDataType .
-
-
-###  https://w3id.org/enigma#T2-weightedMRI
-:T2-weightedMRI rdf:type owl:NamedIndividual ,
-                         :BrainScanDataType .
-
-
-###  https://w3id.org/enigma#TaskBasedFunctionalMRI
-:TaskBasedFunctionalMRI rdf:type owl:NamedIndividual ,
-                                 :BrainScanDataType .
-
-
-###  https://w3id.org/enigma#WholeGenome
-:WholeGenome rdf:type owl:NamedIndividual ,
-                      :GeneticDataType .
+<http://purl.org/dc/terms/contributor> rdfs:isDefinedBy <http://purl.org/dc/terms/contributor> .
 
 
 ###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/
