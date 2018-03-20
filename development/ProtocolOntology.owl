@@ -143,23 +143,7 @@
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasCategory">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Protocol"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:oneOf>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <rdf:first>Genetic</rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                <rdf:first>Imaging</rdf:first>
-                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </owl:oneOf>
-            </rdfs:Datatype>
-        </rdfs:range>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <vann:example xml:lang="en">ENIGMA-SulciProtocol hasCategory &quot;Imaging&quot;</vann:example>
         <rdfs:comment xml:lang="en">Describes a categorical representation of the broad kind of data that a protocol is used for</rdfs:comment>
         <rdfs:label xml:lang="en">has category</rdfs:label>
