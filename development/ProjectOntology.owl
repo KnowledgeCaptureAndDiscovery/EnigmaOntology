@@ -21,7 +21,6 @@
         <terms:creator>Neda Jahanshad</terms:creator>
         <terms:creator>MiHyun Jang</terms:creator>
         <terms:contributor>Daniel Garijo</terms:contributor>
-        <terms:title>The Project Ontology</terms:title>
     </owl:Ontology>
     
 
@@ -149,7 +148,7 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
         <vann:example xml:lang="en">BipolarCohort hasContact JohnSmith</vann:example>
         <rdfs:comment xml:lang="en">Property that points to the person that is a contact for the project or cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has contact person</rdfs:label>
+        <rdfs:label xml:lang="en">has contact</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -218,19 +217,6 @@
         <vann:example xml:lang="en">BipolarProject hasGenotypeImputationProtocol [instance of genotype imputation protocol]</vann:example>
         <rdfs:comment xml:lang="en">Describes the genotype imputation protocol that is used by the project</rdfs:comment>
         <rdfs:label xml:lang="en">has genotype imputation protocol</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasProjectDeveloper -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasProjectDeveloper">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/contributor"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">BipolarCorticolProject hasProjectDeveloper JohnSmith</vann:example>
-        <rdfs:comment xml:lang="en">Describes who the project developer of the project is</rdfs:comment>
-        <rdfs:label xml:lang="en">has project developer</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -611,6 +597,25 @@
         <rdfs:comment xml:lang="en">Group of researchers studying a certain topic/disease</rdfs:comment>
         <rdfs:label xml:lang="en">Working Group</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/enigma -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma">
+        <terms:title>The Project Ontology</terms:title>
+    </owl:NamedIndividual>
     
 
 

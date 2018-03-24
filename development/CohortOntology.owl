@@ -240,10 +240,17 @@
     <!-- https://w3id.org/enigma#hasContact -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasContact">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">Cohort1 hasContact JohnSmith</vann:example>
-        <rdfs:comment xml:lang="en">Describes the contact people from ENIGMA of a cohort</rdfs:comment>
+        <vann:example xml:lang="en">BipolarCohort hasContact JohnSmith</vann:example>
+        <rdfs:comment xml:lang="en">Property that points to the person that is a contact for the project or cohort</rdfs:comment>
         <rdfs:label xml:lang="en">has contact</rdfs:label>
     </owl:ObjectProperty>
     
@@ -492,30 +499,6 @@
         <vann:example xml:lang="en">CohortGroup hasTreatmentDetails antidepressants42</vann:example>
         <rdfs:comment xml:lang="en">Describes the details of the treatment that a cohort group is using</rdfs:comment>
         <rdfs:label xml:lang="en">has treatment details</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isCohortInProject -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isCohortInProject">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
-        <vann:example xml:lang="en">Cohort1 isCohortInProject BipolarProject</vann:example>
-        <rdfs:comment xml:lang="en">Describes what projects a cohort is a part of</rdfs:comment>
-        <rdfs:label xml:lang="en">is cohort in project</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isCohortInWorkingGroup -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isCohortInWorkingGroup">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
-        <vann:example xml:lang="en">BipolarAmsterdamCohort isCohortInWorkingGroup BipolarWorkingGroup --&gt; The Bipolar Amsterdam cohort is part of the Bipolar working group</vann:example>
-        <rdfs:comment xml:lang="en">Describes what working group the cohort is a part of</rdfs:comment>
-        <rdfs:label xml:lang="en">is cohort in working group</rdfs:label>
     </owl:ObjectProperty>
     
 

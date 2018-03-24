@@ -73,7 +73,6 @@
     <!-- http://www.w3.org/2006/vcard/ns#hasAddress -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/2006/vcard/ns#hasAddress">
-        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
         <rdfs:range rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
         <rdfs:comment xml:lang="en">To specify the components of the address for the object</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/vcard/ns"/>
@@ -108,9 +107,16 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasPrimaryAddress">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/vcard/ns#hasAddress"/>
-        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
-        <vann:example xml:lang="en">USC hasPrimaryAddress &quot;Address&quot;</vann:example>
+        <vann:example xml:lang="en">USC hasPrimaryAddress &quot;123 Admiralty Way&quot;</vann:example>
         <rdfs:comment xml:lang="en">Describes the primary address of an organization</rdfs:comment>
         <rdfs:label xml:lang="en">has primary address</rdfs:label>
     </owl:ObjectProperty>
