@@ -51,12 +51,6 @@
     
 
 
-    <!-- https://w3id.org/enigma#vann:example -->
-
-    <owl:AnnotationProperty rdf:about="https://w3id.org/enigma#vann:example"/>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -108,7 +102,6 @@
     <!-- http://vivoweb.org/ontology/core#orcidId -->
 
     <owl:ObjectProperty rdf:about="http://vivoweb.org/ontology/core#orcidId">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is now an object property where the object value is a resource of the form &lt;http://orcid.org/NNNN-NNNN-NNNN-NNNN&gt;.  This is to support connecting VIVO and ORCID in the linked data web.   Note: a person can have multiple ORCID iDs.</rdfs:comment>
         <rdfs:isDefinedBy xml:lang="en">http://vivoweb.org/ontology/core#</rdfs:isDefinedBy>
     </owl:ObjectProperty>
@@ -195,6 +188,11 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasEmail">
         <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/mbox"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <vaem:rationale xml:lang="en">Property added to facilitate interaction with domain and ranges in the wiki. It&apos;s equivalent to foaf:mbox</vaem:rationale>
+        <rdfs:comment xml:lang="en">Property that indicates which is the email of a person</rdfs:comment>
+        <rdfs:label xml:lang="en">has email</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -220,6 +218,18 @@
         <vann:example xml:lang="en">Cohort1 hasMainPrincipalInvestigatorof JohnSmith</vann:example>
         <rdfs:comment xml:lang="en">Describes which cohorts somone is a main PI of</rdfs:comment>
         <rdfs:label xml:lang="en">has main principal investigator</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasOrcidId -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasOrcidId">
+        <rdfs:subPropertyOf rdf:resource="http://vivoweb.org/ontology/core#orcidId"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <vaem:rationale xml:lang="en">Property added to facilitate interaction with the wiki, making domains and ranges explicit</vaem:rationale>
+        <rdfs:comment xml:lang="en">ORCID Id of a Person</rdfs:comment>
+        <rdfs:label xml:lang="en">has ORCID Id</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -254,9 +264,6 @@
         <rdfs:comment xml:lang="en">Describes which cohorts somone is the principal investigator of</rdfs:comment>
         <rdfs:label xml:lang="en">has principal investigator</rdfs:label>
     </owl:ObjectProperty>
-    
-
-
     
 
 
@@ -302,6 +309,11 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#homepage">
         <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/homepage"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <vaem:rationale xml:lang="en">Property added to facilitate interaction with domain and ranges in the wiki. It&apos;s equivalent to foaf:homePage</vaem:rationale>
+        <rdfs:comment xml:lang="en">Property that describes the home page of a person</rdfs:comment>
+        <rdfs:label xml:lang="en">has home page</rdfs:label>
     </owl:ObjectProperty>
     
 
