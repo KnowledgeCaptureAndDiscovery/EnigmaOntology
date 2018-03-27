@@ -21,7 +21,6 @@
         <terms:creator>Neda Jahanshad</terms:creator>
         <terms:creator>MiHyun Jang</terms:creator>
         <terms:contributor>Daniel Garijo</terms:contributor>
-        <terms:title>The Working Group Ontology</terms:title>
     </owl:Ontology>
     
 
@@ -82,7 +81,14 @@
     <!-- https://w3id.org/enigma#hasCohort -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasCohort">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#WorkingGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
         <vann:example xml:lang="en">BipolarWorkingGroup hasCohort AmsterdamBipolarCohort --&gt; Bipolar Working Group includes the Amsterdam Bipolar Cohort</vann:example>
         <rdfs:comment xml:lang="en">Describes what cohorts are part of the working group</rdfs:comment>
@@ -319,6 +325,24 @@
         <rdfs:label xml:lang="en">Working Group</rdfs:label>
     </owl:Class>
     
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/enigma -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma">
+        <terms:title>The Working Group Ontology</terms:title>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 

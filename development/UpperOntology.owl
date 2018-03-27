@@ -88,7 +88,14 @@
     <!-- https://w3id.org/enigma#hasCohort -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasCohort">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#WorkingGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
         <vann:example xml:lang="en">BipolarProject hasCohort AmsterdamBipolarCohort --&gt; Bipolar Project includes the Amsterdam Bipolar Cohort</vann:example>
         <rdfs:comment xml:lang="en">Describes what cohorts are part of the project</rdfs:comment>

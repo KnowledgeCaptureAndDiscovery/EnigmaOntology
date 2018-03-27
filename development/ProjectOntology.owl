@@ -42,6 +42,12 @@
     
 
 
+    <!-- https://w3id.org/enigma#rationale -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/enigma#rationale"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -113,7 +119,14 @@
     <!-- https://w3id.org/enigma#hasCohort -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasCohort">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#WorkingGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
         <vann:example xml:lang="en">BipolarProject hasCohort AmsterdamBipolarCohort</vann:example>
         <rdfs:comment xml:lang="en">Describes what cohorts are part of the project</rdfs:comment>
@@ -436,6 +449,19 @@
         <vann:example xml:lang="en">BipolarProject hasTargetDate 2020-03-12</vann:example>
         <rdfs:comment xml:lang="en">Describes the target date of the project</rdfs:comment>
         <rdfs:label xml:lang="en">has target date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasTitle -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasTitle">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/title"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Describes the title of a project</rdfs:comment>
+        <rdfs:label xml:lang="en">has title</rdfs:label>
+        <rationale xml:lang="en">Property added to restrict the domain to enigma:Project. This is done for facilitating the interaction with the wiki interface</rationale>
     </owl:DatatypeProperty>
     
 

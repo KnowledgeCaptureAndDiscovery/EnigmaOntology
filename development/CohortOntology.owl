@@ -403,6 +403,19 @@
     
 
 
+    <!-- https://w3id.org/enigma#hasMainPrincipalInvestigator -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasMainPrincipalInvestigator">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasPrincipalInvestigator"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example xml:lang="en">Cohort1 hasMainPrincipalInvestigatorof JohnSmith</vann:example>
+        <rdfs:comment xml:lang="en">Describes which cohorts somone is a main PI of</rdfs:comment>
+        <rdfs:label xml:lang="en">has main principal investigator</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/enigma#hasMedicalRatingDetails -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasMedicalRatingDetails">
@@ -470,6 +483,7 @@
     <!-- https://w3id.org/enigma#hasPrincipalInvestigator -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasPrincipalInvestigator">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasInvestigator"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
         <vann:example xml:lang="en">Cohort1 hasPrincipalInvestigator John --&gt; the principal investigator of Cohort1 is John</vann:example>
