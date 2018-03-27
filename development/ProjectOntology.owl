@@ -103,14 +103,14 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#WorkingGroup"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/enigma#BrainScanDataType"/>
         <vann:example xml:lang="en">BipolarProject hasBrainScanDataType DiffusionMRI</vann:example>
-        <rdfs:comment xml:lang="en">Describes which brain scan data types a project has</rdfs:comment>
+        <rdfs:comment xml:lang="en">Describes which brain scan data types a cohort or project has</rdfs:comment>
         <rdfs:label xml:lang="en">has brain scan data type</rdfs:label>
     </owl:ObjectProperty>
     
@@ -129,7 +129,7 @@
         </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
         <vann:example xml:lang="en">BipolarProject hasCohort AmsterdamBipolarCohort</vann:example>
-        <rdfs:comment xml:lang="en">Describes what cohorts are part of the project</rdfs:comment>
+        <rdfs:comment xml:lang="en">Describes what cohorts are part of a project or working group</rdfs:comment>
         <rdfs:label xml:lang="en">has cohort</rdfs:label>
     </owl:ObjectProperty>
     
@@ -169,10 +169,17 @@
     <!-- https://w3id.org/enigma#hasDataType -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDataType">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/enigma#DataType"/>
         <vann:example xml:lang="en">BipolarProject hasDataType MRIImage</vann:example>
-        <rdfs:comment xml:lang="en">Describes the data types that the project collected</rdfs:comment>
+        <rdfs:comment xml:lang="en">Describes the data types that a cohort or project collected</rdfs:comment>
         <rdfs:label xml:lang="en">has data type</rdfs:label>
     </owl:ObjectProperty>
     
@@ -209,14 +216,14 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#WorkingGroup"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/enigma#GeneticDataType"/>
         <vann:example xml:lang="en">BipolarProject hasGeneticDataType Exome</vann:example>
-        <rdfs:comment xml:lang="en">Describes the genetic data types that a project has</rdfs:comment>
+        <rdfs:comment xml:lang="en">Describes the genetic data types that a cohort or project has</rdfs:comment>
         <rdfs:label xml:lang="en">has genetic data type</rdfs:label>
     </owl:ObjectProperty>
     
@@ -394,7 +401,7 @@
                 </owl:oneOf>
             </rdfs:Datatype>
         </rdfs:range>
-        <vann:example xml:lang="en">ProjectSZ hasStatus &quot;published&quot;</vann:example>
+        <vann:example xml:lang="en">ProjectSZ hasProjectStatus &quot;published&quot;</vann:example>
         <rdfs:comment xml:lang="en">Describes the status of the project</rdfs:comment>
         <rdfs:label xml:lang="en">has project status</rdfs:label>
     </owl:DatatypeProperty>
@@ -416,7 +423,14 @@
     <!-- https://w3id.org/enigma#hasStudyDesign -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasStudyDesign">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -435,7 +449,7 @@
             </rdfs:Datatype>
         </rdfs:range>
         <vann:example xml:lang="en">Project1 hasStudyDesign &quot;Case-control&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Describes the study design of the project</rdfs:comment>
+        <rdfs:comment xml:lang="en">Describes the study design of the cohort or project</rdfs:comment>
         <rdfs:label xml:lang="en">has study design</rdfs:label>
     </owl:DatatypeProperty>
     
