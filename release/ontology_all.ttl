@@ -739,6 +739,22 @@ Schizophrenia withMinAgeOfOnsetOfDisorder 10
               [ a       rdfs:Datatype ;
                 owl:oneOf
                         [ a       rdf:List ;
+                          rdf:first "Active"^^xsd:string ;
+                          rdf:rest
+                                  [ a       rdf:List ;
+                                    rdf:first "Inactive"^^xsd:string ;
+                                    rdf:rest
+                                            [ a       rdf:List ;
+                                              rdf:first "Left Organization"^^xsd:string ;
+                                              rdf:rest ()
+                                            ]
+                                  ]
+                        ]
+              ] ;
+      rdfs:range
+              [ a       rdfs:Datatype ;
+                owl:oneOf
+                        [ a       rdf:List ;
                           rdf:first "gathering participants"^^xsd:string ;
                           rdf:rest
                                   [ a       rdf:List ;
@@ -751,22 +767,6 @@ Schizophrenia withMinAgeOfOnsetOfDisorder 10
                                                         rdf:first "revision"^^xsd:string ;
                                                         rdf:rest ()
                                                       ]
-                                            ]
-                                  ]
-                        ]
-              ] ;
-      rdfs:range
-              [ a       rdfs:Datatype ;
-                owl:oneOf
-                        [ a       rdf:List ;
-                          rdf:first "Active"^^xsd:string ;
-                          rdf:rest
-                                  [ a       rdf:List ;
-                                    rdf:first "Inactive"^^xsd:string ;
-                                    rdf:rest
-                                            [ a       rdf:List ;
-                                              rdf:first "Left Organization"^^xsd:string ;
-                                              rdf:rest ()
                                             ]
                                   ]
                         ]
@@ -1420,6 +1420,9 @@ Cohort1 hasAgeGroup \"Seniors\""""@en .
 :Toronto
       a       :City , owl:NamedIndividual .
 
+[]    a       owl:AllDisjointProperties ;
+      owl:members (:hasNumberOfSlices) .
+
 :hasDiagnosticGroup
       a       owl:ObjectProperty ;
       rdfs:comment "Describes the patient group of a cohort"@en ;
@@ -1972,9 +1975,6 @@ YoungManiaRatingScale withMaxDurationOfDisorder 10
 
 :T-Siemens-TrioTim
       a       :Scanner , owl:NamedIndividual .
-
-[]    a       owl:AllDisjointProperties ;
-      owl:members (:hasNumberOfSlices) .
 
 :hasTreatmentDetails
       a       owl:ObjectProperty ;
