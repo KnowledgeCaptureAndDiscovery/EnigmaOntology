@@ -91,7 +91,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasAffiliate">
         <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/member"/>
-        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Organization"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
         <vann:example xml:lang="en">HarvardU hasAffiliate JohnSmith</vann:example>
         <rdfs:comment xml:lang="en">Describes the organization&apos;s affiliates</rdfs:comment>
@@ -107,7 +107,7 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Organization"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#Person"/>
                 </owl:unionOf>
             </owl:Class>
@@ -124,8 +124,8 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isPartOfOrganization">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/isPartOf"/>
-        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
-        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Organization"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Organization"/>
         <vann:example xml:lang="en">Department of Psychology, USC isPartOfOrganization USC</vann:example>
         <rdfs:comment xml:lang="en">Describes the parent organization which an organization is a part of. An organization may be part of more than one organizations.</rdfs:comment>
         <rdfs:label xml:lang="en">is part of organization</rdfs:label>
