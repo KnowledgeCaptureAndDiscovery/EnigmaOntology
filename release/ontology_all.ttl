@@ -253,10 +253,10 @@ vann:preferredNamespaceUri
               [ a       rdfs:Datatype ;
                 owl:oneOf
                         [ a       rdf:List ;
-                          rdf:first "Case-Control" ;
+                          rdf:first "Case-control" ;
                           rdf:rest
                                   [ a       rdf:List ;
-                                    rdf:first "Population-Based" ;
+                                    rdf:first "Population-based" ;
                                     rdf:rest ()
                                   ]
                         ]
@@ -265,10 +265,10 @@ vann:preferredNamespaceUri
               [ a       rdfs:Datatype ;
                 owl:oneOf
                         [ a       rdf:List ;
-                          rdf:first "Case-control" ;
+                          rdf:first "Case-Control" ;
                           rdf:rest
                                   [ a       rdf:List ;
-                                    rdf:first "Population-based" ;
+                                    rdf:first "Population-Based" ;
                                     rdf:rest ()
                                   ]
                         ]
@@ -426,7 +426,6 @@ terms:spatial
       a       owl:Class ;
       rdfs:comment "An organization contributing to a given ENIGMA project"@en ;
       rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> ;
-      vann:example "Information Sciences Institute"@en ;
       owl:equivalentClass :Organization .
 
 :currentJobTitle
@@ -617,6 +616,9 @@ Schizophrenia withMinAgeOfOnsetOfDisorder 10
       rdfs:comment "ENIGMA Protocols for genetic imputations"@en ;
       rdfs:label "Genotype Imputation Protocol"@en ;
       vann:example "ENIGMA3 â€“ GWAS Meta Analysis of Cortical Thickness and Surface Area - Imputation Protocol"@en .
+
+[]    a       owl:AllDisjointProperties ;
+      owl:members (:hasNumberOfSlices) .
 
 :isScannerModel
       a       owl:DatatypeProperty ;
@@ -981,9 +983,6 @@ terms:title
       rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
       rdfs:range <http://www.w3.org/2006/vcard/ns#Address> .
 
-[]    a       owl:AllDisjointProperties ;
-      owl:members (:hasNumberOfSlices) .
-
 :hasNeurologicalComorbidity
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes if the members of a cohort group have a neurological comorbidity"@en ;
@@ -1227,7 +1226,9 @@ Cohort1 hasAgeGroup \"Seniors\""""@en .
       rdfs:comment "An organization belonging to the ENIGMA consortium. Organization can be hospitals, universities, departments, etc."@en , "An organization contributing to a given ENIGMA project"@en ;
       rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> ;
       rdfs:label "Organization"@en ;
-      vann:example "Information Sciences Institute"@en .
+      vann:example "Information Sciences Institute"@en ;
+      <https://w3id.org/enigma#vann:example>
+              "Information Sciences Institute" .
 
 :hasDiagnosticGroup
       a       owl:ObjectProperty ;
@@ -1812,7 +1813,7 @@ vann:example
 :hasAffiliate
       a       owl:ObjectProperty ;
       rdfs:comment "Describes the organization's affiliates"@en ;
-      rdfs:domain <http://xmlns.com/foaf/0.1/Organization> ;
+      rdfs:domain :Organization , <http://xmlns.com/foaf/0.1/Organization> ;
       rdfs:label "has affiliate"@en ;
       rdfs:range :Person ;
       rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/member> ;
@@ -2011,9 +2012,9 @@ terms:date
 :isPartOfOrganization
       a       owl:ObjectProperty ;
       rdfs:comment "Describes the parent organization which an organization is a part of. An organization may be part of more than one organizations."@en ;
-      rdfs:domain <http://xmlns.com/foaf/0.1/Organization> ;
+      rdfs:domain :Organization ;
       rdfs:label "is part of organization"@en ;
-      rdfs:range <http://xmlns.com/foaf/0.1/Organization> ;
+      rdfs:range :Organization ;
       rdfs:subPropertyOf terms:isPartOf ;
       vann:example "Department of Psychology, USC isPartOfOrganization USC"@en .
 
@@ -2102,7 +2103,7 @@ terms:date
               ] ;
       rdfs:domain
               [ a       owl:Class ;
-                owl:unionOf (<http://xmlns.com/foaf/0.1/Organization> :Person)
+                owl:unionOf (:Organization :Person)
               ] ;
       rdfs:label "has primary address"@en ;
       rdfs:range <http://www.w3.org/2006/vcard/ns#Address> ;
