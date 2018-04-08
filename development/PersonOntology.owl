@@ -201,10 +201,17 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasHomePage">
         <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/homepage"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <vaem:rationale xml:lang="en">Property added to facilitate interaction with domain and ranges in the wiki. It&apos;s equivalent to foaf:homePage</vaem:rationale>
-        <rdfs:comment xml:lang="en">Property that describes the home page of a person</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property that describes the home page of a cohort or person</rdfs:comment>
         <rdfs:label xml:lang="en">has home page</rdfs:label>
     </owl:ObjectProperty>
     

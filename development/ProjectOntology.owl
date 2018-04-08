@@ -343,6 +343,7 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#WorkingGroup"/>
                 </owl:unionOf>
@@ -350,7 +351,7 @@
         </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <vann:example xml:lang="en">ProjectSZ hasBriefDescription &quot;reports effect size for corticol thickness&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Provides a brief description of the working group or project</rdfs:comment>
+        <rdfs:comment xml:lang="en">Provides a brief description of the working group or project or cohort</rdfs:comment>
         <rdfs:label xml:lang="en">has brief description</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -426,30 +427,16 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:oneOf>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <rdf:first>Case-control</rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                <rdf:first>Population-based</rdf:first>
-                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </owl:oneOf>
-            </rdfs:Datatype>
-        </rdfs:range>
-        <vann:example xml:lang="en">Project1 hasStudyDesign &quot;Case-control&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Describes the study design of the cohort or project</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <vann:example xml:lang="en">Project1 hasStudyDesign &quot;Case/control, Population&quot;</vann:example>
+        <rdfs:comment xml:lang="en">Describes the study design of the cohort group or project (Case/control; Population; Healthy only; Patients only)
+
+NOTE: study design options are mutually exclusive for Cohort Groups but not Projects</rdfs:comment>
         <rdfs:label xml:lang="en">has study design</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -549,6 +536,17 @@
         <vann:example xml:lang="en">ADNI: Alzheimer’s Disease Neuroimaging Initiative</vann:example>
         <rdfs:comment xml:lang="en">A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria</rdfs:comment>
         <rdfs:label xml:lang="en">Cohort</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#CohortGroup -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#CohortGroup">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <vann:example xml:lang="en">AMCControlGroup is a control cohort group of the AMC cohort</vann:example>
+        <rdfs:comment xml:lang="en">A subset of Cohort, which either forms the patient group or control group</rdfs:comment>
+        <rdfs:label xml:lang="en">Cohort Group</rdfs:label>
     </owl:Class>
     
 
