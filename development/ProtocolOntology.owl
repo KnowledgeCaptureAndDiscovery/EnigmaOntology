@@ -95,14 +95,26 @@
     
 
 
-    <!-- https://w3id.org/enigma#hasRunProtocol -->
+    <!-- https://w3id.org/enigma#hasProtocol -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasRunProtocol">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasProtocol">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#ProtocolDetails"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Protocol"/>
-        <vann:example xml:lang="en">AmsterdamBipolarCohort hasRunProtocol ENIGMA-SulciProtocol</vann:example>
-        <rdfs:comment xml:lang="en">Describes which data processing protocol was run in a cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has run protocol</rdfs:label>
+        <vann:example xml:lang="en">Cohort1 hasProtocolDetails ENIGMA-Sulci-Details hasProtocol ENIGMA-Sulci</vann:example>
+        <rdfs:comment xml:lang="en">Describes the protocol associated with a protocol details relationship</rdfs:comment>
+        <rdfs:label xml:lang="en">has protocol</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasProtocolDetails -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasProtocolDetails">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#ProtocolDetails"/>
+        <vann:example xml:lang="en">AmsterdamBipolarCohort hasProtocolDetails ProtocolDetails</vann:example>
+        <rdfs:comment xml:lang="en">Describes the details of who ran a protocol for a given cohort</rdfs:comment>
+        <rdfs:label xml:lang="en">has protocol details</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -115,6 +127,18 @@
         <vann:example xml:lang="en">BipolarProject usesProtocol ENIGMA-SulciProtocol</vann:example>
         <rdfs:comment xml:lang="en">Describes which data processing protocol was used in a project</rdfs:comment>
         <rdfs:label xml:lang="en">uses protocol</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#wasRunBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#wasRunBy">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#ProtocolDetails"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example xml:lang="en">Cohort1 hasProtocolDetails ENIGMA-Sulci-Details hasProtocol ENIGMA-Sulci &amp; wasRunBy John Smith</vann:example>
+        <rdfs:comment xml:lang="en">Describes the detail of who ran a protocol for a cohort</rdfs:comment>
+        <rdfs:label xml:lang="en">was run by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -270,6 +294,16 @@
         <vann:example xml:lang="en">ENIGMA-Sulci Protocol</vann:example>
         <rdfs:comment xml:lang="en">An image processing or genetic analysis protocol used to extract brain feature data</rdfs:comment>
         <rdfs:label xml:lang="en">Protocol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#ProtocolDetails -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#ProtocolDetails">
+        <vann:example xml:lang="en">Protocol X hasProtocolDetails wasRunBy John Smith</vann:example>
+        <rdfs:comment xml:lang="en">Specific details regarding a protocol</rdfs:comment>
+        <rdfs:label xml:lang="en">Protocol Details</rdfs:label>
     </owl:Class>
     
 
