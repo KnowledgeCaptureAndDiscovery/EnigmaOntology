@@ -125,6 +125,7 @@
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example xml:lang="en">BipolarProject firstDraftContributor JohnSmith</vann:example>
         <rdfs:comment xml:lang="en">Property designed to distinguish who collaborated in the creation of the first draft of a publication</rdfs:comment>
         <rdfs:label xml:lang="en">first draft contributor</rdfs:label>
     </owl:ObjectProperty>
@@ -163,6 +164,7 @@
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributor"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example xml:lang="en">BipolarProject hasDesigner JohnSmith</vann:example>
         <rdfs:comment xml:lang="en">Property that points to the person responsible for helping designing a project.</rdfs:comment>
         <rdfs:label xml:lang="en">has designer</rdfs:label>
     </owl:ObjectProperty>
@@ -227,6 +229,7 @@
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasProjectLead"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example xml:lang="en">BipolarProject hasLastProjectLead JohnSmith</vann:example>
         <rdfs:comment xml:lang="en">Property designed to identify whom of the leads plays a senior role in the project, and therefore should be placed last when writing papers.</rdfs:comment>
         <rdfs:label xml:lang="en">has last project lead</rdfs:label>
     </owl:ObjectProperty>
@@ -246,6 +249,19 @@
     
 
 
+    <!-- https://w3id.org/enigma#hasProtocolRunner -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasProtocolRunner">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributor"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example xml:lang="en">BipolarProject hasProtocolRunner JohnSmith</vann:example>
+        <rdfs:comment xml:lang="en">Describes who ran a protocol for a given cohort</rdfs:comment>
+        <rdfs:label xml:lang="en">has protocol runner</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/enigma#hasReviewer -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasReviewer">
@@ -259,8 +275,21 @@
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example xml:lang="en">BipolarProject hasReviewer JohnSmith</vann:example>
         <rdfs:comment xml:lang="en">Property that indicates who contributed to the paper reviewing the initial drafts and providing comments</rdfs:comment>
         <rdfs:label xml:lang="en">has reviewer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#ranProtocol -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#ranProtocol">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Protocol"/>
+        <vann:example xml:lang="en">JohnSmith ranProtocol ENIGMA-Sulci Protocol</vann:example>
+        <rdfs:comment xml:lang="en">Describes which protocol that an individual ran</rdfs:comment>
+        <rdfs:label xml:lang="en">ran protocol</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -319,6 +348,16 @@
         <vann:example xml:lang="en">SZPositiveSymptoms</vann:example>
         <rdfs:comment xml:lang="en">Project encompassing cohort</rdfs:comment>
         <rdfs:label xml:lang="en">Project</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#Protocol -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#Protocol">
+        <vann:example xml:lang="en">ENIGMA-Sulci Protocol</vann:example>
+        <rdfs:comment xml:lang="en">An image processing or genetic analysis protocol used to extract brain feature data</rdfs:comment>
+        <rdfs:label xml:lang="en">Protocol</rdfs:label>
     </owl:Class>
     
 
