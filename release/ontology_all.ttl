@@ -1,8 +1,8 @@
 @prefix :        <https://w3id.org/enigma#> .
 @prefix vaem:    <http://www.linkedmodel.org/schema/vaem#> .
-@prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix terms:   <http://purl.org/dc/terms/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vann1:   <https://w3id.org/enigma#vann:> .
@@ -33,6 +33,14 @@
       rdfs:label "Specific Disorder Info"@en ;
       vann:example "Severity of a disorder"@en .
 
+:hasNumberOfT1w
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the amount of T1-weighted image data collected by a project cohort"@en ;
+      rdfs:domain :ProjectCohort ;
+      rdfs:label "has number of T1w"@en ;
+      rdfs:range xsd:nonNegativeInteger ;
+      vann:example "ProjectCohortSZ hasNumberOfT1w 8"@en .
+
 :doesNotHaveIntellectualDisability
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes whether a cohort excludes people with an intellectual disability"@en ;
@@ -40,6 +48,14 @@
       rdfs:label "does not have intellectual disability"@en ;
       rdfs:range xsd:boolean ;
       vann:example "Cohort1 doesNotHaveIntellectualDisability true"@en .
+
+:hasNumberOfT2
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the amount of T2 image data  collected by a project cohort"@en ;
+      rdfs:domain :ProjectCohort ;
+      rdfs:label "has number of T2"@en ;
+      rdfs:range xsd:nonNegativeInteger ;
+      vann:example "ProjectCohortSZ hasNumberOfT2 10"@en .
 
 :hasWorkingGroupMember
       a       owl:ObjectProperty ;
@@ -62,10 +78,7 @@ vaem:rationale
 :includesMale
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes whether a cohort includes male participants"@en ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :CohortGroup :ProjectCohort)
-              ] ;
+      rdfs:domain :Cohort ;
       rdfs:label "includes male"@en ;
       rdfs:range xsd:boolean ;
       vann:example "Cohort1 includesMale true"@en .
@@ -101,7 +114,8 @@ vaem:rationale
               ] ;
       rdfs:label "has reviewer"@en ;
       rdfs:range :Person ;
-      rdfs:subPropertyOf :contributor .
+      rdfs:subPropertyOf :contributor ;
+      vann:example "BipolarProject hasReviewer JohnSmith"@en .
 
 :RespiratoryDisorder
       a       owl:Class ;
@@ -122,6 +136,12 @@ vaem:rationale
       rdfs:label "has max age"@en ;
       rdfs:range xsd:positiveInteger ;
       vann:example "CohortGroup1 hasMaxAge 60"@en .
+
+:Protocol
+      a       owl:Class ;
+      rdfs:comment "An image processing or genetic analysis protocol used to extract brain feature data"@en ;
+      rdfs:label "Protocol"@en ;
+      vann:example "ENIGMA-Sulci Protocol"@en .
 
 :withMaxDurationOfDisorder
       a       owl:DatatypeProperty ;
@@ -149,6 +169,30 @@ Schizophrenia withMaxDurationOfDisorder 20
       rdfs:label "Manufacturer"@en ;
       vann:example "Siemens"@en .
 
+:usesScanner
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the scanner used by the cohort"@en ;
+      rdfs:domain :Cohort ;
+      rdfs:label "uses scanner"@en ;
+      rdfs:range xsd:string ;
+      vann:example "SZCohort usesScanner \"1.5T-GE-Signa\""@en .
+
+:hasStudyFeature
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the study features of a cohort group (Clinical trial; Twin/Family study; Logitudinal; in-vivo; ex-vivo; post-mortem)"@en ;
+      rdfs:domain :CohortGroup ;
+      rdfs:label "has study feature"@en ;
+      rdfs:range xsd:string ;
+      vann:example "CohortGroup1 hasStudyFeatures \"Clinical trial, Twin/Family study\""@en .
+
+:hasDiagnosisInstrument
+      a       owl:ObjectProperty ;
+      rdfs:comment "Describes what instrument is used to diagnose the members of the cohort"@en ;
+      rdfs:domain :Cohort ;
+      rdfs:label "has diagnosis instrument"@en ;
+      rdfs:range :DiagnosisInstrument ;
+      vann:example "Cohort1 hasDiagnosisInstrument miniInternationalNeuropychiatricInterview --> The members of Cohort1 are diagnosed with Mini International Neuropychiatric Interview"@en .
+
 :hasFamilyHistoryOf
       a       owl:ObjectProperty ;
       rdfs:comment "Describes what diseases the members of the cohort group have a family history of"@en ;
@@ -166,6 +210,22 @@ Schizophrenia withMaxDurationOfDisorder 20
       rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/givenName> ;
       vaem:rationale "Property added to restrict the domain to enigma:Person. This is done for facilitating the interaction with the wiki interface"@en .
 
+:hasPercentSelectLoci
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the percent of cohort group biosamples which are from select loci (some SNPs/CNVs)"@en ;
+      rdfs:domain :CohortGroup ;
+      rdfs:label "has percent select loci"@en ;
+      rdfs:range xsd:double ;
+      vann:example "CohortGroupSZ hasPercentSelectLoci 67.0"@en .
+
+:hasCategory
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes a categorical representation of the broad kind of data that a protocol is used for"@en ;
+      rdfs:domain :Protocol ;
+      rdfs:label "has category"@en ;
+      rdfs:range xsd:string ;
+      vann:example "ENIGMA-SulciProtocol hasCategory \"Imaging\""@en .
+
 :ScannerSoftware
       a       owl:Class ;
       rdfs:comment "The software associated with a given scanner"@en ;
@@ -180,6 +240,14 @@ Schizophrenia withMaxDurationOfDisorder 20
       rdfs:range :Person ;
       rdfs:subPropertyOf :hasWorkingGroupMember ;
       vann:example "BipolarWorkingGroup hasWorkingGroupChair JohnSmith"@en , "SZWorkingGroup hasWorkingGroupChair JohnSmith"@en .
+
+:hasVersion
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the version of the protocol"@en ;
+      rdfs:domain :Protocol ;
+      rdfs:label "has version"@en ;
+      rdfs:range xsd:string ;
+      vann:example "ENIGMA Cortical Quality Control Protocol hasVersion \"2.0 April 2017\""@en .
 
 <http://xmlns.com/foaf/0.1/member>
       a       owl:ObjectProperty ;
@@ -239,41 +307,20 @@ vann:preferredNamespaceUri
 
 :hasStudyDesign
       a       owl:DatatypeProperty ;
-      rdfs:comment "Describes the study design of the cohort or project"@en ;
+      rdfs:comment """Describes the study design of the cohort group or project (Case/control; Population; Healthy only; Patients only)
+
+NOTE: study design options are mutually exclusive for Cohort Groups but not Projects"""@en ;
       rdfs:domain
               [ a       owl:Class ;
-                owl:unionOf (:Cohort :Project)
+                owl:unionOf (:CohortGroup :Project)
               ] ;
       rdfs:domain
               [ a       owl:Class ;
-                owl:unionOf (:Cohort :Project)
+                owl:unionOf (:CohortGroup :Project)
               ] ;
       rdfs:label "has study design"@en ;
-      rdfs:range
-              [ a       rdfs:Datatype ;
-                owl:oneOf
-                        [ a       rdf:List ;
-                          rdf:first "Case-control" ;
-                          rdf:rest
-                                  [ a       rdf:List ;
-                                    rdf:first "Population-based" ;
-                                    rdf:rest ()
-                                  ]
-                        ]
-              ] ;
-      rdfs:range
-              [ a       rdfs:Datatype ;
-                owl:oneOf
-                        [ a       rdf:List ;
-                          rdf:first "Case-Control" ;
-                          rdf:rest
-                                  [ a       rdf:List ;
-                                    rdf:first "Population-Based" ;
-                                    rdf:rest ()
-                                  ]
-                        ]
-              ] ;
-      vann:example "Cohort1 hasStudyDesign Case-Control"@en , "Project1 hasStudyDesign \"Case-control\""@en .
+      rdfs:range xsd:string ;
+      vann:example "Project1 hasStudyDesign \"Case/control, Population\""@en , "CohortGroup1 hasStudyDesign \"Population\""@en .
 
 :hasGeneticDataType
       a       owl:ObjectProperty ;
@@ -340,7 +387,7 @@ vann:preferredNamespaceUri
 :hasGeneticDataCollector
       a       owl:ObjectProperty ;
       rdfs:comment "Describes what project someone collected genetic data for"@en ;
-      rdfs:domain :Cohort ;
+      rdfs:domain :Project ;
       rdfs:label "has genetic data collector"@en ;
       rdfs:range :Person ;
       rdfs:subPropertyOf :hasDataCollector ;
@@ -395,7 +442,7 @@ terms:spatial
       a       owl:Class ;
       rdfs:comment "ENIGMA Protocols for genetic associations"@en ;
       rdfs:label "Genetic Association Protocol"@en ;
-      vann:example "ENIGMA3 â€“ GWAS Meta Analysis of Cortical Thickness and Surface Area - Association Protocol"@en .
+      vann:example "ENIGMA3 – GWAS Meta Analysis of Cortical Thickness and Surface Area - Association Protocol"@en .
 
 :usesTreatment
       a       owl:ObjectProperty ;
@@ -410,6 +457,14 @@ terms:spatial
       rdfs:comment "The principles and standards used to diagnose a diease or condition"@en ;
       rdfs:label "Diagnostic Criteria"@en ;
       vann:example "DSM4"@en .
+
+:hasNumberOfEEG
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the amount of electroencephalography image data collected by a project cohort"@en ;
+      rdfs:domain :ProjectCohort ;
+      rdfs:label "has number of EEG"@en ;
+      rdfs:range xsd:nonNegativeInteger ;
+      vann:example "ProjectCohortSZ hasNumberOfEEG 30"@en .
 
 :DataType
       a       owl:Class ;
@@ -449,6 +504,14 @@ terms:spatial
       rdfs:subClassOf :Disorder ;
       vann:example "Delirium"@en .
 
+:hasPercentMitochondrialGenotyping
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the percent of cohort group biosamples which are from mitochondrial genotyping"@en ;
+      rdfs:domain :CohortGroup ;
+      rdfs:label "has percent mitochondrial genotyping"@en ;
+      rdfs:range xsd:double ;
+      vann:example "CohortGroupSZ hasPercentMitochondrialGenotyping 44.5"@en .
+
 :hasMiddleInitial
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes middle initial of a person" ;
@@ -463,7 +526,8 @@ terms:spatial
       rdfs:domain :WorkingGroup ;
       rdfs:label "short name"@en ;
       rdfs:range xsd:string ;
-      rdfs:subPropertyOf terms:title .
+      rdfs:subPropertyOf terms:title ;
+      vann:example "SchizophreniaWG shortName SZWG"@en .
 
 vann:preferredNamespacePrefix
       a       owl:AnnotationProperty .
@@ -473,6 +537,14 @@ terms:contributor
       rdfs:domain :Project ;
       rdfs:isDefinedBy terms:contributor ;
       rdfs:range :Person .
+
+:hasSpecies
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the species of the subjects of a cohort (Humans, Chimps, Mice, etc.)"@en ;
+      rdfs:domain :Cohort ;
+      rdfs:label "has species"@en ;
+      rdfs:range xsd:string ;
+      vann:example "Cohort1 hasSpecies \"humans\""@en .
 
 terms:identifier
       a       owl:DatatypeProperty ;
@@ -491,6 +563,14 @@ terms:identifier
       rdfs:domain :AcquisitionProtocol ;
       rdfs:range xsd:boolean ;
       vann:example "1.5T-GE-Signa usedBodyCoil true --> This 1.5T-GE-Signa scanner used a body coil to scan"@en .
+
+:usesProtocol
+      a       owl:ObjectProperty ;
+      rdfs:comment "Describes which data processing protocol was used in a project"@en ;
+      rdfs:domain :Project ;
+      rdfs:label "uses protocol"@en ;
+      rdfs:range :Protocol ;
+      vann:example "BipolarProject usesProtocol ENIGMA-SulciProtocol"@en .
 
 :ImageAcquisitionProtocol
       a       owl:Class ;
@@ -521,6 +601,14 @@ xsd:date
       rdfs:range xsd:date ;
       vann:example "BipolarProject hasStartDate 2018-06-23"@en , "JohnSmith hasQualifiedAffiliation \"QualifiedAffiliation\" hasEndDate \"2018-07-13\""@en .
 
+:hasNumberOfTransgenderMtoF
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describing the number of male to female transgender individuals in a cohort group"@en ;
+      rdfs:domain :CohortGroup ;
+      rdfs:label "has number of transgender m to f"@en ;
+      rdfs:range xsd:nonNegativeInteger ;
+      vann:example "CohortGroup1 hasNumberOfTransgenderMtoF 20"@en .
+
 :familyName
       a       owl:DatatypeProperty ;
       rdfs:comment "The family name of some person."@en ;
@@ -541,10 +629,7 @@ xsd:date
 :includesFemale
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes whether a cohort includes female participants"@en ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :CohortGroup :ProjectCohort)
-              ] ;
+      rdfs:domain :Cohort ;
       rdfs:label "includes female"@en ;
       rdfs:range xsd:boolean ;
       vann:example "Cohort1 includesFemale true"@en .
@@ -556,7 +641,8 @@ xsd:date
 
 :hasContact
       a       owl:ObjectProperty ;
-      rdfs:comment "Property that points to the person that is a contact for the project or cohort"@en ;
+      rdfs:comment "Property that points to the person that is a contact for the project or cohort"@en , "Describes who to contact for inquiries about the protocol"@en ;
+      rdfs:domain :Protocol ;
       rdfs:domain
               [ a       owl:Class ;
                 owl:unionOf (:Cohort :Project)
@@ -568,7 +654,7 @@ xsd:date
       rdfs:label "has contact"@en ;
       rdfs:range :Person ;
       rdfs:subPropertyOf owl:topObjectProperty ;
-      vann:example "BipolarCohort hasContact JohnSmith"@en .
+      vann:example "ENIGMA-SulciProtocol hasContact JohnSmith"@en , "BipolarCohort hasContact JohnSmith"@en .
 
 :hasEmail
       a       owl:ObjectProperty ;
@@ -615,10 +701,17 @@ Schizophrenia withMinAgeOfOnsetOfDisorder 10
       a       owl:Class ;
       rdfs:comment "ENIGMA Protocols for genetic imputations"@en ;
       rdfs:label "Genotype Imputation Protocol"@en ;
-      vann:example "ENIGMA3 â€“ GWAS Meta Analysis of Cortical Thickness and Surface Area - Imputation Protocol"@en .
+      vann:example "ENIGMA3 – GWAS Meta Analysis of Cortical Thickness and Surface Area - Imputation Protocol"@en .
 
-[]    a       owl:AllDisjointProperties ;
-      owl:members (:hasNumberOfSlices) .
+:hasDiagnosisDisorder
+      a       owl:DatatypeProperty ;
+      rdfs:comment """Describing the diagnosis disorder of a cohort group 
+
+(MDD; Bipolar Disorder; Schizophrenia; OCD; ADHD; HIV; Autism; Addiction / SUD; Epilepsy; Anorexia / Eating Disorders; Parkinson; PTSD; Irritability; Stroke Recovery; Cerebellar Ataxia; Generalized anxiety; Panic disorder; Social anxiety; Early Onset Psychosis; Tourette's Syndrome; Brain Injury; Cancer & Chemotherapy; Sleep; Suicidal Thoughts and Behaviors; Lysosome Storage Diseases; 22q DS; CNVs)"""@en ;
+      rdfs:domain :CohortGroup ;
+      rdfs:label "has diagnosis disorder"@en ;
+      rdfs:range xsd:string ;
+      vann:example "CohortGroup hasDiagnosisDisorder \"MDD, Bipolar Disorder\""@en .
 
 :isScannerModel
       a       owl:DatatypeProperty ;
@@ -631,6 +724,14 @@ Schizophrenia withMinAgeOfOnsetOfDisorder 10
       a       owl:Class ;
       rdfs:comment "Concept used to represent a conflict of interest of an author in a paper"@en ;
       rdfs:label "Conflict of interest"@en .
+
+:hasHandedness
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the handedness criteria for individuals in a cohort group (RH only; LH only; matched; assessed but not used as selection criteria; not assessed)"@en ;
+      rdfs:domain :CohortGroup ;
+      rdfs:label "has handedness"@en ;
+      rdfs:range xsd:string ;
+      vann:example "CohortGroup1 hasHandedness \"RH only\""@en .
 
 :hasStatus
       a       owl:DatatypeProperty ;
@@ -695,6 +796,22 @@ Schizophrenia withMinAgeOfOnsetOfDisorder 10
       rdfs:range xsd:double ;
       vann:example "1.5T-GE-Signa hasSliceThickness 1 --> The slice thickness of this scanner is 1 mm"@en .
 
+:hasInformationMethod
+      a       owl:ObjectProperty ;
+      rdfs:comment "Describes the method for obtaining the medical information of a cohort"@en ;
+      rdfs:domain :Cohort ;
+      rdfs:label "has information method"@en ;
+      rdfs:range :InformationObtainmentMethod ;
+      vann:example "Cohort1 hasInformationMethod selfReport --> The information of the members of Cohort1 was obtained through self report"@en .
+
+:hasNumberOfdMRI
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the amount of diffusion MRI image data  collected by a project cohort"@en ;
+      rdfs:domain :ProjectCohort ;
+      rdfs:label "has number of dMRI"@en ;
+      rdfs:range xsd:nonNegativeInteger ;
+      vann:example "ProjectCohortSZ hasNumberOfdMRI 10"@en .
+
 <http://vivoweb.org/ontology/core#Institute>
       a       owl:Class ;
       rdfs:comment "An institute contributing to a given ENIGMA project"@en ;
@@ -717,10 +834,7 @@ Schizophrenia withMinAgeOfOnsetOfDisorder 10
 :isClinicallyStable
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes if the members of the cohort group are clinically stable (typically indicated by vital signs within 20% of usual readings)"@en ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :CohortGroup :ProjectCohort)
-              ] ;
+      rdfs:domain :Cohort ;
       rdfs:label "is clinically stable"@en ;
       rdfs:range xsd:boolean ;
       vann:example "CohortGroup1 isClinicallyStable yes --> CohortGroup1 only includes people who are clinically stable"@en .
@@ -732,13 +846,18 @@ Schizophrenia withMinAgeOfOnsetOfDisorder 10
       rdfs:subClassOf :Disorder ;
       vann:example "Hypothyroidism"@en .
 
+:hasNumberOfCisFemale
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the number of cis female individuals in a cohort group"@en ;
+      rdfs:domain :CohortGroup ;
+      rdfs:label "has number of cis female"@en ;
+      rdfs:range xsd:nonNegativeInteger ;
+      vann:example "CohortGroup1 hasNumberOfCisFemale 12"@en .
+
 :hasMembersWithRecentIssue
       a       owl:ObjectProperty ;
       rdfs:comment "Describes whether or not the members of the cohort had an issue (condition, disorder, or treatment-related)  within the past few months"@en ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :CohortGroup :ProjectCohort)
-              ] ;
+      rdfs:domain :Cohort ;
       rdfs:label "has members with recent issue"@en ;
       rdfs:range
               [ a       owl:Class ;
@@ -754,10 +873,25 @@ Schizophrenia withMinAgeOfOnsetOfDisorder 10
       rdfs:range xsd:string ;
       vann:example "WorkingGroup1 hasSubmittedPaper \"Paper title\""@en .
 
+:hasType
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the type of procedure that a protocol represents"@en ;
+      rdfs:domain :Protocol ;
+      rdfs:label "has type"@en ;
+      rdfs:range xsd:string ;
+      vann:example "ENIGMA-SulciProtocol hasType \"VolumeProtocol\""@en .
+
 :hasHomePage
       a       owl:ObjectProperty ;
-      rdfs:comment "Property that describes the home page of a person"@en ;
-      rdfs:domain :Person ;
+      rdfs:comment "Property that describes the home page of a cohort or person"@en ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :Person)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :Person)
+              ] ;
       rdfs:label "has home page"@en ;
       rdfs:range owl:Thing ;
       rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/homepage> ;
@@ -769,6 +903,14 @@ Schizophrenia withMinAgeOfOnsetOfDisorder 10
       rdfs:domain :AcquisitionProtocol ;
       rdfs:range xsd:string ;
       vann:example "1.5T-GE-Signa hasFoV \"X*Y*Z\""@en .
+
+:hasNumberOfASL
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the amount of arterial spin labeling image data collected by a project cohort"@en ;
+      rdfs:domain :ProjectCohort ;
+      rdfs:label "has number of ASL"@en ;
+      rdfs:range xsd:nonNegativeInteger ;
+      vann:example "ProjectCohortSZ hasNumberOfASL 21"@en .
 
 :doesNotHaveComorbidity
       a       owl:DatatypeProperty ;
@@ -783,10 +925,7 @@ Schizophrenia withMinAgeOfOnsetOfDisorder 10
 :hasAgeStandardDeviation
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes the standard deviation of the age of a cohort"@en ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :CohortGroup :ProjectCohort)
-              ] ;
+      rdfs:domain :Cohort ;
       rdfs:label "has age standard deviation"@en ;
       rdfs:range xsd:double ;
       vann:example "Cohort1 hasAgeStandardDeviation 5.0"@en .
@@ -850,10 +989,7 @@ Schizophrenia withMinAgeOfOnsetOfDisorder 10
 :isProficientInLocalLanguage
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes whether or not the members of the cohort group are proficient in local language"@en ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :CohortGroup :ProjectCohort)
-              ] ;
+      rdfs:domain :Cohort ;
       rdfs:label "is proficient in local language"@en ;
       rdfs:range xsd:boolean ;
       vann:example "CohortGroup1 isProficientInLocalLanguage true"@en .
@@ -892,7 +1028,7 @@ Schizophrenia withMinAgeOfOnsetOfDisorder 10
 :hasImagingDataCollector
       a       owl:ObjectProperty ;
       rdfs:comment "Describes what project someone collected imaging data for"@en ;
-      rdfs:domain :Cohort ;
+      rdfs:domain :Project ;
       rdfs:label "has imaging data collector"@en ;
       rdfs:range :Person ;
       rdfs:subPropertyOf :hasDataCollector ;
@@ -918,6 +1054,14 @@ Schizophrenia withMinAgeOfOnsetOfDisorder 10
       rdfs:comment "Working groups that are not disease focused"@en ;
       rdfs:label "Healthy Variation"@en ;
       rdfs:subClassOf :WorkingGroup .
+
+:hasPercentEpigeneticsBlood
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the percent of cohort group biosamples which are from blood epigenetics"@en ;
+      rdfs:domain :CohortGroup ;
+      rdfs:label "has percent epigenetics blood"@en ;
+      rdfs:range xsd:double ;
+      vann:example "CohortGroupSZ hasPercentEpigeneticsBlood 23.0"@en .
 
 :CerebrovascularDisorder
       a       owl:Class ;
@@ -960,7 +1104,7 @@ terms:license
 
 terms:title
       a       owl:DatatypeProperty , owl:AnnotationProperty ;
-      rdfs:isDefinedBy terms:title ;
+      rdfs:isDefinedBy terms: , terms:title ;
       rdfs:range rdfs:Literal .
 
 :Country
@@ -983,6 +1127,14 @@ terms:title
       rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
       rdfs:range <http://www.w3.org/2006/vcard/ns#Address> .
 
+:hasPercentDNAExtractionNoGenotyping
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the percent of cohort group biosamples which are from DNA extraction with no genotyping"@en ;
+      rdfs:domain :CohortGroup ;
+      rdfs:label "has percent DNA extraction no genotyping"@en ;
+      rdfs:range xsd:double ;
+      vann:example "CohortGroupSZ hasPercentDNAExtractionNoGenotyping 30.0"@en .
+
 :hasNeurologicalComorbidity
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes if the members of a cohort group have a neurological comorbidity"@en ;
@@ -995,10 +1147,7 @@ terms:title
 :isFamilyBased
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes if a cohort study was family based"@en ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :CohortGroup :ProjectCohort)
-              ] ;
+      rdfs:domain :Cohort ;
       rdfs:label "is family based"@en ;
       rdfs:range xsd:boolean ;
       vann:example "Cohort1 isFamilyBased true"@en .
@@ -1030,6 +1179,17 @@ terms:title
       rdfs:domain :ConflictOfInterest ;
       rdfs:label "for publication"@en ;
       rdfs:range :AcademicArticle .
+
+:hasOutputFeature
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes an output feature of the protocol"@en ;
+      rdfs:domain :Protocol ;
+      rdfs:label "has output feature"@en ;
+      rdfs:range xsd:string ;
+      vann:example "ENIGMA-SulciProtocol hasOutputFeature \"mean depth\""@en .
+
+[]    a       owl:AllDisjointProperties ;
+      owl:members (:hasNumberOfSlices) .
 
 :hasProjectStatus
       a       owl:DatatypeProperty ;
@@ -1071,18 +1231,22 @@ terms:title
 
 :hasBriefDescription
       a       owl:DatatypeProperty ;
-      rdfs:comment "Provides a brief description of the working group or project"@en ;
+      rdfs:comment "Provides a brief description of the working group or project or cohort"@en ;
       rdfs:domain
               [ a       owl:Class ;
-                owl:unionOf (:Project :WorkingGroup)
+                owl:unionOf (:Cohort :Project :WorkingGroup)
               ] ;
       rdfs:domain
               [ a       owl:Class ;
-                owl:unionOf (:Project :WorkingGroup)
+                owl:unionOf (:Cohort :Project :WorkingGroup)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :Project :WorkingGroup)
               ] ;
       rdfs:label "has brief description"@en ;
       rdfs:range xsd:string ;
-      vann:example "SZWG hasBriefDescription \"finds correlations between schizophrenia and other conditions\""@en , "ProjectSZ hasBriefDescription \"reports effect size for corticol thickness\""@en .
+      vann:example "SZWG hasBriefDescription \"finds correlations between schizophrenia and other conditions\""@en , "SZCohort hasBriefDescription \"finds correlations between schizophrenia and other conditions\""@en , "ProjectSZ hasBriefDescription \"reports effect size for corticol thickness\""@en .
 
 :hasPsychiatricComorbidity
       a       owl:DatatypeProperty ;
@@ -1162,14 +1326,11 @@ terms:title
 
 :hasNumberOfFemale
       a       owl:DatatypeProperty ;
-      rdfs:comment "Describes the number of female participants in a cohort group"@en ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :CohortGroup :ProjectCohort)
-              ] ;
+      rdfs:comment "Describes the number of females in a cohort group"@en ;
+      rdfs:domain :CohortGroup ;
       rdfs:label "has number of female"@en ;
       rdfs:range xsd:nonNegativeInteger ;
-      vann:example "Cohort1 hasNumberOfFemale 50"@en .
+      vann:example "CohortGroup1 hasNumberOfFemale 50"@en .
 
 :usesGenotypePlatform
       a       owl:ObjectProperty ;
@@ -1185,6 +1346,14 @@ terms:title
       rdfs:domain :AcquisitionProtocol ;
       rdfs:range xsd:double ;
       vann:example "1.5T-GE-Signa hasTE 4.6 --> 1.5T-GE-Signa has TE of 4.6 ms"@en .
+
+:hasNumberOfCisMale
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the number of cis male individuals in a cohort group"@en ;
+      rdfs:domain :CohortGroup ;
+      rdfs:label "has number of cis male"@en ;
+      rdfs:range xsd:nonNegativeInteger ;
+      vann:example "CohortGroup1 hasNumberOfCisMale 12"@en .
 
 :GeneticDataType
       a       owl:Class ;
@@ -1203,15 +1372,11 @@ terms:title
 
 :hasAgeGroup
       a       owl:DatatypeProperty ;
-      rdfs:comment "Describes a group of people who share a similar age"@en ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :CohortGroup :ProjectCohort)
-              ] ;
+      rdfs:comment "Describes the age groupings of individuals within a cohort group"@en ;
+      rdfs:domain :CohortGroup ;
       rdfs:label "has age group"@en ;
       rdfs:range xsd:string ;
-      vann:example """Cohort1 hasAgeGroup \"Infants\"
-Cohort1 hasAgeGroup \"Seniors\""""@en .
+      vann:example "Cohort1 hasAgeGroup \"22-45\""@en .
 
 :hasResearchInterest
       a       owl:DatatypeProperty ;
@@ -1249,18 +1414,35 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
 
 --> CohortGroup1 only includes people who scored at least a 0 on the YMRS"""@en .
 
+:isPublic
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes if a cohort's data is publicly available"@en ;
+      rdfs:domain :Cohort ;
+      rdfs:label "is public"@en ;
+      rdfs:range xsd:boolean ;
+      vann:example "SZCohort isPublic \"true\""@en .
+
 :fullName
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes the full name of the working group"@en ;
       rdfs:domain :WorkingGroup ;
       rdfs:label "full name"@en ;
       rdfs:range xsd:string ;
-      rdfs:subPropertyOf terms:title .
+      rdfs:subPropertyOf terms:title ;
+      vann:example "SchizophreniaWG shortName SchizophreniaWorkingGroup"@en .
+
+:hasPercentExomeSequencing
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the percent of cohort group biosamples which are from exome sequencing"@en ;
+      rdfs:domain :CohortGroup ;
+      rdfs:label "has percent exome sequencing"@en ;
+      rdfs:range xsd:double ;
+      vann:example "CohortGroupSZ hasPercentExomeSequencing 75.0"@en .
 
 :hasDataCollector
       a       owl:ObjectProperty ;
       rdfs:comment "Describes what project someone collected data for"@en ;
-      rdfs:domain :Cohort ;
+      rdfs:domain :Project ;
       rdfs:label "has data collector"@en ;
       rdfs:range :Person ;
       rdfs:subPropertyOf :contributor ;
@@ -1284,17 +1466,25 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
 
 <https://w3id.org/enigma>
       a       owl:Ontology , owl:NamedIndividual ;
-      rdfs:comment "An ontology for describing ENIGMA organizations." , "An ontology that describes projects and their properties." , "A cohort ontology that describes cohorts and their properties." , "An ontology that describes scanners and their properties." , "An ontology for describing working groups." , "A cohort ontology that describes persons participating in ENIGMA and their properties." , "An ontology for describing people's roles in ENIGMA projects." ;
+      rdfs:comment "An ontology for describing the feature protocols used within ENIGMA." , "An ontology for describing ENIGMA organizations." , "An ontology that describes projects and their properties." , "A cohort ontology that describes cohorts and their properties." , "An ontology that describes scanners and their properties." , "An ontology for describing working groups." , "An ontology for describing people's roles in ENIGMA projects." , "A cohort ontology that describes persons participating in ENIGMA and their properties." ;
       terms:contributor "Yolanda Gil" , "Agnes McMahon" , "Daniel Garijo" ;
       terms:creator "Ryan Espiritu" , "MiHyun Jang" , "Daniel Garijo" , "Neda Jahanshad" ;
       terms:license <http://creativecommons.org/licenses/by/2.0/> ;
-      terms:title "The Project Ontology" , "The Cohort Ontology" , "The Person Ontology" , "The Scanner Ontology" , "The Organization Ontology" , "The Enigma Roles Ontology" , "The Working Group Ontology" ;
+      terms:title "The Protocol Ontology"@en , "The Protocol Ontology" , "The Enigma Protocol Ontology" , "The Project Ontology"@en , "The Cohort Ontology" , "The Person Ontology" , "The Organization Ontology" , "The Scanner Ontology" , "The Working Group Ontology" , "The Enigma Roles Ontology" ;
       vann:preferredNamespacePrefix
               "enigma" , <https://w3id.org/enigma> ;
       vann:preferredNamespaceUri
               : ;
-      owl:versionIRI <https://w3id.org/enigma/roles/1.0.0> , <https://w3id.org/enigma/organization/1.0.0> , <https://w3id.org/enigma/scanner/1.0.0> , <https://w3id.org/enigma/cohort/1.0.0> , <https://w3id.org/enigma/project/1.0.0> , <https://w3id.org/enigma/wg/1.0.0> , <https://w3id.org/enigma/person/1.0.0> ;
+      owl:versionIRI <https://w3id.org/enigma/roles/1.0.0> , <https://w3id.org/enigma/organization/1.0.0> , <https://w3id.org/enigma/scanner/1.0.0> , <https://w3id.org/enigma/cohort/1.0.0> , <https://w3id.org/enigma/project/1.0.0> , <https://w3id.org/enigma/protocol/1.0.0> , <https://w3id.org/enigma/wg/1.0.0> , <https://w3id.org/enigma/person/1.0.0> ;
       owl:versionInfo "v1.0.0" .
+
+:hasPercentGeneExpression
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the percent of cohort group biosamples which are from gene expression"@en ;
+      rdfs:domain :CohortGroup ;
+      rdfs:label "has percent gene expression"@en ;
+      rdfs:range xsd:double ;
+      vann:example "CohortGroupSZ hasPercentGeneExpression 22.1"@en .
 
 :doesNotHaveContraindicationToMRI
       a       owl:DatatypeProperty ;
@@ -1322,14 +1512,6 @@ Schizophrenia withDisorderSeverity 5
 
 --> CohortGroup1 only includes people with schizophrenia with disease severity 5"""@en .
 
-:usesDiagnosisInstrument
-      a       owl:ObjectProperty ;
-      rdfs:comment "Describes what instrument is used to diagnose the members of the cohort"@en ;
-      rdfs:domain :Cohort ;
-      rdfs:label "uses diagnosis instrument"@en ;
-      rdfs:range :DiagnosisInstrument ;
-      vann:example "Cohort1 usesDiagnosisInstrument miniInternationalNeuropychiatricInterview --> The members of Cohort1 are diagnosed with Mini International Neuropychiatric Interview"@en .
-
 :Methodology
       a       owl:Class ;
       rdfs:comment "Working groups that develop protocols (imaging or genetics)"@en ;
@@ -1343,10 +1525,7 @@ terms:isPartOf
 :hasMeanAge
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes the mean age of the cohort"@en ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :CohortGroup :ProjectCohort)
-              ] ;
+      rdfs:domain :Cohort ;
       rdfs:label "has mean age"@en ;
       rdfs:range xsd:double ;
       vann:example "Cohort1 hasMeanAge 21.0"@en .
@@ -1367,6 +1546,14 @@ terms:isPartOf
       rdfs:label "has publication"@en ;
       rdfs:range :AcademicArticle .
 
+:hasPercentGenomewideGenotyping
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the percent of cohort group biosamples which are from genome-wide genotyping"@en ;
+      rdfs:domain :CohortGroup ;
+      rdfs:label "has percent genome-wide genotyping"@en ;
+      rdfs:range xsd:double ;
+      vann:example "CohortGroupSZ hasPercentGenomewideGenotyping 55.5"@en .
+
 :ClinicalPopulation
       a       owl:Class ;
       rdfs:comment "Working groups that study clinical populations"@en ;
@@ -1383,6 +1570,14 @@ terms:isPartOf
       rdfs:comment "The family name of some person." ;
       rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
       rdfs:isDefinedBy "http://xmlns.com/foaf/0.1/"@en .
+
+:hasLink
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the physical link to a protocol"@en ;
+      rdfs:domain :Protocol ;
+      rdfs:label "has link"@en ;
+      rdfs:range xsd:string ;
+      vann:example "ENIGMA-SulciProtocol hasLink [url to protocol]"@en .
 
 :hasTitle
       a       owl:DatatypeProperty ;
@@ -1426,6 +1621,14 @@ terms:isPartOf
       rdfs:label "has condition"@en ;
       rdfs:range :Condition ;
       vann:example "Cohort1 hasCondition euthymia"@en .
+
+:hasNumberOfUndisclosedGender
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describing the number of individuals of undisclosed gender in a cohort group"@en ;
+      rdfs:domain :CohortGroup ;
+      rdfs:label "has number of undisclosed gender"@en ;
+      rdfs:range xsd:nonNegativeInteger ;
+      vann:example "CohortGroup1 hasNumberOfUndisclosedGender 50"@en .
 
 :hasGrant
       a       owl:DatatypeProperty ;
@@ -1478,6 +1681,14 @@ terms:isPartOf
       rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
       rdfs:range xsd:string .
 
+:hasAdditionalDemographic
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the additional demographics defining a given cohort group (Height; Weight; Ethnicity; IQ; ParentalSES; IndividualSES)"@en ;
+      rdfs:domain :CohortGroup ;
+      rdfs:label "has additional demographic"@en ;
+      rdfs:range xsd:string ;
+      vann:example "CohortGroup1 hasAdditionalDemographic \"handedness, IQ\""@en .
+
 :hasTI
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes the TI of a scanner in ms"@en ;
@@ -1512,6 +1723,22 @@ terms:isPartOf
       rdfs:comment "A particular setting of pulse sequences and pulsed field gradients within an MRI"@en ;
       rdfs:label "MRISequence"@en ;
       vann:example "FEEsequence"@en .
+
+:hasPercentPlasma
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the percent of cohort group biosamples which are from plasma"@en ;
+      rdfs:domain :CohortGroup ;
+      rdfs:label "has percent plasma"@en ;
+      rdfs:range xsd:double ;
+      vann:example "CohortGroupSZ hasPercentPlasma 11.0"@en .
+
+:hasCollectionSite
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes where the data of the cohort was collected"@en ;
+      rdfs:domain :Cohort ;
+      rdfs:label "has collection site"@en ;
+      rdfs:range xsd:string ;
+      vann:example "Cohort1 hasCollectionSite Toronto"@en .
 
 :WorkingGroup
       a       owl:Class ;
@@ -1559,10 +1786,7 @@ Schizophrenia withMaxAgeOfOnsetOfDisorder 18
 :hasNumberOfParticipants
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes the number of participants in the cohort"@en ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :CohortGroup :ProjectCohort)
-              ] ;
+      rdfs:domain :Cohort ;
       rdfs:label "has number of participants"@en ;
       rdfs:range xsd:positiveInteger ;
       vann:example "Cohort1 hasNumberOfParticipants 500 --> Cohort1 is made up of approximately 500 patients"@en .
@@ -1603,6 +1827,14 @@ Schizophrenia withMaxAgeOfOnsetOfDisorder 18
       rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
       rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
 
+:hasPercentWholeGenomeSequencing
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the percent of cohort group biosamples which are from whole genome sequencing"@en ;
+      rdfs:domain :CohortGroup ;
+      rdfs:label "has percent whole genome sequencing"@en ;
+      rdfs:range xsd:double ;
+      vann:example "CohortGroupSZ hasPercentWholeGenomeSequencing 60.0"@en .
+
 :hasDegree
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes what degree a person has (e.g., BsC, PhD, etc.)"@en ;
@@ -1639,7 +1871,8 @@ Schizophrenia withMaxAgeOfOnsetOfDisorder 18
       rdfs:domain :Project ;
       rdfs:label "has designer"@en ;
       rdfs:range :Person ;
-      rdfs:subPropertyOf :contributor .
+      rdfs:subPropertyOf :contributor ;
+      vann:example "BipolarProject hasDesigner JohnSmith"@en .
 
 <http://vivoweb.org/ontology/core#Consortium>
       a       owl:Class ;
@@ -1654,6 +1887,15 @@ Schizophrenia withMaxAgeOfOnsetOfDisorder 18
       rdfs:comment "Details unique to a given condition of the cohort"@en ;
       rdfs:label "Specific Condition Info"@en ;
       vann:example "Severity of a condition"@en .
+
+:hasName
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Property added to restrict the domain to enigma:Protocol. This is done for facilitating the interaction with the wiki interface"@en , "Describes the name of a protocol"@en ;
+      rdfs:domain :Protocol ;
+      rdfs:label "has name"@en ;
+      rdfs:range xsd:string ;
+      rdfs:subPropertyOf terms:title ;
+      vann:example "ENIGMA-Sulci Protocol hasName ENIGMA-Sulci"@en .
 
 :hasImagingDataAnalyst
       a       owl:ObjectProperty ;
@@ -1670,6 +1912,14 @@ Schizophrenia withMaxAgeOfOnsetOfDisorder 18
       rdfs:label "Diagnosis Instrument"@en ;
       vann:example "Consensus Consultant Diagnosis"@en .
 
+:hasNumberOfTransgenderFtoM
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describing the number of female to male transgender individuals in a cohort group"@en ;
+      rdfs:domain :CohortGroup ;
+      rdfs:label "has number of transgender F to M"@en ;
+      rdfs:range xsd:nonNegativeInteger ;
+      vann:example "CohortGroup2 hasNumberOfTransgenderFtoM 14"@en .
+
 <http://vivoweb.org/ontology/core#Department>
       a       owl:Class ;
       rdfs:comment "A department contributing to a given ENIGMA project"@en ;
@@ -1677,6 +1927,14 @@ Schizophrenia withMaxAgeOfOnsetOfDisorder 18
       rdfs:label "Department"@en ;
       rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> ;
       vann:example "Department of Psychology, USC"@en .
+
+:hasPercentBloodSalivaCollection
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the percent of cohort group biosamples which are from blood/saliva collected/stored with NO DNA extracted"@en ;
+      rdfs:domain :CohortGroup ;
+      rdfs:label "has percent blood saliva collection"@en ;
+      rdfs:range xsd:double ;
+      vann:example "CohortGroupSZ hasPercentBloodSalivaCollection 12.0"@en .
 
 :withMaxNumber
       a       owl:DatatypeProperty ;
@@ -1688,6 +1946,14 @@ Schizophrenia withMaxAgeOfOnsetOfDisorder 18
 YoungManiaRatingScale withMaxDurationOfDisorder 10
 
 --> CohortGroup1 only includes people who received a score of at most 10 on the YMRS"""@en .
+
+:hasNumberOftbfMRI
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the amount of total body fat measured on MRI image data collected by a project cohort"@en ;
+      rdfs:domain :ProjectCohort ;
+      rdfs:label "has number of tbfMRI"@en ;
+      rdfs:range xsd:nonNegativeInteger ;
+      vann:example "ProjectCohortSZ hasNumberOftbfMRI 17"@en .
 
 :hasTreatmentDetails
       a       owl:ObjectProperty ;
@@ -1813,7 +2079,7 @@ vann:example
 :hasAffiliate
       a       owl:ObjectProperty ;
       rdfs:comment "Describes the organization's affiliates"@en ;
-      rdfs:domain :Organization , <http://xmlns.com/foaf/0.1/Organization> ;
+      rdfs:domain :Organization ;
       rdfs:label "has affiliate"@en ;
       rdfs:range :Person ;
       rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/member> ;
@@ -1830,6 +2096,14 @@ vann:example
       rdfs:comment "Details unique to a given medical rating of the cohort"@en ;
       rdfs:label "Specific Medical Rating Info"@en ;
       vann:example "Specifc scale used for medical rating"@en .
+
+:hasDescription
+      a       owl:DatatypeProperty ;
+      rdfs:comment "A brief description of a protocol"@en ;
+      rdfs:domain :Protocol ;
+      rdfs:label "has description"@en ;
+      rdfs:range xsd:string ;
+      vann:example "ENIGMA-Sulci hasDescription \"This protocol allows you to segment, label, and visually inspect 123 cortical sulci/subject using FreeSurfer, BrainVISA, R and ImageMagick.\""@en .
 
 :hasSexDeterminedGenetically
       a       owl:DatatypeProperty ;
@@ -1919,7 +2193,7 @@ terms:date
 
 :kind
       a       owl:DatatypeProperty ;
-      rdfs:comment "Describes the specific kind/type of an rganization or working group"@en , "Describes the specific kind/type of an organization or working group"@en ;
+      rdfs:comment "Describes the specific kind/type of an rganization or working group  (HealthyVariation, GeneticStudy, Methodology, and ClinicalPopulation)"@en , "Describes the specific kind/type of an organization or working group"@en ;
       rdfs:domain
               [ a       owl:Class ;
                 owl:unionOf (:Organization :WorkingGroup)
@@ -1931,14 +2205,6 @@ terms:date
       rdfs:label "kind"@en ;
       rdfs:range xsd:string ;
       vann:example "Organization kind \"University\""@en , "WorkingGroup kind \"Healthy Variation\""@en .
-
-:obtainedInformationThrough
-      a       owl:ObjectProperty ;
-      rdfs:comment "Describes the method for obtaining the medical information of a cohort"@en ;
-      rdfs:domain :Cohort ;
-      rdfs:label "obtained information through"@en ;
-      rdfs:range :InformationObtainmentMethod ;
-      vann:example "Cohort1 obtainedInformationThrough selfReport --> The information of the members of Cohort1 was obtained through self report"@en .
 
 :hasDataCollectionPeriodStart
       a       owl:DatatypeProperty ;
@@ -1952,15 +2218,7 @@ terms:date
       a       owl:Class ;
       rdfs:comment "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria"@en ;
       rdfs:label "Cohort"@en ;
-      vann:example "ADNI: Alzheimerâ€™s Disease Neuroimaging Initiative"@en .
-
-:hasLocationOfDataCollection
-      a       owl:ObjectProperty ;
-      rdfs:comment "Describes where the data of the cohort was collected"@en ;
-      rdfs:domain :Cohort ;
-      rdfs:label "has location of data collection"@en ;
-      rdfs:range :Location ;
-      vann:example "Cohort1 hasLocationOfDataCollection Toronto"@en .
+      vann:example "ADNI: Alzheimer’s Disease Neuroimaging Initiative"@en .
 
 <http://purl.org/ontology/bibo/AcademicArticle>
       a       owl:Class ;
@@ -1983,9 +2241,18 @@ terms:date
       rdfs:range xsd:boolean ;
       vann:example "CohortGroup1 hasComorbidity true --> CohortGroup1 only includes people who are comorbid"@en .
 
-:hasDataType
+:ranProtocol
       a       owl:ObjectProperty ;
-      rdfs:comment "Describes the data types that a cohort or project collected"@en ;
+      rdfs:comment "Describes which protocol that an individual ran"@en ;
+      rdfs:domain :Person ;
+      rdfs:label "ran protocol"@en ;
+      rdfs:range :Protocol ;
+      vann:example "JohnSmith ranProtocol ENIGMA-Sulci Protocol"@en .
+
+:hasDataType
+      a       owl:DatatypeProperty , owl:ObjectProperty ;
+      rdfs:comment "Describes a data type used in the protocol"@en , "Describes the data types that a cohort or project collected"@en ;
+      rdfs:domain :Protocol ;
       rdfs:domain
               [ a       owl:Class ;
                 owl:unionOf (:Cohort :Project)
@@ -1995,8 +2262,8 @@ terms:date
                 owl:unionOf (:Cohort :Project)
               ] ;
       rdfs:label "has data type"@en ;
-      rdfs:range :DataType ;
-      vann:example "BipolarProject hasDataType MRIImage"@en , "Cohort1 hasDataType dataType1"@en .
+      rdfs:range xsd:string , :DataType ;
+      vann:example "BipolarProject hasDataType MRIImage"@en , "Cohort1 hasDataType dataType1"@en , "ENIGMA-SulciProtocol hasDataType \"fMRI\""@en .
 
 :doesNotHaveNeurologicalComorbidity
       a       owl:DatatypeProperty ;
@@ -2069,7 +2336,8 @@ terms:date
       rdfs:domain :Project ;
       rdfs:label "has last project lead"@en ;
       rdfs:range :Person ;
-      rdfs:subPropertyOf :hasProjectLead .
+      rdfs:subPropertyOf :hasProjectLead ;
+      vann:example "BipolarProject hasLastProjectLead JohnSmith"@en .
 
 :Cancer
       a       owl:Class ;
@@ -2078,28 +2346,58 @@ terms:date
       rdfs:subClassOf :Disorder ;
       vann:example "CNS Cancer"@en .
 
+:hasBrainStructuralData
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the types of brain structural/functional data collected by a cohort group (T1w; dMRI; T2w; SWI; rsfMRI; tbfMRI; ASL; EEG; MEG; Histology; CT; Head Circumference; Cognitive/Behavior assessments)"@en ;
+      rdfs:domain :CohortGroup ;
+      rdfs:label "has brain structural data"@en ;
+      rdfs:range xsd:string ;
+      vann:example "CohortGroupSZ hasBrainStructuralData \"T1w, CT\""@en .
+
 :hasNumberOfMale
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes the number of males in the cohort group"@en ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :CohortGroup :ProjectCohort)
-              ] ;
+      rdfs:domain :CohortGroup ;
       rdfs:label "has number of male"@en ;
       rdfs:range xsd:nonNegativeInteger ;
-      vann:example "Cohort1 hasNumberOfMale 50"@en .
+      vann:example "CohortGroup1 hasNumberOfMale 50"@en .
+
+:hasProtocolRunner
+      a       owl:ObjectProperty ;
+      rdfs:comment "Describes who ran a protocol for a given cohort"@en ;
+      rdfs:domain :Project ;
+      rdfs:label "has protocol runner"@en ;
+      rdfs:range :Person ;
+      rdfs:subPropertyOf :contributor ;
+      vann:example "BipolarProject hasProtocolRunner JohnSmith"@en .
+
+:hasNumberOfSWI
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the amount of susceptibility weighted imaging image data collected by a project cohort"@en ;
+      rdfs:domain :ProjectCohort ;
+      rdfs:label "has number of SWI"@en ;
+      rdfs:range xsd:nonNegativeInteger ;
+      vann:example "ProjectCohortSZ hasNumberOfSWI 20"@en .
 
 :QualifiedAffiliation
       a       owl:Class ;
       rdfs:comment "Used to specify additional details regarding an indvidual's affiliation with an organization (i.e. start and end dates, roles, etc.)"@en ;
       rdfs:label "Qualified Affiliation"@en .
 
+:hasPercentTranscriptomics
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the percent of cohort group biosamples which are from transcriptomics"@en ;
+      rdfs:domain :CohortGroup ;
+      rdfs:label "has percent transcriptomics"@en ;
+      rdfs:range xsd:double ;
+      vann:example "CohortGroupSZ hasPercentTranscriptomics 24.7"@en .
+
 :hasPrimaryAddress
       a       owl:ObjectProperty ;
       rdfs:comment "Describes the primary address of a person"@en , "Describes the primary address of an organization"@en ;
       rdfs:domain
               [ a       owl:Class ;
-                owl:unionOf (<http://xmlns.com/foaf/0.1/Organization> :Person)
+                owl:unionOf (:Organization :Person)
               ] ;
       rdfs:domain
               [ a       owl:Class ;
@@ -2124,7 +2422,16 @@ terms:creator
               ] ;
       rdfs:label "first draft contributor"@en ;
       rdfs:range :Person ;
-      rdfs:subPropertyOf :contributor .
+      rdfs:subPropertyOf :contributor ;
+      vann:example "BipolarProject firstDraftContributor JohnSmith"@en .
+
+:hasNumberOfrsfMRI
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the amount of resting state fMRI image data collected by a project cohort"@en ;
+      rdfs:domain :ProjectCohort ;
+      rdfs:label "has number of rsfMRI"@en ;
+      rdfs:range xsd:nonNegativeInteger ;
+      vann:example "ProjectCohortSZ hasNumberOfrsfMRI 17"@en .
 
 :hasProjectCohort
       a       owl:ObjectProperty ;
@@ -2147,6 +2454,14 @@ terms:creator
       rdfs:domain :AcquisitionProtocol ;
       rdfs:range xsd:nonNegativeInteger ;
       vann:example "1.5T-GE-Signa hasNumberOfEchoes 2 --> 1.5T-GE-Signa has 2 echoes"@en .
+
+:hasPercentEpigeneticsSaliva
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the percent of cohort group biosamples which are from saliva epigenetics"@en ;
+      rdfs:domain :CohortGroup ;
+      rdfs:label "has percent epigenetics saliva"@en ;
+      rdfs:range xsd:double ;
+      vann:example "CohortGroupSZ hasPercentEpigeneticsSaliva 23.0"@en .
 
 :hasGeneticAssociationProtocol
       a       owl:ObjectProperty ;

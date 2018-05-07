@@ -16,6 +16,7 @@
         <rdfs:comment>An ontology that describes projects and their properties.</rdfs:comment>
         <terms:contributor>Agnes McMahon</terms:contributor>
         <terms:creator>Ryan Espiritu</terms:creator>
+        <terms:title xml:lang="en">The Project Ontology</terms:title>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
         <vann:preferredNamespaceUri rdf:resource="https://w3id.org/enigma#"/>
         <terms:creator>Neda Jahanshad</terms:creator>
@@ -33,6 +34,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
     
 
 
@@ -320,9 +327,7 @@
 
     <!-- http://purl.org/dc/terms/title -->
 
-    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/title"/>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title"/>
     
 
 
@@ -663,25 +668,6 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- https://w3id.org/enigma -->
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma">
-        <terms:title>The Project Ontology</terms:title>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
     // Annotations
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -689,6 +675,9 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
 
     <rdf:Description rdf:about="http://purl.org/dc/terms/contributor">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/contributor"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/terms/title">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/title"/>
     </rdf:Description>
 </rdf:RDF>
 
