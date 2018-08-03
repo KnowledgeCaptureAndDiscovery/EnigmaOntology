@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://w3id.org/enigma#"
      xml:base="https://w3id.org/enigma"
-     xmlns:vaem="http://www.linkedmodel.org/schema/vaem#"
+     xmlns:enigma="https://w3id.org/enigma#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -88,13 +88,6 @@
     
 
 
-    <!-- http://www.linkedmodel.org/schema/vaem#rationale -->
-
-
-    <owl:AnnotationProperty rdf:about="http://www.linkedmodel.org/schema/vaem#rationale"/>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -126,16 +119,6 @@
     
 
 
-    <!-- http://xmlns.com/foaf/0.1/homepage -->
-
-
-    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/homepage">
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A homepage for some thing.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/enigma#didNotHaveFirstEpisodeOf -->
 
 
@@ -146,7 +129,6 @@
         <owl:propertyDisjointWith rdf:resource="https://w3id.org/enigma#hasFirstEpisodeOf"/>
         <vann:example xml:lang="en">CohortGroup1 didNotHaveFirstEpisodeOf Psychosis --&gt; CohortGroup1 excludes people who had a first episode of psychosis</vann:example>
         <rdfs:comment xml:lang="en">Describes which diseases the cohort group members did NOT have a first episode of</rdfs:comment>
-        <rdfs:label xml:lang="en">did not have first episode of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -160,7 +142,6 @@
         <owl:propertyDisjointWith rdf:resource="https://w3id.org/enigma#hasCondition"/>
         <vann:example xml:lang="en">Cohort1 doesNotHaveCondition euthymia</vann:example>
         <rdfs:comment xml:lang="en">Describes which disease conditions are excluded in a given cohort group</rdfs:comment>
-        <rdfs:label xml:lang="en">does not have condition</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -174,7 +155,6 @@
         <owl:propertyDisjointWith rdf:resource="https://w3id.org/enigma#hasDisorder"/>
         <vann:example xml:lang="en">CohortGroup1 doesNotHaveDisorder Cancer --&gt; CohortGroup1 excludes people who have cancer</vann:example>
         <rdfs:comment xml:lang="en">Describes which disorders are excluded in a given cohort group</rdfs:comment>
-        <rdfs:label xml:lang="en">does not have disorder</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -188,7 +168,6 @@
         <owl:propertyDisjointWith rdf:resource="https://w3id.org/enigma#hasFamilyHistoryOf"/>
         <vann:example xml:lang="en">CohortGroup1 doesNotHaveFamilyHistoryOf Schizophrenia --&gt; CohortGroup1 excludes people who have a family history of schizophrenia</vann:example>
         <rdfs:comment xml:lang="en">Describes which diseases the cohort group members do NOT have a family history of</rdfs:comment>
-        <rdfs:label xml:lang="en">does not family history of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -203,7 +182,6 @@
         <owl:propertyDisjointWith rdf:resource="https://w3id.org/enigma#hasFirstDegreeRelativeWithDisorder"/>
         <vann:example xml:lang="en">CohortGroup1 doesNotHaveFirstDegreeRelativeWithDisorder BipolarDisorder --&gt; CohortGroup1 excludes people who have a first degree relative with bipolar disorder</vann:example>
         <rdfs:comment xml:lang="en">Describes which diseases the first degree relatives of cohort group members do NOT have</rdfs:comment>
-        <rdfs:label xml:lang="en">does not first degree relative with disorder</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -217,7 +195,6 @@
         <owl:propertyDisjointWith rdf:resource="https://w3id.org/enigma#hasPersonalHistoryOf"/>
         <vann:example xml:lang="en">CohortGroup1 doesNotHaveHistoryOf NeurologicalDisease --&gt; CohortGroup1 excludes people who have neurological disease</vann:example>
         <rdfs:comment xml:lang="en">Describes the diseases that the cohort group members do NOT have a history of</rdfs:comment>
-        <rdfs:label xml:lang="en">does not have personal history of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -230,8 +207,7 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#Treatment"/>
         <owl:propertyDisjointWith rdf:resource="https://w3id.org/enigma#usesTreatment"/>
         <vann:example xml:lang="en">CohortGroup1 doesNotUseTreatment Antidepressants --&gt; CohortGroup1 excludes people who use antidepressants</vann:example>
-        <rdfs:comment xml:lang="en">Describes which medications or therapies that the cohort group members are NOT using</rdfs:comment>
-        <rdfs:label xml:lang="en">does not use treatment</rdfs:label>
+        <rdfs:comment xml:lang="en">Describes which drugs or therapies that the cohort group members are NOT using</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -244,7 +220,6 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#DiagnosticCriteria"/>
         <vann:example xml:lang="en">bipolarDisorder fulfillsDiagnosticCriteria diagnosticAndStatisticalManualOfMentalDisorders --&gt; The diagnosis of bipolar disorder fulfills the criteria of the DSM</vann:example>
         <rdfs:comment xml:lang="en">Describes the criteria used to diagnose the disorder</rdfs:comment>
-        <rdfs:label xml:lang="en">fulfills diagnostic criteria</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -254,18 +229,10 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasBrainScanDataType">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasDataType"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#BrainScanDataType"/>
         <vann:example xml:lang="en">Cohort1 hasBrainScanDataType MRI</vann:example>
-        <rdfs:comment xml:lang="en">Describes the brain scan data types that were collected for a cohort or project</rdfs:comment>
-        <rdfs:label xml:lang="en">has brain scan data type</rdfs:label>
+        <rdfs:comment xml:lang="en">Describes the brain scan data types that were collected for a cohort</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -277,28 +244,7 @@
         <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Condition"/>
         <vann:example xml:lang="en">Cohort1 hasCondition euthymia</vann:example>
-        <rdfs:comment xml:lang="en">Describes which diease conditions are included in a given cohort group</rdfs:comment>
-        <rdfs:label xml:lang="en">has condition</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasContact -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasContact">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">BipolarCohort hasContact JohnSmith</vann:example>
-        <rdfs:comment xml:lang="en">Property that points to the person that is a contact for the project or cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has contact</rdfs:label>
+        <rdfs:comment xml:lang="en">describes which diease conditions are included in a given cohort group</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -311,7 +257,6 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#CohortGroup"/>
         <vann:example xml:lang="en">BipolarCohort hasControlGroup BipolarControlGroup</vann:example>
         <rdfs:comment xml:lang="en">Describes the control group of a cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has control group</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -320,31 +265,10 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDataType">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#DataType"/>
         <vann:example xml:lang="en">Cohort1 hasDataType dataType1</vann:example>
-        <rdfs:comment xml:lang="en">Describes the data types that a cohort or project collected</rdfs:comment>
-        <rdfs:label xml:lang="en">has data type</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasDiagnosisInstrument -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDiagnosisInstrument">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#DiagnosisInstrument"/>
-        <vann:example xml:lang="en">Cohort1 hasDiagnosisInstrument miniInternationalNeuropychiatricInterview --&gt; The members of Cohort1 are diagnosed with Mini International Neuropychiatric Interview</vann:example>
-        <rdfs:comment xml:lang="en">Describes what instrument is used to diagnose the members of the cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has diagnosis instrument</rdfs:label>
+        <rdfs:comment xml:lang="en">Describes the data types that were collected for the cohort</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -357,7 +281,6 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#CohortGroup"/>
         <vann:example xml:lang="en">BipolarCohort hasPatientGroup BipolarPatientGroup</vann:example>
         <rdfs:comment xml:lang="en">Describes the patient group of a cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has diagnostic group</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -370,7 +293,6 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#Disorder"/>
         <vann:example xml:lang="en">CohortGroup1 hasDisorder Cancer --&gt; CohortGroup1 only includes people who have cancer</vann:example>
         <rdfs:comment xml:lang="en">Describes what disease(s) the members of the cohort group have</rdfs:comment>
-        <rdfs:label xml:lang="en">has disorder</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -383,7 +305,18 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#SpecificDisorderInfo"/>
         <vann:example xml:lang="en">CohortGroup1 hasDisorderDetails SZ20938</vann:example>
         <rdfs:comment xml:lang="en">Describes the details of a particular disorder that a cohort group has</rdfs:comment>
-        <rdfs:label xml:lang="en">has disorder details</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasEnigmaContact -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasEnigmaContact">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example xml:lang="en">Cohort1 hasEnigmaContact JohnSmith</vann:example>
+        <rdfs:comment xml:lang="en">Describes the contact people from ENIGMA of a cohort</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -396,7 +329,6 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#Disorder"/>
         <vann:example xml:lang="en">CohortGroup1 hasFamilyHistoryOf CardiovascularDisease --&gt; CohortGroup1 only includes people who have a family history of cardiovascular diseases</vann:example>
         <rdfs:comment xml:lang="en">Describes what diseases the members of the cohort group have a family history of</rdfs:comment>
-        <rdfs:label xml:lang="en">has family history of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -410,7 +342,6 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#Disorder"/>
         <vann:example xml:lang="en">CohortGroup1 hasFirstDegreeRelativeWithDisorder Psychosis --&gt; CohortGroup1 only includes people who have a first degree relative with psychosis</vann:example>
         <rdfs:comment xml:lang="en">Describes what diseases the first degree relatives of the members of the cohort group have</rdfs:comment>
-        <rdfs:label xml:lang="en">has first degree relative with disorder</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -424,7 +355,6 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#Disorder"/>
         <vann:example xml:lang="en">CohortGroup1 hasFirstEpisodeOf Psychosis --&gt; CohortGroup1 only includes people who had a first episode of psychosis</vann:example>
         <rdfs:comment xml:lang="en">Describes what disease the members of the cohort group had a first episode of</rdfs:comment>
-        <rdfs:label xml:lang="en">has first episode of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -434,39 +364,10 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasGeneticDataType">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasDataType"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#GeneticDataType"/>
         <vann:example xml:lang="en">Cohort1 hasGeneticDataType epigenetic</vann:example>
-        <rdfs:comment xml:lang="en">Describes the genetic data types that were collected for a cohort or project</rdfs:comment>
-        <rdfs:label xml:lang="en">has genetic data type</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasHomePage -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasHomePage">
-        <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/homepage"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Person"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <vaem:rationale xml:lang="en">Property added to facilitate interaction with domain and ranges in the wiki. It&apos;s equivalent to foaf:homePage</vaem:rationale>
-        <rdfs:comment xml:lang="en">Property that describes the home page of a cohort or person</rdfs:comment>
-        <rdfs:label xml:lang="en">has home page</rdfs:label>
+        <rdfs:comment xml:lang="en">Describes the genetic data types that were collected for a cohort</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -479,20 +380,6 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#ImageAcquisitionProtocol"/>
         <vann:example xml:lang="en">Cohort1 hasImageAcquisitionProtocol AcquisitionProtocol1</vann:example>
         <rdfs:comment xml:lang="en">Describes the acquisition protocol that was used to scan the data of a cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has image acquisition protocol</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasInformationMethod -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasInformationMethod">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#InformationObtainmentMethod"/>
-        <vann:example xml:lang="en">Cohort1 hasInformationMethod selfReport --&gt; The information of the members of Cohort1 was obtained through self report</vann:example>
-        <rdfs:comment xml:lang="en">Describes the method for obtaining the medical information of a cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has information method</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -505,21 +392,18 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
         <vann:example xml:lang="en">BipolarCohort hasInvestigator JohnSmith</vann:example>
         <rdfs:comment xml:lang="en">Describe the investigators of a cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has investigator</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasMainPrincipalInvestigator -->
+    <!-- https://w3id.org/enigma#hasLocationOfDataCollection -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasMainPrincipalInvestigator">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasPrincipalInvestigator"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasLocationOfDataCollection">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">Cohort1 hasMainPrincipalInvestigatorof JohnSmith</vann:example>
-        <rdfs:comment xml:lang="en">Describes which cohorts somone is a main PI of</rdfs:comment>
-        <rdfs:label xml:lang="en">has main principal investigator</rdfs:label>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Location"/>
+        <vann:example xml:lang="en">Cohort1 hasLocationOfDataCollection Toronto</vann:example>
+        <rdfs:comment xml:lang="en">Describes where the data of the cohort was collected</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -532,7 +416,6 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#SpecificMedicalRatingInfo"/>
         <vann:example xml:lang="en">CohortDisorderGroup hasMedicalRatingDetails YMRS3010</vann:example>
         <rdfs:comment xml:lang="en">Describes the min and max values of the medical rating criteria</rdfs:comment>
-        <rdfs:label xml:lang="en">has medical rating details</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -541,7 +424,15 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasMembersWithRecentIssue">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -553,7 +444,18 @@
         </rdfs:range>
         <vann:example xml:lang="en">Cohort1TreatmentInfo usesTreatment Benzodiazepine inThePastMonths 6 --&gt; Cohort1 only includes people who used benzodiazepine in the past6 months</vann:example>
         <rdfs:comment xml:lang="en">Describes whether or not the members of the cohort had an issue (condition, disorder, or treatment-related)  within the past few months</rdfs:comment>
-        <rdfs:label xml:lang="en">has members with recent issue</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasPI -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasPI">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example xml:lang="en">Cohort1 hasPI John --&gt; the principal investigator of Cohort1 is John</vann:example>
+        <rdfs:comment xml:lang="en">Describes the principal investigator of the cohort</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -566,7 +468,6 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#Disorder"/>
         <vann:example xml:lang="en">CohortGroup1 hasHistoryOf NeurologicalDisease --&gt; CohortGroup1 only includes people who have history of neurological disorders</vann:example>
         <rdfs:comment xml:lang="en">Describes the disease that the members of the cohort group have a history of</rdfs:comment>
-        <rdfs:label xml:lang="en">has personal history of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -579,21 +480,6 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#CohortGroup"/>
         <vann:example xml:lang="en">BipolarCohort hasPopulationGroup USCPopulationGroup</vann:example>
         <rdfs:comment xml:lang="en">Describes the population group of a population-based cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has population group</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasPrincipalInvestigator -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasPrincipalInvestigator">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasInvestigator"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">Cohort1 hasPrincipalInvestigator John --&gt; the principal investigator of Cohort1 is John</vann:example>
-        <rdfs:comment xml:lang="en">Describes the principal investigator of the cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has principal investigator</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -606,7 +492,6 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
         <vann:example xml:lang="en">BipolarCohort hasProjectCohort BipolarBarcelonaCohort</vann:example>
         <rdfs:comment xml:lang="en">Describes the subcohorts, specific to a given project, that are part of that cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has project cohort</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -619,7 +504,54 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#SpecificTreatmentInfo"/>
         <vann:example xml:lang="en">CohortGroup hasTreatmentDetails antidepressants42</vann:example>
         <rdfs:comment xml:lang="en">Describes the details of the treatment that a cohort group is using</rdfs:comment>
-        <rdfs:label xml:lang="en">has treatment details</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#isCohortInProject -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isCohortInProject">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
+        <vann:example xml:lang="en">Cohort1 isCohortInProject BipolarProject</vann:example>
+        <rdfs:comment xml:lang="en">Describes what projects a cohort is a part of</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#isCohortInWorkingGroup -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isCohortInWorkingGroup">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+        <vann:example xml:lang="en">BipolarAmsterdamCohort isCohortInWorkingGroup BipolarWorkingGroup --&gt; The Bipolar Amsterdam cohort is part of the Bipolar working group</vann:example>
+        <rdfs:comment xml:lang="en">Describes what working group the cohort is a part of</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#obtainedInformationThrough -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#obtainedInformationThrough">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#InformationObtainmentMethod"/>
+        <vann:example xml:lang="en">Cohort1 obtainedInformationThrough selfReport --&gt; The information of the members of Cohort1 was obtained through self report</vann:example>
+        <rdfs:comment xml:lang="en">Describes the method for obtaining the medical information of a cohort</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#usedDiagnosisInstrument -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#usedDiagnosisInstrument">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#DiagnosisInstrument"/>
+        <vann:example xml:lang="en">Cohort1 usedDiagnosisInstrument miniInternationalNeuropychiatricInterview --&gt; The members of Cohort1 were diagnosted with Mini International Neuropychiatric Interview</vann:example>
+        <rdfs:comment xml:lang="en">Describes what instrument was used to diagnose the members of the cohort</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -632,7 +564,6 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#GenotypePlatform"/>
         <vann:example xml:lang="en">Cohort1 analyzedWithGenotypePlatform IllumniaOnmiExpress --&gt; Illumina OnmiExpress was used to analyze cohort1</vann:example>
         <rdfs:comment xml:lang="en">Describes what genotype platform was used to analyze the members of the cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">uses genotype platform</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -644,8 +575,7 @@
         <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Treatment"/>
         <vann:example xml:lang="en">CohortGroup1 usesTreatment Antidepressants --&gt; CohortGroup1 only includes people who currently use antidepressants</vann:example>
-        <rdfs:comment xml:lang="en">Describes which medications or therapies that the members of the cohort group are using</rdfs:comment>
-        <rdfs:label xml:lang="en">uses treatment</rdfs:label>
+        <rdfs:comment xml:lang="en">Describes which drugs or therapies that the members of the cohort group are using</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -671,7 +601,6 @@
         <owl:propertyDisjointWith rdf:resource="https://w3id.org/enigma#hasComorbidity"/>
         <vann:example xml:lang="en">CohortGroup1 doesNotHaveComorbidity true --&gt; CohortGroup1 excludes people who are comorbid</vann:example>
         <rdfs:comment xml:lang="en">Describes if the members of a cohort group do not have a comorbidity</rdfs:comment>
-        <rdfs:label xml:lang="en">does not have comorbidity</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -684,7 +613,6 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <vann:example xml:lang="en">CohortGroup1 doesNotHaveContraindicationToMRI yes --&gt; CohortGroup1 excludes people who do have contraindication to MRI</vann:example>
         <rdfs:comment xml:lang="en">Describes if individuals who have contraindication to MRI are excluded</rdfs:comment>
-        <rdfs:label xml:lang="en">does not have contraindiction to MRI</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -697,7 +625,6 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <vann:example xml:lang="en">Cohort1 doesNotHaveIntellectualDisability true</vann:example>
         <rdfs:comment xml:lang="en">Describes whether a cohort excludes people with an intellectual disability</rdfs:comment>
-        <rdfs:label xml:lang="en">does not have intellectual disability</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -712,7 +639,6 @@
         <owl:propertyDisjointWith rdf:resource="https://w3id.org/enigma#hasNeurologicalComorbidity"/>
         <vann:example xml:lang="en">CohortGroup1 doesNotHaveNeurologicalComorbidity true --&gt; CohortGroup1 does not include people who have two or more neurological disorders</vann:example>
         <rdfs:comment xml:lang="en">Describes if the members of a cohort group do not have a neurological comorbidity</rdfs:comment>
-        <rdfs:label xml:lang="en">does not have neurological comorbidity</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -727,7 +653,6 @@
         <owl:propertyDisjointWith rdf:resource="https://w3id.org/enigma#hasPsychiatricComorbidity"/>
         <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CohortGroup1 doesNotHavePsychiatricComorbidity true --&gt; CohortGroup1 does not include people who have two or more psychiatric disorders</vann:example>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Describes if the members of a cohort group do not have a psychiatric comorbidity</rdfs:comment>
-        <rdfs:label xml:lang="en">does not have psychiatric comorbidity</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -740,7 +665,6 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <vann:example xml:lang="en">CohortGroup1 excludesLeftHanded true</vann:example>
         <rdfs:comment xml:lang="en">Describes if left handed people were excluded from the study</rdfs:comment>
-        <rdfs:label xml:lang="en">excludes left hands</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -753,20 +677,6 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <vann:example xml:lang="en">CohortGroup1 excludesRightHands true</vann:example>
         <rdfs:comment xml:lang="en">Describes if right handed people were excluded from the study</rdfs:comment>
-        <rdfs:label xml:lang="en">excludes right hands</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasAdditionalDemographic -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasAdditionalDemographic">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <vann:example xml:lang="en">CohortGroup1 hasAdditionalDemographic &quot;handedness, IQ&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Describes the additional demographics defining a given cohort group (Height; Weight; Ethnicity; IQ; ParentalSES; IndividualSES)</rdfs:comment>
-        <rdfs:label xml:lang="en">has additional demographic</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -775,11 +685,19 @@
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasAgeGroup">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <vann:example xml:lang="en">Cohort1 hasAgeGroup &quot;22-45&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Describes the age groupings of individuals within a cohort group</rdfs:comment>
-        <rdfs:label xml:lang="en">has age group</rdfs:label>
+        <vann:example xml:lang="en">Cohort1 hasAgeGroup &quot;Infants&quot;
+Cohort1 hasAgeGroup &quot;Seniors&quot;</vann:example>
+        <rdfs:comment xml:lang="en">Describes a group of people who share a similar age</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -788,99 +706,18 @@
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasAgeStandardDeviation">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <vann:example xml:lang="en">Cohort1 hasAgeStandardDeviation 5.0</vann:example>
-        <rdfs:comment xml:lang="en">Describes the standard deviation of the age of a cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has age standard deviation</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasBrainStructuralData -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasBrainStructuralData">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <vann:example xml:lang="en">CohortGroupSZ hasBrainStructuralData &quot;T1w, CT&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Describes the types of brain structural/functional data collected by a cohort group (T1w; dMRI; T2w; SWI; rsfMRI; tbfMRI; ASL; EEG; MEG; Histology; CT; Head Circumference; Cognitive/Behavior assessments)</rdfs:comment>
-        <rdfs:label xml:lang="en">has brain structural data</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasBriefDescription -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasBriefDescription">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#WorkingGroup"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <vann:example xml:lang="en">SZCohort hasBriefDescription &quot;finds correlations between schizophrenia and other conditions&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Provides a brief description of the working group or project or cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has brief description</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasCohortStatus -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasCohortStatus">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:oneOf>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gathering participants</rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protocol preparation</rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">published</rdf:first>
-                                        <rdf:rest>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">revision</rdf:first>
-                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                            </rdf:Description>
-                                        </rdf:rest>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </owl:oneOf>
-            </rdfs:Datatype>
-        </rdfs:range>
-        <vann:example xml:lang="en">CohortGroup1 hasCohortStatus published</vann:example>
-        <rdfs:comment xml:lang="en">Describes the current status of a cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has cohort status</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasCollectionSite -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasCollectionSite">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <vann:example xml:lang="en">Cohort1 hasCollectionSite Toronto</vann:example>
-        <rdfs:comment xml:lang="en">Describes where the data of the cohort was collected</rdfs:comment>
-        <rdfs:label xml:lang="en">has collection site</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <vann:example xml:lang="en">Cohort1 hasAgeStandardDeviation 5.0</vann:example>
+        <rdfs:comment xml:lang="en">Describes the standard deviation of the age of a cohort</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -893,7 +730,6 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <vann:example xml:lang="en">CohortGroup1 hasComorbidity true --&gt; CohortGroup1 only includes people who are comorbid</vann:example>
         <rdfs:comment xml:lang="en">Describes if the members of a cohort group have a comorbidity</rdfs:comment>
-        <rdfs:label xml:lang="en">has comorbidity</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -906,7 +742,6 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
         <vann:example xml:lang="en">Cohort1 hasDataCollectionPeriodEnd 2008</vann:example>
         <rdfs:comment xml:lang="en">Describes the end year of the data collection period of the cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has data collection period end</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -919,22 +754,6 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
         <vann:example xml:lang="en">Cohort1 hasDataCollectionPeriodStart 2005</vann:example>
         <rdfs:comment xml:lang="en">Describes the start year of the data collection period of the cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has data collection period start</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasDiagnosisDisorder -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasDiagnosisDisorder">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <vann:example xml:lang="en">CohortGroup hasDiagnosisDisorder &quot;MDD, Bipolar Disorder&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Describing the diagnosis disorder of a cohort group 
-
-(MDD; Bipolar Disorder; Schizophrenia; OCD; ADHD; HIV; Autism; Addiction / SUD; Epilepsy; Anorexia / Eating Disorders; Parkinson; PTSD; Irritability; Stroke Recovery; Cerebellar Ataxia; Generalized anxiety; Panic disorder; Social anxiety; Early Onset Psychosis; Tourette&apos;s Syndrome; Brain Injury; Cancer &amp; Chemotherapy; Sleep; Suicidal Thoughts and Behaviors; Lysosome Storage Diseases; 22q DS; CNVs)</rdfs:comment>
-        <rdfs:label xml:lang="en">has diagnosis disorder</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -981,7 +800,6 @@
         </rdfs:range>
         <vann:example xml:lang="en">Cohort1 hasEthnicGroup &quot;European&quot;</vann:example>
         <rdfs:comment xml:lang="en">Describes the ethnic group that the participants of the cohort are in</rdfs:comment>
-        <rdfs:label xml:lang="en">has ethnic group</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1028,7 +846,6 @@
         </rdfs:range>
         <vann:example xml:lang="en">CohortA hasRelations &quot;Twins&quot;</vann:example>
         <rdfs:comment xml:lang="en">Describes the relations between the individuals of a cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has familial relations</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1041,20 +858,6 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <vann:example xml:lang="en">Cohort1 hasFundingSource &quot;NIMH, 5P50MH080272&quot;</vann:example>
         <rdfs:comment xml:lang="en">Describes the funding source of the cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has funding source</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasHandedness -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasHandedness">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <vann:example xml:lang="en">CohortGroup1 hasHandedness &quot;RH only&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Describes the handedness criteria for individuals in a cohort group (RH only; LH only; matched; assessed but not used as selection criteria; not assessed)</rdfs:comment>
-        <rdfs:label xml:lang="en">has handedness</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1067,7 +870,6 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
         <vann:example xml:lang="en">BipolarCorticolCohort hasLongitudinalTimepoint 3</vann:example>
         <rdfs:comment xml:lang="en">Describes the number of times a patient has been examined across time</rdfs:comment>
-        <rdfs:label xml:lang="en">has longitudinal timepoint</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1080,7 +882,6 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
         <vann:example xml:lang="en">CohortGroup1 hasMaxAge 60</vann:example>
         <rdfs:comment xml:lang="en">Describes inclusion criteria for maximum age of participants in a CohortGroup</rdfs:comment>
-        <rdfs:label xml:lang="en">has max age</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1093,7 +894,6 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
         <vann:example xml:lang="en">CohortGroup1 hasMaxIQ 120</vann:example>
         <rdfs:comment xml:lang="en">Describes inclusion criteria for maximum IQ of participants in a CohortGroup</rdfs:comment>
-        <rdfs:label xml:lang="en">has max IQ</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1102,11 +902,18 @@
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasMeanAge">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <vann:example xml:lang="en">Cohort1 hasMeanAge 21.0</vann:example>
-        <rdfs:comment xml:lang="en">Describes the mean age of the cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has mean age</rdfs:label>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+        <vann:example xml:lang="en">Cohort1 hasMeanAge 21</vann:example>
+        <rdfs:comment xml:lang="en">Describes the mean age of the project cohort</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -1119,7 +926,6 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
         <vann:example xml:lang="en">CohortGroup1 hasMinAge 12</vann:example>
         <rdfs:comment xml:lang="en">Describes inclusion criteria for minimum age of participants in a CohortGroup</rdfs:comment>
-        <rdfs:label xml:lang="en">has min age</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1132,7 +938,6 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
         <vann:example xml:lang="en">CohortGroup1 hasMinIQ 70</vann:example>
         <rdfs:comment xml:lang="en">Describes inclusion criteria for minimum IQ of participants in a CohortGroup</rdfs:comment>
-        <rdfs:label xml:lang="en">has min IQ</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1146,59 +951,6 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <vann:example xml:lang="en">CohortGroup1 hasNeurologicalComorbidity true --&gt; CohortGroup1 only includes people who have two or more neurological disorders</vann:example>
         <rdfs:comment xml:lang="en">Describes if the members of a cohort group have a neurological comorbidity</rdfs:comment>
-        <rdfs:label xml:lang="en">has neurological comorbidity</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasNumberOfASL -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfASL">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <vann:example xml:lang="en">ProjectCohortSZ hasNumberOfASL 21</vann:example>
-        <rdfs:comment xml:lang="en">Describes the amount of arterial spin labeling image data collected by a project cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has number of ASL</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasNumberOfCisFemale -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfCisFemale">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <vann:example xml:lang="en">CohortGroup1 hasNumberOfCisFemale 12</vann:example>
-        <rdfs:comment xml:lang="en">Describes the number of cis female individuals in a cohort group</rdfs:comment>
-        <rdfs:label xml:lang="en">has number of cis female</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasNumberOfCisMale -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfCisMale">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <vann:example xml:lang="en">CohortGroup1 hasNumberOfCisMale 12</vann:example>
-        <rdfs:comment xml:lang="en">Describes the number of cis male individuals in a cohort group</rdfs:comment>
-        <rdfs:label xml:lang="en">has number of cis male</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasNumberOfEEG -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfEEG">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <vann:example xml:lang="en">ProjectCohortSZ hasNumberOfEEG 30</vann:example>
-        <rdfs:comment xml:lang="en">Describes the amount of electroencephalography image data collected by a project cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has number of EEG</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1207,11 +959,18 @@
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfFemale">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <vann:example xml:lang="en">CohortGroup1 hasNumberOfFemale 50</vann:example>
-        <rdfs:comment xml:lang="en">Describes the number of females in a cohort group</rdfs:comment>
-        <rdfs:label xml:lang="en">has number of female</rdfs:label>
+        <vann:example xml:lang="en">Cohort1 hasNumberOfFemale 50</vann:example>
+        <rdfs:comment xml:lang="en">Describes the number of female participants in a cohort group</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -1220,11 +979,18 @@
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfMale">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <vann:example xml:lang="en">CohortGroup1 hasNumberOfMale 50</vann:example>
+        <vann:example xml:lang="en">Cohort1 hasNumberOfMale 50</vann:example>
         <rdfs:comment xml:lang="en">Describes the number of males in the cohort group</rdfs:comment>
-        <rdfs:label xml:lang="en">has number of male</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1233,284 +999,18 @@
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfParticipants">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
         <vann:example xml:lang="en">Cohort1 hasNumberOfParticipants 500 --&gt; Cohort1 is made up of approximately 500 patients</vann:example>
         <rdfs:comment xml:lang="en">Describes the number of participants in the cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has number of participants</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasNumberOfSWI -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfSWI">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <vann:example xml:lang="en">ProjectCohortSZ hasNumberOfSWI 20</vann:example>
-        <rdfs:comment xml:lang="en">Describes the amount of susceptibility weighted imaging image data collected by a project cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has number of SWI</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasNumberOfT1w -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfT1w">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <vann:example xml:lang="en">ProjectCohortSZ hasNumberOfT1w 8</vann:example>
-        <rdfs:comment xml:lang="en">Describes the amount of T1-weighted image data collected by a project cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has number of T1w</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasNumberOfT2 -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfT2">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <vann:example xml:lang="en">ProjectCohortSZ hasNumberOfT2 10</vann:example>
-        <rdfs:comment xml:lang="en">Describes the amount of T2 image data  collected by a project cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has number of T2</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasNumberOfTransgenderFtoM -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfTransgenderFtoM">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <vann:example xml:lang="en">CohortGroup2 hasNumberOfTransgenderFtoM 14</vann:example>
-        <rdfs:comment xml:lang="en">Describing the number of female to male transgender individuals in a cohort group</rdfs:comment>
-        <rdfs:label xml:lang="en">has number of transgender F to M</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasNumberOfTransgenderMtoF -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfTransgenderMtoF">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <vann:example xml:lang="en">CohortGroup1 hasNumberOfTransgenderMtoF 20</vann:example>
-        <rdfs:comment xml:lang="en">Describing the number of male to female transgender individuals in a cohort group</rdfs:comment>
-        <rdfs:label xml:lang="en">has number of transgender m to f</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasNumberOfUndisclosedGender -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfUndisclosedGender">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <vann:example xml:lang="en">CohortGroup1 hasNumberOfUndisclosedGender 50</vann:example>
-        <rdfs:comment xml:lang="en">Describing the number of individuals of undisclosed gender in a cohort group</rdfs:comment>
-        <rdfs:label xml:lang="en">has number of undisclosed gender</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasNumberOfdMRI -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfdMRI">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <vann:example xml:lang="en">ProjectCohortSZ hasNumberOfdMRI 10</vann:example>
-        <rdfs:comment xml:lang="en">Describes the amount of diffusion MRI image data  collected by a project cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has number of dMRI</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasNumberOfrsfMRI -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfrsfMRI">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <vann:example xml:lang="en">ProjectCohortSZ hasNumberOfrsfMRI 17</vann:example>
-        <rdfs:comment xml:lang="en">Describes the amount of resting state fMRI image data collected by a project cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has number of rsfMRI</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasNumberOftbfMRI -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOftbfMRI">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
-        <vann:example xml:lang="en">ProjectCohortSZ hasNumberOftbfMRI 17</vann:example>
-        <rdfs:comment xml:lang="en">Describes the amount of total body fat measured on MRI image data collected by a project cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has number of tbfMRI</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasPercentBloodSalivaCollection -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasPercentBloodSalivaCollection">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <vann:example xml:lang="en">CohortGroupSZ hasPercentBloodSalivaCollection 12.0</vann:example>
-        <rdfs:comment xml:lang="en">Describes the percent of cohort group biosamples which are from blood/saliva collected/stored with NO DNA extracted</rdfs:comment>
-        <rdfs:label xml:lang="en">has percent blood saliva collection</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasPercentDNAExtractionNoGenotyping -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasPercentDNAExtractionNoGenotyping">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <vann:example xml:lang="en">CohortGroupSZ hasPercentDNAExtractionNoGenotyping 30.0</vann:example>
-        <rdfs:comment xml:lang="en">Describes the percent of cohort group biosamples which are from DNA extraction with no genotyping</rdfs:comment>
-        <rdfs:label xml:lang="en">has percent DNA extraction no genotyping</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasPercentEpigeneticsBlood -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasPercentEpigeneticsBlood">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <vann:example xml:lang="en">CohortGroupSZ hasPercentEpigeneticsBlood 23.0</vann:example>
-        <rdfs:comment xml:lang="en">Describes the percent of cohort group biosamples which are from blood epigenetics</rdfs:comment>
-        <rdfs:label xml:lang="en">has percent epigenetics blood</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasPercentEpigeneticsSaliva -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasPercentEpigeneticsSaliva">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <vann:example xml:lang="en">CohortGroupSZ hasPercentEpigeneticsSaliva 23.0</vann:example>
-        <rdfs:comment xml:lang="en">Describes the percent of cohort group biosamples which are from saliva epigenetics</rdfs:comment>
-        <rdfs:label xml:lang="en">has percent epigenetics saliva</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasPercentExomeSequencing -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasPercentExomeSequencing">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <vann:example xml:lang="en">CohortGroupSZ hasPercentExomeSequencing 75.0</vann:example>
-        <rdfs:comment xml:lang="en">Describes the percent of cohort group biosamples which are from exome sequencing</rdfs:comment>
-        <rdfs:label xml:lang="en">has percent exome sequencing</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasPercentGeneExpression -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasPercentGeneExpression">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <vann:example xml:lang="en">CohortGroupSZ hasPercentGeneExpression 22.1</vann:example>
-        <rdfs:comment xml:lang="en">Describes the percent of cohort group biosamples which are from gene expression</rdfs:comment>
-        <rdfs:label xml:lang="en">has percent gene expression</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasPercentGenomewideGenotyping -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasPercentGenomewideGenotyping">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <vann:example xml:lang="en">CohortGroupSZ hasPercentGenomewideGenotyping 55.5</vann:example>
-        <rdfs:comment xml:lang="en">Describes the percent of cohort group biosamples which are from genome-wide genotyping</rdfs:comment>
-        <rdfs:label xml:lang="en">has percent genome-wide genotyping</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasPercentMitochondrialGenotyping -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasPercentMitochondrialGenotyping">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <vann:example xml:lang="en">CohortGroupSZ hasPercentMitochondrialGenotyping 44.5</vann:example>
-        <rdfs:comment xml:lang="en">Describes the percent of cohort group biosamples which are from mitochondrial genotyping</rdfs:comment>
-        <rdfs:label xml:lang="en">has percent mitochondrial genotyping</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasPercentPlasma -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasPercentPlasma">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <vann:example xml:lang="en">CohortGroupSZ hasPercentPlasma 11.0</vann:example>
-        <rdfs:comment xml:lang="en">Describes the percent of cohort group biosamples which are from plasma</rdfs:comment>
-        <rdfs:label xml:lang="en">has percent plasma</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasPercentSelectLoci -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasPercentSelectLoci">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <vann:example xml:lang="en">CohortGroupSZ hasPercentSelectLoci 67.0</vann:example>
-        <rdfs:comment xml:lang="en">Describes the percent of cohort group biosamples which are from select loci (some SNPs/CNVs)</rdfs:comment>
-        <rdfs:label xml:lang="en">has percent select loci</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasPercentTranscriptomics -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasPercentTranscriptomics">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <vann:example xml:lang="en">CohortGroupSZ hasPercentTranscriptomics 24.7</vann:example>
-        <rdfs:comment xml:lang="en">Describes the percent of cohort group biosamples which are from transcriptomics</rdfs:comment>
-        <rdfs:label xml:lang="en">has percent transcriptomics</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasPercentWholeGenomeSequencing -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasPercentWholeGenomeSequencing">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <vann:example xml:lang="en">CohortGroupSZ hasPercentWholeGenomeSequencing 60.0</vann:example>
-        <rdfs:comment xml:lang="en">Describes the percent of cohort group biosamples which are from whole genome sequencing</rdfs:comment>
-        <rdfs:label xml:lang="en">has percent whole genome sequencing</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1523,7 +1023,6 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <vann:example xml:lang="en">CohortGroup1 hasPregnantMembers false</vann:example>
         <rdfs:comment xml:lang="en">Describes if the cohort has pregnant members</rdfs:comment>
-        <rdfs:label xml:lang="en">has pregnant members</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1537,7 +1036,6 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <vann:example xml:lang="en">CohortGroup1 hasPsychiatricComorbidity true --&gt; CohortGroup1 only includes people who have two or more pyschiatric disorders</vann:example>
         <rdfs:comment xml:lang="en">Describes if the members of a cohort group have a psychiatric comorbidity</rdfs:comment>
-        <rdfs:label xml:lang="en">has psychiatric comorbidity</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1550,20 +1048,46 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <vann:example xml:lang="en">Cohort1 sexDeterminedGenetically true</vann:example>
         <rdfs:comment xml:lang="en">Describes whether the genders of cohort group members were determined genetically</rdfs:comment>
-        <rdfs:label xml:lang="en">has sex determined genetically</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasSpecies -->
+    <!-- https://w3id.org/enigma#hasStatus -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasSpecies">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasStatus">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <vann:example xml:lang="en">Cohort1 hasSpecies &quot;humans&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Describes the species of the subjects of a cohort (Humans, Chimps, Mice, etc.)</rdfs:comment>
-        <rdfs:label xml:lang="en">has species</rdfs:label>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gathering participants</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protocol preparation</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">published</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">revision</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <vann:example xml:lang="en">CohortGroup1 hasStatus published</vann:example>
+        <rdfs:comment xml:lang="en">Describes the current status of a cohort</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -1572,33 +1096,26 @@
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasStudyDesign">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <vann:example xml:lang="en">CohortGroup1 hasStudyDesign &quot;Population&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Describes the study design of the cohort group or project (Case/control; Population; Healthy only; Patients only)
-
-NOTE: study design options are mutually exclusive for Cohort Groups but not Projects</rdfs:comment>
-        <rdfs:label xml:lang="en">has study design</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasStudyFeature -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasStudyFeature">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <vann:example xml:lang="en">CohortGroup1 hasStudyFeatures &quot;Clinical trial, Twin/Family study&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Describes the study features of a cohort group (Clinical trial; Twin/Family study; Logitudinal; in-vivo; ex-vivo; post-mortem)</rdfs:comment>
-        <rdfs:label xml:lang="en">has study feature</rdfs:label>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Case-Control</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Population-Based</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <vann:example xml:lang="en">Cohort1 hasStudyDesign Case-Control</vann:example>
+        <rdfs:comment xml:lang="en">Describes the study design of the cohort</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -1607,11 +1124,18 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#includesFemale">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <vann:example xml:lang="en">Cohort1 includesFemale true</vann:example>
         <rdfs:comment xml:lang="en">Describes whether a cohort includes female participants</rdfs:comment>
-        <rdfs:label xml:lang="en">includes female</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1620,11 +1144,18 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#includesMale">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <vann:example xml:lang="en">Cohort1 includesMale true</vann:example>
         <rdfs:comment xml:lang="en">Describes whether a cohort includes male participants</rdfs:comment>
-        <rdfs:label xml:lang="en">includes male</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1633,11 +1164,18 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#isClinicallyStable">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <vann:example xml:lang="en">CohortGroup1 isClinicallyStable yes --&gt; CohortGroup1 only includes people who are clinically stable</vann:example>
         <rdfs:comment xml:lang="en">Describes if the members of the cohort group are clinically stable (typically indicated by vital signs within 20% of usual readings)</rdfs:comment>
-        <rdfs:label xml:lang="en">is clinically stable</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1646,11 +1184,18 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#isFamilyBased">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <vann:example xml:lang="en">Cohort1 isFamilyBased true</vann:example>
         <rdfs:comment xml:lang="en">Describes if a cohort study was family based</rdfs:comment>
-        <rdfs:label xml:lang="en">is family based</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1659,37 +1204,18 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#isProficientInLocalLanguage">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <vann:example xml:lang="en">CohortGroup1 isProficientInLocalLanguage true</vann:example>
         <rdfs:comment xml:lang="en">Describes whether or not the members of the cohort group are proficient in local language</rdfs:comment>
-        <rdfs:label xml:lang="en">is proficient in local language</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isPublic -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#isPublic">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <vann:example xml:lang="en">SZCohort isPublic &quot;true&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Describes if a cohort&apos;s data is publicly available</rdfs:comment>
-        <rdfs:label xml:lang="en">is public</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#usesScanner -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#usesScanner">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <vann:example xml:lang="en">SZCohort usesScanner &quot;1.5T-GE-Signa&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Describes the scanner used by the cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">uses scanner</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1705,7 +1231,6 @@ Schizophrenia withDisorderSeverity 5
 
 --&gt; CohortGroup1 only includes people with schizophrenia with disease severity 5</vann:example>
         <rdfs:comment xml:lang="en">Describes the severity of the disease</rdfs:comment>
-        <rdfs:label xml:lang="en">with disorder severity</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1721,7 +1246,6 @@ Schizophrenia withMaxAgeOfOnsetOfDisorder 18
 
 --&gt; CohortGroup1 only includes people who had schizophrenia at 18 or younger</vann:example>
         <rdfs:comment xml:lang="en">Describes the maximum age of onset of a disease</rdfs:comment>
-        <rdfs:label xml:lang="en">with max age of onset of disorder</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1737,7 +1261,6 @@ Schizophrenia withMaxDurationOfDisorder 20
 
 --&gt; CohortGroup1 only includes people who had bipolar disorder for at most 20 years</vann:example>
         <rdfs:comment xml:lang="en">Describes the maximum duration (in years) of a disease</rdfs:comment>
-        <rdfs:label xml:lang="en">with max duration of disorder</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1753,7 +1276,6 @@ YoungManiaRatingScale withMaxDurationOfDisorder 10
 
 --&gt; CohortGroup1 only includes people who received a score of at most 10 on the YMRS</vann:example>
         <rdfs:comment xml:lang="en">Describes the maximum medical rating score of individuals included in a cohort group</rdfs:comment>
-        <rdfs:label xml:lang="en">with max number</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1769,7 +1291,6 @@ Schizophrenia withMinAgeOfOnsetOfDisorder 10
 
 --&gt; CohortGroup1 only includes people who had schizophrenia at 10 or older</vann:example>
         <rdfs:comment xml:lang="en">Describes the minimum age of onset of a disease</rdfs:comment>
-        <rdfs:label xml:lang="en">with min age of onset of disorder</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1785,7 +1306,6 @@ Schizophrenia withMinDurationOfDisorder 10
 
 --&gt; CohortGroup1 only includes people had bipolar disorder for at least 10 years</vann:example>
         <rdfs:comment xml:lang="en">Describes the minimum duration (in years) of a disease</rdfs:comment>
-        <rdfs:label xml:lang="en">with min duration of disorder</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1801,7 +1321,6 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
 
 --&gt; CohortGroup1 only includes people who scored at least a 0 on the YMRS</vann:example>
         <rdfs:comment xml:lang="en">Describes the minimum medical rating score of individuals included in a cohort group</rdfs:comment>
-        <rdfs:label xml:lang="en">with min number</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1825,7 +1344,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
         <vann:example xml:lang="en">PTSD</vann:example>
         <rdfs:comment xml:lang="en">A mental health disorder defined by feelings of anxiety, fear, or worry</rdfs:comment>
-        <rdfs:label xml:lang="en">Anxiety Disorder</rdfs:label>
+        <rdfs:label xml:lang="en">AnxietyDisorder</rdfs:label>
     </owl:Class>
     
 
@@ -1837,7 +1356,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#DataType"/>
         <vann:example xml:lang="en">EEG</vann:example>
         <rdfs:comment xml:lang="en">Specifies the kinds of brain scan data collected</rdfs:comment>
-        <rdfs:label xml:lang="en">Brain Scan Data Type</rdfs:label>
+        <rdfs:label xml:lang="en">BrainScanDataType</rdfs:label>
     </owl:Class>
     
 
@@ -1848,7 +1367,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
     <owl:Class rdf:about="https://w3id.org/enigma#BriefPsychiatricRatingScale">
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#MedicalRating"/>
         <rdfs:comment xml:lang="en">Rating scale used to measure psychiatric symptoms among cohort members</rdfs:comment>
-        <rdfs:label xml:lang="en">Brief Psychiatric Rating Scale</rdfs:label>
+        <rdfs:label xml:lang="en">BriefPsychiatricRatingScale</rdfs:label>
     </owl:Class>
     
 
@@ -1872,7 +1391,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#VascularDisorder"/>
         <vann:example xml:lang="en">Coronary Artery Disease</vann:example>
         <rdfs:comment xml:lang="en">A subset of vascular disorders affecting the heart</rdfs:comment>
-        <rdfs:label xml:lang="en">Cardiovascular Disorder</rdfs:label>
+        <rdfs:label xml:lang="en">CardiovascularDisorder</rdfs:label>
     </owl:Class>
     
 
@@ -1884,7 +1403,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#VascularDisorder"/>
         <vann:example xml:lang="en">Stroke</vann:example>
         <rdfs:comment xml:lang="en">A subset of vascular disorders affecting blood vessels of the brain and cerebral circulation</rdfs:comment>
-        <rdfs:label xml:lang="en">Cerebrovascular Disorder</rdfs:label>
+        <rdfs:label xml:lang="en">CerebrovascularDisorder</rdfs:label>
     </owl:Class>
     
 
@@ -1907,7 +1426,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
     <owl:Class rdf:about="https://w3id.org/enigma#ClinicalGlobalImpressionsScale">
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#MedicalRating"/>
         <rdfs:comment xml:lang="en">Rating scale used to measure mental disorder symptom severity and treaments</rdfs:comment>
-        <rdfs:label xml:lang="en">Clinical Global Impression Scale</rdfs:label>
+        <rdfs:label xml:lang="en">ClinicalGlobalImpressionScale</rdfs:label>
     </owl:Class>
     
 
@@ -1930,7 +1449,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Cohort"/>
         <vann:example xml:lang="en">AMCControlGroup is a control cohort group of the AMC cohort</vann:example>
         <rdfs:comment xml:lang="en">A subset of Cohort, which either forms the patient group or control group</rdfs:comment>
-        <rdfs:label xml:lang="en">Cohort Group</rdfs:label>
+        <rdfs:label xml:lang="en">CohortGroup</rdfs:label>
     </owl:Class>
     
 
@@ -1963,7 +1482,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
 
     <owl:Class rdf:about="https://w3id.org/enigma#DataType">
         <rdfs:comment xml:lang="en">Specifies the kinds of data collected</rdfs:comment>
-        <rdfs:label xml:lang="en">Data Type</rdfs:label>
+        <rdfs:label xml:lang="en">DataType</rdfs:label>
     </owl:Class>
     
 
@@ -1974,7 +1493,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
     <owl:Class rdf:about="https://w3id.org/enigma#DiagnosisInstrument">
         <vann:example xml:lang="en">Consensus Consultant Diagnosis</vann:example>
         <rdfs:comment xml:lang="en">The method used to diagnosis individuals in a Cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">Diagnosis Instrument</rdfs:label>
+        <rdfs:label xml:lang="en">DiagnosisInstrument</rdfs:label>
     </owl:Class>
     
 
@@ -1985,7 +1504,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
     <owl:Class rdf:about="https://w3id.org/enigma#DiagnosticCriteria">
         <vann:example xml:lang="en">DSM4</vann:example>
         <rdfs:comment xml:lang="en">The principles and standards used to diagnose a diease or condition</rdfs:comment>
-        <rdfs:label xml:lang="en">Diagnostic Criteria</rdfs:label>
+        <rdfs:label xml:lang="en">DiagnosticCriteria</rdfs:label>
     </owl:Class>
     
 
@@ -2007,7 +1526,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
         <vann:example xml:lang="en">Hypothyroidism</vann:example>
         <rdfs:comment xml:lang="en">Disorders which affect the endocrine system</rdfs:comment>
-        <rdfs:label xml:lang="en">Endocrine Disorder</rdfs:label>
+        <rdfs:label xml:lang="en">EndocrineDisorder</rdfs:label>
     </owl:Class>
     
 
@@ -2019,7 +1538,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#DataType"/>
         <vann:example xml:lang="en">Epigenetic</vann:example>
         <rdfs:comment xml:lang="en">Specifies the kinds of genetic data collected</rdfs:comment>
-        <rdfs:label xml:lang="en">Genetic Data Type</rdfs:label>
+        <rdfs:label xml:lang="en">GeneticDataType</rdfs:label>
     </owl:Class>
     
 
@@ -2031,7 +1550,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
         <vann:example xml:lang="en">Cystic Fibrosis</vann:example>
         <rdfs:comment xml:lang="en">Disorders which are inherited and caused by abnormalities in the genome</rdfs:comment>
-        <rdfs:label xml:lang="en">Genetic Disorder</rdfs:label>
+        <rdfs:label xml:lang="en">GeneticDisorder</rdfs:label>
     </owl:Class>
     
 
@@ -2042,7 +1561,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
     <owl:Class rdf:about="https://w3id.org/enigma#GenotypePlatform">
         <vann:example xml:lang="en">IlluminaOmniExpress</vann:example>
         <rdfs:comment xml:lang="en">Software tools used for genotyping within a cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">Genotype Platform</rdfs:label>
+        <rdfs:label xml:lang="en">GenotypePlatform</rdfs:label>
     </owl:Class>
     
 
@@ -2053,7 +1572,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
     <owl:Class rdf:about="https://w3id.org/enigma#HamiltonDepressionRatingScale">
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#MedicalRating"/>
         <rdfs:comment xml:lang="en">Questionnaire used to measure the severity of depression</rdfs:comment>
-        <rdfs:label xml:lang="en">Hamilton Depression Rating Scale</rdfs:label>
+        <rdfs:label xml:lang="en">HamiltonDepressionRatingScale</rdfs:label>
     </owl:Class>
     
 
@@ -2064,7 +1583,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
     <owl:Class rdf:about="https://w3id.org/enigma#ImageAcquisitionProtocol">
         <vann:example xml:lang="en">ENIGMA-Sulci</vann:example>
         <rdfs:comment xml:lang="en">Procedure used to collect image data within the cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">Image Acquisition Protocol</rdfs:label>
+        <rdfs:label xml:lang="en">ImageAcquisitionProtocol</rdfs:label>
     </owl:Class>
     
 
@@ -2076,7 +1595,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
         <vann:example xml:lang="en">HIV</vann:example>
         <rdfs:comment xml:lang="en">A disease or disorder caused by the invasion of microorganisms</rdfs:comment>
-        <rdfs:label xml:lang="en">Infectious Disorder</rdfs:label>
+        <rdfs:label xml:lang="en">InfectiousDisorder</rdfs:label>
     </owl:Class>
     
 
@@ -2087,7 +1606,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
     <owl:Class rdf:about="https://w3id.org/enigma#InformationObtainmentMethod">
         <vann:example xml:lang="en">Hospital Records</vann:example>
         <rdfs:comment xml:lang="en">Method used to receive information about cohort subjects</rdfs:comment>
-        <rdfs:label xml:lang="en">Information Obtainment Method</rdfs:label>
+        <rdfs:label xml:lang="en">InformationObtainmentMethod</rdfs:label>
     </owl:Class>
     
 
@@ -2109,7 +1628,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
     <owl:Class rdf:about="https://w3id.org/enigma#MedicalRating">
         <vann:example xml:lang="en">ClincalGlobalImpressionsScale</vann:example>
         <rdfs:comment xml:lang="en">Systems or scales used to measure the severity of a medical condition</rdfs:comment>
-        <rdfs:label xml:lang="en">Medical Rating</rdfs:label>
+        <rdfs:label xml:lang="en">MedicalRating</rdfs:label>
     </owl:Class>
     
 
@@ -2121,7 +1640,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
         <vann:example xml:lang="en">OCD</vann:example>
         <rdfs:comment xml:lang="en">Disorders which can affect mood, behavior, and thinking</rdfs:comment>
-        <rdfs:label xml:lang="en">Mental Health Disorder</rdfs:label>
+        <rdfs:label xml:lang="en">MentalHealthDisorder</rdfs:label>
     </owl:Class>
     
 
@@ -2133,7 +1652,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
         <vann:example xml:lang="en">Bipolar Disorder</vann:example>
         <rdfs:comment xml:lang="en">A mental health disorder defined by mood or behavioral swings</rdfs:comment>
-        <rdfs:label xml:lang="en">Mood Disorder</rdfs:label>
+        <rdfs:label xml:lang="en">MoodDisorder</rdfs:label>
     </owl:Class>
     
 
@@ -2145,7 +1664,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
         <vann:example xml:lang="en">Epilepsy</vann:example>
         <rdfs:comment xml:lang="en">Disorders which affect the nervous system</rdfs:comment>
-        <rdfs:label xml:lang="en">Neurological Disorder</rdfs:label>
+        <rdfs:label xml:lang="en">NeurologicalDisorder</rdfs:label>
     </owl:Class>
     
 
@@ -2157,7 +1676,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
         <vann:example xml:lang="en">Delirium</vann:example>
         <rdfs:comment xml:lang="en">Disorder characterized by decreased mental function due to a medical or physical disease</rdfs:comment>
-        <rdfs:label xml:lang="en">Organic Medical Disorder</rdfs:label>
+        <rdfs:label xml:lang="en">OrganicMedicalDisorder</rdfs:label>
     </owl:Class>
     
 
@@ -2191,7 +1710,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Cohort"/>
         <vann:example xml:lang="en">&quot;Healthy&quot; individuals from the ASRB Cohort were sampled to form a Project Cohort of SZCorticol</vann:example>
         <rdfs:comment xml:lang="en">The subset of the individuals from a Cohort, which are used as samples for a specific project</rdfs:comment>
-        <rdfs:label xml:lang="en">Project Cohort</rdfs:label>
+        <rdfs:label xml:lang="en">ProjectCohort</rdfs:label>
     </owl:Class>
     
 
@@ -2203,7 +1722,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
         <vann:example xml:lang="en">Asthma</vann:example>
         <rdfs:comment xml:lang="en">Disorders which affect the respiratory system</rdfs:comment>
-        <rdfs:label xml:lang="en">Respiratory Disorder</rdfs:label>
+        <rdfs:label xml:lang="en">RespiratoryDisorder</rdfs:label>
     </owl:Class>
     
 
@@ -2215,7 +1734,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
         <vann:example xml:lang="en">Cancer</vann:example>
         <rdfs:comment xml:lang="en">Blanket term ecompassing serious medical condtions</rdfs:comment>
-        <rdfs:label xml:lang="en">Significant General Medical Condition</rdfs:label>
+        <rdfs:label xml:lang="en">SignificantGeneralMedicalCondition</rdfs:label>
     </owl:Class>
     
 
@@ -2226,7 +1745,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
     <owl:Class rdf:about="https://w3id.org/enigma#SpecificConditionInfo">
         <vann:example xml:lang="en">Severity of a condition</vann:example>
         <rdfs:comment xml:lang="en">Details unique to a given condition of the cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">Specific Condition Info</rdfs:label>
+        <rdfs:label xml:lang="en">SpecificConditionInfo</rdfs:label>
     </owl:Class>
     
 
@@ -2237,7 +1756,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
     <owl:Class rdf:about="https://w3id.org/enigma#SpecificDisorderInfo">
         <vann:example xml:lang="en">Severity of a disorder</vann:example>
         <rdfs:comment xml:lang="en">Details unique to a given disorder of the cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">Specific Disorder Info</rdfs:label>
+        <rdfs:label xml:lang="en">SpecificDisorderInfo</rdfs:label>
     </owl:Class>
     
 
@@ -2248,7 +1767,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
     <owl:Class rdf:about="https://w3id.org/enigma#SpecificMedicalRatingInfo">
         <vann:example xml:lang="en">Specifc scale used for medical rating</vann:example>
         <rdfs:comment xml:lang="en">Details unique to a given medical rating of the cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">Specific Medical Rating Info</rdfs:label>
+        <rdfs:label xml:lang="en">SpecificMedicalRatingInfo</rdfs:label>
     </owl:Class>
     
 
@@ -2259,7 +1778,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
     <owl:Class rdf:about="https://w3id.org/enigma#SpecificTreatmentInfo">
         <vann:example xml:lang="en">The length of the treatment usage period</vann:example>
         <rdfs:comment xml:lang="en">Details of a specific treatment of the cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">Specific Treatment Info</rdfs:label>
+        <rdfs:label xml:lang="en">SpecificTreatmentInfo</rdfs:label>
     </owl:Class>
     
 
@@ -2271,7 +1790,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
         <vann:example xml:lang="en">Alcoholism</vann:example>
         <rdfs:comment xml:lang="en">A mental health disorder defined by the overusage or abuse of a substance</rdfs:comment>
-        <rdfs:label xml:lang="en">Substance Abuse</rdfs:label>
+        <rdfs:label xml:lang="en">SubstanceAbuse</rdfs:label>
     </owl:Class>
     
 
@@ -2283,7 +1802,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#SubstanceAbuse"/>
         <vann:example xml:lang="en">Alcohol Dependence</vann:example>
         <rdfs:comment xml:lang="en">A subset of substance abuse in which symptoms of withdrawal may appeared after reduction of substance use</rdfs:comment>
-        <rdfs:label xml:lang="en">Substance Dependence</rdfs:label>
+        <rdfs:label xml:lang="en">SubstanceDependence</rdfs:label>
     </owl:Class>
     
 
@@ -2306,7 +1825,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Disorder"/>
         <vann:example xml:lang="en">Coronary Artery Disease</vann:example>
         <rdfs:comment xml:lang="en">Disorder which affects the body&apos;s network of blood vessels</rdfs:comment>
-        <rdfs:label xml:lang="en">Vascular Disorder</rdfs:label>
+        <rdfs:label xml:lang="en">VascularDisorder</rdfs:label>
     </owl:Class>
     
 
@@ -2317,7 +1836,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
     <owl:Class rdf:about="https://w3id.org/enigma#WorkingGroup">
         <vann:example xml:lang="en">BipolarWG</vann:example>
         <rdfs:comment xml:lang="en">Group of researchers studying a certain topic/disease</rdfs:comment>
-        <rdfs:label xml:lang="en">Working Group</rdfs:label>
+        <rdfs:label xml:lang="en">WorkingGroup</rdfs:label>
     </owl:Class>
     
 
@@ -2328,8 +1847,891 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
     <owl:Class rdf:about="https://w3id.org/enigma#YoungManiaRatingScale">
         <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#MedicalRating"/>
         <rdfs:comment xml:lang="en">Rating scale used to measure the severity of manic episodes in children and young adults</rdfs:comment>
-        <rdfs:label xml:lang="en">Young Mania Rating Scale</rdfs:label>
+        <rdfs:label xml:lang="en">YoungManiaRatingScale</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/enigma#ADHD -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#ADHD">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#ALL1000genomes -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#ALL1000genomes"/>
+    
+
+
+    <!-- https://w3id.org/enigma#BipolarBarcelona -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarBarcelona">
+        <rdf:type rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <hasControlGroup rdf:resource="https://w3id.org/enigma#BipolarBarcelonaControl"/>
+        <hasDiagnosticGroup rdf:resource="https://w3id.org/enigma#BipolarBarcelonaPatient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#BipolarBarcelonaControl -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarBarcelonaControl">
+        <rdf:type rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <doesNotHaveFirstDegreeRelativeWithDisorder rdf:resource="https://w3id.org/enigma#mentalDisorder"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#headTrauma"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#mentalDisorder"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#neurologicalDisorder"/>
+        <doesNotUseTreatment rdf:resource="https://w3id.org/enigma#psychotropicMedication"/>
+        <excludesRightHands rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</excludesRightHands>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#BipolarBarcelonaPatient -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarBarcelonaPatient">
+        <rdf:type rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#headTrauma"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#neurologicalDisorder"/>
+        <hasDisorder rdf:resource="https://w3id.org/enigma#bipolarDisorder"/>
+        <excludesRightHands rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</excludesRightHands>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#BipolarParis -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarParis">
+        <rdf:type rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <hasControlGroup rdf:resource="https://w3id.org/enigma#BipolarParisControl"/>
+        <hasDiagnosticGroup rdf:resource="https://w3id.org/enigma#BipolarParisPatient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#BipolarParisControl -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarParisControl">
+        <rdf:type rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <doesNotHaveFirstDegreeRelativeWithDisorder rdf:resource="https://w3id.org/enigma#bipolarDisorder"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#cardiovascularDisorder"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#headTraumaWithLossOfConsciousness"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#mentalDisorder"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#neurologicalDisorder"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#substanceAbuse"/>
+        <doesNotHaveContraindicationToMRI rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</doesNotHaveContraindicationToMRI>
+        <hasPregnantMembers rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasPregnantMembers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#BipolarParisPatient -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarParisPatient">
+        <rdf:type rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#cardiovascularDisorder"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#headTraumaWithLossOfConsciousness"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#neurologicalDisorder"/>
+        <doesNotHavePersonalHistoryOf rdf:resource="https://w3id.org/enigma#substanceAbuse"/>
+        <doesNotHaveContraindicationToMRI rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</doesNotHaveContraindicationToMRI>
+        <hasPregnantMembers rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasPregnantMembers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#BipolarTulsa -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarTulsa">
+        <rdf:type rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <hasDiagnosticGroup rdf:resource="https://w3id.org/enigma#BipolarTulsaPatient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#BipolarTulsaPatient -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarTulsaPatient">
+        <rdf:type rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <doesNotHaveDisorder rdf:resource="https://w3id.org/enigma#cardiovascularDisorder"/>
+        <doesNotHaveDisorder rdf:resource="https://w3id.org/enigma#endocrineDisorder"/>
+        <doesNotHaveDisorder rdf:resource="https://w3id.org/enigma#neurologicalDisorder"/>
+        <doesNotHaveDisorder rdf:resource="https://w3id.org/enigma#respiratoryDisorder"/>
+        <doesNotHaveDisorder rdf:resource="https://w3id.org/enigma#suicidality"/>
+        <doesNotHaveContraindicationToMRI rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</doesNotHaveContraindicationToMRI>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#BipolarWG -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarWG">
+        <rdf:type rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#CNSCancer -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#CNSCancer">
+        <rdf:type rdf:resource="https://w3id.org/enigma#Cancer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#Canada -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#Canada">
+        <rdf:type rdf:resource="https://w3id.org/enigma#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#DiffusionMRI -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#DiffusionMRI">
+        <rdf:type rdf:resource="https://w3id.org/enigma#BrainScanDataType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#EEG -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#EEG">
+        <rdf:type rdf:resource="https://w3id.org/enigma#BrainScanDataType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#EUR1000genomes -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#EUR1000genomes"/>
+    
+
+
+    <!-- https://w3id.org/enigma#Epigenetic -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#Epigenetic">
+        <rdf:type rdf:resource="https://w3id.org/enigma#GeneticDataType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#Exome -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#Exome">
+        <rdf:type rdf:resource="https://w3id.org/enigma#GeneticDataType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#Expression -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#Expression">
+        <rdf:type rdf:resource="https://w3id.org/enigma#GeneticDataType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#GenomeWide -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#GenomeWide">
+        <rdf:type rdf:resource="https://w3id.org/enigma#GeneticDataType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#HIV -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#HIV">
+        <rdf:type rdf:resource="https://w3id.org/enigma#InfectiousDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#IlluminaOmniExpress -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#IlluminaOmniExpress">
+        <rdf:type rdf:resource="https://w3id.org/enigma#GenotypePlatform"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#Irvine -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#Irvine">
+        <rdf:type rdf:resource="https://w3id.org/enigma#City"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#MDD -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#MDD">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MoodDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#NonCNSCancer -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#NonCNSCancer">
+        <rdf:type rdf:resource="https://w3id.org/enigma#Cancer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#OCD -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#OCD">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#PTSD -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#PTSD">
+        <rdf:type rdf:resource="https://w3id.org/enigma#AnxietyDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#RestingStateFunctionalMRI -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#RestingStateFunctionalMRI">
+        <rdf:type rdf:resource="https://w3id.org/enigma#BrainScanDataType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#T1-weightedMRI -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#T1-weightedMRI">
+        <rdf:type rdf:resource="https://w3id.org/enigma#BrainScanDataType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#T2-weightedMRI -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#T2-weightedMRI">
+        <rdf:type rdf:resource="https://w3id.org/enigma#BrainScanDataType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#TaskBasedFunctionalMRI -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#TaskBasedFunctionalMRI">
+        <rdf:type rdf:resource="https://w3id.org/enigma#BrainScanDataType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#Toronto -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#Toronto">
+        <rdf:type rdf:resource="https://w3id.org/enigma#City"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#USA -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#USA">
+        <rdf:type rdf:resource="https://w3id.org/enigma#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#WholeGenome -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#WholeGenome">
+        <rdf:type rdf:resource="https://w3id.org/enigma#GeneticDataType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#alcoholAbuse -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#alcoholAbuse">
+        <rdf:type rdf:resource="https://w3id.org/enigma#SubstanceAbuse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#alcoholDependence -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#alcoholDependence">
+        <rdf:type rdf:resource="https://w3id.org/enigma#SubstanceDependence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#alzheimers -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#alzheimers">
+        <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#anxietyDisorder -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#anxietyDisorder">
+        <rdf:type rdf:resource="https://w3id.org/enigma#AnxietyDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#autism -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#autism">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#beagle3.3.2 -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#beagle3.3.2"/>
+    
+
+
+    <!-- https://w3id.org/enigma#bipolarDisorder -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#bipolarDisorder">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MoodDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#cardiovascularDisorder -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#cardiovascularDisorder">
+        <rdf:type rdf:resource="https://w3id.org/enigma#CardiovascularDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#cerebralAnatomicAnomaly -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#cerebralAnatomicAnomaly">
+        <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#cerebrovascularDisease -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#cerebrovascularDisease">
+        <rdf:type rdf:resource="https://w3id.org/enigma#CerebrovascularDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#consensusConsultantDiagnosis -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#consensusConsultantDiagnosis">
+        <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosisInstrument"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#diagnosticInteviewForGeneticStudies -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#diagnosticInteviewForGeneticStudies">
+        <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosisInstrument"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#dsm4 -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#dsm4">
+        <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosticCriteria"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#eatingDisorder -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#eatingDisorder">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#endocrineDisorder -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#endocrineDisorder">
+        <rdf:type rdf:resource="https://w3id.org/enigma#EndocrineDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#epilepsy -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#epilepsy">
+        <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#euthymia -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#euthymia">
+        <rdf:type rdf:resource="https://w3id.org/enigma#Condition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#familyInterviewForGeneticStudies -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#familyInterviewForGeneticStudies">
+        <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosticCriteria"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#fluoxetine -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#fluoxetine"/>
+    
+
+
+    <!-- https://w3id.org/enigma#fragileX -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#fragileX">
+        <rdf:type rdf:resource="https://w3id.org/enigma#GeneticDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#frontotemporalDementia -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#frontotemporalDementia">
+        <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#geneticDisorder -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#geneticDisorder">
+        <rdf:type rdf:resource="https://w3id.org/enigma#GeneticDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#headTrauma -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#headTrauma">
+        <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#headTraumaWithLossOfConsciousness -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#headTraumaWithLossOfConsciousness">
+        <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#hepC -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#hepC">
+        <rdf:type rdf:resource="https://w3id.org/enigma#InfectiousDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#hospitalRecords -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#hospitalRecords">
+        <rdf:type rdf:resource="https://w3id.org/enigma#InformationObtainmentMethod"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#impute2.2.2 -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#impute2.2.2"/>
+    
+
+
+    <!-- https://w3id.org/enigma#infectiousDisorder -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#infectiousDisorder">
+        <rdf:type rdf:resource="https://w3id.org/enigma#InfectiousDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#mach1.0.18.c -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#mach1.0.18.c"/>
+    
+
+
+    <!-- https://w3id.org/enigma#mach2qtl1.1.2 -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#mach2qtl1.1.2"/>
+    
+
+
+    <!-- https://w3id.org/enigma#mentalDisorder -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#mentalDisorder">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#merlinOffline1.1.2 -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#merlinOffline1.1.2"/>
+    
+
+
+    <!-- https://w3id.org/enigma#miniInternationalNeuropsychiatricInterview -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#miniInternationalNeuropsychiatricInterview">
+        <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosisInstrument"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#minimac2012.05.29 -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#minimac2012.05.29"/>
+    
+
+
+    <!-- https://w3id.org/enigma#moodDisorder -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#moodDisorder">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MoodDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#neurologicalDisorder -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#neurologicalDisorder">
+        <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#organicMedicalDisorder -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#organicMedicalDisorder">
+        <rdf:type rdf:resource="https://w3id.org/enigma#OrganicMedicalDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#parkinsons -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#parkinsons">
+        <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#patientInterview -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#patientInterview">
+        <rdf:type rdf:resource="https://w3id.org/enigma#InformationObtainmentMethod"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#plink1.07 -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#plink1.07"/>
+    
+
+
+    <!-- https://w3id.org/enigma#probABEL -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#probABEL"/>
+    
+
+
+    <!-- https://w3id.org/enigma#psychiatricMedication -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#psychiatricMedication"/>
+    
+
+
+    <!-- https://w3id.org/enigma#psychiatristReport -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#psychiatristReport">
+        <rdf:type rdf:resource="https://w3id.org/enigma#InformationObtainmentMethod"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#psychosis -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#psychosis">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#psychotropicMedication -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#psychotropicMedication"/>
+    
+
+
+    <!-- https://w3id.org/enigma#quicktest0.95 -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#quicktest0.95"/>
+    
+
+
+    <!-- https://w3id.org/enigma#researchDiagnosticCriteria -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#researchDiagnosticCriteria">
+        <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosticCriteria"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#respiratoryDisorder -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#respiratoryDisorder">
+        <rdf:type rdf:resource="https://w3id.org/enigma#RespiratoryDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#schizophrenia -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#schizophrenia">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#seizures -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#seizures">
+        <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#selfReport -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#selfReport">
+        <rdf:type rdf:resource="https://w3id.org/enigma#InformationObtainmentMethod"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#significantGeneralMedicalCondition -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#significantGeneralMedicalCondition">
+        <rdf:type rdf:resource="https://w3id.org/enigma#SignificantGeneralMedicalCondition"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#storageDisorder -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#storageDisorder">
+        <rdf:type rdf:resource="https://w3id.org/enigma#GeneticDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#stroke -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#stroke">
+        <rdf:type rdf:resource="https://w3id.org/enigma#NeurologicalDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#structuredClinicalInstrument -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#structuredClinicalInstrument">
+        <rdf:type rdf:resource="https://w3id.org/enigma#DiagnosisInstrument"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#substanceAbuse -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#substanceAbuse">
+        <rdf:type rdf:resource="https://w3id.org/enigma#SubstanceAbuse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#substanceDependence -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#substanceDependence">
+        <rdf:type rdf:resource="https://w3id.org/enigma#SubstanceDependence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#suicidality -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#suicidality">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#tourette -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#tourette">
+        <rdf:type rdf:resource="https://w3id.org/enigma#MentalHealthDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#vascularDisorder -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#vascularDisorder">
+        <rdf:type rdf:resource="https://w3id.org/enigma#VascularDisorder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#youngManiaRatingScale0to10 -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#youngManiaRatingScale0to10">
+        <rdf:type rdf:resource="https://w3id.org/enigma#YoungManiaRatingScale"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/enigma#22qDS -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#22qDS">
+        <rdf:type rdf:resource="https://w3id.org/enigma#GeneticDisorder"/>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
