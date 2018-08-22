@@ -17,11 +17,11 @@
         <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MiHyun Jang</terms:creator>
         <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Neda Jahanshad</terms:creator>
         <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ryan Espiritu</terms:creator>
+        <terms:description xml:lang="en">A core ontology representing the main concepts of ENIGMA.</terms:description>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Project Ontology</terms:title>
+        <terms:title xml:lang="en">The Core Ontology</terms:title>
         <vann:preferredNamespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string">enigma</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:resource="https://w3id.org/enigma#"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A core ontology with the main concepts of ENIGMA</rdfs:comment>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">v1.0.0</owl:versionInfo>
     </owl:Ontology>
     
@@ -36,6 +36,13 @@
      -->
 
 
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
     
 
 
@@ -73,6 +80,20 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#AcquisitionProtocol"/>
         <vann:example xml:lang="en">Cohort1 hasAcquisitionProtocol AcquiPro3</vann:example>
         <rdfs:comment xml:lang="en">Describes the acquisition protocol that was used to scan a cohort</rdfs:comment>
+        <rdfs:label xml:lang="en">has acquisition protocol</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasAffiliate -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasAffiliate">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example xml:lang="en">Harvard hasAffiliate JohnSmith</vann:example>
+        <rdfs:comment xml:lang="en">Points to the person who is an affiliate of an organization</rdfs:comment>
+        <rdfs:label xml:lang="en">has affiliate</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -81,22 +102,31 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasCohort">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#WorkingGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Cohort"/>
         <vann:example xml:lang="en">BipolarProject hasCohort AmsterdamBipolarCohort --&gt; Bipolar Project includes the Amsterdam Bipolar Cohort</vann:example>
         <rdfs:comment xml:lang="en">Describes what cohorts are part of the project</rdfs:comment>
+        <rdfs:label xml:lang="en">has cohort</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasPI -->
+    <!-- https://w3id.org/enigma#hasPrincipalInvestigator -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasPI">
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasPrincipalInvestigator">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">Project1 hasPI JohnSmith</vann:example>
-        <rdfs:comment xml:lang="en">Describes who the PI of the project is</rdfs:comment>
+        <vann:example xml:lang="en">Cohort1 hasPrincipalInvestigator JohnSmith</vann:example>
+        <rdfs:comment xml:lang="en">Describes who the principal investigator of the cohort is</rdfs:comment>
+        <rdfs:label xml:lang="en">has principal investigator</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -109,30 +139,20 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
         <vann:example xml:lang="en">BipolarWorkingGroup hasProject BipolarCorticolProject --&gt; The Bipolar Working Group is working on the Bipolar Corticol Project</vann:example>
         <rdfs:comment xml:lang="en">Describes what projects are worked on by a specific working group</rdfs:comment>
+        <rdfs:label xml:lang="en">has project</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasWGMember -->
+    <!-- https://w3id.org/enigma#hasWorkingGroupMember -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasWGMember">
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasWorkingGroupMember">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">BipolarWorkingGroup hasMember JohnSmith --&gt; The bipolar working group has John Smith as a member</vann:example>
+        <vann:example xml:lang="en">BipolarWorkingGroup hasWorkingGroupMember JohnSmith --&gt; The bipolar working group has John Smith as a member</vann:example>
         <rdfs:comment xml:lang="en">Describes who the members of the working group are</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#isAffiliatedWithOrganization -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#isAffiliatedWithOrganization">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Organization"/>
-        <vann:example xml:lang="en">JohnSmith isAffiliatedWithOrganization HarvardU --&gt; John Smith is associated with Harvard</vann:example>
-        <rdfs:comment xml:lang="en">Describes what organization somone is affiliated with</rdfs:comment>
+        <rdfs:label xml:lang="en">has working group member</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -149,13 +169,22 @@
     
 
 
+    <!-- http://xmlns.com/foaf/0.1/Organization -->
+
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Organization">
+        <rdfs:comment rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/enigma#AcquisitionProtocol -->
 
 
     <owl:Class rdf:about="https://w3id.org/enigma#AcquisitionProtocol">
         <vann:example xml:lang="en">ENIGMA-Sulci</vann:example>
         <rdfs:comment xml:lang="en">The protocol used to acquire the scanner data types</rdfs:comment>
-        <rdfs:label xml:lang="en">AcquisitionProtocol</rdfs:label>
+        <rdfs:label xml:lang="en">Acquisition Protocol</rdfs:label>
     </owl:Class>
     
 
@@ -167,17 +196,6 @@
         <vann:example xml:lang="en">ADNI: Alzheimer’s Disease Neuroimaging Initiative</vann:example>
         <rdfs:comment xml:lang="en">A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria</rdfs:comment>
         <rdfs:label xml:lang="en">Cohort</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/enigma#Organization -->
-
-
-    <owl:Class rdf:about="https://w3id.org/enigma#Organization">
-        <rdfs:comment xml:lang="en">An organization contributing to a given ENIGMA project</rdfs:comment>
-        <rdfs:label xml:lang="en">Organization</rdfs:label>
-        <vann1:example xml:lang="en">Information Science Institute</vann1:example>
     </owl:Class>
     
 
@@ -210,7 +228,7 @@
     <owl:Class rdf:about="https://w3id.org/enigma#WorkingGroup">
         <vann:example xml:lang="en">BipolarWG</vann:example>
         <rdfs:comment xml:lang="en">Group of researchers studying a certain topic/disease</rdfs:comment>
-        <rdfs:label xml:lang="en">WorkingGroup</rdfs:label>
+        <rdfs:label xml:lang="en">Working Group</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 

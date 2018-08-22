@@ -9,8 +9,8 @@
     "iri" : "https://w3id.org/enigma",
     "version" : "v1.0.0",
     "author" : [ "MiHyun Jang", "Neda Jahanshad", "Ryan Espiritu", "Daniel Garijo" ],
-    "comments" : {
-      "undefined" : "An ontology for describing ENIGMA organizations."
+    "description" : {
+      "en" : "An ontology representing organizations that participate in the ENIGMA consortium."
     },
     "other" : {
       "license" : [ {
@@ -22,12 +22,12 @@
       "creator" : [ {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "MiHyun Jang",
+        "value" : "Ryan Espiritu",
         "type" : "label"
       }, {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Ryan Espiritu",
+        "value" : "MiHyun Jang",
         "type" : "label"
       }, {
         "identifier" : "creator",
@@ -43,24 +43,24 @@
       "contributor" : [ {
         "identifier" : "contributor",
         "language" : "undefined",
-        "value" : "Yolanda Gil",
+        "value" : "Agnes McMahon",
         "type" : "label"
       }, {
         "identifier" : "contributor",
         "language" : "undefined",
-        "value" : "Agnes McMahon",
+        "value" : "Yolanda Gil",
         "type" : "label"
       } ],
       "preferredNamespacePrefix" : [ {
         "identifier" : "preferredNamespacePrefix",
         "language" : "undefined",
-        "value" : "https://w3id.org/enigma",
-        "type" : "iri"
+        "value" : "enigma",
+        "type" : "label"
       }, {
         "identifier" : "preferredNamespacePrefix",
         "language" : "undefined",
-        "value" : "enigma",
-        "type" : "label"
+        "value" : "https://w3id.org/enigma",
+        "type" : "iri"
       } ],
       "versionInfo" : [ {
         "identifier" : "versionInfo",
@@ -78,9 +78,9 @@
   },
   "namespace" : [ ],
   "metrics" : {
-    "classCount" : 9,
+    "classCount" : 11,
     "objectPropertyCount" : 6,
-    "datatypePropertyCount" : 5,
+    "datatypePropertyCount" : 6,
     "individualCount" : 0
   },
   "class" : [ {
@@ -93,40 +93,58 @@
     "id" : "3",
     "type" : "owl:Class"
   }, {
-    "id" : "4",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "5",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "6",
+    "id" : "7",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "8",
-    "type" : "owl:Class"
+    "type" : "rdfs:Datatype"
   }, {
     "id" : "9",
-    "type" : "owl:Thing"
+    "type" : "rdfs:Datatype"
   }, {
-    "id" : "12",
+    "id" : "11",
     "type" : "owl:Class"
   }, {
-    "id" : "16",
+    "id" : "12",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "5",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "6",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "15",
     "type" : "owl:Class"
   }, {
+    "id" : "16",
+    "type" : "owl:Thing"
+  }, {
     "id" : "17",
-    "type" : "rdfs:Datatype"
+    "type" : "owl:Thing"
+  }, {
+    "id" : "18",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
   }, {
     "id" : "20",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "23",
     "type" : "owl:Class"
   }, {
     "id" : "1",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "13",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "24",
     "type" : "owl:Class"
   }, {
-    "id" : "21",
+    "id" : "14",
     "type" : "owl:Class"
   } ],
   "classAttribute" : [ {
@@ -216,21 +234,21 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "4",
+    "id" : "7",
     "label" : {
       "IRI-based" : "string"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "5",
+    "id" : "8",
     "label" : {
       "IRI-based" : "string"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "6",
+    "id" : "9",
     "label" : {
       "IRI-based" : "string"
     }
@@ -254,13 +272,25 @@
       "en" : "To specify the components of the delivery address for the object"
     },
     "attributes" : [ "external" ],
-    "id" : "8"
+    "id" : "11"
   }, {
-    "iri" : "http://www.w3.org/2002/07/owl#Thing",
-    "baseIri" : "http://owl2vowl.de",
-    "id" : "9",
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "12",
     "label" : {
-      "undefined" : "Thing"
+      "IRI-based" : "string"
+    }
+  }, {
+    "instances" : 0,
+    "union" : [ "13", "14" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "5"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "6",
+    "label" : {
+      "IRI-based" : "string"
     }
   }, {
     "iri" : "https://w3id.org/enigma#Person",
@@ -281,14 +311,26 @@
     "comment" : {
       "en" : "A person associated with a given organization"
     },
-    "id" : "12"
+    "id" : "15"
   }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
     "id" : "16",
     "label" : {
-      "IRI-based" : "string"
+      "undefined" : "Thing"
     }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "17",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "instances" : 0,
+    "union" : [ "13", "15" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "18"
   }, {
     "iri" : "http://vivoweb.org/ontology/core#College",
     "baseIri" : "http://vivoweb.org/ontology/core",
@@ -315,12 +357,12 @@
       "en" : "A college contributing to a given ENIGMA project"
     },
     "attributes" : [ "external" ],
-    "id" : "15",
+    "id" : "19",
     "superClasses" : [ "1" ]
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "17",
+    "id" : "20",
     "label" : {
       "IRI-based" : "string"
     }
@@ -350,7 +392,7 @@
       "en" : "A consortium contributing to a given ENIGMA project"
     },
     "attributes" : [ "external" ],
-    "id" : "20",
+    "id" : "23",
     "superClasses" : [ "1" ]
   }, {
     "iri" : "http://xmlns.com/foaf/0.1/Organization",
@@ -362,10 +404,23 @@
         "language" : "undefined",
         "value" : "http://xmlns.com/foaf/0.1",
         "type" : "iri"
-      } ],
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Organization"
+    },
+    "subClasses" : [ "0", "3", "2", "19", "23", "24" ],
+    "attributes" : [ "equivalent", "external" ],
+    "id" : "1"
+  }, {
+    "iri" : "https://w3id.org/enigma#Organization",
+    "equivalent" : [ "1" ],
+    "baseIri" : "https://w3id.org/enigma",
+    "instances" : 0,
+    "annotations" : {
       "example" : [ {
         "identifier" : "example",
-        "language" : "en",
+        "language" : "undefined",
         "value" : "Information Sciences Institute",
         "type" : "label"
       } ]
@@ -374,12 +429,11 @@
       "IRI-based" : "Organization",
       "en" : "Organization"
     },
-    "subClasses" : [ "0", "3", "2", "15", "20", "21" ],
     "comment" : {
-      "en" : "An organization contributing to a given ENIGMA project"
+      "en" : "An organization belonging to the ENIGMA consortium. Organization can be hospitals, universities, departments, etc."
     },
-    "attributes" : [ "external" ],
-    "id" : "1"
+    "attributes" : [ "equivalent" ],
+    "id" : "13"
   }, {
     "iri" : "http://vivoweb.org/ontology/core#Hospital",
     "baseIri" : "http://vivoweb.org/ontology/core",
@@ -406,65 +460,110 @@
       "en" : "A hospital contributing to a given ENIGMA project"
     },
     "attributes" : [ "external" ],
-    "id" : "21",
+    "id" : "24",
     "superClasses" : [ "1" ]
+  }, {
+    "iri" : "https://w3id.org/enigma#WorkingGroup",
+    "baseIri" : "https://w3id.org/enigma",
+    "instances" : 0,
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "BipolarWG",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "WorkingGroup",
+      "en" : "Working Group"
+    },
+    "comment" : {
+      "en" : "Group of researchers studying a certain topic/disease"
+    },
+    "id" : "14"
   } ],
   "property" : [ {
-    "id" : "7",
+    "id" : "4",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "10",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:datatypeProperty"
   }, {
-    "id" : "11",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "13",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "14",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "18",
+    "id" : "21",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "19",
+    "id" : "25",
     "type" : "owl:objectProperty"
   }, {
     "id" : "22",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "24",
+    "id" : "27",
     "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "25",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "26",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "23",
-    "type" : "owl:objectProperty"
   }, {
     "id" : "28",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "29",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "27",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "30",
-    "type" : "rdfs:SubClassOf"
+    "id" : "26",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "31",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "32",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "33",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "34",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "35",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "30",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "36",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "37",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "38",
     "type" : "rdfs:SubClassOf"
   } ],
   "propertyAttribute" : [ {
+    "iri" : "https://w3id.org/enigma#kind",
+    "baseIri" : "https://w3id.org/enigma",
+    "range" : "6",
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "Organization kind \"University\"",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "kind",
+      "en" : "kind"
+    },
+    "domain" : "5",
+    "comment" : {
+      "en" : "Describes the specific kind/type of an organization or working group"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "4"
+  }, {
     "iri" : "http://www.w3.org/2006/vcard/ns#postal-code",
     "baseIri" : "http://www.w3.org/2006/vcard/ns",
-    "range" : "4",
+    "range" : "8",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -474,39 +573,18 @@
       } ]
     },
     "label" : {
-      "IRI-based" : "postal-code",
-      "en" : "has postal code"
+      "IRI-based" : "postal-code"
     },
-    "domain" : "8",
+    "domain" : "11",
     "comment" : {
       "en" : "The postal code associated with the address of the object"
     },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "7"
-  }, {
-    "range" : "1",
-    "domain" : "0",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "datatype", "external" ],
     "id" : "10"
-  }, {
-    "range" : "1",
-    "domain" : "3",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "11"
-  }, {
-    "range" : "1",
-    "domain" : "2",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "13"
-  }, {
-    "range" : "1",
-    "domain" : "15",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "14"
   }, {
     "iri" : "https://w3id.org/enigma#hasAffiliate",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "12",
+    "range" : "15",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
@@ -519,37 +597,17 @@
       "IRI-based" : "hasAffiliate",
       "en" : "has affiliate"
     },
-    "superproperty" : [ "19" ],
-    "domain" : "1",
+    "superproperty" : [ "22" ],
+    "domain" : "13",
     "comment" : {
       "en" : "Describes the organization's affiliates"
     },
     "attributes" : [ "object" ],
-    "id" : "18"
-  }, {
-    "iri" : "http://xmlns.com/foaf/0.1/member",
-    "baseIri" : "http://xmlns.com/foaf/0.1",
-    "range" : "9",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://xmlns.com/foaf/0.1/",
-        "type" : "iri"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "member",
-      "en" : "has member"
-    },
-    "domain" : "9",
-    "subproperty" : [ "18" ],
-    "attributes" : [ "external", "object" ],
-    "id" : "19"
+    "id" : "21"
   }, {
     "iri" : "http://purl.org/dc/terms/isPartOf",
     "baseIri" : "http://purl.org/dc/terms",
-    "range" : "9",
+    "range" : "17",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -559,17 +617,35 @@
       } ]
     },
     "label" : {
-      "IRI-based" : "isPartOf",
-      "en" : "is part of"
+      "IRI-based" : "isPartOf"
     },
-    "domain" : "9",
-    "subproperty" : [ "23" ],
-    "attributes" : [ "external", "object" ],
+    "domain" : "17",
+    "subproperty" : [ "26" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "25"
+  }, {
+    "iri" : "http://xmlns.com/foaf/0.1/member",
+    "baseIri" : "http://xmlns.com/foaf/0.1",
+    "range" : "17",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://xmlns.com/foaf/0.1/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "member"
+    },
+    "domain" : "17",
+    "subproperty" : [ "21" ],
+    "attributes" : [ "object", "external" ],
     "id" : "22"
   }, {
     "iri" : "http://www.w3.org/2006/vcard/ns#street-address",
     "baseIri" : "http://www.w3.org/2006/vcard/ns",
-    "range" : "6",
+    "range" : "12",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -579,19 +655,18 @@
       } ]
     },
     "label" : {
-      "IRI-based" : "street-address",
-      "en" : "has street address"
+      "IRI-based" : "street-address"
     },
-    "domain" : "8",
+    "domain" : "11",
     "comment" : {
       "en" : "The street address associated with the address of the object"
     },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "24"
+    "attributes" : [ "datatype", "external" ],
+    "id" : "27"
   }, {
     "iri" : "http://www.w3.org/2006/vcard/ns#region",
     "baseIri" : "http://www.w3.org/2006/vcard/ns",
-    "range" : "5",
+    "range" : "9",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -601,24 +676,23 @@
       } ]
     },
     "label" : {
-      "IRI-based" : "region",
-      "en" : "has region"
+      "IRI-based" : "region"
     },
-    "domain" : "8",
+    "domain" : "11",
     "comment" : {
       "en" : "The region (e.g. state or province) associated with the address of the object"
     },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "25"
+    "attributes" : [ "datatype", "external" ],
+    "id" : "28"
   }, {
     "iri" : "https://w3id.org/enigma#hasPrimaryAddress",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "8",
+    "range" : "11",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
         "language" : "en",
-        "value" : "USC hasPrimaryAddress \"Address\"",
+        "value" : "USC hasPrimaryAddress \"123 Admiralty Way\"",
         "type" : "label"
       } ]
     },
@@ -626,17 +700,17 @@
       "IRI-based" : "hasPrimaryAddress",
       "en" : "has primary address"
     },
-    "superproperty" : [ "27" ],
-    "domain" : "1",
+    "superproperty" : [ "30" ],
+    "domain" : "18",
     "comment" : {
       "en" : "Describes the primary address of an organization"
     },
     "attributes" : [ "object" ],
-    "id" : "26"
+    "id" : "29"
   }, {
     "iri" : "https://w3id.org/enigma#isPartOfOrganization",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "1",
+    "range" : "13",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
@@ -649,17 +723,17 @@
       "IRI-based" : "isPartOfOrganization",
       "en" : "is part of organization"
     },
-    "superproperty" : [ "22" ],
-    "domain" : "1",
+    "superproperty" : [ "25" ],
+    "domain" : "13",
     "comment" : {
       "en" : "Describes the parent organization which an organization is a part of. An organization may be part of more than one organizations."
     },
     "attributes" : [ "object" ],
-    "id" : "23"
+    "id" : "26"
   }, {
     "iri" : "http://www.w3.org/2006/vcard/ns#locality",
     "baseIri" : "http://www.w3.org/2006/vcard/ns",
-    "range" : "17",
+    "range" : "7",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -669,19 +743,18 @@
       } ]
     },
     "label" : {
-      "IRI-based" : "locality",
-      "en" : "has locality"
+      "IRI-based" : "locality"
     },
-    "domain" : "8",
+    "domain" : "11",
     "comment" : {
       "en" : "The locality (e.g. city or town) associated with the address of the object"
     },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "28"
+    "attributes" : [ "datatype", "external" ],
+    "id" : "31"
   }, {
     "iri" : "http://www.w3.org/2006/vcard/ns#country-name",
     "baseIri" : "http://www.w3.org/2006/vcard/ns",
-    "range" : "16",
+    "range" : "20",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -691,19 +764,33 @@
       } ]
     },
     "label" : {
-      "IRI-based" : "country-name",
-      "en" : "has country name"
+      "IRI-based" : "country-name"
     },
-    "domain" : "8",
+    "domain" : "11",
     "comment" : {
       "en" : "The country name associated with the address of the object"
     },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "29"
+    "attributes" : [ "datatype", "external" ],
+    "id" : "32"
+  }, {
+    "range" : "1",
+    "domain" : "23",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "33"
+  }, {
+    "range" : "1",
+    "domain" : "19",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "34"
+  }, {
+    "range" : "1",
+    "domain" : "24",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "35"
   }, {
     "iri" : "http://www.w3.org/2006/vcard/ns#hasAddress",
     "baseIri" : "http://www.w3.org/2006/vcard/ns",
-    "range" : "8",
+    "range" : "11",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -713,25 +800,29 @@
       } ]
     },
     "label" : {
-      "IRI-based" : "hasAddress",
-      "en" : "has address"
+      "IRI-based" : "hasAddress"
     },
-    "domain" : "1",
-    "subproperty" : [ "26" ],
+    "domain" : "16",
+    "subproperty" : [ "29" ],
     "comment" : {
       "en" : "To specify the components of the address for the object"
     },
-    "attributes" : [ "external", "object" ],
-    "id" : "27"
-  }, {
-    "range" : "1",
-    "domain" : "20",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "object", "external" ],
     "id" : "30"
   }, {
     "range" : "1",
-    "domain" : "21",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "31"
+    "domain" : "0",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "36"
+  }, {
+    "range" : "1",
+    "domain" : "2",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "37"
+  }, {
+    "range" : "1",
+    "domain" : "3",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "38"
   } ]
 }

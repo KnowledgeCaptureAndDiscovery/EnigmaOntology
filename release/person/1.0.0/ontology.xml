@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://w3id.org/enigma#"
      xml:base="https://w3id.org/enigma"
+     xmlns:vaem="http://www.linkedmodel.org/schema/vaem#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:vann1="https://w3id.org/enigma#vann:"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vann="http://purl.org/vocab/vann/">
     <owl:Ontology rdf:about="https://w3id.org/enigma">
@@ -18,10 +18,10 @@
         <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Neda Jahanshad</terms:creator>
         <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ryan Espiritu</terms:creator>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
+        <terms:title xml:lang="en">A cohort ontology that describes persons participating in ENIGMA and their properties.</terms:title>
         <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Person Ontology</terms:title>
         <vann:preferredNamespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string">enigma</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:resource="https://w3id.org/enigma#"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cohort ontology that describes persons participating in ENIGMA and their properties.</rdfs:comment>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">v1.0.0</owl:versionInfo>
     </owl:Ontology>
     
@@ -39,6 +39,13 @@
     
 
 
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
     <!-- http://purl.org/vocab/vann/example -->
 
 
@@ -46,10 +53,10 @@
     
 
 
-    <!-- https://w3id.org/enigma#vann:example -->
+    <!-- http://www.linkedmodel.org/schema/vaem#rationale -->
 
 
-    <owl:AnnotationProperty rdf:about="https://w3id.org/enigma#vann:example"/>
+    <owl:AnnotationProperty rdf:about="http://www.linkedmodel.org/schema/vaem#rationale"/>
     
 
 
@@ -94,9 +101,7 @@
     <!-- http://purl.org/dc/terms/contributor -->
 
 
-    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/contributor">
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Project"/>
-    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/contributor"/>
     
 
 
@@ -113,7 +118,6 @@
 
 
     <owl:ObjectProperty rdf:about="http://vivoweb.org/ontology/core#orcidId">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is now an object property where the object value is a resource of the form &lt;http://orcid.org/NNNN-NNNN-NNNN-NNNN&gt;.  This is to support connecting VIVO and ORCID in the linked data web.   Note: a person can have multiple ORCID iDs.</rdfs:comment>
         <rdfs:isDefinedBy xml:lang="en">http://vivoweb.org/ontology/core#</rdfs:isDefinedBy>
     </owl:ObjectProperty>
@@ -135,7 +139,7 @@
 
 
     <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/homepage">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A homepage for some thing.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
     </owl:ObjectProperty>
@@ -146,7 +150,7 @@
 
 
     <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/mbox">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A  personal mailbox, ie. an Internet mailbox associated with exactly one owner, the first owner of this mailbox. This is a &apos;static inverse functional property&apos;, in that  there is (across time and change) at most one individual that ever has any particular value for foaf:mbox.</rdfs:comment>
         <rdfs:isDefinedBy xml:lang="en">http://xmlns.com/foaf/0.1/</rdfs:isDefinedBy>
@@ -194,7 +198,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasAffiliate">
         <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/member"/>
-        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Organization"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
         <vann:example xml:lang="en">HarvardU hasAffiliate JohnSmith</vann:example>
         <rdfs:comment xml:lang="en">Describes the organization&apos;s affiliates</rdfs:comment>
@@ -203,22 +207,37 @@
     
 
 
-    <!-- https://w3id.org/enigma#hasContact -->
+    <!-- https://w3id.org/enigma#hasEmail -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasContact">
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasEmail">
+        <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/mbox"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <vaem:rationale xml:lang="en">Property added to facilitate interaction with domain and ranges in the wiki. It&apos;s equivalent to foaf:mbox</vaem:rationale>
+        <rdfs:comment xml:lang="en">Property that indicates which is the email of a person</rdfs:comment>
+        <rdfs:label xml:lang="en">has email</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasHomePage -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasHomePage">
+        <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/homepage"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Person"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">BipolarCohort hasContact JohnSmith</vann:example>
-        <rdfs:comment xml:lang="en">Property that points to the person that is a contact for the project or cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has contact</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <vaem:rationale xml:lang="en">Property added to facilitate interaction with domain and ranges in the wiki. It&apos;s equivalent to foaf:homePage</vaem:rationale>
+        <rdfs:comment xml:lang="en">Property that describes the home page of a cohort or person</rdfs:comment>
+        <rdfs:label xml:lang="en">has home page</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -250,12 +269,32 @@
     
 
 
+    <!-- https://w3id.org/enigma#hasOrcidId -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasOrcidId">
+        <rdfs:subPropertyOf rdf:resource="http://vivoweb.org/ontology/core#orcidId"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <vaem:rationale xml:lang="en">Property added to facilitate interaction with the wiki, making domains and ranges explicit</vaem:rationale>
+        <rdfs:comment xml:lang="en">ORCID Id of a Person</rdfs:comment>
+        <rdfs:label xml:lang="en">has ORCID Id</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/enigma#hasPrimaryAddress -->
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasPrimaryAddress">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/vcard/ns#hasAddress"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Organization"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
         <vann:example xml:lang="en">JohnSmith hasPrimaryAddress &quot;Address&quot;</vann:example>
         <rdfs:comment xml:lang="en">Describes the primary address of a person</rdfs:comment>
@@ -274,20 +313,6 @@
         <vann:example xml:lang="en">Cohort1 hasPrincipalInvestigator JohnSmith</vann:example>
         <rdfs:comment xml:lang="en">Describes which cohorts somone is the principal investigator of</rdfs:comment>
         <rdfs:label xml:lang="en">has principal investigator</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasProjectLead -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasProjectLead">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/contributor"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">BipolarProject hasProjectLead JohnSmith</vann:example>
-        <rdfs:comment xml:lang="en">Describes what project someone is a project lead of</rdfs:comment>
-        <rdfs:label xml:lang="en">has project lead</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -323,7 +348,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasWorkingGroupMember">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasAffiliate"/>
+        <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/member"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
         <vann:example xml:lang="en">BipolarWorkingGroup hasWorkingGroupMember JohnSmith</vann:example>
@@ -410,7 +435,6 @@
 
     <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/familyName">
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The family name of some person.</rdfs:comment>
         <rdfs:isDefinedBy xml:lang="en">http://xmlns.com/foaf/0.1/</rdfs:isDefinedBy>
     </owl:DatatypeProperty>
@@ -422,8 +446,7 @@
 
     <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/givenName">
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The given name of some person.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The given name of some person.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
     </owl:DatatypeProperty>
     
@@ -438,6 +461,34 @@
         <vann:example xml:lang="en">JohnSmith currentJobTitle &quot;Postdoc&quot;</vann:example>
         <rdfs:comment xml:lang="en">Data property that aims to capture the current job title of a person. Examples are student, faculty, staff, postdoc, etc.</rdfs:comment>
         <rdfs:label xml:lang="en">current job title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#familyName -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#familyName">
+        <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/familyName"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <vaem:rationale xml:lang="en">Property added to restrict the domain to enigma:Person. This is done for facilitating the interaction with the wiki interface</vaem:rationale>
+        <rdfs:comment xml:lang="en">The family name of some person.</rdfs:comment>
+        <rdfs:label xml:lang="en">family name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#givenName -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#givenName">
+        <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/givenName"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <vaem:rationale xml:lang="en">Property added to restrict the domain to enigma:Person. This is done for facilitating the interaction with the wiki interface</vaem:rationale>
+        <rdfs:comment xml:lang="en">The given name of some person.</rdfs:comment>
+        <rdfs:label xml:lang="en">given name</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -459,9 +510,16 @@
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasEndDate">
-        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#QualifiedAffiliation"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#WorkingGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-        <vann:example xml:lang="en">JohnSmith hasQualifiedAffiliationRelationship &quot;QualifiedAffiliation&quot; hasEndDate &quot;2018-07-13&quot;</vann:example>
+        <vann:example xml:lang="en">JohnSmith hasQualifiedAffiliation &quot;QualifiedAffiliation&quot; hasEndDate &quot;2018-07-13&quot;</vann:example>
         <rdfs:comment xml:lang="en">Describes the end date of the described resource (a working group, a person in an organizaiton, etc.)</rdfs:comment>
         <rdfs:label xml:lang="en">has end date</rdfs:label>
     </owl:DatatypeProperty>
@@ -511,10 +569,17 @@
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasStartDate">
-        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#QualifiedAffiliation"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#WorkingGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
         <vann:example xml:lang="en">JohnSmith hasQualifiedAffiliation &quot;QualifiedAffiliation&quot; hasStartDate &quot;2008-07-13&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Describes the start date of the described resource (a working group, a person in an organizaiton, etc.)</rdfs:comment>
+        <rdfs:comment xml:lang="en">Describes the start date of the described resource (a working group, a person in an organization, etc.)</rdfs:comment>
         <rdfs:label xml:lang="en">has start date</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -582,10 +647,9 @@
 
 
     <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Organization">
-        <vann:example xml:lang="en">Information Sciences Institute</vann:example>
+        <owl:equivalentClass rdf:resource="https://w3id.org/enigma#Organization"/>
         <rdfs:comment xml:lang="en">An organization contributing to a given ENIGMA project</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1"/>
-        <rdfs:label xml:lang="en">Organization</rdfs:label>
     </owl:Class>
     
 
@@ -617,6 +681,16 @@
         <vann:example xml:lang="en">ADNI: Alzheimer’s Disease Neuroimaging Initiative</vann:example>
         <rdfs:comment xml:lang="en">A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria</rdfs:comment>
         <rdfs:label xml:lang="en">Cohort</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#Organization -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#Organization">
+        <rdfs:comment xml:lang="en">An organization belonging to the ENIGMA consortium. Organization can be hospitals, universities, departments, etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">Organization</rdfs:label>
     </owl:Class>
     
 

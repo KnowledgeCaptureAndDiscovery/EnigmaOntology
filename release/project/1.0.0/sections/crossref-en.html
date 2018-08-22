@@ -1,7 +1,7 @@
-<h2  id="crossreference" class="list">Cross reference for [Ontology Name] classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-This section provides details for each class and property defined by [Ontology Name].
+<h2  id="crossreference" class="list">Cross reference for The Project Ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by The Project Ontology.
 <div id="classes">
-   <h3 id="classes" class="list">Classes</h3>
+   <h3 id="classes-headline" class="list">Classes</h3>
    <ul class="hlist">
       <li>
          <a href="#http://purl.org/ontology/bibo/AcademicArticle" title="http://purl.org/ontology/bibo/AcademicArticle">
@@ -16,6 +16,9 @@ This section provides details for each class and property defined by [Ontology N
       </li>
       <li>
          <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
+      </li>
+      <li>
+         <a href="#CohortGroup" title="https://w3id.org/enigma#CohortGroup">Cohort Group</a>
       </li>
       <li>
          <a href="#ConflictOfInterest" title="https://w3id.org/enigma#ConflictOfInterest">Conflict of interest</a>
@@ -42,6 +45,9 @@ This section provides details for each class and property defined by [Ontology N
       </li>
       <li>
          <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
+      </li>
+      <li>
+         <a href="#Protocol" title="https://w3id.org/enigma#Protocol">Protocol</a>
       </li>
       <li>
          <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">Working Group</a>
@@ -82,6 +88,7 @@ This section provides details for each class and property defined by [Ontology N
          <dt>is in domain of</dt>
          <dd>
             <a href="#hasArticleStatus" title="https://w3id.org/enigma#hasArticleStatus">has article status</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasTitle" title="https://w3id.org/enigma#hasTitle">has title</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#hasVenue" title="https://w3id.org/enigma#hasVenue">has venue</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#location" title="https://w3id.org/enigma#location">location</a>
             <sup class="type-dp" title="data property">dp</sup>
@@ -140,10 +147,39 @@ This section provides details for each class and property defined by [Ontology N
          </dd>
       </dl>
       <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#CohortGroup" title="https://w3id.org/enigma#CohortGroup">Cohort Group</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#hasCohort" title="https://w3id.org/enigma#hasCohort">has cohort</a>
             <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="CohortGroup">
+      <h3>Cohort Group<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#CohortGroup</p>
+      <div class="comment">
+         <span class="markdown">A subset of Cohort, which either forms the patient group or control group</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>AMCControlGroup is a control cohort group of the AMC cohort</pre>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -165,7 +201,7 @@ This section provides details for each class and property defined by [Ontology N
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#hasConflictOfInterest" title="https://w3id.org/enigma#hasConflictOfInterest">has coflict of interest</a>
+            <a href="#hasConflictOfInterest" title="https://w3id.org/enigma#hasConflictOfInterest">has conflict of interest</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -307,14 +343,13 @@ This section provides details for each class and property defined by [Ontology N
       <dl class="description">
          <dt>is in domain of</dt>
          <dd>
-            <a href="#hasConflictOfInterest" title="https://w3id.org/enigma#hasConflictOfInterest">has coflict of interest</a>
+            <a href="#hasConflictOfInterest" title="https://w3id.org/enigma#hasConflictOfInterest">has conflict of interest</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#http://purl.org/dc/terms/contributor" title="http://purl.org/dc/terms/contributor">contributor</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasContact" title="https://w3id.org/enigma#hasContact">has contact person</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasProjectDeveloper" title="https://w3id.org/enigma#hasProjectDeveloper">has project developer</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasContact" title="https://w3id.org/enigma#hasContact">has contact</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasProjectLead" title="https://w3id.org/enigma#hasProjectLead">has project lead</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
@@ -341,20 +376,41 @@ This section provides details for each class and property defined by [Ontology N
          <dd>
             <a href="#http://purl.org/dc/terms/contributor" title="http://purl.org/dc/terms/contributor">contributor</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasApprovedProposalForm" title="https://w3id.org/enigma#hasApprovedProposalForm">has approved proposal form</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasCohort" title="https://w3id.org/enigma#hasCohort">has cohort</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasDataType" title="https://w3id.org/enigma#hasDataType">has data type</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasGeneReferencePanel" title="https://w3id.org/enigma#hasGeneReferencePanel">has gene reference panel</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasGeneReferencePanel" title="https://w3id.org/enigma#hasGeneReferencePanel">has gene reference panel</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasGeneticAssociationProtocol"
                title="https://w3id.org/enigma#hasGeneticAssociationProtocol">has genetic association protocol</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasGenotypeImputationProtocol"
                title="https://w3id.org/enigma#hasGenotypeImputationProtocol">has genotype imputation protocol</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasProjectDeveloper" title="https://w3id.org/enigma#hasProjectDeveloper">has project developer</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasProjectLead" title="https://w3id.org/enigma#hasProjectLead">has project lead</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasProjectStatus" title="https://w3id.org/enigma#hasProjectStatus">has project status</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#hasPublication" title="https://w3id.org/enigma#hasPublication">has publication</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasStudyDesign" title="https://w3id.org/enigma#hasStudyDesign">has study design</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasTargetDate" title="https://w3id.org/enigma#hasTargetDate">has target date</a>
-            <sup class="type-dp" title="data property">dp</sup>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasTargetDate" title="https://w3id.org/enigma#hasTargetDate">has target date</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#usesProtocol" title="https://w3id.org/enigma#usesProtocol">uses protocol</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Protocol">
+      <h3>Protocol<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#Protocol</p>
+      <div class="comment">
+         <span class="markdown">An image processing or genetic analysis protocol used to extract brain feature data</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>ENIGMA-Sulci Protocol</pre>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#usesProtocol" title="https://w3id.org/enigma#usesProtocol">uses protocol</a>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
@@ -390,13 +446,13 @@ This section provides details for each class and property defined by [Ontology N
          <a href="#hasBrainScanDataType" title="https://w3id.org/enigma#hasBrainScanDataType">has brain scan data type</a>
       </li>
       <li>
-         <a href="#hasConflictOfInterest" title="https://w3id.org/enigma#hasConflictOfInterest">has coflict of interest</a>
-      </li>
-      <li>
          <a href="#hasCohort" title="https://w3id.org/enigma#hasCohort">has cohort</a>
       </li>
       <li>
-         <a href="#hasContact" title="https://w3id.org/enigma#hasContact">has contact person</a>
+         <a href="#hasConflictOfInterest" title="https://w3id.org/enigma#hasConflictOfInterest">has conflict of interest</a>
+      </li>
+      <li>
+         <a href="#hasContact" title="https://w3id.org/enigma#hasContact">has contact</a>
       </li>
       <li>
          <a href="#hasDataType" title="https://w3id.org/enigma#hasDataType">has data type</a>
@@ -416,13 +472,13 @@ This section provides details for each class and property defined by [Ontology N
             title="https://w3id.org/enigma#hasGenotypeImputationProtocol">has genotype imputation protocol</a>
       </li>
       <li>
-         <a href="#hasProjectDeveloper" title="https://w3id.org/enigma#hasProjectDeveloper">has project developer</a>
-      </li>
-      <li>
          <a href="#hasProjectLead" title="https://w3id.org/enigma#hasProjectLead">has project lead</a>
       </li>
       <li>
          <a href="#hasPublication" title="https://w3id.org/enigma#hasPublication">has publication</a>
+      </li>
+      <li>
+         <a href="#usesProtocol" title="https://w3id.org/enigma#usesProtocol">uses protocol</a>
       </li>
    </ul>
    <div class="entity" id="http://purl.org/dc/terms/contributor">
@@ -436,8 +492,7 @@ This section provides details for each class and property defined by [Ontology N
          <dl>
             <dt>has sub-properties</dt>
             <dd>
-               <a href="#hasProjectDeveloper" title="https://w3id.org/enigma#hasProjectDeveloper">has project developer</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#hasProjectLead" title="https://w3id.org/enigma#hasProjectLead">has project lead</a>
+               <a href="#hasProjectLead" title="https://w3id.org/enigma#hasProjectLead">has project lead</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -486,7 +541,7 @@ This section provides details for each class and property defined by [Ontology N
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasBrainScanDataType</p>
       <div class="comment">
-         <span class="markdown">Describes which brain scan data types a project has</span>
+         <span class="markdown">Describes which brain scan data types a cohort or project has</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -503,10 +558,10 @@ This section provides details for each class and property defined by [Ontology N
             </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
+               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
                <sup class="type-c" title="class">c</sup> 
                <span class="logic">or</span> 
-               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">Working Group</a>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -517,8 +572,42 @@ This section provides details for each class and property defined by [Ontology N
          </dl>
       </div>
    </div>
+   <div class="entity" id="hasCohort">
+      <h3>has cohort<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasCohort</p>
+      <div class="comment">
+         <span class="markdown">Describes what cohorts are part of a project or working group</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>BipolarProject hasCohort AmsterdamBipolarCohort</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">Working Group</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="hasConflictOfInterest">
-      <h3>has coflict of interest<sup class="type-op" title="object property">op</sup>
+      <h3>has conflict of interest<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
@@ -542,39 +631,8 @@ This section provides details for each class and property defined by [Ontology N
          </dl>
       </div>
    </div>
-   <div class="entity" id="hasCohort">
-      <h3>has cohort<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#hasCohort</p>
-      <div class="comment">
-         <span class="markdown">Describes what cohorts are part of the project</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>BipolarProject hasCohort AmsterdamBipolarCohort</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
    <div class="entity" id="hasContact">
-      <h3>has contact person<sup class="type-op" title="object property">op</sup>
+      <h3>has contact<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
@@ -619,7 +677,7 @@ This section provides details for each class and property defined by [Ontology N
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasDataType</p>
       <div class="comment">
-         <span class="markdown">Describes the data types that the project collected</span>
+         <span class="markdown">Describes the data types that a cohort or project collected</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -637,6 +695,9 @@ This section provides details for each class and property defined by [Ontology N
             </dd>
             <dt>has domain</dt>
             <dd>
+               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
                <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
@@ -719,7 +780,7 @@ This section provides details for each class and property defined by [Ontology N
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasGeneticDataType</p>
       <div class="comment">
-         <span class="markdown">Describes the genetic data types that a project has</span>
+         <span class="markdown">Describes the genetic data types that a cohort or project has</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -736,10 +797,10 @@ This section provides details for each class and property defined by [Ontology N
             </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
+               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
                <sup class="type-c" title="class">c</sup> 
                <span class="logic">or</span> 
-               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">Working Group</a>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -777,42 +838,6 @@ This section provides details for each class and property defined by [Ontology N
             <dd>
                <a href="#GenotypeImputationProtocol"
                   title="https://w3id.org/enigma#GenotypeImputationProtocol">Genotype Imputation Protocol</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasProjectDeveloper">
-      <h3>has project developer<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#hasProjectDeveloper</p>
-      <div class="comment">
-         <span class="markdown">Describes who the project developer of the project is</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>BipolarCorticolProject hasProjectDeveloper JohnSmith</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#http://purl.org/dc/terms/contributor" title="http://purl.org/dc/terms/contributor">contributor</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -879,8 +904,39 @@ This section provides details for each class and property defined by [Ontology N
          </dl>
       </div>
    </div>
+   <div class="entity" id="usesProtocol">
+      <h3>uses protocol<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#usesProtocol</p>
+      <div class="comment">
+         <span class="markdown">Describes which data processing protocol was used in a project</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>BipolarProject usesProtocol ENIGMA-SulciProtocol</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Protocol" title="https://w3id.org/enigma#Protocol">Protocol</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
 </div><div id="dataproperties">
-   <h3 id="dataproperties" class="list">Data Properties</h3>
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
    <ul class="hlist">
       <li>
          <a href="#http://purl.org/dc/terms/date" title="http://purl.org/dc/terms/date">
@@ -912,6 +968,9 @@ This section provides details for each class and property defined by [Ontology N
          <a href="#hasTargetDate" title="https://w3id.org/enigma#hasTargetDate">has target date</a>
       </li>
       <li>
+         <a href="#hasTitle" title="https://w3id.org/enigma#hasTitle">has title</a>
+      </li>
+      <li>
          <a href="#hasVenue" title="https://w3id.org/enigma#hasVenue">has venue</a>
       </li>
       <li>
@@ -925,11 +984,6 @@ This section provides details for each class and property defined by [Ontology N
       <li>
          <a href="#http://purl.org/dc/terms/spatial" title="http://purl.org/dc/terms/spatial">
             <span>spatial</span>
-         </a>
-      </li>
-      <li>
-         <a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title">
-            <span>title</span>
          </a>
       </li>
    </ul>
@@ -1009,7 +1063,7 @@ This section provides details for each class and property defined by [Ontology N
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasBriefDescription</p>
       <div class="comment">
-         <span class="markdown">Provides a brief description of the working group or project</span>
+         <span class="markdown">Provides a brief description of the working group or project or cohort</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -1021,6 +1075,9 @@ This section provides details for each class and property defined by [Ontology N
          <dl>
             <dt>has domain</dt>
             <dd>
+               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
                <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup> 
                <span class="logic">or</span> 
@@ -1077,7 +1134,7 @@ This section provides details for each class and property defined by [Ontology N
       <dl>
          <dt>Example</dt>
          <dd>
-            <pre>ProjectSZ hasStatus "published"</pre>
+            <pre>ProjectSZ hasProjectStatus "published"</pre>
          </dd>
       </dl>
       <div class="description">
@@ -1130,23 +1187,30 @@ This section provides details for each class and property defined by [Ontology N
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasStudyDesign</p>
       <div class="comment">
-         <span class="markdown">Describes the study design of the project</span>
+         <span class="markdown">Describes the study design of the cohort group or project (Case/control; Population; Healthy only; Patients only)
+
+NOTE: study design options are mutually exclusive for Cohort Groups but not Projects</span>
       </div>
       <dl>
          <dt>Example</dt>
          <dd>
-            <pre>Project1 hasStudyDesign "Case-control"</pre>
+            <pre>Project1 hasStudyDesign "Case/control, Population"</pre>
          </dd>
       </dl>
       <div class="description">
          <dl>
             <dt>has domain</dt>
             <dd>
+               <a href="#CohortGroup" title="https://w3id.org/enigma#CohortGroup">Cohort Group</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
                <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
-            <dd>{ "Case-control" , "Population-based" }</dd>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
          </dl>
       </div>
    </div>
@@ -1176,6 +1240,35 @@ This section provides details for each class and property defined by [Ontology N
             <dt>has range</dt>
             <dd>
                <span class="dotted" title="http://www.w3.org/2001/XMLSchema#date">date</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasTitle">
+      <h3>has title<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasTitle</p>
+      <div class="comment">
+         <span class="markdown">Describes the title of a academic article</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://purl.org/dc/terms/title">title</span>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#AcademicArticle" title="https://w3id.org/enigma#AcademicArticle">Academic article</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
             </dd>
          </dl>
       </div>
@@ -1269,46 +1362,6 @@ This section provides details for each class and property defined by [Ontology N
             </dd>
          </dl>
       </div>
-   </div>
-   <div class="entity" id="http://purl.org/dc/terms/title">
-      <h3>title<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://purl.org/dc/terms/title</p>
-      <dl class="definedBy">
-         <dt>Is defined by</dt>
-         <dd>
-            <a href="http://purl.org/dc/terms/title">http://purl.org/dc/terms/title</a>
-         </dd>
-      </dl>
-   </div>
-</div><div id="namedindividuals">
-   <h3 id="namedindividuals" class="list">Named Individuals</h3>
-   <ul class="hlist">
-      <li>
-         <a href="#" title="https://w3id.org/enigma">
-            <span>enigma</span>
-         </a>
-      </li>
-   </ul>
-   <div class="entity" id="">
-      <h3>enigma<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma</p>
-      <dl class="description">
-         <dt>has facts</dt>
-         <dd>
-            <a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title">title</a>
-            <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"The Project Ontology"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
-            </span>
-         </dd>
-      </dl>
    </div>
 </div><div id="legend">
 <h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>

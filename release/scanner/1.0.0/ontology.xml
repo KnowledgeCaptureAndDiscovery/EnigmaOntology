@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://w3id.org/enigma#"
      xml:base="https://w3id.org/enigma"
-     xmlns:enigma="https://w3id.org/enigma#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -17,11 +16,11 @@
         <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MiHyun Jang</terms:creator>
         <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Neda Jahanshad</terms:creator>
         <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ryan Espiritu</terms:creator>
+        <terms:description xml:lang="en">An ontology representing scanners and instruments used to make measurements in the ENIGMA consortium.</terms:description>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
         <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Scanner Ontology</terms:title>
         <vann:preferredNamespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string">enigma</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:resource="https://w3id.org/enigma#"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An ontology that describes scanners and their properties.</rdfs:comment>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">v1.0.0</owl:versionInfo>
     </owl:Ontology>
     
@@ -36,6 +35,13 @@
      -->
 
 
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
     
 
 
@@ -484,297 +490,6 @@
         <rdfs:comment xml:lang="en">Treatments used on the members of the cohort</rdfs:comment>
         <rdfs:label xml:lang="en">Treatment</rdfs:label>
     </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    
-
-
-    <!-- https://w3id.org/enigma#BipolarBarcelonaControl -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarBarcelonaControl">
-        <rdf:type rdf:resource="https://w3id.org/enigma#Cohort"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#BipolarBarcelonaPatient -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarBarcelonaPatient">
-        <rdf:type rdf:resource="https://w3id.org/enigma#Cohort"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#BipolarParisControl -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarParisControl">
-        <rdf:type rdf:resource="https://w3id.org/enigma#Cohort"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#BipolarParisPatient -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarParisPatient">
-        <rdf:type rdf:resource="https://w3id.org/enigma#Cohort"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#BipolarTulsaPatient -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#BipolarTulsaPatient">
-        <rdf:type rdf:resource="https://w3id.org/enigma#Cohort"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#Bruker -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#Bruker">
-        <rdf:type rdf:resource="https://w3id.org/enigma#Manufacturer"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#FEEsequence -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#FEEsequence">
-        <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#FFEsequence -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#FFEsequence">
-        <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#FLAIRsequence -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#FLAIRsequence">
-        <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#FSEsequence -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#FSEsequence">
-        <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#FSLFirst4.1.9 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#FSLFirst4.1.9">
-        <rdf:type rdf:resource="https://w3id.org/enigma#ScannerSoftware"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#FSPGRsequence -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#FSPGRsequence">
-        <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#FreeSurfer5.1.0 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#FreeSurfer5.1.0">
-        <rdf:type rdf:resource="https://w3id.org/enigma#ScannerSoftware"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#FreeSurfer5.3 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#FreeSurfer5.3">
-        <rdf:type rdf:resource="https://w3id.org/enigma#ScannerSoftware"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#GE -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#GE">
-        <rdf:type rdf:resource="https://w3id.org/enigma#Manufacturer"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#GREsequence -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#GREsequence">
-        <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#Illumina -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#Illumina">
-        <rdf:type rdf:resource="https://w3id.org/enigma#Manufacturer"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#IlluminaOmniExpress -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#IlluminaOmniExpress">
-        <hasManufacturer rdf:resource="https://w3id.org/enigma#Illumina"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#MPRAGEsequence -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#MPRAGEsequence">
-        <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#Phillips -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#Phillips">
-        <rdf:type rdf:resource="https://w3id.org/enigma#Manufacturer"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#SEsequence -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#SEsequence">
-        <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#SPGRsequence -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#SPGRsequence">
-        <rdf:type rdf:resource="https://w3id.org/enigma#MRISequence"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#Siemens -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#Siemens">
-        <rdf:type rdf:resource="https://w3id.org/enigma#Manufacturer"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#axial -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#axial">
-        <rdf:type rdf:resource="https://w3id.org/enigma#AcquisitionDirection"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#coronal -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#coronal">
-        <rdf:type rdf:resource="https://w3id.org/enigma#AcquisitionDirection"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#sagittal -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#sagittal">
-        <rdf:type rdf:resource="https://w3id.org/enigma#AcquisitionDirection"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#1.5T-GE-Signa -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#1.5T-GE-Signa">
-        <rdf:type rdf:resource="https://w3id.org/enigma#Scanner"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#1.5T-GE-SignaHDx -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#1.5T-GE-SignaHDx">
-        <rdf:type rdf:resource="https://w3id.org/enigma#Scanner"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#3.0T-GE-Discovery750 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#3.0T-GE-Discovery750">
-        <rdf:type rdf:resource="https://w3id.org/enigma#Scanner"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#3.0T-Phillips-Achieva -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#3.0T-Phillips-Achieva">
-        <rdf:type rdf:resource="https://w3id.org/enigma#Scanner"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/enigma#3.0T-Siemens-TrioTim -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/enigma#3.0T-Siemens-TrioTim">
-        <rdf:type rdf:resource="https://w3id.org/enigma#Scanner"/>
-    </owl:NamedIndividual>
 </rdf:RDF>
 
 
