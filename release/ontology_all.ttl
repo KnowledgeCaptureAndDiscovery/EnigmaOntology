@@ -1,8 +1,8 @@
 @prefix :        <https://w3id.org/enigma#> .
 @prefix vaem:    <http://www.linkedmodel.org/schema/vaem#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix terms:   <http://purl.org/dc/terms/> .
-@prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vann1:   <https://w3id.org/enigma#vann:> .
@@ -429,6 +429,12 @@ terms:spatial
       rdfs:label "AcquisitionProtocol"@en ;
       vann:example "ENIGMA-Sulci"@en .
 
+<http://schema.org/distribution>
+      a       owl:ObjectProperty ;
+      rdfs:domain <http://schema.org/Dataset> ;
+      rdfs:isDefinedBy <http://schema.org> ;
+      rdfs:range <http://schema.org/DataDownload> .
+
 :hasProjectLead
       a       owl:ObjectProperty ;
       rdfs:comment "Describes what project someone is a project lead of"@en , "Describes who the leads of a project are"@en ;
@@ -442,7 +448,7 @@ terms:spatial
       a       owl:Class ;
       rdfs:comment "ENIGMA Protocols for genetic associations"@en ;
       rdfs:label "Genetic Association Protocol"@en ;
-      vann:example "ENIGMA3 – GWAS Meta Analysis of Cortical Thickness and Surface Area - Association Protocol"@en .
+      vann:example "ENIGMA3 â€“ GWAS Meta Analysis of Cortical Thickness and Surface Area - Association Protocol"@en .
 
 :usesTreatment
       a       owl:ObjectProperty ;
@@ -557,6 +563,13 @@ terms:identifier
       rdfs:subClassOf :DataType ;
       vann:example "EEG"@en .
 
+:hasDataset
+      a       owl:ObjectProperty ;
+      rdfs:comment "Property that links a project cohort with the data being described."@en ;
+      rdfs:domain :ProjectCohort ;
+      rdfs:label "has dataset"@en ;
+      rdfs:range :Dataset .
+
 :usedBodyCoil
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes if a body coil was used to scan by the scanner"@en ;
@@ -601,6 +614,10 @@ xsd:date
       rdfs:range xsd:date ;
       vann:example "BipolarProject hasStartDate 2018-06-23"@en , "JohnSmith hasQualifiedAffiliation \"QualifiedAffiliation\" hasEndDate \"2018-07-13\""@en .
 
+<http://schema.org/name>
+      a       owl:DatatypeProperty ;
+      rdfs:isDefinedBy <http://schema.org> .
+
 :hasNumberOfTransgenderMtoF
       a       owl:DatatypeProperty ;
       rdfs:comment "Describing the number of male to female transgender individuals in a cohort group"@en ;
@@ -633,6 +650,12 @@ xsd:date
       rdfs:label "includes female"@en ;
       rdfs:range xsd:boolean ;
       vann:example "Cohort1 includesFemale true"@en .
+
+:Dataset
+      a       owl:Class ;
+      rdfs:comment "A dataset containing information about an ENIGMA project cohort"@en ;
+      rdfs:label "Dataset"@en ;
+      rdfs:subClassOf <http://schema.org/Dataset> .
 
 :AcademicArticle
       a       owl:Class ;
@@ -701,7 +724,7 @@ Schizophrenia withMinAgeOfOnsetOfDisorder 10
       a       owl:Class ;
       rdfs:comment "ENIGMA Protocols for genetic imputations"@en ;
       rdfs:label "Genotype Imputation Protocol"@en ;
-      vann:example "ENIGMA3 – GWAS Meta Analysis of Cortical Thickness and Surface Area - Imputation Protocol"@en .
+      vann:example "ENIGMA3 â€“ GWAS Meta Analysis of Cortical Thickness and Surface Area - Imputation Protocol"@en .
 
 :hasDiagnosisDisorder
       a       owl:DatatypeProperty ;
@@ -1188,9 +1211,6 @@ terms:title
       rdfs:range xsd:string ;
       vann:example "ENIGMA-SulciProtocol hasOutputFeature \"mean depth\""@en .
 
-[]    a       owl:AllDisjointProperties ;
-      owl:members (:hasNumberOfSlices) .
-
 :hasProjectStatus
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes the status of the project"@en ;
@@ -1228,6 +1248,10 @@ terms:title
                 owl:onProperty :isAcquisitionProtocolOf ;
                 owl:someValuesFrom :Cohort
               ] .
+
+<http://schema.org/Dataset>
+      a       owl:Class ;
+      rdfs:isDefinedBy <http://schema.org> .
 
 :hasBriefDescription
       a       owl:DatatypeProperty ;
@@ -1466,11 +1490,12 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
 
 <https://w3id.org/enigma>
       a       owl:Ontology , owl:NamedIndividual ;
-      rdfs:comment "An ontology for describing the feature protocols used within ENIGMA." , "An ontology for describing ENIGMA organizations." , "An ontology that describes projects and their properties." , "A cohort ontology that describes cohorts and their properties." , "An ontology that describes scanners and their properties." , "An ontology for describing working groups." , "An ontology for describing people's roles in ENIGMA projects." , "A cohort ontology that describes persons participating in ENIGMA and their properties." ;
+      rdfs:comment "An ontology for describing people's roles in ENIGMA projects." ;
       terms:contributor "Yolanda Gil" , "Agnes McMahon" , "Daniel Garijo" ;
       terms:creator "Ryan Espiritu" , "MiHyun Jang" , "Daniel Garijo" , "Neda Jahanshad" ;
+      terms:description "An ontology for describing the feature protocols used within ENIGMA."@en , "An ontology representing scanners and instruments used to make measurements in the ENIGMA consortium."@en , "An ontology to describe cohorts of patients participating in ENIGMA projects."@en , "An ontology representing roles different persons play in ENIGMA projects, organizations, papers, or working groups."@en , "An ontology that describes ENIGMA projects and their properties."@en , "An ontology representing organizations that participate in the ENIGMA consortium."@en , "An ontology representing Working Groups that participate in the ENIGMA consortium."@en , "A cohort ontology that describes persons participating in ENIGMA and their properties."@en ;
       terms:license <http://creativecommons.org/licenses/by/2.0/> ;
-      terms:title "The Protocol Ontology"@en , "The Protocol Ontology" , "The Enigma Protocol Ontology" , "The Project Ontology"@en , "The Cohort Ontology" , "The Person Ontology" , "The Organization Ontology" , "The Scanner Ontology" , "The Working Group Ontology" , "The Enigma Roles Ontology" ;
+      terms:title "The Protocol Ontology"@en , "The Project Ontology"@en , "The Roles Ontology"@en , "The Cohort Ontology"@en , "The Person Ontology" , "The Organization Ontology" , "The Scanner Ontology" , "The Working Group Ontology"@en , "The Working Group Ontology" ;
       vann:preferredNamespacePrefix
               "enigma" , <https://w3id.org/enigma> ;
       vann:preferredNamespaceUri
@@ -1538,6 +1563,10 @@ terms:isPartOf
       rdfs:range :Person ;
       rdfs:subPropertyOf :hasInvestigator ;
       vann:example "Cohort1 hasPrincipalInvestigator JohnSmith"@en , "Cohort1 hasPrincipalInvestigator John --> the principal investigator of Cohort1 is John"@en .
+
+<http://schema.org/DataDownload>
+      a       owl:Class ;
+      rdfs:isDefinedBy <http://schema.org> .
 
 :hasPublication
       a       owl:ObjectProperty ;
@@ -1843,6 +1872,9 @@ Schizophrenia withMaxAgeOfOnsetOfDisorder 18
       rdfs:range xsd:string ;
       vann:example "JohnSmith hasDegree PhD"@en .
 
+[]    a       owl:AllDisjointProperties ;
+      owl:members (:hasNumberOfSlices) .
+
 <http://xmlns.com/foaf/0.1/homepage>
       a       owl:ObjectProperty ;
       rdfs:comment "A homepage for some thing." ;
@@ -1985,6 +2017,12 @@ YoungManiaRatingScale withMaxDurationOfDisorder 10
       owl:propertyDisjointWith
               :hasCondition .
 
+<http://schema.org/contentUrl>
+      a       owl:DatatypeProperty ;
+      rdfs:domain <http://schema.org/DataDownload> ;
+      rdfs:isDefinedBy <http://schema.org> ;
+      rdfs:range xsd:anyURI .
+
 :hasNEX
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes the number of excitiations of the acquisition protocol of the scanner"@en ;
@@ -2040,7 +2078,7 @@ YoungManiaRatingScale withMaxDurationOfDisorder 10
       vann:example "bipolarDisorder fulfillsDiagnosticCriteria diagnosticAndStatisticalManualOfMentalDisorders --> The diagnosis of bipolar disorder fulfills the criteria of the DSM"@en .
 
 terms:description
-      a       owl:DatatypeProperty .
+      a       owl:DatatypeProperty , owl:AnnotationProperty .
 
 vann:example
       a       owl:AnnotationProperty .
@@ -2067,6 +2105,13 @@ vann:example
       rdfs:comment "Details of a specific treatment of the cohort"@en ;
       rdfs:label "Specific Treatment Info"@en ;
       vann:example "The length of the treatment usage period"@en .
+
+:hasStatistics
+      a       owl:ObjectProperty ;
+      rdfs:comment "Property used to link a cohort with the summary statistics that may have been  produced after applying a given protocol"@en ;
+      rdfs:domain :ProjectCohort ;
+      rdfs:label "has statistics"@en ;
+      rdfs:range :Dataset .
 
 :hasImageAcquisitionProtocol
       a       owl:ObjectProperty ;
@@ -2218,7 +2263,13 @@ terms:date
       a       owl:Class ;
       rdfs:comment "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria"@en ;
       rdfs:label "Cohort"@en ;
-      vann:example "ADNI: Alzheimer’s Disease Neuroimaging Initiative"@en .
+      vann:example "ADNI: Alzheimerâ€™s Disease Neuroimaging Initiative"@en .
+
+<http://schema.org/encodingFormat>
+      a       owl:DatatypeProperty ;
+      rdfs:domain <http://schema.org/DataDownload> ;
+      rdfs:isDefinedBy <http://schema.org> ;
+      rdfs:range xsd:string .
 
 <http://purl.org/ontology/bibo/AcademicArticle>
       a       owl:Class ;
@@ -2391,6 +2442,10 @@ terms:date
       rdfs:label "has percent transcriptomics"@en ;
       rdfs:range xsd:double ;
       vann:example "CohortGroupSZ hasPercentTranscriptomics 24.7"@en .
+
+<http://schema.org/description>
+      a       owl:DatatypeProperty ;
+      rdfs:isDefinedBy <http://schema.org> .
 
 :hasPrimaryAddress
       a       owl:ObjectProperty ;
