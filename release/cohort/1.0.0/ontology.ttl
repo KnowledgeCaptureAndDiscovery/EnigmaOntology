@@ -8,7 +8,6 @@
 
 <https://w3id.org/enigma> rdf:type owl:Ontology ;
                            owl:versionIRI <https://w3id.org/enigma/cohort/1.0.0> ;
-<<<<<<< HEAD
                            <http://purl.org/dc/terms/contributor> "Agnes McMahon" ,
                                                                   "Daniel Garijo" ,
                                                                   "Yolanda Gil" ;
@@ -21,20 +20,6 @@
                            <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
                            rdfs:comment "A cohort ontology that describes cohorts and their properties." ;
                            owl:versionInfo "v1.0.0" .
-=======
-                           <http://purl.org/dc/terms/contributor> "Agnes McMahon"^^xsd:string ,
-                                                                  "Daniel Garijo"^^xsd:string ,
-                                                                  "Yolanda Gil"^^xsd:string ;
-                           <http://purl.org/dc/terms/creator> "MiHyun Jang"^^xsd:string ,
-                                                              "Neda Jahanshad"^^xsd:string ,
-                                                              "Ryan Espiritu"^^xsd:string ;
-                           <http://purl.org/dc/terms/description> "An ontology to describe cohorts of patients participating in ENIGMA projects."@en ;
-                           <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> ;
-                           <http://purl.org/dc/terms/title> "The Cohort Ontology"@en ;
-                           <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma"^^xsd:string ;
-                           <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
-                           owl:versionInfo "v1.0.0"^^xsd:string .
->>>>>>> b98bf00098c35acbaa0b1bd3f05c62fac6a3e246
 
 #################################################################
 #    Annotation properties
@@ -46,10 +31,6 @@
 
 ###  http://purl.org/dc/terms/creator
 <http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/description
-<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/license
@@ -88,7 +69,6 @@ xsd:gYear rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-<<<<<<< HEAD
 ###  http://schema.org/distribution
 <http://schema.org/distribution> rdf:type owl:ObjectProperty ;
                                  rdfs:domain <http://schema.org/Dataset> ;
@@ -99,11 +79,6 @@ xsd:gYear rdf:type rdfs:Datatype .
 ###  http://xmlns.com/foaf/0.1/homepage
 <http://xmlns.com/foaf/0.1/homepage> rdf:type owl:ObjectProperty ;
                                      rdfs:comment "A homepage for some thing." ;
-=======
-###  http://xmlns.com/foaf/0.1/homepage
-<http://xmlns.com/foaf/0.1/homepage> rdf:type owl:ObjectProperty ;
-                                     rdfs:comment "A homepage for some thing."^^xsd:string ;
->>>>>>> b98bf00098c35acbaa0b1bd3f05c62fac6a3e246
                                      rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
 
 
@@ -246,7 +221,6 @@ xsd:gYear rdf:type rdfs:Datatype .
              rdfs:label "has data type"@en .
 
 
-<<<<<<< HEAD
 ###  https://w3id.org/enigma#hasDataset
 :hasDataset rdf:type owl:ObjectProperty ;
             rdfs:domain :ProjectCohort ;
@@ -255,8 +229,6 @@ xsd:gYear rdf:type rdfs:Datatype .
             rdfs:label "has dataset"@en .
 
 
-=======
->>>>>>> b98bf00098c35acbaa0b1bd3f05c62fac6a3e246
 ###  https://w3id.org/enigma#hasDiagnosisInstrument
 :hasDiagnosisInstrument rdf:type owl:ObjectProperty ;
                         rdfs:domain :Cohort ;
@@ -445,7 +417,6 @@ xsd:gYear rdf:type rdfs:Datatype .
                   <http://purl.org/vocab/vann/example> "BipolarCohort hasProjectCohort BipolarBarcelonaCohort"@en ;
                   rdfs:comment "Describes the subcohorts, specific to a given project, that are part of that cohort"@en ;
                   rdfs:label "has project cohort"@en .
-<<<<<<< HEAD
 
 
 ###  https://w3id.org/enigma#hasStatistics
@@ -454,8 +425,6 @@ xsd:gYear rdf:type rdfs:Datatype .
                rdfs:range :Dataset ;
                rdfs:comment "Property used to link a cohort with the summary statistics that may have been  produced after applying a given protocol"@en ;
                rdfs:label "has statistics"@en .
-=======
->>>>>>> b98bf00098c35acbaa0b1bd3f05c62fac6a3e246
 
 
 ###  https://w3id.org/enigma#hasTreatmentDetails
@@ -558,13 +527,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                                    rdfs:domain :CohortGroup ;
                                    rdfs:range xsd:boolean ;
                                    owl:propertyDisjointWith :hasPsychiatricComorbidity ;
-<<<<<<< HEAD
                                    <http://purl.org/vocab/vann/example> "CohortGroup1 doesNotHavePsychiatricComorbidity true --> CohortGroup1 does not include people who have two or more psychiatric disorders" ;
                                    rdfs:comment "Describes if the members of a cohort group do not have a psychiatric comorbidity" ;
-=======
-                                   <http://purl.org/vocab/vann/example> "CohortGroup1 doesNotHavePsychiatricComorbidity true --> CohortGroup1 does not include people who have two or more psychiatric disorders"^^xsd:string ;
-                                   rdfs:comment "Describes if the members of a cohort group do not have a psychiatric comorbidity"^^xsd:string ;
->>>>>>> b98bf00098c35acbaa0b1bd3f05c62fac6a3e246
                                    rdfs:label "does not have psychiatric comorbidity"@en .
 
 
@@ -641,7 +605,6 @@ xsd:gYear rdf:type rdfs:Datatype .
                  rdfs:domain :Cohort ;
                  rdfs:range [ rdf:type rdfs:Datatype ;
                               owl:oneOf [ rdf:type rdf:List ;
-<<<<<<< HEAD
                                           rdf:first "gathering participants" ;
                                           rdf:rest [ rdf:type rdf:List ;
                                                      rdf:first "protocol preparation" ;
@@ -649,15 +612,6 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                                 rdf:first "published" ;
                                                                 rdf:rest [ rdf:type rdf:List ;
                                                                            rdf:first "revision" ;
-=======
-                                          rdf:first "gathering participants"^^xsd:string ;
-                                          rdf:rest [ rdf:type rdf:List ;
-                                                     rdf:first "protocol preparation"^^xsd:string ;
-                                                     rdf:rest [ rdf:type rdf:List ;
-                                                                rdf:first "published"^^xsd:string ;
-                                                                rdf:rest [ rdf:type rdf:List ;
-                                                                           rdf:first "revision"^^xsd:string ;
->>>>>>> b98bf00098c35acbaa0b1bd3f05c62fac6a3e246
                                                                            rdf:rest rdf:nil
                                                                          ]
                                                               ]
@@ -1420,7 +1374,6 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
 :DataType rdf:type owl:Class ;
           rdfs:comment "Specifies the kinds of data collected"@en ;
           rdfs:label "Data Type"@en .
-<<<<<<< HEAD
 
 
 ###  https://w3id.org/enigma#Dataset
@@ -1428,8 +1381,6 @@ YoungManiaRatingScale withMaxDurationOfDisorder 0
          rdfs:subClassOf <http://schema.org/Dataset> ;
          rdfs:comment "A dataset containing information about an ENIGMA project cohort"@en ;
          rdfs:label "Dataset"@en .
-=======
->>>>>>> b98bf00098c35acbaa0b1bd3f05c62fac6a3e246
 
 
 ###  https://w3id.org/enigma#DiagnosisInstrument
