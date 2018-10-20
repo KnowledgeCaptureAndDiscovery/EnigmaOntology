@@ -2,15 +2,15 @@
   "_comment" : "Created with OWL2VOWL (version 0.3.2-SNAPSHOT), http://vowl.visualdataweb.org",
   "header" : {
     "languages" : [ "en", "undefined" ],
-    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "https://w3id.org/enigma", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "https://w3id.org/enigma", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema", "http://xmlns.com/foaf/0.1" ],
     "title" : {
-      "undefined" : "The Project Ontology"
+      "en" : "The Core Ontology"
     },
     "iri" : "https://w3id.org/enigma",
     "version" : "v1.0.0",
     "author" : [ "MiHyun Jang", "Neda Jahanshad", "Ryan Espiritu" ],
-    "comments" : {
-      "undefined" : "A core ontology with the main concepts of ENIGMA"
+    "description" : {
+      "en" : "A core ontology representing the main concepts of ENIGMA."
     },
     "other" : {
       "license" : [ {
@@ -22,6 +22,11 @@
       "creator" : [ {
         "identifier" : "creator",
         "language" : "undefined",
+        "value" : "Ryan Espiritu",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
         "value" : "MiHyun Jang",
         "type" : "label"
       }, {
@@ -29,21 +34,16 @@
         "language" : "undefined",
         "value" : "Neda Jahanshad",
         "type" : "label"
-      }, {
-        "identifier" : "creator",
-        "language" : "undefined",
-        "value" : "Ryan Espiritu",
-        "type" : "label"
       } ],
       "contributor" : [ {
         "identifier" : "contributor",
         "language" : "undefined",
-        "value" : "Agnes McMahon",
+        "value" : "Yolanda Gil",
         "type" : "label"
       }, {
         "identifier" : "contributor",
         "language" : "undefined",
-        "value" : "Yolanda Gil",
+        "value" : "Agnes McMahon",
         "type" : "label"
       }, {
         "identifier" : "contributor",
@@ -57,22 +57,22 @@
         "value" : "enigma",
         "type" : "label"
       } ],
-      "preferredNamespaceUri" : [ {
-        "identifier" : "preferredNamespaceUri",
-        "language" : "undefined",
-        "value" : "https://w3id.org/enigma#",
-        "type" : "iri"
-      } ],
       "versionInfo" : [ {
         "identifier" : "versionInfo",
         "language" : "undefined",
         "value" : "v1.0.0",
         "type" : "label"
       } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://w3id.org/enigma#",
+        "type" : "iri"
+      } ],
       "title" : [ {
         "identifier" : "title",
-        "language" : "undefined",
-        "value" : "The Project Ontology",
+        "language" : "en",
+        "value" : "The Core Ontology",
         "type" : "label"
       } ]
     }
@@ -85,45 +85,28 @@
     "individualCount" : 0
   },
   "class" : [ {
-    "id" : "0",
-    "type" : "owl:Class"
-  }, {
-    "id" : "1",
-    "type" : "owl:Class"
-  }, {
-    "id" : "5",
+    "id" : "3",
     "type" : "owl:Class"
   }, {
     "id" : "4",
     "type" : "owl:Class"
   }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:unionOf"
+  }, {
     "id" : "7",
     "type" : "owl:Class"
   }, {
-    "id" : "3",
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
     "type" : "owl:Class"
   } ],
   "classAttribute" : [ {
-    "iri" : "https://w3id.org/enigma#Organization",
-    "baseIri" : "https://w3id.org/enigma",
-    "instances" : 0,
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "en",
-        "value" : "Information Science Institute",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Organization",
-      "en" : "Organization"
-    },
-    "comment" : {
-      "en" : "An organization contributing to a given ENIGMA project"
-    },
-    "id" : "0"
-  }, {
     "iri" : "https://w3id.org/enigma#AcquisitionProtocol",
     "baseIri" : "https://w3id.org/enigma",
     "instances" : 0,
@@ -137,12 +120,12 @@
     },
     "label" : {
       "IRI-based" : "AcquisitionProtocol",
-      "en" : "AcquisitionProtocol"
+      "en" : "Acquisition Protocol"
     },
     "comment" : {
       "en" : "The protocol used to acquire the scanner data types"
     },
-    "id" : "1"
+    "id" : "3"
   }, {
     "iri" : "https://w3id.org/enigma#Project",
     "baseIri" : "https://w3id.org/enigma",
@@ -162,7 +145,7 @@
     "comment" : {
       "en" : "Project associated with the cohort"
     },
-    "id" : "5"
+    "id" : "4"
   }, {
     "iri" : "https://w3id.org/enigma#Person",
     "baseIri" : "https://w3id.org/enigma",
@@ -182,7 +165,12 @@
     "comment" : {
       "en" : "Individual involved with the cohort"
     },
-    "id" : "4"
+    "id" : "2"
+  }, {
+    "instances" : 0,
+    "union" : [ "4", "1" ],
+    "attributes" : [ "union", "anonymous" ],
+    "id" : "6"
   }, {
     "iri" : "https://w3id.org/enigma#Cohort",
     "baseIri" : "https://w3id.org/enigma",
@@ -191,7 +179,7 @@
       "example" : [ {
         "identifier" : "example",
         "language" : "en",
-        "value" : "ADNI: Alzheimer’s Disease Neuroimaging Initiative",
+        "value" : "ADNI: Alzheimerâ€™s Disease Neuroimaging Initiative",
         "type" : "label"
       } ]
     },
@@ -203,6 +191,18 @@
       "en" : "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria"
     },
     "id" : "7"
+  }, {
+    "iri" : "http://xmlns.com/foaf/0.1/Organization",
+    "baseIri" : "http://xmlns.com/foaf/0.1",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Organization"
+    },
+    "comment" : {
+      "undefined" : "http://xmlns.com/foaf/0.1/Organization"
+    },
+    "attributes" : [ "external" ],
+    "id" : "10"
   }, {
     "iri" : "https://w3id.org/enigma#WorkingGroup",
     "baseIri" : "https://w3id.org/enigma",
@@ -217,18 +217,18 @@
     },
     "label" : {
       "IRI-based" : "WorkingGroup",
-      "en" : "WorkingGroup"
+      "en" : "Working Group"
     },
     "comment" : {
       "en" : "Group of researchers studying a certain topic/disease"
     },
-    "id" : "3"
+    "id" : "1"
   } ],
   "property" : [ {
-    "id" : "2",
+    "id" : "0",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "6",
+    "id" : "5",
     "type" : "owl:objectProperty"
   }, {
     "id" : "8",
@@ -237,54 +237,34 @@
     "id" : "9",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "10",
+    "id" : "11",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "11",
+    "id" : "12",
     "type" : "owl:objectProperty"
   } ],
   "propertyAttribute" : [ {
-    "iri" : "https://w3id.org/enigma#hasWGMember",
+    "iri" : "https://w3id.org/enigma#hasWorkingGroupMember",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "4",
+    "range" : "2",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
         "language" : "en",
-        "value" : "BipolarWorkingGroup hasMember JohnSmith --> The bipolar working group has John Smith as a member",
+        "value" : "BipolarWorkingGroup hasWorkingGroupMember JohnSmith --> The bipolar working group has John Smith as a member",
         "type" : "label"
       } ]
     },
     "label" : {
-      "IRI-based" : "hasWGMember"
+      "IRI-based" : "hasWorkingGroupMember",
+      "en" : "has working group member"
     },
-    "domain" : "3",
+    "domain" : "1",
     "comment" : {
       "en" : "Describes who the members of the working group are"
     },
     "attributes" : [ "object" ],
-    "id" : "2"
-  }, {
-    "iri" : "https://w3id.org/enigma#hasPI",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "4",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "en",
-        "value" : "Project1 hasPI JohnSmith",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasPI"
-    },
-    "domain" : "7",
-    "comment" : {
-      "en" : "Describes who the PI of the project is"
-    },
-    "attributes" : [ "object" ],
-    "id" : "6"
+    "id" : "0"
   }, {
     "iri" : "https://w3id.org/enigma#hasCohort",
     "baseIri" : "https://w3id.org/enigma",
@@ -298,39 +278,63 @@
       } ]
     },
     "label" : {
-      "IRI-based" : "hasCohort"
+      "IRI-based" : "hasCohort",
+      "en" : "has cohort"
     },
-    "domain" : "5",
+    "domain" : "6",
     "comment" : {
       "en" : "Describes what cohorts are part of the project"
     },
     "attributes" : [ "object" ],
-    "id" : "8"
+    "id" : "5"
   }, {
-    "iri" : "https://w3id.org/enigma#isAffiliatedWithOrganization",
+    "iri" : "https://w3id.org/enigma#hasPrincipalInvestigator",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "0",
+    "range" : "2",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
         "language" : "en",
-        "value" : "JohnSmith isAffiliatedWithOrganization HarvardU --> John Smith is associated with Harvard",
+        "value" : "Cohort1 hasPrincipalInvestigator JohnSmith",
         "type" : "label"
       } ]
     },
     "label" : {
-      "IRI-based" : "isAffiliatedWithOrganization"
+      "IRI-based" : "hasPrincipalInvestigator",
+      "en" : "has principal investigator"
     },
-    "domain" : "4",
+    "domain" : "7",
     "comment" : {
-      "en" : "Describes what organization somone is affiliated with"
+      "en" : "Describes who the principal investigator of the cohort is"
+    },
+    "attributes" : [ "object" ],
+    "id" : "8"
+  }, {
+    "iri" : "https://w3id.org/enigma#hasAffiliate",
+    "baseIri" : "https://w3id.org/enigma",
+    "range" : "2",
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "Harvard hasAffiliate JohnSmith",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasAffiliate",
+      "en" : "has affiliate"
+    },
+    "domain" : "10",
+    "comment" : {
+      "en" : "Points to the person who is an affiliate of an organization"
     },
     "attributes" : [ "object" ],
     "id" : "9"
   }, {
     "iri" : "https://w3id.org/enigma#hasAcquisitionProtocol",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "1",
+    "range" : "3",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
@@ -340,18 +344,19 @@
       } ]
     },
     "label" : {
-      "IRI-based" : "hasAcquisitionProtocol"
+      "IRI-based" : "hasAcquisitionProtocol",
+      "en" : "has acquisition protocol"
     },
     "domain" : "7",
     "comment" : {
       "en" : "Describes the acquisition protocol that was used to scan a cohort"
     },
     "attributes" : [ "object" ],
-    "id" : "10"
+    "id" : "11"
   }, {
     "iri" : "https://w3id.org/enigma#hasProject",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "5",
+    "range" : "4",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
@@ -361,13 +366,14 @@
       } ]
     },
     "label" : {
-      "IRI-based" : "hasProject"
+      "IRI-based" : "hasProject",
+      "en" : "has project"
     },
-    "domain" : "3",
+    "domain" : "1",
     "comment" : {
       "en" : "Describes what projects are worked on by a specific working group"
     },
     "attributes" : [ "object" ],
-    "id" : "11"
+    "id" : "12"
   } ]
 }

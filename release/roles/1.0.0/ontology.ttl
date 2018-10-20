@@ -14,8 +14,9 @@
                            <http://purl.org/dc/terms/creator> "MiHyun Jang"^^xsd:string ,
                                                               "Neda Jahanshad"^^xsd:string ,
                                                               "Ryan Espiritu"^^xsd:string ;
+                           <http://purl.org/dc/terms/description> "An ontology representing roles different persons play in ENIGMA projects, organizations, papers, or working groups."@en ;
                            <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> ;
-                           <http://purl.org/dc/terms/title> "The Enigma Roles Ontology"^^xsd:string ;
+                           <http://purl.org/dc/terms/title> "The Roles Ontology"@en ;
                            <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma"^^xsd:string ;
                            <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
                            rdfs:comment "An ontology for describing people's roles in ENIGMA projects."^^xsd:string ;
@@ -25,12 +26,16 @@
 #    Annotation properties
 #################################################################
 
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/vocab/vann/example
 <http://purl.org/vocab/vann/example> rdf:type owl:AnnotationProperty .
 
 
-###  https://w3id.org/enigma#vann:example
-:example rdf:type owl:AnnotationProperty .
+###  http://www.linkedmodel.org/schema/vaem#rationale
+<http://www.linkedmodel.org/schema/vaem#rationale> rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -53,18 +58,38 @@ xsd:gYear rdf:type rdfs:Datatype .
 <http://purl.org/dc/terms/contributor> rdf:type owl:ObjectProperty .
 
 
+###  https://w3id.org/enigma#contributor
+:contributor rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf <http://purl.org/dc/terms/contributor> ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :AcademicArticle
+                                         :Cohort
+                                         :Project
+                                       )
+                         ] ;
+             rdfs:range :Person ;
+             <http://www.linkedmodel.org/schema/vaem#rationale> "Property added to restrict the domain to projects, cohorts and academic articles. This is done for facilitating the interaction with the wiki interface"@en ;
+             rdfs:comment "Property that indicates who is a contributor to a project or cohort"@en ;
+             rdfs:label "contributor"@en .
+
+
 ###  https://w3id.org/enigma#firstDraftContributor
 :firstDraftContributor rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf <http://purl.org/dc/terms/contributor> ;
-                       rdfs:domain :AcademicArticle ;
+                       rdfs:subPropertyOf :contributor ;
+                       rdfs:domain [ rdf:type owl:Class ;
+                                     owl:unionOf ( :AcademicArticle
+                                                   :Project
+                                                 )
+                                   ] ;
                        rdfs:range :Person ;
+                       <http://purl.org/vocab/vann/example> "BipolarProject firstDraftContributor JohnSmith"@en ;
                        rdfs:comment "Property designed to distinguish who collaborated in the creation of the first draft of a publication"@en ;
                        rdfs:label "first draft contributor"@en .
 
 
 ###  https://w3id.org/enigma#hasDataAnalyst
 :hasDataAnalyst rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf <http://purl.org/dc/terms/contributor> ;
+                rdfs:subPropertyOf :contributor ;
                 rdfs:domain :Project ;
                 rdfs:range :Person ;
                 <http://purl.org/vocab/vann/example> "BipolarProject hasDataAnalyst JohnSmith"@en ;
@@ -74,7 +99,7 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 ###  https://w3id.org/enigma#hasDataCollector
 :hasDataCollector rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf <http://purl.org/dc/terms/contributor> ;
+                  rdfs:subPropertyOf :contributor ;
                   rdfs:domain :Project ;
                   rdfs:range :Person ;
                   <http://purl.org/vocab/vann/example> "BipolarProject hasDataCollector JohnSmith"@en ;
@@ -84,9 +109,10 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 ###  https://w3id.org/enigma#hasDesigner
 :hasDesigner rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf <http://purl.org/dc/terms/contributor> ;
+             rdfs:subPropertyOf :contributor ;
              rdfs:domain :Project ;
              rdfs:range :Person ;
+             <http://purl.org/vocab/vann/example> "BipolarProject hasDesigner JohnSmith"@en ;
              rdfs:comment "Property that points to the person responsible for helping designing a project."@en ;
              rdfs:label "has designer"@en .
 
@@ -131,23 +157,57 @@ xsd:gYear rdf:type rdfs:Datatype .
                          rdfs:label "has imaging data collector"@en .
 
 
-###  https://w3id.org/enigma#hasProjectDeveloper
-:hasProjectDeveloper rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf <http://purl.org/dc/terms/contributor> ;
-                     rdfs:domain :Project ;
-                     rdfs:range :Person ;
-                     <http://purl.org/vocab/vann/example> "BipolarProject hasProjectDeveloper JohnSmith"@en ;
-                     rdfs:comment "Describes what project someone is a project developer of"@en ;
-                     rdfs:label "has project developer"@en .
+###  https://w3id.org/enigma#hasLastProjectLead
+:hasLastProjectLead rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :hasProjectLead ;
+                    rdfs:domain :Project ;
+                    rdfs:range :Person ;
+                    <http://purl.org/vocab/vann/example> "BipolarProject hasLastProjectLead JohnSmith"@en ;
+                    rdfs:comment "Property designed to identify whom of the leads plays a senior role in the project, and therefore should be placed last when writing papers."@en ;
+                    rdfs:label "has last project lead"@en .
+
+
+###  https://w3id.org/enigma#hasProjectLead
+:hasProjectLead rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf <http://purl.org/dc/terms/contributor> ;
+                rdfs:domain :Project ;
+                rdfs:range :Person ;
+                <http://purl.org/vocab/vann/example> "BipolarProject hasProjectLead JohnSmith"@en ;
+                rdfs:comment "Describes what project someone is a project lead of"@en ;
+                rdfs:label "has project lead"@en .
+
+
+###  https://w3id.org/enigma#hasProtocolRunner
+:hasProtocolRunner rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :contributor ;
+                   rdfs:domain :Project ;
+                   rdfs:range :Person ;
+                   <http://purl.org/vocab/vann/example> "BipolarProject hasProtocolRunner JohnSmith"@en ;
+                   rdfs:comment "Describes who ran a protocol for a given cohort"@en ;
+                   rdfs:label "has protocol runner"@en .
 
 
 ###  https://w3id.org/enigma#hasReviewer
 :hasReviewer rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf <http://purl.org/dc/terms/contributor> ;
-             rdfs:domain :AcademicArticle ;
+             rdfs:subPropertyOf :contributor ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :AcademicArticle
+                                         :Project
+                                       )
+                         ] ;
              rdfs:range :Person ;
+             <http://purl.org/vocab/vann/example> "BipolarProject hasReviewer JohnSmith"@en ;
              rdfs:comment "Property that indicates who contributed to the paper reviewing the initial drafts and providing comments"@en ;
              rdfs:label "has reviewer"@en .
+
+
+###  https://w3id.org/enigma#ranProtocol
+:ranProtocol rdf:type owl:ObjectProperty ;
+             rdfs:domain :Person ;
+             rdfs:range :Protocol ;
+             <http://purl.org/vocab/vann/example> "JohnSmith ranProtocol ENIGMA-Sulci Protocol"@en ;
+             rdfs:comment "Describes which protocol that an individual ran"@en ;
+             rdfs:label "ran protocol"@en .
 
 
 #################################################################
@@ -166,6 +226,12 @@ xsd:gYear rdf:type rdfs:Datatype .
                  rdfs:label "Academic article"@en .
 
 
+###  https://w3id.org/enigma#Cohort
+:Cohort rdf:type owl:Class ;
+        rdfs:comment "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria"@en ;
+        rdfs:label "Cohort"@en .
+
+
 ###  https://w3id.org/enigma#Person
 :Person rdf:type owl:Class ;
         <http://purl.org/vocab/vann/example> "Theo van Erp"@en ;
@@ -178,6 +244,13 @@ xsd:gYear rdf:type rdfs:Datatype .
          <http://purl.org/vocab/vann/example> "SZPositiveSymptoms"@en ;
          rdfs:comment "Project encompassing cohort"@en ;
          rdfs:label "Project"@en .
+
+
+###  https://w3id.org/enigma#Protocol
+:Protocol rdf:type owl:Class ;
+          <http://purl.org/vocab/vann/example> "ENIGMA-Sulci Protocol"@en ;
+          rdfs:comment "An image processing or genetic analysis protocol used to extract brain feature data"@en ;
+          rdfs:label "Protocol"@en .
 
 
 #################################################################

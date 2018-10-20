@@ -15,22 +15,26 @@
                                                               "Neda Jahanshad"^^xsd:string ,
                                                               "Ryan Espiritu"^^xsd:string ;
                            <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> ;
-                           <http://purl.org/dc/terms/title> "The Person Ontology"^^xsd:string ;
+                           <http://purl.org/dc/terms/title> "A cohort ontology that describes persons participating in ENIGMA and their properties."@en ,
+                                                            "The Person Ontology"^^xsd:string ;
                            <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma"^^xsd:string ;
                            <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
-                           rdfs:comment "A cohort ontology that describes persons participating in ENIGMA and their properties."^^xsd:string ;
                            owl:versionInfo "v1.0.0"^^xsd:string .
 
 #################################################################
 #    Annotation properties
 #################################################################
 
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/vocab/vann/example
 <http://purl.org/vocab/vann/example> rdf:type owl:AnnotationProperty .
 
 
-###  https://w3id.org/enigma#vann:example
-:example rdf:type owl:AnnotationProperty .
+###  http://www.linkedmodel.org/schema/vaem#rationale
+<http://www.linkedmodel.org/schema/vaem#rationale> rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -50,8 +54,7 @@ xsd:gYear rdf:type rdfs:Datatype .
 #################################################################
 
 ###  http://purl.org/dc/terms/contributor
-<http://purl.org/dc/terms/contributor> rdf:type owl:ObjectProperty ;
-                                       rdfs:range :Project .
+<http://purl.org/dc/terms/contributor> rdf:type owl:ObjectProperty .
 
 
 ###  http://purl.org/dc/terms/creator
@@ -61,7 +64,6 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 ###  http://vivoweb.org/ontology/core#orcidId
 <http://vivoweb.org/ontology/core#orcidId> rdf:type owl:ObjectProperty ;
-                                           rdfs:domain :Person ;
                                            rdfs:comment "This is now an object property where the object value is a resource of the form <http://orcid.org/NNNN-NNNN-NNNN-NNNN>.  This is to support connecting VIVO and ORCID in the linked data web.   Note: a person can have multiple ORCID iDs."^^xsd:string ;
                                            rdfs:isDefinedBy "http://vivoweb.org/ontology/core#"@en .
 
@@ -75,14 +77,14 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 ###  http://xmlns.com/foaf/0.1/homepage
 <http://xmlns.com/foaf/0.1/homepage> rdf:type owl:ObjectProperty ;
-                                     rdfs:domain :Person ;
+                                     rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
                                      rdfs:comment "A homepage for some thing."^^xsd:string ;
                                      rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
 
 
 ###  http://xmlns.com/foaf/0.1/mbox
 <http://xmlns.com/foaf/0.1/mbox> rdf:type owl:ObjectProperty ;
-                                 rdfs:domain :Person ;
+                                 rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
                                  rdfs:range owl:Thing ;
                                  rdfs:comment "A  personal mailbox, ie. an Internet mailbox associated with exactly one owner, the first owner of this mailbox. This is a 'static inverse functional property', in that  there is (across time and change) at most one individual that ever has any particular value for foaf:mbox."^^xsd:string ;
                                  rdfs:isDefinedBy "http://xmlns.com/foaf/0.1/"@en .
@@ -114,24 +116,35 @@ xsd:gYear rdf:type rdfs:Datatype .
 ###  https://w3id.org/enigma#hasAffiliate
 :hasAffiliate rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/member> ;
-              rdfs:domain <http://xmlns.com/foaf/0.1/Organization> ;
+              rdfs:domain :Organization ;
               rdfs:range :Person ;
               <http://purl.org/vocab/vann/example> "HarvardU hasAffiliate JohnSmith"@en ;
               rdfs:comment "Describes the organization's affiliates"@en ;
               rdfs:label "has affiliate"@en .
 
 
-###  https://w3id.org/enigma#hasContact
-:hasContact rdf:type owl:ObjectProperty ;
-            rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( :Cohort
-                                        :Project
-                                      )
-                        ] ;
-            rdfs:range :Person ;
-            <http://purl.org/vocab/vann/example> "BipolarCohort hasContact JohnSmith"@en ;
-            rdfs:comment "Property that points to the person that is a contact for the project or cohort"@en ;
-            rdfs:label "has contact"@en .
+###  https://w3id.org/enigma#hasEmail
+:hasEmail rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/mbox> ;
+          rdfs:domain :Person ;
+          rdfs:range owl:Thing ;
+          <http://www.linkedmodel.org/schema/vaem#rationale> "Property added to facilitate interaction with domain and ranges in the wiki. It's equivalent to foaf:mbox"@en ;
+          rdfs:comment "Property that indicates which is the email of a person"@en ;
+          rdfs:label "has email"@en .
+
+
+###  https://w3id.org/enigma#hasHomePage
+:hasHomePage rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/homepage> ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :Cohort
+                                         :Person
+                                       )
+                         ] ;
+             rdfs:range owl:Thing ;
+             <http://www.linkedmodel.org/schema/vaem#rationale> "Property added to facilitate interaction with domain and ranges in the wiki. It's equivalent to foaf:homePage"@en ;
+             rdfs:comment "Property that describes the home page of a cohort or person"@en ;
+             rdfs:label "has home page"@en .
 
 
 ###  https://w3id.org/enigma#hasInvestigator
@@ -153,10 +166,23 @@ xsd:gYear rdf:type rdfs:Datatype .
                               rdfs:label "has main principal investigator"@en .
 
 
+###  https://w3id.org/enigma#hasOrcidId
+:hasOrcidId rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf <http://vivoweb.org/ontology/core#orcidId> ;
+            rdfs:domain :Person ;
+            <http://www.linkedmodel.org/schema/vaem#rationale> "Property added to facilitate interaction with the wiki, making domains and ranges explicit"@en ;
+            rdfs:comment "ORCID Id of a Person"@en ;
+            rdfs:label "has ORCID Id"@en .
+
+
 ###  https://w3id.org/enigma#hasPrimaryAddress
 :hasPrimaryAddress rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf <http://www.w3.org/2006/vcard/ns#hasAddress> ;
-                   rdfs:domain :Person ;
+                   rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( :Organization
+                                               :Person
+                                             )
+                               ] ;
                    rdfs:range <http://www.w3.org/2006/vcard/ns#Address> ;
                    <http://purl.org/vocab/vann/example> "JohnSmith hasPrimaryAddress \"Address\""@en ;
                    rdfs:comment "Describes the primary address of a person"@en ;
@@ -171,16 +197,6 @@ xsd:gYear rdf:type rdfs:Datatype .
                           <http://purl.org/vocab/vann/example> "Cohort1 hasPrincipalInvestigator JohnSmith"@en ;
                           rdfs:comment "Describes which cohorts somone is the principal investigator of"@en ;
                           rdfs:label "has principal investigator"@en .
-
-
-###  https://w3id.org/enigma#hasProjectLead
-:hasProjectLead rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf <http://purl.org/dc/terms/contributor> ;
-                rdfs:domain :Project ;
-                rdfs:range :Person ;
-                <http://purl.org/vocab/vann/example> "BipolarProject hasProjectLead JohnSmith"@en ;
-                rdfs:comment "Describes what project someone is a project lead of"@en ;
-                rdfs:label "has project lead"@en .
 
 
 ###  https://w3id.org/enigma#hasQualifiedAffiliation
@@ -204,7 +220,7 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 ###  https://w3id.org/enigma#hasWorkingGroupMember
 :hasWorkingGroupMember rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf :hasAffiliate ;
+                       rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/member> ;
                        rdfs:domain :WorkingGroup ;
                        rdfs:range :Person ;
                        <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasWorkingGroupMember JohnSmith"@en ;
@@ -259,7 +275,6 @@ xsd:gYear rdf:type rdfs:Datatype .
 ###  http://xmlns.com/foaf/0.1/familyName
 <http://xmlns.com/foaf/0.1/familyName> rdf:type owl:DatatypeProperty ;
                                        rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
-                                       rdfs:range xsd:string ;
                                        rdfs:comment "The family name of some person."^^xsd:string ;
                                        rdfs:isDefinedBy "http://xmlns.com/foaf/0.1/"@en .
 
@@ -267,8 +282,7 @@ xsd:gYear rdf:type rdfs:Datatype .
 ###  http://xmlns.com/foaf/0.1/givenName
 <http://xmlns.com/foaf/0.1/givenName> rdf:type owl:DatatypeProperty ;
                                       rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
-                                      rdfs:range xsd:string ;
-                                      rdfs:comment "The given name of some person."^^xsd:string ;
+                                      rdfs:comment "The given name of some person."@en ;
                                       rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
 
 
@@ -279,6 +293,26 @@ xsd:gYear rdf:type rdfs:Datatype .
                  <http://purl.org/vocab/vann/example> "JohnSmith currentJobTitle \"Postdoc\""@en ;
                  rdfs:comment "Data property that aims to capture the current job title of a person. Examples are student, faculty, staff, postdoc, etc."@en ;
                  rdfs:label "current job title"@en .
+
+
+###  https://w3id.org/enigma#familyName
+:familyName rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/familyName> ;
+            rdfs:domain :Person ;
+            rdfs:range xsd:string ;
+            <http://www.linkedmodel.org/schema/vaem#rationale> "Property added to restrict the domain to enigma:Person. This is done for facilitating the interaction with the wiki interface"@en ;
+            rdfs:comment "The family name of some person."@en ;
+            rdfs:label "family name"@en .
+
+
+###  https://w3id.org/enigma#givenName
+:givenName rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/givenName> ;
+           rdfs:domain :Person ;
+           rdfs:range xsd:string ;
+           <http://www.linkedmodel.org/schema/vaem#rationale> "Property added to restrict the domain to enigma:Person. This is done for facilitating the interaction with the wiki interface"@en ;
+           rdfs:comment "The given name of some person."@en ;
+           rdfs:label "given name"@en .
 
 
 ###  https://w3id.org/enigma#hasDegree
@@ -292,9 +326,13 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 ###  https://w3id.org/enigma#hasEndDate
 :hasEndDate rdf:type owl:DatatypeProperty ;
-            rdfs:domain owl:Thing ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :QualifiedAffiliation
+                                        :WorkingGroup
+                                      )
+                        ] ;
             rdfs:range xsd:date ;
-            <http://purl.org/vocab/vann/example> "JohnSmith hasQualifiedAffiliationRelationship \"QualifiedAffiliation\" hasEndDate \"2018-07-13\""@en ;
+            <http://purl.org/vocab/vann/example> "JohnSmith hasQualifiedAffiliation \"QualifiedAffiliation\" hasEndDate \"2018-07-13\""@en ;
             rdfs:comment "Describes the end date of the described resource (a working group, a person in an organizaiton, etc.)"@en ;
             rdfs:label "has end date"@en .
 
@@ -328,10 +366,14 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 ###  https://w3id.org/enigma#hasStartDate
 :hasStartDate rdf:type owl:DatatypeProperty ;
-              rdfs:domain owl:Thing ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( :QualifiedAffiliation
+                                          :WorkingGroup
+                                        )
+                          ] ;
               rdfs:range xsd:date ;
               <http://purl.org/vocab/vann/example> "JohnSmith hasQualifiedAffiliation \"QualifiedAffiliation\" hasStartDate \"2008-07-13\""@en ;
-              rdfs:comment "Describes the start date of the described resource (a working group, a person in an organizaiton, etc.)"@en ;
+              rdfs:comment "Describes the start date of the described resource (a working group, a person in an organization, etc.)"@en ;
               rdfs:label "has start date"@en .
 
 
@@ -368,10 +410,9 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 ###  http://xmlns.com/foaf/0.1/Organization
 <http://xmlns.com/foaf/0.1/Organization> rdf:type owl:Class ;
-                                         <http://purl.org/vocab/vann/example> "Information Sciences Institute"@en ;
+                                         owl:equivalentClass :Organization ;
                                          rdfs:comment "An organization contributing to a given ENIGMA project"@en ;
-                                         rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> ;
-                                         rdfs:label "Organization"@en .
+                                         rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> .
 
 
 ###  http://xmlns.com/foaf/0.1/Person
@@ -391,6 +432,12 @@ xsd:gYear rdf:type rdfs:Datatype .
         <http://purl.org/vocab/vann/example> "ADNI: Alzheimer’s Disease Neuroimaging Initiative"@en ;
         rdfs:comment "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria"@en ;
         rdfs:label "Cohort"@en .
+
+
+###  https://w3id.org/enigma#Organization
+:Organization rdf:type owl:Class ;
+              rdfs:comment "An organization belonging to the ENIGMA consortium. Organization can be hospitals, universities, departments, etc."@en ;
+              rdfs:label "Organization"@en .
 
 
 ###  https://w3id.org/enigma#Person

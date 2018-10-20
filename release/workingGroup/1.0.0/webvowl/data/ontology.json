@@ -3,11 +3,15 @@
   "header" : {
     "languages" : [ "en", "undefined" ],
     "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "https://w3id.org/enigma", "http://www.w3.org/2002/07/owl", "http://www.w3.org/2000/01/rdf-schema", "http://purl.org/dc/terms", "http://www.w3.org/2001/XMLSchema", "http://xmlns.com/foaf/0.1" ],
+    "title" : {
+      "en" : "The Working Group Ontology",
+      "undefined" : "The Working Group Ontology"
+    },
     "iri" : "https://w3id.org/enigma",
     "version" : "v1.0.0",
     "author" : [ "MiHyun Jang", "Neda Jahanshad", "Ryan Espiritu" ],
-    "comments" : {
-      "undefined" : "An ontology for describing working groups."
+    "description" : {
+      "en" : "An ontology representing Working Groups that participate in the ENIGMA consortium."
     },
     "other" : {
       "license" : [ {
@@ -24,12 +28,12 @@
       }, {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "MiHyun Jang",
+        "value" : "Neda Jahanshad",
         "type" : "label"
       }, {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Neda Jahanshad",
+        "value" : "MiHyun Jang",
         "type" : "label"
       } ],
       "contributor" : [ {
@@ -65,58 +69,63 @@
         "language" : "undefined",
         "value" : "https://w3id.org/enigma#",
         "type" : "iri"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "undefined",
+        "value" : "The Working Group Ontology",
+        "type" : "label"
+      }, {
+        "identifier" : "title",
+        "language" : "en",
+        "value" : "The Working Group Ontology",
+        "type" : "label"
       } ]
     }
   },
   "namespace" : [ ],
   "metrics" : {
-    "classCount" : 9,
+    "classCount" : 10,
     "objectPropertyCount" : 5,
-    "datatypePropertyCount" : 8,
+    "datatypePropertyCount" : 10,
     "individualCount" : 1
   },
   "class" : [ {
-    "id" : "3",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "4",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "5",
-    "type" : "owl:Class"
-  }, {
-    "id" : "6",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "2",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "11",
-    "type" : "rdfs:Datatype"
+    "id" : "9",
+    "type" : "owl:unionOf"
   }, {
     "id" : "12",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "9",
+    "id" : "11",
     "type" : "owl:Class"
-  }, {
-    "id" : "1",
-    "type" : "owl:Thing"
   }, {
     "id" : "13",
-    "type" : "rdfs:Literal"
+    "type" : "rdfs:Datatype"
   }, {
     "id" : "14",
-    "type" : "rdfs:Literal"
+    "type" : "rdfs:Datatype"
   }, {
-    "id" : "15",
-    "type" : "owl:unionOf"
+    "id" : "8",
+    "type" : "rdfs:Datatype"
   }, {
     "id" : "18",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "16",
     "type" : "owl:Class"
   }, {
+    "id" : "4",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "5",
+    "type" : "rdfs:Datatype"
+  }, {
     "id" : "20",
-    "type" : "owl:Class"
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "2",
+    "type" : "rdfs:Datatype"
   }, {
     "id" : "23",
     "type" : "owl:Class"
@@ -124,23 +133,42 @@
     "id" : "26",
     "type" : "owl:Class"
   }, {
-    "id" : "29",
+    "id" : "19",
     "type" : "owl:Class"
   }, {
-    "id" : "8",
+    "id" : "28",
     "type" : "owl:Class"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "36",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "37",
+    "type" : "owl:Class"
+  }, {
+    "id" : "30",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "34",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "7",
+    "type" : "owl:Thing"
   } ],
   "classAttribute" : [ {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "3",
-    "label" : {
-      "IRI-based" : "string"
-    }
+    "instances" : 0,
+    "union" : [ "10", "11", "1" ],
+    "attributes" : [ "union", "anonymous" ],
+    "id" : "9"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "4",
+    "id" : "12",
     "label" : {
       "IRI-based" : "string"
     }
@@ -163,32 +191,32 @@
     "comment" : {
       "en" : "Project associated with the cohort"
     },
-    "id" : "5"
+    "id" : "11"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "6",
+    "id" : "13",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "14",
     "label" : {
       "IRI-based" : "string"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#date",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "2",
+    "id" : "8",
     "label" : {
       "IRI-based" : "date"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "11",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "12",
+    "id" : "18",
     "label" : {
       "IRI-based" : "string"
     }
@@ -211,34 +239,31 @@
     "comment" : {
       "en" : "Individual involved with the cohort"
     },
-    "id" : "9"
+    "id" : "16"
   }, {
-    "iri" : "http://www.w3.org/2002/07/owl#Thing",
-    "baseIri" : "http://owl2vowl.de",
-    "id" : "1",
-    "label" : {
-      "undefined" : "Thing"
-    }
+    "instances" : 0,
+    "union" : [ "19", "1" ],
+    "attributes" : [ "union", "anonymous" ],
+    "id" : "4"
   }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "13",
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "5",
     "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
-    "id" : "14",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
+      "IRI-based" : "string"
     }
   }, {
     "instances" : 0,
-    "union" : [ "5", "8" ],
+    "union" : [ "11", "1" ],
     "attributes" : [ "union", "anonymous" ],
-    "id" : "15"
+    "id" : "20"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "2",
+    "label" : {
+      "IRI-based" : "string"
+    }
   }, {
     "iri" : "https://w3id.org/enigma#Methodology",
     "baseIri" : "https://w3id.org/enigma",
@@ -250,8 +275,8 @@
     "comment" : {
       "en" : "Working groups that develop protocols (imaging or genetics)"
     },
-    "id" : "18",
-    "superClasses" : [ "8" ]
+    "id" : "23",
+    "superClasses" : [ "1" ]
   }, {
     "iri" : "https://w3id.org/enigma#GeneticStudy",
     "baseIri" : "https://w3id.org/enigma",
@@ -263,8 +288,34 @@
     "comment" : {
       "en" : "Working groups dedicated to genetic analysis"
     },
-    "id" : "20",
-    "superClasses" : [ "8" ]
+    "id" : "26",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "https://w3id.org/enigma#Organization",
+    "baseIri" : "https://w3id.org/enigma",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://xmlns.com/foaf/0.1",
+        "type" : "iri"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "Information Sciences Institute",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Organization",
+      "en" : "Organization"
+    },
+    "comment" : {
+      "en" : "An organization contributing to a given ENIGMA project"
+    },
+    "id" : "19"
   }, {
     "iri" : "https://w3id.org/enigma#ClinicalPopulation",
     "baseIri" : "https://w3id.org/enigma",
@@ -276,8 +327,8 @@
     "comment" : {
       "en" : "Working groups that study clinical populations"
     },
-    "id" : "23",
-    "superClasses" : [ "8" ]
+    "id" : "28",
+    "superClasses" : [ "1" ]
   }, {
     "iri" : "https://w3id.org/enigma#Cohort",
     "baseIri" : "https://w3id.org/enigma",
@@ -286,7 +337,7 @@
       "example" : [ {
         "identifier" : "example",
         "language" : "en",
-        "value" : "ADNI: Alzheimer’s Disease Neuroimaging Initiative",
+        "value" : "ADNI: Alzheimerâ€™s Disease Neuroimaging Initiative",
         "type" : "label"
       } ]
     },
@@ -297,7 +348,14 @@
     "comment" : {
       "en" : "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria"
     },
-    "id" : "26"
+    "id" : "10"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "36",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
   }, {
     "iri" : "https://w3id.org/enigma#HealthyVariation",
     "baseIri" : "https://w3id.org/enigma",
@@ -309,8 +367,15 @@
     "comment" : {
       "en" : "Working groups that are not disease focused"
     },
-    "id" : "29",
-    "superClasses" : [ "8" ]
+    "id" : "37",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "30",
+    "label" : {
+      "IRI-based" : "string"
+    }
   }, {
     "iri" : "https://w3id.org/enigma#WorkingGroup",
     "baseIri" : "https://w3id.org/enigma",
@@ -327,68 +392,132 @@
       "IRI-based" : "WorkingGroup",
       "en" : "Working Group"
     },
-    "subClasses" : [ "23", "29", "18", "20" ],
+    "subClasses" : [ "28", "37", "23", "26" ],
     "comment" : {
       "en" : "Group of researchers studying a certain topic/disease"
     },
-    "id" : "8"
+    "id" : "1"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "34",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "7",
+    "label" : {
+      "undefined" : "Thing"
+    }
   } ],
   "property" : [ {
     "id" : "0",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "7",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "16",
+    "id" : "3",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "17",
+    "id" : "6",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "19",
+    "id" : "15",
     "type" : "owl:objectProperty"
   }, {
     "id" : "21",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "10",
-    "type" : "owl:objectProperty"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "22",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "24",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "25",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "17",
     "type" : "owl:objectProperty"
   }, {
     "id" : "27",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "28",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "30",
+    "id" : "29",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "31",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "32",
-    "type" : "owl:datatypeProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "33",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "35",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "34",
+    "id" : "38",
     "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "39",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "40",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "41",
+    "type" : "owl:datatypeProperty"
   } ],
   "propertyAttribute" : [ {
-    "iri" : "https://w3id.org/enigma#hasStartDate",
+    "iri" : "https://w3id.org/enigma#fullName",
     "baseIri" : "https://w3id.org/enigma",
     "range" : "2",
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "SchizophreniaWG shortName SchizophreniaWorkingGroup",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "fullName",
+      "en" : "full name"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Describes the full name of the working group"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "0"
+  }, {
+    "iri" : "https://w3id.org/enigma#kind",
+    "baseIri" : "https://w3id.org/enigma",
+    "range" : "5",
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "WorkingGroup kind \"Healthy Variation\"",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "kind",
+      "en" : "kind"
+    },
+    "domain" : "4",
+    "comment" : {
+      "en" : "Describes the specific kind/type of an rganization or working group  (HealthyVariation, GeneticStudy, Methodology, and ClinicalPopulation)"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "3"
+  }, {
+    "iri" : "https://w3id.org/enigma#hasStartDate",
+    "baseIri" : "https://w3id.org/enigma",
+    "range" : "8",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
@@ -401,16 +530,16 @@
       "IRI-based" : "hasStartDate",
       "en" : "has start date"
     },
-    "domain" : "1",
+    "domain" : "7",
     "comment" : {
       "en" : "Describes the start date of the described resource (a working group, a person in an organizaiton, etc.)"
     },
     "attributes" : [ "datatype" ],
-    "id" : "0"
+    "id" : "6"
   }, {
     "iri" : "https://w3id.org/enigma#hasWorkingGroupChair",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "9",
+    "range" : "16",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
@@ -423,39 +552,17 @@
       "IRI-based" : "hasWorkingGroupChair",
       "en" : "has working group chair"
     },
-    "superproperty" : [ "10" ],
-    "domain" : "8",
+    "superproperty" : [ "17" ],
+    "domain" : "1",
     "comment" : {
       "en" : "Describes who the chairs of a working group are"
     },
     "attributes" : [ "object" ],
-    "id" : "7"
-  }, {
-    "iri" : "https://w3id.org/enigma#hasSubmittedPaper",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "11",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "en",
-        "value" : "WorkingGroup1 hasSubmittedPaper \"Paper title\"",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasSubmittedPaper",
-      "en" : "has submitted paper"
-    },
-    "domain" : "8",
-    "comment" : {
-      "en" : "Describes the titles of the submitted papers of a working group"
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "16"
+    "id" : "15"
   }, {
     "iri" : "https://w3id.org/enigma#hasBriefDescription",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "3",
+    "range" : "12",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
@@ -468,16 +575,38 @@
       "IRI-based" : "hasBriefDescription",
       "en" : "has brief description"
     },
-    "domain" : "15",
+    "domain" : "9",
     "comment" : {
-      "en" : "Provides a brief description of the working group or project"
+      "en" : "Provides a brief description of the working group or project or cohort"
     },
     "attributes" : [ "datatype" ],
-    "id" : "17"
+    "id" : "21"
+  }, {
+    "iri" : "https://w3id.org/enigma#hasSubmittedPaper",
+    "baseIri" : "https://w3id.org/enigma",
+    "range" : "18",
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "WorkingGroup1 hasSubmittedPaper \"Paper title\"",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasSubmittedPaper",
+      "en" : "has submitted paper"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Describes the titles of the submitted papers of a working group"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "22"
   }, {
     "iri" : "https://w3id.org/enigma#hasProject",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "5",
+    "range" : "11",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
@@ -490,16 +619,16 @@
       "IRI-based" : "hasProject",
       "en" : "has project"
     },
-    "domain" : "8",
+    "domain" : "1",
     "comment" : {
       "en" : "Describes what projects are worked on by a specific working group"
     },
     "attributes" : [ "object" ],
-    "id" : "19"
+    "id" : "24"
   }, {
     "iri" : "http://xmlns.com/foaf/0.1/member",
     "baseIri" : "http://xmlns.com/foaf/0.1",
-    "range" : "1",
+    "range" : "7",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -511,14 +640,14 @@
     "label" : {
       "IRI-based" : "member"
     },
-    "domain" : "1",
-    "subproperty" : [ "10" ],
+    "domain" : "7",
+    "subproperty" : [ "17" ],
     "attributes" : [ "object", "external" ],
-    "id" : "21"
+    "id" : "25"
   }, {
     "iri" : "https://w3id.org/enigma#hasWorkingGroupMember",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "9",
+    "range" : "16",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
@@ -531,28 +660,28 @@
       "IRI-based" : "hasWorkingGroupMember",
       "en" : "has working group member"
     },
-    "superproperty" : [ "21" ],
-    "domain" : "8",
-    "subproperty" : [ "7" ],
+    "superproperty" : [ "25" ],
+    "domain" : "1",
+    "subproperty" : [ "15" ],
     "comment" : {
       "en" : "Describes who the members of the working group are"
     },
     "attributes" : [ "object" ],
-    "id" : "10"
+    "id" : "17"
   }, {
     "iri" : "https://w3id.org/enigma#hasPublishedPaper",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "6",
+    "range" : "14",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
         "language" : "en",
-        "value" : "WorkingGroup2 hasPublishedPaper \"Article Title\"",
+        "value" : "WorkingGroup1 hasPublishedPaper www.publishedpaperexample.com",
         "type" : "label"
       }, {
         "identifier" : "example",
         "language" : "en",
-        "value" : "WorkingGroup1 hasPublishedPaper www.publishedpaperexample.com",
+        "value" : "WorkingGroup2 hasPublishedPaper \"Article Title\"",
         "type" : "label"
       } ]
     },
@@ -560,30 +689,38 @@
       "IRI-based" : "hasPublishedPaper",
       "en" : "has published paper"
     },
-    "domain" : "8",
+    "domain" : "1",
     "comment" : {
       "en" : "Describes the links to published papers or the paper title (if link does not exist) for the working group"
     },
     "attributes" : [ "datatype" ],
-    "id" : "22"
+    "id" : "27"
   }, {
     "iri" : "https://w3id.org/enigma#shortName",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "12",
+    "range" : "30",
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "SchizophreniaWG shortName SZWG",
+        "type" : "label"
+      } ]
+    },
     "label" : {
       "IRI-based" : "shortName",
       "en" : "short name"
     },
-    "domain" : "8",
+    "domain" : "1",
     "comment" : {
       "en" : "A short name for the working group, in case the working group name is too long"
     },
     "attributes" : [ "datatype" ],
-    "id" : "24"
+    "id" : "29"
   }, {
     "iri" : "https://w3id.org/enigma#hasCohort",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "26",
+    "range" : "10",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
@@ -596,31 +733,46 @@
       "IRI-based" : "hasCohort",
       "en" : "has cohort"
     },
-    "domain" : "8",
+    "domain" : "20",
     "comment" : {
-      "en" : "Describes what cohorts are part of the working group"
+      "en" : "Describes what cohorts are part of a project or working group"
     },
     "attributes" : [ "object" ],
-    "id" : "25"
+    "id" : "31"
+  }, {
+    "range" : "1",
+    "domain" : "26",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "32"
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#topDataProperty",
     "baseIri" : "http://www.w3.org/2002/07/owl",
-    "range" : "13",
+    "range" : "34",
     "label" : {
       "IRI-based" : "topDataProperty"
     },
-    "domain" : "1",
-    "attributes" : [ "datatype", "external" ],
-    "id" : "27"
+    "domain" : "7",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "33"
   }, {
-    "range" : "8",
-    "domain" : "20",
+    "range" : "1",
+    "domain" : "28",
     "attributes" : [ "object", "anonymous" ],
-    "id" : "28"
+    "id" : "35"
+  }, {
+    "range" : "1",
+    "domain" : "23",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "38"
+  }, {
+    "range" : "1",
+    "domain" : "37",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "39"
   }, {
     "iri" : "https://w3id.org/enigma#hasMemorandumOfUnderstanding",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "4",
+    "range" : "13",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
@@ -633,21 +785,16 @@
       "IRI-based" : "hasMemorandumOfUnderstanding",
       "en" : "has memorandum of understanding"
     },
-    "domain" : "8",
+    "domain" : "1",
     "comment" : {
       "en" : "Describes the memorandum of understanding links of the working group"
     },
     "attributes" : [ "datatype" ],
-    "id" : "30"
-  }, {
-    "range" : "8",
-    "domain" : "23",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "31"
+    "id" : "40"
   }, {
     "iri" : "http://purl.org/dc/terms/title",
     "baseIri" : "http://purl.org/dc/terms",
-    "range" : "14",
+    "range" : "36",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -659,18 +806,8 @@
     "label" : {
       "IRI-based" : "title"
     },
-    "domain" : "1",
-    "attributes" : [ "datatype", "external" ],
-    "id" : "32"
-  }, {
-    "range" : "8",
-    "domain" : "18",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "33"
-  }, {
-    "range" : "8",
-    "domain" : "29",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "34"
+    "domain" : "7",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "41"
   } ]
 }

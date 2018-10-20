@@ -1,0 +1,203 @@
+<https://w3id.org/enigma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/enigma/protocol/1.0.0> .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Agnes McMahon" .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Daniel Garijo" .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Yolanda Gil" .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "MiHyun Jang" .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "Neda Jahanshad" .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "Ryan Espiritu" .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/description> "An ontology for describing the feature protocols used within ENIGMA."@en .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/title> "The Protocol Ontology"@en .
+<https://w3id.org/enigma> <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma" .
+<https://w3id.org/enigma> <http://purl.org/vocab/vann/preferredNamespaceUri> <https://w3id.org/enigma#> .
+<https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionInfo> "v1.0.0" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/dc/terms/title> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+# 
+# http://purl.org/vocab/vann/example
+<http://purl.org/vocab/vann/example> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://w3id.org/enigma#vann:example
+<https://w3id.org/enigma#vann:example> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# http://www.w3.org/2001/XMLSchema#gYear
+<http://www.w3.org/2001/XMLSchema#gYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/enigma#hasContact
+<https://w3id.org/enigma#hasContact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasContact> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Protocol> .
+<https://w3id.org/enigma#hasContact> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#hasContact> <http://purl.org/vocab/vann/example> "ENIGMA-SulciProtocol hasContact JohnSmith"@en .
+<https://w3id.org/enigma#hasContact> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes who to contact for inquiries about the protocol"@en .
+<https://w3id.org/enigma#hasContact> <http://www.w3.org/2000/01/rdf-schema#label> "has contact"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# https://w3id.org/enigma#hasCategory
+<https://w3id.org/enigma#hasCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasCategory> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Protocol> .
+<https://w3id.org/enigma#hasCategory> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#hasCategory> <http://purl.org/vocab/vann/example> "ENIGMA-SulciProtocol hasCategory \"Imaging\""@en .
+<https://w3id.org/enigma#hasCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes a categorical representation of the broad kind of data that a protocol is used for"@en .
+<https://w3id.org/enigma#hasCategory> <http://www.w3.org/2000/01/rdf-schema#label> "has category"@en .
+# 
+# https://w3id.org/enigma#hasDataType
+<https://w3id.org/enigma#hasDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasDataType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Protocol> .
+<https://w3id.org/enigma#hasDataType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#hasDataType> <http://purl.org/vocab/vann/example> "ENIGMA-SulciProtocol hasDataType \"fMRI\""@en .
+<https://w3id.org/enigma#hasDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes a data type used in the protocol"@en .
+<https://w3id.org/enigma#hasDataType> <http://www.w3.org/2000/01/rdf-schema#label> "has data type"@en .
+# 
+# https://w3id.org/enigma#hasDescription
+<https://w3id.org/enigma#hasDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasDescription> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Protocol> .
+<https://w3id.org/enigma#hasDescription> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#hasDescription> <http://purl.org/vocab/vann/example> "ENIGMA-Sulci hasDescription \"This protocol allows you to segment, label, and visually inspect 123 cortical sulci/subject using FreeSurfer, BrainVISA, R and ImageMagick.\""@en .
+<https://w3id.org/enigma#hasDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "A brief description of a protocol"@en .
+<https://w3id.org/enigma#hasDescription> <http://www.w3.org/2000/01/rdf-schema#label> "has description"@en .
+# 
+# https://w3id.org/enigma#hasLink
+<https://w3id.org/enigma#hasLink> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasLink> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Protocol> .
+<https://w3id.org/enigma#hasLink> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#hasLink> <http://purl.org/vocab/vann/example> "ENIGMA-SulciProtocol hasLink [url to protocol]"@en .
+<https://w3id.org/enigma#hasLink> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the physical link to a protocol"@en .
+<https://w3id.org/enigma#hasLink> <http://www.w3.org/2000/01/rdf-schema#label> "has link"@en .
+# 
+# https://w3id.org/enigma#hasName
+<https://w3id.org/enigma#hasName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasName> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/title> .
+<https://w3id.org/enigma#hasName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Protocol> .
+<https://w3id.org/enigma#hasName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#hasName> <http://purl.org/vocab/vann/example> "ENIGMA-Sulci Protocol hasName ENIGMA-Sulci"@en .
+<https://w3id.org/enigma#hasName> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the name of a protocol"@en .
+<https://w3id.org/enigma#hasName> <http://www.w3.org/2000/01/rdf-schema#comment> "Property added to restrict the domain to enigma:Protocol. This is done for facilitating the interaction with the wiki interface"@en .
+<https://w3id.org/enigma#hasName> <http://www.w3.org/2000/01/rdf-schema#label> "has name"@en .
+# 
+# https://w3id.org/enigma#hasOutputFeature
+<https://w3id.org/enigma#hasOutputFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasOutputFeature> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Protocol> .
+<https://w3id.org/enigma#hasOutputFeature> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#hasOutputFeature> <http://purl.org/vocab/vann/example> "ENIGMA-SulciProtocol hasOutputFeature \"mean depth\""@en .
+<https://w3id.org/enigma#hasOutputFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes an output feature of the protocol"@en .
+<https://w3id.org/enigma#hasOutputFeature> <http://www.w3.org/2000/01/rdf-schema#label> "has output feature"@en .
+# 
+# https://w3id.org/enigma#hasType
+<https://w3id.org/enigma#hasType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Protocol> .
+<https://w3id.org/enigma#hasType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#hasType> <http://purl.org/vocab/vann/example> "ENIGMA-SulciProtocol hasType \"VolumeProtocol\""@en .
+<https://w3id.org/enigma#hasType> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the type of procedure that a protocol represents"@en .
+<https://w3id.org/enigma#hasType> <http://www.w3.org/2000/01/rdf-schema#label> "has type"@en .
+# 
+# https://w3id.org/enigma#hasVersion
+<https://w3id.org/enigma#hasVersion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasVersion> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Protocol> .
+<https://w3id.org/enigma#hasVersion> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#hasVersion> <http://purl.org/vocab/vann/example> "ENIGMA Cortical Quality Control Protocol hasVersion \"2.0 April 2017\""@en .
+<https://w3id.org/enigma#hasVersion> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the version of the protocol"@en .
+<https://w3id.org/enigma#hasVersion> <http://www.w3.org/2000/01/rdf-schema#label> "has version"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/enigma#Cohort
+<https://w3id.org/enigma#Cohort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#Cohort> <http://purl.org/vocab/vann/example> "ADNI: Alzheimer\u2019s Disease Neuroimaging Initiative"@en .
+<https://w3id.org/enigma#Cohort> <http://www.w3.org/2000/01/rdf-schema#comment> "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria"@en .
+<https://w3id.org/enigma#Cohort> <http://www.w3.org/2000/01/rdf-schema#label> "Cohort"@en .
+# 
+# https://w3id.org/enigma#Person
+<https://w3id.org/enigma#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#Person> <http://purl.org/vocab/vann/example> "Theo van Erp"@en .
+<https://w3id.org/enigma#Person> <http://www.w3.org/2000/01/rdf-schema#comment> "Individual involved with the cohort"@en .
+<https://w3id.org/enigma#Person> <http://www.w3.org/2000/01/rdf-schema#label> "Person"@en .
+# 
+# https://w3id.org/enigma#Project
+<https://w3id.org/enigma#Project> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#Project> <http://purl.org/vocab/vann/example> "SZPositiveSymptoms"@en .
+<https://w3id.org/enigma#Project> <http://www.w3.org/2000/01/rdf-schema#comment> "Project associated with the cohort"@en .
+<https://w3id.org/enigma#Project> <http://www.w3.org/2000/01/rdf-schema#label> "Project"@en .
+# 
+# https://w3id.org/enigma#Protocol
+<https://w3id.org/enigma#Protocol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#Protocol> <http://purl.org/vocab/vann/example> "ENIGMA-Sulci Protocol"@en .
+<https://w3id.org/enigma#Protocol> <http://www.w3.org/2000/01/rdf-schema#comment> "An image processing or genetic analysis protocol used to extract brain feature data"@en .
+<https://w3id.org/enigma#Protocol> <http://www.w3.org/2000/01/rdf-schema#label> "Protocol"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/enigma
+<https://w3id.org/enigma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<http://purl.org/dc/terms/title> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
+# 
+# Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

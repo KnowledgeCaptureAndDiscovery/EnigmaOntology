@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://w3id.org/enigma#"
      xml:base="https://w3id.org/enigma"
+     xmlns:vaem="http://www.linkedmodel.org/schema/vaem#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:vann1="https://w3id.org/enigma#vann:"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vann="http://purl.org/vocab/vann/">
     <owl:Ontology rdf:about="https://w3id.org/enigma">
@@ -17,8 +17,9 @@
         <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MiHyun Jang</terms:creator>
         <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Neda Jahanshad</terms:creator>
         <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ryan Espiritu</terms:creator>
+        <terms:description xml:lang="en">An ontology representing roles different persons play in ENIGMA projects, organizations, papers, or working groups.</terms:description>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
-        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Enigma Roles Ontology</terms:title>
+        <terms:title xml:lang="en">The Roles Ontology</terms:title>
         <vann:preferredNamespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string">enigma</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:resource="https://w3id.org/enigma#"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An ontology for describing people&apos;s roles in ENIGMA projects.</rdfs:comment>
@@ -39,6 +40,13 @@
     
 
 
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
     <!-- http://purl.org/vocab/vann/example -->
 
 
@@ -46,10 +54,10 @@
     
 
 
-    <!-- https://w3id.org/enigma#vann:example -->
+    <!-- http://www.linkedmodel.org/schema/vaem#rationale -->
 
 
-    <owl:AnnotationProperty rdf:about="https://w3id.org/enigma#vann:example"/>
+    <owl:AnnotationProperty rdf:about="http://www.linkedmodel.org/schema/vaem#rationale"/>
     
 
 
@@ -98,13 +106,43 @@
     
 
 
+    <!-- https://w3id.org/enigma#contributor -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#contributor">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/contributor"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#AcademicArticle"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vaem:rationale xml:lang="en">Property added to restrict the domain to projects, cohorts and academic articles. This is done for facilitating the interaction with the wiki interface</vaem:rationale>
+        <rdfs:comment xml:lang="en">Property that indicates who is a contributor to a project or cohort</rdfs:comment>
+        <rdfs:label xml:lang="en">contributor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/enigma#firstDraftContributor -->
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#firstDraftContributor">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/contributor"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#AcademicArticle"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributor"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#AcademicArticle"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example xml:lang="en">BipolarProject firstDraftContributor JohnSmith</vann:example>
         <rdfs:comment xml:lang="en">Property designed to distinguish who collaborated in the creation of the first draft of a publication</rdfs:comment>
         <rdfs:label xml:lang="en">first draft contributor</rdfs:label>
     </owl:ObjectProperty>
@@ -115,7 +153,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDataAnalyst">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/contributor"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributor"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
         <vann:example xml:lang="en">BipolarProject hasDataAnalyst JohnSmith</vann:example>
@@ -129,7 +167,7 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDataCollector">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/contributor"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributor"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
         <vann:example xml:lang="en">BipolarProject hasDataCollector JohnSmith</vann:example>
@@ -143,9 +181,10 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDesigner">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/contributor"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributor"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example xml:lang="en">BipolarProject hasDesigner JohnSmith</vann:example>
         <rdfs:comment xml:lang="en">Property that points to the person responsible for helping designing a project.</rdfs:comment>
         <rdfs:label xml:lang="en">has designer</rdfs:label>
     </owl:ObjectProperty>
@@ -208,16 +247,44 @@
     
 
 
-    <!-- https://w3id.org/enigma#hasProjectDeveloper -->
+    <!-- https://w3id.org/enigma#hasLastProjectLead -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasProjectDeveloper">
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasLastProjectLead">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasProjectLead"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example xml:lang="en">BipolarProject hasLastProjectLead JohnSmith</vann:example>
+        <rdfs:comment xml:lang="en">Property designed to identify whom of the leads plays a senior role in the project, and therefore should be placed last when writing papers.</rdfs:comment>
+        <rdfs:label xml:lang="en">has last project lead</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasProjectLead -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasProjectLead">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/contributor"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">BipolarProject hasProjectDeveloper JohnSmith</vann:example>
-        <rdfs:comment xml:lang="en">Describes what project someone is a project developer of</rdfs:comment>
-        <rdfs:label xml:lang="en">has project developer</rdfs:label>
+        <vann:example xml:lang="en">BipolarProject hasProjectLead JohnSmith</vann:example>
+        <rdfs:comment xml:lang="en">Describes what project someone is a project lead of</rdfs:comment>
+        <rdfs:label xml:lang="en">has project lead</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasProtocolRunner -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasProtocolRunner">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributor"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example xml:lang="en">BipolarProject hasProtocolRunner JohnSmith</vann:example>
+        <rdfs:comment xml:lang="en">Describes who ran a protocol for a given cohort</rdfs:comment>
+        <rdfs:label xml:lang="en">has protocol runner</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -226,11 +293,32 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasReviewer">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/contributor"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#AcademicArticle"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributor"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#AcademicArticle"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example xml:lang="en">BipolarProject hasReviewer JohnSmith</vann:example>
         <rdfs:comment xml:lang="en">Property that indicates who contributed to the paper reviewing the initial drafts and providing comments</rdfs:comment>
         <rdfs:label xml:lang="en">has reviewer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#ranProtocol -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#ranProtocol">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Protocol"/>
+        <vann:example xml:lang="en">JohnSmith ranProtocol ENIGMA-Sulci Protocol</vann:example>
+        <rdfs:comment xml:lang="en">Describes which protocol that an individual ran</rdfs:comment>
+        <rdfs:label xml:lang="en">ran protocol</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -267,6 +355,16 @@
     
 
 
+    <!-- https://w3id.org/enigma#Cohort -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#Cohort">
+        <rdfs:comment xml:lang="en">A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria</rdfs:comment>
+        <rdfs:label xml:lang="en">Cohort</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/enigma#Person -->
 
 
@@ -285,6 +383,17 @@
         <vann:example xml:lang="en">SZPositiveSymptoms</vann:example>
         <rdfs:comment xml:lang="en">Project encompassing cohort</rdfs:comment>
         <rdfs:label xml:lang="en">Project</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#Protocol -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#Protocol">
+        <vann:example xml:lang="en">ENIGMA-Sulci Protocol</vann:example>
+        <rdfs:comment xml:lang="en">An image processing or genetic analysis protocol used to extract brain feature data</rdfs:comment>
+        <rdfs:label xml:lang="en">Protocol</rdfs:label>
     </owl:Class>
     
 

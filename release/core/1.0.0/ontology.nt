@@ -6,11 +6,11 @@
 <https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "MiHyun Jang" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "Neda Jahanshad" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "Ryan Espiritu" .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/description> "A core ontology representing the main concepts of ENIGMA."@en .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> .
-<https://w3id.org/enigma> <http://purl.org/dc/terms/title> "The Project Ontology" .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/title> "The Core Ontology"@en .
 <https://w3id.org/enigma> <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma" .
 <https://w3id.org/enigma> <http://purl.org/vocab/vann/preferredNamespaceUri> <https://w3id.org/enigma#> .
-<https://w3id.org/enigma> <http://www.w3.org/2000/01/rdf-schema#comment> "A core ontology with the main concepts of ENIGMA" .
 <https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionInfo> "v1.0.0" .
 # 
 # 
@@ -20,6 +20,9 @@
 # #
 # #################################################################
 # 
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://purl.org/vocab/vann/example
 <http://purl.org/vocab/vann/example> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -42,20 +45,39 @@
 <https://w3id.org/enigma#hasAcquisitionProtocol> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#AcquisitionProtocol> .
 <https://w3id.org/enigma#hasAcquisitionProtocol> <http://purl.org/vocab/vann/example> "Cohort1 hasAcquisitionProtocol AcquiPro3"@en .
 <https://w3id.org/enigma#hasAcquisitionProtocol> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the acquisition protocol that was used to scan a cohort"@en .
+<https://w3id.org/enigma#hasAcquisitionProtocol> <http://www.w3.org/2000/01/rdf-schema#label> "has acquisition protocol"@en .
+# 
+# https://w3id.org/enigma#hasAffiliate
+<https://w3id.org/enigma#hasAffiliate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasAffiliate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Organization> .
+<https://w3id.org/enigma#hasAffiliate> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#hasAffiliate> <http://purl.org/vocab/vann/example> "Harvard hasAffiliate JohnSmith"@en .
+<https://w3id.org/enigma#hasAffiliate> <http://www.w3.org/2000/01/rdf-schema#comment> "Points to the person who is an affiliate of an organization"@en .
+<https://w3id.org/enigma#hasAffiliate> <http://www.w3.org/2000/01/rdf-schema#label> "has affiliate"@en .
 # 
 # https://w3id.org/enigma#hasCohort
 <https://w3id.org/enigma#hasCohort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#hasCohort> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasCohort> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Project> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#WorkingGroup> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <https://w3id.org/enigma#hasCohort> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Cohort> .
 <https://w3id.org/enigma#hasCohort> <http://purl.org/vocab/vann/example> "BipolarProject hasCohort AmsterdamBipolarCohort --> Bipolar Project includes the Amsterdam Bipolar Cohort"@en .
 <https://w3id.org/enigma#hasCohort> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what cohorts are part of the project"@en .
+<https://w3id.org/enigma#hasCohort> <http://www.w3.org/2000/01/rdf-schema#label> "has cohort"@en .
 # 
-# https://w3id.org/enigma#hasPI
-<https://w3id.org/enigma#hasPI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#hasPI> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cohort> .
-<https://w3id.org/enigma#hasPI> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
-<https://w3id.org/enigma#hasPI> <http://purl.org/vocab/vann/example> "Project1 hasPI JohnSmith"@en .
-<https://w3id.org/enigma#hasPI> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes who the PI of the project is"@en .
+# https://w3id.org/enigma#hasPrincipalInvestigator
+<https://w3id.org/enigma#hasPrincipalInvestigator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasPrincipalInvestigator> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cohort> .
+<https://w3id.org/enigma#hasPrincipalInvestigator> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#hasPrincipalInvestigator> <http://purl.org/vocab/vann/example> "Cohort1 hasPrincipalInvestigator JohnSmith"@en .
+<https://w3id.org/enigma#hasPrincipalInvestigator> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes who the principal investigator of the cohort is"@en .
+<https://w3id.org/enigma#hasPrincipalInvestigator> <http://www.w3.org/2000/01/rdf-schema#label> "has principal investigator"@en .
 # 
 # https://w3id.org/enigma#hasProject
 <https://w3id.org/enigma#hasProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -63,20 +85,15 @@
 <https://w3id.org/enigma#hasProject> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Project> .
 <https://w3id.org/enigma#hasProject> <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasProject BipolarCorticolProject --> The Bipolar Working Group is working on the Bipolar Corticol Project"@en .
 <https://w3id.org/enigma#hasProject> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what projects are worked on by a specific working group"@en .
+<https://w3id.org/enigma#hasProject> <http://www.w3.org/2000/01/rdf-schema#label> "has project"@en .
 # 
-# https://w3id.org/enigma#hasWGMember
-<https://w3id.org/enigma#hasWGMember> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#hasWGMember> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#WorkingGroup> .
-<https://w3id.org/enigma#hasWGMember> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
-<https://w3id.org/enigma#hasWGMember> <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasMember JohnSmith --> The bipolar working group has John Smith as a member"@en .
-<https://w3id.org/enigma#hasWGMember> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes who the members of the working group are"@en .
-# 
-# https://w3id.org/enigma#isAffiliatedWithOrganization
-<https://w3id.org/enigma#isAffiliatedWithOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#isAffiliatedWithOrganization> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Person> .
-<https://w3id.org/enigma#isAffiliatedWithOrganization> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Organization> .
-<https://w3id.org/enigma#isAffiliatedWithOrganization> <http://purl.org/vocab/vann/example> "JohnSmith isAffiliatedWithOrganization HarvardU --> John Smith is associated with Harvard"@en .
-<https://w3id.org/enigma#isAffiliatedWithOrganization> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what organization somone is affiliated with"@en .
+# https://w3id.org/enigma#hasWorkingGroupMember
+<https://w3id.org/enigma#hasWorkingGroupMember> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasWorkingGroupMember> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#WorkingGroup> .
+<https://w3id.org/enigma#hasWorkingGroupMember> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#hasWorkingGroupMember> <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasWorkingGroupMember JohnSmith --> The bipolar working group has John Smith as a member"@en .
+<https://w3id.org/enigma#hasWorkingGroupMember> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes who the members of the working group are"@en .
+<https://w3id.org/enigma#hasWorkingGroupMember> <http://www.w3.org/2000/01/rdf-schema#label> "has working group member"@en .
 # 
 # 
 # 
@@ -87,23 +104,21 @@
 # #################################################################
 # 
 # 
+# http://xmlns.com/foaf/0.1/Organization
+<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/2000/01/rdf-schema#comment> <http://xmlns.com/foaf/0.1/Organization> .
+# 
 # https://w3id.org/enigma#AcquisitionProtocol
 <https://w3id.org/enigma#AcquisitionProtocol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/enigma#AcquisitionProtocol> <http://purl.org/vocab/vann/example> "ENIGMA-Sulci"@en .
 <https://w3id.org/enigma#AcquisitionProtocol> <http://www.w3.org/2000/01/rdf-schema#comment> "The protocol used to acquire the scanner data types"@en .
-<https://w3id.org/enigma#AcquisitionProtocol> <http://www.w3.org/2000/01/rdf-schema#label> "AcquisitionProtocol"@en .
+<https://w3id.org/enigma#AcquisitionProtocol> <http://www.w3.org/2000/01/rdf-schema#label> "Acquisition Protocol"@en .
 # 
 # https://w3id.org/enigma#Cohort
 <https://w3id.org/enigma#Cohort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/enigma#Cohort> <http://purl.org/vocab/vann/example> "ADNI: Alzheimer\u2019s Disease Neuroimaging Initiative"@en .
 <https://w3id.org/enigma#Cohort> <http://www.w3.org/2000/01/rdf-schema#comment> "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria"@en .
 <https://w3id.org/enigma#Cohort> <http://www.w3.org/2000/01/rdf-schema#label> "Cohort"@en .
-# 
-# https://w3id.org/enigma#Organization
-<https://w3id.org/enigma#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/enigma#Organization> <http://www.w3.org/2000/01/rdf-schema#comment> "An organization contributing to a given ENIGMA project"@en .
-<https://w3id.org/enigma#Organization> <http://www.w3.org/2000/01/rdf-schema#label> "Organization"@en .
-<https://w3id.org/enigma#Organization> <https://w3id.org/enigma#vann:example> "Information Science Institute"@en .
 # 
 # https://w3id.org/enigma#Person
 <https://w3id.org/enigma#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -121,6 +136,6 @@
 <https://w3id.org/enigma#WorkingGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/enigma#WorkingGroup> <http://purl.org/vocab/vann/example> "BipolarWG"@en .
 <https://w3id.org/enigma#WorkingGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "Group of researchers studying a certain topic/disease"@en .
-<https://w3id.org/enigma#WorkingGroup> <http://www.w3.org/2000/01/rdf-schema#label> "WorkingGroup"@en .
+<https://w3id.org/enigma#WorkingGroup> <http://www.w3.org/2000/01/rdf-schema#label> "Working Group"@en .
 # 
 # Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

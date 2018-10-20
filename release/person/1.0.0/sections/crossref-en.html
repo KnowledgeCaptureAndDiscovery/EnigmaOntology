@@ -1,7 +1,7 @@
 <h2  id="crossreference" class="list">Cross reference for The Person Ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 This section provides details for each class and property defined by The Person Ontology.
 <div id="classes">
-   <h3 id="classes" class="list">Classes</h3>
+   <h3 id="classes-headline" class="list">Classes</h3>
    <ul class="hlist">
       <li>
          <a href="#AcademicArticle" title="https://w3id.org/enigma#AcademicArticle">Academic article</a>
@@ -13,7 +13,12 @@ This section provides details for each class and property defined by The Person 
          <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
       </li>
       <li>
-         <a href="#http://xmlns.com/foaf/0.1/Organization" title="http://xmlns.com/foaf/0.1/Organization">Organization</a>
+         <a href="#http://xmlns.com/foaf/0.1/Organization" title="http://xmlns.com/foaf/0.1/Organization">
+            <span>organization</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Organization" title="https://w3id.org/enigma#Organization">Organization</a>
       </li>
       <li>
          <a href="#http://xmlns.com/foaf/0.1/Person" title="http://xmlns.com/foaf/0.1/Person">
@@ -113,7 +118,7 @@ This section provides details for each class and property defined by The Person 
       </dl>
    </div>
    <div class="entity" id="http://xmlns.com/foaf/0.1/Organization">
-      <h3>Organization<sup class="type-c" title="class">c</sup>
+      <h3>organization<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
@@ -128,21 +133,33 @@ This section provides details for each class and property defined by The Person 
             <a href="http://xmlns.com/foaf/0.1">http://xmlns.com/foaf/0.1</a>
          </dd>
       </dl>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>Information Sciences Institute</pre>
-         </dd>
-      </dl>
       <dl class="description">
-         <dt>is in domain of</dt>
+         <dt>is equivalent to</dt>
          <dd>
-            <a href="#hasAffiliate" title="https://w3id.org/enigma#hasAffiliate">has affiliate</a>
-            <sup class="type-op" title="object property">op</sup>
+            <a href="#Organization" title="https://w3id.org/enigma#Organization">Organization</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#forOrganization" title="https://w3id.org/enigma#forOrganization">for organization</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Organization">
+      <h3>Organization<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#Organization</p>
+      <div class="comment">
+         <span class="markdown">An organization belonging to the ENIGMA consortium. Organization can be hospitals, universities, departments, etc.</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasAffiliate" title="https://w3id.org/enigma#hasAffiliate">has affiliate</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -168,7 +185,9 @@ This section provides details for each class and property defined by The Person 
          <dd>
             <a href="#http://xmlns.com/foaf/0.1/familyName" title="http://xmlns.com/foaf/0.1/familyName">family name</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#http://xmlns.com/foaf/0.1/givenName" title="http://xmlns.com/foaf/0.1/givenName">given name</a>
-            <sup class="type-dp" title="data property">dp</sup>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#http://xmlns.com/foaf/0.1/homepage" title="http://xmlns.com/foaf/0.1/homepage">homepage</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://xmlns.com/foaf/0.1/mbox" title="http://xmlns.com/foaf/0.1/mbox">mbox</a>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
@@ -192,27 +211,25 @@ This section provides details for each class and property defined by The Person 
          <dt>is in domain of</dt>
          <dd>
             <a href="#currentJobTitle" title="https://w3id.org/enigma#currentJobTitle">current job title</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasDegree" title="https://w3id.org/enigma#hasDegree">has degree</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasGrant" title="https://w3id.org/enigma#hasGrant">has grant</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#familyName" title="https://w3id.org/enigma#familyName">family name</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#givenName" title="https://w3id.org/enigma#givenName">given name</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasOrcidId" title="https://w3id.org/enigma#hasOrcidId">has ORCID Id</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasDegree" title="https://w3id.org/enigma#hasDegree">has degree</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasEmail" title="https://w3id.org/enigma#hasEmail">has email</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasGrant" title="https://w3id.org/enigma#hasGrant">has grant</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#hasMiddleInitial" title="https://w3id.org/enigma#hasMiddleInitial">has middle initial</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasPrimaryAddress" title="https://w3id.org/enigma#hasPrimaryAddress">has primary address</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasQualifiedAffiliation" title="https://w3id.org/enigma#hasQualifiedAffiliation">has qualified affiliation</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasQualifiedAffiliation" title="https://w3id.org/enigma#hasQualifiedAffiliation">has qualified affiliation</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasResearchInterest" title="https://w3id.org/enigma#hasResearchInterest">has research interest</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#http://xmlns.com/foaf/0.1/homepage" title="http://xmlns.com/foaf/0.1/homepage">homepage</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#http://xmlns.com/foaf/0.1/mbox" title="http://xmlns.com/foaf/0.1/mbox">mbox</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#http://vivoweb.org/ontology/core#orcidId" title="http://vivoweb.org/ontology/core#orcidId">orcid id</a>
-            <sup class="type-op" title="object property">op</sup>
+            <sup class="type-dp" title="data property">dp</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#author" title="https://w3id.org/enigma#author">author</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasAffiliate" title="https://w3id.org/enigma#hasAffiliate">has affiliate</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasContact" title="https://w3id.org/enigma#hasContact">has contact</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasInvestigator" title="https://w3id.org/enigma#hasInvestigator">has investigator</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasMainPrincipalInvestigator"
                title="https://w3id.org/enigma#hasMainPrincipalInvestigator">has main principal investigator</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasPrincipalInvestigator" title="https://w3id.org/enigma#hasPrincipalInvestigator">has principal investigator</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasProjectLead" title="https://w3id.org/enigma#hasProjectLead">has project lead</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasWorkingGroupChair" title="https://w3id.org/enigma#hasWorkingGroupChair">has working group chair</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasWorkingGroupMember" title="https://w3id.org/enigma#hasWorkingGroupMember">has working group member</a>
             <sup class="type-op" title="object property">op</sup>
@@ -233,18 +250,6 @@ This section provides details for each class and property defined by The Person 
          <dt>Example</dt>
          <dd>
             <pre>SZPositiveSymptoms</pre>
-         </dd>
-      </dl>
-      <dl class="description">
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#hasProjectLead" title="https://w3id.org/enigma#hasProjectLead">has project lead</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#http://purl.org/dc/terms/contributor" title="http://purl.org/dc/terms/contributor">contributor</a>
-            <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
@@ -304,11 +309,6 @@ This section provides details for each class and property defined by The Person 
          <a href="#author" title="https://w3id.org/enigma#author">author</a>
       </li>
       <li>
-         <a href="#http://purl.org/dc/terms/contributor" title="http://purl.org/dc/terms/contributor">
-            <span>contributor</span>
-         </a>
-      </li>
-      <li>
          <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">
             <span>creator</span>
          </a>
@@ -325,7 +325,10 @@ This section provides details for each class and property defined by The Person 
          <a href="#hasAffiliate" title="https://w3id.org/enigma#hasAffiliate">has affiliate</a>
       </li>
       <li>
-         <a href="#hasContact" title="https://w3id.org/enigma#hasContact">has contact</a>
+         <a href="#hasEmail" title="https://w3id.org/enigma#hasEmail">has email</a>
+      </li>
+      <li>
+         <a href="#hasHomePage" title="https://w3id.org/enigma#hasHomePage">has home page</a>
       </li>
       <li>
          <a href="#hasInvestigator" title="https://w3id.org/enigma#hasInvestigator">has investigator</a>
@@ -335,13 +338,13 @@ This section provides details for each class and property defined by The Person 
             title="https://w3id.org/enigma#hasMainPrincipalInvestigator">has main principal investigator</a>
       </li>
       <li>
+         <a href="#hasOrcidId" title="https://w3id.org/enigma#hasOrcidId">has ORCID Id</a>
+      </li>
+      <li>
          <a href="#hasPrimaryAddress" title="https://w3id.org/enigma#hasPrimaryAddress">has primary address</a>
       </li>
       <li>
          <a href="#hasPrincipalInvestigator" title="https://w3id.org/enigma#hasPrincipalInvestigator">has principal investigator</a>
-      </li>
-      <li>
-         <a href="#hasProjectLead" title="https://w3id.org/enigma#hasProjectLead">has project lead</a>
       </li>
       <li>
          <a href="#hasQualifiedAffiliation" title="https://w3id.org/enigma#hasQualifiedAffiliation">has qualified affiliation</a>
@@ -403,29 +406,6 @@ This section provides details for each class and property defined by The Person 
          </dl>
       </div>
    </div>
-   <div class="entity" id="http://purl.org/dc/terms/contributor">
-      <h3>contributor<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://purl.org/dc/terms/contributor</p>
-      <div class="description">
-         <dl>
-            <dt>has sub-properties</dt>
-            <dd>
-               <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">creator</a>
-               <sup class="type-op" title="object property">op</sup>, <a href="#hasProjectLead" title="https://w3id.org/enigma#hasProjectLead">has project lead</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
    <div class="entity" id="http://purl.org/dc/terms/creator">
       <h3>creator<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -437,7 +417,7 @@ This section provides details for each class and property defined by The Person 
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#http://purl.org/dc/terms/contributor" title="http://purl.org/dc/terms/contributor">contributor</a>
+               <span class="dotted" title="http://purl.org/dc/terms/contributor">contributor</span>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has sub-properties</dt>
@@ -473,7 +453,7 @@ This section provides details for each class and property defined by The Person 
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#http://xmlns.com/foaf/0.1/Organization" title="http://xmlns.com/foaf/0.1/Organization">Organization</a>
+               <a href="#http://xmlns.com/foaf/0.1/Organization" title="http://xmlns.com/foaf/0.1/Organization">organization</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -533,14 +513,9 @@ This section provides details for each class and property defined by The Person 
                <a href="#http://xmlns.com/foaf/0.1/member" title="http://xmlns.com/foaf/0.1/member">member</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
-            <dt>has sub-properties</dt>
-            <dd>
-               <a href="#hasWorkingGroupMember" title="https://w3id.org/enigma#hasWorkingGroupMember">has working group member</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#http://xmlns.com/foaf/0.1/Organization" title="http://xmlns.com/foaf/0.1/Organization">Organization</a>
+               <a href="#Organization" title="https://w3id.org/enigma#Organization">Organization</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -551,35 +526,72 @@ This section provides details for each class and property defined by The Person 
          </dl>
       </div>
    </div>
-   <div class="entity" id="hasContact">
-      <h3>has contact<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="hasEmail">
+      <h3>has email<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#hasContact</p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasEmail</p>
       <div class="comment">
-         <span class="markdown">Property that points to the person that is a contact for the project or cohort</span>
+         <span class="markdown">Property that indicates which is the email of a person</span>
       </div>
       <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>BipolarCohort hasContact JohnSmith</pre>
-         </dd>
+         <dt>Term rationale</dt>
+         <dd>Property added to facilitate interaction with domain and ranges in the wiki. It's equivalent to foaf:mbox</dd>
       </dl>
       <div class="description">
          <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#http://xmlns.com/foaf/0.1/mbox" title="http://xmlns.com/foaf/0.1/mbox">mbox</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2002/07/owl#Thing">thing</span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasHomePage">
+      <h3>has home page<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasHomePage</p>
+      <div class="comment">
+         <span class="markdown">Property that describes the home page of a cohort or person</span>
+      </div>
+      <dl>
+         <dt>Term rationale</dt>
+         <dd>Property added to facilitate interaction with domain and ranges in the wiki. It's equivalent to foaf:homePage</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#http://xmlns.com/foaf/0.1/homepage" title="http://xmlns.com/foaf/0.1/homepage">homepage</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
             <dt>has domain</dt>
             <dd>
                <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
                <sup class="type-c" title="class">c</sup> 
                <span class="logic">or</span> 
-               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+               <span class="dotted" title="http://www.w3.org/2002/07/owl#Thing">thing</span>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -657,6 +669,35 @@ This section provides details for each class and property defined by The Person 
          </dl>
       </div>
    </div>
+   <div class="entity" id="hasOrcidId">
+      <h3>has ORCID Id<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasOrcidId</p>
+      <div class="comment">
+         <span class="markdown">ORCID Id of a Person</span>
+      </div>
+      <dl>
+         <dt>Term rationale</dt>
+         <dd>Property added to facilitate interaction with the wiki, making domains and ranges explicit</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#http://vivoweb.org/ontology/core#orcidId" title="http://vivoweb.org/ontology/core#orcidId">orcid id</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="hasPrimaryAddress">
       <h3>has primary address<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -682,6 +723,9 @@ This section provides details for each class and property defined by The Person 
             </dd>
             <dt>has domain</dt>
             <dd>
+               <a href="#Organization" title="https://w3id.org/enigma#Organization">Organization</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
                <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
@@ -725,42 +769,6 @@ This section provides details for each class and property defined by The Person 
             <dt>has domain</dt>
             <dd>
                <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasProjectLead">
-      <h3>has project lead<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#hasProjectLead</p>
-      <div class="comment">
-         <span class="markdown">Describes what project someone is a project lead of</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>BipolarProject hasProjectLead JohnSmith</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#http://purl.org/dc/terms/contributor" title="http://purl.org/dc/terms/contributor">contributor</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -858,7 +866,7 @@ This section provides details for each class and property defined by The Person 
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#hasAffiliate" title="https://w3id.org/enigma#hasAffiliate">has affiliate</a>
+               <a href="#http://xmlns.com/foaf/0.1/member" title="http://xmlns.com/foaf/0.1/member">member</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has sub-properties</dt>
@@ -897,9 +905,14 @@ This section provides details for each class and property defined by The Person 
       </dl>
       <div class="description">
          <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#hasHomePage" title="https://w3id.org/enigma#hasHomePage">has home page</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+               <a href="#http://xmlns.com/foaf/0.1/Person" title="http://xmlns.com/foaf/0.1/Person">person</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -921,9 +934,14 @@ This section provides details for each class and property defined by The Person 
       </dl>
       <div class="description">
          <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#hasEmail" title="https://w3id.org/enigma#hasEmail">has email</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+               <a href="#http://xmlns.com/foaf/0.1/Person" title="http://xmlns.com/foaf/0.1/Person">person</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -952,6 +970,7 @@ This section provides details for each class and property defined by The Person 
             <dt>has sub-properties</dt>
             <dd>
                <a href="#hasAffiliate" title="https://w3id.org/enigma#hasAffiliate">has affiliate</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#hasWorkingGroupMember" title="https://w3id.org/enigma#hasWorkingGroupMember">has working group member</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
@@ -973,16 +992,16 @@ This section provides details for each class and property defined by The Person 
       </dl>
       <div class="description">
          <dl>
-            <dt>has domain</dt>
+            <dt>has sub-properties</dt>
             <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
+               <a href="#hasOrcidId" title="https://w3id.org/enigma#hasOrcidId">has ORCID Id</a>
+               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
    </div>
 </div><div id="dataproperties">
-   <h3 id="dataproperties" class="list">Data Properties</h3>
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
    <ul class="hlist">
       <li>
          <a href="#http://www.w3.org/2006/vcard/ns#country-name" title="http://www.w3.org/2006/vcard/ns#country-name">
@@ -998,9 +1017,15 @@ This section provides details for each class and property defined by The Person 
          </a>
       </li>
       <li>
+         <a href="#familyName" title="https://w3id.org/enigma#familyName">family name</a>
+      </li>
+      <li>
          <a href="#http://xmlns.com/foaf/0.1/givenName" title="http://xmlns.com/foaf/0.1/givenName">
             <span>given name</span>
          </a>
+      </li>
+      <li>
+         <a href="#givenName" title="https://w3id.org/enigma#givenName">given name</a>
       </li>
       <li>
          <a href="#hasDegree" title="https://w3id.org/enigma#hasDegree">has degree</a>
@@ -1120,9 +1145,43 @@ This section provides details for each class and property defined by The Person 
       </dl>
       <div class="description">
          <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#familyName" title="https://w3id.org/enigma#familyName">family name</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
             <dt>has domain</dt>
             <dd>
                <a href="#http://xmlns.com/foaf/0.1/Person" title="http://xmlns.com/foaf/0.1/Person">person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="familyName">
+      <h3>family name<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#familyName</p>
+      <div class="comment">
+         <span class="markdown">The family name of some person.</span>
+      </div>
+      <dl>
+         <dt>Term rationale</dt>
+         <dd>Property added to restrict the domain to enigma:Person. This is done for facilitating the interaction with the wiki interface</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#http://xmlns.com/foaf/0.1/familyName" title="http://xmlns.com/foaf/0.1/familyName">family name</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1150,9 +1209,43 @@ This section provides details for each class and property defined by The Person 
       </dl>
       <div class="description">
          <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#givenName" title="https://w3id.org/enigma#givenName">given name</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
             <dt>has domain</dt>
             <dd>
                <a href="#http://xmlns.com/foaf/0.1/Person" title="http://xmlns.com/foaf/0.1/Person">person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="givenName">
+      <h3>given name<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#givenName</p>
+      <div class="comment">
+         <span class="markdown">The given name of some person.</span>
+      </div>
+      <dl>
+         <dt>Term rationale</dt>
+         <dd>Property added to restrict the domain to enigma:Person. This is done for facilitating the interaction with the wiki interface</dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#http://xmlns.com/foaf/0.1/givenName" title="http://xmlns.com/foaf/0.1/givenName">given name</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1205,14 +1298,17 @@ This section provides details for each class and property defined by The Person 
       <dl>
          <dt>Example</dt>
          <dd>
-            <pre>JohnSmith hasQualifiedAffiliationRelationship "QualifiedAffiliation" hasEndDate "2018-07-13"</pre>
+            <pre>JohnSmith hasQualifiedAffiliation "QualifiedAffiliation" hasEndDate "2018-07-13"</pre>
          </dd>
       </dl>
       <div class="description">
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2002/07/owl#Thing">thing</span>
+               <a href="#QualifiedAffiliation" title="https://w3id.org/enigma#QualifiedAffiliation">Qualified Affiliation</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">Working Group</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1320,7 +1416,7 @@ This section provides details for each class and property defined by The Person 
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasStartDate</p>
       <div class="comment">
-         <span class="markdown">Describes the start date of the described resource (a working group, a person in an organizaiton, etc.)</span>
+         <span class="markdown">Describes the start date of the described resource (a working group, a person in an organization, etc.)</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -1332,7 +1428,10 @@ This section provides details for each class and property defined by The Person 
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2002/07/owl#Thing">thing</span>
+               <a href="#QualifiedAffiliation" title="https://w3id.org/enigma#QualifiedAffiliation">Qualified Affiliation</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">Working Group</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>

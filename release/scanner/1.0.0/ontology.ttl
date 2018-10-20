@@ -14,16 +14,20 @@
                            <http://purl.org/dc/terms/creator> "MiHyun Jang"^^xsd:string ,
                                                               "Neda Jahanshad"^^xsd:string ,
                                                               "Ryan Espiritu"^^xsd:string ;
+                           <http://purl.org/dc/terms/description> "An ontology representing scanners and instruments used to make measurements in the ENIGMA consortium."@en ;
                            <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> ;
                            <http://purl.org/dc/terms/title> "The Scanner Ontology"^^xsd:string ;
                            <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma"^^xsd:string ;
                            <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
-                           rdfs:comment "An ontology that describes scanners and their properties."^^xsd:string ;
                            owl:versionInfo "v1.0.0"^^xsd:string .
 
 #################################################################
 #    Annotation properties
 #################################################################
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
 
 ###  http://purl.org/vocab/vann/example
 <http://purl.org/vocab/vann/example> rdf:type owl:AnnotationProperty .
@@ -306,165 +310,6 @@
            <http://purl.org/vocab/vann/example> "Antidepressants"@en ;
            rdfs:comment "Treatments used on the members of the cohort"@en ;
            rdfs:label "Treatment"@en .
-
-
-#################################################################
-#    Individuals
-#################################################################
-
-###  https://w3id.org/enigma#BipolarBarcelonaControl
-:BipolarBarcelonaControl rdf:type owl:NamedIndividual ,
-                                  :Cohort .
-
-
-###  https://w3id.org/enigma#BipolarBarcelonaPatient
-:BipolarBarcelonaPatient rdf:type owl:NamedIndividual ,
-                                  :Cohort .
-
-
-###  https://w3id.org/enigma#BipolarParisControl
-:BipolarParisControl rdf:type owl:NamedIndividual ,
-                              :Cohort .
-
-
-###  https://w3id.org/enigma#BipolarParisPatient
-:BipolarParisPatient rdf:type owl:NamedIndividual ,
-                              :Cohort .
-
-
-###  https://w3id.org/enigma#BipolarTulsaPatient
-:BipolarTulsaPatient rdf:type owl:NamedIndividual ,
-                              :Cohort .
-
-
-###  https://w3id.org/enigma#Bruker
-:Bruker rdf:type owl:NamedIndividual ,
-                 :Manufacturer .
-
-
-###  https://w3id.org/enigma#FEEsequence
-:FEEsequence rdf:type owl:NamedIndividual ,
-                      :MRISequence .
-
-
-###  https://w3id.org/enigma#FFEsequence
-:FFEsequence rdf:type owl:NamedIndividual ,
-                      :MRISequence .
-
-
-###  https://w3id.org/enigma#FLAIRsequence
-:FLAIRsequence rdf:type owl:NamedIndividual ,
-                        :MRISequence .
-
-
-###  https://w3id.org/enigma#FSEsequence
-:FSEsequence rdf:type owl:NamedIndividual ,
-                      :MRISequence .
-
-
-###  https://w3id.org/enigma#FSLFirst4.1.9
-:FSLFirst4.1.9 rdf:type owl:NamedIndividual ,
-                        :ScannerSoftware .
-
-
-###  https://w3id.org/enigma#FSPGRsequence
-:FSPGRsequence rdf:type owl:NamedIndividual ,
-                        :MRISequence .
-
-
-###  https://w3id.org/enigma#FreeSurfer5.1.0
-:FreeSurfer5.1.0 rdf:type owl:NamedIndividual ,
-                          :ScannerSoftware .
-
-
-###  https://w3id.org/enigma#FreeSurfer5.3
-:FreeSurfer5.3 rdf:type owl:NamedIndividual ,
-                        :ScannerSoftware .
-
-
-###  https://w3id.org/enigma#GE
-:GE rdf:type owl:NamedIndividual ,
-             :Manufacturer .
-
-
-###  https://w3id.org/enigma#GREsequence
-:GREsequence rdf:type owl:NamedIndividual ,
-                      :MRISequence .
-
-
-###  https://w3id.org/enigma#Illumina
-:Illumina rdf:type owl:NamedIndividual ,
-                   :Manufacturer .
-
-
-###  https://w3id.org/enigma#IlluminaOmniExpress
-:IlluminaOmniExpress rdf:type owl:NamedIndividual ;
-                     :hasManufacturer :Illumina .
-
-
-###  https://w3id.org/enigma#MPRAGEsequence
-:MPRAGEsequence rdf:type owl:NamedIndividual ,
-                         :MRISequence .
-
-
-###  https://w3id.org/enigma#Phillips
-:Phillips rdf:type owl:NamedIndividual ,
-                   :Manufacturer .
-
-
-###  https://w3id.org/enigma#SEsequence
-:SEsequence rdf:type owl:NamedIndividual ,
-                     :MRISequence .
-
-
-###  https://w3id.org/enigma#SPGRsequence
-:SPGRsequence rdf:type owl:NamedIndividual ,
-                       :MRISequence .
-
-
-###  https://w3id.org/enigma#Siemens
-:Siemens rdf:type owl:NamedIndividual ,
-                  :Manufacturer .
-
-
-###  https://w3id.org/enigma#axial
-:axial rdf:type owl:NamedIndividual ,
-                :AcquisitionDirection .
-
-
-###  https://w3id.org/enigma#coronal
-:coronal rdf:type owl:NamedIndividual ,
-                  :AcquisitionDirection .
-
-
-###  https://w3id.org/enigma#sagittal
-:sagittal rdf:type owl:NamedIndividual ,
-                   :AcquisitionDirection .
-
-
-###  https://w3id.org/enigma#1.5T-GE-Signa
-:T-GE-Signa rdf:type owl:NamedIndividual ,
-                     :Scanner .
-
-
-###  https://w3id.org/enigma#1.5T-GE-SignaHDx
-:T-GE-SignaHDx rdf:type owl:NamedIndividual ,
-                        :Scanner .
-
-
-###  https://w3id.org/enigma#3.0T-GE-Discovery750
-:T-GE-Discovery750 rdf:type owl:NamedIndividual ,
-                            :Scanner .
-
-
-###  https://w3id.org/enigma#3.0T-Phillips-Achieva
-:T-Phillips-Achieva rdf:type owl:NamedIndividual ,
-                             :Scanner .
-
-
-###  https://w3id.org/enigma#3.0T-Siemens-TrioTim
-:T-Siemens-TrioTim rdf:type owl:NamedIndividual ,
-                            :Scanner .
 
 
 ###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

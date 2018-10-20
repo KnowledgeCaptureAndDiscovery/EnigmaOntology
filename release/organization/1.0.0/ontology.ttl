@@ -14,16 +14,20 @@
                                                               "MiHyun Jang"^^xsd:string ,
                                                               "Neda Jahanshad"^^xsd:string ,
                                                               "Ryan Espiritu"^^xsd:string ;
+                           <http://purl.org/dc/terms/description> "An ontology representing organizations that participate in the ENIGMA consortium."@en ;
                            <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> ;
                            <http://purl.org/dc/terms/title> "The Organization Ontology"^^xsd:string ;
                            <http://purl.org/vocab/vann/preferredNamespacePrefix> <https://w3id.org/enigma> ,
                                                                                  "enigma"^^xsd:string ;
-                           rdfs:comment "An ontology for describing ENIGMA organizations."^^xsd:string ;
                            owl:versionInfo "v1.0.0"^^xsd:string .
 
 #################################################################
 #    Annotation properties
 #################################################################
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
 
 ###  http://purl.org/vocab/vann/example
 <http://purl.org/vocab/vann/example> rdf:type owl:AnnotationProperty .
@@ -39,29 +43,25 @@
 
 ###  http://purl.org/dc/terms/isPartOf
 <http://purl.org/dc/terms/isPartOf> rdf:type owl:ObjectProperty ;
-                                    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
-                                    rdfs:label "is part of"@en .
+                                    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
 
 
 ###  http://www.w3.org/2006/vcard/ns#hasAddress
 <http://www.w3.org/2006/vcard/ns#hasAddress> rdf:type owl:ObjectProperty ;
-                                             rdfs:domain <http://xmlns.com/foaf/0.1/Organization> ;
                                              rdfs:range <http://www.w3.org/2006/vcard/ns#Address> ;
                                              rdfs:comment "To specify the components of the address for the object"@en ;
-                                             rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
-                                             rdfs:label "has address"@en .
+                                             rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> .
 
 
 ###  http://xmlns.com/foaf/0.1/member
 <http://xmlns.com/foaf/0.1/member> rdf:type owl:ObjectProperty ;
-                                   rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
-                                   rdfs:label "has member"@en .
+                                   rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
 
 
 ###  https://w3id.org/enigma#hasAffiliate
 :hasAffiliate rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/member> ;
-              rdfs:domain <http://xmlns.com/foaf/0.1/Organization> ;
+              rdfs:domain :Organization ;
               rdfs:range :Person ;
               <http://purl.org/vocab/vann/example> "HarvardU hasAffiliate JohnSmith"@en ;
               rdfs:comment "Describes the organization's affiliates"@en ;
@@ -71,9 +71,13 @@
 ###  https://w3id.org/enigma#hasPrimaryAddress
 :hasPrimaryAddress rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf <http://www.w3.org/2006/vcard/ns#hasAddress> ;
-                   rdfs:domain <http://xmlns.com/foaf/0.1/Organization> ;
+                   rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( :Organization
+                                               :Person
+                                             )
+                               ] ;
                    rdfs:range <http://www.w3.org/2006/vcard/ns#Address> ;
-                   <http://purl.org/vocab/vann/example> "USC hasPrimaryAddress \"Address\""@en ;
+                   <http://purl.org/vocab/vann/example> "USC hasPrimaryAddress \"123 Admiralty Way\""@en ;
                    rdfs:comment "Describes the primary address of an organization"@en ;
                    rdfs:label "has primary address"@en .
 
@@ -81,8 +85,8 @@
 ###  https://w3id.org/enigma#isPartOfOrganization
 :isPartOfOrganization rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf <http://purl.org/dc/terms/isPartOf> ;
-                      rdfs:domain <http://xmlns.com/foaf/0.1/Organization> ;
-                      rdfs:range <http://xmlns.com/foaf/0.1/Organization> ;
+                      rdfs:domain :Organization ;
+                      rdfs:range :Organization ;
                       <http://purl.org/vocab/vann/example> "Department of Psychology, USC isPartOfOrganization USC"@en ;
                       rdfs:comment "Describes the parent organization which an organization is a part of. An organization may be part of more than one organizations."@en ;
                       rdfs:label "is part of organization"@en .
@@ -97,8 +101,7 @@
                                                rdfs:domain <http://www.w3.org/2006/vcard/ns#Address> ;
                                                rdfs:range xsd:string ;
                                                rdfs:comment "The country name associated with the address of the object"@en ;
-                                               rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
-                                               rdfs:label "has country name"@en .
+                                               rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> .
 
 
 ###  http://www.w3.org/2006/vcard/ns#locality
@@ -106,8 +109,7 @@
                                            rdfs:domain <http://www.w3.org/2006/vcard/ns#Address> ;
                                            rdfs:range xsd:string ;
                                            rdfs:comment "The locality (e.g. city or town) associated with the address of the object"@en ;
-                                           rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
-                                           rdfs:label "has locality"@en .
+                                           rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> .
 
 
 ###  http://www.w3.org/2006/vcard/ns#postal-code
@@ -115,8 +117,7 @@
                                               rdfs:domain <http://www.w3.org/2006/vcard/ns#Address> ;
                                               rdfs:range xsd:string ;
                                               rdfs:comment "The postal code associated with the address of the object"@en ;
-                                              rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
-                                              rdfs:label "has postal code"@en .
+                                              rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> .
 
 
 ###  http://www.w3.org/2006/vcard/ns#region
@@ -124,8 +125,7 @@
                                          rdfs:domain <http://www.w3.org/2006/vcard/ns#Address> ;
                                          rdfs:range xsd:string ;
                                          rdfs:comment "The region (e.g. state or province) associated with the address of the object"@en ;
-                                         rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
-                                         rdfs:label "has region"@en .
+                                         rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> .
 
 
 ###  http://www.w3.org/2006/vcard/ns#street-address
@@ -133,8 +133,20 @@
                                                  rdfs:domain <http://www.w3.org/2006/vcard/ns#Address> ;
                                                  rdfs:range xsd:string ;
                                                  rdfs:comment "The street address associated with the address of the object"@en ;
-                                                 rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
-                                                 rdfs:label "has street address"@en .
+                                                 rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> .
+
+
+###  https://w3id.org/enigma#kind
+:kind rdf:type owl:DatatypeProperty ;
+      rdfs:domain [ rdf:type owl:Class ;
+                    owl:unionOf ( :Organization
+                                  :WorkingGroup
+                                )
+                  ] ;
+      rdfs:range xsd:string ;
+      <http://purl.org/vocab/vann/example> "Organization kind \"University\""@en ;
+      rdfs:comment "Describes the specific kind/type of an organization or working group"@en ;
+      rdfs:label "kind"@en .
 
 
 #################################################################
@@ -204,10 +216,15 @@
 
 ###  http://xmlns.com/foaf/0.1/Organization
 <http://xmlns.com/foaf/0.1/Organization> rdf:type owl:Class ;
-                                         <http://purl.org/vocab/vann/example> "Information Sciences Institute"@en ;
-                                         rdfs:comment "An organization contributing to a given ENIGMA project"@en ;
-                                         rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> ;
-                                         rdfs:label "Organization"@en .
+                                         owl:equivalentClass :Organization ;
+                                         rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> .
+
+
+###  https://w3id.org/enigma#Organization
+:Organization rdf:type owl:Class ;
+              rdfs:comment "An organization belonging to the ENIGMA consortium. Organization can be hospitals, universities, departments, etc."@en ;
+              rdfs:label "Organization"@en ;
+              :example "Information Sciences Institute"^^xsd:string .
 
 
 ###  https://w3id.org/enigma#Person
@@ -215,6 +232,13 @@
         <http://purl.org/vocab/vann/example> "Theo van Erp"@en ;
         rdfs:comment "A person associated with a given organization"@en ;
         rdfs:label "Person"@en .
+
+
+###  https://w3id.org/enigma#WorkingGroup
+:WorkingGroup rdf:type owl:Class ;
+              <http://purl.org/vocab/vann/example> "BipolarWG"@en ;
+              rdfs:comment "Group of researchers studying a certain topic/disease"@en ;
+              rdfs:label "Working Group"@en .
 
 
 ###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/
