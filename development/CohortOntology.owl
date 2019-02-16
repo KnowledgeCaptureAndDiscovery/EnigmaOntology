@@ -15,6 +15,7 @@
         <terms:description xml:lang="en">An ontology to describe cohorts of patients participating in ENIGMA projects.</terms:description>
         <vann:preferredNamespacePrefix>enigma</vann:preferredNamespacePrefix>
         <terms:contributor>Yolanda Gil</terms:contributor>
+        <terms:creator>Michael Bornstein</terms:creator>
         <terms:contributor>Agnes McMahon</terms:contributor>
         <terms:creator>Ryan Espiritu</terms:creator>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
@@ -267,6 +268,8 @@
     <!-- https://w3id.org/enigma#hasCohortGroup -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasCohortGroup">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#CohortGroup"/>
         <vann:example xml:lang="en">QTIM has cohort group QTIM_control</vann:example>
         <rdfs:comment xml:lang="en">Property that indicates the cohort groups part of a cohort</rdfs:comment>
         <rdfs:label xml:lang="en">has cohort group</rdfs:label>
@@ -1548,7 +1551,7 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
                 </owl:unionOf>
             </owl:Class>
