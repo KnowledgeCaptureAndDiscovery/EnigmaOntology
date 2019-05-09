@@ -15,7 +15,7 @@
     "@list" : [ {
       "@id" : "https://w3id.org/enigma#Cohort"
     }, {
-      "@id" : "https://w3id.org/enigma#CohortGroup"
+      "@id" : "https://w3id.org/enigma#ProjectCohort"
     } ]
   } ]
 }, {
@@ -25,7 +25,7 @@
     "@list" : [ {
       "@id" : "https://w3id.org/enigma#Cohort"
     }, {
-      "@id" : "https://w3id.org/enigma#Project"
+      "@id" : "https://w3id.org/enigma#CohortGroup"
     } ]
   } ]
 }, {
@@ -35,7 +35,7 @@
     "@list" : [ {
       "@id" : "https://w3id.org/enigma#Cohort"
     }, {
-      "@id" : "https://w3id.org/enigma#Person"
+      "@id" : "https://w3id.org/enigma#Project"
     } ]
   } ]
 }, {
@@ -45,7 +45,7 @@
     "@list" : [ {
       "@id" : "https://w3id.org/enigma#Cohort"
     }, {
-      "@id" : "https://w3id.org/enigma#CohortGroup"
+      "@id" : "https://w3id.org/enigma#Person"
     } ]
   } ]
 }, {
@@ -65,6 +65,16 @@
     "@list" : [ {
       "@id" : "https://w3id.org/enigma#Cohort"
     }, {
+      "@id" : "https://w3id.org/enigma#CohortGroup"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid28",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/enigma#Cohort"
+    }, {
       "@id" : "https://w3id.org/enigma#ImageAcquisitionProtocol"
     }, {
       "@id" : "https://w3id.org/enigma#Project"
@@ -75,7 +85,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid31",
+  "@id" : "_:genid34",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -89,7 +99,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid36",
+  "@id" : "_:genid39",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -115,16 +125,6 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid42",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/enigma#Cohort"
-    }, {
-      "@id" : "https://w3id.org/enigma#CohortGroup"
-    } ]
-  } ]
-}, {
   "@id" : "_:genid45",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
@@ -141,11 +141,21 @@
     "@list" : [ {
       "@id" : "https://w3id.org/enigma#Cohort"
     }, {
-      "@id" : "https://w3id.org/enigma#Project"
+      "@id" : "https://w3id.org/enigma#CohortGroup"
     } ]
   } ]
 }, {
   "@id" : "_:genid51",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/enigma#Cohort"
+    }, {
+      "@id" : "https://w3id.org/enigma#Project"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid54",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -970,7 +980,7 @@
     "@value" : "Provides a brief description of the working group or project or cohort"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid25"
+    "@id" : "_:genid28"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1019,7 +1029,7 @@
     "@value" : "has cohort status"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid31"
+    "@id" : "_:genid34"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#hasCollectionSite",
@@ -1158,7 +1168,7 @@
     "@value" : "Property that links a project cohort with the data being described."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/enigma#ProjectCohort"
+    "@id" : "_:genid10"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1203,7 +1213,7 @@
     "@value" : "Describes what instrument is used to diagnose the members of the cohort"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid10"
+    "@id" : "_:genid13"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1252,7 +1262,7 @@
     "@value" : "has ethnic group"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid36"
+    "@id" : "_:genid39"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#hasExclusionCriteria",
@@ -1262,7 +1272,7 @@
     "@value" : "Criteria used to exclude cohort patients"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid42"
+    "@id" : "_:genid45"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1304,7 +1314,7 @@
     "@value" : "Describes the genetic data types that were collected for a cohort or project"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid13"
+    "@id" : "_:genid16"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1328,7 +1338,7 @@
     "@value" : "Property that describes the home page of a cohort or person"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid16"
+    "@id" : "_:genid19"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1352,7 +1362,7 @@
     "@value" : "Describes the acquisition protocol that was used to scan the data of a cohort"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid19"
+    "@id" : "_:genid22"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1439,7 +1449,7 @@
     "@value" : "Describes the mean age of the cohort"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid45"
+    "@id" : "_:genid48"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2189,7 +2199,7 @@
     "@value" : "Describes the study design of the cohort group or project (Case/control; Population; Healthy only; Patients only)\n\nNOTE: study design options are mutually exclusive for Cohort Groups but not Projects"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid48"
+    "@id" : "_:genid51"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2248,7 +2258,7 @@
     "@value" : "Property to identify the software used by a cohort"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid22"
+    "@id" : "_:genid25"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2269,7 +2279,7 @@
     "@value" : "Describes the scanner used by the cohort"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid51"
+    "@id" : "_:genid54"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",

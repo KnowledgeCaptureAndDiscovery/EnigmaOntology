@@ -248,7 +248,14 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDataset">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#ProjectCohort"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#ProjectCohort"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Dataset"/>
         <rdfs:comment xml:lang="en">Property that links a project cohort with the data being described.</rdfs:comment>
         <rdfs:label xml:lang="en">has dataset</rdfs:label>

@@ -149,7 +149,11 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 ###  https://w3id.org/enigma#hasDataset
 :hasDataset rdf:type owl:ObjectProperty ;
-            rdfs:domain :ProjectCohort ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :Cohort
+                                        :ProjectCohort
+                                      )
+                        ] ;
             rdfs:range :Dataset ;
             rdfs:comment "Property that links a project cohort with the data being described."@en ;
             rdfs:label "has dataset"@en .
