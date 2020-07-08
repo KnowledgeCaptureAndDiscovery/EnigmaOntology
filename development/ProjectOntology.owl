@@ -198,33 +198,21 @@
     
 
 
-    <!-- https://w3id.org/enigma#hasGeneReferencePanel -->
+    <!-- https://w3id.org/enigma#hasProtocol -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasGeneReferencePanel">
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasProtocol">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#GeneReferencePanel"/>
-        <vann:example xml:lang="en">BipolarProject hasGeneReferencePanel [instance of gene reference panel]</vann:example>
-        <rdfs:comment xml:lang="en">Describes the gene reference panel used by the project</rdfs:comment>
-        <rdfs:label xml:lang="en">has gene reference panel</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasGeneticAssociationProtocol -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasGeneticAssociationProtocol">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#GeneticAssociationProtocol"/>
-        <vann:example xml:lang="en">BipolarProject hasGeneticAssociationProtocol [instance of genetic association protocol]</vann:example>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Protocol"/>
+        <vann:example xml:lang="en">BipolarProject hasProtocol [instance of genetic association protocol]</vann:example>
         <rdfs:comment xml:lang="en">Describes the genetic association protocol that is used by the project</rdfs:comment>
-        <rdfs:label xml:lang="en">has genetic association protocol</rdfs:label>
+        <rdfs:label xml:lang="en">has protocol</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasGeneticDataType -->
+    <!-- https://w3id.org/enigma#requiresDataType -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasGeneticDataType">
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#requiresDataType">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasDataType"/>
         <rdfs:domain>
             <owl:Class>
@@ -235,23 +223,11 @@
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/enigma#GeneticDataType"/>
-        <vann:example xml:lang="en">BipolarProject hasGeneticDataType Exome</vann:example>
-        <rdfs:comment xml:lang="en">Describes the genetic data types that a cohort or project has</rdfs:comment>
-        <rdfs:label xml:lang="en">has genetic data type</rdfs:label>
+        <vann:example xml:lang="en">BipolarProject requiresDataType Exome</vann:example>
+        <rdfs:comment xml:lang="en">Describes the data types that a cohort or project requires</rdfs:comment>
+        <rdfs:label xml:lang="en">requires data type</rdfs:label>
     </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasGenotypeImputationProtocol -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasGenotypeImputationProtocol">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#GenotypeImputationProtocol"/>
-        <vann:example xml:lang="en">BipolarProject hasGenotypeImputationProtocol [instance of genotype imputation protocol]</vann:example>
-        <rdfs:comment xml:lang="en">Describes the genotype imputation protocol that is used by the project</rdfs:comment>
-        <rdfs:label xml:lang="en">has genotype imputation protocol</rdfs:label>
-    </owl:ObjectProperty>
-    
+       
 
 
     <!-- https://w3id.org/enigma#hasProjectLead -->
@@ -277,17 +253,6 @@
     </owl:ObjectProperty>
     
 
-
-    <!-- https://w3id.org/enigma#usesProtocol -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#usesProtocol">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Protocol"/>
-        <vann:example xml:lang="en">BipolarProject usesProtocol ENIGMA-SulciProtocol</vann:example>
-        <rdfs:comment xml:lang="en">Describes which data processing protocol was used in a project</rdfs:comment>
-        <rdfs:label xml:lang="en">uses protocol</rdfs:label>
-    </owl:ObjectProperty>
-    
 
 
     <!-- 
