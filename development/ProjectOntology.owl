@@ -107,7 +107,16 @@
         <rdfs:label xml:lang="en">for publication</rdfs:label>
     </owl:ObjectProperty>
     
+    
+    <!-- https://w3id.org/enigma#requiresDataType -->
 
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#requiresDataType">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#DataType"/>
+        <rdfs:comment xml:lang="en">Describes which data type is required by a project</rdfs:comment>
+        <rdfs:label xml:lang="en">requires data type</rdfs:label>
+    </owl:ObjectProperty>
+    
 
     <!-- https://w3id.org/enigma#hasBrainScanDataType -->
 
@@ -159,9 +168,9 @@
     
 
 
-    <!-- https://w3id.org/enigma#hasContact -->
+    <!-- https://w3id.org/enigma#hasPersonRole_ProjectContact -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasContact">
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasPersonRole_ProjectContact">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain>
             <owl:Class>
@@ -172,7 +181,7 @@
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">BipolarCohort hasContact JohnSmith</vann:example>
+        <vann:example xml:lang="en">BipolarCohort hasPersonRole_ProjectContact JohnSmith</vann:example>
         <rdfs:comment xml:lang="en">Property that points to the person that is a contact for the project or cohort</rdfs:comment>
         <rdfs:label xml:lang="en">has contact</rdfs:label>
     </owl:ObjectProperty>
@@ -288,6 +297,14 @@
         <rdfs:label xml:lang="en">uses protocol</rdfs:label>
     </owl:ObjectProperty>
     
+    <!-- https://w3id.org/enigma#hasDataProcessingProtocol -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDataProcessingProtocol">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Protocol"/>
+        <rdfs:comment xml:lang="en">Describes which data processing protocol was used in a project</rdfs:comment>
+        <rdfs:label xml:lang="en">uses protocol</rdfs:label>
+    </owl:ObjectProperty>
 
 
     <!-- 
@@ -337,12 +354,12 @@
     
 
 
-    <!-- https://w3id.org/enigma#hasApprovedProposalForm -->
+    <!-- https://w3id.org/enigma#hasProposalForm -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasApprovedProposalForm">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasProposalForm">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <vann:example xml:lang="en">Project1 hasApprovedProposalForm www.proposalformexample.com</vann:example>
+        <vann:example xml:lang="en">Project1 hasProposalForm www.proposalformexample.com</vann:example>
         <rdfs:comment xml:lang="en">Describes the approved proposal form link of a project</rdfs:comment>
         <rdfs:label xml:lang="en">has approved proposal form</rdfs:label>
     </owl:DatatypeProperty>
@@ -465,16 +482,45 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
     
 
 
-    <!-- https://w3id.org/enigma#hasTargetDate -->
+    <!-- https://w3id.org/enigma#hasDate_TargetEnd -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasTargetDate">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasDate_TargetEnd">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-        <vann:example xml:lang="en">BipolarProject hasTargetDate 2020-03-12</vann:example>
-        <rdfs:comment xml:lang="en">Describes the target date of the project</rdfs:comment>
-        <rdfs:label xml:lang="en">has target date</rdfs:label>
+        <vann:example xml:lang="en">BipolarProject hasDate_TargetEnd 2020-03-12</vann:example>
+        <rdfs:comment xml:lang="en">Describes the end date of the target period of the project</rdfs:comment>
+        <rdfs:label xml:lang="en">has target end date</rdfs:label>
     </owl:DatatypeProperty>
     
+    
+    <!-- https://w3id.org/enigma#hasDate_TargetStart -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasDate_TargetStart">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment xml:lang="en">Describes the start date of the target period of the project</rdfs:comment>
+        <rdfs:label xml:lang="en">has target start date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+    
+    <!-- https://w3id.org/enigma#hasDate_DataContributionDeadline -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasDate_DataContributionDeadline">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment xml:lang="en">Describes the deadline date for data contribution of a project</rdfs:comment>
+        <rdfs:label xml:lang="en">has data contribution deadline date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+    
+    <!-- https://w3id.org/enigma#hasDate_ProposalApproval -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasDate_ProposalApproval">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment xml:lang="en">Describes the date the proposal for a project was approved</rdfs:comment>
+        <rdfs:label xml:lang="en">has proposal approval date</rdfs:label>
+    </owl:DatatypeProperty>
 
 
     <!-- https://w3id.org/enigma#hasTitle -->
@@ -488,7 +534,16 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
         <rationale xml:lang="en">Property added to restrict the domain to enigma:AcademicArticle. This is done for facilitating the interaction with the wiki interface</rationale>
     </owl:DatatypeProperty>
     
+    
+    <!-- https://w3id.org/enigma#isActive -->
 
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasTitle">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Describes whether a project is active</rdfs:comment>
+        <rdfs:label xml:lang="en">is Active</rdfs:label>
+    </owl:DatatypeProperty>
+    
 
     <!-- https://w3id.org/enigma#hasVenue -->
 
