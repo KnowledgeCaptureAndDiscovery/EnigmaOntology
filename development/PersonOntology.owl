@@ -18,6 +18,7 @@
         <terms:description xml:lang="en">A cohort ontology that describes persons participating in ENIGMA and their properties.</terms:description>
         <terms:title>The Person Ontology</terms:title>
         <terms:contributor>Agnes McMahon</terms:contributor>
+        <terms:contributor>Haripriya Dharmala</terms:contributor>
         <terms:creator>Ryan Espiritu</terms:creator>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
         <vann:preferredNamespaceUri rdf:resource="https://w3id.org/enigma#"/>
@@ -397,9 +398,9 @@
     
 
 
-    <!-- http://xmlns.com/foaf/0.1/hasFamilyName -->
+    <!-- http://xmlns.com/foaf/0.1/familyName -->
 
-    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/hasFamilyName">
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/familyName">
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:comment>The family name of some person.</rdfs:comment>
         <rdfs:isDefinedBy xml:lang="en">http://xmlns.com/foaf/0.1/</rdfs:isDefinedBy>
@@ -407,9 +408,9 @@
     
 
 
-    <!-- http://xmlns.com/foaf/0.1/hasGivenName -->
+    <!-- http://xmlns.com/foaf/0.1/givenName -->
 
-    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/hasGivenName">
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/givenName">
         <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:comment xml:lang="en">The given name of some person.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
@@ -417,21 +418,21 @@
     
 
 
-    <!-- https://w3id.org/enigma#hasCurrentJobTitle -->
+    <!-- https://w3id.org/enigma#currentJobTitle -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasCurrentJobTitle">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#currentJobTitle">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <vann:example xml:lang="en">JohnSmith currentJobTitle &quot;Postdoc&quot;</vann:example>
         <rdfs:comment xml:lang="en">Data property that aims to capture the current job title of a person. Examples are student, faculty, staff, postdoc, etc.</rdfs:comment>
-        <rdfs:label xml:lang="en">has current job title</rdfs:label>
+        <rdfs:label xml:lang="en">current job title</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#familyName -->
+    <!-- https://w3id.org/enigma#hasFamilyName -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#familyName">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasFamilyName">
         <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/familyName"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -442,10 +443,10 @@
     
 
 
-    <!-- https://w3id.org/enigma#givenName -->
+    <!-- https://w3id.org/enigma#hasGivenName -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#givenName">
-        <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/givenName"/>
+        <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/hasGivenName"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <vaem:rationale xml:lang="en">Property added to restrict the domain to enigma:Person. This is done for facilitating the interaction with the wiki interface</vaem:rationale>
