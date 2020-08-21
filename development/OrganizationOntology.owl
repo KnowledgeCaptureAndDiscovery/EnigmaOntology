@@ -18,6 +18,7 @@
         <vann:preferredNamespacePrefix rdf:resource="https://w3id.org/enigma"/>
         <terms:contributor>Yolanda Gil</terms:contributor>
         <terms:contributor>Agnes McMahon</terms:contributor>
+        <terms:contributor>Haripriya Dharmala</terms:contributor>
         <terms:title>The Organization Ontology</terms:title>
         <terms:creator>Ryan Espiritu</terms:creator>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
@@ -71,6 +72,8 @@
 
     <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/isPartOf">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+        <rdfs:comment>A related resource in which the described resource is included.</rdfs:comment>
+        <rdfs:label>is Part of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -80,6 +83,7 @@
     <owl:ObjectProperty rdf:about="http://www.w3.org/2006/vcard/ns#hasAddress">
         <rdfs:range rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
         <rdfs:comment xml:lang="en">To specify the components of the address for the object</rdfs:comment>
+        <rdfs:label>has Address</rdfs:label>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/vcard/ns"/>
     </owl:ObjectProperty>
     
@@ -88,6 +92,8 @@
     <!-- http://xmlns.com/foaf/0.1/member -->
 
     <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/member">
+        <rdfs:comment>Indicates member of a group</rdfs:comment>
+        <rdfs:label>member</rdfs:label>
         <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
     </owl:ObjectProperty>
     
@@ -147,19 +153,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://www.w3.org/2006/vcard/ns#country-name -->
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/vcard/ns#country-name">
-        <rdfs:domain rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">The country name associated with the address of the object</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/vcard/ns"/>
-    </owl:DatatypeProperty>
-    
-
 
     <!-- http://www.w3.org/2006/vcard/ns#locality -->
 
@@ -167,43 +160,10 @@
         <rdfs:domain rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">The locality (e.g. city or town) associated with the address of the object</rdfs:comment>
+        <rdfs:label xml:lang="en">Locality</rdfs:label>
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/vcard/ns"/>
     </owl:DatatypeProperty>
     
-
-
-    <!-- http://www.w3.org/2006/vcard/ns#postal-code -->
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/vcard/ns#postal-code">
-        <rdfs:domain rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">The postal code associated with the address of the object</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/vcard/ns"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.w3.org/2006/vcard/ns#region -->
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/vcard/ns#region">
-        <rdfs:domain rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">The region (e.g. state or province) associated with the address of the object</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/vcard/ns"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.w3.org/2006/vcard/ns#street-address -->
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/vcard/ns#street-address">
-        <rdfs:domain rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">The street address associated with the address of the object</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/vcard/ns"/>
-    </owl:DatatypeProperty>
-    
-
 
     <!-- https://w3id.org/enigma#hasKindOfInstitute -->
 
@@ -219,47 +179,51 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <vann:example xml:lang="en">Organization kind &quot;University&quot;</vann:example>
         <rdfs:comment xml:lang="en">Describes the specific kind/type of an organization or working group</rdfs:comment>
-        <rdfs:label xml:lang="en">kind</rdfs:label>
+        <rdfs:label xml:lang="en">kind of institute</rdfs:label>
     </owl:DatatypeProperty>
     
     
     <!-- http://www.w3.org/2006/vcard/ns#hasStreetAddress -->
 
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/vcard/ns#hasStreetAddress">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/vcard/ns#street-address"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">The street address associated with the address of the object</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/vcard/ns"/>
+        <rdfs:label xml:lang="en">has street address</rdfs:label>
     </owl:DatatypeProperty>
     
     
     <!-- http://www.w3.org/2006/vcard/ns#hasCountryName -->
 
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/vcard/ns#hasCountryName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/vcard/ns#country-name"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">The country name associated with the address of the object</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/vcard/ns"/>
+        <rdfs:label xml:lang="en">has country name</rdfs:label>
     </owl:DatatypeProperty>
     
     
      <!-- http://www.w3.org/2006/vcard/ns#hasRegion -->
 
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/vcard/ns#hasRegion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/vcard/ns#region"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">The region (e.g. state or province) associated with the address of the object</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/vcard/ns"/>
+        <rdfs:label xml:lang="en">has region</rdfs:label>
     </owl:DatatypeProperty>
     
     
     <!-- http://www.w3.org/2006/vcard/ns#hasPostalCode -->
 
     <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/vcard/ns#hasPostalCode">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/vcard/ns#postal-code"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">The postal code associated with the address of the object</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/vcard/ns"/>
+        <rdfs:label xml:lang="en">has postal code</rdfs:label>
     </owl:DatatypeProperty>
     
     
@@ -269,6 +233,7 @@
         <rdfs:domain rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">The coordinates associated with the address of the organization</rdfs:comment>
+        <rdfs:label xml:lang="en">has coordinates</rdfs:label>
     </owl:DatatypeProperty>
 
 
