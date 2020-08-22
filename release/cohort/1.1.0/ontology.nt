@@ -2,6 +2,7 @@
 <https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/enigma/cohort/1.1.0> .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Agnes McMahon" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Daniel Garijo" .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Haripriya Dharmala" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Yolanda Gil" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "MiHyun Jang" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "Michael Bornstein" .
@@ -71,16 +72,15 @@
 # #################################################################
 # 
 # 
-# http://schema.org/distribution
-<http://schema.org/distribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://schema.org/distribution> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.org/Dataset> .
-<http://schema.org/distribution> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/DataDownload> .
-<http://schema.org/distribution> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://schema.org> .
-# 
 # http://xmlns.com/foaf/0.1/homepage
 <http://xmlns.com/foaf/0.1/homepage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://xmlns.com/foaf/0.1/homepage> <http://www.w3.org/2000/01/rdf-schema#comment> "A homepage for some thing." .
 <http://xmlns.com/foaf/0.1/homepage> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+<http://xmlns.com/foaf/0.1/homepage> <http://www.w3.org/2000/01/rdf-schema#label> "homepage" .
+# 
+# https://schema.org/distribution
+<https://schema.org/distribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://schema.org/distribution> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://schema.org/> .
 # 
 # https://w3id.org/enigma#hasBrainScanDataType
 <https://w3id.org/enigma#hasBrainScanDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -107,6 +107,14 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/enigma#hasCohortGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that indicates the cohort groups part of a cohort"@en .
 <https://w3id.org/enigma#hasCohortGroup> <http://www.w3.org/2000/01/rdf-schema#label> "has cohort group"@en .
 # 
+# https://w3id.org/enigma#hasCohortProject
+<https://w3id.org/enigma#hasCohortProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasCohortProject> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cohort> .
+<https://w3id.org/enigma#hasCohortProject> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#CohortProject> .
+<https://w3id.org/enigma#hasCohortProject> <http://purl.org/vocab/vann/example> "BipolarCohort hasCohortProject BipolarBarcelonaCohort"@en .
+<https://w3id.org/enigma#hasCohortProject> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the subcohorts, specific to a given project, that are part of that cohort"@en .
+<https://w3id.org/enigma#hasCohortProject> <http://www.w3.org/2000/01/rdf-schema#label> "has cohort project"@en .
+# 
 # https://w3id.org/enigma#hasContact
 <https://w3id.org/enigma#hasContact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/enigma#hasContact> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid4 .
@@ -123,6 +131,22 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/enigma#hasContact> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that points to the person that is a contact for the project or cohort"@en .
 <https://w3id.org/enigma#hasContact> <http://www.w3.org/2000/01/rdf-schema#label> "has contact"@en .
 # 
+# https://w3id.org/enigma#hasContributor
+<https://w3id.org/enigma#hasContributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasContributor> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid7 <http://www.w3.org/2002/07/owl#unionOf> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Cohort> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Project> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/enigma#hasContributor> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#hasContributor> <http://purl.org/vocab/vann/example> "BipolarCohort hasContributor JohnDoe"@en .
+<https://w3id.org/enigma#hasContributor> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that points to the contributor for the project or cohort"@en .
+<https://w3id.org/enigma#hasContributor> <http://www.w3.org/2000/01/rdf-schema#label> "has contributor"@en .
+# 
 # https://w3id.org/enigma#hasControlGroup
 <https://w3id.org/enigma#hasControlGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/enigma#hasControlGroup> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#hasCohortGroup> .
@@ -134,15 +158,15 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # https://w3id.org/enigma#hasDataType
 <https://w3id.org/enigma#hasDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#hasDataType> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid7 .
-_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid7 <http://www.w3.org/2002/07/owl#unionOf> _:genid9 .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Cohort> .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Project> .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/enigma#hasDataType> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid10 <http://www.w3.org/2002/07/owl#unionOf> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Cohort> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Project> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <https://w3id.org/enigma#hasDataType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#DataType> .
 <https://w3id.org/enigma#hasDataType> <http://purl.org/vocab/vann/example> "Cohort1 hasDataType dataType1"@en .
 <https://w3id.org/enigma#hasDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the data types that a cohort or project collected"@en .
@@ -150,17 +174,9 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # https://w3id.org/enigma#hasDataset
 <https://w3id.org/enigma#hasDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#hasDataset> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid10 .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid10 <http://www.w3.org/2002/07/owl#unionOf> _:genid12 .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Cohort> .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid11 .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#ProjectCohort> .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/enigma#hasDataset> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#CohortProject> .
 <https://w3id.org/enigma#hasDataset> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Dataset> .
-<https://w3id.org/enigma#hasDataset> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that links a project cohort with the data being described."@en .
+<https://w3id.org/enigma#hasDataset> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that links a cohort project with the data being described."@en .
 <https://w3id.org/enigma#hasDataset> <http://www.w3.org/2000/01/rdf-schema#label> "has dataset"@en .
 # 
 # https://w3id.org/enigma#hasDiagnosticGroup
@@ -195,6 +211,14 @@ _:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#hasDisorder> <http://purl.org/vocab/vann/example> "CohortGroup1 hasDisorder Cancer --> CohortGroup1 only includes people who have cancer"@en .
 <https://w3id.org/enigma#hasDisorder> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what disease(s) the members of the cohort group have"@en .
 <https://w3id.org/enigma#hasDisorder> <http://www.w3.org/2000/01/rdf-schema#label> "has disorder"@en .
+# 
+# https://w3id.org/enigma#hasDistribution
+<https://w3id.org/enigma#hasDistribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasDistribution> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://schema.org/distribution> .
+<https://w3id.org/enigma#hasDistribution> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Dataset> .
+<https://w3id.org/enigma#hasDistribution> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#DataDownload> .
+<https://w3id.org/enigma#hasDistribution> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates a downloadable form of a dataset at a specific location" .
+<https://w3id.org/enigma#hasDistribution> <http://www.w3.org/2000/01/rdf-schema#label> "has distribution" .
 # 
 # https://w3id.org/enigma#hasGeneticDataType
 <https://w3id.org/enigma#hasGeneticDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -281,32 +305,74 @@ _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#hasPrincipalInvestigator> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the principal investigator of the cohort"@en .
 <https://w3id.org/enigma#hasPrincipalInvestigator> <http://www.w3.org/2000/01/rdf-schema#label> "has principal investigator"@en .
 # 
-# https://w3id.org/enigma#hasProjectCohort
-<https://w3id.org/enigma#hasProjectCohort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#hasProjectCohort> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cohort> .
-<https://w3id.org/enigma#hasProjectCohort> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#ProjectCohort> .
-<https://w3id.org/enigma#hasProjectCohort> <http://purl.org/vocab/vann/example> "BipolarCohort hasProjectCohort BipolarBarcelonaCohort"@en .
-<https://w3id.org/enigma#hasProjectCohort> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the subcohorts, specific to a given project, that are part of that cohort"@en .
-<https://w3id.org/enigma#hasProjectCohort> <http://www.w3.org/2000/01/rdf-schema#label> "has project cohort"@en .
+# https://w3id.org/enigma#hasProject
+<https://w3id.org/enigma#hasProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasProject> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cohort> .
+<https://w3id.org/enigma#hasProject> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#hasProject> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that indicates the projects that a cohort has"@en .
+<https://w3id.org/enigma#hasProject> <http://www.w3.org/2000/01/rdf-schema#label> "has project"@en .
 # 
 # https://w3id.org/enigma#hasStatistics
 <https://w3id.org/enigma#hasStatistics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#hasStatistics> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#ProjectCohort> .
+<https://w3id.org/enigma#hasStatistics> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#CohortProject> .
 <https://w3id.org/enigma#hasStatistics> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Dataset> .
 <https://w3id.org/enigma#hasStatistics> <http://www.w3.org/2000/01/rdf-schema#comment> "Property used to link a cohort with the summary statistics that may have been  produced after applying a given protocol"@en .
 <https://w3id.org/enigma#hasStatistics> <http://www.w3.org/2000/01/rdf-schema#label> "has statistics"@en .
 # 
-# https://w3id.org/enigma#usedSoftware
-<https://w3id.org/enigma#usedSoftware> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#usedSoftware> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid25 .
+# https://w3id.org/enigma#isPartOfCohort
+<https://w3id.org/enigma#isPartOfCohort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#isPartOfCohort> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid25 .
 _:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 _:genid25 <http://www.w3.org/2002/07/owl#unionOf> _:genid27 .
 _:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Cohort> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#CohortGroup> .
 _:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid26 .
 _:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#CohortGroup> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#CohortProject> .
 _:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/enigma#isPartOfCohort> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Cohort> .
+<https://w3id.org/enigma#isPartOfCohort> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that indicates the cohort groups and cohort projects which are part of a cohort"@en .
+<https://w3id.org/enigma#isPartOfCohort> <http://www.w3.org/2000/01/rdf-schema#label> "is part of cohort"@en .
+# 
+# https://w3id.org/enigma#isPartOfCohortGroup
+<https://w3id.org/enigma#isPartOfCohortGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#isPartOfCohortGroup> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#isPartOfCohortGroup> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#CohortGroup> .
+<https://w3id.org/enigma#isPartOfCohortGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that indicates the projects which are part of a cohort group"@en .
+<https://w3id.org/enigma#isPartOfCohortGroup> <http://www.w3.org/2000/01/rdf-schema#label> "is part of cohort group"@en .
+# 
+# https://w3id.org/enigma#isPartOfCohortProject
+<https://w3id.org/enigma#isPartOfCohortProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#isPartOfCohortProject> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#CohortGroup> .
+<https://w3id.org/enigma#isPartOfCohortProject> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#CohortProject> .
+<https://w3id.org/enigma#isPartOfCohortProject> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that indicates the cohort groups which are part of a cohort project"@en .
+<https://w3id.org/enigma#isPartOfCohortProject> <http://www.w3.org/2000/01/rdf-schema#label> "is part of cohort project"@en .
+# 
+# https://w3id.org/enigma#isPartOfProject
+<https://w3id.org/enigma#isPartOfProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#isPartOfProject> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#CohortGroup> .
+<https://w3id.org/enigma#isPartOfProject> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Project> .
+<https://w3id.org/enigma#isPartOfProject> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that indicates the cohort groups specific to a project"@en .
+<https://w3id.org/enigma#isPartOfProject> <http://www.w3.org/2000/01/rdf-schema#label> "is part of project"@en .
+# 
+# https://w3id.org/enigma#isPartOfWorkingGroup
+<https://w3id.org/enigma#isPartOfWorkingGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#isPartOfWorkingGroup> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cohort> .
+<https://w3id.org/enigma#isPartOfWorkingGroup> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#WorkingGroup> .
+<https://w3id.org/enigma#isPartOfWorkingGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that indicates the cohorts which are a part of a working group"@en .
+<https://w3id.org/enigma#isPartOfWorkingGroup> <http://www.w3.org/2000/01/rdf-schema#label> "is part of working group"@en .
+# 
+# https://w3id.org/enigma#usedSoftware
+<https://w3id.org/enigma#usedSoftware> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#usedSoftware> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid28 <http://www.w3.org/2002/07/owl#unionOf> _:genid30 .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Cohort> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#CohortGroup> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <https://w3id.org/enigma#usedSoftware> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Software> .
 <https://w3id.org/enigma#usedSoftware> <http://www.w3.org/2000/01/rdf-schema#comment> "Property to identify the software used by a cohort"@en .
 <https://w3id.org/enigma#usedSoftware> <http://www.w3.org/2000/01/rdf-schema#label> "used software"@en .
@@ -320,25 +386,21 @@ _:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 # #################################################################
 # 
 # 
-# http://schema.org/contentUrl
-<http://schema.org/contentUrl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.org/contentUrl> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.org/DataDownload> .
-<http://schema.org/contentUrl> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI> .
-<http://schema.org/contentUrl> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://schema.org> .
+# https://schema.org/contentUrl
+<https://schema.org/contentUrl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://schema.org/contentUrl> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://schema.org/> .
 # 
-# http://schema.org/description
-<http://schema.org/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.org/description> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://schema.org> .
+# https://schema.org/description
+<https://schema.org/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://schema.org/description> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://schema.org/> .
 # 
-# http://schema.org/encodingFormat
-<http://schema.org/encodingFormat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.org/encodingFormat> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.org/DataDownload> .
-<http://schema.org/encodingFormat> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://schema.org/encodingFormat> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://schema.org> .
+# https://schema.org/encodingFormat
+<https://schema.org/encodingFormat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://schema.org/encodingFormat> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://schema.org/> .
 # 
-# http://schema.org/name
-<http://schema.org/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://schema.org> .
+# https://schema.org/name
+<https://schema.org/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://schema.org> .
 # 
 # https://w3id.org/enigma#hasAdditionalDemographic
 <https://w3id.org/enigma#hasAdditionalDemographic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -356,34 +418,66 @@ _:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#hasAgeGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the age groupings of individuals within a cohort group"@en .
 <https://w3id.org/enigma#hasAgeGroup> <http://www.w3.org/2000/01/rdf-schema#label> "has age group"@en .
 # 
-# https://w3id.org/enigma#hasAgeStandardDeviation
-<https://w3id.org/enigma#hasAgeStandardDeviation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasAgeStandardDeviation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cohort> .
-<https://w3id.org/enigma#hasAgeStandardDeviation> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
-<https://w3id.org/enigma#hasAgeStandardDeviation> <http://purl.org/vocab/vann/example> "Cohort1 hasAgeStandardDeviation 5.0"@en .
-<https://w3id.org/enigma#hasAgeStandardDeviation> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the standard deviation of the age of a cohort"@en .
-<https://w3id.org/enigma#hasAgeStandardDeviation> <http://www.w3.org/2000/01/rdf-schema#label> "has age standard deviation"@en .
+# https://w3id.org/enigma#hasAge_Maximum
+<https://w3id.org/enigma#hasAge_Maximum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasAge_Maximum> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#CohortGroup> .
+<https://w3id.org/enigma#hasAge_Maximum> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#positiveInteger> .
+<https://w3id.org/enigma#hasAge_Maximum> <http://purl.org/vocab/vann/example> "CohortGroup1 hasAge_Maximum 60"@en .
+<https://w3id.org/enigma#hasAge_Maximum> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes inclusion criteria for maximum age of participants in a CohortGroup"@en .
+<https://w3id.org/enigma#hasAge_Maximum> <http://www.w3.org/2000/01/rdf-schema#label> "has maximum age"@en .
 # 
-# https://w3id.org/enigma#hasBriefDescription
-<https://w3id.org/enigma#hasBriefDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasBriefDescription> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid28 .
-_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid28 <http://www.w3.org/2002/07/owl#unionOf> _:genid33 .
+# https://w3id.org/enigma#hasAge_Mean
+<https://w3id.org/enigma#hasAge_Mean> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasAge_Mean> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid31 .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid31 <http://www.w3.org/2002/07/owl#unionOf> _:genid33 .
 _:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Cohort> .
 _:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid32 .
 _:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#ImageAcquisitionProtocol> .
-_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid31 .
-_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Project> .
-_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid30 .
-_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Software> .
-_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid29 .
-_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#WorkingGroup> .
-_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#CohortGroup> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/enigma#hasAge_Mean> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<https://w3id.org/enigma#hasAge_Mean> <http://purl.org/vocab/vann/example> "Cohort1 hasAge_Mean 21.0"@en .
+<https://w3id.org/enigma#hasAge_Mean> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the mean age of the cohort"@en .
+<https://w3id.org/enigma#hasAge_Mean> <http://www.w3.org/2000/01/rdf-schema#label> "has mean age"@en .
+# 
+# https://w3id.org/enigma#hasAge_Minimum
+<https://w3id.org/enigma#hasAge_Minimum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasAge_Minimum> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#CohortGroup> .
+<https://w3id.org/enigma#hasAge_Minimum> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#positiveInteger> .
+<https://w3id.org/enigma#hasAge_Minimum> <http://purl.org/vocab/vann/example> "CohortGroup1 hasAge_Minimum 12"@en .
+<https://w3id.org/enigma#hasAge_Minimum> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes inclusion criteria for minimum age of participants in a CohortGroup"@en .
+<https://w3id.org/enigma#hasAge_Minimum> <http://www.w3.org/2000/01/rdf-schema#label> "has minimum age"@en .
+# 
+# https://w3id.org/enigma#hasAge_StandardDeviation
+<https://w3id.org/enigma#hasAge_StandardDeviation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasAge_StandardDeviation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cohort> .
+<https://w3id.org/enigma#hasAge_StandardDeviation> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<https://w3id.org/enigma#hasAge_StandardDeviation> <http://purl.org/vocab/vann/example> "Cohort1 hasAge_StandardDeviation 5.0"@en .
+<https://w3id.org/enigma#hasAge_StandardDeviation> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the standard deviation of the age of a cohort"@en .
+<https://w3id.org/enigma#hasAge_StandardDeviation> <http://www.w3.org/2000/01/rdf-schema#label> "has age standard deviation"@en .
+# 
+# https://w3id.org/enigma#hasBriefDescription
+<https://w3id.org/enigma#hasBriefDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasBriefDescription> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid34 .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid34 <http://www.w3.org/2002/07/owl#unionOf> _:genid39 .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Cohort> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid38 .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#ImageAcquisitionProtocol> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid37 .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Project> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid36 .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Software> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid35 .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#WorkingGroup> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <https://w3id.org/enigma#hasBriefDescription> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/enigma#hasBriefDescription> <http://purl.org/vocab/vann/example> "SZCohort hasBriefDescription \"finds correlations between schizophrenia and other conditions\""@en .
 <https://w3id.org/enigma#hasBriefDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "Provides a brief description of the working group or project or cohort"@en .
@@ -392,21 +486,21 @@ _:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 # https://w3id.org/enigma#hasCohortStatus
 <https://w3id.org/enigma#hasCohortStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/enigma#hasCohortStatus> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cohort> .
-<https://w3id.org/enigma#hasCohortStatus> <http://www.w3.org/2000/01/rdf-schema#range> _:genid34 .
-_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
-_:genid34 <http://www.w3.org/2002/07/owl#oneOf> _:genid38 .
-_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "gathering participants" .
-_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid37 .
-_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "protocol preparation" .
-_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid36 .
-_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "published" .
-_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid35 .
-_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "revision" .
-_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/enigma#hasCohortStatus> <http://www.w3.org/2000/01/rdf-schema#range> _:genid40 .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+_:genid40 <http://www.w3.org/2002/07/owl#oneOf> _:genid44 .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "gathering participants" .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid43 .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "protocol preparation" .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid42 .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "published" .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid41 .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "revision" .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <https://w3id.org/enigma#hasCohortStatus> <http://purl.org/vocab/vann/example> "CohortGroup1 hasCohortStatus published"@en .
 <https://w3id.org/enigma#hasCohortStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the current status of a cohort"@en .
 <https://w3id.org/enigma#hasCohortStatus> <http://www.w3.org/2000/01/rdf-schema#label> "has cohort status"@en .
@@ -418,6 +512,14 @@ _:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#hasCollectionSite> <http://purl.org/vocab/vann/example> "Cohort1 hasCollectionSite Toronto"@en .
 <https://w3id.org/enigma#hasCollectionSite> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes where the data of the cohort was collected"@en .
 <https://w3id.org/enigma#hasCollectionSite> <http://www.w3.org/2000/01/rdf-schema#label> "has collection site"@en .
+# 
+# https://w3id.org/enigma#hasContentUrl
+<https://w3id.org/enigma#hasContentUrl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasContentUrl> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://schema.org/contentUrl> .
+<https://w3id.org/enigma#hasContentUrl> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#DataDownload> .
+<https://w3id.org/enigma#hasContentUrl> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/enigma#hasContentUrl> <http://www.w3.org/2000/01/rdf-schema#comment> "Points to a media object, like an image or video file" .
+<https://w3id.org/enigma#hasContentUrl> <http://www.w3.org/2000/01/rdf-schema#label> "has content URL" .
 # 
 # https://w3id.org/enigma#hasDataCollectionPeriodEnd
 <https://w3id.org/enigma#hasDataCollectionPeriodEnd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -435,42 +537,50 @@ _:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#hasDataCollectionPeriodStart> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the start year of the data collection period of the cohort"@en .
 <https://w3id.org/enigma#hasDataCollectionPeriodStart> <http://www.w3.org/2000/01/rdf-schema#label> "has data collection period start"@en .
 # 
+# https://w3id.org/enigma#hasDescription
+<https://w3id.org/enigma#hasDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasDescription> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://schema.org/description> .
+<https://w3id.org/enigma#hasDescription> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Dataset> .
+<https://w3id.org/enigma#hasDescription> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#hasDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "Description of an item" .
+<https://w3id.org/enigma#hasDescription> <http://www.w3.org/2000/01/rdf-schema#label> "has description" .
+# 
 # https://w3id.org/enigma#hasEthnicGroup
 <https://w3id.org/enigma#hasEthnicGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/enigma#hasEthnicGroup> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cohort> .
-<https://w3id.org/enigma#hasEthnicGroup> <http://www.w3.org/2000/01/rdf-schema#range> _:genid39 .
-_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
-_:genid39 <http://www.w3.org/2002/07/owl#oneOf> _:genid44 .
-_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "African American" .
-_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid43 .
-_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "Asian" .
-_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid42 .
-_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "European" .
-_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid41 .
-_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "Latino" .
-_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid40 .
-_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "Two or More Races" .
-_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/enigma#hasEthnicGroup> <http://www.w3.org/2000/01/rdf-schema#range> _:genid45 .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+_:genid45 <http://www.w3.org/2002/07/owl#oneOf> _:genid50 .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "African American" .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid49 .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "Asian" .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid48 .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "European" .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid47 .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "Latino" .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid46 .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "Two or More Races" .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <https://w3id.org/enigma#hasEthnicGroup> <http://purl.org/vocab/vann/example> "Cohort1 hasEthnicGroup \"European\""@en .
 <https://w3id.org/enigma#hasEthnicGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the ethnic group that the participants of the cohort are in"@en .
 <https://w3id.org/enigma#hasEthnicGroup> <http://www.w3.org/2000/01/rdf-schema#label> "has ethnic group"@en .
 # 
 # https://w3id.org/enigma#hasExclusionCriteria
 <https://w3id.org/enigma#hasExclusionCriteria> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasExclusionCriteria> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid45 .
-_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid45 <http://www.w3.org/2002/07/owl#unionOf> _:genid47 .
-_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Cohort> .
-_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid46 .
-_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#CohortGroup> .
-_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/enigma#hasExclusionCriteria> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid51 .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid51 <http://www.w3.org/2002/07/owl#unionOf> _:genid53 .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Cohort> .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid52 .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#CohortGroup> .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <https://w3id.org/enigma#hasExclusionCriteria> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/enigma#hasExclusionCriteria> <http://www.w3.org/2000/01/rdf-schema#comment> "Criteria used to exclude cohort patients"@en .
 <https://w3id.org/enigma#hasExclusionCriteria> <http://www.w3.org/2000/01/rdf-schema#label> "has exclusion criteria"@en .
@@ -483,101 +593,44 @@ _:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#hasFundingSource> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the funding source of the cohort"@en .
 <https://w3id.org/enigma#hasFundingSource> <http://www.w3.org/2000/01/rdf-schema#label> "has funding source"@en .
 # 
-# https://w3id.org/enigma#hasMaximumAge
-<https://w3id.org/enigma#hasMaximumAge> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasMaximumAge> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#CohortGroup> .
-<https://w3id.org/enigma#hasMaximumAge> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#positiveInteger> .
-<https://w3id.org/enigma#hasMaximumAge> <http://purl.org/vocab/vann/example> "CohortGroup1 hasMaximumAge 60"@en .
-<https://w3id.org/enigma#hasMaximumAge> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes inclusion criteria for maximum age of participants in a CohortGroup"@en .
-<https://w3id.org/enigma#hasMaximumAge> <http://www.w3.org/2000/01/rdf-schema#label> "has maximum age"@en .
+# https://w3id.org/enigma#hasGroupCriteria
+<https://w3id.org/enigma#hasGroupCriteria> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasGroupCriteria> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid54 .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid54 <http://www.w3.org/2002/07/owl#unionOf> _:genid56 .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Cohort> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid55 .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#CohortGroup> .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/enigma#hasGroupCriteria> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#hasGroupCriteria> <http://www.w3.org/2000/01/rdf-schema#comment> "Criteria used to define group of cohort patients"@en .
+<https://w3id.org/enigma#hasGroupCriteria> <http://www.w3.org/2000/01/rdf-schema#label> "has group criteria"@en .
 # 
-# https://w3id.org/enigma#hasMeanAge
-<https://w3id.org/enigma#hasMeanAge> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasMeanAge> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid48 .
-_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid48 <http://www.w3.org/2002/07/owl#unionOf> _:genid50 .
-_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Cohort> .
-_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid49 .
-_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#CohortGroup> .
-_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<https://w3id.org/enigma#hasMeanAge> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
-<https://w3id.org/enigma#hasMeanAge> <http://purl.org/vocab/vann/example> "Cohort1 hasMeanAge 21.0"@en .
-<https://w3id.org/enigma#hasMeanAge> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the mean age of the cohort"@en .
-<https://w3id.org/enigma#hasMeanAge> <http://www.w3.org/2000/01/rdf-schema#label> "has mean age"@en .
+# https://w3id.org/enigma#hasName
+<https://w3id.org/enigma#hasName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasName> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://schema.org/name> .
+<https://w3id.org/enigma#hasName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Dataset> .
+<https://w3id.org/enigma#hasName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#hasName> <http://www.w3.org/2000/01/rdf-schema#comment> "Name of an item" .
+<https://w3id.org/enigma#hasName> <http://www.w3.org/2000/01/rdf-schema#label> "has name" .
 # 
-# https://w3id.org/enigma#hasMinimumAge
-<https://w3id.org/enigma#hasMinimumAge> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasMinimumAge> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#CohortGroup> .
-<https://w3id.org/enigma#hasMinimumAge> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#positiveInteger> .
-<https://w3id.org/enigma#hasMinimumAge> <http://purl.org/vocab/vann/example> "CohortGroup1 hasMinimumAge 12"@en .
-<https://w3id.org/enigma#hasMinimumAge> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes inclusion criteria for minimum age of participants in a CohortGroup"@en .
-<https://w3id.org/enigma#hasMinimumAge> <http://www.w3.org/2000/01/rdf-schema#label> "has minimum age"@en .
+# https://w3id.org/enigma#hasNumberOfFemaleSex
+<https://w3id.org/enigma#hasNumberOfFemaleSex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasNumberOfFemaleSex> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#CohortGroup> .
+<https://w3id.org/enigma#hasNumberOfFemaleSex> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/enigma#hasNumberOfFemaleSex> <http://purl.org/vocab/vann/example> "CohortGroup2 hasNumberOfFemaleSex 16"@en .
+<https://w3id.org/enigma#hasNumberOfFemaleSex> <http://www.w3.org/2000/01/rdf-schema#comment> "Describing the number of females in a cohort group"@en .
+<https://w3id.org/enigma#hasNumberOfFemaleSex> <http://www.w3.org/2000/01/rdf-schema#label> "has number of females"@en .
 # 
-# https://w3id.org/enigma#hasNumberOfASL
-<https://w3id.org/enigma#hasNumberOfASL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasNumberOfASL> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#ProjectCohort> .
-<https://w3id.org/enigma#hasNumberOfASL> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/enigma#hasNumberOfASL> <http://purl.org/vocab/vann/example> "ProjectCohortSZ hasNumberOfASL 21"@en .
-<https://w3id.org/enigma#hasNumberOfASL> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the amount of arterial spin labeling image data collected by a project cohort"@en .
-<https://w3id.org/enigma#hasNumberOfASL> <http://www.w3.org/2000/01/rdf-schema#label> "has number of ASL"@en .
-# 
-# https://w3id.org/enigma#hasNumberOfEEG
-<https://w3id.org/enigma#hasNumberOfEEG> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasNumberOfEEG> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#ProjectCohort> .
-<https://w3id.org/enigma#hasNumberOfEEG> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/enigma#hasNumberOfEEG> <http://purl.org/vocab/vann/example> "ProjectCohortSZ hasNumberOfEEG 30"@en .
-<https://w3id.org/enigma#hasNumberOfEEG> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the amount of electroencephalography image data collected by a project cohort"@en .
-<https://w3id.org/enigma#hasNumberOfEEG> <http://www.w3.org/2000/01/rdf-schema#label> "has number of EEG"@en .
-# 
-# https://w3id.org/enigma#hasNumberOfParticipants
-<https://w3id.org/enigma#hasNumberOfParticipants> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasNumberOfParticipants> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cohort> .
-<https://w3id.org/enigma#hasNumberOfParticipants> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#positiveInteger> .
-<https://w3id.org/enigma#hasNumberOfParticipants> <http://purl.org/vocab/vann/example> "Cohort1 hasNumberOfParticipants 500 --> Cohort1 is made up of approximately 500 patients"@en .
-<https://w3id.org/enigma#hasNumberOfParticipants> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the number of participants in the cohort"@en .
-<https://w3id.org/enigma#hasNumberOfParticipants> <http://www.w3.org/2000/01/rdf-schema#label> "has number of participants"@en .
-# 
-# https://w3id.org/enigma#hasNumberOfSWI
-<https://w3id.org/enigma#hasNumberOfSWI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasNumberOfSWI> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#ProjectCohort> .
-<https://w3id.org/enigma#hasNumberOfSWI> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/enigma#hasNumberOfSWI> <http://purl.org/vocab/vann/example> "ProjectCohortSZ hasNumberOfSWI 20"@en .
-<https://w3id.org/enigma#hasNumberOfSWI> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the amount of susceptibility weighted imaging image data collected by a project cohort"@en .
-<https://w3id.org/enigma#hasNumberOfSWI> <http://www.w3.org/2000/01/rdf-schema#label> "has number of SWI"@en .
-# 
-# https://w3id.org/enigma#hasNumberOfT1w
-<https://w3id.org/enigma#hasNumberOfT1w> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasNumberOfT1w> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#ProjectCohort> .
-<https://w3id.org/enigma#hasNumberOfT1w> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/enigma#hasNumberOfT1w> <http://purl.org/vocab/vann/example> "ProjectCohortSZ hasNumberOfT1w 8"@en .
-<https://w3id.org/enigma#hasNumberOfT1w> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the amount of T1-weighted image data collected by a project cohort"@en .
-<https://w3id.org/enigma#hasNumberOfT1w> <http://www.w3.org/2000/01/rdf-schema#label> "has number of T1w"@en .
-# 
-# https://w3id.org/enigma#hasNumberOfT2
-<https://w3id.org/enigma#hasNumberOfT2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasNumberOfT2> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#ProjectCohort> .
-<https://w3id.org/enigma#hasNumberOfT2> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/enigma#hasNumberOfT2> <http://purl.org/vocab/vann/example> "ProjectCohortSZ hasNumberOfT2 10"@en .
-<https://w3id.org/enigma#hasNumberOfT2> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the amount of T2 image data  collected by a project cohort"@en .
-<https://w3id.org/enigma#hasNumberOfT2> <http://www.w3.org/2000/01/rdf-schema#label> "has number of T2"@en .
-# 
-# https://w3id.org/enigma#hasNumberOfTransgenderFtoM
-<https://w3id.org/enigma#hasNumberOfTransgenderFtoM> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasNumberOfTransgenderFtoM> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#CohortGroup> .
-<https://w3id.org/enigma#hasNumberOfTransgenderFtoM> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/enigma#hasNumberOfTransgenderFtoM> <http://purl.org/vocab/vann/example> "CohortGroup2 hasNumberOfTransgenderFtoM 14"@en .
-<https://w3id.org/enigma#hasNumberOfTransgenderFtoM> <http://www.w3.org/2000/01/rdf-schema#comment> "Describing the number of female to male transgender individuals in a cohort group"@en .
-<https://w3id.org/enigma#hasNumberOfTransgenderFtoM> <http://www.w3.org/2000/01/rdf-schema#label> "has number of transgender F to M"@en .
-# 
-# https://w3id.org/enigma#hasNumberOfTransgenderMtoF
-<https://w3id.org/enigma#hasNumberOfTransgenderMtoF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasNumberOfTransgenderMtoF> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#CohortGroup> .
-<https://w3id.org/enigma#hasNumberOfTransgenderMtoF> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/enigma#hasNumberOfTransgenderMtoF> <http://purl.org/vocab/vann/example> "CohortGroup1 hasNumberOfTransgenderMtoF 20"@en .
-<https://w3id.org/enigma#hasNumberOfTransgenderMtoF> <http://www.w3.org/2000/01/rdf-schema#comment> "Describing the number of male to female transgender individuals in a cohort group"@en .
-<https://w3id.org/enigma#hasNumberOfTransgenderMtoF> <http://www.w3.org/2000/01/rdf-schema#label> "has number of transgender m to f"@en .
+# https://w3id.org/enigma#hasNumberOfMaleSex
+<https://w3id.org/enigma#hasNumberOfMaleSex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasNumberOfMaleSex> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#CohortGroup> .
+<https://w3id.org/enigma#hasNumberOfMaleSex> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/enigma#hasNumberOfMaleSex> <http://purl.org/vocab/vann/example> "CohortGroup2 hasNumberOfMaleSex 12"@en .
+<https://w3id.org/enigma#hasNumberOfMaleSex> <http://www.w3.org/2000/01/rdf-schema#comment> "Describing the number of males in a cohort group"@en .
+<https://w3id.org/enigma#hasNumberOfMaleSex> <http://www.w3.org/2000/01/rdf-schema#label> "has number of males"@en .
 # 
 # https://w3id.org/enigma#hasNumberOfUndisclosedGender
 <https://w3id.org/enigma#hasNumberOfUndisclosedGender> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -586,30 +639,6 @@ _:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#hasNumberOfUndisclosedGender> <http://purl.org/vocab/vann/example> "CohortGroup1 hasNumberOfUndisclosedGender 50"@en .
 <https://w3id.org/enigma#hasNumberOfUndisclosedGender> <http://www.w3.org/2000/01/rdf-schema#comment> "Describing the number of individuals of undisclosed gender in a cohort group"@en .
 <https://w3id.org/enigma#hasNumberOfUndisclosedGender> <http://www.w3.org/2000/01/rdf-schema#label> "has number of undisclosed gender"@en .
-# 
-# https://w3id.org/enigma#hasNumberOfdMRI
-<https://w3id.org/enigma#hasNumberOfdMRI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasNumberOfdMRI> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#ProjectCohort> .
-<https://w3id.org/enigma#hasNumberOfdMRI> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/enigma#hasNumberOfdMRI> <http://purl.org/vocab/vann/example> "ProjectCohortSZ hasNumberOfdMRI 10"@en .
-<https://w3id.org/enigma#hasNumberOfdMRI> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the amount of diffusion MRI image data  collected by a project cohort"@en .
-<https://w3id.org/enigma#hasNumberOfdMRI> <http://www.w3.org/2000/01/rdf-schema#label> "has number of dMRI"@en .
-# 
-# https://w3id.org/enigma#hasNumberOfrsfMRI
-<https://w3id.org/enigma#hasNumberOfrsfMRI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasNumberOfrsfMRI> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#ProjectCohort> .
-<https://w3id.org/enigma#hasNumberOfrsfMRI> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/enigma#hasNumberOfrsfMRI> <http://purl.org/vocab/vann/example> "ProjectCohortSZ hasNumberOfrsfMRI 17"@en .
-<https://w3id.org/enigma#hasNumberOfrsfMRI> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the amount of resting state fMRI image data collected by a project cohort"@en .
-<https://w3id.org/enigma#hasNumberOfrsfMRI> <http://www.w3.org/2000/01/rdf-schema#label> "has number of rsfMRI"@en .
-# 
-# https://w3id.org/enigma#hasNumberOftbfMRI
-<https://w3id.org/enigma#hasNumberOftbfMRI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasNumberOftbfMRI> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#ProjectCohort> .
-<https://w3id.org/enigma#hasNumberOftbfMRI> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/enigma#hasNumberOftbfMRI> <http://purl.org/vocab/vann/example> "ProjectCohortSZ hasNumberOftbfMRI 17"@en .
-<https://w3id.org/enigma#hasNumberOftbfMRI> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the amount of total body fat measured on MRI image data collected by a project cohort"@en .
-<https://w3id.org/enigma#hasNumberOftbfMRI> <http://www.w3.org/2000/01/rdf-schema#label> "has number of tbfMRI"@en .
 # 
 # https://w3id.org/enigma#hasPercentBloodSalivaCollection
 <https://w3id.org/enigma#hasPercentBloodSalivaCollection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -679,7 +708,7 @@ _:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#hasPercentOfFemale> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/enigma#hasPercentOfFemale> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#CohortGroup> .
 <https://w3id.org/enigma#hasPercentOfFemale> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/enigma#hasPercentOfFemale> <http://purl.org/vocab/vann/example> "CohortGroup1 hasNumberOfFemale 50"@en .
+<https://w3id.org/enigma#hasPercentOfFemale> <http://purl.org/vocab/vann/example> "CohortGroup1 hasPercentOfFemale 50"@en .
 <https://w3id.org/enigma#hasPercentOfFemale> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the percent of females in a cohort group"@en .
 <https://w3id.org/enigma#hasPercentOfFemale> <http://www.w3.org/2000/01/rdf-schema#label> "has percent of female"@en .
 # 
@@ -687,7 +716,7 @@ _:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#hasPercentOfMale> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/enigma#hasPercentOfMale> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#CohortGroup> .
 <https://w3id.org/enigma#hasPercentOfMale> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/enigma#hasPercentOfMale> <http://purl.org/vocab/vann/example> "CohortGroup1 hasNumberOfMale 50"@en .
+<https://w3id.org/enigma#hasPercentOfMale> <http://purl.org/vocab/vann/example> "CohortGroup1 hasPercentOfMale 50"@en .
 <https://w3id.org/enigma#hasPercentOfMale> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the percent of males in the cohort group"@en .
 <https://w3id.org/enigma#hasPercentOfMale> <http://www.w3.org/2000/01/rdf-schema#label> "has percent of male"@en .
 # 
@@ -755,15 +784,15 @@ _:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 # 
 # https://w3id.org/enigma#hasStudyDesign
 <https://w3id.org/enigma#hasStudyDesign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasStudyDesign> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid51 .
-_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid51 <http://www.w3.org/2002/07/owl#unionOf> _:genid53 .
-_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Cohort> .
-_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid52 .
-_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Project> .
-_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/enigma#hasStudyDesign> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid57 .
+_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid57 <http://www.w3.org/2002/07/owl#unionOf> _:genid59 .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Cohort> .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid58 .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Project> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <https://w3id.org/enigma#hasStudyDesign> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/enigma#hasStudyDesign> <http://purl.org/vocab/vann/example> "CohortGroup1 hasStudyDesign \"Population\""@en .
 <https://w3id.org/enigma#hasStudyDesign> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the study design of the cohort group or project (Case/control; Population; Healthy only; Patients only)\n\nNOTE: study design options are mutually exclusive for Cohort Groups but not Projects"@en .
@@ -777,6 +806,30 @@ _:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#hasStudyFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the study features of a cohort group (Clinical trial; Twin/Family study; Logitudinal; in-vivo; ex-vivo; post-mortem)"@en .
 <https://w3id.org/enigma#hasStudyFeature> <http://www.w3.org/2000/01/rdf-schema#label> "has study feature"@en .
 # 
+# https://w3id.org/enigma#hasTotalNumberOfParticipants
+<https://w3id.org/enigma#hasTotalNumberOfParticipants> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasTotalNumberOfParticipants> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cohort> .
+<https://w3id.org/enigma#hasTotalNumberOfParticipants> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#positiveInteger> .
+<https://w3id.org/enigma#hasTotalNumberOfParticipants> <http://purl.org/vocab/vann/example> "Cohort1 hasTotalNumberOfParticipants 500 --> Cohort1 is made up of approximately 500 patients"@en .
+<https://w3id.org/enigma#hasTotalNumberOfParticipants> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the total number of participants in the cohort"@en .
+<https://w3id.org/enigma#hasTotalNumberOfParticipants> <http://www.w3.org/2000/01/rdf-schema#label> "has number of participants"@en .
+# 
+# https://w3id.org/enigma#hasTransgenderFtoM
+<https://w3id.org/enigma#hasTransgenderFtoM> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasTransgenderFtoM> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#CohortGroup> .
+<https://w3id.org/enigma#hasTransgenderFtoM> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/enigma#hasTransgenderFtoM> <http://purl.org/vocab/vann/example> "CohortGroup2 hasTransgenderFtoM 14"@en .
+<https://w3id.org/enigma#hasTransgenderFtoM> <http://www.w3.org/2000/01/rdf-schema#comment> "Describing the number of female to male transgender individuals in a cohort group"@en .
+<https://w3id.org/enigma#hasTransgenderFtoM> <http://www.w3.org/2000/01/rdf-schema#label> "has transgender F to M"@en .
+# 
+# https://w3id.org/enigma#hasTransgenderMtoF
+<https://w3id.org/enigma#hasTransgenderMtoF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasTransgenderMtoF> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#CohortGroup> .
+<https://w3id.org/enigma#hasTransgenderMtoF> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/enigma#hasTransgenderMtoF> <http://purl.org/vocab/vann/example> "CohortGroup1 hasTransgenderMtoF 20"@en .
+<https://w3id.org/enigma#hasTransgenderMtoF> <http://www.w3.org/2000/01/rdf-schema#comment> "Describing the number of male to female transgender individuals in a cohort group"@en .
+<https://w3id.org/enigma#hasTransgenderMtoF> <http://www.w3.org/2000/01/rdf-schema#label> "has transgender m to f"@en .
+# 
 # https://w3id.org/enigma#isPublic
 <https://w3id.org/enigma#isPublic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/enigma#isPublic> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cohort> .
@@ -785,17 +838,25 @@ _:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#isPublic> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes if a cohort's data is publicly available"@en .
 <https://w3id.org/enigma#isPublic> <http://www.w3.org/2000/01/rdf-schema#label> "is public"@en .
 # 
+# https://w3id.org/enigma#usesEncodingFormat
+<https://w3id.org/enigma#usesEncodingFormat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#usesEncodingFormat> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://schema.org/encodingFormat> .
+<https://w3id.org/enigma#usesEncodingFormat> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#DataDownload> .
+<https://w3id.org/enigma#usesEncodingFormat> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#usesEncodingFormat> <http://www.w3.org/2000/01/rdf-schema#comment> "Encoding format of an item"@en .
+<https://w3id.org/enigma#usesEncodingFormat> <http://www.w3.org/2000/01/rdf-schema#label> "uses encoding format"@en .
+# 
 # https://w3id.org/enigma#usesScanner
 <https://w3id.org/enigma#usesScanner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#usesScanner> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid54 .
-_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid54 <http://www.w3.org/2002/07/owl#unionOf> _:genid56 .
-_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Cohort> .
-_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid55 .
-_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#CohortGroup> .
-_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/enigma#usesScanner> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid60 .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid60 <http://www.w3.org/2002/07/owl#unionOf> _:genid62 .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Cohort> .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid61 .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#CohortGroup> .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <https://w3id.org/enigma#usesScanner> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/enigma#usesScanner> <http://purl.org/vocab/vann/example> "SZCohort usesScanner \"1.5T-GE-Signa\""@en .
 <https://w3id.org/enigma#usesScanner> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the scanner used by the cohort"@en .
@@ -813,10 +874,13 @@ _:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 # http://schema.org/DataDownload
 <http://schema.org/DataDownload> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.org/DataDownload> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://schema.org> .
+<http://schema.org/DataDownload> <http://www.w3.org/2000/01/rdf-schema#label> "Data Download" .
 # 
 # http://schema.org/Dataset
 <http://schema.org/Dataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/Dataset> <http://www.w3.org/2000/01/rdf-schema#comment> "Dataset" .
 <http://schema.org/Dataset> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://schema.org> .
+<http://schema.org/Dataset> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset" .
 # 
 # https://w3id.org/enigma#AnxietyDisorder
 <https://w3id.org/enigma#AnxietyDisorder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -873,6 +937,13 @@ _:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#CohortGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "A subset of Cohort, which either forms the patient group or control group"@en .
 <https://w3id.org/enigma#CohortGroup> <http://www.w3.org/2000/01/rdf-schema#label> "Cohort Group"@en .
 # 
+# https://w3id.org/enigma#CohortProject
+<https://w3id.org/enigma#CohortProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#CohortProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/enigma#Cohort> .
+<https://w3id.org/enigma#CohortProject> <http://purl.org/vocab/vann/example> "\"Healthy\" individuals from the ASRB Cohort were sampled to form a Cohort Project of SZCorticol"@en .
+<https://w3id.org/enigma#CohortProject> <http://www.w3.org/2000/01/rdf-schema#comment> "The subset of the individuals from a Cohort, which are used as samples for a specific project"@en .
+<https://w3id.org/enigma#CohortProject> <http://www.w3.org/2000/01/rdf-schema#label> "Cohort Project"@en .
+# 
 # https://w3id.org/enigma#Condition
 <https://w3id.org/enigma#Condition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/enigma#Condition> <http://purl.org/vocab/vann/example> "Euthymia"@en .
@@ -885,6 +956,12 @@ _:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#Country> <http://purl.org/vocab/vann/example> "United States"@en .
 <https://w3id.org/enigma#Country> <http://www.w3.org/2000/01/rdf-schema#comment> "Country in which a cohort is located"@en .
 <https://w3id.org/enigma#Country> <http://www.w3.org/2000/01/rdf-schema#label> "Country"@en .
+# 
+# https://w3id.org/enigma#DataDownload
+<https://w3id.org/enigma#DataDownload> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#DataDownload> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/DataDownload> .
+<https://w3id.org/enigma#DataDownload> <http://www.w3.org/2000/01/rdf-schema#comment> "Dataset in downloadable form"@en .
+<https://w3id.org/enigma#DataDownload> <http://www.w3.org/2000/01/rdf-schema#label> "Data Download"@en .
 # 
 # https://w3id.org/enigma#DataType
 <https://w3id.org/enigma#DataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -988,13 +1065,6 @@ _:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#Project> <http://www.w3.org/2000/01/rdf-schema#comment> "Project associated with the cohort"@en .
 <https://w3id.org/enigma#Project> <http://www.w3.org/2000/01/rdf-schema#label> "Project"@en .
 # 
-# https://w3id.org/enigma#ProjectCohort
-<https://w3id.org/enigma#ProjectCohort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/enigma#ProjectCohort> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/enigma#Cohort> .
-<https://w3id.org/enigma#ProjectCohort> <http://purl.org/vocab/vann/example> "\"Healthy\" individuals from the ASRB Cohort were sampled to form a Project Cohort of SZCorticol"@en .
-<https://w3id.org/enigma#ProjectCohort> <http://www.w3.org/2000/01/rdf-schema#comment> "The subset of the individuals from a Cohort, which are used as samples for a specific project"@en .
-<https://w3id.org/enigma#ProjectCohort> <http://www.w3.org/2000/01/rdf-schema#label> "Project Cohort"@en .
-# 
 # https://w3id.org/enigma#RespiratoryDisorder
 <https://w3id.org/enigma#RespiratoryDisorder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/enigma#RespiratoryDisorder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/enigma#Disorder> .
@@ -1041,4 +1111,4 @@ _:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#WorkingGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "Group of researchers studying a certain topic/disease"@en .
 <https://w3id.org/enigma#WorkingGroup> <http://www.w3.org/2000/01/rdf-schema#label> "Working Group"@en .
 # 
-# Generated by the OWL API (version 5.1.9) https://github.com/owlcs/owlapi/
+# Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
