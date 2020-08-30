@@ -1,0 +1,171 @@
+@prefix : <https://w3id.org/enigma#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/enigma> .
+
+<https://w3id.org/enigma> rdf:type owl:Ontology ;
+                           owl:versionIRI <https://w3id.org/enigma/core/1.1.0> ;
+                           <http://purl.org/dc/terms/contributor> "Daniel Garijo" ,
+                                                                  "Yolanda Gil" ;
+                           <http://purl.org/dc/terms/creator> "MiHyun Jang" ,
+                                                              "Neda Jahanshad" ,
+                                                              "Ryan Espiritu" ;
+                           <http://purl.org/dc/terms/description> "A core ontology representing the main concepts of ENIGMA."@en ;
+                           <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> ;
+                           <http://purl.org/dc/terms/title> "The Core Ontology"@en ;
+                           <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma" ;
+                           <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
+                           owl:priorVersion <https://w3id.org/enigma/core/1.0.0> ;
+                           owl:versionInfo "v1.1.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/example
+<http://purl.org/vocab/vann/example> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/enigma#vann:example
+:vann:example rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/enigma#hasAffiliate
+:hasAffiliate rdf:type owl:ObjectProperty ;
+              rdfs:domain :Organization ;
+              rdfs:range :Person ;
+              <http://purl.org/vocab/vann/example> "Harvard hasAffiliate JohnSmith"@en ;
+              rdfs:comment "Points to the person who is an affiliate of an organization"@en ;
+              rdfs:label "has affiliate"@en .
+
+
+###  https://w3id.org/enigma#hasCohort
+:hasCohort rdf:type owl:ObjectProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Project
+                                       :WorkingGroup
+                                     )
+                       ] ;
+           rdfs:range :Cohort ;
+           <http://purl.org/vocab/vann/example> "BipolarProject hasCohort AmsterdamBipolarCohort --> Bipolar Project includes the Amsterdam Bipolar Cohort"@en ;
+           rdfs:comment "Describes what cohorts are part of the project"@en ;
+           rdfs:label "has cohort"@en .
+
+
+###  https://w3id.org/enigma#hasImageAcquisitionProtocol
+:hasImageAcquisitionProtocol rdf:type owl:ObjectProperty ;
+                             rdfs:domain :Cohort ;
+                             rdfs:range :ImageAcquisitionProtocol ;
+                             <http://purl.org/vocab/vann/example> "Cohort1 hasAcquisitionProtocol AcquiPro3"@en ;
+                             rdfs:comment "Describes the acquisition protocol that was used to scan a cohort"@en ;
+                             rdfs:label "has acquisition protocol"@en .
+
+
+###  https://w3id.org/enigma#hasPrincipalInvestigator
+:hasPrincipalInvestigator rdf:type owl:ObjectProperty ;
+                          rdfs:domain :Cohort ;
+                          rdfs:range :Person ;
+                          <http://purl.org/vocab/vann/example> "Cohort1 hasPrincipalInvestigator JohnSmith"@en ;
+                          rdfs:comment "Describes who the principal investigator of the cohort is"@en ;
+                          rdfs:label "has principal investigator"@en .
+
+
+###  https://w3id.org/enigma#hasProject
+:hasProject rdf:type owl:ObjectProperty ;
+            rdfs:domain :WorkingGroup ;
+            rdfs:range :Project ;
+            <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasProject BipolarCorticolProject --> The Bipolar Working Group is working on the Bipolar Corticol Project"@en ;
+            rdfs:comment "Describes what projects are worked on by a specific working group"@en ;
+            rdfs:label "has project"@en .
+
+
+###  https://w3id.org/enigma#hasWorkingGroupMember
+:hasWorkingGroupMember rdf:type owl:ObjectProperty ;
+                       rdfs:domain :WorkingGroup ;
+                       rdfs:range :Person ;
+                       <http://purl.org/vocab/vann/example> "BipolarWorkingGroup hasWorkingGroupMember JohnSmith --> The bipolar working group has John Smith as a member"@en ;
+                       rdfs:comment "Describes who the members of the working group are"@en ;
+                       rdfs:label "has working group member"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/enigma#Cohort
+:Cohort rdf:type owl:Class ;
+        <http://purl.org/vocab/vann/example> "ADNI: Alzheimer’s Disease Neuroimaging Initiative"@en ;
+        rdfs:comment "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria"@en ;
+        rdfs:label "Cohort"@en .
+
+
+###  https://w3id.org/enigma#ImageAcquisitionProtocol
+:ImageAcquisitionProtocol rdf:type owl:Class ;
+                          <http://purl.org/vocab/vann/example> "ENIGMA-Sulci"@en ;
+                          rdfs:comment "Procedure used to collect image data within the cohort"@en ;
+                          rdfs:label "Image Acquisition Protocol"@en .
+
+
+###  https://w3id.org/enigma#Organization
+:Organization rdf:type owl:Class ;
+              rdfs:comment "An organization belonging to the ENIGMA consortium. Organization can be hospitals, universities, departments, etc." ;
+              rdfs:label "Organization"@en .
+
+
+###  https://w3id.org/enigma#Person
+:Person rdf:type owl:Class ;
+        <http://purl.org/vocab/vann/example> "Theo van Erp"@en ;
+        rdfs:comment "Individual involved with the cohort"@en ;
+        rdfs:label "Person"@en .
+
+
+###  https://w3id.org/enigma#Project
+:Project rdf:type owl:Class ;
+         <http://purl.org/vocab/vann/example> "SZPositiveSymptoms"@en ;
+         rdfs:comment "Project associated with the cohort"@en ;
+         rdfs:label "Project"@en .
+
+
+###  https://w3id.org/enigma#WorkingGroup
+:WorkingGroup rdf:type owl:Class ;
+              <http://purl.org/vocab/vann/example> "BipolarWG"@en ;
+              rdfs:comment "Group of researchers studying a certain topic/disease"@en ;
+              rdfs:label "Working Group"@en .
+
+
+###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
