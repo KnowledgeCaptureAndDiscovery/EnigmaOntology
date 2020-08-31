@@ -246,17 +246,10 @@
     <!-- https://w3id.org/enigma#hasKindOfInstitute -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasKindOfInstitute">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Organization"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#WorkingGroup"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Organization"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <vann:example xml:lang="en">Organization kind &quot;University&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Describes the specific kind/type of an organization or working group</rdfs:comment>
+        <rdfs:comment xml:lang="en">Describes the specific kind/type of an organization</rdfs:comment>
         <rdfs:label xml:lang="en">kind of institute</rdfs:label>
     </owl:DatatypeProperty>
     
