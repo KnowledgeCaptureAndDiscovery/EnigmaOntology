@@ -144,10 +144,17 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasPrimaryAddress">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/vcard/ns#hasAddress"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Organization"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Organization"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Address"/>
         <vann:example xml:lang="en">USC hasPrimaryAddress &quot;123 Admiralty Way&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Describes the primary address of an organization</rdfs:comment>
+        <rdfs:comment xml:lang="en">Describes the primary address of an organization or person</rdfs:comment>
         <rdfs:label xml:lang="en">has primary address</rdfs:label>
     </owl:ObjectProperty>
     
