@@ -337,18 +337,6 @@
     
 
 
-    <!-- https://w3id.org/enigma#hasDisorder -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDisorder">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Disorder"/>
-        <vann:example xml:lang="en">CohortGroup1 hasDisorder Cancer --&gt; CohortGroup1 only includes people who have cancer</vann:example>
-        <rdfs:comment xml:lang="en">Describes what disease(s) the members of the cohort group have</rdfs:comment>
-        <rdfs:label xml:lang="en">has disorder</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/enigma#hasDistribution -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDistribution">
@@ -579,23 +567,6 @@
     </owl:ObjectProperty>
     
 
-
-    <!-- https://w3id.org/enigma#usedSoftware -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#usedSoftware">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Software"/>
-        <rdfs:comment xml:lang="en">Property to identify the software used by a cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">used software</rdfs:label>
-    </owl:ObjectProperty>
-    
 
 
     <!-- 
@@ -1024,17 +995,6 @@
         <vann:example xml:lang="en">CohortGroup2 hasNumberOfMaleSex 12</vann:example>
         <rdfs:comment xml:lang="en">Describing the number of males in a cohort project</rdfs:comment>
         <rdfs:label xml:lang="en">has number of males</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasSliceOrientation -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasSliceOrientation">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">Orientation of the images used in the cohort group</rdfs:comment>
-        <rdfs:label xml:lang="en">has slice orientation</rdfs:label>
     </owl:DatatypeProperty>
     
 
