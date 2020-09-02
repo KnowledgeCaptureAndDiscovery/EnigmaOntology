@@ -795,8 +795,7 @@
         <rdfs:label xml:lang="en">has collection site</rdfs:label>
     </owl:DatatypeProperty>
     
-
-
+    
     <!-- https://w3id.org/enigma#hasContentUrl -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasContentUrl">
@@ -805,6 +804,16 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:comment>Points to a media object, like an image or video file</rdfs:comment>
         <rdfs:label>has content URL</rdfs:label>
+    </owl:DatatypeProperty>
+    
+    
+    <!-- https://w3id.org/enigma#checksum -->
+    
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#checksum">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#DataDownload"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Checksum of data file to check if there are modifications</rdfs:comment>
+        <rdfs:label>Checksum</rdfs:label>
     </owl:DatatypeProperty>
     
 
