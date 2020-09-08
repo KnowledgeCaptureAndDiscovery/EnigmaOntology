@@ -8,19 +8,19 @@
 
 <https://w3id.org/enigma> rdf:type owl:Ontology ;
                            owl:versionIRI <https://w3id.org/enigma/roles/1.1.0> ;
-                           <http://purl.org/dc/terms/contributor> "Daniel Garijo" ,
-                                                                  "Yolanda Gil" ;
-                           <http://purl.org/dc/terms/creator> "MiHyun Jang" ,
-                                                              "Neda Jahanshad" ,
-                                                              "Ryan Espiritu" ;
+                           <http://purl.org/dc/terms/contributor> "Daniel Garijo"^^xsd:string ,
+                                                                  "Yolanda Gil"^^xsd:string ;
+                           <http://purl.org/dc/terms/creator> "MiHyun Jang"^^xsd:string ,
+                                                              "Neda Jahanshad"^^xsd:string ,
+                                                              "Ryan Espiritu"^^xsd:string ;
                            <http://purl.org/dc/terms/description> "An ontology representing roles different persons play in ENIGMA projects, organizations, papers, or working groups."@en ;
                            <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> ;
                            <http://purl.org/dc/terms/title> "The Roles Ontology"@en ;
-                           <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma" ;
+                           <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma"^^xsd:string ;
                            <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
-                           rdfs:comment "An ontology for describing people's roles in ENIGMA projects." ;
+                           rdfs:comment "An ontology for describing people's roles in ENIGMA projects."^^xsd:string ;
                            owl:priorVersion <https://w3id.org/enigma/roles/1.0.0> ;
-                           owl:versionInfo "v1.1.0" .
+                           owl:versionInfo "v1.1.0"^^xsd:string .
 
 #################################################################
 #    Annotation properties
@@ -161,87 +161,6 @@ xsd:gYear rdf:type rdfs:Datatype .
              rdfs:label "contributor"@en .
 
 
-###  https://w3id.org/enigma#hasDataAnalyst
-:hasDataAnalyst rdf:type owl:ObjectProperty .
-
-
-###  https://w3id.org/enigma#hasDataCollector
-:hasDataCollector rdf:type owl:ObjectProperty .
-
-
-###  https://w3id.org/enigma#hasDesigner
-:hasDesigner rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf :contributor ;
-             rdfs:domain :Project ;
-             rdfs:range :Person ;
-             <http://purl.org/vocab/vann/example> "BipolarProject hasDesigner JohnSmith"@en ;
-             rdfs:comment "Property that points to the person responsible for helping designing a project."@en ;
-             rdfs:label "has designer"@en .
-
-
-###  https://w3id.org/enigma#hasGeneticDataAnalyst
-:hasGeneticDataAnalyst rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf :hasDataAnalyst ;
-                       rdfs:domain :Project ;
-                       rdfs:range :Person ;
-                       <http://purl.org/vocab/vann/example> "BipolarProject hasGeneticDataAnalyst JohnSmith"@en ;
-                       rdfs:comment "Describes what project someone is a genetic data analyst of"@en ;
-                       rdfs:label "has genetic data analyst"@en .
-
-
-###  https://w3id.org/enigma#hasGeneticDataCollector
-:hasGeneticDataCollector rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf :hasDataCollector ;
-                         rdfs:domain :Project ;
-                         rdfs:range :Person ;
-                         <http://purl.org/vocab/vann/example> "BipolarProject hasGeneticDataCollector JohnSmith"@en ;
-                         rdfs:comment "Describes what project someone collected genetic data for"@en ;
-                         rdfs:label "has genetic data collector"@en .
-
-
-###  https://w3id.org/enigma#hasImagingDataAnalyst
-:hasImagingDataAnalyst rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf :hasDataAnalyst ;
-                       rdfs:domain :Project ;
-                       rdfs:range :Person ;
-                       <http://purl.org/vocab/vann/example> "BipolarProject hasImagingDataAnalyst JohnSmith"@en ;
-                       rdfs:comment "Describes what project someone is an imaging data analyst of"@en ;
-                       rdfs:label "has imaging data analyst"@en .
-
-
-###  https://w3id.org/enigma#hasImagingDataCollector
-:hasImagingDataCollector rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf :hasDataCollector ;
-                         rdfs:domain :Project ;
-                         rdfs:range :Person ;
-                         <http://purl.org/vocab/vann/example> "BipolarProject hasImagingDataCollector JohnSmith"@en ;
-                         rdfs:comment "Describes what project someone collected imaging data for"@en ;
-                         rdfs:label "has imaging data collector"@en .
-
-
-###  https://w3id.org/enigma#hasLastProjectLead
-:hasLastProjectLead rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf :hasProjectLead ;
-                    rdfs:domain :Project ;
-                    rdfs:range :Person ;
-                    <http://purl.org/vocab/vann/example> "BipolarProject hasLastProjectLead JohnSmith"@en ;
-                    rdfs:comment "Property designed to identify whom of the leads plays a senior role in the project, and therefore should be placed last when writing papers."@en ;
-                    rdfs:label "has last project lead"@en .
-
-
-###  https://w3id.org/enigma#hasProjectLead
-:hasProjectLead rdf:type owl:ObjectProperty .
-
-
-###  https://w3id.org/enigma#ranProtocol
-:ranProtocol rdf:type owl:ObjectProperty ;
-             rdfs:domain :Person ;
-             rdfs:range :Protocol ;
-             <http://purl.org/vocab/vann/example> "JohnSmith ranProtocol ENIGMA-Sulci Protocol"@en ;
-             rdfs:comment "Describes which protocol that an individual ran"@en ;
-             rdfs:label "ran protocol"@en .
-
-
 #################################################################
 #    Classes
 #################################################################
@@ -292,4 +211,4 @@ xsd:gYear rdf:type rdfs:Datatype .
 <http://purl.org/dc/terms/contributor> rdfs:isDefinedBy <http://purl.org/dc/terms/contributor> .
 
 
-###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
+###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/
