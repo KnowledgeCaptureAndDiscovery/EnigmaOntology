@@ -1,5 +1,5 @@
 {
-  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "_comment" : "Created with OWL2VOWL (version 0.3.2-SNAPSHOT), http://vowl.visualdataweb.org",
   "header" : {
     "languages" : [ "en", "undefined" ],
     "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "https://w3id.org/enigma", "http://www.w3.org/2000/01/rdf-schema", "http://purl.org/dc/terms", "http://www.w3.org/2001/XMLSchema", "http://xmlns.com/foaf/0.1" ],
@@ -16,16 +16,16 @@
       "undefined" : "An ontology for describing people's roles in ENIGMA projects."
     },
     "other" : {
-      "license" : [ {
-        "identifier" : "license",
-        "language" : "undefined",
-        "value" : "http://creativecommons.org/licenses/by/2.0/",
-        "type" : "iri"
-      } ],
       "priorVersion" : [ {
         "identifier" : "priorVersion",
         "language" : "undefined",
         "value" : "https://w3id.org/enigma/roles/1.0.0",
+        "type" : "iri"
+      } ],
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "http://creativecommons.org/licenses/by/2.0/",
         "type" : "iri"
       } ],
       "creator" : [ {
@@ -47,12 +47,12 @@
       "contributor" : [ {
         "identifier" : "contributor",
         "language" : "undefined",
-        "value" : "Daniel Garijo",
+        "value" : "Yolanda Gil",
         "type" : "label"
       }, {
         "identifier" : "contributor",
         "language" : "undefined",
-        "value" : "Yolanda Gil",
+        "value" : "Daniel Garijo",
         "type" : "label"
       } ],
       "preferredNamespacePrefix" : [ {
@@ -82,46 +82,52 @@
     }
   },
   "namespace" : [ ],
+  "metrics" : {
+    "classCount" : 6,
+    "objectPropertyCount" : 8,
+    "datatypePropertyCount" : 0,
+    "individualCount" : 0
+  },
   "class" : [ {
-    "id" : "4",
+    "id" : "8",
     "type" : "owl:unionOf"
   }, {
-    "id" : "9",
+    "id" : "1",
     "type" : "owl:Thing"
   }, {
-    "id" : "1",
+    "id" : "5",
     "type" : "owl:Class"
   }, {
-    "id" : "2",
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
     "type" : "owl:equivalentClass"
   }, {
-    "id" : "5",
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "10",
     "type" : "owl:Class"
   }, {
     "id" : "17",
     "type" : "owl:unionOf"
   }, {
-    "id" : "18",
-    "type" : "owl:unionOf"
-  }, {
-    "id" : "22",
-    "type" : "owl:Class"
-  }, {
-    "id" : "6",
-    "type" : "owl:Class"
-  }, {
-    "id" : "12",
+    "id" : "14",
     "type" : "owl:equivalentClass"
   } ],
   "classAttribute" : [ {
     "instances" : 0,
-    "union" : [ "5", "6", "1" ],
+    "union" : [ "9", "10", "5" ],
     "attributes" : [ "union", "anonymous" ],
-    "id" : "4"
+    "id" : "8"
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
-    "id" : "9",
+    "id" : "1",
     "label" : {
       "undefined" : "Thing"
     }
@@ -144,51 +150,7 @@
     "comment" : {
       "en" : "Project encompassing cohort"
     },
-    "id" : "1"
-  }, {
-    "iri" : "https://w3id.org/enigma#Person",
-    "equivalent" : [ "12" ],
-    "baseIri" : "https://w3id.org/enigma",
-    "instances" : 0,
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "en",
-        "value" : "Theo van Erp",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Person",
-      "en" : "Person"
-    },
-    "comment" : {
-      "en" : "Individual involved with the cohort"
-    },
-    "attributes" : [ "equivalent" ],
-    "id" : "2"
-  }, {
-    "iri" : "https://w3id.org/enigma#AcademicArticle",
-    "baseIri" : "https://w3id.org/enigma",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "AcademicArticle",
-      "en" : "Academic article"
-    },
-    "comment" : {
-      "en" : "An academic article, submitted as a result of the work in an ENIGMA project"
-    },
     "id" : "5"
-  }, {
-    "instances" : 0,
-    "union" : [ "5", "1" ],
-    "attributes" : [ "union", "anonymous" ],
-    "id" : "17"
-  }, {
-    "instances" : 0,
-    "union" : [ "5", "1" ],
-    "attributes" : [ "union", "anonymous" ],
-    "id" : "18"
   }, {
     "iri" : "https://w3id.org/enigma#Protocol",
     "baseIri" : "https://w3id.org/enigma",
@@ -208,7 +170,46 @@
     "comment" : {
       "en" : "An image processing or genetic analysis protocol used to extract brain feature data"
     },
-    "id" : "22"
+    "id" : "13"
+  }, {
+    "iri" : "https://w3id.org/enigma#Person",
+    "equivalent" : [ "14" ],
+    "baseIri" : "https://w3id.org/enigma",
+    "instances" : 0,
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "Theo van Erp",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Person",
+      "en" : "Person"
+    },
+    "comment" : {
+      "en" : "Individual involved with the cohort"
+    },
+    "attributes" : [ "equivalent" ],
+    "id" : "6"
+  }, {
+    "iri" : "https://w3id.org/enigma#AcademicArticle",
+    "baseIri" : "https://w3id.org/enigma",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AcademicArticle",
+      "en" : "Academic article"
+    },
+    "comment" : {
+      "en" : "An academic article, submitted as a result of the work in an ENIGMA project"
+    },
+    "id" : "9"
+  }, {
+    "instances" : 0,
+    "union" : [ "9", "5" ],
+    "attributes" : [ "union", "anonymous" ],
+    "id" : "12"
   }, {
     "iri" : "https://w3id.org/enigma#Cohort",
     "baseIri" : "https://w3id.org/enigma",
@@ -220,7 +221,12 @@
     "comment" : {
       "en" : "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria"
     },
-    "id" : "6"
+    "id" : "10"
+  }, {
+    "instances" : 0,
+    "union" : [ "9", "5" ],
+    "attributes" : [ "union", "anonymous" ],
+    "id" : "17"
   }, {
     "iri" : "http://xmlns.com/foaf/0.1/Person",
     "baseIri" : "http://xmlns.com/foaf/0.1",
@@ -236,227 +242,38 @@
     "label" : {
       "IRI-based" : "Person"
     },
-    "attributes" : [ "equivalent", "external" ],
-    "id" : "12"
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "14"
   } ],
   "property" : [ {
     "id" : "0",
     "type" : "owl:objectProperty"
   }, {
+    "id" : "4",
+    "type" : "owl:objectProperty"
+  }, {
     "id" : "7",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "10",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "13",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "14",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "11",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "19",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "21",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "8",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "23",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "24",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "25",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "26",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "16",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "15",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "20",
     "type" : "owl:objectProperty"
   }, {
     "id" : "3",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "27",
+    "id" : "11",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "15",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "2",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "16",
     "type" : "owl:objectProperty"
   } ],
   "propertyAttribute" : [ {
-    "iri" : "https://w3id.org/enigma#hasImagingDataAnalyst",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "2",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "en",
-        "value" : "BipolarProject hasImagingDataAnalyst JohnSmith",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasImagingDataAnalyst",
-      "en" : "has imaging data analyst"
-    },
-    "superproperty" : [ "3" ],
-    "domain" : "1",
-    "comment" : {
-      "en" : "Describes what project someone is an imaging data analyst of"
-    },
-    "attributes" : [ "object" ],
-    "id" : "0"
-  }, {
-    "iri" : "https://w3id.org/enigma#HasPersonRole_ProjectLead",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "2",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "en",
-        "value" : "BipolarProject HasPersonRole_ProjectLead JohnSmith",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "HasPersonRole_ProjectLead",
-      "en" : "has project lead"
-    },
-    "superproperty" : [ "8" ],
-    "domain" : "1",
-    "comment" : {
-      "en" : "Describes what project someone is a project lead of"
-    },
-    "attributes" : [ "object" ],
-    "id" : "7"
-  }, {
-    "iri" : "https://w3id.org/enigma#hasGeneticDataCollector",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "2",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "en",
-        "value" : "BipolarProject hasGeneticDataCollector JohnSmith",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasGeneticDataCollector",
-      "en" : "has genetic data collector"
-    },
-    "superproperty" : [ "11" ],
-    "domain" : "1",
-    "comment" : {
-      "en" : "Describes what project someone collected genetic data for"
-    },
-    "attributes" : [ "object" ],
-    "id" : "10"
-  }, {
-    "iri" : "https://w3id.org/enigma#hasGeneticDataAnalyst",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "2",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "en",
-        "value" : "BipolarProject hasGeneticDataAnalyst JohnSmith",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasGeneticDataAnalyst",
-      "en" : "has genetic data analyst"
-    },
-    "superproperty" : [ "3" ],
-    "domain" : "1",
-    "comment" : {
-      "en" : "Describes what project someone is a genetic data analyst of"
-    },
-    "attributes" : [ "object" ],
-    "id" : "13"
-  }, {
-    "iri" : "https://w3id.org/enigma#HasPersonRole_ProtocolRunner",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "2",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "en",
-        "value" : "BipolarProject HasPersonRole_ProtocolRunner JohnSmith",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "HasPersonRole_ProtocolRunner",
-      "en" : "has protocol runner"
-    },
-    "superproperty" : [ "15" ],
-    "domain" : "1",
-    "comment" : {
-      "en" : "Describes who ran a protocol for a given cohort"
-    },
-    "attributes" : [ "object" ],
-    "id" : "14"
-  }, {
-    "iri" : "https://w3id.org/enigma#hasDataCollector",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "9",
-    "label" : {
-      "IRI-based" : "hasDataCollector"
-    },
-    "domain" : "9",
-    "subproperty" : [ "10", "16" ],
-    "attributes" : [ "object" ],
-    "id" : "11"
-  }, {
-    "iri" : "https://w3id.org/enigma#hasProjectLead",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "9",
-    "label" : {
-      "IRI-based" : "hasProjectLead"
-    },
-    "domain" : "9",
-    "subproperty" : [ "20" ],
-    "attributes" : [ "object" ],
-    "id" : "19"
-  }, {
-    "iri" : "https://w3id.org/enigma#ranProtocol",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "22",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "en",
-        "value" : "JohnSmith ranProtocol ENIGMA-Sulci Protocol",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "ranProtocol",
-      "en" : "ran protocol"
-    },
-    "domain" : "2",
-    "comment" : {
-      "en" : "Describes which protocol that an individual ran"
-    },
-    "attributes" : [ "object" ],
-    "id" : "21"
-  }, {
     "iri" : "http://purl.org/dc/terms/contributor",
     "baseIri" : "http://purl.org/dc/terms",
-    "range" : "9",
+    "range" : "1",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -468,37 +285,14 @@
     "label" : {
       "IRI-based" : "contributor"
     },
-    "domain" : "9",
-    "subproperty" : [ "15", "7" ],
-    "attributes" : [ "object", "external" ],
-    "id" : "8"
-  }, {
-    "iri" : "https://w3id.org/enigma#HasPersonRole_DataCollector",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "2",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "en",
-        "value" : "BipolarProject HasPersonRole_DataCollector JohnSmith",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "HasPersonRole_DataCollector",
-      "en" : "has data collector"
-    },
-    "superproperty" : [ "15" ],
     "domain" : "1",
-    "comment" : {
-      "en" : "Describes what project someone collected data for"
-    },
-    "attributes" : [ "object" ],
-    "id" : "23"
+    "subproperty" : [ "2", "3" ],
+    "attributes" : [ "external", "object" ],
+    "id" : "0"
   }, {
     "iri" : "https://w3id.org/enigma#HasPersonRole_DataAnalyst",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "2",
+    "range" : "6",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
@@ -511,40 +305,63 @@
       "IRI-based" : "HasPersonRole_DataAnalyst",
       "en" : "has data analyst"
     },
-    "superproperty" : [ "15" ],
-    "domain" : "1",
+    "superproperty" : [ "2" ],
+    "domain" : "5",
     "comment" : {
       "en" : "Describes what project someone is a data analyst of"
     },
     "attributes" : [ "object" ],
-    "id" : "24"
+    "id" : "4"
   }, {
-    "iri" : "https://w3id.org/enigma#hasDesigner",
+    "iri" : "https://w3id.org/enigma#HasPersonRole_DataCollector",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "2",
+    "range" : "6",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
         "language" : "en",
-        "value" : "BipolarProject hasDesigner JohnSmith",
+        "value" : "BipolarProject HasPersonRole_DataCollector JohnSmith",
         "type" : "label"
       } ]
     },
     "label" : {
-      "IRI-based" : "hasDesigner",
-      "en" : "has designer"
+      "IRI-based" : "HasPersonRole_DataCollector",
+      "en" : "has data collector"
     },
-    "superproperty" : [ "15" ],
-    "domain" : "1",
+    "superproperty" : [ "2" ],
+    "domain" : "5",
     "comment" : {
-      "en" : "Property that points to the person responsible for helping designing a project."
+      "en" : "Describes what project someone collected data for"
     },
     "attributes" : [ "object" ],
-    "id" : "25"
+    "id" : "7"
+  }, {
+    "iri" : "https://w3id.org/enigma#HasPersonRole_ProjectLead",
+    "baseIri" : "https://w3id.org/enigma",
+    "range" : "6",
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "BipolarProject HasPersonRole_ProjectLead JohnSmith",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "HasPersonRole_ProjectLead",
+      "en" : "has project lead"
+    },
+    "superproperty" : [ "0" ],
+    "domain" : "5",
+    "comment" : {
+      "en" : "Describes what project someone is a project lead of"
+    },
+    "attributes" : [ "object" ],
+    "id" : "3"
   }, {
     "iri" : "https://w3id.org/enigma#HasPersonRole_FirstDraftContributor",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "2",
+    "range" : "6",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
@@ -557,40 +374,40 @@
       "IRI-based" : "HasPersonRole_FirstDraftContributor",
       "en" : "first draft contributor"
     },
-    "superproperty" : [ "15" ],
-    "domain" : "17",
+    "superproperty" : [ "2" ],
+    "domain" : "12",
     "comment" : {
       "en" : "Property designed to distinguish who collaborated in the creation of the first draft of a publication"
     },
     "attributes" : [ "object" ],
-    "id" : "26"
+    "id" : "11"
   }, {
-    "iri" : "https://w3id.org/enigma#hasImagingDataCollector",
+    "iri" : "https://w3id.org/enigma#HasPersonRole_ProtocolRunner",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "2",
+    "range" : "6",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
         "language" : "en",
-        "value" : "BipolarProject hasImagingDataCollector JohnSmith",
+        "value" : "BipolarProject HasPersonRole_ProtocolRunner JohnSmith",
         "type" : "label"
       } ]
     },
     "label" : {
-      "IRI-based" : "hasImagingDataCollector",
-      "en" : "has imaging data collector"
+      "IRI-based" : "HasPersonRole_ProtocolRunner",
+      "en" : "has protocol runner"
     },
-    "superproperty" : [ "11" ],
-    "domain" : "1",
+    "superproperty" : [ "2" ],
+    "domain" : "5",
     "comment" : {
-      "en" : "Describes what project someone collected imaging data for"
+      "en" : "Describes who ran a protocol for a given cohort"
     },
     "attributes" : [ "object" ],
-    "id" : "16"
+    "id" : "15"
   }, {
     "iri" : "https://w3id.org/enigma#contributor",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "2",
+    "range" : "6",
     "annotations" : {
       "rationale" : [ {
         "identifier" : "rationale",
@@ -603,52 +420,18 @@
       "IRI-based" : "contributor",
       "en" : "contributor"
     },
-    "superproperty" : [ "8" ],
-    "domain" : "4",
-    "subproperty" : [ "14", "24", "23", "25", "26", "27" ],
+    "superproperty" : [ "0" ],
+    "domain" : "8",
+    "subproperty" : [ "15", "4", "7", "11", "16" ],
     "comment" : {
       "en" : "Property that indicates who is a contributor to a project or cohort"
     },
     "attributes" : [ "object" ],
-    "id" : "15"
-  }, {
-    "iri" : "https://w3id.org/enigma#hasLastProjectLead",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "2",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "en",
-        "value" : "BipolarProject hasLastProjectLead JohnSmith",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasLastProjectLead",
-      "en" : "has last project lead"
-    },
-    "superproperty" : [ "19" ],
-    "domain" : "1",
-    "comment" : {
-      "en" : "Property designed to identify whom of the leads plays a senior role in the project, and therefore should be placed last when writing papers."
-    },
-    "attributes" : [ "object" ],
-    "id" : "20"
-  }, {
-    "iri" : "https://w3id.org/enigma#hasDataAnalyst",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "9",
-    "label" : {
-      "IRI-based" : "hasDataAnalyst"
-    },
-    "domain" : "9",
-    "subproperty" : [ "0", "13" ],
-    "attributes" : [ "object" ],
-    "id" : "3"
+    "id" : "2"
   }, {
     "iri" : "https://w3id.org/enigma#HasPersonRole_Reviewer",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "2",
+    "range" : "6",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
@@ -661,12 +444,12 @@
       "IRI-based" : "HasPersonRole_Reviewer",
       "en" : "has reviewer"
     },
-    "superproperty" : [ "15" ],
-    "domain" : "18",
+    "superproperty" : [ "2" ],
+    "domain" : "17",
     "comment" : {
       "en" : "Property that indicates who contributed to the paper reviewing the initial drafts and providing comments"
     },
     "attributes" : [ "object" ],
-    "id" : "27"
+    "id" : "16"
   } ]
 }
