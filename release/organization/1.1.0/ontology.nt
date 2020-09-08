@@ -84,10 +84,18 @@
 # https://w3id.org/enigma#hasPrimaryAddress
 <https://w3id.org/enigma#hasPrimaryAddress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/enigma#hasPrimaryAddress> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2006/vcard/ns#hasAddress> .
-<https://w3id.org/enigma#hasPrimaryAddress> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Organization> .
+<https://w3id.org/enigma#hasPrimaryAddress> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Organization> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Person> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <https://w3id.org/enigma#hasPrimaryAddress> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Address> .
 <https://w3id.org/enigma#hasPrimaryAddress> <http://purl.org/vocab/vann/example> "USC hasPrimaryAddress \"123 Admiralty Way\""@en .
-<https://w3id.org/enigma#hasPrimaryAddress> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the primary address of an organization"@en .
+<https://w3id.org/enigma#hasPrimaryAddress> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the primary address of an organization or person"@en .
 <https://w3id.org/enigma#hasPrimaryAddress> <http://www.w3.org/2000/01/rdf-schema#label> "has primary address"@en .
 # 
 # https://w3id.org/enigma#isPartOfOrganization
@@ -130,33 +138,25 @@
 # 
 # https://w3id.org/enigma#hasCoordinates
 <https://w3id.org/enigma#hasCoordinates> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasCoordinates> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Address> .
+<https://w3id.org/enigma#hasCoordinates> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Organization> .
 <https://w3id.org/enigma#hasCoordinates> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/enigma#hasCoordinates> <http://www.w3.org/2000/01/rdf-schema#comment> "The coordinates associated with the address of the organization"@en .
+<https://w3id.org/enigma#hasCoordinates> <http://www.w3.org/2000/01/rdf-schema#comment> "The coordinates associated with an organization"@en .
 <https://w3id.org/enigma#hasCoordinates> <http://www.w3.org/2000/01/rdf-schema#label> "has coordinates"@en .
 # 
-# https://w3id.org/enigma#hasCountryName
-<https://w3id.org/enigma#hasCountryName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasCountryName> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2006/vcard/ns#country-name> .
-<https://w3id.org/enigma#hasCountryName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Address> .
-<https://w3id.org/enigma#hasCountryName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/enigma#hasCountryName> <http://www.w3.org/2000/01/rdf-schema#comment> "The country name associated with the address of the object"@en .
-<https://w3id.org/enigma#hasCountryName> <http://www.w3.org/2000/01/rdf-schema#label> "has country name"@en .
+# https://w3id.org/enigma#hasCountry
+<https://w3id.org/enigma#hasCountry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasCountry> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2006/vcard/ns#country-name> .
+<https://w3id.org/enigma#hasCountry> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Address> .
+<https://w3id.org/enigma#hasCountry> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#hasCountry> <http://www.w3.org/2000/01/rdf-schema#comment> "The country name associated with the address of the object"@en .
+<https://w3id.org/enigma#hasCountry> <http://www.w3.org/2000/01/rdf-schema#label> "has country"@en .
 # 
 # https://w3id.org/enigma#hasKindOfInstitute
 <https://w3id.org/enigma#hasKindOfInstitute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasKindOfInstitute> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
-_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Organization> .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#WorkingGroup> .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/enigma#hasKindOfInstitute> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Organization> .
 <https://w3id.org/enigma#hasKindOfInstitute> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/enigma#hasKindOfInstitute> <http://purl.org/vocab/vann/example> "Organization kind \"University\""@en .
-<https://w3id.org/enigma#hasKindOfInstitute> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the specific kind/type of an organization or working group"@en .
+<https://w3id.org/enigma#hasKindOfInstitute> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the specific kind/type of an organization"@en .
 <https://w3id.org/enigma#hasKindOfInstitute> <http://www.w3.org/2000/01/rdf-schema#label> "kind of institute"@en .
 # 
 # https://w3id.org/enigma#hasPostalCode
@@ -274,4 +274,4 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/enigma#WorkingGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "Group of researchers studying a certain topic/disease"@en .
 <https://w3id.org/enigma#WorkingGroup> <http://www.w3.org/2000/01/rdf-schema#label> "Working Group"@en .
 # 
-# Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
+# Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

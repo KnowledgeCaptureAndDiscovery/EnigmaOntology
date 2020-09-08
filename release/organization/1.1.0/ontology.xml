@@ -1,29 +1,29 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://w3id.org/enigma#"
      xml:base="https://w3id.org/enigma"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:vann1="https://w3id.org/enigma#vann:"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:vann="http://purl.org/vocab/vann/"
-     xmlns:terms="http://purl.org/dc/terms/"
-     xmlns:vann1="https://w3id.org/enigma#vann:">
+     xmlns:vann="http://purl.org/vocab/vann/">
     <owl:Ontology rdf:about="https://w3id.org/enigma">
         <owl:versionIRI rdf:resource="https://w3id.org/enigma/organization/1.1.0"/>
-        <terms:contributor>Haripriya Dharmala</terms:contributor>
-        <terms:contributor>Yolanda Gil</terms:contributor>
-        <terms:creator>Daniel Garijo</terms:creator>
-        <terms:creator>MiHyun Jang</terms:creator>
-        <terms:creator>Neda Jahanshad</terms:creator>
-        <terms:creator>Ryan Espiritu</terms:creator>
+        <terms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Haripriya Dharmala</terms:contributor>
+        <terms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yolanda Gil</terms:contributor>
+        <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Daniel Garijo</terms:creator>
+        <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MiHyun Jang</terms:creator>
+        <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Neda Jahanshad</terms:creator>
+        <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ryan Espiritu</terms:creator>
         <terms:description xml:lang="en">An ontology representing organizations that participate in the ENIGMA consortium.</terms:description>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
-        <terms:title>The Organization Ontology</terms:title>
+        <terms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Organization Ontology</terms:title>
         <vann:preferredNamespacePrefix rdf:resource="https://w3id.org/enigma"/>
-        <vann:preferredNamespacePrefix>enigma</vann:preferredNamespacePrefix>
+        <vann:preferredNamespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string">enigma</vann:preferredNamespacePrefix>
         <owl:priorVersion rdf:resource="https://w3id.org/enigma/organization/1.1.0"/>
-        <owl:versionInfo>v1.1.0</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">v1.1.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -112,9 +112,9 @@
 
 
     <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/isPartOf">
-        <rdfs:comment>A related resource in which the described resource is included.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A related resource in which the described resource is included.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-        <rdfs:label>is Part of</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is Part of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -124,7 +124,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/2006/vcard/ns#hasAddress">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/vcard/ns"/>
-        <rdfs:label>has Address</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has Address</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -133,9 +133,9 @@
 
 
     <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/member">
-        <rdfs:comment>Indicates member of a group</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates member of a group</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
-        <rdfs:label>member</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">member</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -159,10 +159,17 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasPrimaryAddress">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/vcard/ns#hasAddress"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Organization"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Organization"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Address"/>
         <vann:example xml:lang="en">USC hasPrimaryAddress &quot;123 Admiralty Way&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Describes the primary address of an organization</rdfs:comment>
+        <rdfs:comment xml:lang="en">Describes the primary address of an organization or person</rdfs:comment>
         <rdfs:label xml:lang="en">has primary address</rdfs:label>
     </owl:ObjectProperty>
     
@@ -239,23 +246,23 @@
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasCoordinates">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Address"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Organization"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">The coordinates associated with the address of the organization</rdfs:comment>
+        <rdfs:comment xml:lang="en">The coordinates associated with an organization</rdfs:comment>
         <rdfs:label xml:lang="en">has coordinates</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasCountryName -->
+    <!-- https://w3id.org/enigma#hasCountry -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasCountryName">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasCountry">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/vcard/ns#country-name"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Address"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">The country name associated with the address of the object</rdfs:comment>
-        <rdfs:label xml:lang="en">has country name</rdfs:label>
+        <rdfs:label xml:lang="en">has country</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -264,17 +271,10 @@
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasKindOfInstitute">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Organization"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#WorkingGroup"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Organization"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <vann:example xml:lang="en">Organization kind &quot;University&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Describes the specific kind/type of an organization or working group</rdfs:comment>
+        <rdfs:comment xml:lang="en">Describes the specific kind/type of an organization</rdfs:comment>
         <rdfs:label xml:lang="en">kind of institute</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -446,7 +446,7 @@
     <owl:Class rdf:about="https://w3id.org/enigma#Organization">
         <rdfs:comment xml:lang="en">An organization belonging to the ENIGMA consortium. Organization can be hospitals, universities, departments, etc.</rdfs:comment>
         <rdfs:label xml:lang="en">Organization</rdfs:label>
-        <vann1:example>Information Sciences Institute</vann1:example>
+        <vann1:example rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Information Sciences Institute</vann1:example>
     </owl:Class>
     
 
@@ -474,6 +474,6 @@
 
 
 
-<!-- Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/ -->
+<!-- Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/ -->
 
 
