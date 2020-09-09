@@ -298,7 +298,6 @@ This section provides details for each class and property defined by The Cohort 
             <sup class="type-op" title="object property">op</sup>, <a href="#hasPrincipalInvestigator" title="https://w3id.org/enigma#hasPrincipalInvestigator">has principal investigator</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasTotalNumberOfParticipants"
                title="https://w3id.org/enigma#hasTotalNumberOfParticipants">has total number of participants</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#usesScanner" title="https://w3id.org/enigma#usesScanner">uses scanner</a>
             <sup class="type-dp" title="data property">dp</sup>
          </dd>
          <dt>is in range of</dt>
@@ -467,7 +466,7 @@ This section provides details for each class and property defined by The Cohort 
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#checksum" title="https://w3id.org/enigma#checksum">Checksum</a>
+            <a href="#checksum" title="https://w3id.org/enigma#checksum">checksum</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#hasContentUrl" title="https://w3id.org/enigma#hasContentUrl">has content URL</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#usesEncodingFormat" title="https://w3id.org/enigma#usesEncodingFormat">uses encoding format</a>
             <sup class="type-dp" title="data property">dp</sup>
@@ -1655,11 +1654,6 @@ This section provides details for each class and property defined by The Cohort 
          <strong>IRI:</strong> https://w3id.org/enigma#hasHomePage</p>
       <div class="description">
          <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#http://xmlns.com/foaf/0.1/homepage" title="http://xmlns.com/foaf/0.1/homepage">homepage</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
             <dt>has domain</dt>
             <dd>
                <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
@@ -1925,15 +1919,6 @@ This section provides details for each class and property defined by The Cohort 
             <a href="http://xmlns.com/foaf/0.1/">http://xmlns.com/foaf/0.1/</a>
          </dd>
       </dl>
-      <div class="description">
-         <dl>
-            <dt>has sub-properties</dt>
-            <dd>
-               <a href="#hasHomePage" title="https://w3id.org/enigma#hasHomePage">has home page</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-         </dl>
-      </div>
    </div>
    <div class="entity" id="isPartOfCohort">
       <h3>is part of cohort<sup class="type-op" title="object property">op</sup>
@@ -2079,7 +2064,7 @@ This section provides details for each class and property defined by The Cohort 
    <h3 id="dataproperties-headline" class="list">Data Properties</h3>
    <ul class="hlist">
       <li>
-         <a href="#checksum" title="https://w3id.org/enigma#checksum">Checksum</a>
+         <a href="#checksum" title="https://w3id.org/enigma#checksum">checksum</a>
       </li>
       <li>
          <a href="#https://schema.org/contentUrl" title="https://schema.org/contentUrl">
@@ -2193,14 +2178,14 @@ This section provides details for each class and property defined by The Cohort 
       </li>
    </ul>
    <div class="entity" id="checksum">
-      <h3>Checksum<sup class="type-dp" title="data property">dp</sup>
+      <h3>checksum<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#checksum</p>
       <div class="comment">
-         <span class="markdown">Checksum of data file to check if there are modifications</span>
+         <span class="markdown">checksum of data file to check if there are modifications</span>
       </div>
       <div class="description">
          <dl>
@@ -2960,7 +2945,7 @@ This section provides details for each class and property defined by The Cohort 
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#positiveInteger">positive integer</span>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#int">int</span>
             </dd>
          </dl>
       </div>
@@ -3233,6 +3218,12 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
             <dt>has domain</dt>
             <dd>
                <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#CohortGroup" title="https://w3id.org/enigma#CohortGroup">Cohort Group</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#CohortProject" title="https://w3id.org/enigma#CohortProject">Cohort Project</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
