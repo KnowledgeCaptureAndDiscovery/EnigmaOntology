@@ -166,6 +166,25 @@
         <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/member"/>
     </owl:ObjectProperty>
     
+    <!-- https://w3id.org/enigma#author -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#author">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/creator"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#AcademicArticle"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <rdfs:comment xml:lang="en">Property to describe the author of a publication in the context of an ENIGMA project</rdfs:comment>
+        <rdfs:label xml:lang="en">author</rdfs:label>
+    </owl:ObjectProperty>
+    
+    <!-- https://w3id.org/enigma#forOrganization -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#forOrganization">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#QualifiedAffiliation"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <vann:example xml:lang="en">JohnSmith hasQualifiedAffiliation &quot;QualifiedAffiliation&quot; forOrganization USC</vann:example>
+        <rdfs:comment xml:lang="en">Describes the organization associated with the qualified affiliation</rdfs:comment>
+        <rdfs:label xml:lang="en">for organization</rdfs:label>
+    </owl:ObjectProperty>
 
     <!-- https://w3id.org/enigma#hasAffiliate -->
 
@@ -351,7 +370,6 @@
     <!-- https://w3id.org/enigma#hasHomePage -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasHomePage">
-        <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/homepage"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
