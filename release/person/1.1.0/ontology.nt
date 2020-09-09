@@ -96,6 +96,22 @@
 <http://xmlns.com/foaf/0.1/member> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://xmlns.com/foaf/0.1/member> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/member> .
 # 
+# https://w3id.org/enigma#author
+<https://w3id.org/enigma#author> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#author> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/creator> .
+<https://w3id.org/enigma#author> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#AcademicArticle> .
+<https://w3id.org/enigma#author> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#author> <http://www.w3.org/2000/01/rdf-schema#comment> "Property to describe the author of a publication in the context of an ENIGMA project"@en .
+<https://w3id.org/enigma#author> <http://www.w3.org/2000/01/rdf-schema#label> "author"@en .
+# 
+# https://w3id.org/enigma#forOrganization
+<https://w3id.org/enigma#forOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#forOrganization> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#QualifiedAffiliation> .
+<https://w3id.org/enigma#forOrganization> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Organization> .
+<https://w3id.org/enigma#forOrganization> <http://purl.org/vocab/vann/example> "JohnSmith hasQualifiedAffiliation \"QualifiedAffiliation\" forOrganization USC"@en .
+<https://w3id.org/enigma#forOrganization> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the organization associated with the qualified affiliation"@en .
+<https://w3id.org/enigma#forOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "for organization"@en .
+# 
 # https://w3id.org/enigma#hasAffiliate
 <https://w3id.org/enigma#hasAffiliate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/enigma#hasAffiliate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://xmlns.com/foaf/0.1/member> .
@@ -116,7 +132,6 @@
 # 
 # https://w3id.org/enigma#hasHomePage
 <https://w3id.org/enigma#hasHomePage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#hasHomePage> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://xmlns.com/foaf/0.1/homepage> .
 <https://w3id.org/enigma#hasHomePage> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
 _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 _:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .

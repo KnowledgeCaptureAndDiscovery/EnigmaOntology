@@ -105,6 +105,24 @@ xsd:gYear rdf:type rdfs:Datatype .
                                    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/member> .
 
 
+###  https://w3id.org/enigma#author
+:author rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf <http://purl.org/dc/terms/creator> ;
+        rdfs:domain :AcademicArticle ;
+        rdfs:range :Person ;
+        rdfs:comment "Property to describe the author of a publication in the context of an ENIGMA project"@en ;
+        rdfs:label "author"@en .
+
+
+###  https://w3id.org/enigma#forOrganization
+:forOrganization rdf:type owl:ObjectProperty ;
+                 rdfs:domain :QualifiedAffiliation ;
+                 rdfs:range <http://xmlns.com/foaf/0.1/Organization> ;
+                 <http://purl.org/vocab/vann/example> "JohnSmith hasQualifiedAffiliation \"QualifiedAffiliation\" forOrganization USC"@en ;
+                 rdfs:comment "Describes the organization associated with the qualified affiliation"@en ;
+                 rdfs:label "for organization"@en .
+
+
 ###  https://w3id.org/enigma#hasAffiliate
 :hasAffiliate rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/member> ;
@@ -127,7 +145,6 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 ###  https://w3id.org/enigma#hasHomePage
 :hasHomePage rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/homepage> ;
              rdfs:domain [ rdf:type owl:Class ;
                            owl:unionOf ( :Cohort
                                          :Person
