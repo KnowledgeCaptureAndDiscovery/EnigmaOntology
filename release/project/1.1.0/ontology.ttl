@@ -7,9 +7,8 @@
 @base <https://w3id.org/enigma> .
 
 <https://w3id.org/enigma> rdf:type owl:Ontology ;
-                           owl:versionIRI <https://w3id.org/enigma/project/1.0.0> ;
-                           <http://purl.org/dc/terms/contributor> "Daniel Garijo"^^xsd:string ,
-                                                                  "Haripriya Dharmala"^^xsd:string ,
+                           owl:versionIRI <https://w3id.org/enigma/project/1.1.0> ;
+                           <http://purl.org/dc/terms/contributor> "Haripriya Dharmala"^^xsd:string ,
                                                                   "Yolanda Gil"^^xsd:string ;
                            <http://purl.org/dc/terms/creator> "MiHyun Jang"^^xsd:string ,
                                                               "Neda Jahanshad"^^xsd:string ,
@@ -19,11 +18,15 @@
                            <http://purl.org/dc/terms/title> "The Project Ontology"@en ;
                            <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma"^^xsd:string ;
                            <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
-                           owl:versionInfo "v1.0.0"^^xsd:string .
+                           owl:versionInfo "v1.1.0"^^xsd:string .
 
 #################################################################
 #    Annotation properties
 #################################################################
+
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+
 
 ###  http://purl.org/dc/terms/creator
 <http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
@@ -68,12 +71,6 @@ xsd:date rdf:type rdfs:Datatype .
 #################################################################
 #    Object Properties
 #################################################################
-
-###  http://purl.org/dc/terms/contributor
-<http://purl.org/dc/terms/contributor> rdf:type owl:ObjectProperty ;
-                                       rdfs:domain :Project ;
-                                       rdfs:range :Person .
-
 
 ###  https://w3id.org/enigma#hasBrainScanDataType
 :hasBrainScanDataType rdf:type owl:ObjectProperty ;
@@ -174,31 +171,13 @@ xsd:date rdf:type rdfs:Datatype .
 #    Data properties
 #################################################################
 
-###  http://purl.org/dc/terms/date
-<http://purl.org/dc/terms/date> rdf:type owl:DatatypeProperty ;
-                                rdfs:isDefinedBy <http://purl.org/dc/terms/date> .
-
-
 ###  http://purl.org/dc/terms/description
 <http://purl.org/dc/terms/description> rdf:type owl:DatatypeProperty .
 
 
-###  http://purl.org/dc/terms/identifier
-<http://purl.org/dc/terms/identifier> rdf:type owl:DatatypeProperty ;
-                                      rdfs:isDefinedBy <http://purl.org/dc/terms/identifier> .
-
-
-###  http://purl.org/dc/terms/spatial
-<http://purl.org/dc/terms/spatial> rdf:type owl:DatatypeProperty ;
-                                   rdfs:isDefinedBy <http://purl.org/dc/terms/spatial> .
-
-
-###  http://purl.org/dc/terms/title
-<http://purl.org/dc/terms/title> rdf:type owl:DatatypeProperty .
-
-
 ###  https://w3id.org/enigma#hasBriefDescription
 :hasBriefDescription rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf <http://purl.org/dc/terms/description> ;
                      rdfs:domain [ rdf:type owl:Class ;
                                    owl:unionOf ( :Cohort
                                                  :Project
@@ -327,31 +306,12 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
           rdfs:label "Data Type"@en .
 
 
-###  https://w3id.org/enigma#GeneReferencePanel
-:GeneReferencePanel rdf:type owl:Class ;
-                    rdfs:label "Gene Reference Panel"@en .
-
-
-###  https://w3id.org/enigma#GeneticAssociationProtocol
-:GeneticAssociationProtocol rdf:type owl:Class ;
-                            <http://purl.org/vocab/vann/example> "ENIGMA3 – GWAS Meta Analysis of Cortical Thickness and Surface Area - Association Protocol"@en ;
-                            rdfs:comment "ENIGMA Protocols for genetic associations"@en ;
-                            rdfs:label "Genetic Association Protocol"@en .
-
-
 ###  https://w3id.org/enigma#GeneticDataType
 :GeneticDataType rdf:type owl:Class ;
                  rdfs:subClassOf :DataType ;
                  <http://purl.org/vocab/vann/example> "Epigenetic"@en ;
                  rdfs:comment "Specifies the kinds of genetic data collected"@en ;
                  rdfs:label "Genetic Data Type"@en .
-
-
-###  https://w3id.org/enigma#GenotypeImputationProtocol
-:GenotypeImputationProtocol rdf:type owl:Class ;
-                            <http://purl.org/vocab/vann/example> "ENIGMA3 – GWAS Meta Analysis of Cortical Thickness and Surface Area - Imputation Protocol"@en ;
-                            rdfs:comment "ENIGMA Protocols for genetic imputations"@en ;
-                            rdfs:label "Genotype Imputation Protocol"@en .
 
 
 ###  https://w3id.org/enigma#Person
@@ -380,16 +340,6 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
               <http://purl.org/vocab/vann/example> "BipolarWG"@en ;
               rdfs:comment "Group of researchers studying a certain topic/disease"@en ;
               rdfs:label "Working Group"@en .
-
-
-#################################################################
-#    Annotations
-#################################################################
-
-<http://purl.org/dc/terms/contributor> rdfs:isDefinedBy <http://purl.org/dc/terms/> .
-
-
-<http://purl.org/dc/terms/title> rdfs:isDefinedBy <http://purl.org/dc/terms/> .
 
 
 ###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/
