@@ -1,6 +1,5 @@
 <https://w3id.org/enigma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/enigma/roles/1.1.0> .
-<https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Daniel Garijo" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Yolanda Gil" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "MiHyun Jang" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "Neda Jahanshad" .
@@ -73,6 +72,26 @@
 # http://purl.org/dc/terms/contributor
 <http://purl.org/dc/terms/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 # 
+# https://w3id.org/enigma#contributor
+<https://w3id.org/enigma#contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#contributor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/contributor> .
+<https://w3id.org/enigma#contributor> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#AcademicArticle> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Cohort> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Project> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/enigma#contributor> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#contributor> <http://www.linkedmodel.org/schema/vaem#rationale> "Property added to restrict the domain to projects, cohorts and academic articles. This is done for facilitating the interaction with the wiki interface"@en .
+<https://w3id.org/enigma#contributor> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that indicates who is a contributor to a project or cohort"@en .
+<https://w3id.org/enigma#contributor> <http://www.w3.org/2000/01/rdf-schema#label> "contributor"@en .
+# 
 # https://w3id.org/enigma#hasPersonRole_DataAnalyst
 <https://w3id.org/enigma#hasPersonRole_DataAnalyst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/enigma#hasPersonRole_DataAnalyst> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#contributor> .
@@ -94,15 +113,15 @@
 # https://w3id.org/enigma#hasPersonRole_FirstDraftContributor
 <https://w3id.org/enigma#hasPersonRole_FirstDraftContributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/enigma#hasPersonRole_FirstDraftContributor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#contributor> .
-<https://w3id.org/enigma#hasPersonRole_FirstDraftContributor> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
-_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#AcademicArticle> .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Project> .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/enigma#hasPersonRole_FirstDraftContributor> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid5 <http://www.w3.org/2002/07/owl#unionOf> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#AcademicArticle> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Project> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <https://w3id.org/enigma#hasPersonRole_FirstDraftContributor> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
 <https://w3id.org/enigma#hasPersonRole_FirstDraftContributor> <http://purl.org/vocab/vann/example> "BipolarProject hasPersonRole_FirstDraftContributor JohnSmith"@en .
 <https://w3id.org/enigma#hasPersonRole_FirstDraftContributor> <http://www.w3.org/2000/01/rdf-schema#comment> "Property designed to distinguish who collaborated in the creation of the first draft of a publication"@en .
@@ -110,7 +129,7 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # https://w3id.org/enigma#hasPersonRole_ProjectLead
 <https://w3id.org/enigma#hasPersonRole_ProjectLead> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#hasPersonRole_ProjectLead> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/contributor> .
+<https://w3id.org/enigma#hasPersonRole_ProjectLead> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
 <https://w3id.org/enigma#hasPersonRole_ProjectLead> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
 <https://w3id.org/enigma#hasPersonRole_ProjectLead> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
 <https://w3id.org/enigma#hasPersonRole_ProjectLead> <http://purl.org/vocab/vann/example> "BipolarProject hasPersonRole_ProjectLead JohnSmith"@en .
@@ -129,81 +148,19 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # https://w3id.org/enigma#hasPersonRole_Reviewer
 <https://w3id.org/enigma#hasPersonRole_Reviewer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/enigma#hasPersonRole_Reviewer> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#contributor> .
-<https://w3id.org/enigma#hasPersonRole_Reviewer> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid4 .
-_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid4 <http://www.w3.org/2002/07/owl#unionOf> _:genid6 .
-_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#AcademicArticle> .
-_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Project> .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<https://w3id.org/enigma#hasPersonRole_Reviewer> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
-<https://w3id.org/enigma#hasPersonRole_Reviewer> <http://purl.org/vocab/vann/example> "BipolarProject hasPersonRole_Reviewer JohnSmith"@en .
-<https://w3id.org/enigma#hasPersonRole_Reviewer> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that indicates who contributed to the paper reviewing the initial drafts and providing comments"@en .
-<https://w3id.org/enigma#hasPersonRole_Reviewer> <http://www.w3.org/2000/01/rdf-schema#label> "has reviewer"@en .
-# 
-# https://w3id.org/enigma#contributor
-<https://w3id.org/enigma#contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#contributor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/contributor> .
-<https://w3id.org/enigma#contributor> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid7 .
-_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid7 <http://www.w3.org/2002/07/owl#unionOf> _:genid10 .
+<https://w3id.org/enigma#hasPersonRole_Reviewer> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid8 <http://www.w3.org/2002/07/owl#unionOf> _:genid10 .
 _:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#AcademicArticle> .
 _:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid9 .
 _:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Cohort> .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Project> .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<https://w3id.org/enigma#contributor> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
-<https://w3id.org/enigma#contributor> <http://www.linkedmodel.org/schema/vaem#rationale> "Property added to restrict the domain to projects, cohorts and academic articles. This is done for facilitating the interaction with the wiki interface"@en .
-<https://w3id.org/enigma#contributor> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that indicates who is a contributor to a project or cohort"@en .
-<https://w3id.org/enigma#contributor> <http://www.w3.org/2000/01/rdf-schema#label> "contributor"@en .
-# 
-# https://w3id.org/enigma#hasDataAnalyst
-<https://w3id.org/enigma#hasDataAnalyst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-# 
-# https://w3id.org/enigma#hasDataCollector
-<https://w3id.org/enigma#hasDataCollector> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-# 
-# https://w3id.org/enigma#hasGeneticDataAnalyst
-<https://w3id.org/enigma#hasGeneticDataAnalyst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#hasGeneticDataAnalyst> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#hasDataAnalyst> .
-<https://w3id.org/enigma#hasGeneticDataAnalyst> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
-<https://w3id.org/enigma#hasGeneticDataAnalyst> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
-<https://w3id.org/enigma#hasGeneticDataAnalyst> <http://purl.org/vocab/vann/example> "BipolarProject hasGeneticDataAnalyst JohnSmith"@en .
-<https://w3id.org/enigma#hasGeneticDataAnalyst> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what project someone is a genetic data analyst of"@en .
-<https://w3id.org/enigma#hasGeneticDataAnalyst> <http://www.w3.org/2000/01/rdf-schema#label> "has genetic data analyst"@en .
-# 
-# https://w3id.org/enigma#hasGeneticDataCollector
-<https://w3id.org/enigma#hasGeneticDataCollector> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#hasGeneticDataCollector> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#hasDataCollector> .
-<https://w3id.org/enigma#hasGeneticDataCollector> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
-<https://w3id.org/enigma#hasGeneticDataCollector> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
-<https://w3id.org/enigma#hasGeneticDataCollector> <http://purl.org/vocab/vann/example> "BipolarProject hasGeneticDataCollector JohnSmith"@en .
-<https://w3id.org/enigma#hasGeneticDataCollector> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what project someone collected genetic data for"@en .
-<https://w3id.org/enigma#hasGeneticDataCollector> <http://www.w3.org/2000/01/rdf-schema#label> "has genetic data collector"@en .
-# 
-# https://w3id.org/enigma#hasImagingDataAnalyst
-<https://w3id.org/enigma#hasImagingDataAnalyst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#hasImagingDataAnalyst> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#hasDataAnalyst> .
-<https://w3id.org/enigma#hasImagingDataAnalyst> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
-<https://w3id.org/enigma#hasImagingDataAnalyst> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
-<https://w3id.org/enigma#hasImagingDataAnalyst> <http://purl.org/vocab/vann/example> "BipolarProject hasImagingDataAnalyst JohnSmith"@en .
-<https://w3id.org/enigma#hasImagingDataAnalyst> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what project someone is an imaging data analyst of"@en .
-<https://w3id.org/enigma#hasImagingDataAnalyst> <http://www.w3.org/2000/01/rdf-schema#label> "has imaging data analyst"@en .
-# 
-# https://w3id.org/enigma#hasImagingDataCollector
-<https://w3id.org/enigma#hasImagingDataCollector> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#hasImagingDataCollector> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/enigma#hasDataCollector> .
-<https://w3id.org/enigma#hasImagingDataCollector> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
-<https://w3id.org/enigma#hasImagingDataCollector> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
-<https://w3id.org/enigma#hasImagingDataCollector> <http://purl.org/vocab/vann/example> "BipolarProject hasImagingDataCollector JohnSmith"@en .
-<https://w3id.org/enigma#hasImagingDataCollector> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what project someone collected imaging data for"@en .
-<https://w3id.org/enigma#hasImagingDataCollector> <http://www.w3.org/2000/01/rdf-schema#label> "has imaging data collector"@en .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Project> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/enigma#hasPersonRole_Reviewer> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#hasPersonRole_Reviewer> <http://purl.org/vocab/vann/example> "BipolarProject hasPersonRole_Reviewer JohnSmith"@en .
+<https://w3id.org/enigma#hasPersonRole_Reviewer> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that indicates who contributed to the paper reviewing the initial drafts and providing comments"@en .
+<https://w3id.org/enigma#hasPersonRole_Reviewer> <http://www.w3.org/2000/01/rdf-schema#label> "has reviewer"@en .
 # 
 # 
 # 

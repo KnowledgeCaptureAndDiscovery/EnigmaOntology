@@ -8,8 +8,7 @@
 
 <https://w3id.org/enigma> rdf:type owl:Ontology ;
                            owl:versionIRI <https://w3id.org/enigma/roles/1.1.0> ;
-                           <http://purl.org/dc/terms/contributor> "Daniel Garijo"^^xsd:string ,
-                                                                  "Yolanda Gil"^^xsd:string ;
+                           <http://purl.org/dc/terms/contributor> "Yolanda Gil"^^xsd:string ;
                            <http://purl.org/dc/terms/creator> "MiHyun Jang"^^xsd:string ,
                                                               "Neda Jahanshad"^^xsd:string ,
                                                               "Ryan Espiritu"^^xsd:string ;
@@ -78,6 +77,21 @@ xsd:gYear rdf:type rdfs:Datatype .
 <http://purl.org/dc/terms/contributor> rdf:type owl:ObjectProperty .
 
 
+###  https://w3id.org/enigma#contributor
+:contributor rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf <http://purl.org/dc/terms/contributor> ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :AcademicArticle
+                                         :Cohort
+                                         :Project
+                                       )
+                         ] ;
+             rdfs:range :Person ;
+             <http://www.linkedmodel.org/schema/vaem#rationale> "Property added to restrict the domain to projects, cohorts and academic articles. This is done for facilitating the interaction with the wiki interface"@en ;
+             rdfs:comment "Property that indicates who is a contributor to a project or cohort"@en ;
+             rdfs:label "contributor"@en .
+
+
 ###  https://w3id.org/enigma#hasPersonRole_DataAnalyst
 :hasPersonRole_DataAnalyst rdf:type owl:ObjectProperty ;
                            rdfs:subPropertyOf :contributor ;
@@ -114,7 +128,7 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 ###  https://w3id.org/enigma#hasPersonRole_ProjectLead
 :hasPersonRole_ProjectLead rdf:type owl:ObjectProperty ;
-                           rdfs:subPropertyOf <http://purl.org/dc/terms/contributor> ;
+                           rdfs:subPropertyOf owl:topObjectProperty ;
                            rdfs:domain :Project ;
                            rdfs:range :Person ;
                            <http://purl.org/vocab/vann/example> "BipolarProject hasPersonRole_ProjectLead JohnSmith"@en ;
@@ -144,69 +158,6 @@ xsd:gYear rdf:type rdfs:Datatype .
                         <http://purl.org/vocab/vann/example> "BipolarProject hasPersonRole_Reviewer JohnSmith"@en ;
                         rdfs:comment "Property that indicates who contributed to the paper reviewing the initial drafts and providing comments"@en ;
                         rdfs:label "has reviewer"@en .
-
-
-###  https://w3id.org/enigma#contributor
-:contributor rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf <http://purl.org/dc/terms/contributor> ;
-             rdfs:domain [ rdf:type owl:Class ;
-                           owl:unionOf ( :AcademicArticle
-                                         :Cohort
-                                         :Project
-                                       )
-                         ] ;
-             rdfs:range :Person ;
-             <http://www.linkedmodel.org/schema/vaem#rationale> "Property added to restrict the domain to projects, cohorts and academic articles. This is done for facilitating the interaction with the wiki interface"@en ;
-             rdfs:comment "Property that indicates who is a contributor to a project or cohort"@en ;
-             rdfs:label "contributor"@en .
-
-
-###  https://w3id.org/enigma#hasDataAnalyst
-:hasDataAnalyst rdf:type owl:ObjectProperty .
-
-
-###  https://w3id.org/enigma#hasDataCollector
-:hasDataCollector rdf:type owl:ObjectProperty .
-
-
-###  https://w3id.org/enigma#hasGeneticDataAnalyst
-:hasGeneticDataAnalyst rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf :hasDataAnalyst ;
-                       rdfs:domain :Project ;
-                       rdfs:range :Person ;
-                       <http://purl.org/vocab/vann/example> "BipolarProject hasGeneticDataAnalyst JohnSmith"@en ;
-                       rdfs:comment "Describes what project someone is a genetic data analyst of"@en ;
-                       rdfs:label "has genetic data analyst"@en .
-
-
-###  https://w3id.org/enigma#hasGeneticDataCollector
-:hasGeneticDataCollector rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf :hasDataCollector ;
-                         rdfs:domain :Project ;
-                         rdfs:range :Person ;
-                         <http://purl.org/vocab/vann/example> "BipolarProject hasGeneticDataCollector JohnSmith"@en ;
-                         rdfs:comment "Describes what project someone collected genetic data for"@en ;
-                         rdfs:label "has genetic data collector"@en .
-
-
-###  https://w3id.org/enigma#hasImagingDataAnalyst
-:hasImagingDataAnalyst rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf :hasDataAnalyst ;
-                       rdfs:domain :Project ;
-                       rdfs:range :Person ;
-                       <http://purl.org/vocab/vann/example> "BipolarProject hasImagingDataAnalyst JohnSmith"@en ;
-                       rdfs:comment "Describes what project someone is an imaging data analyst of"@en ;
-                       rdfs:label "has imaging data analyst"@en .
-
-
-###  https://w3id.org/enigma#hasImagingDataCollector
-:hasImagingDataCollector rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf :hasDataCollector ;
-                         rdfs:domain :Project ;
-                         rdfs:range :Person ;
-                         <http://purl.org/vocab/vann/example> "BipolarProject hasImagingDataCollector JohnSmith"@en ;
-                         rdfs:comment "Describes what project someone collected imaging data for"@en ;
-                         rdfs:label "has imaging data collector"@en .
 
 
 #################################################################
