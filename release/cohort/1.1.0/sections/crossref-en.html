@@ -31,9 +31,6 @@ This section provides details for each class and property defined by The Cohort 
          <a href="#CohortProject" title="https://w3id.org/enigma#CohortProject">Cohort Project</a>
       </li>
       <li>
-         <a href="#Condition" title="https://w3id.org/enigma#Condition">Condition</a>
-      </li>
-      <li>
          <a href="#Country" title="https://w3id.org/enigma#Country">Country</a>
       </li>
       <li>
@@ -100,9 +97,6 @@ This section provides details for each class and property defined by The Cohort 
       <li>
          <a href="#SignificantGeneralMedicalCondition"
             title="https://w3id.org/enigma#SignificantGeneralMedicalCondition">Significant General Medical Condition</a>
-      </li>
-      <li>
-         <a href="#Software" title="https://w3id.org/enigma#Software">Software</a>
       </li>
       <li>
          <a href="#SubstanceAbuse" title="https://w3id.org/enigma#SubstanceAbuse">Substance Abuse</a>
@@ -294,8 +288,10 @@ This section provides details for each class and property defined by The Cohort 
             <a href="#hasAdditionalDemographic" title="https://w3id.org/enigma#hasAdditionalDemographic">has additional demographic</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#hasAge_Group" title="https://w3id.org/enigma#hasAge_Group">has age group</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#hasCollectionSite" title="https://w3id.org/enigma#hasCollectionSite">has collection site</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasInvestigator" title="https://w3id.org/enigma#hasInvestigator">has investigator</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasPrincipalInvestigator" title="https://w3id.org/enigma#hasPrincipalInvestigator">has principal investigator</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasPersonRole_Investigator"
+               title="https://w3id.org/enigma#hasPersonRole_Investigator">has person role investigator</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasPersonRole_PrincipalInvestigator"
+               title="https://w3id.org/enigma#hasPersonRole_PrincipalInvestigator">has person role principal investigator</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasTotalNumberOfParticipants"
                title="https://w3id.org/enigma#hasTotalNumberOfParticipants">has total number of participants</a>
             <sup class="type-dp" title="data property">dp</sup>
@@ -383,23 +379,6 @@ This section provides details for each class and property defined by The Cohort 
             <a href="#hasCohortProject" title="https://w3id.org/enigma#hasCohortProject">has cohort project</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isPartOfCohortProject" title="https://w3id.org/enigma#isPartOfCohortProject">is part of cohort project</a>
             <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Condition">
-      <h3>Condition<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#Condition</p>
-      <div class="comment">
-         <span class="markdown">A state or mood experienced by the members of a cohort</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>Euthymia</pre>
          </dd>
       </dl>
    </div>
@@ -606,6 +585,11 @@ This section provides details for each class and property defined by The Cohort 
                title="https://w3id.org/enigma#SignificantGeneralMedicalCondition">Significant General Medical Condition</a>
             <sup class="type-c" title="class">c</sup>, <a href="#VascularDisorder" title="https://w3id.org/enigma#VascularDisorder">Vascular Disorder</a>
             <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#studiesDisorder" title="https://w3id.org/enigma#studiesDisorder">studies disorder</a>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
@@ -883,11 +867,12 @@ This section provides details for each class and property defined by The Cohort 
          <dt>is in range of</dt>
          <dd>
             <a href="#hasContact" title="https://w3id.org/enigma#hasContact">has contact</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasContributor" title="https://w3id.org/enigma#hasContributor">has contributor</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasInvestigator" title="https://w3id.org/enigma#hasInvestigator">has investigator</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasMainPrincipalInvestigator"
-               title="https://w3id.org/enigma#hasMainPrincipalInvestigator">has main principal investigator</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasPrincipalInvestigator" title="https://w3id.org/enigma#hasPrincipalInvestigator">has principal investigator</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasPersonRole_MainPrincipalInvestigator"
+               title="https://w3id.org/enigma#hasPersonRole_MainPrincipalInvestigator">has main person role principal investigator</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasPersonRole_Investigator"
+               title="https://w3id.org/enigma#hasPersonRole_Investigator">has person role investigator</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasPersonRole_PrincipalInvestigator"
+               title="https://w3id.org/enigma#hasPersonRole_PrincipalInvestigator">has person role principal investigator</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -968,17 +953,6 @@ This section provides details for each class and property defined by The Cohort 
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
-   </div>
-   <div class="entity" id="Software">
-      <h3>Software<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#Software</p>
-      <div class="comment">
-         <span class="markdown">Computational tool that can be executed to achieve a certain goal</span>
-      </div>
    </div>
    <div class="entity" id="SubstanceAbuse">
       <h3>Substance Abuse<sup class="type-c" title="class">c</sup>
@@ -1108,9 +1082,6 @@ This section provides details for each class and property defined by The Cohort 
          <a href="#hasContact" title="https://w3id.org/enigma#hasContact">has contact</a>
       </li>
       <li>
-         <a href="#hasContributor" title="https://w3id.org/enigma#hasContributor">has contributor</a>
-      </li>
-      <li>
          <a href="#hasControlGroup" title="https://w3id.org/enigma#hasControlGroup">has control group</a>
       </li>
       <li>
@@ -1141,17 +1112,19 @@ This section provides details for each class and property defined by The Cohort 
             title="https://w3id.org/enigma#hasImageAcquisitionProtocol">has image acquisition protocol</a>
       </li>
       <li>
-         <a href="#hasInvestigator" title="https://w3id.org/enigma#hasInvestigator">has investigator</a>
+         <a href="#hasPersonRole_MainPrincipalInvestigator"
+            title="https://w3id.org/enigma#hasPersonRole_MainPrincipalInvestigator">has main person role principal investigator</a>
       </li>
       <li>
-         <a href="#hasMainPrincipalInvestigator"
-            title="https://w3id.org/enigma#hasMainPrincipalInvestigator">has main principal investigator</a>
+         <a href="#hasPersonRole_Investigator"
+            title="https://w3id.org/enigma#hasPersonRole_Investigator">has person role investigator</a>
+      </li>
+      <li>
+         <a href="#hasPersonRole_PrincipalInvestigator"
+            title="https://w3id.org/enigma#hasPersonRole_PrincipalInvestigator">has person role principal investigator</a>
       </li>
       <li>
          <a href="#hasPopulationGroup" title="https://w3id.org/enigma#hasPopulationGroup">has population group</a>
-      </li>
-      <li>
-         <a href="#hasPrincipalInvestigator" title="https://w3id.org/enigma#hasPrincipalInvestigator">has principal investigator</a>
       </li>
       <li>
          <a href="#hasStatistics" title="https://w3id.org/enigma#hasStatistics">has statistics</a>
@@ -1173,6 +1146,9 @@ This section provides details for each class and property defined by The Cohort 
       </li>
       <li>
          <a href="#isPartOfWorkingGroup" title="https://w3id.org/enigma#isPartOfWorkingGroup">is part of working group</a>
+      </li>
+      <li>
+         <a href="#studiesDisorder" title="https://w3id.org/enigma#studiesDisorder">studies disorder</a>
       </li>
    </ul>
    <div class="entity" id="https://schema.org/distribution">
@@ -1346,40 +1322,6 @@ This section provides details for each class and property defined by The Cohort 
                <sup class="type-c" title="class">c</sup> 
                <span class="logic">or</span> 
                <a href="#CohortGroup" title="https://w3id.org/enigma#CohortGroup">Cohort Group</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#CohortProject" title="https://w3id.org/enigma#CohortProject">Cohort Project</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasContributor">
-      <h3>has contributor<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#hasContributor</p>
-      <div class="comment">
-         <span class="markdown">Property that points to the contributor for the project or cohort</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>BipolarCohort hasContributor JohnDoe</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
                <sup class="type-c" title="class">c</sup> 
                <span class="logic">or</span> 
                <a href="#CohortProject" title="https://w3id.org/enigma#CohortProject">Cohort Project</a>
@@ -1716,13 +1658,56 @@ This section provides details for each class and property defined by The Cohort 
          </dl>
       </div>
    </div>
-   <div class="entity" id="hasInvestigator">
-      <h3>has investigator<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="hasPersonRole_MainPrincipalInvestigator">
+      <h3>has main person role principal investigator<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#hasInvestigator</p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasPersonRole_MainPrincipalInvestigator</p>
+      <div class="comment">
+         <span class="markdown">Describes which cohorts somone is a main PI of</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>Cohort1 hasMainPrincipalInvestigatorof JohnSmith</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#hasPersonRole_PrincipalInvestigator"
+                  title="https://w3id.org/enigma#hasPersonRole_PrincipalInvestigator">has person role principal investigator</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#CohortGroup" title="https://w3id.org/enigma#CohortGroup">Cohort Group</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#CohortProject" title="https://w3id.org/enigma#CohortProject">Cohort Project</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasPersonRole_Investigator">
+      <h3>has person role investigator<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasPersonRole_Investigator</p>
       <div class="comment">
          <span class="markdown">Describe the investigators of a cohort</span>
       </div>
@@ -1736,7 +1721,8 @@ This section provides details for each class and property defined by The Cohort 
          <dl>
             <dt>has sub-properties</dt>
             <dd>
-               <a href="#hasPrincipalInvestigator" title="https://w3id.org/enigma#hasPrincipalInvestigator">has principal investigator</a>
+               <a href="#hasPersonRole_PrincipalInvestigator"
+                  title="https://w3id.org/enigma#hasPersonRole_PrincipalInvestigator">has person role principal investigator</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
@@ -1752,38 +1738,39 @@ This section provides details for each class and property defined by The Cohort 
          </dl>
       </div>
    </div>
-   <div class="entity" id="hasMainPrincipalInvestigator">
-      <h3>has main principal investigator<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="hasPersonRole_PrincipalInvestigator">
+      <h3>has person role principal investigator<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#hasMainPrincipalInvestigator</p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasPersonRole_PrincipalInvestigator</p>
       <div class="comment">
-         <span class="markdown">Describes which cohorts somone is a main PI of</span>
+         <span class="markdown">Describes the principal investigator of the cohort</span>
       </div>
       <dl>
          <dt>Example</dt>
          <dd>
-            <pre>Cohort1 hasMainPrincipalInvestigatorof JohnSmith</pre>
+            <pre>Cohort1 hasPrincipalInvestigator John --&gt; the principal investigator of Cohort1 is John</pre>
          </dd>
       </dl>
       <div class="description">
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#hasPrincipalInvestigator" title="https://w3id.org/enigma#hasPrincipalInvestigator">has principal investigator</a>
+               <a href="#hasPersonRole_Investigator"
+                  title="https://w3id.org/enigma#hasPersonRole_Investigator">has person role investigator</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#hasPersonRole_MainPrincipalInvestigator"
+                  title="https://w3id.org/enigma#hasPersonRole_MainPrincipalInvestigator">has main person role principal investigator</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dt>has domain</dt>
             <dd>
                <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#CohortGroup" title="https://w3id.org/enigma#CohortGroup">Cohort Group</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#CohortProject" title="https://w3id.org/enigma#CohortProject">Cohort Project</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1831,48 +1818,6 @@ This section provides details for each class and property defined by The Cohort 
             <dt>has range</dt>
             <dd>
                <a href="#CohortGroup" title="https://w3id.org/enigma#CohortGroup">Cohort Group</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasPrincipalInvestigator">
-      <h3>has principal investigator<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#hasPrincipalInvestigator</p>
-      <div class="comment">
-         <span class="markdown">Describes the principal investigator of the cohort</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>Cohort1 hasPrincipalInvestigator John --&gt; the principal investigator of Cohort1 is John</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#hasInvestigator" title="https://w3id.org/enigma#hasInvestigator">has investigator</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has sub-properties</dt>
-            <dd>
-               <a href="#hasMainPrincipalInvestigator"
-                  title="https://w3id.org/enigma#hasMainPrincipalInvestigator">has main principal investigator</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -2055,6 +2000,34 @@ This section provides details for each class and property defined by The Cohort 
             <dt>has range</dt>
             <dd>
                <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">Working Group</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="studiesDisorder">
+      <h3>studies disorder<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#studiesDisorder</p>
+      <div class="comment">
+         <span class="markdown">Property that indicates which project/working group studies which disorder</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Project" title="https://w3id.org/enigma#Project">Project</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">Working Group</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Disorder" title="https://w3id.org/enigma#Disorder">Disorder</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
