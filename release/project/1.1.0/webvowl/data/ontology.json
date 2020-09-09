@@ -22,11 +22,6 @@
       "creator" : [ {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Neda Jahanshad",
-        "type" : "label"
-      }, {
-        "identifier" : "creator",
-        "language" : "undefined",
         "value" : "MiHyun Jang",
         "type" : "label"
       }, {
@@ -34,13 +29,13 @@
         "language" : "undefined",
         "value" : "Ryan Espiritu",
         "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Neda Jahanshad",
+        "type" : "label"
       } ],
       "contributor" : [ {
-        "identifier" : "contributor",
-        "language" : "undefined",
-        "value" : "Haripriya Dharmala",
-        "type" : "label"
-      }, {
         "identifier" : "contributor",
         "language" : "undefined",
         "value" : "Yolanda Gil",
@@ -49,6 +44,11 @@
         "identifier" : "contributor",
         "language" : "undefined",
         "value" : "Daniel Garijo",
+        "type" : "label"
+      }, {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Haripriya Dharmala",
         "type" : "label"
       } ],
       "preferredNamespacePrefix" : [ {
@@ -80,7 +80,7 @@
   "namespace" : [ ],
   "metrics" : {
     "classCount" : 15,
-    "objectPropertyCount" : 10,
+    "objectPropertyCount" : 11,
     "datatypePropertyCount" : 13,
     "individualCount" : 0
   },
@@ -314,7 +314,7 @@
     "label" : {
       "IRI-based" : "AcademicArticle"
     },
-    "attributes" : [ "equivalent", "external" ],
+    "attributes" : [ "external", "equivalent" ],
     "id" : "18"
   }, {
     "iri" : "https://w3id.org/enigma#GeneticAssociationProtocol",
@@ -662,9 +662,12 @@
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "59",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "60",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "61",
     "type" : "owl:datatypeProperty"
   } ],
   "propertyAttribute" : [ {
@@ -1061,6 +1064,20 @@
     "attributes" : [ "datatype" ],
     "id" : "58"
   }, {
+    "iri" : "https://w3id.org/enigma#hasConflictOfInterest",
+    "baseIri" : "https://w3id.org/enigma",
+    "range" : "56",
+    "label" : {
+      "IRI-based" : "hasConflictOfInterest",
+      "en" : "has conflict of interest"
+    },
+    "domain" : "11",
+    "comment" : {
+      "en" : "Property linking an author with a conflict of interest that the author has on a paper"
+    },
+    "attributes" : [ "object" ],
+    "id" : "59"
+  }, {
     "iri" : "https://w3id.org/enigma#isActive",
     "baseIri" : "https://w3id.org/enigma",
     "range" : "46",
@@ -1073,7 +1090,7 @@
       "en" : "Describes whether a project is active"
     },
     "attributes" : [ "datatype" ],
-    "id" : "59"
+    "id" : "60"
   }, {
     "iri" : "http://purl.org/dc/terms/title",
     "baseIri" : "http://purl.org/dc/terms",
@@ -1091,6 +1108,6 @@
     },
     "domain" : "9",
     "attributes" : [ "external", "datatype" ],
-    "id" : "60"
+    "id" : "61"
   } ]
 }
