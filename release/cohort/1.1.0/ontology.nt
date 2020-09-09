@@ -286,7 +286,6 @@ _:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 # 
 # https://w3id.org/enigma#hasHomePage
 <https://w3id.org/enigma#hasHomePage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#hasHomePage> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://xmlns.com/foaf/0.1/homepage> .
 <https://w3id.org/enigma#hasHomePage> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid39 .
 _:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 _:genid39 <http://www.w3.org/2002/07/owl#unionOf> _:genid43 .
@@ -481,8 +480,8 @@ _:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#checksum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/enigma#checksum> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#DataDownload> .
 <https://w3id.org/enigma#checksum> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/enigma#checksum> <http://www.w3.org/2000/01/rdf-schema#comment> "Checksum of data file to check if there are modifications" .
-<https://w3id.org/enigma#checksum> <http://www.w3.org/2000/01/rdf-schema#label> "Checksum" .
+<https://w3id.org/enigma#checksum> <http://www.w3.org/2000/01/rdf-schema#comment> "checksum of data file to check if there are modifications" .
+<https://w3id.org/enigma#checksum> <http://www.w3.org/2000/01/rdf-schema#label> "checksum" .
 # 
 # https://w3id.org/enigma#hasAdditionalDemographic
 <https://w3id.org/enigma#hasAdditionalDemographic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -805,7 +804,7 @@ _:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid122 .
 _:genid122 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid122 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#CohortProject> .
 _:genid122 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<https://w3id.org/enigma#hasNumberOfParticipants> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#positiveInteger> .
+<https://w3id.org/enigma#hasNumberOfParticipants> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
 <https://w3id.org/enigma#hasNumberOfParticipants> <http://purl.org/vocab/vann/example> "CohortGroup2 hasNumberOfParticipants 200"@en .
 <https://w3id.org/enigma#hasNumberOfParticipants> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the number of participants in a cohort group or cohort project"@en .
 <https://w3id.org/enigma#hasNumberOfParticipants> <http://www.w3.org/2000/01/rdf-schema#label> "has number of participants"@en .
@@ -890,7 +889,18 @@ _:genid129 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/
 # 
 # https://w3id.org/enigma#usesScanner
 <https://w3id.org/enigma#usesScanner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#usesScanner> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cohort> .
+<https://w3id.org/enigma#usesScanner> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid132 .
+_:genid132 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid132 <http://www.w3.org/2002/07/owl#unionOf> _:genid135 .
+_:genid135 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid135 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Cohort> .
+_:genid135 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid134 .
+_:genid134 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid134 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#CohortGroup> .
+_:genid134 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid133 .
+_:genid133 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid133 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#CohortProject> .
+_:genid133 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <https://w3id.org/enigma#usesScanner> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/enigma#usesScanner> <http://purl.org/vocab/vann/example> "SZCohort usesScanner \"1.5T-GE-Signa\""@en .
 <https://w3id.org/enigma#usesScanner> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the scanner used by the cohort"@en .

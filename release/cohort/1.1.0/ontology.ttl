@@ -250,7 +250,6 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 ###  https://w3id.org/enigma#hasHomePage
 :hasHomePage rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/homepage> ;
              rdfs:domain [ rdf:type owl:Class ;
                            owl:unionOf ( :Cohort
                                          :CohortGroup
@@ -414,8 +413,8 @@ xsd:gYear rdf:type rdfs:Datatype .
 :checksum rdf:type owl:DatatypeProperty ;
           rdfs:domain :DataDownload ;
           rdfs:range xsd:string ;
-          rdfs:comment "Checksum of data file to check if there are modifications"^^xsd:string ;
-          rdfs:label "Checksum"^^xsd:string .
+          rdfs:comment "checksum of data file to check if there are modifications"^^xsd:string ;
+          rdfs:label "checksum"^^xsd:string .
 
 
 ###  https://w3id.org/enigma#hasAdditionalDemographic
@@ -692,7 +691,7 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                      :CohortProject
                                                    )
                                      ] ;
-                         rdfs:range xsd:positiveInteger ;
+                         rdfs:range xsd:int ;
                          <http://purl.org/vocab/vann/example> "CohortGroup2 hasNumberOfParticipants 200"@en ;
                          rdfs:comment "Describes the number of participants in a cohort group or cohort project"@en ;
                          rdfs:label "has number of participants"@en .
@@ -774,7 +773,12 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
 
 ###  https://w3id.org/enigma#usesScanner
 :usesScanner rdf:type owl:DatatypeProperty ;
-             rdfs:domain :Cohort ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :Cohort
+                                         :CohortGroup
+                                         :CohortProject
+                                       )
+                         ] ;
              rdfs:range xsd:string ;
              <http://purl.org/vocab/vann/example> "SZCohort usesScanner \"1.5T-GE-Signa\""@en ;
              rdfs:comment "Describes the scanner used by the cohort"@en ;
