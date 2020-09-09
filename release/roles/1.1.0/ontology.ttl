@@ -161,6 +161,54 @@ xsd:gYear rdf:type rdfs:Datatype .
              rdfs:label "contributor"@en .
 
 
+###  https://w3id.org/enigma#hasDataAnalyst
+:hasDataAnalyst rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/enigma#hasDataCollector
+:hasDataCollector rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/enigma#hasGeneticDataAnalyst
+:hasGeneticDataAnalyst rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :hasDataAnalyst ;
+                       rdfs:domain :Project ;
+                       rdfs:range :Person ;
+                       <http://purl.org/vocab/vann/example> "BipolarProject hasGeneticDataAnalyst JohnSmith"@en ;
+                       rdfs:comment "Describes what project someone is a genetic data analyst of"@en ;
+                       rdfs:label "has genetic data analyst"@en .
+
+
+###  https://w3id.org/enigma#hasGeneticDataCollector
+:hasGeneticDataCollector rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :hasDataCollector ;
+                         rdfs:domain :Project ;
+                         rdfs:range :Person ;
+                         <http://purl.org/vocab/vann/example> "BipolarProject hasGeneticDataCollector JohnSmith"@en ;
+                         rdfs:comment "Describes what project someone collected genetic data for"@en ;
+                         rdfs:label "has genetic data collector"@en .
+
+
+###  https://w3id.org/enigma#hasImagingDataAnalyst
+:hasImagingDataAnalyst rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :hasDataAnalyst ;
+                       rdfs:domain :Project ;
+                       rdfs:range :Person ;
+                       <http://purl.org/vocab/vann/example> "BipolarProject hasImagingDataAnalyst JohnSmith"@en ;
+                       rdfs:comment "Describes what project someone is an imaging data analyst of"@en ;
+                       rdfs:label "has imaging data analyst"@en .
+
+
+###  https://w3id.org/enigma#hasImagingDataCollector
+:hasImagingDataCollector rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :hasDataCollector ;
+                         rdfs:domain :Project ;
+                         rdfs:range :Person ;
+                         <http://purl.org/vocab/vann/example> "BipolarProject hasImagingDataCollector JohnSmith"@en ;
+                         rdfs:comment "Describes what project someone collected imaging data for"@en ;
+                         rdfs:label "has imaging data collector"@en .
+
+
 #################################################################
 #    Classes
 #################################################################
