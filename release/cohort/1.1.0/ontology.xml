@@ -241,26 +241,6 @@
     
 
 
-    <!-- https://w3id.org/enigma#hasContributor -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasContributor">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortProject"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">BipolarCohort hasContributor JohnDoe</vann:example>
-        <rdfs:comment xml:lang="en">Property that points to the contributor for the project or cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has contributor</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/enigma#hasControlGroup -->
 
 
@@ -437,24 +417,24 @@
     
 
 
-    <!-- https://w3id.org/enigma#hasInvestigator -->
+    <!-- https://w3id.org/enigma#hasPersonRole_Investigator -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasInvestigator">
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasPersonRole_Investigator">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
         <vann:example xml:lang="en">BipolarCohort hasInvestigator JohnSmith</vann:example>
         <rdfs:comment xml:lang="en">Describe the investigators of a cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has investigator</rdfs:label>
+        <rdfs:label xml:lang="en">has person role investigator</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasMainPrincipalInvestigator -->
+    <!-- https://w3id.org/enigma#hasPersonRole_MainPrincipalInvestigator -->
 
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasMainPrincipalInvestigator">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasPrincipalInvestigator"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasPersonRole_MainPrincipalInvestigator">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasPersonRole_PrincipalInvestigator"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -467,7 +447,21 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
         <vann:example xml:lang="en">Cohort1 hasMainPrincipalInvestigatorof JohnSmith</vann:example>
         <rdfs:comment xml:lang="en">Describes which cohorts somone is a main PI of</rdfs:comment>
-        <rdfs:label xml:lang="en">has main principal investigator</rdfs:label>
+        <rdfs:label xml:lang="en">has main person role principal investigator</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasPersonRole_PrincipalInvestigator -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasPersonRole_PrincipalInvestigator">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasPersonRole_Investigator"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example xml:lang="en">Cohort1 hasPrincipalInvestigator John --&gt; the principal investigator of Cohort1 is John</vann:example>
+        <rdfs:comment xml:lang="en">Describes the principal investigator of the cohort</rdfs:comment>
+        <rdfs:label xml:lang="en">has person role principal investigator</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -490,20 +484,6 @@
         <vann:example xml:lang="en">BipolarCohort hasPopulationGroup USCPopulationGroup</vann:example>
         <rdfs:comment xml:lang="en">Describes the population group of a population-based cohort</rdfs:comment>
         <rdfs:label xml:lang="en">has population group</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasPrincipalInvestigator -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasPrincipalInvestigator">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasInvestigator"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">Cohort1 hasPrincipalInvestigator John --&gt; the principal investigator of Cohort1 is John</vann:example>
-        <rdfs:comment xml:lang="en">Describes the principal investigator of the cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">has principal investigator</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -599,6 +579,25 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#WorkingGroup"/>
         <rdfs:comment xml:lang="en">Property that indicates the cohorts which are a part of a working group</rdfs:comment>
         <rdfs:label xml:lang="en">is part of working group</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#studiesDisorder -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#studiesDisorder">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Project"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#WorkingGroup"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Disorder"/>
+        <rdfs:comment xml:lang="en">Property that indicates which project/working group studies which disorder</rdfs:comment>
+        <rdfs:label xml:lang="en">studies disorder</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1366,17 +1365,6 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
     
 
 
-    <!-- https://w3id.org/enigma#Condition -->
-
-
-    <owl:Class rdf:about="https://w3id.org/enigma#Condition">
-        <vann:example xml:lang="en">Euthymia</vann:example>
-        <rdfs:comment xml:lang="en">A state or mood experienced by the members of a cohort</rdfs:comment>
-        <rdfs:label xml:lang="en">Condition</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/enigma#Country -->
 
 
@@ -1602,16 +1590,6 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
         <vann:example xml:lang="en">Cancer</vann:example>
         <rdfs:comment xml:lang="en">Blanket term ecompassing serious medical condtions</rdfs:comment>
         <rdfs:label xml:lang="en">Significant General Medical Condition</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/enigma#Software -->
-
-
-    <owl:Class rdf:about="https://w3id.org/enigma#Software">
-        <rdfs:comment xml:lang="en">Computational tool that can be executed to achieve a certain goal</rdfs:comment>
-        <rdfs:label xml:lang="en">Software</rdfs:label>
     </owl:Class>
     
 

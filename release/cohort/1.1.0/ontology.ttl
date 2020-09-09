@@ -145,19 +145,6 @@ xsd:gYear rdf:type rdfs:Datatype .
             rdfs:label "has contact"@en .
 
 
-###  https://w3id.org/enigma#hasContributor
-:hasContributor rdf:type owl:ObjectProperty ;
-                rdfs:domain [ rdf:type owl:Class ;
-                              owl:unionOf ( :Cohort
-                                            :CohortProject
-                                          )
-                            ] ;
-                rdfs:range :Person ;
-                <http://purl.org/vocab/vann/example> "BipolarCohort hasContributor JohnDoe"@en ;
-                rdfs:comment "Property that points to the contributor for the project or cohort"@en ;
-                rdfs:label "has contributor"@en .
-
-
 ###  https://w3id.org/enigma#hasControlGroup
 :hasControlGroup rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf :hasCohortGroup ;
@@ -274,28 +261,38 @@ xsd:gYear rdf:type rdfs:Datatype .
                              rdfs:label "has image acquisition protocol"@en .
 
 
-###  https://w3id.org/enigma#hasInvestigator
-:hasInvestigator rdf:type owl:ObjectProperty ;
-                 rdfs:domain :Cohort ;
-                 rdfs:range :Person ;
-                 <http://purl.org/vocab/vann/example> "BipolarCohort hasInvestigator JohnSmith"@en ;
-                 rdfs:comment "Describe the investigators of a cohort"@en ;
-                 rdfs:label "has investigator"@en .
+###  https://w3id.org/enigma#hasPersonRole_Investigator
+:hasPersonRole_Investigator rdf:type owl:ObjectProperty ;
+                            rdfs:domain :Cohort ;
+                            rdfs:range :Person ;
+                            <http://purl.org/vocab/vann/example> "BipolarCohort hasInvestigator JohnSmith"@en ;
+                            rdfs:comment "Describe the investigators of a cohort"@en ;
+                            rdfs:label "has person role investigator"@en .
 
 
-###  https://w3id.org/enigma#hasMainPrincipalInvestigator
-:hasMainPrincipalInvestigator rdf:type owl:ObjectProperty ;
-                              rdfs:subPropertyOf :hasPrincipalInvestigator ;
-                              rdfs:domain [ rdf:type owl:Class ;
-                                            owl:unionOf ( :Cohort
-                                                          :CohortGroup
-                                                          :CohortProject
-                                                        )
-                                          ] ;
-                              rdfs:range :Person ;
-                              <http://purl.org/vocab/vann/example> "Cohort1 hasMainPrincipalInvestigatorof JohnSmith"@en ;
-                              rdfs:comment "Describes which cohorts somone is a main PI of"@en ;
-                              rdfs:label "has main principal investigator"@en .
+###  https://w3id.org/enigma#hasPersonRole_MainPrincipalInvestigator
+:hasPersonRole_MainPrincipalInvestigator rdf:type owl:ObjectProperty ;
+                                         rdfs:subPropertyOf :hasPersonRole_PrincipalInvestigator ;
+                                         rdfs:domain [ rdf:type owl:Class ;
+                                                       owl:unionOf ( :Cohort
+                                                                     :CohortGroup
+                                                                     :CohortProject
+                                                                   )
+                                                     ] ;
+                                         rdfs:range :Person ;
+                                         <http://purl.org/vocab/vann/example> "Cohort1 hasMainPrincipalInvestigatorof JohnSmith"@en ;
+                                         rdfs:comment "Describes which cohorts somone is a main PI of"@en ;
+                                         rdfs:label "has main person role principal investigator"@en .
+
+
+###  https://w3id.org/enigma#hasPersonRole_PrincipalInvestigator
+:hasPersonRole_PrincipalInvestigator rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf :hasPersonRole_Investigator ;
+                                     rdfs:domain :Cohort ;
+                                     rdfs:range :Person ;
+                                     <http://purl.org/vocab/vann/example> "Cohort1 hasPrincipalInvestigator John --> the principal investigator of Cohort1 is John"@en ;
+                                     rdfs:comment "Describes the principal investigator of the cohort"@en ;
+                                     rdfs:label "has person role principal investigator"@en .
 
 
 ###  https://w3id.org/enigma#hasPopulationGroup
@@ -311,16 +308,6 @@ xsd:gYear rdf:type rdfs:Datatype .
                     <http://purl.org/vocab/vann/example> "BipolarCohort hasPopulationGroup USCPopulationGroup"@en ;
                     rdfs:comment "Describes the population group of a population-based cohort"@en ;
                     rdfs:label "has population group"@en .
-
-
-###  https://w3id.org/enigma#hasPrincipalInvestigator
-:hasPrincipalInvestigator rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf :hasInvestigator ;
-                          rdfs:domain :Cohort ;
-                          rdfs:range :Person ;
-                          <http://purl.org/vocab/vann/example> "Cohort1 hasPrincipalInvestigator John --> the principal investigator of Cohort1 is John"@en ;
-                          rdfs:comment "Describes the principal investigator of the cohort"@en ;
-                          rdfs:label "has principal investigator"@en .
 
 
 ###  https://w3id.org/enigma#hasStatistics
@@ -383,6 +370,18 @@ xsd:gYear rdf:type rdfs:Datatype .
                       rdfs:range :WorkingGroup ;
                       rdfs:comment "Property that indicates the cohorts which are a part of a working group"@en ;
                       rdfs:label "is part of working group"@en .
+
+
+###  https://w3id.org/enigma#studiesDisorder
+:studiesDisorder rdf:type owl:ObjectProperty ;
+                 rdfs:domain [ rdf:type owl:Class ;
+                               owl:unionOf ( :Project
+                                             :WorkingGroup
+                                           )
+                             ] ;
+                 rdfs:range :Disorder ;
+                 rdfs:comment "Property that indicates which project/working group studies which disorder"@en ;
+                 rdfs:label "studies disorder"@en .
 
 
 #################################################################
@@ -873,13 +872,6 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
                rdfs:label "Cohort Project"@en .
 
 
-###  https://w3id.org/enigma#Condition
-:Condition rdf:type owl:Class ;
-           <http://purl.org/vocab/vann/example> "Euthymia"@en ;
-           rdfs:comment "A state or mood experienced by the members of a cohort"@en ;
-           rdfs:label "Condition"@en .
-
-
 ###  https://w3id.org/enigma#Country
 :Country rdf:type owl:Class ;
          rdfs:subClassOf :Location ;
@@ -1027,12 +1019,6 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
                                     <http://purl.org/vocab/vann/example> "Cancer"@en ;
                                     rdfs:comment "Blanket term ecompassing serious medical condtions"@en ;
                                     rdfs:label "Significant General Medical Condition"@en .
-
-
-###  https://w3id.org/enigma#Software
-:Software rdf:type owl:Class ;
-          rdfs:comment "Computational tool that can be executed to achieve a certain goal"@en ;
-          rdfs:label "Software"@en .
 
 
 ###  https://w3id.org/enigma#SubstanceAbuse

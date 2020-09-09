@@ -10,8 +10,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vann="http://purl.org/vocab/vann/">
     <owl:Ontology rdf:about="https://w3id.org/enigma">
-        <owl:versionIRI rdf:resource="https://w3id.org/enigma/project/1.0.0"/>
-        <terms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Daniel Garijo</terms:contributor>
+        <owl:versionIRI rdf:resource="https://w3id.org/enigma/project/1.1.0"/>
         <terms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Haripriya Dharmala</terms:contributor>
         <terms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yolanda Gil</terms:contributor>
         <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MiHyun Jang</terms:creator>
@@ -22,7 +21,7 @@
         <terms:title xml:lang="en">The Project Ontology</terms:title>
         <vann:preferredNamespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string">enigma</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:resource="https://w3id.org/enigma#"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">v1.0.0</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">v1.1.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -36,6 +35,13 @@
      -->
 
 
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
     
 
 
@@ -123,16 +129,6 @@
      -->
 
 
-    
-
-
-    <!-- http://purl.org/dc/terms/contributor -->
-
-
-    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/contributor">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-    </owl:ObjectProperty>
     
 
 
@@ -291,15 +287,6 @@
     
 
 
-    <!-- http://purl.org/dc/terms/date -->
-
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/date">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/date"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://purl.org/dc/terms/description -->
 
 
@@ -307,35 +294,11 @@
     
 
 
-    <!-- http://purl.org/dc/terms/identifier -->
-
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/identifier">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/identifier"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/dc/terms/spatial -->
-
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/spatial">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/spatial"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/dc/terms/title -->
-
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title"/>
-    
-
-
     <!-- https://w3id.org/enigma#hasBriefDescription -->
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasBriefDescription">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/description"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -536,26 +499,6 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
     
 
 
-    <!-- https://w3id.org/enigma#GeneReferencePanel -->
-
-
-    <owl:Class rdf:about="https://w3id.org/enigma#GeneReferencePanel">
-        <rdfs:label xml:lang="en">Gene Reference Panel</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/enigma#GeneticAssociationProtocol -->
-
-
-    <owl:Class rdf:about="https://w3id.org/enigma#GeneticAssociationProtocol">
-        <vann:example xml:lang="en">ENIGMA3 – GWAS Meta Analysis of Cortical Thickness and Surface Area - Association Protocol</vann:example>
-        <rdfs:comment xml:lang="en">ENIGMA Protocols for genetic associations</rdfs:comment>
-        <rdfs:label xml:lang="en">Genetic Association Protocol</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/enigma#GeneticDataType -->
 
 
@@ -564,17 +507,6 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
         <vann:example xml:lang="en">Epigenetic</vann:example>
         <rdfs:comment xml:lang="en">Specifies the kinds of genetic data collected</rdfs:comment>
         <rdfs:label xml:lang="en">Genetic Data Type</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/enigma#GenotypeImputationProtocol -->
-
-
-    <owl:Class rdf:about="https://w3id.org/enigma#GenotypeImputationProtocol">
-        <vann:example xml:lang="en">ENIGMA3 – GWAS Meta Analysis of Cortical Thickness and Surface Area - Imputation Protocol</vann:example>
-        <rdfs:comment xml:lang="en">ENIGMA Protocols for genetic imputations</rdfs:comment>
-        <rdfs:label xml:lang="en">Genotype Imputation Protocol</rdfs:label>
     </owl:Class>
     
 
@@ -620,24 +552,6 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
         <rdfs:comment xml:lang="en">Group of researchers studying a certain topic/disease</rdfs:comment>
         <rdfs:label xml:lang="en">Working Group</rdfs:label>
     </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    <rdf:Description rdf:about="http://purl.org/dc/terms/contributor">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/dc/terms/title">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-    </rdf:Description>
 </rdf:RDF>
 
 

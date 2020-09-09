@@ -1,6 +1,5 @@
 <https://w3id.org/enigma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/enigma/project/1.0.0> .
-<https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Daniel Garijo" .
+<https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/enigma/project/1.1.0> .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Haripriya Dharmala" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Yolanda Gil" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "MiHyun Jang" .
@@ -11,7 +10,7 @@
 <https://w3id.org/enigma> <http://purl.org/dc/terms/title> "The Project Ontology"@en .
 <https://w3id.org/enigma> <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma" .
 <https://w3id.org/enigma> <http://purl.org/vocab/vann/preferredNamespaceUri> <https://w3id.org/enigma#> .
-<https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionInfo> "v1.0.0" .
+<https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionInfo> "v1.1.0" .
 # 
 # 
 # #################################################################
@@ -20,6 +19,9 @@
 # #
 # #################################################################
 # 
+# 
+# http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://purl.org/dc/terms/creator
 <http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -65,11 +67,6 @@
 # #
 # #################################################################
 # 
-# 
-# http://purl.org/dc/terms/contributor
-<http://purl.org/dc/terms/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/dc/terms/contributor> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Project> .
-<http://purl.org/dc/terms/contributor> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
 # 
 # https://w3id.org/enigma#hasBrainScanDataType
 <https://w3id.org/enigma#hasBrainScanDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -182,26 +179,12 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 # #################################################################
 # 
 # 
-# http://purl.org/dc/terms/date
-<http://purl.org/dc/terms/date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://purl.org/dc/terms/date> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/date> .
-# 
 # http://purl.org/dc/terms/description
 <http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 # 
-# http://purl.org/dc/terms/identifier
-<http://purl.org/dc/terms/identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://purl.org/dc/terms/identifier> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/identifier> .
-# 
-# http://purl.org/dc/terms/spatial
-<http://purl.org/dc/terms/spatial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://purl.org/dc/terms/spatial> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/spatial> .
-# 
-# http://purl.org/dc/terms/title
-<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
 # https://w3id.org/enigma#hasBriefDescription
 <https://w3id.org/enigma#hasBriefDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasBriefDescription> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/description> .
 <https://w3id.org/enigma#hasBriefDescription> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid13 .
 _:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 _:genid13 <http://www.w3.org/2002/07/owl#unionOf> _:genid16 .
@@ -328,28 +311,12 @@ _:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#DataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the kinds of data collected"@en .
 <https://w3id.org/enigma#DataType> <http://www.w3.org/2000/01/rdf-schema#label> "Data Type"@en .
 # 
-# https://w3id.org/enigma#GeneReferencePanel
-<https://w3id.org/enigma#GeneReferencePanel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/enigma#GeneReferencePanel> <http://www.w3.org/2000/01/rdf-schema#label> "Gene Reference Panel"@en .
-# 
-# https://w3id.org/enigma#GeneticAssociationProtocol
-<https://w3id.org/enigma#GeneticAssociationProtocol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/enigma#GeneticAssociationProtocol> <http://purl.org/vocab/vann/example> "ENIGMA3 \u2013 GWAS Meta Analysis of Cortical Thickness and Surface Area - Association Protocol"@en .
-<https://w3id.org/enigma#GeneticAssociationProtocol> <http://www.w3.org/2000/01/rdf-schema#comment> "ENIGMA Protocols for genetic associations"@en .
-<https://w3id.org/enigma#GeneticAssociationProtocol> <http://www.w3.org/2000/01/rdf-schema#label> "Genetic Association Protocol"@en .
-# 
 # https://w3id.org/enigma#GeneticDataType
 <https://w3id.org/enigma#GeneticDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/enigma#GeneticDataType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/enigma#DataType> .
 <https://w3id.org/enigma#GeneticDataType> <http://purl.org/vocab/vann/example> "Epigenetic"@en .
 <https://w3id.org/enigma#GeneticDataType> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the kinds of genetic data collected"@en .
 <https://w3id.org/enigma#GeneticDataType> <http://www.w3.org/2000/01/rdf-schema#label> "Genetic Data Type"@en .
-# 
-# https://w3id.org/enigma#GenotypeImputationProtocol
-<https://w3id.org/enigma#GenotypeImputationProtocol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/enigma#GenotypeImputationProtocol> <http://purl.org/vocab/vann/example> "ENIGMA3 \u2013 GWAS Meta Analysis of Cortical Thickness and Surface Area - Imputation Protocol"@en .
-<https://w3id.org/enigma#GenotypeImputationProtocol> <http://www.w3.org/2000/01/rdf-schema#comment> "ENIGMA Protocols for genetic imputations"@en .
-<https://w3id.org/enigma#GenotypeImputationProtocol> <http://www.w3.org/2000/01/rdf-schema#label> "Genotype Imputation Protocol"@en .
 # 
 # https://w3id.org/enigma#Person
 <https://w3id.org/enigma#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -374,18 +341,5 @@ _:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#WorkingGroup> <http://purl.org/vocab/vann/example> "BipolarWG"@en .
 <https://w3id.org/enigma#WorkingGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "Group of researchers studying a certain topic/disease"@en .
 <https://w3id.org/enigma#WorkingGroup> <http://www.w3.org/2000/01/rdf-schema#label> "Working Group"@en .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Annotations
-# #
-# #################################################################
-# 
-# 
-<http://purl.org/dc/terms/contributor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
-# 
-<http://purl.org/dc/terms/title> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
 # 
 # Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/
