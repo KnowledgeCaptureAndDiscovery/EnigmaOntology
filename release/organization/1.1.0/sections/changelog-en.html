@@ -1,136 +1,48 @@
 <div id="changelog">
 <h2 id="changes" class="list">Changes from last version</h2>
-<h3 id="changeClass" class="list">Classes</h3>
-<details><summary><u>Modified classes</u></summary>
-<ul><li><a href="#http://www.w3.org/2006/vcard/ns#Address">http://www.w3.org/2006/vcard/ns#Address</a>
+<h3 id="changeProp" class="list">Object Properties</h3>
+<p><u>Modified properties</u></p>
+<ul><li><a href="##hasPrimaryAddress">https://w3id.org/enigma#hasPrimaryAddress</a>
 <ul>
-<li>Deleted: rdfs:comment "To specify the components of the delivery address for the object"@en</li>
+<li>Added: domain Union of (https://w3id.org/enigma#Organization, https://w3id.org/enigma#Person)</li>
+<li>Added: rdfs:comment "Describes the primary address of an organization or person"@en</li>
+</ul>
+<ul>
+<li>Deleted: domain https://w3id.org/enigma#Organization</li>
+<li>Deleted: rdfs:comment "Describes the primary address of an organization"@en</li>
 </ul>
 </li>
-</ul></details><details><summary><u>Added classes</u></summary>
-<ul><li><a href="#Address">https://w3id.org/enigma#Address</a>
+</ul><h3 id="changeDataProp" class="list">Data Properties</h3>
+<p><u>Modified data properties</u></p>
+<ul><li><a href="##hasKindOfInstitute">https://w3id.org/enigma#hasKindOfInstitute</a>
 <ul>
-<li>Added: SubClass of http://www.w3.org/2006/vcard/ns#Address</li>
+<li>Added: Domain https://w3id.org/enigma#Organization</li>
+<li>Added: rdfs:comment "Describes the specific kind/type of an organization"@en</li>
+</ul>
+<ul>
+<li>Deleted: Domain Union of (https://w3id.org/enigma#Organization, https://w3id.org/enigma#WorkingGroup)</li>
+<li>Deleted: rdfs:comment "Describes the specific kind/type of an organization or working group"@en</li>
 </ul>
 </li>
-</ul></details><h3 id="changeProp" class="list">Object Properties</h3>
-<details><summary><u>Modified properties</u></summary>
-<ul><li><a href="#http://purl.org/dc/terms/isPartOf">http://purl.org/dc/terms/isPartOf</a>
+<li><a href="##hasCoordinates">https://w3id.org/enigma#hasCoordinates</a>
 <ul>
-<li>Added: rdfs:comment "A related resource in which the described resource is included."^^xsd:string</li>
-<li>Added: rdfs:label "is Part of"^^xsd:string</li>
+<li>Added: rdfs:comment "The coordinates associated with an organization"@en</li>
+<li>Added: Domain https://w3id.org/enigma#Organization</li>
+</ul>
+<ul>
+<li>Deleted: Domain https://w3id.org/enigma#Address</li>
+<li>Deleted: rdfs:comment "The coordinates associated with the address of the organization"@en</li>
 </ul>
 </li>
-<li><a href="#http://www.w3.org/2006/vcard/ns#hasAddress">http://www.w3.org/2006/vcard/ns#hasAddress</a>
-<ul>
-<li>Added: rdfs:label "has Address"^^xsd:string</li>
-</ul>
-<ul>
-<li>Deleted: rdfs:comment "To specify the components of the address for the object"@en</li>
-<li>Deleted: Range http://www.w3.org/2006/vcard/ns#Address</li>
-</ul>
-</li>
-<li><a href="#http://xmlns.com/foaf/0.1/member">http://xmlns.com/foaf/0.1/member</a>
-<ul>
-<li>Added: rdfs:label "member"^^xsd:string</li>
-<li>Added: rdfs:comment "Indicates member of a group"^^xsd:string</li>
-</ul>
-</li>
-<li><a href="#hasPrimaryAddress">https://w3id.org/enigma#hasPrimaryAddress</a>
-<ul>
-<li>Added: domain https://w3id.org/enigma#Organization</li>
-<li>Added: Range https://w3id.org/enigma#Address</li>
-</ul>
-<ul>
-<li>Deleted: Range http://www.w3.org/2006/vcard/ns#Address</li>
-<li>Deleted: domain Union of (https://w3id.org/enigma#Organization, https://w3id.org/enigma#Person)</li>
-</ul>
-</li>
-</ul></details><h3 id="changeDataProp" class="list">Data Properties</h3>
-<details><summary><u>Modified data properties</u></summary>
-<ul><li><a href="#http://www.w3.org/2006/vcard/ns#country-name">http://www.w3.org/2006/vcard/ns#country-name</a>
-<ul>
-<li>Deleted: Domain http://www.w3.org/2006/vcard/ns#Address</li>
-<li>Deleted: rdfs:comment "The country name associated with the address of the object"@en</li>
-<li>Deleted: rdfs:isDefinedBy http://www.w3.org/2006/vcard/ns</li>
-<li>Deleted: Range http://www.w3.org/2001/XMLSchema#string</li>
-</ul>
-</li>
-<li><a href="#http://www.w3.org/2006/vcard/ns#locality">http://www.w3.org/2006/vcard/ns#locality</a>
-<ul>
-<li>Added: Domain https://w3id.org/enigma#Address</li>
-<li>Added: rdfs:label "locality"@en</li>
-</ul>
-<ul>
-<li>Deleted: Domain http://www.w3.org/2006/vcard/ns#Address</li>
-</ul>
-</li>
-<li><a href="#http://www.w3.org/2006/vcard/ns#postal-code">http://www.w3.org/2006/vcard/ns#postal-code</a>
-<ul>
-<li>Deleted: rdfs:isDefinedBy http://www.w3.org/2006/vcard/ns</li>
-<li>Deleted: rdfs:comment "The postal code associated with the address of the object"@en</li>
-<li>Deleted: Domain http://www.w3.org/2006/vcard/ns#Address</li>
-<li>Deleted: Range http://www.w3.org/2001/XMLSchema#string</li>
-</ul>
-</li>
-<li><a href="#http://www.w3.org/2006/vcard/ns#region">http://www.w3.org/2006/vcard/ns#region</a>
-<ul>
-<li>Deleted: rdfs:isDefinedBy http://www.w3.org/2006/vcard/ns</li>
-<li>Deleted: Range http://www.w3.org/2001/XMLSchema#string</li>
-<li>Deleted: Domain http://www.w3.org/2006/vcard/ns#Address</li>
-<li>Deleted: rdfs:comment "The region (e.g. state or province) associated with the address of the object"@en</li>
-</ul>
-</li>
-<li><a href="#http://www.w3.org/2006/vcard/ns#street-address">http://www.w3.org/2006/vcard/ns#street-address</a>
-<ul>
-<li>Deleted: Range http://www.w3.org/2001/XMLSchema#string</li>
-<li>Deleted: Domain http://www.w3.org/2006/vcard/ns#Address</li>
-<li>Deleted: rdfs:comment "The street address associated with the address of the object"@en</li>
-<li>Deleted: rdfs:isDefinedBy http://www.w3.org/2006/vcard/ns</li>
-</ul>
-</li>
-</ul></details><details><summary><u>Added data properties</u></summary>
-<ul><li><a href="#hasCoordinates">https://w3id.org/enigma#hasCoordinates</a>
-<ul>
-<li>Added: Domain https://w3id.org/enigma#Address</li>
-<li>Added: Range http://www.w3.org/2001/XMLSchema#string</li>
-</ul>
-</li>
-<li><a href="#hasCountryName">https://w3id.org/enigma#hasCountryName</a>
+</ul><p><u>Added data properties</u></p>
+<ul><li><a href="##hasCountry">https://w3id.org/enigma#hasCountry</a>
 <ul>
 <li>Added: Domain https://w3id.org/enigma#Address</li>
 <li>Added: Range http://www.w3.org/2001/XMLSchema#string</li>
 <li>Added: SubProperty of http://www.w3.org/2006/vcard/ns#country-name</li>
 </ul>
 </li>
-<li><a href="#hasKindOfInstitute">https://w3id.org/enigma#hasKindOfInstitute</a>
-<ul>
-<li>Added: Domain Union of (https://w3id.org/enigma#Organization, https://w3id.org/enigma#WorkingGroup)</li>
-<li>Added: Range http://www.w3.org/2001/XMLSchema#string</li>
-</ul>
+</ul><p><u>Deleted data properties</u></p>
+<ul><li><a href="##hasCountryName">https://w3id.org/enigma#hasCountryName</a>
 </li>
-<li><a href="#hasPostalCode">https://w3id.org/enigma#hasPostalCode</a>
-<ul>
-<li>Added: Domain https://w3id.org/enigma#Address</li>
-<li>Added: SubProperty of http://www.w3.org/2006/vcard/ns#postal-code</li>
-<li>Added: Range http://www.w3.org/2001/XMLSchema#string</li>
-</ul>
-</li>
-<li><a href="#hasRegion">https://w3id.org/enigma#hasRegion</a>
-<ul>
-<li>Added: Range http://www.w3.org/2001/XMLSchema#string</li>
-<li>Added: SubProperty of http://www.w3.org/2006/vcard/ns#region</li>
-<li>Added: Domain https://w3id.org/enigma#Address</li>
-</ul>
-</li>
-<li><a href="#hasStreetAddress">https://w3id.org/enigma#hasStreetAddress</a>
-<ul>
-<li>Added: Domain https://w3id.org/enigma#Address</li>
-<li>Added: Range http://www.w3.org/2001/XMLSchema#string</li>
-<li>Added: SubProperty of http://www.w3.org/2006/vcard/ns#street-address</li>
-</ul>
-</li>
-</ul></details><details><summary><u>Deleted data properties</u></summary>
-<ul><li><a href="#kind">https://w3id.org/enigma#kind</a>
-</li>
-</ul></details></div>
+</ul></div>

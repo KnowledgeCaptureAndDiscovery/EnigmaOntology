@@ -1,498 +1,400 @@
 <div id="changelog">
 <h2 id="changes" class="list">Changes from last version</h2>
-<h3 id="changeClass" class="list">Classes</h3>
-<details><summary><u>Modified classes</u></summary>
-<ul><li><a href="#http://schema.org/DataDownload">http://schema.org/DataDownload</a>
+<h3 id="changeProp" class="list">Object Properties</h3>
+<p><u>Modified properties</u></p>
+<ul><li><a href="##hasBrainScanDataType">https://w3id.org/enigma#hasBrainScanDataType</a>
 <ul>
-<li>Added: rdfs:label "Data Download"^^xsd:string</li>
-</ul>
-</li>
-<li><a href="#http://schema.org/Dataset">http://schema.org/Dataset</a>
-<ul>
-<li>Added: rdfs:label "Dataset"^^xsd:string</li>
-<li>Added: rdfs:comment "Dataset"^^xsd:string</li>
-</ul>
-</li>
-</ul></details><details><summary><u>Added classes</u></summary>
-<ul><li><a href="#CohortProject">https://w3id.org/enigma#CohortProject</a>
-<ul>
-<li>Added: SubClass of https://w3id.org/enigma#Cohort</li>
-</ul>
-</li>
-<li><a href="#DataDownload">https://w3id.org/enigma#DataDownload</a>
-<ul>
-<li>Added: SubClass of http://schema.org/DataDownload</li>
-</ul>
-</li>
-<li><a href="#DiagnosticInstrument">https://w3id.org/enigma#DiagnosticInstrument</a>
-</li>
-<li><a href="#Software">https://w3id.org/enigma#Software</a>
-</li>
-</ul></details><details><summary><u>Deleted classes</u></summary>
-<ul><li><a href="#BriefPsychiatricRatingScale">https://w3id.org/enigma#BriefPsychiatricRatingScale</a>
-</li>
-<li><a href="#ClinicalGlobalImpressionsScale">https://w3id.org/enigma#ClinicalGlobalImpressionsScale</a>
-</li>
-<li><a href="#DiagnosisInstrument">https://w3id.org/enigma#DiagnosisInstrument</a>
-</li>
-<li><a href="#DiagnosticCriteria">https://w3id.org/enigma#DiagnosticCriteria</a>
-</li>
-<li><a href="#GenotypePlatform">https://w3id.org/enigma#GenotypePlatform</a>
-</li>
-<li><a href="#HamiltonDepressionRatingScale">https://w3id.org/enigma#HamiltonDepressionRatingScale</a>
-</li>
-<li><a href="#InformationObtainmentMethod">https://w3id.org/enigma#InformationObtainmentMethod</a>
-</li>
-<li><a href="#MedicalRating">https://w3id.org/enigma#MedicalRating</a>
-</li>
-<li><a href="#ProjectCohort">https://w3id.org/enigma#ProjectCohort</a>
-</li>
-<li><a href="#SpecificConditionInfo">https://w3id.org/enigma#SpecificConditionInfo</a>
-</li>
-<li><a href="#SpecificDisorderInfo">https://w3id.org/enigma#SpecificDisorderInfo</a>
-</li>
-<li><a href="#SpecificMedicalRatingInfo">https://w3id.org/enigma#SpecificMedicalRatingInfo</a>
-</li>
-<li><a href="#SpecificTreatmentInfo">https://w3id.org/enigma#SpecificTreatmentInfo</a>
-</li>
-<li><a href="#Treatment">https://w3id.org/enigma#Treatment</a>
-</li>
-<li><a href="#YoungManiaRatingScale">https://w3id.org/enigma#YoungManiaRatingScale</a>
-</li>
-</ul></details><h3 id="changeProp" class="list">Object Properties</h3>
-<details><summary><u>Modified properties</u></summary>
-<ul><li><a href="#http://xmlns.com/foaf/0.1/homepage">http://xmlns.com/foaf/0.1/homepage</a>
-<ul>
-<li>Added: rdfs:label "homepage"^^xsd:string</li>
-</ul>
-</li>
-<li><a href="#hasControlGroup">https://w3id.org/enigma#hasControlGroup</a>
-<ul>
-<li>Added: SubProperty of https://w3id.org/enigma#hasCohortGroup</li>
-</ul>
-</li>
-<li><a href="#hasDataset">https://w3id.org/enigma#hasDataset</a>
-<ul>
-<li>Added: rdfs:comment "Property that links a cohort project with the data being described."@en</li>
-<li>Added: domain https://w3id.org/enigma#CohortProject</li>
+<li>Added: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject, https://w3id.org/enigma#Project)</li>
 </ul>
 <ul>
-<li>Deleted: rdfs:comment "Property that links a project cohort with the data being described."@en</li>
-<li>Deleted: domain https://w3id.org/enigma#ProjectCohort</li>
+<li>Deleted: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#Project)</li>
 </ul>
 </li>
-<li><a href="#hasDiagnosticGroup">https://w3id.org/enigma#hasDiagnosticGroup</a>
+<li><a href="##hasDiagnosticInstrument">https://w3id.org/enigma#hasDiagnosticInstrument</a>
 <ul>
-<li>Added: SubProperty of https://w3id.org/enigma#hasCohortGroup</li>
+<li>Added: domain Union of (https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject)</li>
+</ul>
+<ul>
+<li>Deleted: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup)</li>
 </ul>
 </li>
-<li><a href="#hasDisorder">https://w3id.org/enigma#hasDisorder</a>
+<li><a href="##hasContributor">https://w3id.org/enigma#hasContributor</a>
 <ul>
-<li>Deleted: DisjointObjectProperties DisjointObjectProperties(&lt;https://w3id.org/enigma#doesNotHaveDisorder&gt; &lt;https://w3id.org/enigma#hasDisorder&gt; )</li>
+<li>Added: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortProject)</li>
+</ul>
+<ul>
+<li>Deleted: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#Project)</li>
 </ul>
 </li>
-<li><a href="#hasImageAcquisitionProtocol">https://w3id.org/enigma#hasImageAcquisitionProtocol</a>
+<li><a href="##hasContact">https://w3id.org/enigma#hasContact</a>
 <ul>
-<li>Added: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup)</li>
+<li>Added: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject)</li>
+</ul>
+<ul>
+<li>Deleted: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#Project)</li>
+</ul>
+</li>
+<li><a href="##isPartOfCohort">https://w3id.org/enigma#isPartOfCohort</a>
+<ul>
+<li>Added: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject)</li>
+</ul>
+<ul>
+<li>Deleted: domain Union of (https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject)</li>
+</ul>
+</li>
+<li><a href="##hasDiagnosticGroup">https://w3id.org/enigma#hasDiagnosticGroup</a>
+<ul>
+<li>Added: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortProject)</li>
 </ul>
 <ul>
 <li>Deleted: domain https://w3id.org/enigma#Cohort</li>
 </ul>
 </li>
-<li><a href="#hasPopulationGroup">https://w3id.org/enigma#hasPopulationGroup</a>
+<li><a href="##hasMainPrincipalInvestigator">https://w3id.org/enigma#hasMainPrincipalInvestigator</a>
 <ul>
-<li>Added: SubProperty of https://w3id.org/enigma#hasCohortGroup</li>
+<li>Added: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject)</li>
+</ul>
+<ul>
+<li>Deleted: domain https://w3id.org/enigma#Cohort</li>
 </ul>
 </li>
-<li><a href="#hasStatistics">https://w3id.org/enigma#hasStatistics</a>
+<li><a href="##isPartOfWorkingGroup">https://w3id.org/enigma#isPartOfWorkingGroup</a>
+<ul>
+<li>Added: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject)</li>
+</ul>
+<ul>
+<li>Deleted: domain https://w3id.org/enigma#Cohort</li>
+</ul>
+</li>
+<li><a href="##isPartOfCohortGroup">https://w3id.org/enigma#isPartOfCohortGroup</a>
 <ul>
 <li>Added: domain https://w3id.org/enigma#CohortProject</li>
 </ul>
 <ul>
-<li>Deleted: domain https://w3id.org/enigma#ProjectCohort</li>
+<li>Deleted: domain https://w3id.org/enigma#Project</li>
 </ul>
 </li>
-</ul></details><details><summary><u>Added properties</u></summary>
-<ul><li><a href="#https://schema.org/distribution">https://schema.org/distribution</a>
-</li>
-<li><a href="#hasCohortGroup">https://w3id.org/enigma#hasCohortGroup</a>
+<li><a href="##hasPopulationGroup">https://w3id.org/enigma#hasPopulationGroup</a>
 <ul>
-<li>Added: domain https://w3id.org/enigma#Cohort</li>
-<li>Added: Range https://w3id.org/enigma#CohortGroup</li>
+<li>Added: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject)</li>
 </ul>
-</li>
-<li><a href="#hasCohortProject">https://w3id.org/enigma#hasCohortProject</a>
 <ul>
-<li>Added: Range https://w3id.org/enigma#CohortProject</li>
-<li>Added: domain https://w3id.org/enigma#Cohort</li>
+<li>Deleted: domain https://w3id.org/enigma#Cohort</li>
 </ul>
 </li>
-<li><a href="#hasContributor">https://w3id.org/enigma#hasContributor</a>
+<li><a href="##hasControlGroup">https://w3id.org/enigma#hasControlGroup</a>
 <ul>
-<li>Added: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#Project)</li>
-<li>Added: Range https://w3id.org/enigma#Person</li>
+<li>Added: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortProject)</li>
 </ul>
-</li>
-<li><a href="#hasDiagnosticInstrument">https://w3id.org/enigma#hasDiagnosticInstrument</a>
 <ul>
-<li>Added: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup)</li>
-<li>Added: Range https://w3id.org/enigma#DiagnosticInstrument</li>
+<li>Deleted: domain https://w3id.org/enigma#Cohort</li>
 </ul>
 </li>
-<li><a href="#hasDistribution">https://w3id.org/enigma#hasDistribution</a>
+<li><a href="##hasImageAcquisitionProtocol">https://w3id.org/enigma#hasImageAcquisitionProtocol</a>
 <ul>
-<li>Added: Range https://w3id.org/enigma#DataDownload</li>
-<li>Added: SubProperty of https://schema.org/distribution</li>
-<li>Added: domain https://w3id.org/enigma#Dataset</li>
+<li>Added: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject)</li>
 </ul>
-</li>
-<li><a href="#hasProject">https://w3id.org/enigma#hasProject</a>
 <ul>
-<li>Added: domain https://w3id.org/enigma#Cohort</li>
-<li>Added: Range https://w3id.org/enigma#Project</li>
+<li>Deleted: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup)</li>
 </ul>
 </li>
-<li><a href="#isPartOfCohort">https://w3id.org/enigma#isPartOfCohort</a>
+<li><a href="##isPartOfProject">https://w3id.org/enigma#isPartOfProject</a>
 <ul>
 <li>Added: domain Union of (https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject)</li>
-<li>Added: Range https://w3id.org/enigma#Cohort</li>
-</ul>
-</li>
-<li><a href="#isPartOfCohortGroup">https://w3id.org/enigma#isPartOfCohortGroup</a>
-<ul>
-<li>Added: domain https://w3id.org/enigma#Project</li>
-<li>Added: Range https://w3id.org/enigma#CohortGroup</li>
-</ul>
-</li>
-<li><a href="#isPartOfCohortProject">https://w3id.org/enigma#isPartOfCohortProject</a>
-<ul>
-<li>Added: Range https://w3id.org/enigma#CohortProject</li>
-<li>Added: domain https://w3id.org/enigma#CohortGroup</li>
-</ul>
-</li>
-<li><a href="#isPartOfProject">https://w3id.org/enigma#isPartOfProject</a>
-<ul>
-<li>Added: Range https://w3id.org/enigma#Project</li>
-<li>Added: domain https://w3id.org/enigma#CohortGroup</li>
-</ul>
-</li>
-<li><a href="#isPartOfWorkingGroup">https://w3id.org/enigma#isPartOfWorkingGroup</a>
-<ul>
-<li>Added: domain https://w3id.org/enigma#Cohort</li>
-<li>Added: Range https://w3id.org/enigma#WorkingGroup</li>
-</ul>
-</li>
-<li><a href="#usedSoftware">https://w3id.org/enigma#usedSoftware</a>
-<ul>
-<li>Added: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup)</li>
-<li>Added: Range https://w3id.org/enigma#Software</li>
-</ul>
-</li>
-</ul></details><details><summary><u>Deleted properties</u></summary>
-<ul><li><a href="#http://schema.org/distribution">http://schema.org/distribution</a>
-</li>
-<li><a href="#didNotHaveFirstEpisodeOf">https://w3id.org/enigma#didNotHaveFirstEpisodeOf</a>
-</li>
-<li><a href="#doesNotHaveCondition">https://w3id.org/enigma#doesNotHaveCondition</a>
-</li>
-<li><a href="#doesNotHaveDisorder">https://w3id.org/enigma#doesNotHaveDisorder</a>
-</li>
-<li><a href="#doesNotHaveFamilyHistoryOf">https://w3id.org/enigma#doesNotHaveFamilyHistoryOf</a>
-</li>
-<li><a href="#doesNotHaveFirstDegreeRelativeWithDisorder">https://w3id.org/enigma#doesNotHaveFirstDegreeRelativeWithDisorder</a>
-</li>
-<li><a href="#doesNotHavePersonalHistoryOf">https://w3id.org/enigma#doesNotHavePersonalHistoryOf</a>
-</li>
-<li><a href="#doesNotUseTreatment">https://w3id.org/enigma#doesNotUseTreatment</a>
-</li>
-<li><a href="#fulfillsDiagnosticCriteria">https://w3id.org/enigma#fulfillsDiagnosticCriteria</a>
-</li>
-<li><a href="#hasCondition">https://w3id.org/enigma#hasCondition</a>
-</li>
-<li><a href="#hasDiagnosisInstrument">https://w3id.org/enigma#hasDiagnosisInstrument</a>
-</li>
-<li><a href="#hasDisorderDetails">https://w3id.org/enigma#hasDisorderDetails</a>
-</li>
-<li><a href="#hasFamilyHistoryOf">https://w3id.org/enigma#hasFamilyHistoryOf</a>
-</li>
-<li><a href="#hasFirstDegreeRelativeWithDisorder">https://w3id.org/enigma#hasFirstDegreeRelativeWithDisorder</a>
-</li>
-<li><a href="#hasFirstEpisodeOf">https://w3id.org/enigma#hasFirstEpisodeOf</a>
-</li>
-<li><a href="#hasInformationMethod">https://w3id.org/enigma#hasInformationMethod</a>
-</li>
-<li><a href="#hasMedicalRatingDetails">https://w3id.org/enigma#hasMedicalRatingDetails</a>
-</li>
-<li><a href="#hasMembersWithRecentIssue">https://w3id.org/enigma#hasMembersWithRecentIssue</a>
-</li>
-<li><a href="#hasPersonalHistoryOf">https://w3id.org/enigma#hasPersonalHistoryOf</a>
-</li>
-<li><a href="#hasProjectCohort">https://w3id.org/enigma#hasProjectCohort</a>
-</li>
-<li><a href="#hasTreatmentDetails">https://w3id.org/enigma#hasTreatmentDetails</a>
-</li>
-<li><a href="#usesGenotypePlatform">https://w3id.org/enigma#usesGenotypePlatform</a>
-</li>
-<li><a href="#usesTreatment">https://w3id.org/enigma#usesTreatment</a>
-</li>
-</ul></details><h3 id="changeDataProp" class="list">Data Properties</h3>
-<details><summary><u>Modified data properties</u></summary>
-<ul><li><a href="#hasBriefDescription">https://w3id.org/enigma#hasBriefDescription</a>
-<ul>
-<li>Added: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#ImageAcquisitionProtocol, https://w3id.org/enigma#Project, https://w3id.org/enigma#Software, https://w3id.org/enigma#WorkingGroup)</li>
 </ul>
 <ul>
-<li>Deleted: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#Project, https://w3id.org/enigma#WorkingGroup)</li>
+<li>Deleted: domain https://w3id.org/enigma#CohortGroup</li>
 </ul>
 </li>
-<li><a href="#hasStudyDesign">https://w3id.org/enigma#hasStudyDesign</a>
+<li><a href="##hasHomePage">https://w3id.org/enigma#hasHomePage</a>
 <ul>
-<li>Added: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#Project)</li>
+<li>Added: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject, https://w3id.org/enigma#Person)</li>
 </ul>
 <ul>
-<li>Deleted: Domain Union of (https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#Project)</li>
+<li>Deleted: SubProperty of http://xmlns.com/foaf/0.1/homepage</li>
+<li>Deleted: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#Person)</li>
 </ul>
 </li>
-<li><a href="#usesScanner">https://w3id.org/enigma#usesScanner</a>
+<li><a href="##hasCohortProject">https://w3id.org/enigma#hasCohortProject</a>
 <ul>
-<li>Added: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup)</li>
+<li>Added: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#ImageAcquisitionProtocol)</li>
+</ul>
+<ul>
+<li>Deleted: domain https://w3id.org/enigma#Cohort</li>
+</ul>
+</li>
+<li><a href="##hasGeneticDataType">https://w3id.org/enigma#hasGeneticDataType</a>
+<ul>
+<li>Added: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject)</li>
+</ul>
+<ul>
+<li>Deleted: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#Project)</li>
+</ul>
+</li>
+<li><a href="##hasCohortGroup">https://w3id.org/enigma#hasCohortGroup</a>
+<ul>
+<li>Added: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortProject)</li>
+</ul>
+<ul>
+<li>Deleted: domain https://w3id.org/enigma#Cohort</li>
+</ul>
+</li>
+<li><a href="##hasDataset">https://w3id.org/enigma#hasDataset</a>
+<ul>
+<li>Added: domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortProject)</li>
+</ul>
+<ul>
+<li>Deleted: domain https://w3id.org/enigma#CohortProject</li>
+</ul>
+</li>
+</ul><p><u>Deleted properties</u></p>
+<ul><li><a href="##usedSoftware">https://w3id.org/enigma#usedSoftware</a>
+</li>
+<li><a href="##hasDisorder">https://w3id.org/enigma#hasDisorder</a>
+</li>
+<li><a href="##hasProject">https://w3id.org/enigma#hasProject</a>
+</li>
+</ul><h3 id="changeDataProp" class="list">Data Properties</h3>
+<p><u>Modified data properties</u></p>
+<ul><li><a href="##hasSpecies">https://w3id.org/enigma#hasSpecies</a>
+<ul>
+<li>Added: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject)</li>
 </ul>
 <ul>
 <li>Deleted: Domain https://w3id.org/enigma#Cohort</li>
 </ul>
 </li>
-</ul></details><details><summary><u>Added data properties</u></summary>
-<ul><li><a href="#https://schema.org/contentUrl">https://schema.org/contentUrl</a>
-</li>
-<li><a href="#https://schema.org/description">https://schema.org/description</a>
-</li>
-<li><a href="#https://schema.org/encodingFormat">https://schema.org/encodingFormat</a>
-</li>
-<li><a href="#https://schema.org/name">https://schema.org/name</a>
-</li>
-<li><a href="#hasAge_Maximum">https://w3id.org/enigma#hasAge_Maximum</a>
+<li><a href="##hasNumberOfMaleSex">https://w3id.org/enigma#hasNumberOfMaleSex</a>
 <ul>
-<li>Added: Range http://www.w3.org/2001/XMLSchema#positiveInteger</li>
-<li>Added: Domain https://w3id.org/enigma#CohortGroup</li>
+<li>Added: rdfs:comment "Describing the number of males in a cohort project"@en</li>
+<li>Added: Domain https://w3id.org/enigma#CohortProject</li>
+</ul>
+<ul>
+<li>Deleted: Domain https://w3id.org/enigma#CohortGroup</li>
+<li>Deleted: rdfs:comment "Describing the number of males in a cohort group"@en</li>
 </ul>
 </li>
-<li><a href="#hasAge_Mean">https://w3id.org/enigma#hasAge_Mean</a>
-<ul>
-<li>Added: Range http://www.w3.org/2001/XMLSchema#double</li>
-<li>Added: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup)</li>
-</ul>
-</li>
-<li><a href="#hasAge_Minimum">https://w3id.org/enigma#hasAge_Minimum</a>
-<ul>
-<li>Added: Range http://www.w3.org/2001/XMLSchema#positiveInteger</li>
-<li>Added: Domain https://w3id.org/enigma#CohortGroup</li>
-</ul>
-</li>
-<li><a href="#hasAge_StandardDeviation">https://w3id.org/enigma#hasAge_StandardDeviation</a>
+<li><a href="##hasAdditionalDemographic">https://w3id.org/enigma#hasAdditionalDemographic</a>
 <ul>
 <li>Added: Domain https://w3id.org/enigma#Cohort</li>
-<li>Added: Range http://www.w3.org/2001/XMLSchema#double</li>
+<li>Added: rdfs:comment "Describes the additional demographics defining a given cohort"@en</li>
+</ul>
+<ul>
+<li>Deleted: rdfs:comment "Describes the additional demographics defining a given cohort group (Height; Weight; Ethnicity; IQ; ParentalSES; IndividualSES)"@en</li>
+<li>Deleted: Domain https://w3id.org/enigma#CohortGroup</li>
 </ul>
 </li>
-<li><a href="#hasContentUrl">https://w3id.org/enigma#hasContentUrl</a>
+<li><a href="##hasAge_Minimum">https://w3id.org/enigma#hasAge_Minimum</a>
 <ul>
-<li>Added: Domain https://w3id.org/enigma#DataDownload</li>
-<li>Added: SubProperty of https://schema.org/contentUrl</li>
-<li>Added: Range http://www.w3.org/2001/XMLSchema#anyURI</li>
+<li>Added: rdfs:comment "Describes inclusion criteria for minimum age of participants in a Cohort, CohortProject or CohortGroup"@en</li>
+<li>Added: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject)</li>
+</ul>
+<ul>
+<li>Deleted: rdfs:comment "Describes inclusion criteria for minimum age of participants in a CohortGroup"@en</li>
+<li>Deleted: Domain https://w3id.org/enigma#CohortGroup</li>
 </ul>
 </li>
-<li><a href="#hasDescription">https://w3id.org/enigma#hasDescription</a>
+<li><a href="##hasDataCollectionPeriodStart">https://w3id.org/enigma#hasDataCollectionPeriodStart</a>
 <ul>
-<li>Added: Range http://www.w3.org/2001/XMLSchema#string</li>
-<li>Added: Domain https://w3id.org/enigma#Dataset</li>
-<li>Added: SubProperty of https://schema.org/description</li>
+<li>Added: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject)</li>
+</ul>
+<ul>
+<li>Deleted: Domain https://w3id.org/enigma#Cohort</li>
 </ul>
 </li>
-<li><a href="#hasExclusionCriteria">https://w3id.org/enigma#hasExclusionCriteria</a>
+<li><a href="##hasAge_Maximum">https://w3id.org/enigma#hasAge_Maximum</a>
 <ul>
-<li>Added: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup)</li>
-<li>Added: Range http://www.w3.org/2001/XMLSchema#string</li>
+<li>Added: rdfs:comment "Describes inclusion criteria for maximum age of participants in a Cohort, CohortProject or CohortGroup"@en</li>
+<li>Added: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject)</li>
+</ul>
+<ul>
+<li>Deleted: rdfs:comment "Describes inclusion criteria for maximum age of participants in a CohortGroup"@en</li>
+<li>Deleted: Domain https://w3id.org/enigma#CohortGroup</li>
 </ul>
 </li>
-<li><a href="#hasGroupCriteria">https://w3id.org/enigma#hasGroupCriteria</a>
+<li><a href="##isPublic">https://w3id.org/enigma#isPublic</a>
 <ul>
-<li>Added: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup)</li>
-<li>Added: Range http://www.w3.org/2001/XMLSchema#string</li>
+<li>Added: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject)</li>
+</ul>
+<ul>
+<li>Deleted: Domain https://w3id.org/enigma#Cohort</li>
 </ul>
 </li>
-<li><a href="#hasName">https://w3id.org/enigma#hasName</a>
+<li><a href="##hasAge_StandardDeviation">https://w3id.org/enigma#hasAge_StandardDeviation</a>
 <ul>
-<li>Added: SubProperty of https://schema.org/name</li>
-<li>Added: Range http://www.w3.org/2001/XMLSchema#string</li>
-<li>Added: Domain https://w3id.org/enigma#Dataset</li>
+<li>Added: Domain Union of (https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject)</li>
+</ul>
+<ul>
+<li>Deleted: Domain https://w3id.org/enigma#Cohort</li>
 </ul>
 </li>
-<li><a href="#hasNumberOfFemaleSex">https://w3id.org/enigma#hasNumberOfFemaleSex</a>
+<li><a href="##hasCohortStatus">https://w3id.org/enigma#hasCohortStatus</a>
 <ul>
-<li>Added: Range http://www.w3.org/2001/XMLSchema#nonNegativeInteger</li>
+<li>Added: rdfs:comment "Describes the current status of a cohort, cohort group or cohort project"@en</li>
+<li>Added: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject)</li>
+</ul>
+<ul>
+<li>Deleted: rdfs:comment "Describes the current status of a cohort"@en</li>
+<li>Deleted: Domain https://w3id.org/enigma#Cohort</li>
+</ul>
+</li>
+<li><a href="##hasExclusionCriteria">https://w3id.org/enigma#hasExclusionCriteria</a>
+<ul>
+<li>Added: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject)</li>
+</ul>
+<ul>
+<li>Deleted: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup)</li>
+</ul>
+</li>
+<li><a href="##hasFundingSource">https://w3id.org/enigma#hasFundingSource</a>
+<ul>
+<li>Added: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortProject)</li>
+</ul>
+<ul>
+<li>Deleted: Domain https://w3id.org/enigma#Cohort</li>
+</ul>
+</li>
+<li><a href="##hasTotalNumberOfParticipants">https://w3id.org/enigma#hasTotalNumberOfParticipants</a>
+<ul>
+<li>Added: rdfs:label "has total number of participants"@en</li>
+</ul>
+<ul>
+<li>Deleted: rdfs:label "has number of participants"@en</li>
+</ul>
+</li>
+<li><a href="##hasNumberOfFemaleSex">https://w3id.org/enigma#hasNumberOfFemaleSex</a>
+<ul>
+<li>Added: rdfs:comment "Describing the number of females in a cohort project"@en</li>
+<li>Added: Domain https://w3id.org/enigma#CohortProject</li>
+</ul>
+<ul>
+<li>Deleted: Domain https://w3id.org/enigma#CohortGroup</li>
+<li>Deleted: rdfs:comment "Describing the number of females in a cohort group"@en</li>
+</ul>
+</li>
+<li><a href="##hasBriefDescription">https://w3id.org/enigma#hasBriefDescription</a>
+<ul>
+<li>Added: rdfs:comment "Provides a brief description of the working group or project or cohort or image acquisition protocol"@en</li>
+<li>Added: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject, https://w3id.org/enigma#ImageAcquisitionProtocol, https://w3id.org/enigma#Project, https://w3id.org/enigma#WorkingGroup)</li>
+</ul>
+<ul>
+<li>Deleted: rdfs:comment "Provides a brief description of the working group or project or cohort"@en</li>
+<li>Deleted: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#ImageAcquisitionProtocol, https://w3id.org/enigma#Project, https://w3id.org/enigma#Software, https://w3id.org/enigma#WorkingGroup)</li>
+</ul>
+</li>
+<li><a href="##hasEthnicGroup">https://w3id.org/enigma#hasEthnicGroup</a>
+<ul>
+<li>Added: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortProject)</li>
+</ul>
+<ul>
+<li>Deleted: Domain https://w3id.org/enigma#Cohort</li>
+</ul>
+</li>
+<li><a href="##usesScanner">https://w3id.org/enigma#usesScanner</a>
+<ul>
+<li>Added: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject)</li>
+</ul>
+<ul>
+<li>Deleted: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup)</li>
+</ul>
+</li>
+<li><a href="##hasGroupCriteria">https://w3id.org/enigma#hasGroupCriteria</a>
+<ul>
 <li>Added: Domain https://w3id.org/enigma#CohortGroup</li>
 </ul>
-</li>
-<li><a href="#hasNumberOfMaleSex">https://w3id.org/enigma#hasNumberOfMaleSex</a>
 <ul>
-<li>Added: Range http://www.w3.org/2001/XMLSchema#nonNegativeInteger</li>
-<li>Added: Domain https://w3id.org/enigma#CohortGroup</li>
+<li>Deleted: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup)</li>
 </ul>
 </li>
-<li><a href="#hasPercentOfFemale">https://w3id.org/enigma#hasPercentOfFemale</a>
+<li><a href="##hasDataCollectionPeriodEnd">https://w3id.org/enigma#hasDataCollectionPeriodEnd</a>
 <ul>
-<li>Added: Domain https://w3id.org/enigma#CohortGroup</li>
-<li>Added: Range http://www.w3.org/2001/XMLSchema#nonNegativeInteger</li>
+<li>Added: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject)</li>
+</ul>
+<ul>
+<li>Deleted: Domain https://w3id.org/enigma#Cohort</li>
 </ul>
 </li>
-<li><a href="#hasPercentOfMale">https://w3id.org/enigma#hasPercentOfMale</a>
+<li><a href="##hasAge_Mean">https://w3id.org/enigma#hasAge_Mean</a>
 <ul>
-<li>Added: Range http://www.w3.org/2001/XMLSchema#nonNegativeInteger</li>
-<li>Added: Domain https://w3id.org/enigma#CohortGroup</li>
+<li>Added: Domain Union of (https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject)</li>
+</ul>
+<ul>
+<li>Deleted: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#CohortGroup)</li>
 </ul>
 </li>
-<li><a href="#hasSliceOrientation">https://w3id.org/enigma#hasSliceOrientation</a>
+<li><a href="##hasStudyDesign">https://w3id.org/enigma#hasStudyDesign</a>
+<ul>
+<li>Added: Domain https://w3id.org/enigma#Project</li>
+<li>Added: rdfs:comment "Describes the study design of a project (Case/control; Population; Healthy only; Patients only)
+NOTE: study design options are mutually exclusive for Cohort Groups but not Projects"@en</li>
+</ul>
+<ul>
+<li>Deleted: Domain Union of (https://w3id.org/enigma#Cohort, https://w3id.org/enigma#Project)</li>
+<li>Deleted: rdfs:comment "Describes the study design of the cohort group or project (Case/control; Population; Healthy only; Patients only)
+
+NOTE: study design options are mutually exclusive for Cohort Groups but not Projects"@en</li>
+</ul>
+</li>
+</ul><p><u>Added data properties</u></p>
+<ul><li><a href="##hasHomePage">https://w3id.org/enigma#hasHomePage</a>
+</li>
+<li><a href="##hasAge_Group">https://w3id.org/enigma#hasAge_Group</a>
 <ul>
 <li>Added: Range http://www.w3.org/2001/XMLSchema#string</li>
-<li>Added: Domain https://w3id.org/enigma#CohortGroup</li>
-</ul>
-</li>
-<li><a href="#hasSoftwareVersion">https://w3id.org/enigma#hasSoftwareVersion</a>
-<ul>
-<li>Added: Range http://www.w3.org/2001/XMLSchema#string</li>
-<li>Added: Domain https://w3id.org/enigma#Software</li>
-</ul>
-</li>
-<li><a href="#hasTotalNumberOfParticipants">https://w3id.org/enigma#hasTotalNumberOfParticipants</a>
-<ul>
-<li>Added: Range http://www.w3.org/2001/XMLSchema#positiveInteger</li>
 <li>Added: Domain https://w3id.org/enigma#Cohort</li>
 </ul>
 </li>
-<li><a href="#hasTransgenderFtoM">https://w3id.org/enigma#hasTransgenderFtoM</a>
+<li><a href="##checksum">https://w3id.org/enigma#checksum</a>
 <ul>
-<li>Added: Domain https://w3id.org/enigma#CohortGroup</li>
-<li>Added: Range http://www.w3.org/2001/XMLSchema#nonNegativeInteger</li>
-</ul>
-</li>
-<li><a href="#hasTransgenderMtoF">https://w3id.org/enigma#hasTransgenderMtoF</a>
-<ul>
-<li>Added: Range http://www.w3.org/2001/XMLSchema#nonNegativeInteger</li>
-<li>Added: Domain https://w3id.org/enigma#CohortGroup</li>
-</ul>
-</li>
-<li><a href="#usesEncodingFormat">https://w3id.org/enigma#usesEncodingFormat</a>
-<ul>
-<li>Added: SubProperty of https://schema.org/encodingFormat</li>
-<li>Added: Domain https://w3id.org/enigma#DataDownload</li>
 <li>Added: Range http://www.w3.org/2001/XMLSchema#string</li>
+<li>Added: Domain https://w3id.org/enigma#DataDownload</li>
 </ul>
 </li>
-</ul></details><details><summary><u>Deleted data properties</u></summary>
-<ul><li><a href="#http://schema.org/contentUrl">http://schema.org/contentUrl</a>
+<li><a href="##hasNumberOfParticipants">https://w3id.org/enigma#hasNumberOfParticipants</a>
+<ul>
+<li>Added: Domain Union of (https://w3id.org/enigma#CohortGroup, https://w3id.org/enigma#CohortProject)</li>
+<li>Added: Range http://www.w3.org/2001/XMLSchema#int</li>
+</ul>
 </li>
-<li><a href="#http://schema.org/description">http://schema.org/description</a>
+</ul><p><u>Deleted data properties</u></p>
+<ul><li><a href="##hasPercentMitochondrialGenotyping">https://w3id.org/enigma#hasPercentMitochondrialGenotyping</a>
 </li>
-<li><a href="#http://schema.org/encodingFormat">http://schema.org/encodingFormat</a>
+<li><a href="##hasPercentSelectLoci">https://w3id.org/enigma#hasPercentSelectLoci</a>
 </li>
-<li><a href="#http://schema.org/name">http://schema.org/name</a>
+<li><a href="##hasPercentBloodSalivaCollection">https://w3id.org/enigma#hasPercentBloodSalivaCollection</a>
 </li>
-<li><a href="#doesNotHaveComorbidity">https://w3id.org/enigma#doesNotHaveComorbidity</a>
+<li><a href="##hasPercentTranscriptomics">https://w3id.org/enigma#hasPercentTranscriptomics</a>
 </li>
-<li><a href="#doesNotHaveContraindicationToMRI">https://w3id.org/enigma#doesNotHaveContraindicationToMRI</a>
+<li><a href="##hasPercentPlasma">https://w3id.org/enigma#hasPercentPlasma</a>
 </li>
-<li><a href="#doesNotHaveIntellectualDisability">https://w3id.org/enigma#doesNotHaveIntellectualDisability</a>
+<li><a href="##hasPercentExomeSequencing">https://w3id.org/enigma#hasPercentExomeSequencing</a>
 </li>
-<li><a href="#doesNotHaveNeurologicalComorbidity">https://w3id.org/enigma#doesNotHaveNeurologicalComorbidity</a>
+<li><a href="##hasPercentEpigeneticsSaliva">https://w3id.org/enigma#hasPercentEpigeneticsSaliva</a>
 </li>
-<li><a href="#doesNotHavePsychiatricComorbidity">https://w3id.org/enigma#doesNotHavePsychiatricComorbidity</a>
+<li><a href="##hasNumberOfUndisclosedGender">https://w3id.org/enigma#hasNumberOfUndisclosedGender</a>
 </li>
-<li><a href="#excludesLeftHands">https://w3id.org/enigma#excludesLeftHands</a>
+<li><a href="##hasPercentGeneExpression">https://w3id.org/enigma#hasPercentGeneExpression</a>
 </li>
-<li><a href="#excludesRightHands">https://w3id.org/enigma#excludesRightHands</a>
+<li><a href="##hasPercentOfFemale">https://w3id.org/enigma#hasPercentOfFemale</a>
 </li>
-<li><a href="#hasAgeStandardDeviation">https://w3id.org/enigma#hasAgeStandardDeviation</a>
+<li><a href="##hasPercentEpigeneticsBlood">https://w3id.org/enigma#hasPercentEpigeneticsBlood</a>
 </li>
-<li><a href="#hasBrainStructuralData">https://w3id.org/enigma#hasBrainStructuralData</a>
+<li><a href="##hasStudyFeature">https://w3id.org/enigma#hasStudyFeature</a>
 </li>
-<li><a href="#hasComorbidity">https://w3id.org/enigma#hasComorbidity</a>
+<li><a href="##hasPercentOfMale">https://w3id.org/enigma#hasPercentOfMale</a>
 </li>
-<li><a href="#hasDiagnosisDisorder">https://w3id.org/enigma#hasDiagnosisDisorder</a>
+<li><a href="##hasSliceOrientation">https://w3id.org/enigma#hasSliceOrientation</a>
 </li>
-<li><a href="#hasFamilialRelations">https://w3id.org/enigma#hasFamilialRelations</a>
+<li><a href="##hasPercentDNAExtractionNoGenotyping">https://w3id.org/enigma#hasPercentDNAExtractionNoGenotyping</a>
 </li>
-<li><a href="#hasHandedness">https://w3id.org/enigma#hasHandedness</a>
+<li><a href="##hasAgeGroup">https://w3id.org/enigma#hasAgeGroup</a>
 </li>
-<li><a href="#hasLongitudinalTimepoint">https://w3id.org/enigma#hasLongitudinalTimepoint</a>
+<li><a href="##hasPregnantMembers">https://w3id.org/enigma#hasPregnantMembers</a>
 </li>
-<li><a href="#hasMaxAge">https://w3id.org/enigma#hasMaxAge</a>
+<li><a href="##hasSoftwareVersion">https://w3id.org/enigma#hasSoftwareVersion</a>
 </li>
-<li><a href="#hasMaxIQ">https://w3id.org/enigma#hasMaxIQ</a>
+<li><a href="##hasPercentGenomewideGenotyping">https://w3id.org/enigma#hasPercentGenomewideGenotyping</a>
 </li>
-<li><a href="#hasMeanAge">https://w3id.org/enigma#hasMeanAge</a>
+<li><a href="##hasPercentWholeGenomeSequencing">https://w3id.org/enigma#hasPercentWholeGenomeSequencing</a>
 </li>
-<li><a href="#hasMinAge">https://w3id.org/enigma#hasMinAge</a>
-</li>
-<li><a href="#hasMinIQ">https://w3id.org/enigma#hasMinIQ</a>
-</li>
-<li><a href="#hasNeurologicalComorbidity">https://w3id.org/enigma#hasNeurologicalComorbidity</a>
-</li>
-<li><a href="#hasNumberOfASL">https://w3id.org/enigma#hasNumberOfASL</a>
-</li>
-<li><a href="#hasNumberOfCisFemale">https://w3id.org/enigma#hasNumberOfCisFemale</a>
-</li>
-<li><a href="#hasNumberOfCisMale">https://w3id.org/enigma#hasNumberOfCisMale</a>
-</li>
-<li><a href="#hasNumberOfEEG">https://w3id.org/enigma#hasNumberOfEEG</a>
-</li>
-<li><a href="#hasNumberOfFemale">https://w3id.org/enigma#hasNumberOfFemale</a>
-</li>
-<li><a href="#hasNumberOfMale">https://w3id.org/enigma#hasNumberOfMale</a>
-</li>
-<li><a href="#hasNumberOfParticipants">https://w3id.org/enigma#hasNumberOfParticipants</a>
-</li>
-<li><a href="#hasNumberOfSWI">https://w3id.org/enigma#hasNumberOfSWI</a>
-</li>
-<li><a href="#hasNumberOfT1w">https://w3id.org/enigma#hasNumberOfT1w</a>
-</li>
-<li><a href="#hasNumberOfT2">https://w3id.org/enigma#hasNumberOfT2</a>
-</li>
-<li><a href="#hasNumberOfTransgenderFtoM">https://w3id.org/enigma#hasNumberOfTransgenderFtoM</a>
-</li>
-<li><a href="#hasNumberOfTransgenderMtoF">https://w3id.org/enigma#hasNumberOfTransgenderMtoF</a>
-</li>
-<li><a href="#hasNumberOfdMRI">https://w3id.org/enigma#hasNumberOfdMRI</a>
-</li>
-<li><a href="#hasNumberOfrsfMRI">https://w3id.org/enigma#hasNumberOfrsfMRI</a>
-</li>
-<li><a href="#hasNumberOftbfMRI">https://w3id.org/enigma#hasNumberOftbfMRI</a>
-</li>
-<li><a href="#hasPsychiatricComorbidity">https://w3id.org/enigma#hasPsychiatricComorbidity</a>
-</li>
-<li><a href="#hasSexDeterminedGenetically">https://w3id.org/enigma#hasSexDeterminedGenetically</a>
-</li>
-<li><a href="#includesFemale">https://w3id.org/enigma#includesFemale</a>
-</li>
-<li><a href="#includesMale">https://w3id.org/enigma#includesMale</a>
-</li>
-<li><a href="#isClinicallyStable">https://w3id.org/enigma#isClinicallyStable</a>
-</li>
-<li><a href="#isFamilyBased">https://w3id.org/enigma#isFamilyBased</a>
-</li>
-<li><a href="#isProficientInLocalLanguage">https://w3id.org/enigma#isProficientInLocalLanguage</a>
-</li>
-<li><a href="#withDisorderSeverity">https://w3id.org/enigma#withDisorderSeverity</a>
-</li>
-<li><a href="#withMaxAgeOfOnsetOfDisorder">https://w3id.org/enigma#withMaxAgeOfOnsetOfDisorder</a>
-</li>
-<li><a href="#withMaxDurationOfDisorder">https://w3id.org/enigma#withMaxDurationOfDisorder</a>
-</li>
-<li><a href="#withMaxNumber">https://w3id.org/enigma#withMaxNumber</a>
-</li>
-<li><a href="#withMinAgeOfOnsetOfDisorder">https://w3id.org/enigma#withMinAgeOfOnsetOfDisorder</a>
-</li>
-<li><a href="#withMinDurationOfDisorder">https://w3id.org/enigma#withMinDurationOfDisorder</a>
-</li>
-<li><a href="#withMinNumber">https://w3id.org/enigma#withMinNumber</a>
-</li>
-</ul></details></div>
+</ul></div>

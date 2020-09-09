@@ -1,5 +1,5 @@
 {
-  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "_comment" : "Created with OWL2VOWL (version 0.3.2-SNAPSHOT), http://vowl.visualdataweb.org",
   "header" : {
     "languages" : [ "en", "undefined" ],
     "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "https://w3id.org/enigma", "http://www.w3.org/2000/01/rdf-schema", "http://purl.org/dc/terms", "http://www.w3.org/2001/XMLSchema", "http://xmlns.com/foaf/0.1" ],
@@ -31,12 +31,12 @@
       "creator" : [ {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Neda Jahanshad",
+        "value" : "MiHyun Jang",
         "type" : "label"
       }, {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "MiHyun Jang",
+        "value" : "Neda Jahanshad",
         "type" : "label"
       }, {
         "identifier" : "creator",
@@ -61,17 +61,17 @@
         "value" : "enigma",
         "type" : "label"
       } ],
-      "versionInfo" : [ {
-        "identifier" : "versionInfo",
-        "language" : "undefined",
-        "value" : "v1.1.0",
-        "type" : "label"
-      } ],
       "preferredNamespaceUri" : [ {
         "identifier" : "preferredNamespaceUri",
         "language" : "undefined",
         "value" : "https://w3id.org/enigma#",
         "type" : "iri"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "v1.1.0",
+        "type" : "label"
       } ],
       "title" : [ {
         "identifier" : "title",
@@ -82,6 +82,12 @@
     }
   },
   "namespace" : [ ],
+  "metrics" : {
+    "classCount" : 6,
+    "objectPropertyCount" : 14,
+    "datatypePropertyCount" : 0,
+    "individualCount" : 0
+  },
   "class" : [ {
     "id" : "4",
     "type" : "owl:unionOf"
@@ -110,13 +116,13 @@
     "id" : "6",
     "type" : "owl:Class"
   }, {
-    "id" : "12",
+    "id" : "10",
     "type" : "owl:equivalentClass"
   } ],
   "classAttribute" : [ {
     "instances" : 0,
     "union" : [ "5", "6", "1" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "4"
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
@@ -147,7 +153,7 @@
     "id" : "1"
   }, {
     "iri" : "https://w3id.org/enigma#Person",
-    "equivalent" : [ "12" ],
+    "equivalent" : [ "10" ],
     "baseIri" : "https://w3id.org/enigma",
     "instances" : 0,
     "annotations" : {
@@ -182,12 +188,12 @@
   }, {
     "instances" : 0,
     "union" : [ "5", "1" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "17"
   }, {
     "instances" : 0,
     "union" : [ "5", "1" ],
-    "attributes" : [ "union", "anonymous" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "18"
   }, {
     "iri" : "https://w3id.org/enigma#Protocol",
@@ -236,8 +242,8 @@
     "label" : {
       "IRI-based" : "Person"
     },
-    "attributes" : [ "equivalent", "external" ],
-    "id" : "12"
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "10"
   } ],
   "property" : [ {
     "id" : "0",
@@ -246,7 +252,7 @@
     "id" : "7",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "10",
+    "id" : "11",
     "type" : "owl:objectProperty"
   }, {
     "id" : "13",
@@ -255,28 +261,19 @@
     "id" : "14",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "11",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "19",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "21",
+    "id" : "12",
     "type" : "owl:objectProperty"
   }, {
     "id" : "8",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "23",
+    "id" : "19",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "24",
+    "id" : "20",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "25",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "26",
+    "id" : "21",
     "type" : "owl:objectProperty"
   }, {
     "id" : "16",
@@ -285,13 +282,10 @@
     "id" : "15",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "20",
-    "type" : "owl:objectProperty"
-  }, {
     "id" : "3",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "27",
+    "id" : "23",
     "type" : "owl:objectProperty"
   } ],
   "propertyAttribute" : [ {
@@ -356,13 +350,13 @@
       "IRI-based" : "hasGeneticDataCollector",
       "en" : "has genetic data collector"
     },
-    "superproperty" : [ "11" ],
+    "superproperty" : [ "12" ],
     "domain" : "1",
     "comment" : {
       "en" : "Describes what project someone collected genetic data for"
     },
     "attributes" : [ "object" ],
-    "id" : "10"
+    "id" : "11"
   }, {
     "iri" : "https://w3id.org/enigma#hasGeneticDataAnalyst",
     "baseIri" : "https://w3id.org/enigma",
@@ -417,42 +411,9 @@
       "IRI-based" : "hasDataCollector"
     },
     "domain" : "9",
-    "subproperty" : [ "10", "16" ],
+    "subproperty" : [ "11", "16" ],
     "attributes" : [ "object" ],
-    "id" : "11"
-  }, {
-    "iri" : "https://w3id.org/enigma#hasProjectLead",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "9",
-    "label" : {
-      "IRI-based" : "hasProjectLead"
-    },
-    "domain" : "9",
-    "subproperty" : [ "20" ],
-    "attributes" : [ "object" ],
-    "id" : "19"
-  }, {
-    "iri" : "https://w3id.org/enigma#ranProtocol",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "22",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "en",
-        "value" : "JohnSmith ranProtocol ENIGMA-Sulci Protocol",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "ranProtocol",
-      "en" : "ran protocol"
-    },
-    "domain" : "2",
-    "comment" : {
-      "en" : "Describes which protocol that an individual ran"
-    },
-    "attributes" : [ "object" ],
-    "id" : "21"
+    "id" : "12"
   }, {
     "iri" : "http://purl.org/dc/terms/contributor",
     "baseIri" : "http://purl.org/dc/terms",
@@ -472,29 +433,6 @@
     "subproperty" : [ "15", "7" ],
     "attributes" : [ "object", "external" ],
     "id" : "8"
-  }, {
-    "iri" : "https://w3id.org/enigma#HasPersonRole_DataCollector",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "2",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "en",
-        "value" : "BipolarProject HasPersonRole_DataCollector JohnSmith",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "HasPersonRole_DataCollector",
-      "en" : "has data collector"
-    },
-    "superproperty" : [ "15" ],
-    "domain" : "1",
-    "comment" : {
-      "en" : "Describes what project someone collected data for"
-    },
-    "attributes" : [ "object" ],
-    "id" : "23"
   }, {
     "iri" : "https://w3id.org/enigma#HasPersonRole_DataAnalyst",
     "baseIri" : "https://w3id.org/enigma",
@@ -517,30 +455,30 @@
       "en" : "Describes what project someone is a data analyst of"
     },
     "attributes" : [ "object" ],
-    "id" : "24"
+    "id" : "19"
   }, {
-    "iri" : "https://w3id.org/enigma#hasDesigner",
+    "iri" : "https://w3id.org/enigma#HasPersonRole_DataCollector",
     "baseIri" : "https://w3id.org/enigma",
     "range" : "2",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
         "language" : "en",
-        "value" : "BipolarProject hasDesigner JohnSmith",
+        "value" : "BipolarProject HasPersonRole_DataCollector JohnSmith",
         "type" : "label"
       } ]
     },
     "label" : {
-      "IRI-based" : "hasDesigner",
-      "en" : "has designer"
+      "IRI-based" : "HasPersonRole_DataCollector",
+      "en" : "has data collector"
     },
     "superproperty" : [ "15" ],
     "domain" : "1",
     "comment" : {
-      "en" : "Property that points to the person responsible for helping designing a project."
+      "en" : "Describes what project someone collected data for"
     },
     "attributes" : [ "object" ],
-    "id" : "25"
+    "id" : "20"
   }, {
     "iri" : "https://w3id.org/enigma#HasPersonRole_FirstDraftContributor",
     "baseIri" : "https://w3id.org/enigma",
@@ -563,7 +501,7 @@
       "en" : "Property designed to distinguish who collaborated in the creation of the first draft of a publication"
     },
     "attributes" : [ "object" ],
-    "id" : "26"
+    "id" : "21"
   }, {
     "iri" : "https://w3id.org/enigma#hasImagingDataCollector",
     "baseIri" : "https://w3id.org/enigma",
@@ -580,7 +518,7 @@
       "IRI-based" : "hasImagingDataCollector",
       "en" : "has imaging data collector"
     },
-    "superproperty" : [ "11" ],
+    "superproperty" : [ "12" ],
     "domain" : "1",
     "comment" : {
       "en" : "Describes what project someone collected imaging data for"
@@ -605,35 +543,12 @@
     },
     "superproperty" : [ "8" ],
     "domain" : "4",
-    "subproperty" : [ "14", "24", "23", "25", "26", "27" ],
+    "subproperty" : [ "14", "19", "20", "21", "23" ],
     "comment" : {
       "en" : "Property that indicates who is a contributor to a project or cohort"
     },
     "attributes" : [ "object" ],
     "id" : "15"
-  }, {
-    "iri" : "https://w3id.org/enigma#hasLastProjectLead",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "2",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "en",
-        "value" : "BipolarProject hasLastProjectLead JohnSmith",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasLastProjectLead",
-      "en" : "has last project lead"
-    },
-    "superproperty" : [ "19" ],
-    "domain" : "1",
-    "comment" : {
-      "en" : "Property designed to identify whom of the leads plays a senior role in the project, and therefore should be placed last when writing papers."
-    },
-    "attributes" : [ "object" ],
-    "id" : "20"
   }, {
     "iri" : "https://w3id.org/enigma#hasDataAnalyst",
     "baseIri" : "https://w3id.org/enigma",
@@ -667,6 +582,6 @@
       "en" : "Property that indicates who contributed to the paper reviewing the initial drafts and providing comments"
     },
     "attributes" : [ "object" ],
-    "id" : "27"
+    "id" : "23"
   } ]
 }

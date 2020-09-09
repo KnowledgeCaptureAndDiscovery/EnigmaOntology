@@ -126,7 +126,10 @@
 
     <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/contributor"/>
     
+    
+    <!-- https://w3id.org/enigma#hasDataCollector -->
 
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDataCollector"/>
 
     <!-- https://w3id.org/enigma#HasPersonRole_DataAnalyst -->
 
@@ -172,6 +175,50 @@
         <rdfs:label xml:lang="en">first draft contributor</rdfs:label>
     </owl:ObjectProperty>
     
+    
+    <!-- https://w3id.org/enigma#hasImagingDataCollector -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasImagingDataCollector">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasDataCollector"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example xml:lang="en">BipolarProject hasImagingDataCollector JohnSmith</vann:example>
+        <rdfs:comment xml:lang="en">Describes what project someone collected imaging data for</rdfs:comment>
+        <rdfs:label xml:lang="en">has imaging data collector</rdfs:label>
+    </owl:ObjectProperty>
+    
+    <!-- https://w3id.org/enigma#hasGeneticDataCollector -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasGeneticDataCollector">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasDataCollector"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example xml:lang="en">BipolarProject hasGeneticDataCollector JohnSmith</vann:example>
+        <rdfs:comment xml:lang="en">Describes what project someone collected genetic data for</rdfs:comment>
+        <rdfs:label xml:lang="en">has genetic data collector</rdfs:label>
+    </owl:ObjectProperty>
+    
+    <!-- https://w3id.org/enigma#hasGeneticDataAnalyst -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasGeneticDataAnalyst">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasDataAnalyst"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example xml:lang="en">BipolarProject hasGeneticDataAnalyst JohnSmith</vann:example>
+        <rdfs:comment xml:lang="en">Describes what project someone is a genetic data analyst of</rdfs:comment>
+        <rdfs:label xml:lang="en">has genetic data analyst</rdfs:label>
+    </owl:ObjectProperty>
+    
+    <!-- https://w3id.org/enigma#hasImagingDataAnalyst -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasImagingDataAnalyst">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasDataAnalyst"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
+        <vann:example xml:lang="en">BipolarProject hasImagingDataAnalyst JohnSmith</vann:example>
+        <rdfs:comment xml:lang="en">Describes what project someone is an imaging data analyst of</rdfs:comment>
+        <rdfs:label xml:lang="en">has imaging data analyst</rdfs:label>
+    </owl:ObjectProperty>
 
 
     <!-- https://w3id.org/enigma#HasPersonRole_ProjectLead -->
@@ -238,116 +285,7 @@
         <rdfs:comment xml:lang="en">Property that indicates who is a contributor to a project or cohort</rdfs:comment>
         <rdfs:label xml:lang="en">contributor</rdfs:label>
     </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasDataAnalyst -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDataAnalyst"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasDataCollector -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDataCollector"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasDesigner -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDesigner">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#contributor"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">BipolarProject hasDesigner JohnSmith</vann:example>
-        <rdfs:comment xml:lang="en">Property that points to the person responsible for helping designing a project.</rdfs:comment>
-        <rdfs:label xml:lang="en">has designer</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasGeneticDataAnalyst -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasGeneticDataAnalyst">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasDataAnalyst"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">BipolarProject hasGeneticDataAnalyst JohnSmith</vann:example>
-        <rdfs:comment xml:lang="en">Describes what project someone is a genetic data analyst of</rdfs:comment>
-        <rdfs:label xml:lang="en">has genetic data analyst</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasGeneticDataCollector -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasGeneticDataCollector">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasDataCollector"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">BipolarProject hasGeneticDataCollector JohnSmith</vann:example>
-        <rdfs:comment xml:lang="en">Describes what project someone collected genetic data for</rdfs:comment>
-        <rdfs:label xml:lang="en">has genetic data collector</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasImagingDataAnalyst -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasImagingDataAnalyst">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasDataAnalyst"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">BipolarProject hasImagingDataAnalyst JohnSmith</vann:example>
-        <rdfs:comment xml:lang="en">Describes what project someone is an imaging data analyst of</rdfs:comment>
-        <rdfs:label xml:lang="en">has imaging data analyst</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasImagingDataCollector -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasImagingDataCollector">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasDataCollector"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">BipolarProject hasImagingDataCollector JohnSmith</vann:example>
-        <rdfs:comment xml:lang="en">Describes what project someone collected imaging data for</rdfs:comment>
-        <rdfs:label xml:lang="en">has imaging data collector</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasLastProjectLead -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasLastProjectLead">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/enigma#hasProjectLead"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Person"/>
-        <vann:example xml:lang="en">BipolarProject hasLastProjectLead JohnSmith</vann:example>
-        <rdfs:comment xml:lang="en">Property designed to identify whom of the leads plays a senior role in the project, and therefore should be placed last when writing papers.</rdfs:comment>
-        <rdfs:label xml:lang="en">has last project lead</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasProjectLead -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasProjectLead"/>
-    
-
-
-    <!-- https://w3id.org/enigma#ranProtocol -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#ranProtocol">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Protocol"/>
-        <vann:example xml:lang="en">JohnSmith ranProtocol ENIGMA-Sulci Protocol</vann:example>
-        <rdfs:comment xml:lang="en">Describes which protocol that an individual ran</rdfs:comment>
-        <rdfs:label xml:lang="en">ran protocol</rdfs:label>
-    </owl:ObjectProperty>
-    
-
+   
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////

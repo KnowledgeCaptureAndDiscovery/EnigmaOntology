@@ -1,4 +1,4 @@
-<h2 id="crossreference" class="list">Cross reference for The Organization Ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<h2  id="crossreference" class="list">Cross reference for The Organization Ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 This section provides details for each class and property defined by The Organization Ontology.
 <div id="classes">
    <h3 id="classes-headline" class="list">Classes</h3>
@@ -81,8 +81,7 @@ This section provides details for each class and property defined by The Organiz
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#hasCoordinates" title="https://w3id.org/enigma#hasCoordinates">has coordinates</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasCountryName" title="https://w3id.org/enigma#hasCountryName">has country name</a>
+            <a href="#hasCountry" title="https://w3id.org/enigma#hasCountry">has country</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#hasPostalCode" title="https://w3id.org/enigma#hasPostalCode">has postal code</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#hasRegion" title="https://w3id.org/enigma#hasRegion">has region</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#hasStreetAddress" title="https://w3id.org/enigma#hasStreetAddress">has street address</a>
@@ -291,9 +290,10 @@ This section provides details for each class and property defined by The Organiz
          <dt>is in domain of</dt>
          <dd>
             <a href="#hasAffiliate" title="https://w3id.org/enigma#hasAffiliate">has affiliate</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasPrimaryAddress" title="https://w3id.org/enigma#hasPrimaryAddress">has primary address</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isPartOfOrganization" title="https://w3id.org/enigma#isPartOfOrganization">is part of organization</a>
-            <sup class="type-op" title="object property">op</sup>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasCoordinates" title="https://w3id.org/enigma#hasCoordinates">has coordinates</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#isPartOfOrganization" title="https://w3id.org/enigma#isPartOfOrganization">is part of organization</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasKindOfInstitute" title="https://w3id.org/enigma#hasKindOfInstitute">kind of institute</a>
+            <sup class="type-dp" title="data property">dp</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
@@ -462,7 +462,7 @@ This section provides details for each class and property defined by The Organiz
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasPrimaryAddress</p>
       <div class="comment">
-         <span class="markdown">Describes the primary address of an organization</span>
+         <span class="markdown">Describes the primary address of an organization or person</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -480,6 +480,9 @@ This section provides details for each class and property defined by The Organiz
             <dt>has domain</dt>
             <dd>
                <a href="#Organization" title="https://w3id.org/enigma#Organization">Organization</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -585,7 +588,7 @@ This section provides details for each class and property defined by The Organiz
          <a href="#hasCoordinates" title="https://w3id.org/enigma#hasCoordinates">has coordinates</a>
       </li>
       <li>
-         <a href="#hasCountryName" title="https://w3id.org/enigma#hasCountryName">has country name</a>
+         <a href="#hasCountry" title="https://w3id.org/enigma#hasCountry">has country</a>
       </li>
       <li>
          <a href="#hasPostalCode" title="https://w3id.org/enigma#hasPostalCode">has postal code</a>
@@ -611,31 +614,29 @@ This section provides details for each class and property defined by The Organiz
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasCoordinates</p>
       <div class="comment">
-         <span class="markdown">The coordinates associated with the address of the organization</span>
+         <span class="markdown">The coordinates associated with an organization</span>
       </div>
       <div class="description">
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#Address" title="https://w3id.org/enigma#Address">Address</a>
+               <a href="#Organization" title="https://w3id.org/enigma#Organization">Organization</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#string"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
             </dd>
          </dl>
       </div>
    </div>
-   <div class="entity" id="hasCountryName">
-      <h3>has country name<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="hasCountry">
+      <h3>has country<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#hasCountryName</p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasCountry</p>
       <div class="comment">
          <span class="markdown">The country name associated with the address of the object</span>
       </div>
@@ -643,9 +644,7 @@ This section provides details for each class and property defined by The Organiz
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="http://www.w3.org/2006/vcard/ns#country-name"
-                  target="_blank"
-                  title="http://www.w3.org/2006/vcard/ns#country-name">country name</a>
+               <span class="dotted" title="http://www.w3.org/2006/vcard/ns#country-name">country name</span>
                <sup class="type-dp" title="data property">dp</sup>
             </dd>
             <dt>has domain</dt>
@@ -655,9 +654,7 @@ This section provides details for each class and property defined by The Organiz
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#string"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
             </dd>
          </dl>
       </div>
@@ -676,9 +673,7 @@ This section provides details for each class and property defined by The Organiz
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="http://www.w3.org/2006/vcard/ns#postal-code"
-                  target="_blank"
-                  title="http://www.w3.org/2006/vcard/ns#postal-code">postal code</a>
+               <span class="dotted" title="http://www.w3.org/2006/vcard/ns#postal-code">postal code</span>
                <sup class="type-dp" title="data property">dp</sup>
             </dd>
             <dt>has domain</dt>
@@ -688,9 +683,7 @@ This section provides details for each class and property defined by The Organiz
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#string"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
             </dd>
          </dl>
       </div>
@@ -709,9 +702,7 @@ This section provides details for each class and property defined by The Organiz
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="http://www.w3.org/2006/vcard/ns#region"
-                  target="_blank"
-                  title="http://www.w3.org/2006/vcard/ns#region">region</a>
+               <span class="dotted" title="http://www.w3.org/2006/vcard/ns#region">region</span>
                <sup class="type-dp" title="data property">dp</sup>
             </dd>
             <dt>has domain</dt>
@@ -721,9 +712,7 @@ This section provides details for each class and property defined by The Organiz
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#string"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
             </dd>
          </dl>
       </div>
@@ -742,9 +731,7 @@ This section provides details for each class and property defined by The Organiz
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="http://www.w3.org/2006/vcard/ns#street-address"
-                  target="_blank"
-                  title="http://www.w3.org/2006/vcard/ns#street-address">street address</a>
+               <span class="dotted" title="http://www.w3.org/2006/vcard/ns#street-address">street address</span>
                <sup class="type-dp" title="data property">dp</sup>
             </dd>
             <dt>has domain</dt>
@@ -754,9 +741,7 @@ This section provides details for each class and property defined by The Organiz
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#string"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
             </dd>
          </dl>
       </div>
@@ -769,7 +754,7 @@ This section provides details for each class and property defined by The Organiz
       <p>
          <strong>IRI:</strong> https://w3id.org/enigma#hasKindOfInstitute</p>
       <div class="comment">
-         <span class="markdown">Describes the specific kind/type of an organization or working group</span>
+         <span class="markdown">Describes the specific kind/type of an organization</span>
       </div>
       <dl>
          <dt>Example</dt>
@@ -782,16 +767,11 @@ This section provides details for each class and property defined by The Organiz
             <dt>has domain</dt>
             <dd>
                <a href="#Organization" title="https://w3id.org/enigma#Organization">Organization</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#WorkingGroup" title="https://w3id.org/enigma#WorkingGroup">Working Group</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#string"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
             </dd>
          </dl>
       </div>
@@ -821,9 +801,7 @@ This section provides details for each class and property defined by The Organiz
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#string"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
             </dd>
          </dl>
       </div>

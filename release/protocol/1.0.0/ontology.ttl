@@ -75,15 +75,6 @@ xsd:gYear rdf:type rdfs:Datatype .
 <http://purl.org/dc/terms/title> rdf:type owl:DatatypeProperty .
 
 
-###  https://w3id.org/enigma#hasCategory
-:hasCategory rdf:type owl:DatatypeProperty ;
-             rdfs:domain :Protocol ;
-             rdfs:range xsd:string ;
-             <http://purl.org/vocab/vann/example> "ENIGMA-SulciProtocol hasCategory \"Imaging\""@en ;
-             rdfs:comment "Describes a categorical representation of the broad kind of data that a protocol is used for"@en ;
-             rdfs:label "has category"@en .
-
-
 ###  https://w3id.org/enigma#hasDataType
 :hasDataType rdf:type owl:DatatypeProperty ;
              rdfs:domain :Protocol ;
@@ -100,53 +91,6 @@ xsd:gYear rdf:type rdfs:Datatype .
                 <http://purl.org/vocab/vann/example> "ENIGMA-Sulci hasDescription \"This protocol allows you to segment, label, and visually inspect 123 cortical sulci/subject using FreeSurfer, BrainVISA, R and ImageMagick.\""@en ;
                 rdfs:comment "A brief description of a protocol"@en ;
                 rdfs:label "has description"@en .
-
-
-###  https://w3id.org/enigma#hasLink
-:hasLink rdf:type owl:DatatypeProperty ;
-         rdfs:domain :Protocol ;
-         rdfs:range xsd:string ;
-         <http://purl.org/vocab/vann/example> "ENIGMA-SulciProtocol hasLink [url to protocol]"@en ;
-         rdfs:comment "Describes the physical link to a protocol"@en ;
-         rdfs:label "has link"@en .
-
-
-###  https://w3id.org/enigma#hasName
-:hasName rdf:type owl:DatatypeProperty ;
-         rdfs:subPropertyOf <http://purl.org/dc/terms/title> ;
-         rdfs:domain :Protocol ;
-         rdfs:range xsd:string ;
-         <http://purl.org/vocab/vann/example> "ENIGMA-Sulci Protocol hasName ENIGMA-Sulci"@en ;
-         rdfs:comment "Describes the name of a protocol"@en ,
-                      "Property added to restrict the domain to enigma:Protocol. This is done for facilitating the interaction with the wiki interface"@en ;
-         rdfs:label "has name"@en .
-
-
-###  https://w3id.org/enigma#hasOutputFeature
-:hasOutputFeature rdf:type owl:DatatypeProperty ;
-                  rdfs:domain :Protocol ;
-                  rdfs:range xsd:string ;
-                  <http://purl.org/vocab/vann/example> "ENIGMA-SulciProtocol hasOutputFeature \"mean depth\""@en ;
-                  rdfs:comment "Describes an output feature of the protocol"@en ;
-                  rdfs:label "has output feature"@en .
-
-
-###  https://w3id.org/enigma#hasType
-:hasType rdf:type owl:DatatypeProperty ;
-         rdfs:domain :Protocol ;
-         rdfs:range xsd:string ;
-         <http://purl.org/vocab/vann/example> "ENIGMA-SulciProtocol hasType \"VolumeProtocol\""@en ;
-         rdfs:comment "Describes the type of procedure that a protocol represents"@en ;
-         rdfs:label "has type"@en .
-
-
-###  https://w3id.org/enigma#hasVersion
-:hasVersion rdf:type owl:DatatypeProperty ;
-            rdfs:domain :Protocol ;
-            rdfs:range xsd:string ;
-            <http://purl.org/vocab/vann/example> "ENIGMA Cortical Quality Control Protocol hasVersion \"2.0 April 2017\""@en ;
-            rdfs:comment "Describes the version of the protocol"@en ;
-            rdfs:label "has version"@en .
 
 
 #################################################################

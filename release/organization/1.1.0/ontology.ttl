@@ -8,19 +8,19 @@
 
 <https://w3id.org/enigma> rdf:type owl:Ontology ;
                            owl:versionIRI <https://w3id.org/enigma/organization/1.1.0> ;
-                           <http://purl.org/dc/terms/contributor> "Haripriya Dharmala" ,
-                                                                  "Yolanda Gil" ;
-                           <http://purl.org/dc/terms/creator> "Daniel Garijo" ,
-                                                              "MiHyun Jang" ,
-                                                              "Neda Jahanshad" ,
-                                                              "Ryan Espiritu" ;
+                           <http://purl.org/dc/terms/contributor> "Haripriya Dharmala"^^xsd:string ,
+                                                                  "Yolanda Gil"^^xsd:string ;
+                           <http://purl.org/dc/terms/creator> "Daniel Garijo"^^xsd:string ,
+                                                              "MiHyun Jang"^^xsd:string ,
+                                                              "Neda Jahanshad"^^xsd:string ,
+                                                              "Ryan Espiritu"^^xsd:string ;
                            <http://purl.org/dc/terms/description> "An ontology representing organizations that participate in the ENIGMA consortium."@en ;
                            <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> ;
-                           <http://purl.org/dc/terms/title> "The Organization Ontology" ;
+                           <http://purl.org/dc/terms/title> "The Organization Ontology"^^xsd:string ;
                            <http://purl.org/vocab/vann/preferredNamespacePrefix> <https://w3id.org/enigma> ,
-                                                                                 "enigma" ;
+                                                                                 "enigma"^^xsd:string ;
                            owl:priorVersion <https://w3id.org/enigma/organization/1.1.0> ;
-                           owl:versionInfo "v1.1.0" .
+                           owl:versionInfo "v1.1.0"^^xsd:string .
 
 #################################################################
 #    Annotation properties
@@ -55,7 +55,7 @@
 
 
 ###  https://w3id.org/enigma#vann:example
-:vann:example rdf:type owl:AnnotationProperty .
+:example rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -64,22 +64,22 @@
 
 ###  http://purl.org/dc/terms/isPartOf
 <http://purl.org/dc/terms/isPartOf> rdf:type owl:ObjectProperty ;
-                                    rdfs:comment "A related resource in which the described resource is included." ;
+                                    rdfs:comment "A related resource in which the described resource is included."^^xsd:string ;
                                     rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
-                                    rdfs:label "is Part of" .
+                                    rdfs:label "is Part of"^^xsd:string .
 
 
 ###  http://www.w3.org/2006/vcard/ns#hasAddress
 <http://www.w3.org/2006/vcard/ns#hasAddress> rdf:type owl:ObjectProperty ;
                                              rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
-                                             rdfs:label "has Address" .
+                                             rdfs:label "has Address"^^xsd:string .
 
 
 ###  http://xmlns.com/foaf/0.1/member
 <http://xmlns.com/foaf/0.1/member> rdf:type owl:ObjectProperty ;
-                                   rdfs:comment "Indicates member of a group" ;
+                                   rdfs:comment "Indicates member of a group"^^xsd:string ;
                                    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
-                                   rdfs:label "member" .
+                                   rdfs:label "member"^^xsd:string .
 
 
 ###  https://w3id.org/enigma#hasAffiliate
@@ -95,10 +95,14 @@
 ###  https://w3id.org/enigma#hasPrimaryAddress
 :hasPrimaryAddress rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf <http://www.w3.org/2006/vcard/ns#hasAddress> ;
-                   rdfs:domain :Organization ;
+                   rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( :Organization
+                                               :Person
+                                             )
+                               ] ;
                    rdfs:range :Address ;
                    <http://purl.org/vocab/vann/example> "USC hasPrimaryAddress \"123 Admiralty Way\""@en ;
-                   rdfs:comment "Describes the primary address of an organization"@en ;
+                   rdfs:comment "Describes the primary address of an organization or person"@en ;
                    rdfs:label "has primary address"@en .
 
 
@@ -143,31 +147,27 @@
 
 ###  https://w3id.org/enigma#hasCoordinates
 :hasCoordinates rdf:type owl:DatatypeProperty ;
-                rdfs:domain :Address ;
+                rdfs:domain :Organization ;
                 rdfs:range xsd:string ;
-                rdfs:comment "The coordinates associated with the address of the organization"@en ;
+                rdfs:comment "The coordinates associated with an organization"@en ;
                 rdfs:label "has coordinates"@en .
 
 
-###  https://w3id.org/enigma#hasCountryName
-:hasCountryName rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf <http://www.w3.org/2006/vcard/ns#country-name> ;
-                rdfs:domain :Address ;
-                rdfs:range xsd:string ;
-                rdfs:comment "The country name associated with the address of the object"@en ;
-                rdfs:label "has country name"@en .
+###  https://w3id.org/enigma#hasCountry
+:hasCountry rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf <http://www.w3.org/2006/vcard/ns#country-name> ;
+            rdfs:domain :Address ;
+            rdfs:range xsd:string ;
+            rdfs:comment "The country name associated with the address of the object"@en ;
+            rdfs:label "has country"@en .
 
 
 ###  https://w3id.org/enigma#hasKindOfInstitute
 :hasKindOfInstitute rdf:type owl:DatatypeProperty ;
-                    rdfs:domain [ rdf:type owl:Class ;
-                                  owl:unionOf ( :Organization
-                                                :WorkingGroup
-                                              )
-                                ] ;
+                    rdfs:domain :Organization ;
                     rdfs:range xsd:string ;
                     <http://purl.org/vocab/vann/example> "Organization kind \"University\""@en ;
-                    rdfs:comment "Describes the specific kind/type of an organization or working group"@en ;
+                    rdfs:comment "Describes the specific kind/type of an organization"@en ;
                     rdfs:label "kind of institute"@en .
 
 
@@ -279,7 +279,7 @@
 :Organization rdf:type owl:Class ;
               rdfs:comment "An organization belonging to the ENIGMA consortium. Organization can be hospitals, universities, departments, etc."@en ;
               rdfs:label "Organization"@en ;
-              :vann:example "Information Sciences Institute" .
+              :example "Information Sciences Institute"^^xsd:string .
 
 
 ###  https://w3id.org/enigma#Person
@@ -296,4 +296,4 @@
               rdfs:label "Working Group"@en .
 
 
-###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
+###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

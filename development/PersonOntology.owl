@@ -166,8 +166,6 @@
         <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/member"/>
     </owl:ObjectProperty>
     
-
-
     <!-- https://w3id.org/enigma#author -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#author">
@@ -178,8 +176,6 @@
         <rdfs:label xml:lang="en">author</rdfs:label>
     </owl:ObjectProperty>
     
-
-
     <!-- https://w3id.org/enigma#forOrganization -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#forOrganization">
@@ -189,8 +185,6 @@
         <rdfs:comment xml:lang="en">Describes the organization associated with the qualified affiliation</rdfs:comment>
         <rdfs:label xml:lang="en">for organization</rdfs:label>
     </owl:ObjectProperty>
-    
-
 
     <!-- https://w3id.org/enigma#hasAffiliate -->
 
@@ -214,26 +208,6 @@
         <vaem:rationale xml:lang="en">Property added to facilitate interaction with domain and ranges in the wiki. It&apos;s equivalent to foaf:mbox</vaem:rationale>
         <rdfs:comment xml:lang="en">Property that indicates which is the email of a person</rdfs:comment>
         <rdfs:label xml:lang="en">has email</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasHomePage -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasHomePage">
-        <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/homepage"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Person"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <vaem:rationale xml:lang="en">Property added to facilitate interaction with domain and ranges in the wiki. It&apos;s equivalent to foaf:homePage</vaem:rationale>
-        <rdfs:comment xml:lang="en">Property that describes the home page of a cohort or person</rdfs:comment>
-        <rdfs:label xml:lang="en">has home page</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -286,19 +260,6 @@
         <rdfs:label xml:lang="en">has principal investigator</rdfs:label>
     </owl:ObjectProperty>
     
-
-
-    <!-- https://w3id.org/enigma#hasQualifiedAffiliation -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasQualifiedAffiliation">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#QualifiedAffiliation"/>
-        <vann:example xml:lang="en">JohnSmith hasQualifiedAffiliation &quot;QualifiedAffiliation&quot; forOrganization USC</vann:example>
-        <rdfs:comment xml:lang="en">Describes the qualified affiliation of a person. Used to specify additional detailes regarding an indvidual&apos;s affiliation with an organization (i.e. start and end dates)</rdfs:comment>
-        <rdfs:label xml:lang="en">has qualified affiliation</rdfs:label>
-    </owl:ObjectProperty>
-    
-
 
     <!-- https://w3id.org/enigma#hasWorkingGroupChair -->
 
@@ -357,14 +318,14 @@
     
 
 
-    <!-- https://w3id.org/enigma#currentJobTitle -->
+    <!-- https://w3id.org/enigma#hasCurrentJobTitle -->
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#currentJobTitle">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasCurrentJobTitle">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <vann:example xml:lang="en">JohnSmith currentJobTitle &quot;Postdoc&quot;</vann:example>
+        <vann:example xml:lang="en">JohnSmith hasCurrentJobTitle &quot;Postdoc&quot;</vann:example>
         <rdfs:comment xml:lang="en">Data property that aims to capture the current job title of a person. Examples are student, faculty, staff, postdoc, etc.</rdfs:comment>
-        <rdfs:label xml:lang="en">current job title</rdfs:label>
+        <rdfs:label xml:lang="en">has current job title</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -377,25 +338,6 @@
         <vann:example xml:lang="en">JohnSmith hasDegree PhD</vann:example>
         <rdfs:comment xml:lang="en">Describes what degree a person has (e.g., BsC, PhD, etc.)</rdfs:comment>
         <rdfs:label xml:lang="en">has degree</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasEndDate -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasEndDate">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#QualifiedAffiliation"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#WorkingGroup"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-        <vann:example xml:lang="en">JohnSmith hasQualifiedAffiliation &quot;QualifiedAffiliation&quot; hasEndDate &quot;2018-07-13&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Describes the end date of the described resource (a working group, a person in an organizaiton, etc.)</rdfs:comment>
-        <rdfs:label xml:lang="en">has end date</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -424,7 +366,24 @@
         <rdfs:label xml:lang="en">has given name</rdfs:label>
     </owl:DatatypeProperty>
     
+    
+    <!-- https://w3id.org/enigma#hasHomePage -->
 
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasHomePage">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <vaem:rationale xml:lang="en">Property added to facilitate interaction with domain and ranges in the wiki. It&apos;s equivalent to foaf:homePage</vaem:rationale>
+        <rdfs:comment xml:lang="en">Property that describes the home page of a cohort or person</rdfs:comment>
+        <rdfs:label xml:lang="en">has home page</rdfs:label>
+    </owl:DatatypeProperty>
+    
 
     <!-- https://w3id.org/enigma#hasGrant -->
 
@@ -458,59 +417,6 @@
         <vann:example xml:lang="en">JohnSmith hasReasearchInterest &quot;bipolar disorder&quot;, &quot;schizophrenia&quot;</vann:example>
         <rdfs:comment xml:lang="en">Describes a research interest of a person</rdfs:comment>
         <rdfs:label xml:lang="en">has research interest</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasStartDate -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasStartDate">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#QualifiedAffiliation"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#WorkingGroup"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-        <vann:example xml:lang="en">JohnSmith hasQualifiedAffiliation &quot;QualifiedAffiliation&quot; hasStartDate &quot;2008-07-13&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Describes the start date of the described resource (a working group, a person in an organization, etc.)</rdfs:comment>
-        <rdfs:label xml:lang="en">has start date</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/enigma#hasStatus -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasStatus">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#QualifiedAffiliation"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:oneOf>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <rdf:first>Active</rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                <rdf:first>Inactive</rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                        <rdf:first>Left Organization</rdf:first>
-                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </owl:oneOf>
-            </rdfs:Datatype>
-        </rdfs:range>
-        <vann:example xml:lang="en">JohnSmith hasQualifiedAffiliationRelationship &quot;QualifiedAffiliation&quot; hasStatus &quot;Inactive&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Describes the current activity status of a person at a given organization. &quot;Active&quot; specifies that one is currently active within an organization. &quot;Inactive&quot; specifies that one is currently still part of an organization but not currently active. &quot;Left Organization&quot; specifies that one is no longer a part of an organization.</rdfs:comment>
-        <rdfs:label xml:lang="en">has status</rdfs:label>
     </owl:DatatypeProperty>
     
 

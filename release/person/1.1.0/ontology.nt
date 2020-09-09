@@ -132,7 +132,6 @@
 # 
 # https://w3id.org/enigma#hasHomePage
 <https://w3id.org/enigma#hasHomePage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#hasHomePage> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://xmlns.com/foaf/0.1/homepage> .
 <https://w3id.org/enigma#hasHomePage> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
 _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 _:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
@@ -143,9 +142,6 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Person> .
 _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <https://w3id.org/enigma#hasHomePage> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2002/07/owl#Thing> .
-<https://w3id.org/enigma#hasHomePage> <http://www.linkedmodel.org/schema/vaem#rationale> "Property added to facilitate interaction with domain and ranges in the wiki. It's equivalent to foaf:homePage"@en .
-<https://w3id.org/enigma#hasHomePage> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that describes the home page of a cohort or person"@en .
-<https://w3id.org/enigma#hasHomePage> <http://www.w3.org/2000/01/rdf-schema#label> "has home page"@en .
 # 
 # https://w3id.org/enigma#hasInvestigator
 <https://w3id.org/enigma#hasInvestigator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -180,14 +176,6 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/enigma#hasPrincipalInvestigator> <http://purl.org/vocab/vann/example> "Cohort1 hasPrincipalInvestigator JohnSmith"@en .
 <https://w3id.org/enigma#hasPrincipalInvestigator> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes which cohorts somone is the principal investigator of"@en .
 <https://w3id.org/enigma#hasPrincipalInvestigator> <http://www.w3.org/2000/01/rdf-schema#label> "has principal investigator"@en .
-# 
-# https://w3id.org/enigma#hasQualifiedAffiliation
-<https://w3id.org/enigma#hasQualifiedAffiliation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#hasQualifiedAffiliation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Person> .
-<https://w3id.org/enigma#hasQualifiedAffiliation> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#QualifiedAffiliation> .
-<https://w3id.org/enigma#hasQualifiedAffiliation> <http://purl.org/vocab/vann/example> "JohnSmith hasQualifiedAffiliation \"QualifiedAffiliation\" forOrganization USC"@en .
-<https://w3id.org/enigma#hasQualifiedAffiliation> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the qualified affiliation of a person. Used to specify additional detailes regarding an indvidual's affiliation with an organization (i.e. start and end dates)"@en .
-<https://w3id.org/enigma#hasQualifiedAffiliation> <http://www.w3.org/2000/01/rdf-schema#label> "has qualified affiliation"@en .
 # 
 # https://w3id.org/enigma#hasWorkingGroupChair
 <https://w3id.org/enigma#hasWorkingGroupChair> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -228,13 +216,13 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <http://xmlns.com/foaf/0.1/givenName> <http://www.w3.org/2000/01/rdf-schema#comment> "The given name of some person."@en .
 <http://xmlns.com/foaf/0.1/givenName> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
 # 
-# https://w3id.org/enigma#currentJobTitle
-<https://w3id.org/enigma#currentJobTitle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#currentJobTitle> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Person> .
-<https://w3id.org/enigma#currentJobTitle> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/enigma#currentJobTitle> <http://purl.org/vocab/vann/example> "JohnSmith currentJobTitle \"Postdoc\""@en .
-<https://w3id.org/enigma#currentJobTitle> <http://www.w3.org/2000/01/rdf-schema#comment> "Data property that aims to capture the current job title of a person. Examples are student, faculty, staff, postdoc, etc."@en .
-<https://w3id.org/enigma#currentJobTitle> <http://www.w3.org/2000/01/rdf-schema#label> "current job title"@en .
+# https://w3id.org/enigma#hasCurrentJobTitle
+<https://w3id.org/enigma#hasCurrentJobTitle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#hasCurrentJobTitle> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Person> .
+<https://w3id.org/enigma#hasCurrentJobTitle> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#hasCurrentJobTitle> <http://purl.org/vocab/vann/example> "JohnSmith hasCurrentJobTitle \"Postdoc\""@en .
+<https://w3id.org/enigma#hasCurrentJobTitle> <http://www.w3.org/2000/01/rdf-schema#comment> "Data property that aims to capture the current job title of a person. Examples are student, faculty, staff, postdoc, etc."@en .
+<https://w3id.org/enigma#hasCurrentJobTitle> <http://www.w3.org/2000/01/rdf-schema#label> "has current job title"@en .
 # 
 # https://w3id.org/enigma#hasDegree
 <https://w3id.org/enigma#hasDegree> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -243,22 +231,6 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/enigma#hasDegree> <http://purl.org/vocab/vann/example> "JohnSmith hasDegree PhD"@en .
 <https://w3id.org/enigma#hasDegree> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes what degree a person has (e.g., BsC, PhD, etc.)"@en .
 <https://w3id.org/enigma#hasDegree> <http://www.w3.org/2000/01/rdf-schema#label> "has degree"@en .
-# 
-# https://w3id.org/enigma#hasEndDate
-<https://w3id.org/enigma#hasEndDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasEndDate> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid4 .
-_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid4 <http://www.w3.org/2002/07/owl#unionOf> _:genid6 .
-_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#QualifiedAffiliation> .
-_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#WorkingGroup> .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<https://w3id.org/enigma#hasEndDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
-<https://w3id.org/enigma#hasEndDate> <http://purl.org/vocab/vann/example> "JohnSmith hasQualifiedAffiliation \"QualifiedAffiliation\" hasEndDate \"2018-07-13\""@en .
-<https://w3id.org/enigma#hasEndDate> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the end date of the described resource (a working group, a person in an organizaiton, etc.)"@en .
-<https://w3id.org/enigma#hasEndDate> <http://www.w3.org/2000/01/rdf-schema#label> "has end date"@en .
 # 
 # https://w3id.org/enigma#hasFamilyName
 <https://w3id.org/enigma#hasFamilyName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -286,6 +258,9 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/enigma#hasGrant> <http://www.w3.org/2000/01/rdf-schema#comment> "Data property that aims to capture the grants that have been obtained by a person, in order to properly list them in the acknowledgements of the corresponding publication"@en .
 <https://w3id.org/enigma#hasGrant> <http://www.w3.org/2000/01/rdf-schema#label> "has grant"@en .
 # 
+# https://w3id.org/enigma#hasHomePage
+<https://w3id.org/enigma#hasHomePage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
 # https://w3id.org/enigma#hasMiddleInitial
 <https://w3id.org/enigma#hasMiddleInitial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/enigma#hasMiddleInitial> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Person> .
@@ -301,41 +276,6 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/enigma#hasResearchInterest> <http://purl.org/vocab/vann/example> "JohnSmith hasReasearchInterest \"bipolar disorder\", \"schizophrenia\""@en .
 <https://w3id.org/enigma#hasResearchInterest> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes a research interest of a person"@en .
 <https://w3id.org/enigma#hasResearchInterest> <http://www.w3.org/2000/01/rdf-schema#label> "has research interest"@en .
-# 
-# https://w3id.org/enigma#hasStartDate
-<https://w3id.org/enigma#hasStartDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasStartDate> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid7 .
-_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid7 <http://www.w3.org/2002/07/owl#unionOf> _:genid9 .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#QualifiedAffiliation> .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#WorkingGroup> .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<https://w3id.org/enigma#hasStartDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
-<https://w3id.org/enigma#hasStartDate> <http://purl.org/vocab/vann/example> "JohnSmith hasQualifiedAffiliation \"QualifiedAffiliation\" hasStartDate \"2008-07-13\""@en .
-<https://w3id.org/enigma#hasStartDate> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the start date of the described resource (a working group, a person in an organization, etc.)"@en .
-<https://w3id.org/enigma#hasStartDate> <http://www.w3.org/2000/01/rdf-schema#label> "has start date"@en .
-# 
-# https://w3id.org/enigma#hasStatus
-<https://w3id.org/enigma#hasStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasStatus> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#QualifiedAffiliation> .
-<https://w3id.org/enigma#hasStatus> <http://www.w3.org/2000/01/rdf-schema#range> _:genid10 .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
-_:genid10 <http://www.w3.org/2002/07/owl#oneOf> _:genid13 .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "Active" .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid12 .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "Inactive" .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid11 .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "Left Organization" .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<https://w3id.org/enigma#hasStatus> <http://purl.org/vocab/vann/example> "JohnSmith hasQualifiedAffiliationRelationship \"QualifiedAffiliation\" hasStatus \"Inactive\""@en .
-<https://w3id.org/enigma#hasStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the current activity status of a person at a given organization. \"Active\" specifies that one is currently active within an organization. \"Inactive\" specifies that one is currently still part of an organization but not currently active. \"Left Organization\" specifies that one is no longer a part of an organization."@en .
-<https://w3id.org/enigma#hasStatus> <http://www.w3.org/2000/01/rdf-schema#label> "has status"@en .
 # 
 # 
 # 
@@ -364,7 +304,7 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 # 
 # https://w3id.org/enigma#Cohort
 <https://w3id.org/enigma#Cohort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/enigma#Cohort> <http://purl.org/vocab/vann/example> "ADNI: Alzheimer’s Disease Neuroimaging Initiative"@en .
+<https://w3id.org/enigma#Cohort> <http://purl.org/vocab/vann/example> "ADNI: Alzheimer\u2019s Disease Neuroimaging Initiative"@en .
 <https://w3id.org/enigma#Cohort> <http://www.w3.org/2000/01/rdf-schema#comment> "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria"@en .
 <https://w3id.org/enigma#Cohort> <http://www.w3.org/2000/01/rdf-schema#label> "Cohort"@en .
 # 
@@ -409,4 +349,8 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 # 
 <http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/creator> .
 # 
-# Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
+<https://w3id.org/enigma#hasHomePage> <http://www.linkedmodel.org/schema/vaem#rationale> "Property added to facilitate interaction with domain and ranges in the wiki. It's equivalent to foaf:homePage"@en .
+<https://w3id.org/enigma#hasHomePage> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that describes the home page of a cohort or person"@en .
+<https://w3id.org/enigma#hasHomePage> <http://www.w3.org/2000/01/rdf-schema#label> "has home page"@en .
+# 
+# Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/
