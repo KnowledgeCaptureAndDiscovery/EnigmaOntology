@@ -1249,6 +1249,15 @@ vann:example
       rdfs:subPropertyOf :hasCohortGroup ;
       vann:example "BipolarCohort hasPopulationGroup USCPopulationGroup"@en .
 
+###  https://w3id.org/enigma#hasProjectResults
+:hasProjectResults rdf:type owl:ObjectProperty ;
+      a       owl:ObjectProperty ;
+      rdfs:domain :CohortProject ;
+      rdfs:range :DataDownload ;
+      rdfs:comment "Property to link project results to a Cohort Project"^^xsd:string ;
+      rdfs:label "has project results"^^xsd:string .
+      vann:example "CohortProject ADNI1Project hasProjectResults ADNI1_GWAS_Results"@en.
+
 <https://schema.org/description>
       a       owl:DatatypeProperty ;
       rdfs:isDefinedBy <https://schema.org/> .
