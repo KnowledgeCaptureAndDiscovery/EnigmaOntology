@@ -9,8 +9,57 @@
 }, {
   "@id" : "https://w3id.org/enigma",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/terms/contributor" : [ {
+    "@value" : "Agnes McMahon"
+  }, {
+    "@value" : "Hernan Vargas"
+  }, {
+    "@value" : "Kevin Low"
+  }, {
+    "@value" : "MiHyun Jang"
+  }, {
+    "@value" : "Michael Bornstein"
+  }, {
+    "@value" : "Ryan Espiritu"
+  } ],
+  "http://purl.org/dc/terms/creator" : [ {
+    "@value" : "Daniel Garijo"
+  }, {
+    "@value" : "Haripriya Dharmala"
+  }, {
+    "@value" : "Joanna Bright"
+  }, {
+    "@value" : "Josh Boyd"
+  }, {
+    "@value" : "Neda Jahanshad"
+  }, {
+    "@value" : "Wesley Surento"
+  }, {
+    "@value" : "Yolanda Gil"
+  } ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@value" : "An ontology representing covariates for the ENIGMA Suicidal Thoughts and Behaviors working group"
+  } ],
+  "http://purl.org/dc/terms/license" : [ {
+    "@id" : "http://creativecommons.org/licenses/by/2.0/"
+  } ],
+  "http://purl.org/dc/terms/title" : [ {
+    "@value" : "The STB Ontology"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
+    "@value" : "enigma"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
+    "@id" : "https://w3id.org/enigma#"
+  } ],
   "http://www.w3.org/2002/07/owl#imports" : [ {
     "@id" : "https://w3id.org/enigma/cohort/1.1.0"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionIRI" : [ {
+    "@id" : "https://w3id.org/enigma/stb/1.1.0"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@value" : "v1.1.0"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#Age",
@@ -26,6 +75,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#demographicProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#BAS_TotalScore",
@@ -41,6 +93,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#scoreProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#BD_AgeofOnset",
@@ -56,6 +111,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#BD_Current",
@@ -71,6 +129,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#BD_CurrentState",
@@ -86,6 +147,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#BD_DiagnosisType",
@@ -97,10 +161,13 @@
     "@id" : "https://w3id.org/enigma#Covariates"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "BDD diagnosis type"
+    "@value" : "BD diagnosis type"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#BD_Lifetime",
@@ -116,6 +183,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#BD_Stage",
@@ -131,6 +201,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#BIS_TotalScore",
@@ -146,6 +219,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#scoreProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#CGITotal",
@@ -161,6 +237,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#scoreProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#Covariates",
@@ -185,6 +264,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#GAD_Current",
@@ -200,6 +282,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#GAD_Lifetime",
@@ -215,6 +300,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#GAF_Total",
@@ -230,12 +318,15 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#scoreProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#IQ",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+    "@id" : "https://w3id.org/enigma#demographicProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#IQ_method",
@@ -251,6 +342,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#demographicProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#MDD_AgeofOnset",
@@ -266,6 +360,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#MDD_Current",
@@ -281,6 +378,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#MDD_Lifetime",
@@ -296,6 +396,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#MDD_Stage",
@@ -311,6 +414,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#MDD_TotalEpisodes",
@@ -326,6 +432,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#Marital_status",
@@ -341,6 +450,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#demographicProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#OCD_AgeofOnset",
@@ -352,10 +464,13 @@
     "@id" : "https://w3id.org/enigma#Covariates"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "ocd age of onset"
+    "@value" : "OCD age of onset"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#OCD_Current",
@@ -371,6 +486,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#OCD_Lifetime",
@@ -386,6 +504,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#Occupation",
@@ -401,6 +522,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#demographicProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#PTSD_AgeofOnset",
@@ -416,6 +540,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#PTSD_Current",
@@ -431,6 +558,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#PTSD_Lifetime",
@@ -446,6 +576,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#SOFAS_Total",
@@ -461,6 +594,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#scoreProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#Sex",
@@ -476,6 +612,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#demographicProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#SubjID",
@@ -491,6 +630,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#demographicProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#alcoholUseDisorderScale",
@@ -506,6 +648,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#useDisorderProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#alcoholUseDisorder_AgeofOnset",
@@ -521,6 +666,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#useDisorderProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#alcoholUseDisorder_Current",
@@ -536,6 +684,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#useDisorderProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#alcoholUseDisorder_Lifetime",
@@ -551,6 +702,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#useDisorderProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#antidepressantUse_Current",
@@ -566,6 +720,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#medicationSomaticProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#antidepressantUse_Lifetime",
@@ -581,6 +738,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#medicationSomaticProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#antiepilepticUse_Current",
@@ -596,6 +756,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#medicationSomaticProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#antiepilepticUse_Lifetime",
@@ -611,6 +774,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#medicationSomaticProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#atypicalAntipsychoticUse_Current",
@@ -626,6 +792,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#medicationSomaticProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#atypicalAntipsychoticUse_Lifetime",
@@ -641,6 +810,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#medicationSomaticProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#barratt_TotalScore",
@@ -656,6 +828,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#scoreProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#barratt_VersionUsed",
@@ -671,6 +846,18 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#scoreProperty"
+  } ]
+}, {
+  "@id" : "https://w3id.org/enigma#demographicProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "any demographic property"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "demographic property"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#diagnosisGroup",
@@ -686,6 +873,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#demographicProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#education_Category",
@@ -701,6 +891,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#demographicProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#education_Method",
@@ -716,6 +909,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#demographicProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#education_Years",
@@ -731,6 +927,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#demographicProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#hasCovariates",
@@ -759,6 +958,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#medicationSomaticProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#lithiumUse_Lifetime",
@@ -774,6 +976,18 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#medicationSomaticProperty"
+  } ]
+}, {
+  "@id" : "https://w3id.org/enigma#medicationSomaticProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Any Medication use/Somatic Health property"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Medication use/Somatic Health property"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#negLifeEvents",
@@ -789,6 +1003,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#negLifeEventsMethod",
@@ -804,6 +1021,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#otherDx_AgeofOnset",
@@ -819,6 +1039,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#otherDx_Current",
@@ -834,6 +1057,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#otherDx_Lifetime",
@@ -849,6 +1075,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#otherMedUse_Current",
@@ -864,6 +1093,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#medicationSomaticProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#otherMedUse_Lifetime",
@@ -879,6 +1111,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#medicationSomaticProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#otherSubstanceUseDisorder_AgeofOnset",
@@ -894,6 +1129,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#useDisorderProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#otherSubstanceUseDisorder_Current",
@@ -909,6 +1147,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#useDisorderProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#otherSubstanceUseDisorder_Lifetime",
@@ -924,6 +1165,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#useDisorderProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#panicDisorder_AgeofOnset",
@@ -939,6 +1183,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#panicDisorder_Current",
@@ -954,6 +1201,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#panicDisorder_Lifetime",
@@ -969,6 +1219,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#parent_SocioeconomicStatus",
@@ -984,6 +1237,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#demographicProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#parent_SocioeconomicStatusScale",
@@ -999,6 +1255,18 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#demographicProperty"
+  } ]
+}, {
+  "@id" : "https://w3id.org/enigma#psychopathologicalProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Any psychopathological property"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "psychopathological property"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#psychoticDisorder_AgeofOnset",
@@ -1014,6 +1282,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#psychoticDisorder_Current",
@@ -1029,6 +1300,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#psychoticDisorder_DiagnosisType",
@@ -1044,6 +1318,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#psychoticDisorder_Lifetime",
@@ -1059,6 +1336,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#race_ethnicity",
@@ -1074,6 +1354,18 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#demographicProperty"
+  } ]
+}, {
+  "@id" : "https://w3id.org/enigma#scoreProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Any score property"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "score property"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#smokingStatus_Current",
@@ -1089,6 +1381,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#useDisorderProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#smokingStatus_Lifetime",
@@ -1104,6 +1399,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#useDisorderProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#socialAnxietyDisorder_AgeofOnset",
@@ -1119,6 +1417,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#socialAnxietyDisorder_Current",
@@ -1134,6 +1435,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#socialAnxietyDisorder_Lifetime",
@@ -1149,6 +1453,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#psychopathologicalProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#somaticIllness_current",
@@ -1164,6 +1471,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#medicationSomaticProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#somaticIllness_type",
@@ -1179,6 +1489,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#medicationSomaticProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#subject_SocioeconomicStatus",
@@ -1194,6 +1507,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#demographicProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#subject_SocioeconomicStatusScale",
@@ -1209,6 +1525,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#demographicProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#typicalAntipsychoticUse_Current",
@@ -1224,6 +1543,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#medicationSomaticProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#typicalAntipsychoticUse_Lifetime",
@@ -1239,5 +1561,17 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/enigma#medicationSomaticProperty"
+  } ]
+}, {
+  "@id" : "https://w3id.org/enigma#useDisorderProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Any use disorder property"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "use disorder property"
   } ]
 } ]
