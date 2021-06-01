@@ -8,7 +8,6 @@
 
 <https://w3id.org/enigma> rdf:type owl:Ontology ;
                            owl:versionIRI <https://w3id.org/enigma/stb/1.1.0> ;
-                           owl:imports <https://w3id.org/enigma/cohort/1.1.0> ;
                            <http://purl.org/dc/terms/contributor> "Agnes McMahon" ,
                                                                   "Hernan Vargas" ,
                                                                   "Kevin Low" ,
@@ -28,6 +27,38 @@
                            <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma" ;
                            <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
                            owl:versionInfo "v1.1.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
 
 #################################################################
 #    Object Properties
@@ -807,6 +838,10 @@ owl:topDataProperty rdfs:domain :Covariates ;
 #################################################################
 #    Classes
 #################################################################
+
+###  https://w3id.org/enigma#Cohort
+:Cohort rdf:type owl:Class .
+
 
 ###  https://w3id.org/enigma#Covariates
 :Covariates rdf:type owl:Class ;
