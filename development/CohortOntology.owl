@@ -11,17 +11,17 @@
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/enigma">
         <owl:versionIRI rdf:resource="https://w3id.org/enigma/cohort/1.1.0"/>
+        <terms:contributor>Agnes McMahon</terms:contributor>
         <terms:contributor>MiHyun Jang</terms:contributor>
         <terms:contributor>Michael Bornstein</terms:contributor>
         <terms:contributor>Ryan Espiritu</terms:contributor>
-        <terms:contributor>Agnes McMahon</terms:contributor>
-        <terms:creator>Josh Boyd</terms:creator>
-        <terms:creator>Joanna Bright</terms:creator>
-        <terms:creator>Wesley Surento</terms:creator>
         <terms:creator>Daniel Garijo</terms:creator>
         <terms:creator>Haripriya Dharmala</terms:creator>
-        <terms:creator>Yolanda Gil</terms:creator>
+        <terms:creator>Joanna Bright</terms:creator>
+        <terms:creator>Josh Boyd</terms:creator>
         <terms:creator>Neda Jahanshad</terms:creator>
+        <terms:creator>Wesley Surento</terms:creator>
+        <terms:creator>Yolanda Gil</terms:creator>
         <terms:description xml:lang="en">An ontology to describe cohorts of patients participating in ENIGMA projects.</terms:description>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
         <terms:title xml:lang="en">The Cohort Ontology</terms:title>
@@ -459,6 +459,17 @@
     
 
 
+    <!-- https://w3id.org/enigma#hasProjectResults -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasProjectResults">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortProject"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#DataDownload"/>
+        <rdfs:comment>Property to link project results to a Cohort Project</rdfs:comment>
+        <rdfs:label>has project results</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/enigma#hasStatistics -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasStatistics">
@@ -564,15 +575,6 @@
         <rdfs:label xml:lang="en">studies disorder</rdfs:label>
     </owl:ObjectProperty>
     
-    <!-- https://w3id.org/enigma#hasProjectResults -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasProjectResults">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortProject"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#DataDownload"/>
-        <rdfs:comment>Property to link project results to a Cohort Project</rdfs:comment>
-        <rdfs:label>has project results</rdfs:label>
-    </owl:ObjectProperty>
-    
 
 
     <!-- 
@@ -662,6 +664,7 @@
                     <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#CohortProject"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Covariates"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -681,6 +684,7 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#CohortProject"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Covariates"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -701,6 +705,7 @@
                     <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#CohortProject"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Covariates"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1301,6 +1306,15 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
     
 
 
+    <!-- https://w3id.org/enigma#Covariates -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#Covariates">
+        <rdfs:comment>A class used to describe covariates information for a cohort or study.</rdfs:comment>
+        <rdfs:label>Covariates</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/enigma#DataDownload -->
 
     <owl:Class rdf:about="https://w3id.org/enigma#DataDownload">
@@ -1552,8 +1566,8 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
 
     <rdf:Description rdf:about="https://w3id.org/enigma#hasHomePage">
         <rdfs:comment xml:lang="en">Property that describes the home page of a cohort or person</rdfs:comment>
-        <vaem:rationale xml:lang="en">Property added to facilitate interaction with domain and ranges in the wiki. It&apos;s equivalent to foaf:homePage</vaem:rationale>
         <rdfs:label xml:lang="en">has home page</rdfs:label>
+        <vaem:rationale xml:lang="en">Property added to facilitate interaction with domain and ranges in the wiki. It&apos;s equivalent to foaf:homePage</vaem:rationale>
     </rdf:Description>
 </rdf:RDF>
 

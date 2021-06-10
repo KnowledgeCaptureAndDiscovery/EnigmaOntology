@@ -212,9 +212,9 @@
 
 :checksum
       a       owl:DatatypeProperty ;
-      rdfs:comment "checksum of data file to check if there are modifications"^^xsd:string ;
+      rdfs:comment "checksum of data file to check if there are modifications" ;
       rdfs:domain :DataDownload ;
-      rdfs:label "checksum"^^xsd:string ;
+      rdfs:label "checksum" ;
       rdfs:range xsd:string .
 
 :DataDownload
@@ -330,9 +330,9 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
 
 :hasContentUrl
       a       owl:DatatypeProperty ;
-      rdfs:comment "Points to a media object, like an image or video file"^^xsd:string ;
+      rdfs:comment "Points to a media object, like an image or video file" ;
       rdfs:domain :DataDownload ;
-      rdfs:label "has content URL"^^xsd:string ;
+      rdfs:label "has content URL" ;
       rdfs:range xsd:anyURI ;
       rdfs:subPropertyOf <https://schema.org/contentUrl> .
 
@@ -665,16 +665,16 @@ xsd:date
               [ a       rdfs:Datatype ;
                 owl:oneOf
                         [ a       rdf:List ;
-                          rdf:first "gathering participants"^^xsd:string ;
+                          rdf:first "gathering participants" ;
                           rdf:rest
                                   [ a       rdf:List ;
-                                    rdf:first "protocol preparation"^^xsd:string ;
+                                    rdf:first "protocol preparation" ;
                                     rdf:rest
                                             [ a       rdf:List ;
-                                              rdf:first "published"^^xsd:string ;
+                                              rdf:first "published" ;
                                               rdf:rest
                                                       [ a       rdf:List ;
-                                                        rdf:first "revision"^^xsd:string ;
+                                                        rdf:first "revision" ;
                                                         rdf:rest ()
                                                       ]
                                             ]
@@ -1097,7 +1097,7 @@ xsd:date
       rdfs:comment "Describes inclusion criteria for maximum age of participants in a Cohort, CohortProject or CohortGroup"@en ;
       rdfs:domain
               [ a       owl:Class ;
-                owl:unionOf (:Cohort :CohortGroup :CohortProject)
+                owl:unionOf (:Cohort :CohortGroup :CohortProject :Covariates)
               ] ;
       rdfs:label "has maximum age"@en ;
       rdfs:range xsd:positiveInteger ;
@@ -1114,9 +1114,9 @@ xsd:date
 
 <http://schema.org/Dataset>
       a       owl:Class ;
-      rdfs:comment "Dataset"^^xsd:string ;
+      rdfs:comment "Dataset" ;
       rdfs:isDefinedBy <http://schema.org> ;
-      rdfs:label "Dataset"^^xsd:string .
+      rdfs:label "Dataset" .
 
 :education_Category
       a       owl:DatatypeProperty ;
@@ -1140,15 +1140,15 @@ xsd:date
       rdfs:comment "Provides a brief description of the working group or project or cohort or image acquisition protocol"@en , "Provides a brief description of the working group or project or cohort"@en ;
       rdfs:domain
               [ a       owl:Class ;
-                owl:unionOf (:Cohort :Project :WorkingGroup)
-              ] ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :Project :WorkingGroup)
-              ] ;
-      rdfs:domain
-              [ a       owl:Class ;
                 owl:unionOf (:Cohort :CohortGroup :CohortProject :ImageAcquisitionProtocol :Project :WorkingGroup)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :Project :WorkingGroup)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :Project :WorkingGroup)
               ] ;
       rdfs:label "has brief description"@en ;
       rdfs:range xsd:string ;
@@ -1285,9 +1285,9 @@ xsd:date
       a       owl:Ontology , owl:NamedIndividual ;
       rdfs:comment "An ontology for describing people's roles in ENIGMA projects."^^xsd:string ;
       <http://purl.org/dc/terms/contributor>
-              "Kevin Low" , "Haripriya Dharmala"^^xsd:string , "Michael Bornstein" , "Ryan Espiritu" , "Yolanda Gil"^^xsd:string , "MiHyun Jang" , "Hernan Vargas" , "Agnes McMahon" , "Agnes McMahon"^^xsd:string , "Daniel Garijo"^^xsd:string ;
+              "Kevin Low" , "Haripriya Dharmala"^^xsd:string , "Michael Bornstein" , "Ryan Espiritu" , "Yolanda Gil"^^xsd:string , "MiHyun Jang" , "Hernan Vargas" , "Agnes McMahon"^^xsd:string , "Agnes McMahon" , "Daniel Garijo"^^xsd:string ;
       <http://purl.org/dc/terms/creator>
-              "Michael Bornstein"^^xsd:string , "Josh Boyd" , "Ryan Espiritu"^^xsd:string , "Yolanda Gil" , "Daniel Garijo" , "Daniel Garijo"^^xsd:string , "Haripriya Dharmala" , "Haripriya Dharmala"^^xsd:string , "Joanna Bright" , "Wesley Surento" , "MiHyun Jang"^^xsd:string , "Neda Jahanshad" , "Neda Jahanshad"^^xsd:string ;
+              "Haripriya Dharmala"^^xsd:string , "Haripriya Dharmala" , "Joanna Bright" , "Josh Boyd" , "Wesley Surento" , "Ryan Espiritu"^^xsd:string , "Yolanda Gil" , "MiHyun Jang"^^xsd:string , "Daniel Garijo" , "Daniel Garijo"^^xsd:string , "Neda Jahanshad" , "Neda Jahanshad"^^xsd:string ;
       <http://purl.org/dc/terms/description>
               "An ontology to describe cohorts of patients participating in ENIGMA projects."@en , "An ontology representing roles different persons play in ENIGMA projects, organizations, papers, or working groups."@en , "A core ontology representing the main concepts of ENIGMA."@en , "An ontology representing covariates for the ENIGMA Suicidal Thoughts and Behaviors working group" , "An ontology that describes ENIGMA projects and their properties."@en , "An ontology representing organizations that participate in the ENIGMA consortium."@en , "An ontology representing Working Groups that participate in the ENIGMA consortium."@en , "A cohort ontology that describes persons participating in ENIGMA and their properties."@en ;
       <http://purl.org/dc/terms/license>
@@ -1298,7 +1298,7 @@ xsd:date
               "enigma" , "enigma"^^xsd:string , <https://w3id.org/enigma> ;
       <http://purl.org/vocab/vann/preferredNamespaceUri>
               : ;
-      owl:priorVersion <https://w3id.org/enigma/roles/1.0.0> , <https://w3id.org/enigma/organization/1.1.0> , "https://w3id.org/enigma/cohort/1.0.0"^^xsd:string , <https://w3id.org/enigma/core/1.0.0> , <https://w3id.org/enigma/wg/1.0.0> , <https://w3id.org/enigma/person/1.0.0> ;
+      owl:priorVersion <https://w3id.org/enigma/roles/1.0.0> , <https://w3id.org/enigma/organization/1.1.0> , "https://w3id.org/enigma/cohort/1.0.0" , <https://w3id.org/enigma/core/1.0.0> , <https://w3id.org/enigma/wg/1.0.0> , <https://w3id.org/enigma/person/1.0.0> ;
       owl:versionIRI <https://w3id.org/enigma/cohort/1.1.0> , <https://w3id.org/enigma/roles/1.1.0> , <https://w3id.org/enigma/core/1.1.0> , <https://w3id.org/enigma/stb/1.1.0> , <https://w3id.org/enigma/organization/1.1.0> , <https://w3id.org/enigma/project/1.1.0> , <https://w3id.org/enigma/person/1.1.0> , <https://w3id.org/enigma/wg/1.1.0> ;
       owl:versionInfo "v1.1.0" , "v1.1.0"^^xsd:string .
 
@@ -1335,7 +1335,7 @@ xsd:date
 <http://schema.org/DataDownload>
       a       owl:Class ;
       rdfs:isDefinedBy <http://schema.org> ;
-      rdfs:label "Data Download"^^xsd:string .
+      rdfs:label "Data Download" .
 
 :hasPublication
       a       owl:ObjectProperty ;
@@ -1608,9 +1608,9 @@ xsd:gYear
 
 <http://xmlns.com/foaf/0.1/homepage>
       a       owl:ObjectProperty ;
-      rdfs:comment "A homepage for some thing."^^xsd:string ;
+      rdfs:comment "A homepage for some thing." ;
       rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
-      rdfs:label "homepage"^^xsd:string .
+      rdfs:label "homepage" .
 
 :race_ethnicity
       a       owl:DatatypeProperty ;
@@ -1675,9 +1675,9 @@ xsd:gYear
 
 :hasName
       a       owl:DatatypeProperty ;
-      rdfs:comment "Name of an item"^^xsd:string ;
+      rdfs:comment "Name of an item" ;
       rdfs:domain :Dataset ;
-      rdfs:label "has name"^^xsd:string ;
+      rdfs:label "has name" ;
       rdfs:range xsd:string ;
       rdfs:subPropertyOf <https://schema.org/name> .
 
@@ -1808,18 +1808,11 @@ xsd:gYear
 <http://purl.org/vocab/vann/example>
       a       owl:AnnotationProperty .
 
-:Age  a       owl:DatatypeProperty ;
-      rdfs:comment "Subject's age in years ." ;
-      rdfs:domain :Covariates ;
-      rdfs:label "age" ;
-      rdfs:range xsd:integer ;
-      rdfs:subPropertyOf :demographicProperty .
-
 :hasProjectResults
       a       owl:ObjectProperty ;
-      rdfs:comment "Property to link project results to a Cohort Project"^^xsd:string ;
+      rdfs:comment "Property to link project results to a Cohort Project" ;
       rdfs:domain :CohortProject ;
-      rdfs:label "has project results"^^xsd:string ;
+      rdfs:label "has project results" ;
       rdfs:range :DataDownload .
 
 :InfectiousDisorder
@@ -1890,9 +1883,9 @@ owl:topDataProperty
 
 :hasDescription
       a       owl:DatatypeProperty ;
-      rdfs:comment "Description of an item"^^xsd:string ;
+      rdfs:comment "Description of an item" ;
       rdfs:domain :Dataset ;
-      rdfs:label "has description"^^xsd:string ;
+      rdfs:label "has description" ;
       rdfs:range xsd:string ;
       rdfs:subPropertyOf <https://schema.org/description> .
 
@@ -1927,19 +1920,19 @@ owl:topDataProperty
               [ a       rdfs:Datatype ;
                 owl:oneOf
                         [ a       rdf:List ;
-                          rdf:first "African American"^^xsd:string ;
+                          rdf:first "African American" ;
                           rdf:rest
                                   [ a       rdf:List ;
-                                    rdf:first "Asian"^^xsd:string ;
+                                    rdf:first "Asian" ;
                                     rdf:rest
                                             [ a       rdf:List ;
-                                              rdf:first "European"^^xsd:string ;
+                                              rdf:first "European" ;
                                               rdf:rest
                                                       [ a       rdf:List ;
-                                                        rdf:first "Latino"^^xsd:string ;
+                                                        rdf:first "Latino" ;
                                                         rdf:rest
                                                                 [ a       rdf:List ;
-                                                                  rdf:first "Two or More Races"^^xsd:string ;
+                                                                  rdf:first "Two or More Races" ;
                                                                   rdf:rest ()
                                                                 ]
                                                       ]
@@ -2202,7 +2195,7 @@ owl:topDataProperty
       rdfs:comment "Describes the mean age of the cohort"@en ;
       rdfs:domain
               [ a       owl:Class ;
-                owl:unionOf (:CohortGroup :CohortProject)
+                owl:unionOf (:CohortGroup :CohortProject :Covariates)
               ] ;
       rdfs:label "has mean age"@en ;
       rdfs:range xsd:double ;
@@ -2222,7 +2215,7 @@ owl:topDataProperty
       rdfs:comment "Describes inclusion criteria for minimum age of participants in a Cohort, CohortProject or CohortGroup"@en ;
       rdfs:domain
               [ a       owl:Class ;
-                owl:unionOf (:Cohort :CohortGroup :CohortProject)
+                owl:unionOf (:Cohort :CohortGroup :CohortProject :Covariates)
               ] ;
       rdfs:label "has minimum age"@en ;
       rdfs:range xsd:positiveInteger ;
@@ -2260,9 +2253,9 @@ owl:topDataProperty
 
 :hasDistribution
       a       owl:ObjectProperty ;
-      rdfs:comment "Indicates a downloadable form of a dataset at a specific location"^^xsd:string ;
+      rdfs:comment "Indicates a downloadable form of a dataset at a specific location" ;
       rdfs:domain :Dataset ;
-      rdfs:label "has distribution"^^xsd:string ;
+      rdfs:label "has distribution" ;
       rdfs:range :DataDownload ;
       rdfs:subPropertyOf <https://schema.org/distribution> .
 
