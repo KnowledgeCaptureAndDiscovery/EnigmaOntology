@@ -1,31 +1,34 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://w3id.org/enigma#"
      xml:base="https://w3id.org/enigma"
-     xmlns:vaem="http://www.linkedmodel.org/schema/vaem#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:vann="http://purl.org/vocab/vann/">
+     xmlns:vaem="http://www.linkedmodel.org/schema/vaem#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/enigma">
         <owl:versionIRI rdf:resource="https://w3id.org/enigma/cohort/1.1.0"/>
-        <terms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Agnes McMahon</terms:contributor>
-        <terms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Daniel Garijo</terms:contributor>
-        <terms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Haripriya Dharmala</terms:contributor>
-        <terms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yolanda Gil</terms:contributor>
-        <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MiHyun Jang</terms:creator>
-        <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Michael Bornstein</terms:creator>
-        <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Neda Jahanshad</terms:creator>
-        <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ryan Espiritu</terms:creator>
+        <terms:contributor>Agnes McMahon</terms:contributor>
+        <terms:contributor>MiHyun Jang</terms:contributor>
+        <terms:contributor>Michael Bornstein</terms:contributor>
+        <terms:contributor>Ryan Espiritu</terms:contributor>
+        <terms:creator>Daniel Garijo</terms:creator>
+        <terms:creator>Haripriya Dharmala</terms:creator>
+        <terms:creator>Joanna Bright</terms:creator>
+        <terms:creator>Josh Boyd</terms:creator>
+        <terms:creator>Neda Jahanshad</terms:creator>
+        <terms:creator>Wesley Surento</terms:creator>
+        <terms:creator>Yolanda Gil</terms:creator>
         <terms:description xml:lang="en">An ontology to describe cohorts of patients participating in ENIGMA projects.</terms:description>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
         <terms:title xml:lang="en">The Cohort Ontology</terms:title>
-        <vann:preferredNamespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string">enigma</vann:preferredNamespacePrefix>
+        <vann:preferredNamespacePrefix>enigma</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:resource="https://w3id.org/enigma#"/>
-        <owl:priorVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://w3id.org/enigma/cohort/1.0.0</owl:priorVersion>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">v1.1.0</owl:versionInfo>
+        <owl:priorVersion>https://w3id.org/enigma/cohort/1.0.0</owl:priorVersion>
+        <owl:versionInfo>v1.1.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -140,9 +143,9 @@
 
 
     <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/homepage">
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A homepage for some thing.</rdfs:comment>
+        <rdfs:comment>A homepage for some thing.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">homepage</rdfs:label>
+        <rdfs:label>homepage</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -349,8 +352,8 @@
         <rdfs:subPropertyOf rdf:resource="https://schema.org/distribution"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Dataset"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#DataDownload"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indicates a downloadable form of a dataset at a specific location</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has distribution</rdfs:label>
+        <rdfs:comment>Indicates a downloadable form of a dataset at a specific location</rdfs:comment>
+        <rdfs:label>has distribution</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -494,8 +497,8 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasProjectResults">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortProject"/>
         <rdfs:range rdf:resource="https://w3id.org/enigma#DataDownload"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Property to link project results to a Cohort Project</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has project results</rdfs:label>
+        <rdfs:comment>Property to link project results to a Cohort Project</rdfs:comment>
+        <rdfs:label>has project results</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -668,8 +671,8 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#checksum">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#DataDownload"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">checksum of data file to check if there are modifications</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">checksum</rdfs:label>
+        <rdfs:comment>checksum of data file to check if there are modifications</rdfs:comment>
+        <rdfs:label>checksum</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -710,6 +713,7 @@
                     <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#CohortProject"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Covariates"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -730,6 +734,7 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#CohortProject"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Covariates"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -751,6 +756,7 @@
                     <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#CohortProject"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Covariates"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -824,19 +830,19 @@
                 <owl:oneOf>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gathering participants</rdf:first>
+                        <rdf:first>gathering participants</rdf:first>
                         <rdf:rest>
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protocol preparation</rdf:first>
+                                <rdf:first>protocol preparation</rdf:first>
                                 <rdf:rest>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">published</rdf:first>
+                                        <rdf:first>published</rdf:first>
                                         <rdf:rest>
                                             <rdf:Description>
                                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">revision</rdf:first>
+                                                <rdf:first>revision</rdf:first>
                                                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                                             </rdf:Description>
                                         </rdf:rest>
@@ -875,8 +881,8 @@
         <rdfs:subPropertyOf rdf:resource="https://schema.org/contentUrl"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#DataDownload"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Points to a media object, like an image or video file</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has content URL</rdfs:label>
+        <rdfs:comment>Points to a media object, like an image or video file</rdfs:comment>
+        <rdfs:label>has content URL</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -930,8 +936,8 @@
         <rdfs:subPropertyOf rdf:resource="https://schema.org/description"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Dataset"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Description of an item</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has description</rdfs:label>
+        <rdfs:comment>Description of an item</rdfs:comment>
+        <rdfs:label>has description</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -953,23 +959,23 @@
                 <owl:oneOf>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">African American</rdf:first>
+                        <rdf:first>African American</rdf:first>
                         <rdf:rest>
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Asian</rdf:first>
+                                <rdf:first>Asian</rdf:first>
                                 <rdf:rest>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">European</rdf:first>
+                                        <rdf:first>European</rdf:first>
                                         <rdf:rest>
                                             <rdf:Description>
                                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Latino</rdf:first>
+                                                <rdf:first>Latino</rdf:first>
                                                 <rdf:rest>
                                                     <rdf:Description>
                                                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Two or More Races</rdf:first>
+                                                        <rdf:first>Two or More Races</rdf:first>
                                                         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                                                     </rdf:Description>
                                                 </rdf:rest>
@@ -1056,8 +1062,8 @@
         <rdfs:subPropertyOf rdf:resource="https://schema.org/name"/>
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Dataset"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Name of an item</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has name</rdfs:label>
+        <rdfs:comment>Name of an item</rdfs:comment>
+        <rdfs:label>has name</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1254,7 +1260,7 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
 
     <owl:Class rdf:about="http://schema.org/DataDownload">
         <rdfs:isDefinedBy rdf:resource="http://schema.org"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Download</rdfs:label>
+        <rdfs:label>Data Download</rdfs:label>
     </owl:Class>
     
 
@@ -1263,9 +1269,9 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
 
 
     <owl:Class rdf:about="http://schema.org/Dataset">
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dataset</rdfs:comment>
+        <rdfs:comment>Dataset</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://schema.org"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dataset</rdfs:label>
+        <rdfs:label>Dataset</rdfs:label>
     </owl:Class>
     
 
@@ -1671,6 +1677,6 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
 
 
 
-<!-- Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/ -->
+<!-- Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/ -->
 
 
