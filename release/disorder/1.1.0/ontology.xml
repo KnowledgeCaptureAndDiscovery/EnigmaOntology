@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/enigma#"
+     xml:base="https://w3id.org/enigma"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://w3id.org/enigma">
+        <owl:versionIRI rdf:resource="https://w3id.org/enigma/disorder/1.1.0"/>
+        <terms:contributor>Agnes McMahon</terms:contributor>
+        <terms:contributor>Hernan Vargas</terms:contributor>
+        <terms:contributor>Kevin Low</terms:contributor>
+        <terms:contributor>MiHyun Jang</terms:contributor>
+        <terms:contributor>Michael Bornstein</terms:contributor>
+        <terms:contributor>Ryan Espiritu</terms:contributor>
+        <terms:creator>Daniel Garijo</terms:creator>
+        <terms:creator>Haripriya Dharmala</terms:creator>
+        <terms:creator>Joanna Bright</terms:creator>
+        <terms:creator>Josh Boyd</terms:creator>
+        <terms:creator>Neda Jahanshad</terms:creator>
+        <terms:creator>Wesley Surento</terms:creator>
+        <terms:creator>Yolanda Gil</terms:creator>
+        <terms:description>An ontology representing disorders for the ENIGMA working groups</terms:description>
+        <terms:license rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
+        <terms:title>The Disorder Ontology</terms:title>
+        <vann:preferredNamespacePrefix>enigma</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri rdf:resource="https://w3id.org/enigma#"/>
+        <owl:versionInfo>v1.1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Covariates"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/enigma#alcoholUseDisorderScale -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#alcoholUseDisorderScale">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Covariates"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Describes whether the scale used to determine the diagnosis of alcohol use disorder (ie: SCID, ASSIST, AUDIT) is specified.</rdfs:comment>
+        <rdfs:label>alcohol use disorder scale</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#alcoholUseDisorder_AgeofOnset -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#alcoholUseDisorder_AgeofOnset">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Covariates"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Describes the age of onset of the subject&apos;s alcohol use disorder.</rdfs:comment>
+        <rdfs:label>alcohol use disorder age of onset</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#alcoholUseDisorder_Current -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#alcoholUseDisorder_Current">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Covariates"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Describes the subject&apos;s current alcohol use disorder (ie: dependence, abuse, none).</rdfs:comment>
+        <rdfs:label>alcohol use disorder current</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#alcoholUseDisorder_Lifetime -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#alcoholUseDisorder_Lifetime">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Covariates"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Describes whether the subject&apos;s previous lifetime alcohol use disorder (ie: dependence, abuse, none) is specified.</rdfs:comment>
+        <rdfs:label>alcohol use disorder lifetime</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#otherSubstanceUseDisorder_AgeofOnset -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#otherSubstanceUseDisorder_AgeofOnset">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Covariates"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Describes whether age of onset of subject&apos;s substance use disorder is specified.</rdfs:comment>
+        <rdfs:label>other substance use disorder age of onset</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#otherSubstanceUseDisorder_Current -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#otherSubstanceUseDisorder_Current">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Covariates"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Describes subject&apos;s current drug use that meets criteria for substance abuse disorder at the time of scan (e.g. cocaine, opiods etc.)</rdfs:comment>
+        <rdfs:label>other substance use disorder current</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#otherSubstanceUseDisorder_Lifetime -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#otherSubstanceUseDisorder_Lifetime">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Covariates"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Describes subject&apos;s previous lifetime drug use that meets criteria for lifetime substance abuse disorder  (e.g. cocaine, opiods etc.)</rdfs:comment>
+        <rdfs:label>other substance use disorder lifetime</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#smokingStatus_Current -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#smokingStatus_Current">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Covariates"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Describes if the subject is currently smoking.</rdfs:comment>
+        <rdfs:label>smoking status current</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#smokingStatus_Lifetime -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#smokingStatus_Lifetime">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Covariates"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Describes if the subject smoked during their lifetime.</rdfs:comment>
+        <rdfs:label>smoking status lifetime</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/enigma#Covariates -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#Covariates">
+        <rdfs:comment>A class used to describe covariates information for a cohort or study.</rdfs:comment>
+        <rdfs:label>Covariates</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/ -->
+
+

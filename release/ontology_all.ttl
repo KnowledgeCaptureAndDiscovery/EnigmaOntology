@@ -36,14 +36,6 @@
       rdfs:label "locality"@en ;
       rdfs:range xsd:string .
 
-:antiepilepticUse_Lifetime
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Describes whether the subject's use of antiepileptics during their lifetime is specified." ;
-      rdfs:domain :Covariates ;
-      rdfs:label "antiepileptic use lifetime" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :medicationSomaticProperty .
-
 :hasWorkingGroupMember
       a       owl:ObjectProperty ;
       rdfs:comment "Describes who the members of the working group are"@en , "Describes what working group a person is a member of"@en ;
@@ -61,14 +53,6 @@
       a       owl:Class ;
       rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
       rdfs:label "Address"@en .
-
-:atypicalAntipsychoticUse_Lifetime
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Describes if the subject's use of 2nd generation (atypical) antipsychotics during their lifetime is specified." ;
-      rdfs:domain :Covariates ;
-      rdfs:label "atypical antipsychotic use lifetime" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :medicationSomaticProperty .
 
 <http://www.w3.org/2006/vcard/ns#street-address>
       a       owl:DatatypeProperty .
@@ -101,8 +85,7 @@
       rdfs:comment "Describes whether the Behavioral Inhibition System subscale score on the BIS/BAS is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "BIS total score" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :scoreProperty .
+      rdfs:range xsd:boolean .
 
 :RespiratoryDisorder
       a       owl:Class ;
@@ -117,14 +100,6 @@
       rdfs:isDefinedBy "http://xmlns.com/foaf/0.1/"@en ;
       owl:equivalentClass :Person .
 
-:somaticIllness_type
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Describes the subject's somatic illness type." ;
-      rdfs:domain :Covariates ;
-      rdfs:label "somatic illness type" ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf :medicationSomaticProperty .
-
 :Protocol
       a       owl:Class ;
       rdfs:comment "An image processing or genetic analysis protocol used to extract brain feature data"@en ;
@@ -137,16 +112,14 @@
       rdfs:comment "Describes if the subject had Panic Disorder during their lifetime." ;
       rdfs:domain :Covariates ;
       rdfs:label "panic disorder lifetime" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :GAD_Current
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes if the subject currently has Generalized Anxiety Disorder." ;
       rdfs:domain :Covariates ;
       rdfs:label "GAD current" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :usesScanner
       a       owl:DatatypeProperty ;
@@ -160,14 +133,6 @@
       <http://purl.org/vocab/vann/example>
               "SZCohort usesScanner \"1.5T-GE-Signa\""@en .
 
-:typicalAntipsychoticUse_Current
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Describes whether the subject's use of 1st generation (typical) antipsychotics at time of scan is specified." ;
-      rdfs:domain :Covariates ;
-      rdfs:label "typical antipsychotic use current" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :medicationSomaticProperty .
-
 <https://schema.org/name>
       a       owl:DatatypeProperty ;
       rdfs:isDefinedBy <https://schema.org> .
@@ -177,8 +142,7 @@
       rdfs:comment "Describes whether the subject's current Bipolar Disorder stage (first episode, recurrent episodes, no BD, and NA = no information available) is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "BD stage" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :hasWorkingGroupChair
       a       owl:ObjectProperty ;
@@ -199,16 +163,14 @@
       rdfs:comment "Describes whether the age of onset of the subject's Obsessive Compulsive Disorder is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "OCD age of onset" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :parent_SocioeconomicStatusScale
       a       owl:DatatypeProperty ;
       rdfs:comment "The scale used in measuring a parent(s) socioeconomic status." ;
       rdfs:domain :Covariates ;
       rdfs:label "parent socioeconomic status scale" ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf :demographicProperty .
+      rdfs:range xsd:string .
 
 :checksum
       a       owl:DatatypeProperty ;
@@ -234,8 +196,7 @@
       rdfs:comment "Describes if the subject currently has Social Anxiety Disorder." ;
       rdfs:domain :Covariates ;
       rdfs:label "social anxiety disorder current" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :hasPersonRole_DataAnalyst
       a       owl:ObjectProperty ;
@@ -247,18 +208,12 @@
       <http://purl.org/vocab/vann/example>
               "BipolarProject hasPersonRole_DataAnalyst JohnSmith"@en .
 
-:demographicProperty
-      a       owl:DatatypeProperty ;
-      rdfs:comment "any demographic property" ;
-      rdfs:label "demographic property" .
-
 :education_Method
       a       owl:DatatypeProperty ;
       rdfs:comment "The method used for coding the Education Category (ie: 1 = some high school, 2 = some college, 3 = some professional degree)" ;
       rdfs:domain :Covariates ;
       rdfs:label "education method" ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf :demographicProperty .
+      rdfs:range xsd:string .
 
 :hasPublishedPaper
       a       owl:DatatypeProperty ;
@@ -278,8 +233,7 @@
       rdfs:comment "Describes if the number of negative life events the subject experienced in the past 6 months is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "negative life events" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :hasStudyDesign
       a       owl:DatatypeProperty ;
@@ -366,8 +320,7 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
       rdfs:comment "Describes subject's current drug use that meets criteria for substance abuse disorder at the time of scan (e.g. cocaine, opiods etc.)" ;
       rdfs:domain :Covariates ;
       rdfs:label "other substance use disorder current" ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf :useDisorderProperty .
+      rdfs:range xsd:string .
 
 :hasDate_DataContributionDeadline
       a       owl:DatatypeProperty ;
@@ -381,8 +334,7 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
       rdfs:comment "Describes if the subject had the Psychotic Disorder during their lifetime." ;
       rdfs:domain :Covariates ;
       rdfs:label "pyschotic disorder lifetime" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 <http://vivoweb.org/ontology/core#College>
       a       owl:Class ;
@@ -398,8 +350,7 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
       rdfs:comment "Describes if age of onset of subject's other psychiatric disorders is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "other Dx age of onset" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :hasCountry
       a       owl:DatatypeProperty ;
@@ -420,16 +371,14 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
       rdfs:comment "Property which states whether subject's marital status (ie: single, married) is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "marital status" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :demographicProperty .
+      rdfs:range xsd:string .
 
 :smokingStatus_Current
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes if the subject is currently smoking." ;
       rdfs:domain :Covariates ;
       rdfs:label "smoking status current" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :useDisorderProperty .
+      rdfs:range xsd:boolean .
 
 :DataType
       a       owl:Class ;
@@ -447,16 +396,14 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
       rdfs:comment "Describes whether the subject's Social and Occupational Functioning Assessment Scale total score is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "SOFAS total" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :scoreProperty .
+      rdfs:range xsd:boolean .
 
 :socialAnxietyDisorder_AgeofOnset
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes whether age of onset of subject's Social Anxiety Disorder is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "social anxiety disorder age of onset" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :OrganicMedicalDisorder
       a       owl:Class ;
@@ -595,8 +542,7 @@ xsd:date
       rdfs:comment "Describes whether the subject's Psychotic Disorder type (ie: schizophrenia, schizoaffective disorder, delusional disorder, psychosis NOS, schizophreniform disorder, brief psychotic disorder, shared psychotic disorder, substance-induced psychosis) is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "psychotic disorder diagnosis type" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :hasFamilyName
       a       owl:DatatypeProperty ;
@@ -608,37 +554,12 @@ xsd:date
       <http://www.linkedmodel.org/schema/vaem#rationale>
               "Property added to restrict the domain to enigma:Person. This is done for facilitating the interaction with the wiki interface"@en .
 
-:atypicalAntipsychoticUse_Current
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Describes if the subject's use of 2nd generation (atypical) antipsychotics at time of scan is speciied." ;
-      rdfs:domain :Covariates ;
-      rdfs:label "atypical antipsychotic use current" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :medicationSomaticProperty .
-
 :BD_Current
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes if the subject currently has Bipolar Disorder." ;
       rdfs:domain :Covariates ;
       rdfs:label "BD current" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
-
-:somaticIllness_current
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Describes if the subject has a type of somatic illness." ;
-      rdfs:domain :Covariates ;
-      rdfs:label "somatic illness current" ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf :medicationSomaticProperty .
-
-:lithiumUse_Lifetime
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Describes if the subject's use of lithium during their lifetime is specified." ;
-      rdfs:domain :Covariates ;
-      rdfs:label "lithium use lifetime" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :medicationSomaticProperty .
+      rdfs:range xsd:boolean .
 
 :ConflictOfInterest
       a       owl:Class ;
@@ -650,8 +571,7 @@ xsd:date
       rdfs:comment "Describes if the subject had Major Depressive Disorder during their lifetime." ;
       rdfs:domain :Covariates ;
       rdfs:label "MDD lifetime" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :hasCohortStatus
       a       owl:DatatypeProperty ;
@@ -689,32 +609,28 @@ xsd:date
       rdfs:comment "Describes if the subject had Bipolar Disorder during their lifetime." ;
       rdfs:domain :Covariates ;
       rdfs:label "BD lifetime" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :psychoticDisorder_AgeofOnset
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes whether the age of onset of the subject's psychotic disorder is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "psychotic disorder age of onset" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :OCD_Lifetime
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes if the subject had Obsessive Compulsive Disorder during their lifetime." ;
       rdfs:domain :Covariates ;
       rdfs:label "OCD lifetime" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :socialAnxietyDisorder_Lifetime
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes if the subject had Social Anxiety Disorder during their lifetime." ;
       rdfs:domain :Covariates ;
       rdfs:label "social anxiety disorder lifetime" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 <http://vivoweb.org/ontology/core#Institute>
       a       owl:Class ;
@@ -730,24 +646,21 @@ xsd:date
       rdfs:comment "The scale used in measuring a subject’s socioeconomic status." ;
       rdfs:domain :Covariates ;
       rdfs:label "subject socioeconomic status" ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf :demographicProperty .
+      rdfs:range xsd:string .
 
 :MDD_AgeofOnset
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes whether the age of onset of the subject's first depressive episode is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "MDD age of onset" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :GAF_Total
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes if the subject's Global Assessment of Functioning scale total score is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "GAF total" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :scoreProperty .
+      rdfs:range xsd:boolean .
 
 :EndocrineDisorder
       a       owl:Class ;
@@ -802,8 +715,7 @@ xsd:date
       rdfs:comment "Describes the subject's Global Clinical Impression Scale's total score." ;
       rdfs:domain :Covariates ;
       rdfs:label "CGI total" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :scoreProperty .
+      rdfs:range xsd:boolean .
 
 :hasStreetAddress
       a       owl:DatatypeProperty ;
@@ -818,8 +730,7 @@ xsd:date
       rdfs:comment "Describes the subject's other psychiatric diagnoses at the time of scan (e.g. borderline personality disorder, ADHD, etc.)." ;
       rdfs:domain :Covariates ;
       rdfs:label "other dx current" ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:string .
 
 :hasPersonRole_PrincipalInvestigator
       a       owl:ObjectProperty ;
@@ -852,8 +763,7 @@ xsd:date
       rdfs:comment "Describes whether age of onset of subject's Panic Disorder is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "panic disorder age of onset" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :Covariates
       a       owl:Class ;
@@ -881,11 +791,6 @@ xsd:date
       rdfs:range xsd:gYear ;
       <http://purl.org/vocab/vann/example>
               "Cohort1 hasDataCollectionPeriodEnd 2008"@en .
-
-:useDisorderProperty
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Any use disorder property" ;
-      rdfs:label "use disorder property" .
 
 :hasTransgenderMtoF
       a       owl:DatatypeProperty ;
@@ -918,8 +823,7 @@ xsd:date
       rdfs:comment "Describes if the subject's Barratt Impulsiveness Scale total score is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "barratt total score" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :scoreProperty .
+      rdfs:range xsd:boolean .
 
 :hasAge_Group
       a       owl:DatatypeProperty ;
@@ -1001,8 +905,7 @@ xsd:date
       rdfs:comment "Property to state whether subject's sex (male, female, other) is specified or not." ;
       rdfs:domain :Covariates ;
       rdfs:label "sex" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :demographicProperty .
+      rdfs:range xsd:string .
 
 :Project
       a       owl:Class ;
@@ -1032,8 +935,7 @@ xsd:date
       rdfs:comment "Describes the age of onset of the subject's alcohol use disorder." ;
       rdfs:domain :Covariates ;
       rdfs:label "alcohol use disorder age of onset" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :useDisorderProperty .
+      rdfs:range xsd:boolean .
 
 <http://www.w3.org/2006/vcard/ns#hasAddress>
       a       owl:ObjectProperty ;
@@ -1041,7 +943,8 @@ xsd:date
       rdfs:label "has Address"^^xsd:string .
 
 :IQ   a       owl:DatatypeProperty ;
-      rdfs:subPropertyOf :demographicProperty .
+      rdfs:domain :Covariates ;
+      rdfs:range xsd:string .
 
 :hasTransgenderFtoM
       a       owl:DatatypeProperty ;
@@ -1057,40 +960,28 @@ xsd:date
       rdfs:comment "Describes if the subject currently has a Psychotic Disorder." ;
       rdfs:domain :Covariates ;
       rdfs:label "pyschotic disorder current" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :parent_SocioeconomicStatus
       a       owl:DatatypeProperty ;
       rdfs:comment "Highest level of parental socioeconomic status either based on education, occupation or both." ;
       rdfs:domain :Covariates ;
       rdfs:label "parent socioeconomic status" ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf :demographicProperty .
-
-:otherMedUse_Current
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Describes the subject's other medication use at time of scan." ;
-      rdfs:domain :Covariates ;
-      rdfs:label "other medication use current" ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf :medicationSomaticProperty .
+      rdfs:range xsd:string .
 
 :IQ_method
       a       owl:DatatypeProperty ;
       rdfs:comment "The IQ scale used for each subject/group (ie: WISC-IV, WAIS-IV, WASI-II)." ;
       rdfs:domain :Covariates ;
       rdfs:label "IQ method" ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf :demographicProperty .
+      rdfs:range xsd:string .
 
 :MDD_Current
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes if the subject currently has Major Depressive Disorder." ;
       rdfs:domain :Covariates ;
       rdfs:label "MDD current" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :hasAge_Maximum
       a       owl:DatatypeProperty ;
@@ -1109,8 +1000,7 @@ xsd:date
       rdfs:comment "Property which states whether the identification code/number of unique subjects is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "subject ID" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :demographicProperty .
+      rdfs:range xsd:string .
 
 <http://schema.org/Dataset>
       a       owl:Class ;
@@ -1123,8 +1013,7 @@ xsd:date
       rdfs:comment "Subject's education coded as categories (ie: a range from 1-5)" ;
       rdfs:domain :Covariates ;
       rdfs:label "education category" ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf :demographicProperty .
+      rdfs:range xsd:string .
 
 :hasKindOfInstitute
       a       owl:DatatypeProperty ;
@@ -1181,8 +1070,7 @@ xsd:date
       rdfs:comment "Describes if the subject currently has Panic Disorder." ;
       rdfs:domain :Covariates ;
       rdfs:label "panic disorder current" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :hasFundingSource
       a       owl:DatatypeProperty ;
@@ -1201,8 +1089,7 @@ xsd:date
       rdfs:comment "Describes if the Behavioral Activation System subscale score on the BIS/BAS is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "BAS total score" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :scoreProperty .
+      rdfs:range xsd:boolean .
 
 :GeneticDataType
       a       owl:Class ;
@@ -1273,13 +1160,7 @@ xsd:date
       rdfs:comment "The highest level of subject's socioeconomic status based on education, occupation or both." ;
       rdfs:domain :Covariates ;
       rdfs:label "subject socioeconomic status" ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf :demographicProperty .
-
-:psychopathologicalProperty
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Any psychopathological property" ;
-      rdfs:label "psychopathological property" .
+      rdfs:range xsd:string .
 
 <https://w3id.org/enigma>
       a       owl:Ontology , owl:NamedIndividual ;
@@ -1289,17 +1170,17 @@ xsd:date
       <http://purl.org/dc/terms/creator>
               "Haripriya Dharmala"^^xsd:string , "Haripriya Dharmala" , "Joanna Bright" , "Josh Boyd" , "Wesley Surento" , "Ryan Espiritu"^^xsd:string , "Yolanda Gil" , "MiHyun Jang"^^xsd:string , "Daniel Garijo" , "Daniel Garijo"^^xsd:string , "Neda Jahanshad" , "Neda Jahanshad"^^xsd:string ;
       <http://purl.org/dc/terms/description>
-              "An ontology to describe cohorts of patients participating in ENIGMA projects."@en , "An ontology representing roles different persons play in ENIGMA projects, organizations, papers, or working groups."@en , "A core ontology representing the main concepts of ENIGMA."@en , "An ontology representing covariates for the ENIGMA Suicidal Thoughts and Behaviors working group" , "An ontology that describes ENIGMA projects and their properties."@en , "An ontology representing organizations that participate in the ENIGMA consortium."@en , "An ontology representing Working Groups that participate in the ENIGMA consortium."@en , "A cohort ontology that describes persons participating in ENIGMA and their properties."@en ;
+              "An ontology representing demographics for the ENIGMA working groups" , "An ontology representing disorders for the ENIGMA working groups" , "An ontology to describe cohorts of patients participating in ENIGMA projects."@en , "An ontology representing scores for the ENIGMA working groups" , "An ontology representing roles different persons play in ENIGMA projects, organizations, papers, or working groups."@en , "A core ontology representing the main concepts of ENIGMA."@en , "An ontology that describes ENIGMA projects and their properties."@en , "An ontology representing organizations that participate in the ENIGMA consortium."@en , "An ontology representing Working Groups that participate in the ENIGMA consortium."@en , "An ontology representing psychopathology for the ENIGMA working groups" , "A cohort ontology that describes persons participating in ENIGMA and their properties."@en , "An ontology representing medication for the ENIGMA working groups" ;
       <http://purl.org/dc/terms/license>
               <http://creativecommons.org/licenses/by/2.0/> ;
       <http://purl.org/dc/terms/title>
-              "The Core Ontology"@en , "The Project Ontology"@en , "The Roles Ontology"@en , "The STB Ontology" , "The Cohort Ontology"@en , "The Person Ontology"^^xsd:string , "The Organization Ontology"^^xsd:string , "The Working Group Ontology"@en ;
+              "The Disorder Ontology" , "The Medication Ontology" , "The Psychopathology Ontology" , "The Core Ontology"@en , "The Project Ontology"@en , "The Scores Ontology" , "The Roles Ontology"@en , "The Cohort Ontology"@en , "The Person Ontology"^^xsd:string , "The Demographic Ontology" , "The Organization Ontology"^^xsd:string , "The Working Group Ontology"@en ;
       <http://purl.org/vocab/vann/preferredNamespacePrefix>
               "enigma" , "enigma"^^xsd:string , <https://w3id.org/enigma> ;
       <http://purl.org/vocab/vann/preferredNamespaceUri>
               : ;
       owl:priorVersion <https://w3id.org/enigma/roles/1.0.0> , <https://w3id.org/enigma/organization/1.1.0> , "https://w3id.org/enigma/cohort/1.0.0" , <https://w3id.org/enigma/core/1.0.0> , <https://w3id.org/enigma/wg/1.0.0> , <https://w3id.org/enigma/person/1.0.0> ;
-      owl:versionIRI <https://w3id.org/enigma/cohort/1.1.0> , <https://w3id.org/enigma/roles/1.1.0> , <https://w3id.org/enigma/core/1.1.0> , <https://w3id.org/enigma/stb/1.1.0> , <https://w3id.org/enigma/organization/1.1.0> , <https://w3id.org/enigma/project/1.1.0> , <https://w3id.org/enigma/person/1.1.0> , <https://w3id.org/enigma/wg/1.1.0> ;
+      owl:versionIRI <https://w3id.org/enigma/cohort/1.1.0> , <https://w3id.org/enigma/psychopathology/1.1.0> , <https://w3id.org/enigma/roles/1.1.0> , <https://w3id.org/enigma/core/1.1.0> , <https://w3id.org/enigma/disorder/1.1.0> , <https://w3id.org/enigma/scores/1.1.0> , <https://w3id.org/enigma/organization/1.1.0> , <https://w3id.org/enigma/project/1.1.0> , <https://w3id.org/enigma/medication/1.1.0> , <https://w3id.org/enigma/person/1.1.0> , <https://w3id.org/enigma/demographic/1.1.0> , <https://w3id.org/enigma/wg/1.1.0> ;
       owl:versionInfo "v1.1.0" , "v1.1.0"^^xsd:string .
 
 :hasPersonRole_ProjectLead
@@ -1367,8 +1248,7 @@ xsd:date
       rdfs:comment "Describes if age of onset of subject's Generalized Anxiety Disorder is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "GAD age of onset" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 <http://vivoweb.org/ontology/core#orcidId>
       a       owl:ObjectProperty ;
@@ -1419,8 +1299,7 @@ xsd:date
       rdfs:comment "Property which states whether the diagnostic group each subject is associated with (control vs. experimental) is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "diagnosis group" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :demographicProperty .
+      rdfs:range xsd:string .
 
 :hasGrant
       a       owl:DatatypeProperty ;
@@ -1436,8 +1315,7 @@ xsd:date
       rdfs:comment "Describes whether the scale used to determine the diagnosis of alcohol use disorder (ie: SCID, ASSIST, AUDIT) is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "alcohol use disorder scale" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :useDisorderProperty .
+      rdfs:range xsd:boolean .
 
 <http://xmlns.com/foaf/0.1/mbox>
       a       owl:ObjectProperty ;
@@ -1470,8 +1348,7 @@ xsd:date
       rdfs:comment "Describes whether the subject's Bipolar Disorder type (ie: type I, type II, NOS, no BD, NA) is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "BD diagnosis type" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :hasNumberOfFemaleSex
       a       owl:DatatypeProperty ;
@@ -1523,8 +1400,7 @@ xsd:date
       rdfs:comment "Describes the questionnaire/interview used to assess negative life events from past 6 months (e.g. NLESS, SLESQ)." ;
       rdfs:domain :Covariates ;
       rdfs:label "negative life events method" ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:string .
 
 xsd:gYear
       a       rdfs:Datatype .
@@ -1586,8 +1462,7 @@ xsd:gYear
       rdfs:comment "Describes if the subject had Post-Traumatic Stress Disorder during their lifetime." ;
       rdfs:domain :Covariates ;
       rdfs:label "PTSD lifetime" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :hasNumberOfMaleSex
       a       owl:DatatypeProperty ;
@@ -1603,8 +1478,7 @@ xsd:gYear
       rdfs:comment "Describes if the subject currently has Post-Traumatic Stress Disorder." ;
       rdfs:domain :Covariates ;
       rdfs:label "PTSD current" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 <http://xmlns.com/foaf/0.1/homepage>
       a       owl:ObjectProperty ;
@@ -1617,8 +1491,7 @@ xsd:gYear
       rdfs:comment "Subject's race/ethnicity." ;
       rdfs:domain :Covariates ;
       rdfs:label "race ethnicity" ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf :demographicProperty .
+      rdfs:range xsd:string .
 
 :requiresDataType
       a       owl:ObjectProperty ;
@@ -1681,29 +1554,19 @@ xsd:gYear
       rdfs:range xsd:string ;
       rdfs:subPropertyOf <https://schema.org/name> .
 
-:typicalAntipsychoticUse_Lifetime
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Describes if the subject's use of 1st generation (typical) antipsychotics during their lifetime is specified." ;
-      rdfs:domain :Covariates ;
-      rdfs:label "typical antipsychotic use lifetime" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :medicationSomaticProperty .
-
 :alcoholUseDisorder_Lifetime
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes whether the subject's previous lifetime alcohol use disorder (ie: dependence, abuse, none) is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "alcohol use disorder lifetime" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :useDisorderProperty .
+      rdfs:range xsd:boolean .
 
 :otherSubstanceUseDisorder_Lifetime
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes subject's previous lifetime drug use that meets criteria for lifetime substance abuse disorder  (e.g. cocaine, opiods etc.)" ;
       rdfs:domain :Covariates ;
       rdfs:label "other substance use disorder lifetime" ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf :useDisorderProperty .
+      rdfs:range xsd:string .
 
 <http://vivoweb.org/ontology/core#Department>
       a       owl:Class ;
@@ -1714,21 +1577,12 @@ xsd:gYear
       <http://purl.org/vocab/vann/example>
               "Department of Psychology, USC"@en .
 
-:antiepilepticUse_Current
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Describes whether the subject's use of antiepileptics at time of scan is specified." ;
-      rdfs:domain :Covariates ;
-      rdfs:label "antiepileptic use current" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :medicationSomaticProperty .
-
 :BD_CurrentState
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes the subject's current Bipolar Disorder state (ie: depressed, hypomanic, manic, eutyhmic, mixed)" ;
       rdfs:domain :Covariates ;
       rdfs:label "BD current state" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :hasDate_TargetStart
       a       owl:DatatypeProperty ;
@@ -1750,21 +1604,12 @@ xsd:gYear
       rdfs:comment "A disorder/disease experienced by members of a cohort"@en ;
       rdfs:label "Disorder"@en .
 
-:lithiumUse_Current
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Describes if the subject's use of lithium at time of scan is specified." ;
-      rdfs:domain :Covariates ;
-      rdfs:label "lithium use current" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :medicationSomaticProperty .
-
 :MDD_Stage
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes whether the current stage of the subject's Major Depressive Disorder (ie: recurrent or first episode) is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "MDD stage" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :hasProject
       a       owl:ObjectProperty ;
@@ -1794,16 +1639,14 @@ xsd:gYear
       rdfs:comment "Describes the subject's other psychiatric diagnoses during their lifetime (e.g. borderline personality disorder, ADHD, etc.)" ;
       rdfs:domain :Covariates ;
       rdfs:label "other dx lifetime" ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:string .
 
 :BD_AgeofOnset
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes whether the age of onset of the subject's Bipolar Disorder is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "BD age of onset" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 <http://purl.org/vocab/vann/example>
       a       owl:AnnotationProperty .
@@ -1828,8 +1671,7 @@ xsd:gYear
       rdfs:comment "Describes if the subject smoked during their lifetime." ;
       rdfs:domain :Covariates ;
       rdfs:label "smoking status lifetime" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :useDisorderProperty .
+      rdfs:range xsd:boolean .
 
 :hasStatistics
       a       owl:ObjectProperty ;
@@ -1868,18 +1710,12 @@ owl:topDataProperty
       rdfs:domain :Covariates ;
       rdfs:range xsd:boolean .
 
-:medicationSomaticProperty
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Any Medication use/Somatic Health property" ;
-      rdfs:label "Medication use/Somatic Health property" .
-
 :MDD_TotalEpisodes
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes whether the subject's current number of depressive episodes is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "MDD total episodes" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :hasDescription
       a       owl:DatatypeProperty ;
@@ -1964,16 +1800,7 @@ owl:topDataProperty
       rdfs:comment "Describes if the age of onset of the subject's Post-Traumatic Stress Disorder is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "PTSD age of onset" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
-
-:antidepressantUse_Lifetime
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Describes if the subject's use of antidepressants during their lifetime is specified." ;
-      rdfs:domain :Covariates ;
-      rdfs:label "antidepressant use lifetime" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :medicationSomaticProperty .
+      rdfs:range xsd:boolean .
 
 :hasPersonRole_Reviewer
       a       owl:ObjectProperty ;
@@ -2002,21 +1829,12 @@ owl:topDataProperty
       rdfs:label "has coordinates"@en ;
       rdfs:range xsd:string .
 
-:antidepressantUse_Current
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Describes if the subject's use of antidepressants at time of scan is specified." ;
-      rdfs:domain :Covariates ;
-      rdfs:label "antidepressant use current" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :medicationSomaticProperty .
-
 :OCD_Current
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes if the subject currently has Obsessive Compulsive Disorder." ;
       rdfs:domain :Covariates ;
       rdfs:label "OCD current" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :hasDataCollectionPeriodStart
       a       owl:DatatypeProperty ;
@@ -2037,18 +1855,12 @@ owl:topDataProperty
       <http://purl.org/vocab/vann/example>
               "ADNI: Alzheimer’s Disease Neuroimaging Initiative"@en .
 
-:scoreProperty
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Any score property" ;
-      rdfs:label "score property" .
-
 :barratt_VersionUsed
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes the Barratt Impulsiveness Scale version that was used." ;
       rdfs:domain :Covariates ;
       rdfs:label "barratt version used" ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf :scoreProperty .
+      rdfs:range xsd:string .
 
 :isPartOfCohort
       a       owl:ObjectProperty ;
@@ -2064,12 +1876,6 @@ owl:topDataProperty
       a       owl:Class ;
       rdfs:isDefinedBy <http://purl.org/ontology/bibo/AcademicArticle> ;
       owl:equivalentClass :AcademicArticle .
-
-:hasCovariates
-      a       owl:ObjectProperty ;
-      rdfs:domain :Cohort ;
-      rdfs:label "has covariates"@en ;
-      rdfs:range :Covariates .
 
 :hasOrcidId
       a       owl:ObjectProperty ;
@@ -2124,8 +1930,7 @@ owl:topDataProperty
       rdfs:comment "Property to state whether subject's education in years is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "education years" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :demographicProperty .
+      rdfs:range xsd:string .
 
 :author
       a       owl:ObjectProperty ;
@@ -2183,8 +1988,7 @@ owl:topDataProperty
       rdfs:comment "Describes the subject's current alcohol use disorder (ie: dependence, abuse, none)." ;
       rdfs:domain :Covariates ;
       rdfs:label "alcohol use disorder current" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :useDisorderProperty .
+      rdfs:range xsd:boolean .
 
 <https://schema.org/distribution>
       a       owl:ObjectProperty ;
@@ -2248,8 +2052,7 @@ owl:topDataProperty
       rdfs:comment "Property which states whether subject's occupation is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "occupation" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :demographicProperty .
+      rdfs:range xsd:string .
 
 :hasDistribution
       a       owl:ObjectProperty ;
@@ -2277,8 +2080,7 @@ owl:topDataProperty
       rdfs:comment "Describes whether age of onset of subject's substance use disorder is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "other substance use disorder age of onset" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :useDisorderProperty .
+      rdfs:range xsd:boolean .
 
 <http://purl.org/dc/terms/creator>
       a       owl:AnnotationProperty , owl:ObjectProperty ;
@@ -2289,8 +2091,7 @@ owl:topDataProperty
       rdfs:comment "Describes whether if the subject had Generalized Anxiety Disorder during their lifetime is specified." ;
       rdfs:domain :Covariates ;
       rdfs:label "GAD lifetime" ;
-      rdfs:range xsd:boolean ;
-      rdfs:subPropertyOf :psychopathologicalProperty .
+      rdfs:range xsd:boolean .
 
 :isPartOfCohortProject
       a       owl:ObjectProperty ;
@@ -2298,11 +2099,3 @@ owl:topDataProperty
       rdfs:domain :CohortGroup ;
       rdfs:label "is part of cohort project"@en ;
       rdfs:range :CohortProject .
-
-:otherMedUse_Lifetime
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Describes the subject's other medication use during their lifetime." ;
-      rdfs:domain :Covariates ;
-      rdfs:label "other medication use lifetime" ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf :medicationSomaticProperty .

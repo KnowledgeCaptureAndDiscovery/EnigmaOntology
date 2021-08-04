@@ -1,0 +1,200 @@
+@prefix : <https://w3id.org/enigma#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/enigma> .
+
+<https://w3id.org/enigma> rdf:type owl:Ontology ;
+                           owl:versionIRI <https://w3id.org/enigma/demographic/1.1.0> ;
+                           <http://purl.org/dc/terms/contributor> "Agnes McMahon" ,
+                                                                  "Hernan Vargas" ,
+                                                                  "Kevin Low" ,
+                                                                  "MiHyun Jang" ,
+                                                                  "Michael Bornstein" ,
+                                                                  "Ryan Espiritu" ;
+                           <http://purl.org/dc/terms/creator> "Daniel Garijo" ,
+                                                              "Haripriya Dharmala" ,
+                                                              "Joanna Bright" ,
+                                                              "Josh Boyd" ,
+                                                              "Neda Jahanshad" ,
+                                                              "Wesley Surento" ,
+                                                              "Yolanda Gil" ;
+                           <http://purl.org/dc/terms/description> "An ontology representing demographics for the ENIGMA working groups" ;
+                           <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> ;
+                           <http://purl.org/dc/terms/title> "The Demographic Ontology" ;
+                           <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma" ;
+                           <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
+                           owl:versionInfo "v1.1.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.w3.org/2002/07/owl#topDataProperty
+owl:topDataProperty rdfs:domain :Covariates ;
+                    rdfs:range xsd:boolean .
+
+
+###  https://w3id.org/enigma#IQ
+:IQ rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Covariates ;
+    rdfs:range xsd:string .
+
+
+###  https://w3id.org/enigma#IQ_method
+:IQ_method rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Covariates ;
+           rdfs:range xsd:string ;
+           rdfs:comment "The IQ scale used for each subject/group (ie: WISC-IV, WAIS-IV, WASI-II)." ;
+           rdfs:label "IQ method" .
+
+
+###  https://w3id.org/enigma#Marital_status
+:Marital_status rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Covariates ;
+                rdfs:range xsd:string ;
+                rdfs:comment "Property which states whether subject's marital status (ie: single, married) is specified." ;
+                rdfs:label "marital status" .
+
+
+###  https://w3id.org/enigma#Occupation
+:Occupation rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Covariates ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Property which states whether subject's occupation is specified." ;
+            rdfs:label "occupation" .
+
+
+###  https://w3id.org/enigma#Sex
+:Sex rdf:type owl:DatatypeProperty ;
+     rdfs:domain :Covariates ;
+     rdfs:range xsd:string ;
+     rdfs:comment "Property to state whether subject's sex (male, female, other) is specified or not." ;
+     rdfs:label "sex" .
+
+
+###  https://w3id.org/enigma#SubjID
+:SubjID rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Covariates ;
+        rdfs:range xsd:string ;
+        rdfs:comment "Property which states whether the identification code/number of unique subjects is specified." ;
+        rdfs:label "subject ID" .
+
+
+###  https://w3id.org/enigma#diagnosisGroup
+:diagnosisGroup rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Covariates ;
+                rdfs:range xsd:string ;
+                rdfs:comment "Property which states whether the diagnostic group each subject is associated with (control vs. experimental) is specified." ;
+                rdfs:label "diagnosis group" .
+
+
+###  https://w3id.org/enigma#education_Category
+:education_Category rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Covariates ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "Subject's education coded as categories (ie: a range from 1-5)" ;
+                    rdfs:label "education category" .
+
+
+###  https://w3id.org/enigma#education_Method
+:education_Method rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Covariates ;
+                  rdfs:range xsd:string ;
+                  rdfs:comment "The method used for coding the Education Category (ie: 1 = some high school, 2 = some college, 3 = some professional degree)" ;
+                  rdfs:label "education method" .
+
+
+###  https://w3id.org/enigma#education_Years
+:education_Years rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Covariates ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Property to state whether subject's education in years is specified." ;
+                 rdfs:label "education years" .
+
+
+###  https://w3id.org/enigma#parent_SocioeconomicStatus
+:parent_SocioeconomicStatus rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :Covariates ;
+                            rdfs:range xsd:string ;
+                            rdfs:comment "Highest level of parental socioeconomic status either based on education, occupation or both." ;
+                            rdfs:label "parent socioeconomic status" .
+
+
+###  https://w3id.org/enigma#parent_SocioeconomicStatusScale
+:parent_SocioeconomicStatusScale rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain :Covariates ;
+                                 rdfs:range xsd:string ;
+                                 rdfs:comment "The scale used in measuring a parent(s) socioeconomic status." ;
+                                 rdfs:label "parent socioeconomic status scale" .
+
+
+###  https://w3id.org/enigma#race_ethnicity
+:race_ethnicity rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Covariates ;
+                rdfs:range xsd:string ;
+                rdfs:comment "Subject's race/ethnicity." ;
+                rdfs:label "race ethnicity" .
+
+
+###  https://w3id.org/enigma#subject_SocioeconomicStatus
+:subject_SocioeconomicStatus rdf:type owl:DatatypeProperty ;
+                             rdfs:domain :Covariates ;
+                             rdfs:range xsd:string ;
+                             rdfs:comment "The scale used in measuring a subject’s socioeconomic status." ;
+                             rdfs:label "subject socioeconomic status" .
+
+
+###  https://w3id.org/enigma#subject_SocioeconomicStatusScale
+:subject_SocioeconomicStatusScale rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain :Covariates ;
+                                  rdfs:range xsd:string ;
+                                  rdfs:comment "The highest level of subject's socioeconomic status based on education, occupation or both." ;
+                                  rdfs:label "subject socioeconomic status" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/enigma#Covariates
+:Covariates rdf:type owl:Class ;
+            rdfs:comment "A class used to describe covariates information for a cohort or study." ;
+            rdfs:label "Covariates" .
+
+
+###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/

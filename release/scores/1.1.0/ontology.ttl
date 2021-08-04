@@ -1,0 +1,138 @@
+@prefix : <https://w3id.org/enigma#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/enigma> .
+
+<https://w3id.org/enigma> rdf:type owl:Ontology ;
+                           owl:versionIRI <https://w3id.org/enigma/scores/1.1.0> ;
+                           <http://purl.org/dc/terms/contributor> "Agnes McMahon" ,
+                                                                  "Hernan Vargas" ,
+                                                                  "Kevin Low" ,
+                                                                  "MiHyun Jang" ,
+                                                                  "Michael Bornstein" ,
+                                                                  "Ryan Espiritu" ;
+                           <http://purl.org/dc/terms/creator> "Daniel Garijo" ,
+                                                              "Haripriya Dharmala" ,
+                                                              "Joanna Bright" ,
+                                                              "Josh Boyd" ,
+                                                              "Neda Jahanshad" ,
+                                                              "Wesley Surento" ,
+                                                              "Yolanda Gil" ;
+                           <http://purl.org/dc/terms/description> "An ontology representing scores for the ENIGMA working groups" ;
+                           <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> ;
+                           <http://purl.org/dc/terms/title> "The Scores Ontology" ;
+                           <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma" ;
+                           <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
+                           owl:versionInfo "v1.1.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.w3.org/2002/07/owl#topDataProperty
+owl:topDataProperty rdfs:domain :Covariates ;
+                    rdfs:range xsd:boolean .
+
+
+###  https://w3id.org/enigma#BAS_TotalScore
+:BAS_TotalScore rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Covariates ;
+                rdfs:range xsd:boolean ;
+                rdfs:comment "Describes if the Behavioral Activation System subscale score on the BIS/BAS is specified." ;
+                rdfs:label "BAS total score" .
+
+
+###  https://w3id.org/enigma#BIS_TotalScore
+:BIS_TotalScore rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Covariates ;
+                rdfs:range xsd:boolean ;
+                rdfs:comment "Describes whether the Behavioral Inhibition System subscale score on the BIS/BAS is specified." ;
+                rdfs:label "BIS total score" .
+
+
+###  https://w3id.org/enigma#CGITotal
+:CGITotal rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Covariates ;
+          rdfs:range xsd:boolean ;
+          rdfs:comment "Describes the subject's Global Clinical Impression Scale's total score." ;
+          rdfs:label "CGI total" .
+
+
+###  https://w3id.org/enigma#GAF_Total
+:GAF_Total rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Covariates ;
+           rdfs:range xsd:boolean ;
+           rdfs:comment "Describes if the subject's Global Assessment of Functioning scale total score is specified." ;
+           rdfs:label "GAF total" .
+
+
+###  https://w3id.org/enigma#SOFAS_Total
+:SOFAS_Total rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Covariates ;
+             rdfs:range xsd:boolean ;
+             rdfs:comment "Describes whether the subject's Social and Occupational Functioning Assessment Scale total score is specified." ;
+             rdfs:label "SOFAS total" .
+
+
+###  https://w3id.org/enigma#barratt_TotalScore
+:barratt_TotalScore rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Covariates ;
+                    rdfs:range xsd:boolean ;
+                    rdfs:comment "Describes if the subject's Barratt Impulsiveness Scale total score is specified." ;
+                    rdfs:label "barratt total score" .
+
+
+###  https://w3id.org/enigma#barratt_VersionUsed
+:barratt_VersionUsed rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Covariates ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "Describes the Barratt Impulsiveness Scale version that was used." ;
+                     rdfs:label "barratt version used" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/enigma#Covariates
+:Covariates rdf:type owl:Class ;
+            rdfs:comment "A class used to describe covariates information for a cohort or study." ;
+            rdfs:label "Covariates" .
+
+
+###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/

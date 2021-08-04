@@ -1,0 +1,362 @@
+@prefix : <https://w3id.org/enigma#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/enigma> .
+
+<https://w3id.org/enigma> rdf:type owl:Ontology ;
+                           owl:versionIRI <https://w3id.org/enigma/psychopathology/1.1.0> ;
+                           <http://purl.org/dc/terms/contributor> "Agnes McMahon" ,
+                                                                  "Hernan Vargas" ,
+                                                                  "Kevin Low" ,
+                                                                  "MiHyun Jang" ,
+                                                                  "Michael Bornstein" ,
+                                                                  "Ryan Espiritu" ;
+                           <http://purl.org/dc/terms/creator> "Daniel Garijo" ,
+                                                              "Haripriya Dharmala" ,
+                                                              "Joanna Bright" ,
+                                                              "Josh Boyd" ,
+                                                              "Neda Jahanshad" ,
+                                                              "Wesley Surento" ,
+                                                              "Yolanda Gil" ;
+                           <http://purl.org/dc/terms/description> "An ontology representing psychopathology for the ENIGMA working groups" ;
+                           <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> ;
+                           <http://purl.org/dc/terms/title> "The Psychopathology Ontology" ;
+                           <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma" ;
+                           <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
+                           owl:versionInfo "v1.1.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.w3.org/2002/07/owl#topDataProperty
+owl:topDataProperty rdfs:domain :Covariates ;
+                    rdfs:range xsd:boolean .
+
+
+###  https://w3id.org/enigma#BD_AgeofOnset
+:BD_AgeofOnset rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Covariates ;
+               rdfs:range xsd:boolean ;
+               rdfs:comment "Describes whether the age of onset of the subject's Bipolar Disorder is specified." ;
+               rdfs:label "BD age of onset" .
+
+
+###  https://w3id.org/enigma#BD_Current
+:BD_Current rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Covariates ;
+            rdfs:range xsd:boolean ;
+            rdfs:comment "Describes if the subject currently has Bipolar Disorder." ;
+            rdfs:label "BD current" .
+
+
+###  https://w3id.org/enigma#BD_CurrentState
+:BD_CurrentState rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Covariates ;
+                 rdfs:range xsd:boolean ;
+                 rdfs:comment "Describes the subject's current Bipolar Disorder state (ie: depressed, hypomanic, manic, eutyhmic, mixed)" ;
+                 rdfs:label "BD current state" .
+
+
+###  https://w3id.org/enigma#BD_DiagnosisType
+:BD_DiagnosisType rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Covariates ;
+                  rdfs:range xsd:boolean ;
+                  rdfs:comment "Describes whether the subject's Bipolar Disorder type (ie: type I, type II, NOS, no BD, NA) is specified." ;
+                  rdfs:label "BD diagnosis type" .
+
+
+###  https://w3id.org/enigma#BD_Lifetime
+:BD_Lifetime rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Covariates ;
+             rdfs:range xsd:boolean ;
+             rdfs:comment "Describes if the subject had Bipolar Disorder during their lifetime." ;
+             rdfs:label "BD lifetime" .
+
+
+###  https://w3id.org/enigma#BD_Stage
+:BD_Stage rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Covariates ;
+          rdfs:range xsd:boolean ;
+          rdfs:comment "Describes whether the subject's current Bipolar Disorder stage (first episode, recurrent episodes, no BD, and NA = no information available) is specified." ;
+          rdfs:label "BD stage" .
+
+
+###  https://w3id.org/enigma#GAD_AgeofOnset
+:GAD_AgeofOnset rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Covariates ;
+                rdfs:range xsd:boolean ;
+                rdfs:comment "Describes if age of onset of subject's Generalized Anxiety Disorder is specified." ;
+                rdfs:label "GAD age of onset" .
+
+
+###  https://w3id.org/enigma#GAD_Current
+:GAD_Current rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Covariates ;
+             rdfs:range xsd:boolean ;
+             rdfs:comment "Describes if the subject currently has Generalized Anxiety Disorder." ;
+             rdfs:label "GAD current" .
+
+
+###  https://w3id.org/enigma#GAD_Lifetime
+:GAD_Lifetime rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Covariates ;
+              rdfs:range xsd:boolean ;
+              rdfs:comment "Describes whether if the subject had Generalized Anxiety Disorder during their lifetime is specified." ;
+              rdfs:label "GAD lifetime" .
+
+
+###  https://w3id.org/enigma#MDD_AgeofOnset
+:MDD_AgeofOnset rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Covariates ;
+                rdfs:range xsd:boolean ;
+                rdfs:comment "Describes whether the age of onset of the subject's first depressive episode is specified." ;
+                rdfs:label "MDD age of onset" .
+
+
+###  https://w3id.org/enigma#MDD_Current
+:MDD_Current rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Covariates ;
+             rdfs:range xsd:boolean ;
+             rdfs:comment "Describes if the subject currently has Major Depressive Disorder." ;
+             rdfs:label "MDD current" .
+
+
+###  https://w3id.org/enigma#MDD_Lifetime
+:MDD_Lifetime rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Covariates ;
+              rdfs:range xsd:boolean ;
+              rdfs:comment "Describes if the subject had Major Depressive Disorder during their lifetime." ;
+              rdfs:label "MDD lifetime" .
+
+
+###  https://w3id.org/enigma#MDD_Stage
+:MDD_Stage rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Covariates ;
+           rdfs:range xsd:boolean ;
+           rdfs:comment "Describes whether the current stage of the subject's Major Depressive Disorder (ie: recurrent or first episode) is specified." ;
+           rdfs:label "MDD stage" .
+
+
+###  https://w3id.org/enigma#MDD_TotalEpisodes
+:MDD_TotalEpisodes rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Covariates ;
+                   rdfs:range xsd:boolean ;
+                   rdfs:comment "Describes whether the subject's current number of depressive episodes is specified." ;
+                   rdfs:label "MDD total episodes" .
+
+
+###  https://w3id.org/enigma#OCD_AgeofOnset
+:OCD_AgeofOnset rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Covariates ;
+                rdfs:range xsd:boolean ;
+                rdfs:comment "Describes whether the age of onset of the subject's Obsessive Compulsive Disorder is specified." ;
+                rdfs:label "OCD age of onset" .
+
+
+###  https://w3id.org/enigma#OCD_Current
+:OCD_Current rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Covariates ;
+             rdfs:range xsd:boolean ;
+             rdfs:comment "Describes if the subject currently has Obsessive Compulsive Disorder." ;
+             rdfs:label "OCD current" .
+
+
+###  https://w3id.org/enigma#OCD_Lifetime
+:OCD_Lifetime rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Covariates ;
+              rdfs:range xsd:boolean ;
+              rdfs:comment "Describes if the subject had Obsessive Compulsive Disorder during their lifetime." ;
+              rdfs:label "OCD lifetime" .
+
+
+###  https://w3id.org/enigma#PTSD_AgeofOnset
+:PTSD_AgeofOnset rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Covariates ;
+                 rdfs:range xsd:boolean ;
+                 rdfs:comment "Describes if the age of onset of the subject's Post-Traumatic Stress Disorder is specified." ;
+                 rdfs:label "PTSD age of onset" .
+
+
+###  https://w3id.org/enigma#PTSD_Current
+:PTSD_Current rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Covariates ;
+              rdfs:range xsd:boolean ;
+              rdfs:comment "Describes if the subject currently has Post-Traumatic Stress Disorder." ;
+              rdfs:label "PTSD current" .
+
+
+###  https://w3id.org/enigma#PTSD_Lifetime
+:PTSD_Lifetime rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Covariates ;
+               rdfs:range xsd:boolean ;
+               rdfs:comment "Describes if the subject had Post-Traumatic Stress Disorder during their lifetime." ;
+               rdfs:label "PTSD lifetime" .
+
+
+###  https://w3id.org/enigma#negLifeEvents
+:negLifeEvents rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Covariates ;
+               rdfs:range xsd:boolean ;
+               rdfs:comment "Describes if the number of negative life events the subject experienced in the past 6 months is specified." ;
+               rdfs:label "negative life events" .
+
+
+###  https://w3id.org/enigma#negLifeEventsMethod
+:negLifeEventsMethod rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Covariates ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "Describes the questionnaire/interview used to assess negative life events from past 6 months (e.g. NLESS, SLESQ)." ;
+                     rdfs:label "negative life events method" .
+
+
+###  https://w3id.org/enigma#otherDx_AgeofOnset
+:otherDx_AgeofOnset rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Covariates ;
+                    rdfs:range xsd:boolean ;
+                    rdfs:comment "Describes if age of onset of subject's other psychiatric disorders is specified." ;
+                    rdfs:label "other Dx age of onset" .
+
+
+###  https://w3id.org/enigma#otherDx_Current
+:otherDx_Current rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Covariates ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Describes the subject's other psychiatric diagnoses at the time of scan (e.g. borderline personality disorder, ADHD, etc.)." ;
+                 rdfs:label "other dx current" .
+
+
+###  https://w3id.org/enigma#otherDx_Lifetime
+:otherDx_Lifetime rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Covariates ;
+                  rdfs:range xsd:string ;
+                  rdfs:comment "Describes the subject's other psychiatric diagnoses during their lifetime (e.g. borderline personality disorder, ADHD, etc.)" ;
+                  rdfs:label "other dx lifetime" .
+
+
+###  https://w3id.org/enigma#panicDisorder_AgeofOnset
+:panicDisorder_AgeofOnset rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :Covariates ;
+                          rdfs:range xsd:boolean ;
+                          rdfs:comment "Describes whether age of onset of subject's Panic Disorder is specified." ;
+                          rdfs:label "panic disorder age of onset" .
+
+
+###  https://w3id.org/enigma#panicDisorder_Current
+:panicDisorder_Current rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Covariates ;
+                       rdfs:range xsd:boolean ;
+                       rdfs:comment "Describes if the subject currently has Panic Disorder." ;
+                       rdfs:label "panic disorder current" .
+
+
+###  https://w3id.org/enigma#panicDisorder_Lifetime
+:panicDisorder_Lifetime rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :Covariates ;
+                        rdfs:range xsd:boolean ;
+                        rdfs:comment "Describes if the subject had Panic Disorder during their lifetime." ;
+                        rdfs:label "panic disorder lifetime" .
+
+
+###  https://w3id.org/enigma#psychoticDisorder_AgeofOnset
+:psychoticDisorder_AgeofOnset rdf:type owl:DatatypeProperty ;
+                              rdfs:domain :Covariates ;
+                              rdfs:range xsd:boolean ;
+                              rdfs:comment "Describes whether the age of onset of the subject's psychotic disorder is specified." ;
+                              rdfs:label "psychotic disorder age of onset" .
+
+
+###  https://w3id.org/enigma#psychoticDisorder_Current
+:psychoticDisorder_Current rdf:type owl:DatatypeProperty ;
+                           rdfs:domain :Covariates ;
+                           rdfs:range xsd:boolean ;
+                           rdfs:comment "Describes if the subject currently has a Psychotic Disorder." ;
+                           rdfs:label "pyschotic disorder current" .
+
+
+###  https://w3id.org/enigma#psychoticDisorder_DiagnosisType
+:psychoticDisorder_DiagnosisType rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain :Covariates ;
+                                 rdfs:range xsd:boolean ;
+                                 rdfs:comment "Describes whether the subject's Psychotic Disorder type (ie: schizophrenia, schizoaffective disorder, delusional disorder, psychosis NOS, schizophreniform disorder, brief psychotic disorder, shared psychotic disorder, substance-induced psychosis) is specified." ;
+                                 rdfs:label "psychotic disorder diagnosis type" .
+
+
+###  https://w3id.org/enigma#psychoticDisorder_Lifetime
+:psychoticDisorder_Lifetime rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :Covariates ;
+                            rdfs:range xsd:boolean ;
+                            rdfs:comment "Describes if the subject had the Psychotic Disorder during their lifetime." ;
+                            rdfs:label "pyschotic disorder lifetime" .
+
+
+###  https://w3id.org/enigma#socialAnxietyDisorder_AgeofOnset
+:socialAnxietyDisorder_AgeofOnset rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain :Covariates ;
+                                  rdfs:range xsd:boolean ;
+                                  rdfs:comment "Describes whether age of onset of subject's Social Anxiety Disorder is specified." ;
+                                  rdfs:label "social anxiety disorder age of onset" .
+
+
+###  https://w3id.org/enigma#socialAnxietyDisorder_Current
+:socialAnxietyDisorder_Current rdf:type owl:DatatypeProperty ;
+                               rdfs:domain :Covariates ;
+                               rdfs:range xsd:boolean ;
+                               rdfs:comment "Describes if the subject currently has Social Anxiety Disorder." ;
+                               rdfs:label "social anxiety disorder current" .
+
+
+###  https://w3id.org/enigma#socialAnxietyDisorder_Lifetime
+:socialAnxietyDisorder_Lifetime rdf:type owl:DatatypeProperty ;
+                                rdfs:domain :Covariates ;
+                                rdfs:range xsd:boolean ;
+                                rdfs:comment "Describes if the subject had Social Anxiety Disorder during their lifetime." ;
+                                rdfs:label "social anxiety disorder lifetime" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/enigma#Covariates
+:Covariates rdf:type owl:Class ;
+            rdfs:comment "A class used to describe covariates information for a cohort or study." ;
+            rdfs:label "Covariates" .
+
+
+###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
