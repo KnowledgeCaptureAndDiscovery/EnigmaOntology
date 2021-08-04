@@ -1,0 +1,877 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="https://w3id.org/enigma"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="https://w3id.org/enigma"
+     versionIRI="https://w3id.org/enigma/psychopathology/1.1.0">
+    <Prefix name="" IRI="https://w3id.org/enigma#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="vaem" IRI="http://www.linkedmodel.org/schema/vaem#"/>
+    <Prefix name="vann" IRI="http://purl.org/vocab/vann/"/>
+    <Prefix name="terms" IRI="http://purl.org/dc/terms/"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:contributor"/>
+        <Literal>Agnes McMahon</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:contributor"/>
+        <Literal>Hernan Vargas</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:contributor"/>
+        <Literal>Kevin Low</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:contributor"/>
+        <Literal>MiHyun Jang</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:contributor"/>
+        <Literal>Michael Bornstein</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:contributor"/>
+        <Literal>Ryan Espiritu</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:creator"/>
+        <Literal>Daniel Garijo</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:creator"/>
+        <Literal>Haripriya Dharmala</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:creator"/>
+        <Literal>Joanna Bright</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:creator"/>
+        <Literal>Josh Boyd</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:creator"/>
+        <Literal>Neda Jahanshad</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:creator"/>
+        <Literal>Wesley Surento</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:creator"/>
+        <Literal>Yolanda Gil</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:description"/>
+        <Literal>An ontology representing covariates for the ENIGMA Suicidal Thoughts and Behaviors working group</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:license"/>
+        <IRI>http://creativecommons.org/licenses/by/2.0/</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:title"/>
+        <Literal>The STB Ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespacePrefix"/>
+        <Literal>enigma</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
+        <IRI>#</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal>v1.1.0</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Covariates"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#BD_AgeofOnset"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#BD_Current"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#BD_CurrentState"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#BD_DiagnosisType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#BD_Lifetime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#BD_Stage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#GAD_AgeofOnset"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#GAD_Current"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#GAD_Lifetime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#MDD_AgeofOnset"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#MDD_Current"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#MDD_Lifetime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#MDD_Stage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#MDD_TotalEpisodes"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#OCD_AgeofOnset"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#OCD_Current"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#OCD_Lifetime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#PTSD_AgeofOnset"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#PTSD_Current"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#PTSD_Lifetime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#negLifeEvents"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#negLifeEventsMethod"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#otherDx_AgeofOnset"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#otherDx_Current"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#otherDx_Lifetime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#panicDisorder_AgeofOnset"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#panicDisorder_Current"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#panicDisorder_Lifetime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#psychoticDisorder_AgeofOnset"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#psychoticDisorder_Current"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#psychoticDisorder_DiagnosisType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#psychoticDisorder_Lifetime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#socialAnxietyDisorder_AgeofOnset"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#socialAnxietyDisorder_Current"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#socialAnxietyDisorder_Lifetime"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:contributor"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:license"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:title"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespacePrefix"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
+    </Declaration>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#BD_AgeofOnset"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#BD_Current"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#BD_CurrentState"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#BD_DiagnosisType"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#BD_Lifetime"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#BD_Stage"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#GAD_AgeofOnset"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#GAD_Current"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#GAD_Lifetime"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#MDD_AgeofOnset"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#MDD_Current"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#MDD_Lifetime"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#MDD_Stage"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#MDD_TotalEpisodes"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#OCD_AgeofOnset"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#OCD_Current"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#OCD_Lifetime"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#PTSD_AgeofOnset"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#PTSD_Current"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#PTSD_Lifetime"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#negLifeEvents"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#negLifeEventsMethod"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#otherDx_AgeofOnset"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#otherDx_Current"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#otherDx_Lifetime"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#panicDisorder_AgeofOnset"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#panicDisorder_Current"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#panicDisorder_Lifetime"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#psychoticDisorder_AgeofOnset"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#psychoticDisorder_Current"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#psychoticDisorder_DiagnosisType"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#psychoticDisorder_Lifetime"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#socialAnxietyDisorder_AgeofOnset"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#socialAnxietyDisorder_Current"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#socialAnxietyDisorder_Lifetime"/>
+        <Class IRI="#Covariates"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#BD_AgeofOnset"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#BD_Current"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#BD_CurrentState"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#BD_DiagnosisType"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#BD_Lifetime"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#BD_Stage"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#GAD_AgeofOnset"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#GAD_Current"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#GAD_Lifetime"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#MDD_AgeofOnset"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#MDD_Current"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#MDD_Lifetime"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#MDD_Stage"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#MDD_TotalEpisodes"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#OCD_AgeofOnset"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#OCD_Current"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#OCD_Lifetime"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#PTSD_AgeofOnset"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#PTSD_Current"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#PTSD_Lifetime"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#negLifeEvents"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#negLifeEventsMethod"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#otherDx_AgeofOnset"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#otherDx_Current"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#otherDx_Lifetime"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#panicDisorder_AgeofOnset"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#panicDisorder_Current"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#panicDisorder_Lifetime"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#psychoticDisorder_AgeofOnset"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#psychoticDisorder_Current"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#psychoticDisorder_DiagnosisType"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#psychoticDisorder_Lifetime"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#socialAnxietyDisorder_AgeofOnset"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#socialAnxietyDisorder_Current"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#socialAnxietyDisorder_Lifetime"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BD_AgeofOnset</IRI>
+        <Literal>Describes whether the age of onset of the subject&apos;s Bipolar Disorder is specified.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#BD_AgeofOnset</IRI>
+        <Literal>BD age of onset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BD_Current</IRI>
+        <Literal>Describes if the subject currently has Bipolar Disorder.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#BD_Current</IRI>
+        <Literal>BD current</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BD_CurrentState</IRI>
+        <Literal>Describes the subject&apos;s current Bipolar Disorder state (ie: depressed, hypomanic, manic, eutyhmic, mixed)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#BD_CurrentState</IRI>
+        <Literal>BD current state</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BD_DiagnosisType</IRI>
+        <Literal>Describes whether the subject&apos;s Bipolar Disorder type (ie: type I, type II, NOS, no BD, NA) is specified.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#BD_DiagnosisType</IRI>
+        <Literal>BD diagnosis type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BD_Lifetime</IRI>
+        <Literal>Describes if the subject had Bipolar Disorder during their lifetime.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#BD_Lifetime</IRI>
+        <Literal>BD lifetime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BD_Stage</IRI>
+        <Literal>Describes whether the subject&apos;s current Bipolar Disorder stage (first episode, recurrent episodes, no BD, and NA = no information available) is specified.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#BD_Stage</IRI>
+        <Literal>BD stage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Covariates</IRI>
+        <Literal>A class used to describe covariates information for a cohort or study.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Covariates</IRI>
+        <Literal>Covariates</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GAD_AgeofOnset</IRI>
+        <Literal>Describes if age of onset of subject&apos;s Generalized Anxiety Disorder is specified.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GAD_AgeofOnset</IRI>
+        <Literal>GAD age of onset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GAD_Current</IRI>
+        <Literal>Describes if the subject currently has Generalized Anxiety Disorder.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GAD_Current</IRI>
+        <Literal>GAD current</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GAD_Lifetime</IRI>
+        <Literal>Describes whether if the subject had Generalized Anxiety Disorder during their lifetime is specified.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GAD_Lifetime</IRI>
+        <Literal>GAD lifetime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MDD_AgeofOnset</IRI>
+        <Literal>Describes whether the age of onset of the subject&apos;s first depressive episode is specified.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MDD_AgeofOnset</IRI>
+        <Literal>MDD age of onset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MDD_Current</IRI>
+        <Literal>Describes if the subject currently has Major Depressive Disorder.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MDD_Current</IRI>
+        <Literal>MDD current</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MDD_Lifetime</IRI>
+        <Literal>Describes if the subject had Major Depressive Disorder during their lifetime.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MDD_Lifetime</IRI>
+        <Literal>MDD lifetime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MDD_Stage</IRI>
+        <Literal>Describes whether the current stage of the subject&apos;s Major Depressive Disorder (ie: recurrent or first episode) is specified.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MDD_Stage</IRI>
+        <Literal>MDD stage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MDD_TotalEpisodes</IRI>
+        <Literal>Describes whether the subject&apos;s current number of depressive episodes is specified.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MDD_TotalEpisodes</IRI>
+        <Literal>MDD total episodes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OCD_AgeofOnset</IRI>
+        <Literal>Describes whether the age of onset of the subject&apos;s Obsessive Compulsive Disorder is specified.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OCD_AgeofOnset</IRI>
+        <Literal>OCD age of onset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OCD_Current</IRI>
+        <Literal>Describes if the subject currently has Obsessive Compulsive Disorder.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OCD_Current</IRI>
+        <Literal>OCD current</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OCD_Lifetime</IRI>
+        <Literal>Describes if the subject had Obsessive Compulsive Disorder during their lifetime.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OCD_Lifetime</IRI>
+        <Literal>OCD lifetime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PTSD_AgeofOnset</IRI>
+        <Literal>Describes if the age of onset of the subject&apos;s Post-Traumatic Stress Disorder is specified.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PTSD_AgeofOnset</IRI>
+        <Literal>PTSD age of onset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PTSD_Current</IRI>
+        <Literal>Describes if the subject currently has Post-Traumatic Stress Disorder.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PTSD_Current</IRI>
+        <Literal>PTSD current</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PTSD_Lifetime</IRI>
+        <Literal>Describes if the subject had Post-Traumatic Stress Disorder during their lifetime.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PTSD_Lifetime</IRI>
+        <Literal>PTSD lifetime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#negLifeEvents</IRI>
+        <Literal>Describes if the number of negative life events the subject experienced in the past 6 months is specified.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#negLifeEvents</IRI>
+        <Literal>negative life events</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#negLifeEventsMethod</IRI>
+        <Literal>Describes the questionnaire/interview used to assess negative life events from past 6 months (e.g. NLESS, SLESQ).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#negLifeEventsMethod</IRI>
+        <Literal>negative life events method</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#otherDx_AgeofOnset</IRI>
+        <Literal>Describes if age of onset of subject&apos;s other psychiatric disorders is specified.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#otherDx_AgeofOnset</IRI>
+        <Literal>other Dx age of onset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#otherDx_Current</IRI>
+        <Literal>Describes the subject&apos;s other psychiatric diagnoses at the time of scan (e.g. borderline personality disorder, ADHD, etc.).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#otherDx_Current</IRI>
+        <Literal>other dx current</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#otherDx_Lifetime</IRI>
+        <Literal>Describes the subject&apos;s other psychiatric diagnoses during their lifetime (e.g. borderline personality disorder, ADHD, etc.)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#otherDx_Lifetime</IRI>
+        <Literal>other dx lifetime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#panicDisorder_AgeofOnset</IRI>
+        <Literal>Describes whether age of onset of subject&apos;s Panic Disorder is specified.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#panicDisorder_AgeofOnset</IRI>
+        <Literal>panic disorder age of onset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#panicDisorder_Current</IRI>
+        <Literal>Describes if the subject currently has Panic Disorder.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#panicDisorder_Current</IRI>
+        <Literal>panic disorder current</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#panicDisorder_Lifetime</IRI>
+        <Literal>Describes if the subject had Panic Disorder during their lifetime.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#panicDisorder_Lifetime</IRI>
+        <Literal>panic disorder lifetime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#psychoticDisorder_AgeofOnset</IRI>
+        <Literal>Describes whether the age of onset of the subject&apos;s psychotic disorder is specified.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#psychoticDisorder_AgeofOnset</IRI>
+        <Literal>psychotic disorder age of onset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#psychoticDisorder_Current</IRI>
+        <Literal>Describes if the subject currently has a Psychotic Disorder.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#psychoticDisorder_Current</IRI>
+        <Literal>pyschotic disorder current</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#psychoticDisorder_DiagnosisType</IRI>
+        <Literal>Describes whether the subject&apos;s Psychotic Disorder type (ie: schizophrenia, schizoaffective disorder, delusional disorder, psychosis NOS, schizophreniform disorder, brief psychotic disorder, shared psychotic disorder, substance-induced psychosis) is specified.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#psychoticDisorder_DiagnosisType</IRI>
+        <Literal>psychotic disorder diagnosis type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#psychoticDisorder_Lifetime</IRI>
+        <Literal>Describes if the subject had the Psychotic Disorder during their lifetime.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#psychoticDisorder_Lifetime</IRI>
+        <Literal>pyschotic disorder lifetime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#socialAnxietyDisorder_AgeofOnset</IRI>
+        <Literal>Describes whether age of onset of subject&apos;s Social Anxiety Disorder is specified.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#socialAnxietyDisorder_AgeofOnset</IRI>
+        <Literal>social anxiety disorder age of onset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#socialAnxietyDisorder_Current</IRI>
+        <Literal>Describes if the subject currently has Social Anxiety Disorder.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#socialAnxietyDisorder_Current</IRI>
+        <Literal>social anxiety disorder current</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#socialAnxietyDisorder_Lifetime</IRI>
+        <Literal>Describes if the subject had Social Anxiety Disorder during their lifetime.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#socialAnxietyDisorder_Lifetime</IRI>
+        <Literal>social anxiety disorder lifetime</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
