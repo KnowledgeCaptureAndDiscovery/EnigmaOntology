@@ -65,27 +65,37 @@
 #################################################################
 
 ###  http://www.w3.org/2002/07/owl#topDataProperty
-owl:topDataProperty rdfs:domain :Covariates ;
-                    rdfs:range xsd:boolean .
+owl:topDataProperty rdfs:range xsd:boolean .
 
 
 ###  https://w3id.org/enigma#IQ
 :IQ rdf:type owl:DatatypeProperty ;
-    rdfs:domain :Covariates ;
-    rdfs:range xsd:string .
+    rdfs:domain :Demographics ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Intelligence Quotient measured by different means" ;
+    rdfs:label "IQ" .
 
 
 ###  https://w3id.org/enigma#IQ_method
 :IQ_method rdf:type owl:DatatypeProperty ;
-           rdfs:domain :Covariates ;
+           rdfs:domain :Demographics ;
            rdfs:range xsd:string ;
            rdfs:comment "The IQ scale used for each subject/group (ie: WISC-IV, WAIS-IV, WASI-II)." ;
            rdfs:label "IQ method" .
 
 
+###  https://w3id.org/enigma#IllnessDuration
+:IllnessDuration rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Demographics ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Property which states if the Duration of Illness was measured in a cohort. Often abbreviated \"DURILL\"" ;
+                 rdfs:label "Illness Duration" .
+
+
 ###  https://w3id.org/enigma#Marital_status
 :Marital_status rdf:type owl:DatatypeProperty ;
-                rdfs:domain :Covariates ;
+                rdfs:domain :Demographics ;
                 rdfs:range xsd:string ;
                 rdfs:comment "Property which states whether subject's marital status (ie: single, married) is specified." ;
                 rdfs:label "marital status" .
@@ -93,7 +103,7 @@ owl:topDataProperty rdfs:domain :Covariates ;
 
 ###  https://w3id.org/enigma#Occupation
 :Occupation rdf:type owl:DatatypeProperty ;
-            rdfs:domain :Covariates ;
+            rdfs:domain :Demographics ;
             rdfs:range xsd:string ;
             rdfs:comment "Property which states whether subject's occupation is specified." ;
             rdfs:label "occupation" .
@@ -101,7 +111,7 @@ owl:topDataProperty rdfs:domain :Covariates ;
 
 ###  https://w3id.org/enigma#Sex
 :Sex rdf:type owl:DatatypeProperty ;
-     rdfs:domain :Covariates ;
+     rdfs:domain :Demographics ;
      rdfs:range xsd:string ;
      rdfs:comment "Property to state whether subject's sex (male, female, other) is specified or not." ;
      rdfs:label "sex" .
@@ -109,7 +119,7 @@ owl:topDataProperty rdfs:domain :Covariates ;
 
 ###  https://w3id.org/enigma#SubjID
 :SubjID rdf:type owl:DatatypeProperty ;
-        rdfs:domain :Covariates ;
+        rdfs:domain :Demographics ;
         rdfs:range xsd:string ;
         rdfs:comment "Property which states whether the identification code/number of unique subjects is specified." ;
         rdfs:label "subject ID" .
@@ -117,7 +127,7 @@ owl:topDataProperty rdfs:domain :Covariates ;
 
 ###  https://w3id.org/enigma#diagnosisGroup
 :diagnosisGroup rdf:type owl:DatatypeProperty ;
-                rdfs:domain :Covariates ;
+                rdfs:domain :Demographics ;
                 rdfs:range xsd:string ;
                 rdfs:comment "Property which states whether the diagnostic group each subject is associated with (control vs. experimental) is specified." ;
                 rdfs:label "diagnosis group" .
@@ -125,7 +135,7 @@ owl:topDataProperty rdfs:domain :Covariates ;
 
 ###  https://w3id.org/enigma#education_Category
 :education_Category rdf:type owl:DatatypeProperty ;
-                    rdfs:domain :Covariates ;
+                    rdfs:domain :Demographics ;
                     rdfs:range xsd:string ;
                     rdfs:comment "Subject's education coded as categories (ie: a range from 1-5)" ;
                     rdfs:label "education category" .
@@ -133,7 +143,7 @@ owl:topDataProperty rdfs:domain :Covariates ;
 
 ###  https://w3id.org/enigma#education_Method
 :education_Method rdf:type owl:DatatypeProperty ;
-                  rdfs:domain :Covariates ;
+                  rdfs:domain :Demographics ;
                   rdfs:range xsd:string ;
                   rdfs:comment "The method used for coding the Education Category (ie: 1 = some high school, 2 = some college, 3 = some professional degree)" ;
                   rdfs:label "education method" .
@@ -141,7 +151,7 @@ owl:topDataProperty rdfs:domain :Covariates ;
 
 ###  https://w3id.org/enigma#education_Years
 :education_Years rdf:type owl:DatatypeProperty ;
-                 rdfs:domain :Covariates ;
+                 rdfs:domain :Demographics ;
                  rdfs:range xsd:string ;
                  rdfs:comment "Property to state whether subject's education in years is specified." ;
                  rdfs:label "education years" .
@@ -149,7 +159,7 @@ owl:topDataProperty rdfs:domain :Covariates ;
 
 ###  https://w3id.org/enigma#parent_SocioeconomicStatus
 :parent_SocioeconomicStatus rdf:type owl:DatatypeProperty ;
-                            rdfs:domain :Covariates ;
+                            rdfs:domain :Demographics ;
                             rdfs:range xsd:string ;
                             rdfs:comment "Highest level of parental socioeconomic status either based on education, occupation or both." ;
                             rdfs:label "parent socioeconomic status" .
@@ -157,7 +167,7 @@ owl:topDataProperty rdfs:domain :Covariates ;
 
 ###  https://w3id.org/enigma#parent_SocioeconomicStatusScale
 :parent_SocioeconomicStatusScale rdf:type owl:DatatypeProperty ;
-                                 rdfs:domain :Covariates ;
+                                 rdfs:domain :Demographics ;
                                  rdfs:range xsd:string ;
                                  rdfs:comment "The scale used in measuring a parent(s) socioeconomic status." ;
                                  rdfs:label "parent socioeconomic status scale" .
@@ -165,7 +175,7 @@ owl:topDataProperty rdfs:domain :Covariates ;
 
 ###  https://w3id.org/enigma#race_ethnicity
 :race_ethnicity rdf:type owl:DatatypeProperty ;
-                rdfs:domain :Covariates ;
+                rdfs:domain :Demographics ;
                 rdfs:range xsd:string ;
                 rdfs:comment "Subject's race/ethnicity." ;
                 rdfs:label "race ethnicity" .
@@ -173,7 +183,7 @@ owl:topDataProperty rdfs:domain :Covariates ;
 
 ###  https://w3id.org/enigma#subject_SocioeconomicStatus
 :subject_SocioeconomicStatus rdf:type owl:DatatypeProperty ;
-                             rdfs:domain :Covariates ;
+                             rdfs:domain :Demographics ;
                              rdfs:range xsd:string ;
                              rdfs:comment "The scale used in measuring a subject’s socioeconomic status." ;
                              rdfs:label "subject socioeconomic status" .
@@ -181,7 +191,7 @@ owl:topDataProperty rdfs:domain :Covariates ;
 
 ###  https://w3id.org/enigma#subject_SocioeconomicStatusScale
 :subject_SocioeconomicStatusScale rdf:type owl:DatatypeProperty ;
-                                  rdfs:domain :Covariates ;
+                                  rdfs:domain :Demographics ;
                                   rdfs:range xsd:string ;
                                   rdfs:comment "The highest level of subject's socioeconomic status based on education, occupation or both." ;
                                   rdfs:label "subject socioeconomic status" .
@@ -191,10 +201,10 @@ owl:topDataProperty rdfs:domain :Covariates ;
 #    Classes
 #################################################################
 
-###  https://w3id.org/enigma#Covariates
-:Covariates rdf:type owl:Class ;
-            rdfs:comment "A class used to describe covariates information for a cohort or study." ;
-            rdfs:label "Covariates" .
+###  https://w3id.org/enigma#Demographics
+:Demographics rdf:type owl:Class ;
+              rdfs:comment "A class used to describe the demographics covariates of a cohort or study" ;
+              rdfs:label "Demographics" .
 
 
 ###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/

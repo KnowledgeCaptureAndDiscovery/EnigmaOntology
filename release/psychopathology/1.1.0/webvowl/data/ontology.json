@@ -22,7 +22,12 @@
       "creator" : [ {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Haripriya Dharmala",
+        "value" : "Neda Jahanshad",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Yolanda Gil",
         "type" : "label"
       }, {
         "identifier" : "creator",
@@ -32,17 +37,12 @@
       }, {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Wesley Surento",
-        "type" : "label"
-      }, {
-        "identifier" : "creator",
-        "language" : "undefined",
-        "value" : "Neda Jahanshad",
-        "type" : "label"
-      }, {
-        "identifier" : "creator",
-        "language" : "undefined",
         "value" : "Joanna Bright",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Wesley Surento",
         "type" : "label"
       }, {
         "identifier" : "creator",
@@ -52,13 +52,13 @@
       }, {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Yolanda Gil",
+        "value" : "Haripriya Dharmala",
         "type" : "label"
       } ],
       "contributor" : [ {
         "identifier" : "contributor",
         "language" : "undefined",
-        "value" : "Ryan Espiritu",
+        "value" : "Kevin Low",
         "type" : "label"
       }, {
         "identifier" : "contributor",
@@ -68,7 +68,12 @@
       }, {
         "identifier" : "contributor",
         "language" : "undefined",
-        "value" : "Kevin Low",
+        "value" : "Michael Bornstein",
+        "type" : "label"
+      }, {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Ryan Espiritu",
         "type" : "label"
       }, {
         "identifier" : "contributor",
@@ -79,11 +84,6 @@
         "identifier" : "contributor",
         "language" : "undefined",
         "value" : "MiHyun Jang",
-        "type" : "label"
-      }, {
-        "identifier" : "contributor",
-        "language" : "undefined",
-        "value" : "Michael Bornstein",
         "type" : "label"
       } ],
       "preferredNamespacePrefix" : [ {
@@ -147,7 +147,7 @@
     "id" : "34",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "30",
+    "id" : "32",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "8",
@@ -171,14 +171,11 @@
     "id" : "22",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "32",
+    "id" : "30",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "24",
     "type" : "rdfs:Datatype"
-  }, {
-    "id" : "1",
-    "type" : "owl:Class"
   }, {
     "id" : "47",
     "type" : "rdfs:Datatype"
@@ -209,6 +206,9 @@
   }, {
     "id" : "58",
     "type" : "rdfs:Datatype"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
   }, {
     "id" : "6",
     "type" : "rdfs:Datatype"
@@ -305,7 +305,7 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "30",
+    "id" : "32",
     "label" : {
       "IRI-based" : "boolean"
     }
@@ -361,7 +361,7 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "32",
+    "id" : "30",
     "label" : {
       "IRI-based" : "boolean"
     }
@@ -372,18 +372,6 @@
     "label" : {
       "IRI-based" : "boolean"
     }
-  }, {
-    "iri" : "https://w3id.org/enigma#Covariates",
-    "baseIri" : "https://w3id.org/enigma",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "Covariates",
-      "undefined" : "Covariates"
-    },
-    "comment" : {
-      "undefined" : "A class used to describe covariates information for a cohort or study."
-    },
-    "id" : "1"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
@@ -454,6 +442,18 @@
     "label" : {
       "IRI-based" : "boolean"
     }
+  }, {
+    "iri" : "https://w3id.org/enigma#Psychopathology_Covariates",
+    "baseIri" : "https://w3id.org/enigma",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Psychopathology_Covariates",
+      "undefined" : "Psychopathology Covariates"
+    },
+    "comment" : {
+      "undefined" : "A class used to describe psychopathology covariate information for a cohort or study."
+    },
+    "id" : "1"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
@@ -768,23 +768,9 @@
     "attributes" : [ "datatype" ],
     "id" : "23"
   }, {
-    "iri" : "https://w3id.org/enigma#PTSD_AgeofOnset",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "30",
-    "label" : {
-      "IRI-based" : "PTSD_AgeofOnset",
-      "undefined" : "PTSD age of onset"
-    },
-    "domain" : "1",
-    "comment" : {
-      "undefined" : "Describes if the age of onset of the subject's Post-Traumatic Stress Disorder is specified."
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "29"
-  }, {
     "iri" : "https://w3id.org/enigma#MDD_Lifetime",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "32",
+    "range" : "30",
     "label" : {
       "IRI-based" : "MDD_Lifetime",
       "undefined" : "MDD lifetime"
@@ -792,6 +778,20 @@
     "domain" : "1",
     "comment" : {
       "undefined" : "Describes if the subject had Major Depressive Disorder during their lifetime."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "29"
+  }, {
+    "iri" : "https://w3id.org/enigma#PTSD_AgeofOnset",
+    "baseIri" : "https://w3id.org/enigma",
+    "range" : "32",
+    "label" : {
+      "IRI-based" : "PTSD_AgeofOnset",
+      "undefined" : "PTSD age of onset"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "Describes if the age of onset of the subject's Post-Traumatic Stress Disorder is specified."
     },
     "attributes" : [ "datatype" ],
     "id" : "31"

@@ -65,13 +65,12 @@
 #################################################################
 
 ###  http://www.w3.org/2002/07/owl#topDataProperty
-owl:topDataProperty rdfs:domain :Covariates ;
-                    rdfs:range xsd:boolean .
+owl:topDataProperty rdfs:range xsd:boolean .
 
 
 ###  https://w3id.org/enigma#alcoholUseDisorderScale
 :alcoholUseDisorderScale rdf:type owl:DatatypeProperty ;
-                         rdfs:domain :Covariates ;
+                         rdfs:domain :Disorder_Covariates ;
                          rdfs:range xsd:boolean ;
                          rdfs:comment "Describes whether the scale used to determine the diagnosis of alcohol use disorder (ie: SCID, ASSIST, AUDIT) is specified." ;
                          rdfs:label "alcohol use disorder scale" .
@@ -79,7 +78,7 @@ owl:topDataProperty rdfs:domain :Covariates ;
 
 ###  https://w3id.org/enigma#alcoholUseDisorder_AgeofOnset
 :alcoholUseDisorder_AgeofOnset rdf:type owl:DatatypeProperty ;
-                               rdfs:domain :Covariates ;
+                               rdfs:domain :Disorder_Covariates ;
                                rdfs:range xsd:boolean ;
                                rdfs:comment "Describes the age of onset of the subject's alcohol use disorder." ;
                                rdfs:label "alcohol use disorder age of onset" .
@@ -87,7 +86,7 @@ owl:topDataProperty rdfs:domain :Covariates ;
 
 ###  https://w3id.org/enigma#alcoholUseDisorder_Current
 :alcoholUseDisorder_Current rdf:type owl:DatatypeProperty ;
-                            rdfs:domain :Covariates ;
+                            rdfs:domain :Disorder_Covariates ;
                             rdfs:range xsd:boolean ;
                             rdfs:comment "Describes the subject's current alcohol use disorder (ie: dependence, abuse, none)." ;
                             rdfs:label "alcohol use disorder current" .
@@ -95,7 +94,7 @@ owl:topDataProperty rdfs:domain :Covariates ;
 
 ###  https://w3id.org/enigma#alcoholUseDisorder_Lifetime
 :alcoholUseDisorder_Lifetime rdf:type owl:DatatypeProperty ;
-                             rdfs:domain :Covariates ;
+                             rdfs:domain :Disorder_Covariates ;
                              rdfs:range xsd:boolean ;
                              rdfs:comment "Describes whether the subject's previous lifetime alcohol use disorder (ie: dependence, abuse, none) is specified." ;
                              rdfs:label "alcohol use disorder lifetime" .
@@ -103,7 +102,7 @@ owl:topDataProperty rdfs:domain :Covariates ;
 
 ###  https://w3id.org/enigma#otherSubstanceUseDisorder_AgeofOnset
 :otherSubstanceUseDisorder_AgeofOnset rdf:type owl:DatatypeProperty ;
-                                      rdfs:domain :Covariates ;
+                                      rdfs:domain :Disorder_Covariates ;
                                       rdfs:range xsd:boolean ;
                                       rdfs:comment "Describes whether age of onset of subject's substance use disorder is specified." ;
                                       rdfs:label "other substance use disorder age of onset" .
@@ -111,7 +110,7 @@ owl:topDataProperty rdfs:domain :Covariates ;
 
 ###  https://w3id.org/enigma#otherSubstanceUseDisorder_Current
 :otherSubstanceUseDisorder_Current rdf:type owl:DatatypeProperty ;
-                                   rdfs:domain :Covariates ;
+                                   rdfs:domain :Disorder_Covariates ;
                                    rdfs:range xsd:string ;
                                    rdfs:comment "Describes subject's current drug use that meets criteria for substance abuse disorder at the time of scan (e.g. cocaine, opiods etc.)" ;
                                    rdfs:label "other substance use disorder current" .
@@ -119,7 +118,7 @@ owl:topDataProperty rdfs:domain :Covariates ;
 
 ###  https://w3id.org/enigma#otherSubstanceUseDisorder_Lifetime
 :otherSubstanceUseDisorder_Lifetime rdf:type owl:DatatypeProperty ;
-                                    rdfs:domain :Covariates ;
+                                    rdfs:domain :Disorder_Covariates ;
                                     rdfs:range xsd:string ;
                                     rdfs:comment "Describes subject's previous lifetime drug use that meets criteria for lifetime substance abuse disorder  (e.g. cocaine, opiods etc.)" ;
                                     rdfs:label "other substance use disorder lifetime" .
@@ -127,7 +126,7 @@ owl:topDataProperty rdfs:domain :Covariates ;
 
 ###  https://w3id.org/enigma#smokingStatus_Current
 :smokingStatus_Current rdf:type owl:DatatypeProperty ;
-                       rdfs:domain :Covariates ;
+                       rdfs:domain :Disorder_Covariates ;
                        rdfs:range xsd:boolean ;
                        rdfs:comment "Describes if the subject is currently smoking." ;
                        rdfs:label "smoking status current" .
@@ -135,7 +134,7 @@ owl:topDataProperty rdfs:domain :Covariates ;
 
 ###  https://w3id.org/enigma#smokingStatus_Lifetime
 :smokingStatus_Lifetime rdf:type owl:DatatypeProperty ;
-                        rdfs:domain :Covariates ;
+                        rdfs:domain :Disorder_Covariates ;
                         rdfs:range xsd:boolean ;
                         rdfs:comment "Describes if the subject smoked during their lifetime." ;
                         rdfs:label "smoking status lifetime" .
@@ -145,10 +144,10 @@ owl:topDataProperty rdfs:domain :Covariates ;
 #    Classes
 #################################################################
 
-###  https://w3id.org/enigma#Covariates
-:Covariates rdf:type owl:Class ;
-            rdfs:comment "A class used to describe covariates information for a cohort or study." ;
-            rdfs:label "Covariates" .
+###  https://w3id.org/enigma#Disorder_Covariates
+:Disorder_Covariates rdf:type owl:Class ;
+                     rdfs:comment "A class used to describe the disorder covariates of a cohort or study" ;
+                     rdfs:label "Disorder Covariates" .
 
 
 ###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
