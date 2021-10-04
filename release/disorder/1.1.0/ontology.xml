@@ -110,7 +110,6 @@
 
 
     <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Covariates"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </rdf:Description>
     
@@ -120,7 +119,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#alcoholUseDisorderScale">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Covariates"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Disorder_Covariates"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>Describes whether the scale used to determine the diagnosis of alcohol use disorder (ie: SCID, ASSIST, AUDIT) is specified.</rdfs:comment>
         <rdfs:label>alcohol use disorder scale</rdfs:label>
@@ -132,7 +131,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#alcoholUseDisorder_AgeofOnset">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Covariates"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Disorder_Covariates"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>Describes the age of onset of the subject&apos;s alcohol use disorder.</rdfs:comment>
         <rdfs:label>alcohol use disorder age of onset</rdfs:label>
@@ -144,7 +143,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#alcoholUseDisorder_Current">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Covariates"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Disorder_Covariates"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>Describes the subject&apos;s current alcohol use disorder (ie: dependence, abuse, none).</rdfs:comment>
         <rdfs:label>alcohol use disorder current</rdfs:label>
@@ -156,7 +155,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#alcoholUseDisorder_Lifetime">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Covariates"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Disorder_Covariates"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>Describes whether the subject&apos;s previous lifetime alcohol use disorder (ie: dependence, abuse, none) is specified.</rdfs:comment>
         <rdfs:label>alcohol use disorder lifetime</rdfs:label>
@@ -168,7 +167,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#otherSubstanceUseDisorder_AgeofOnset">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Covariates"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Disorder_Covariates"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>Describes whether age of onset of subject&apos;s substance use disorder is specified.</rdfs:comment>
         <rdfs:label>other substance use disorder age of onset</rdfs:label>
@@ -180,7 +179,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#otherSubstanceUseDisorder_Current">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Covariates"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Disorder_Covariates"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Describes subject&apos;s current drug use that meets criteria for substance abuse disorder at the time of scan (e.g. cocaine, opiods etc.)</rdfs:comment>
         <rdfs:label>other substance use disorder current</rdfs:label>
@@ -192,7 +191,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#otherSubstanceUseDisorder_Lifetime">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Covariates"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Disorder_Covariates"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Describes subject&apos;s previous lifetime drug use that meets criteria for lifetime substance abuse disorder  (e.g. cocaine, opiods etc.)</rdfs:comment>
         <rdfs:label>other substance use disorder lifetime</rdfs:label>
@@ -204,7 +203,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#smokingStatus_Current">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Covariates"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Disorder_Covariates"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>Describes if the subject is currently smoking.</rdfs:comment>
         <rdfs:label>smoking status current</rdfs:label>
@@ -216,7 +215,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#smokingStatus_Lifetime">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Covariates"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Disorder_Covariates"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>Describes if the subject smoked during their lifetime.</rdfs:comment>
         <rdfs:label>smoking status lifetime</rdfs:label>
@@ -236,12 +235,12 @@
     
 
 
-    <!-- https://w3id.org/enigma#Covariates -->
+    <!-- https://w3id.org/enigma#Disorder_Covariates -->
 
 
-    <owl:Class rdf:about="https://w3id.org/enigma#Covariates">
-        <rdfs:comment>A class used to describe covariates information for a cohort or study.</rdfs:comment>
-        <rdfs:label>Covariates</rdfs:label>
+    <owl:Class rdf:about="https://w3id.org/enigma#Disorder_Covariates">
+        <rdfs:comment>A class used to describe the disorder covariates of a cohort or study</rdfs:comment>
+        <rdfs:label>Disorder Covariates</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 

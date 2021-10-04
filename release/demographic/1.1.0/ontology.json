@@ -21,9 +21,6 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://www.w3.org/2002/07/owl#topDataProperty",
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/enigma#Covariates"
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
   } ]
@@ -80,19 +77,25 @@
     "@value" : "v1.1.0"
   } ]
 }, {
-  "@id" : "https://w3id.org/enigma#Covariates",
+  "@id" : "https://w3id.org/enigma#Demographics",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A class used to describe covariates information for a cohort or study."
+    "@value" : "A class used to describe the demographics covariates of a cohort or study"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Covariates"
+    "@value" : "Demographics"
   } ]
 }, {
   "@id" : "https://w3id.org/enigma#IQ",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Intelligence Quotient measured by different means"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/enigma#Covariates"
+    "@id" : "https://w3id.org/enigma#Demographics"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "IQ"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
@@ -104,7 +107,7 @@
     "@value" : "The IQ scale used for each subject/group (ie: WISC-IV, WAIS-IV, WASI-II)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/enigma#Covariates"
+    "@id" : "https://w3id.org/enigma#Demographics"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "IQ method"
@@ -113,13 +116,31 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
+  "@id" : "https://w3id.org/enigma#IllnessDuration",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Property which states if the Duration of Illness was measured in a cohort. Often abbreviated \"DURILL\""
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/enigma#Demographics"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Illness Duration"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
   "@id" : "https://w3id.org/enigma#Marital_status",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Property which states whether subject's marital status (ie: single, married) is specified."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/enigma#Covariates"
+    "@id" : "https://w3id.org/enigma#Demographics"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "marital status"
@@ -134,7 +155,7 @@
     "@value" : "Property which states whether subject's occupation is specified."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/enigma#Covariates"
+    "@id" : "https://w3id.org/enigma#Demographics"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "occupation"
@@ -149,7 +170,7 @@
     "@value" : "Property to state whether subject's sex (male, female, other) is specified or not."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/enigma#Covariates"
+    "@id" : "https://w3id.org/enigma#Demographics"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "sex"
@@ -164,7 +185,7 @@
     "@value" : "Property which states whether the identification code/number of unique subjects is specified."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/enigma#Covariates"
+    "@id" : "https://w3id.org/enigma#Demographics"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "subject ID"
@@ -179,7 +200,7 @@
     "@value" : "Property which states whether the diagnostic group each subject is associated with (control vs. experimental) is specified."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/enigma#Covariates"
+    "@id" : "https://w3id.org/enigma#Demographics"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "diagnosis group"
@@ -194,7 +215,7 @@
     "@value" : "Subject's education coded as categories (ie: a range from 1-5)"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/enigma#Covariates"
+    "@id" : "https://w3id.org/enigma#Demographics"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "education category"
@@ -209,7 +230,7 @@
     "@value" : "The method used for coding the Education Category (ie: 1 = some high school, 2 = some college, 3 = some professional degree)"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/enigma#Covariates"
+    "@id" : "https://w3id.org/enigma#Demographics"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "education method"
@@ -224,7 +245,7 @@
     "@value" : "Property to state whether subject's education in years is specified."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/enigma#Covariates"
+    "@id" : "https://w3id.org/enigma#Demographics"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "education years"
@@ -239,7 +260,7 @@
     "@value" : "Highest level of parental socioeconomic status either based on education, occupation or both."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/enigma#Covariates"
+    "@id" : "https://w3id.org/enigma#Demographics"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "parent socioeconomic status"
@@ -254,7 +275,7 @@
     "@value" : "The scale used in measuring a parent(s) socioeconomic status."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/enigma#Covariates"
+    "@id" : "https://w3id.org/enigma#Demographics"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "parent socioeconomic status scale"
@@ -269,7 +290,7 @@
     "@value" : "Subject's race/ethnicity."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/enigma#Covariates"
+    "@id" : "https://w3id.org/enigma#Demographics"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "race ethnicity"
@@ -284,7 +305,7 @@
     "@value" : "The scale used in measuring a subject’s socioeconomic status."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/enigma#Covariates"
+    "@id" : "https://w3id.org/enigma#Demographics"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "subject socioeconomic status"
@@ -299,7 +320,7 @@
     "@value" : "The highest level of subject's socioeconomic status based on education, occupation or both."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/enigma#Covariates"
+    "@id" : "https://w3id.org/enigma#Demographics"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "subject socioeconomic status"
