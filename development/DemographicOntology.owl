@@ -7,7 +7,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="https://w3id.org/enigma"
      versionIRI="https://w3id.org/enigma/demographic/1.1.0">
-    <Prefix name="" IRI="https://w3id.org/enigma#"/>
+    <Prefix name="" IRI="https://w3id.org/enigma"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -93,13 +93,16 @@
         <Literal>v1.1.0</Literal>
     </Annotation>
     <Declaration>
-        <Class IRI="#Covariates"/>
+        <Class IRI="#Demographics"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#IQ"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#IQ_method"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#IllnessDuration"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#Marital_status"/>
@@ -161,69 +164,73 @@
     <Declaration>
         <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
     </Declaration>
-    <DataPropertyDomain>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#IllnessDuration"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-        <Class IRI="#Covariates"/>
-    </DataPropertyDomain>
+    </SubDataPropertyOf>
     <DataPropertyDomain>
         <DataProperty IRI="#IQ"/>
-        <Class IRI="#Covariates"/>
+        <Class IRI="#Demographics"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#IQ_method"/>
-        <Class IRI="#Covariates"/>
+        <Class IRI="#Demographics"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#IllnessDuration"/>
+        <Class IRI="#Demographics"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#Marital_status"/>
-        <Class IRI="#Covariates"/>
+        <Class IRI="#Demographics"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#Occupation"/>
-        <Class IRI="#Covariates"/>
+        <Class IRI="#Demographics"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#Sex"/>
-        <Class IRI="#Covariates"/>
+        <Class IRI="#Demographics"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#SubjID"/>
-        <Class IRI="#Covariates"/>
+        <Class IRI="#Demographics"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#diagnosisGroup"/>
-        <Class IRI="#Covariates"/>
+        <Class IRI="#Demographics"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#education_Category"/>
-        <Class IRI="#Covariates"/>
+        <Class IRI="#Demographics"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#education_Method"/>
-        <Class IRI="#Covariates"/>
+        <Class IRI="#Demographics"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#education_Years"/>
-        <Class IRI="#Covariates"/>
+        <Class IRI="#Demographics"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#parent_SocioeconomicStatus"/>
-        <Class IRI="#Covariates"/>
+        <Class IRI="#Demographics"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#parent_SocioeconomicStatusScale"/>
-        <Class IRI="#Covariates"/>
+        <Class IRI="#Demographics"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#race_ethnicity"/>
-        <Class IRI="#Covariates"/>
+        <Class IRI="#Demographics"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#subject_SocioeconomicStatus"/>
-        <Class IRI="#Covariates"/>
+        <Class IRI="#Demographics"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#subject_SocioeconomicStatusScale"/>
-        <Class IRI="#Covariates"/>
+        <Class IRI="#Demographics"/>
     </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
@@ -238,6 +245,10 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="#IllnessDuration"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="#Marital_status"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
@@ -291,13 +302,23 @@
     </DataPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Covariates</IRI>
-        <Literal>A class used to describe covariates information for a cohort or study.</Literal>
+        <IRI>#Demographics</IRI>
+        <Literal>A class used to describe the demographics covariates of a cohort or study</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Covariates</IRI>
-        <Literal>Covariates</Literal>
+        <IRI>#Demographics</IRI>
+        <Literal>Demographics</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#IQ</IRI>
+        <Literal>Intelligence Quotient measured by different means</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#IQ</IRI>
+        <Literal>IQ</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -308,6 +329,16 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#IQ_method</IRI>
         <Literal>IQ method</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#IllnessDuration</IRI>
+        <Literal>Property which states if the Duration of Illness was measured in a cohort. Often abbreviated &quot;DURILL&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#IllnessDuration</IRI>
+        <Literal>Illness Duration</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
