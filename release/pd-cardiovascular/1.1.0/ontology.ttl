@@ -7,7 +7,7 @@
 @base <https://w3id.org/enigma> .
 
 <https://w3id.org/enigma> rdf:type owl:Ontology ;
-                           owl:versionIRI <https://w3id.org/enigma/cohort/1.1.0> ;
+                           owl:versionIRI <https://w3id.org/enigma/pd-cardiovascular/1.1.0> ;
                            <http://purl.org/dc/terms/contributor> "Agnes McMahon" ,
                                                                   "MiHyun Jang" ,
                                                                   "Michael Bornstein" ,
@@ -22,10 +22,9 @@
                                                               "Yolanda Gil" ;
                            <http://purl.org/dc/terms/description> "An ontology to describe cohorts of patients participating in ENIGMA projects."@en ;
                            <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> ;
-                           <http://purl.org/dc/terms/title> "The Cohort Ontology"@en ;
+                           <http://purl.org/dc/terms/title> "The PD Cardiovascular Ontology"@en ;
                            <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma" ;
                            <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
-                           owl:priorVersion "https://w3id.org/enigma/cohort/1.0.0" ;
                            owl:versionInfo "v1.1.0" .
 
 #################################################################
@@ -161,6 +160,13 @@ xsd:gYear rdf:type rdfs:Datatype .
                  <http://purl.org/vocab/vann/example> "BipolarCohort hasControlGroup BipolarControlGroup"@en ;
                  rdfs:comment "Describes the control group of a cohort"@en ;
                  rdfs:label "has control group"@en .
+
+
+###  https://w3id.org/enigma#hasCovariates
+:hasCovariates rdf:type owl:ObjectProperty ;
+               rdfs:domain :Cohort ;
+               rdfs:range :Covariates ;
+               rdfs:label "has covariates" .
 
 
 ###  https://w3id.org/enigma#hasDataType
@@ -330,6 +336,14 @@ xsd:gYear rdf:type rdfs:Datatype .
                rdfs:label "has statistics"@en .
 
 
+###  https://w3id.org/enigma#has_neuropsychiatric
+:has_neuropsychiatric rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdfs:domain :Cohort ;
+                      rdfs:range :Neuropsychiatric ;
+                      rdfs:label "has neuropsychiatric" .
+
+
 ###  https://w3id.org/enigma#isPartOfCohort
 :isPartOfCohort rdf:type owl:ObjectProperty ;
                 rdfs:domain [ rdf:type owl:Class ;
@@ -400,144 +414,161 @@ xsd:gYear rdf:type rdfs:Datatype .
 #    Data properties
 #################################################################
 
-###  https://schema.org/contentUrl
-<https://schema.org/contentUrl> rdf:type owl:DatatypeProperty .
-
-
-###  https://schema.org/description
-<https://schema.org/description> rdf:type owl:DatatypeProperty .
-
-
-###  https://schema.org/encodingFormat
-<https://schema.org/encodingFormat> rdf:type owl:DatatypeProperty .
-
-
-###  https://schema.org/name
-<https://schema.org/name> rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#checksum
-:checksum rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasAdditionalDemographic
-:hasAdditionalDemographic rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasAge_Group
-:hasAge_Group rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasAge_Maximum
-:hasAge_Maximum rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasAge_Mean
-:hasAge_Mean rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasAge_Minimum
-:hasAge_Minimum rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasAge_StandardDeviation
-:hasAge_StandardDeviation rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasBriefDescription
-:hasBriefDescription rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasCohortStatus
-:hasCohortStatus rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasCollectionSite
-:hasCollectionSite rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasContentUrl
-:hasContentUrl rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasDataCollectionPeriodEnd
-:hasDataCollectionPeriodEnd rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasDataCollectionPeriodStart
-:hasDataCollectionPeriodStart rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasDescription
-:hasDescription rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasEthnicGroup
-:hasEthnicGroup rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasExclusionCriteria
-:hasExclusionCriteria rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasFundingSource
-:hasFundingSource rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasGroupCriteria
-:hasGroupCriteria rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasHomePage
-:hasHomePage rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasName
-:hasName rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasNumberOfFemaleSex
-:hasNumberOfFemaleSex rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasNumberOfMaleSex
-:hasNumberOfMaleSex rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasNumberOfParticipants
-:hasNumberOfParticipants rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasSpecies
-:hasSpecies rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasStudyDesign
-:hasStudyDesign rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasTotalNumberOfParticipants
-:hasTotalNumberOfParticipants rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasTransgenderFtoM
-:hasTransgenderFtoM rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasTransgenderMtoF
-:hasTransgenderMtoF rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#isPublic
-:isPublic rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#usesEncodingFormat
-:usesEncodingFormat rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#usesScanner
-:usesScanner rdf:type owl:DatatypeProperty .
+###  https://w3id.org/enigma#AlcoholConsumption
+:AlcoholConsumption rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain :Cardiovascular ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "Include info on how this was measured" ;
+                    rdfs:label "Alcohol Consumption" .
+
+
+###  https://w3id.org/enigma#AtrialFibrillation
+:AtrialFibrillation rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain :Cardiovascular ;
+                    rdfs:range xsd:boolean ;
+                    rdfs:comment "Atrial Fibrillation: irregular (and often rapid) heart rate caused by poor blood flow that can cause blood clots, strokes, etc." ;
+                    rdfs:label "Atrial Fibrillation" .
+
+
+###  https://w3id.org/enigma#BodyMassIndex
+:BodyMassIndex rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :Cardiovascular ;
+               rdfs:range xsd:boolean ;
+               rdfs:label "Body Mass Index" .
+
+
+###  https://w3id.org/enigma#CoagulationScreenPerformed
+:CoagulationScreenPerformed rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf owl:topDataProperty ;
+                            rdfs:domain :Cardiovascular ;
+                            rdfs:range xsd:boolean ;
+                            rdfs:label "Coagulation Screen Performed" .
+
+
+###  https://w3id.org/enigma#Diabetes
+:Diabetes rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :Cardiovascular ;
+          rdfs:range xsd:boolean ;
+          rdfs:label "Diabetes" .
+
+
+###  https://w3id.org/enigma#FamilyHistoryOfCVDisease
+:FamilyHistoryOfCVDisease rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf owl:topDataProperty ;
+                          rdfs:domain :Cardiovascular ;
+                          rdfs:range xsd:boolean ;
+                          rdfs:comment "CV: Cardiovascular Disease" ;
+                          rdfs:label "Family History of CV Disease" .
+
+
+###  https://w3id.org/enigma#HeartRate
+:HeartRate rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :Cardiovascular ;
+           rdfs:range xsd:boolean ;
+           rdfs:label "Heart Rate" .
+
+
+###  https://w3id.org/enigma#HistoryOfIschamicHeartDisease
+:HistoryOfIschamicHeartDisease rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf owl:topDataProperty ;
+                               rdfs:domain :Cardiovascular ;
+                               rdfs:range xsd:boolean ;
+                               rdfs:comment "Ischamic Heart Disease: aka Coronary Heart Disease, heart problems caused by narrowed arteries that supply blood to the heart" ;
+                               rdfs:label "History of Ischamic Heart Disease" .
+
+
+###  https://w3id.org/enigma#HistoryOfStrokeOrTransientIschaemicAttack
+:HistoryOfStrokeOrTransientIschaemicAttack rdf:type owl:DatatypeProperty ;
+                                           rdfs:subPropertyOf owl:topDataProperty ;
+                                           rdfs:domain :Cardiovascular ;
+                                           rdfs:range xsd:boolean ;
+                                           rdfs:comment "Transient Ischaemic Attack: A \"mini stroke\" with minor stroke symptoms" ;
+                                           rdfs:label "History of Stroke or Transient Ischaemic Attack" .
+
+
+###  https://w3id.org/enigma#Hyperlipidaemia
+:Hyperlipidaemia rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Cardiovascular ;
+                 rdfs:range xsd:boolean ;
+                 rdfs:comment "Hyperlipidaemia: High levels of lipids/cholesterol/fats in the blood" ;
+                 rdfs:label "Hyperlipidaemia" .
+
+
+###  https://w3id.org/enigma#Hypertension
+:Hypertension rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :Cardiovascular ;
+              rdfs:range xsd:boolean ;
+              rdfs:comment "Hypertension: high blood pressure" ;
+              rdfs:label "Hypertension" .
+
+
+###  https://w3id.org/enigma#OrthostaticHypertension
+:OrthostaticHypertension rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf owl:topDataProperty ;
+                         rdfs:domain :Cardiovascular ;
+                         rdfs:range xsd:boolean ;
+                         rdfs:comment "Orthostatic Hypertension: an increase in blood pressure upon assuming an upright position" ;
+                         rdfs:label "Orthostatic Hypertension" .
+
+
+###  https://w3id.org/enigma#OtherRelevantCardiovascularMedications
+:OtherRelevantCardiovascularMedications rdf:type owl:DatatypeProperty ;
+                                        rdfs:subPropertyOf owl:topDataProperty ;
+                                        rdfs:domain :Cardiovascular ;
+                                        rdfs:range xsd:string ;
+                                        rdfs:comment "e.g. antihypertensives, cholesterol lowering drugs, aspirin, steriods" ;
+                                        rdfs:label "Other Relevant Cardiovascular Medications" .
+
+
+###  https://w3id.org/enigma#OtherRelevantDiagnoses
+:OtherRelevantDiagnoses rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf owl:topDataProperty ;
+                        rdfs:domain :Cardiovascular ;
+                        rdfs:range xsd:string ;
+                        rdfs:comment "e.g. chronic kidney disease and stage, migraines, arthritis, lupus" ;
+                        rdfs:label "Other Relevant Diagnoses" .
+
+
+###  https://w3id.org/enigma#Smoking
+:Smoking rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :Cardiovascular ;
+         rdfs:range xsd:boolean ;
+         rdfs:label "Smoking" .
+
+
+###  https://w3id.org/enigma#SmokingPackYears
+:SmokingPackYears rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:domain :Cardiovascular ;
+                  rdfs:range xsd:string ;
+                  rdfs:comment "A \"pack year\" is defined as twenty cigarettes smoked everyday for one year" ;
+                  rdfs:label "Smoking Pack Years" .
+
+
+###  https://w3id.org/enigma#StandingBloodPressure
+:StandingBloodPressure rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf owl:topDataProperty ;
+                       rdfs:domain :Cardiovascular ;
+                       rdfs:range xsd:boolean ;
+                       rdfs:comment "Standing blood pressure after standing for 3 minutes" ;
+                       rdfs:label "Standing Blood Pressure" .
+
+
+###  https://w3id.org/enigma#SupineBloodPressure
+:SupineBloodPressure rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty ;
+                     rdfs:domain :Cardiovascular ;
+                     rdfs:range xsd:boolean ;
+                     rdfs:comment "Supine blood pressure after resting for at least 5 minutes" ;
+                     rdfs:label "Supine Blood Pressure" .
 
 
 #################################################################
@@ -581,6 +612,12 @@ xsd:gYear rdf:type rdfs:Datatype .
         rdfs:label "Cancer"@en .
 
 
+###  https://w3id.org/enigma#Cardiovascular
+:Cardiovascular rdf:type owl:Class ;
+                rdfs:comment "Cardiovascular Covariates measured by each PD cohort" ;
+                rdfs:label "Cardiovascular" .
+
+
 ###  https://w3id.org/enigma#CardiovascularDisorder
 :CardiovascularDisorder rdf:type owl:Class ;
                         rdfs:subClassOf :VascularDisorder ;
@@ -603,6 +640,12 @@ xsd:gYear rdf:type rdfs:Datatype .
       <http://purl.org/vocab/vann/example> "Los Angeles"@en ;
       rdfs:comment "City in which a cohort is located"@en ;
       rdfs:label "City"@en .
+
+
+###  https://w3id.org/enigma#Cognitive
+:Cognitive rdf:type owl:Class ;
+           rdfs:comment "Cognitive Covariates measured by each PD cohort" ;
+           rdfs:label "Cognitive" .
 
 
 ###  https://w3id.org/enigma#Cohort
@@ -743,6 +786,12 @@ xsd:gYear rdf:type rdfs:Datatype .
                       <http://purl.org/vocab/vann/example> "Epilepsy"@en ;
                       rdfs:comment "Disorders which affect the nervous system"@en ;
                       rdfs:label "Neurological Disorder"@en .
+
+
+###  https://w3id.org/enigma#Neuropsychiatric
+:Neuropsychiatric rdf:type owl:Class ;
+                  rdfs:comment "Neuropsychiatric Covariates measured by each cohort" ;
+                  rdfs:label "Neuropsychiatric" .
 
 
 ###  https://w3id.org/enigma#OrganicMedicalDisorder

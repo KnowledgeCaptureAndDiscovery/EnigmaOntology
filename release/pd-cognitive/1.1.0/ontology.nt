@@ -1,5 +1,5 @@
 <https://w3id.org/enigma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/enigma/cohort/1.1.0> .
+<https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/enigma/pd-cognitive/1.1.0> .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Agnes McMahon" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "MiHyun Jang" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Michael Bornstein" .
@@ -14,10 +14,9 @@
 <https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "Yolanda Gil" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/description> "An ontology to describe cohorts of patients participating in ENIGMA projects."@en .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> .
-<https://w3id.org/enigma> <http://purl.org/dc/terms/title> "The Cohort Ontology"@en .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/title> "The PD Cognitive Ontology"@en .
 <https://w3id.org/enigma> <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma" .
 <https://w3id.org/enigma> <http://purl.org/vocab/vann/preferredNamespaceUri> <https://w3id.org/enigma#> .
-<https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#priorVersion> "https://w3id.org/enigma/cohort/1.0.0" .
 <https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionInfo> "v1.1.0" .
 # 
 # 
@@ -179,6 +178,12 @@ _:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#hasControlGroup> <http://purl.org/vocab/vann/example> "BipolarCohort hasControlGroup BipolarControlGroup"@en .
 <https://w3id.org/enigma#hasControlGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the control group of a cohort"@en .
 <https://w3id.org/enigma#hasControlGroup> <http://www.w3.org/2000/01/rdf-schema#label> "has control group"@en .
+# 
+# https://w3id.org/enigma#hasCovariates
+<https://w3id.org/enigma#hasCovariates> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasCovariates> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cohort> .
+<https://w3id.org/enigma#hasCovariates> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Covariates> .
+<https://w3id.org/enigma#hasCovariates> <http://www.w3.org/2000/01/rdf-schema#label> "has covariates" .
 # 
 # https://w3id.org/enigma#hasDataType
 <https://w3id.org/enigma#hasDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -381,6 +386,13 @@ _:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#hasStatistics> <http://www.w3.org/2000/01/rdf-schema#comment> "Property used to link a cohort with the summary statistics that may have been  produced after applying a given protocol"@en .
 <https://w3id.org/enigma#hasStatistics> <http://www.w3.org/2000/01/rdf-schema#label> "has statistics"@en .
 # 
+# https://w3id.org/enigma#has_neuropsychiatric
+<https://w3id.org/enigma#has_neuropsychiatric> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#has_neuropsychiatric> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/enigma#has_neuropsychiatric> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cohort> .
+<https://w3id.org/enigma#has_neuropsychiatric> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#has_neuropsychiatric> <http://www.w3.org/2000/01/rdf-schema#label> "has neuropsychiatric" .
+# 
 # https://w3id.org/enigma#isPartOfCohort
 <https://w3id.org/enigma#isPartOfCohort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/enigma#isPartOfCohort> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid53 .
@@ -470,110 +482,123 @@ _:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 # #################################################################
 # 
 # 
-# https://schema.org/contentUrl
-<https://schema.org/contentUrl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#AES
+<https://w3id.org/enigma#AES> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#AES> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#AES> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#AES> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#AES> <http://www.w3.org/2000/01/rdf-schema#comment> "Apathy Evaluation Scale - 12 item scale or 18 item scale" .
+<https://w3id.org/enigma#AES> <http://www.w3.org/2000/01/rdf-schema#label> "AES" .
 # 
-# https://schema.org/description
-<https://schema.org/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#DigitSpanBackward
+<https://w3id.org/enigma#DigitSpanBackward> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#DigitSpanBackward> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#DigitSpanBackward> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
+<https://w3id.org/enigma#DigitSpanBackward> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#DigitSpanBackward> <http://www.w3.org/2000/01/rdf-schema#label> "Digit Span Backward" .
 # 
-# https://schema.org/encodingFormat
-<https://schema.org/encodingFormat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#DigitSpanForward
+<https://w3id.org/enigma#DigitSpanForward> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#DigitSpanForward> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#DigitSpanForward> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
+<https://w3id.org/enigma#DigitSpanForward> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#DigitSpanForward> <http://www.w3.org/2000/01/rdf-schema#label> "Digit Span Forward" .
 # 
-# https://schema.org/name
-<https://schema.org/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#MMSE
+<https://w3id.org/enigma#MMSE> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#MMSE> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#MMSE> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
+<https://w3id.org/enigma#MMSE> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#MMSE> <http://www.w3.org/2000/01/rdf-schema#comment> "Mini Mental State Exam" .
+<https://w3id.org/enigma#MMSE> <http://www.w3.org/2000/01/rdf-schema#label> "MMSE" .
 # 
-# https://w3id.org/enigma#checksum
-<https://w3id.org/enigma#checksum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#MoCA
+<https://w3id.org/enigma#MoCA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#MoCA> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#MoCA> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
+<https://w3id.org/enigma#MoCA> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#MoCA> <http://www.w3.org/2000/01/rdf-schema#comment> "Montreal Cognitive Assessment" .
+<https://w3id.org/enigma#MoCA> <http://www.w3.org/2000/01/rdf-schema#label> "MoCA" .
 # 
-# https://w3id.org/enigma#hasAdditionalDemographic
-<https://w3id.org/enigma#hasAdditionalDemographic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#OtherCognitiveCovariates
+<https://w3id.org/enigma#OtherCognitiveCovariates> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#OtherCognitiveCovariates> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#OtherCognitiveCovariates> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
+<https://w3id.org/enigma#OtherCognitiveCovariates> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#OtherCognitiveCovariates> <http://www.w3.org/2000/01/rdf-schema#label> "Other Cognitive Covariates" .
 # 
-# https://w3id.org/enigma#hasAge_Group
-<https://w3id.org/enigma#hasAge_Group> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#PD_DementiaDiagnosis
+<https://w3id.org/enigma#PD_DementiaDiagnosis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#PD_DementiaDiagnosis> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#PD_DementiaDiagnosis> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
+<https://w3id.org/enigma#PD_DementiaDiagnosis> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#PD_DementiaDiagnosis> <http://www.w3.org/2000/01/rdf-schema#label> "PD Dementia Diagnosis" .
 # 
-# https://w3id.org/enigma#hasAge_Maximum
-<https://w3id.org/enigma#hasAge_Maximum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#PhonologicalAndSemanticVerbalFluencyTest
+<https://w3id.org/enigma#PhonologicalAndSemanticVerbalFluencyTest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#PhonologicalAndSemanticVerbalFluencyTest> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#PhonologicalAndSemanticVerbalFluencyTest> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
+<https://w3id.org/enigma#PhonologicalAndSemanticVerbalFluencyTest> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#PhonologicalAndSemanticVerbalFluencyTest> <http://www.w3.org/2000/01/rdf-schema#label> "Phonological (PVF) and Semantic (SVF) Verbal Fluency Test" .
 # 
-# https://w3id.org/enigma#hasAge_Mean
-<https://w3id.org/enigma#hasAge_Mean> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#Rey_OsterriethComplexFigureTest
+<https://w3id.org/enigma#Rey_OsterriethComplexFigureTest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#Rey_OsterriethComplexFigureTest> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#Rey_OsterriethComplexFigureTest> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
+<https://w3id.org/enigma#Rey_OsterriethComplexFigureTest> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#Rey_OsterriethComplexFigureTest> <http://www.w3.org/2000/01/rdf-schema#label> "Rey-Osterrieth Complex Figure Test" .
 # 
-# https://w3id.org/enigma#hasAge_Minimum
-<https://w3id.org/enigma#hasAge_Minimum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#Reys15WordTest
+<https://w3id.org/enigma#Reys15WordTest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#Reys15WordTest> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#Reys15WordTest> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
+<https://w3id.org/enigma#Reys15WordTest> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#Reys15WordTest> <http://www.w3.org/2000/01/rdf-schema#label> "Rey's 15-word Test - Immediate Recall (RIR) and Delayed Recall (RDR)" .
 # 
-# https://w3id.org/enigma#hasAge_StandardDeviation
-<https://w3id.org/enigma#hasAge_StandardDeviation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#SWCT
+<https://w3id.org/enigma#SWCT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#SWCT> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#SWCT> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
+<https://w3id.org/enigma#SWCT> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#SWCT> <http://www.w3.org/2000/01/rdf-schema#comment> "Stroop Word-Color Test" .
+<https://w3id.org/enigma#SWCT> <http://www.w3.org/2000/01/rdf-schema#label> "SWCT" .
 # 
-# https://w3id.org/enigma#hasBriefDescription
-<https://w3id.org/enigma#hasBriefDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#SentencesConstruction
+<https://w3id.org/enigma#SentencesConstruction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#SentencesConstruction> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#SentencesConstruction> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
+<https://w3id.org/enigma#SentencesConstruction> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#SentencesConstruction> <http://www.w3.org/2000/01/rdf-schema#label> "Sentences Construction" .
 # 
-# https://w3id.org/enigma#hasCohortStatus
-<https://w3id.org/enigma#hasCohortStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#TrialMakingTestA-B
+<https://w3id.org/enigma#TrialMakingTestA-B> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#TrialMakingTestA-B> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#TrialMakingTestA-B> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
+<https://w3id.org/enigma#TrialMakingTestA-B> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#TrialMakingTestA-B> <http://www.w3.org/2000/01/rdf-schema#label> "Trial Making Test A-B" .
 # 
-# https://w3id.org/enigma#hasCollectionSite
-<https://w3id.org/enigma#hasCollectionSite> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#WCST-SF
+<https://w3id.org/enigma#WCST-SF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#WCST-SF> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#WCST-SF> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
+<https://w3id.org/enigma#WCST-SF> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#WCST-SF> <http://www.w3.org/2000/01/rdf-schema#comment> "Wisconsin Card Sorting Test - Short Form" .
+<https://w3id.org/enigma#WCST-SF> <http://www.w3.org/2000/01/rdf-schema#label> "WCST-SF" .
 # 
-# https://w3id.org/enigma#hasContentUrl
-<https://w3id.org/enigma#hasContentUrl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#WordListLearningTask
+<https://w3id.org/enigma#WordListLearningTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#WordListLearningTask> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#WordListLearningTask> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
+<https://w3id.org/enigma#WordListLearningTask> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#WordListLearningTask> <http://www.w3.org/2000/01/rdf-schema#comment> "Word List Learning Task: Note the version used" .
+<https://w3id.org/enigma#WordListLearningTask> <http://www.w3.org/2000/01/rdf-schema#label> "Word List Learning Task" .
 # 
-# https://w3id.org/enigma#hasDataCollectionPeriodEnd
-<https://w3id.org/enigma#hasDataCollectionPeriodEnd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/enigma#hasDataCollectionPeriodStart
-<https://w3id.org/enigma#hasDataCollectionPeriodStart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/enigma#hasDescription
-<https://w3id.org/enigma#hasDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/enigma#hasEthnicGroup
-<https://w3id.org/enigma#hasEthnicGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/enigma#hasExclusionCriteria
-<https://w3id.org/enigma#hasExclusionCriteria> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/enigma#hasFundingSource
-<https://w3id.org/enigma#hasFundingSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/enigma#hasGroupCriteria
-<https://w3id.org/enigma#hasGroupCriteria> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/enigma#hasHomePage
-<https://w3id.org/enigma#hasHomePage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/enigma#hasName
-<https://w3id.org/enigma#hasName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/enigma#hasNumberOfFemaleSex
-<https://w3id.org/enigma#hasNumberOfFemaleSex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/enigma#hasNumberOfMaleSex
-<https://w3id.org/enigma#hasNumberOfMaleSex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/enigma#hasNumberOfParticipants
-<https://w3id.org/enigma#hasNumberOfParticipants> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/enigma#hasSpecies
-<https://w3id.org/enigma#hasSpecies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/enigma#hasStudyDesign
-<https://w3id.org/enigma#hasStudyDesign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/enigma#hasTotalNumberOfParticipants
-<https://w3id.org/enigma#hasTotalNumberOfParticipants> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/enigma#hasTransgenderFtoM
-<https://w3id.org/enigma#hasTransgenderFtoM> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/enigma#hasTransgenderMtoF
-<https://w3id.org/enigma#hasTransgenderMtoF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/enigma#isPublic
-<https://w3id.org/enigma#isPublic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/enigma#usesEncodingFormat
-<https://w3id.org/enigma#usesEncodingFormat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/enigma#usesScanner
-<https://w3id.org/enigma#usesScanner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#mildCognitiveImpairmentDiagnosis
+<https://w3id.org/enigma#mildCognitiveImpairmentDiagnosis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#mildCognitiveImpairmentDiagnosis> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#mildCognitiveImpairmentDiagnosis> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
+<https://w3id.org/enigma#mildCognitiveImpairmentDiagnosis> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#mildCognitiveImpairmentDiagnosis> <http://www.w3.org/2000/01/rdf-schema#label> "Mild Cognitive Impairment Diagnosis" .
 # 
 # 
 # 
@@ -636,6 +661,11 @@ _:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#City> <http://purl.org/vocab/vann/example> "Los Angeles"@en .
 <https://w3id.org/enigma#City> <http://www.w3.org/2000/01/rdf-schema#comment> "City in which a cohort is located"@en .
 <https://w3id.org/enigma#City> <http://www.w3.org/2000/01/rdf-schema#label> "City"@en .
+# 
+# https://w3id.org/enigma#Cognitive
+<https://w3id.org/enigma#Cognitive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#Cognitive> <http://www.w3.org/2000/01/rdf-schema#comment> "Cognitive Covariates measured by each PD cohort" .
+<https://w3id.org/enigma#Cognitive> <http://www.w3.org/2000/01/rdf-schema#label> "Cognitive" .
 # 
 # https://w3id.org/enigma#Cohort
 <https://w3id.org/enigma#Cohort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -757,6 +787,11 @@ _:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#NeurologicalDisorder> <http://purl.org/vocab/vann/example> "Epilepsy"@en .
 <https://w3id.org/enigma#NeurologicalDisorder> <http://www.w3.org/2000/01/rdf-schema#comment> "Disorders which affect the nervous system"@en .
 <https://w3id.org/enigma#NeurologicalDisorder> <http://www.w3.org/2000/01/rdf-schema#label> "Neurological Disorder"@en .
+# 
+# https://w3id.org/enigma#Neuropsychiatric
+<https://w3id.org/enigma#Neuropsychiatric> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#Neuropsychiatric> <http://www.w3.org/2000/01/rdf-schema#comment> "Neuropsychiatric Covariates measured by each cohort" .
+<https://w3id.org/enigma#Neuropsychiatric> <http://www.w3.org/2000/01/rdf-schema#label> "Neuropsychiatric" .
 # 
 # https://w3id.org/enigma#OrganicMedicalDisorder
 <https://w3id.org/enigma#OrganicMedicalDisorder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

@@ -7,7 +7,7 @@
 @base <https://w3id.org/enigma> .
 
 <https://w3id.org/enigma> rdf:type owl:Ontology ;
-                           owl:versionIRI <https://w3id.org/enigma/cohort/1.1.0> ;
+                           owl:versionIRI <https://w3id.org/enigma/pd-neuropsychiatric/1.1.0> ;
                            <http://purl.org/dc/terms/contributor> "Agnes McMahon" ,
                                                                   "MiHyun Jang" ,
                                                                   "Michael Bornstein" ,
@@ -22,10 +22,9 @@
                                                               "Yolanda Gil" ;
                            <http://purl.org/dc/terms/description> "An ontology to describe cohorts of patients participating in ENIGMA projects."@en ;
                            <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> ;
-                           <http://purl.org/dc/terms/title> "The Cohort Ontology"@en ;
+                           <http://purl.org/dc/terms/title> "The PD Neuropsychiatric Ontology"@en ;
                            <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma" ;
                            <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
-                           owl:priorVersion "https://w3id.org/enigma/cohort/1.0.0" ;
                            owl:versionInfo "v1.1.0" .
 
 #################################################################
@@ -161,6 +160,13 @@ xsd:gYear rdf:type rdfs:Datatype .
                  <http://purl.org/vocab/vann/example> "BipolarCohort hasControlGroup BipolarControlGroup"@en ;
                  rdfs:comment "Describes the control group of a cohort"@en ;
                  rdfs:label "has control group"@en .
+
+
+###  https://w3id.org/enigma#hasCovariates
+:hasCovariates rdf:type owl:ObjectProperty ;
+               rdfs:domain :Cohort ;
+               rdfs:range :Covariates ;
+               rdfs:label "has covariates" .
 
 
 ###  https://w3id.org/enigma#hasDataType
@@ -330,6 +336,14 @@ xsd:gYear rdf:type rdfs:Datatype .
                rdfs:label "has statistics"@en .
 
 
+###  https://w3id.org/enigma#has_neuropsychiatric
+:has_neuropsychiatric rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdfs:domain :Cohort ;
+                      rdfs:range :Neuropsychiatric ;
+                      rdfs:label "has neuropsychiatric" .
+
+
 ###  https://w3id.org/enigma#isPartOfCohort
 :isPartOfCohort rdf:type owl:ObjectProperty ;
                 rdfs:domain [ rdf:type owl:Class ;
@@ -400,144 +414,273 @@ xsd:gYear rdf:type rdfs:Datatype .
 #    Data properties
 #################################################################
 
-###  https://schema.org/contentUrl
-<https://schema.org/contentUrl> rdf:type owl:DatatypeProperty .
-
-
-###  https://schema.org/description
-<https://schema.org/description> rdf:type owl:DatatypeProperty .
-
-
-###  https://schema.org/encodingFormat
-<https://schema.org/encodingFormat> rdf:type owl:DatatypeProperty .
-
-
-###  https://schema.org/name
-<https://schema.org/name> rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#checksum
-:checksum rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasAdditionalDemographic
-:hasAdditionalDemographic rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasAge_Group
-:hasAge_Group rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasAge_Maximum
-:hasAge_Maximum rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasAge_Mean
-:hasAge_Mean rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasAge_Minimum
-:hasAge_Minimum rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasAge_StandardDeviation
-:hasAge_StandardDeviation rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasBriefDescription
-:hasBriefDescription rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasCohortStatus
-:hasCohortStatus rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasCollectionSite
-:hasCollectionSite rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasContentUrl
-:hasContentUrl rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasDataCollectionPeriodEnd
-:hasDataCollectionPeriodEnd rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasDataCollectionPeriodStart
-:hasDataCollectionPeriodStart rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasDescription
-:hasDescription rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasEthnicGroup
-:hasEthnicGroup rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasExclusionCriteria
-:hasExclusionCriteria rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasFundingSource
-:hasFundingSource rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasGroupCriteria
-:hasGroupCriteria rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasHomePage
-:hasHomePage rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasName
-:hasName rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasNumberOfFemaleSex
-:hasNumberOfFemaleSex rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasNumberOfMaleSex
-:hasNumberOfMaleSex rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasNumberOfParticipants
-:hasNumberOfParticipants rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasSpecies
-:hasSpecies rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasStudyDesign
-:hasStudyDesign rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasTotalNumberOfParticipants
-:hasTotalNumberOfParticipants rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasTransgenderFtoM
-:hasTransgenderFtoM rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#hasTransgenderMtoF
-:hasTransgenderMtoF rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#isPublic
-:isPublic rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#usesEncodingFormat
-:usesEncodingFormat rdf:type owl:DatatypeProperty .
-
-
-###  https://w3id.org/enigma#usesScanner
-:usesScanner rdf:type owl:DatatypeProperty .
+###  https://w3id.org/enigma#AES
+:AES rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf owl:topDataProperty ;
+     rdfs:domain :Neuropsychiatric ;
+     rdfs:range xsd:string ;
+     rdfs:comment "Apathy Evaluation Scale - 12 item scale or 18 item scale" ;
+     rdfs:label "AES" .
+
+
+###  https://w3id.org/enigma#AS
+:AS rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf owl:topDataProperty ;
+    rdfs:domain :Neuropsychiatric ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "Starkstein's Apathy Scale" ;
+    rdfs:label "AS" .
+
+
+###  https://w3id.org/enigma#BAI
+:BAI rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf owl:topDataProperty ;
+     rdfs:domain :Neuropsychiatric ;
+     rdfs:range xsd:boolean ;
+     rdfs:comment "Beck's Anxiety Index" ;
+     rdfs:label "BAI" .
+
+
+###  https://w3id.org/enigma#BDI
+:BDI rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf owl:topDataProperty ;
+     rdfs:domain :Neuropsychiatric ;
+     rdfs:range xsd:boolean ;
+     rdfs:comment "Beck's Depression Inventory" ;
+     rdfs:label "BDI" .
+
+
+###  https://w3id.org/enigma#ESS
+:ESS rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf owl:topDataProperty ;
+     rdfs:domain :Neuropsychiatric ;
+     rdfs:range xsd:boolean ;
+     rdfs:comment "Epworth Sleepiness Scale" ;
+     rdfs:label "ESS" .
+
+
+###  https://w3id.org/enigma#GDI
+:GDI rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf owl:topDataProperty ;
+     rdfs:domain :Neuropsychiatric ;
+     rdfs:range xsd:boolean ;
+     rdfs:comment "Geriatric Depression Index" ;
+     rdfs:label "GDI" .
+
+
+###  https://w3id.org/enigma#HAMA
+:HAMA rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:range xsd:boolean ;
+      rdfs:comment "Hamilton Anxiety Scale" ;
+      rdfs:label "HAMA" .
+
+
+###  https://w3id.org/enigma#HRDS
+:HRDS rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:range xsd:boolean ;
+      rdfs:comment "Hamilton Rating Scale for Depression (or HAM-D)" ;
+      rdfs:label "HRDS" .
+
+
+###  https://w3id.org/enigma#IDS
+:IDS rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf owl:topDataProperty ;
+     rdfs:domain :Neuropsychiatric ;
+     rdfs:range xsd:boolean ;
+     rdfs:comment "Inventory of Depressive Symptomology" ;
+     rdfs:label "IDS" .
+
+
+###  https://w3id.org/enigma#ISI
+:ISI rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf owl:topDataProperty ;
+     rdfs:domain :Neuropsychiatric ;
+     rdfs:range xsd:boolean ;
+     rdfs:comment "Insomnia Severity Index" ;
+     rdfs:label "ISI" .
+
+
+###  https://w3id.org/enigma#KSS
+:KSS rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf owl:topDataProperty ;
+     rdfs:domain :Neuropsychiatric ;
+     rdfs:range xsd:boolean ;
+     rdfs:comment "Karolinska Sleepiness Scale" ;
+     rdfs:label "KSS" .
+
+
+###  https://w3id.org/enigma#MADRS
+:MADRS rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdfs:domain :Neuropsychiatric ;
+       rdfs:range xsd:boolean ;
+       rdfs:comment "Montgomery-Asberg Depression Rating Scale" ;
+       rdfs:label "MADRS" .
+
+
+###  https://w3id.org/enigma#OtherNeuropsychiatricCovariates
+:OtherNeuropsychiatricCovariates rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf owl:topDataProperty ;
+                                 rdfs:domain :Neuropsychiatric ;
+                                 rdfs:range xsd:string ;
+                                 rdfs:label "Other Neuropsychiatric Covariates" .
+
+
+###  https://w3id.org/enigma#PANNS
+:PANNS rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdfs:domain :Neuropsychiatric ;
+       rdfs:range xsd:boolean ;
+       rdfs:comment "Positive and Negative Syndrome Scale" ;
+       rdfs:label "PANNS" .
+
+
+###  https://w3id.org/enigma#PAS
+:PAS rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf owl:topDataProperty ;
+     rdfs:domain :Neuropsychiatric ;
+     rdfs:range xsd:boolean ;
+     rdfs:comment "Parkinson's Anxiety Scale" ;
+     rdfs:label "PAS" .
+
+
+###  https://w3id.org/enigma#PDSS
+:PDSS rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:range xsd:boolean ;
+      rdfs:comment "Parkinson's Disease Sleep Scale" ;
+      rdfs:label "PDSS" .
+
+
+###  https://w3id.org/enigma#PPRS
+:PPRS rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:range xsd:boolean ;
+      rdfs:comment "Parkinson's Psychosis Rating Scale" ;
+      rdfs:label "PPRS" .
+
+
+###  https://w3id.org/enigma#PSQI
+:PSQI rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:range xsd:string ;
+      rdfs:comment "Pittsburgh Sleep Quality Index - Note whether you have the 7 component scores" ;
+      rdfs:label "PSQI" .
+
+
+###  https://w3id.org/enigma#QPE
+:QPE rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf owl:topDataProperty ;
+     rdfs:domain :Neuropsychiatric ;
+     rdfs:range xsd:boolean ;
+     rdfs:comment "Questionnaire for Psychotic Experiences" ;
+     rdfs:label "QPE" .
+
+
+###  https://w3id.org/enigma#QUIP-rs
+:QUIP-rs rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :Neuropsychiatric ;
+         rdfs:range xsd:boolean ;
+         rdfs:comment "Questionnaire for Impulsive-Compulsive Disorders in Parkinson's Disease–Rating Scale" ;
+         rdfs:label "QUIP-rs" .
+
+
+###  https://w3id.org/enigma#RBD1Q
+:RBD1Q rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdfs:domain :Neuropsychiatric ;
+       rdfs:range xsd:boolean ;
+       rdfs:comment "REM Sleep Behavior Disorder 1 item screener" ;
+       rdfs:label "RBD1Q" .
+
+
+###  https://w3id.org/enigma#RBDSQ
+:RBDSQ rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdfs:domain :Neuropsychiatric ;
+       rdfs:range xsd:boolean ;
+       rdfs:comment "REM Sleep Behavior Disorder Screening Questionnaire - full screener" ;
+       rdfs:label "RBDSQ" .
+
+
+###  https://w3id.org/enigma#SAPS-PD
+:SAPS-PD rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :Neuropsychiatric ;
+         rdfs:range xsd:boolean ;
+         rdfs:comment "Schedule for Assessment of Positive Symptoms - PD" ;
+         rdfs:label "SAPS-PD" .
+
+
+###  https://w3id.org/enigma#SASDQ
+:SASDQ rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdfs:domain :Neuropsychiatric ;
+       rdfs:range xsd:boolean ;
+       rdfs:comment "Sleep Apnea Scale of the Sleep Disorders Questionnaire" ;
+       rdfs:label "SASDQ" .
+
+
+###  https://w3id.org/enigma#SHAPS
+:SHAPS rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdfs:domain :Neuropsychiatric ;
+       rdfs:range xsd:boolean ;
+       rdfs:comment "Snaith Hamilton Rating Scale" ;
+       rdfs:label "SHAPS" .
+
+
+###  https://w3id.org/enigma#STAI
+:STAI rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:range xsd:boolean ;
+      rdfs:comment "State-Trait Anxiety Index" ;
+      rdfs:label "STAI" .
+
+
+###  https://w3id.org/enigma#STAXI
+:STAXI rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdfs:domain :Neuropsychiatric ;
+       rdfs:range xsd:boolean ;
+       rdfs:comment "State-Trait Anger Expression Inventory" ;
+       rdfs:label "STAXI" .
+
+
+###  https://w3id.org/enigma#TAS-20
+:TAS-20 rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdfs:domain :Neuropsychiatric ;
+        rdfs:range xsd:boolean ;
+        rdfs:comment "Toronto Alexithymia Scale" ;
+        rdfs:label "TAS-20" .
+
+
+###  https://w3id.org/enigma#UM-PDHQ
+:UM-PDHQ rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :Neuropsychiatric ;
+         rdfs:range xsd:boolean ;
+         rdfs:comment "University of Miami Parkinson's Disease Hallucinations Questionnaire" ;
+         rdfs:label "UM-PDHQ" .
+
+
+###  https://w3id.org/enigma#WOQ
+:WOQ rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf owl:topDataProperty ;
+     rdfs:domain :Neuropsychiatric ;
+     rdfs:range xsd:string ;
+     rdfs:comment "Wearing-Off Questionnaires WOQ-9, WOQ-19, WOQ-32" ;
+     rdfs:label "WOQ" .
 
 
 #################################################################
@@ -743,6 +886,12 @@ xsd:gYear rdf:type rdfs:Datatype .
                       <http://purl.org/vocab/vann/example> "Epilepsy"@en ;
                       rdfs:comment "Disorders which affect the nervous system"@en ;
                       rdfs:label "Neurological Disorder"@en .
+
+
+###  https://w3id.org/enigma#Neuropsychiatric
+:Neuropsychiatric rdf:type owl:Class ;
+                  rdfs:comment "Neuropsychiatric Covariates measured by each PD cohort" ;
+                  rdfs:label "Neuropsychiatric" .
 
 
 ###  https://w3id.org/enigma#OrganicMedicalDisorder

@@ -1,5 +1,5 @@
 <https://w3id.org/enigma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/enigma/cohort/1.1.0> .
+<https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/enigma/pd-neuropsychiatric/1.1.0> .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Agnes McMahon" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "MiHyun Jang" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Michael Bornstein" .
@@ -14,10 +14,9 @@
 <https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "Yolanda Gil" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/description> "An ontology to describe cohorts of patients participating in ENIGMA projects."@en .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> .
-<https://w3id.org/enigma> <http://purl.org/dc/terms/title> "The Cohort Ontology"@en .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/title> "The PD Neuropsychiatric Ontology"@en .
 <https://w3id.org/enigma> <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma" .
 <https://w3id.org/enigma> <http://purl.org/vocab/vann/preferredNamespaceUri> <https://w3id.org/enigma#> .
-<https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#priorVersion> "https://w3id.org/enigma/cohort/1.0.0" .
 <https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionInfo> "v1.1.0" .
 # 
 # 
@@ -179,6 +178,12 @@ _:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#hasControlGroup> <http://purl.org/vocab/vann/example> "BipolarCohort hasControlGroup BipolarControlGroup"@en .
 <https://w3id.org/enigma#hasControlGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the control group of a cohort"@en .
 <https://w3id.org/enigma#hasControlGroup> <http://www.w3.org/2000/01/rdf-schema#label> "has control group"@en .
+# 
+# https://w3id.org/enigma#hasCovariates
+<https://w3id.org/enigma#hasCovariates> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#hasCovariates> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cohort> .
+<https://w3id.org/enigma#hasCovariates> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Covariates> .
+<https://w3id.org/enigma#hasCovariates> <http://www.w3.org/2000/01/rdf-schema#label> "has covariates" .
 # 
 # https://w3id.org/enigma#hasDataType
 <https://w3id.org/enigma#hasDataType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -381,6 +386,13 @@ _:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#hasStatistics> <http://www.w3.org/2000/01/rdf-schema#comment> "Property used to link a cohort with the summary statistics that may have been  produced after applying a given protocol"@en .
 <https://w3id.org/enigma#hasStatistics> <http://www.w3.org/2000/01/rdf-schema#label> "has statistics"@en .
 # 
+# https://w3id.org/enigma#has_neuropsychiatric
+<https://w3id.org/enigma#has_neuropsychiatric> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#has_neuropsychiatric> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/enigma#has_neuropsychiatric> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cohort> .
+<https://w3id.org/enigma#has_neuropsychiatric> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#has_neuropsychiatric> <http://www.w3.org/2000/01/rdf-schema#label> "has neuropsychiatric" .
+# 
 # https://w3id.org/enigma#isPartOfCohort
 <https://w3id.org/enigma#isPartOfCohort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/enigma#isPartOfCohort> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid53 .
@@ -470,110 +482,244 @@ _:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 # #################################################################
 # 
 # 
-# https://schema.org/contentUrl
-<https://schema.org/contentUrl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#AES
+<https://w3id.org/enigma#AES> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#AES> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#AES> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#AES> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#AES> <http://www.w3.org/2000/01/rdf-schema#comment> "Apathy Evaluation Scale - 12 item scale or 18 item scale" .
+<https://w3id.org/enigma#AES> <http://www.w3.org/2000/01/rdf-schema#label> "AES" .
 # 
-# https://schema.org/description
-<https://schema.org/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#AS
+<https://w3id.org/enigma#AS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#AS> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#AS> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#AS> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#AS> <http://www.w3.org/2000/01/rdf-schema#comment> "Starkstein's Apathy Scale" .
+<https://w3id.org/enigma#AS> <http://www.w3.org/2000/01/rdf-schema#label> "AS" .
 # 
-# https://schema.org/encodingFormat
-<https://schema.org/encodingFormat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#BAI
+<https://w3id.org/enigma#BAI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#BAI> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#BAI> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#BAI> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#BAI> <http://www.w3.org/2000/01/rdf-schema#comment> "Beck's Anxiety Index" .
+<https://w3id.org/enigma#BAI> <http://www.w3.org/2000/01/rdf-schema#label> "BAI" .
 # 
-# https://schema.org/name
-<https://schema.org/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#BDI
+<https://w3id.org/enigma#BDI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#BDI> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#BDI> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#BDI> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#BDI> <http://www.w3.org/2000/01/rdf-schema#comment> "Beck's Depression Inventory" .
+<https://w3id.org/enigma#BDI> <http://www.w3.org/2000/01/rdf-schema#label> "BDI" .
 # 
-# https://w3id.org/enigma#checksum
-<https://w3id.org/enigma#checksum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#ESS
+<https://w3id.org/enigma#ESS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#ESS> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#ESS> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#ESS> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#ESS> <http://www.w3.org/2000/01/rdf-schema#comment> "Epworth Sleepiness Scale" .
+<https://w3id.org/enigma#ESS> <http://www.w3.org/2000/01/rdf-schema#label> "ESS" .
 # 
-# https://w3id.org/enigma#hasAdditionalDemographic
-<https://w3id.org/enigma#hasAdditionalDemographic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#GDI
+<https://w3id.org/enigma#GDI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#GDI> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#GDI> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#GDI> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#GDI> <http://www.w3.org/2000/01/rdf-schema#comment> "Geriatric Depression Index" .
+<https://w3id.org/enigma#GDI> <http://www.w3.org/2000/01/rdf-schema#label> "GDI" .
 # 
-# https://w3id.org/enigma#hasAge_Group
-<https://w3id.org/enigma#hasAge_Group> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#HAMA
+<https://w3id.org/enigma#HAMA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#HAMA> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#HAMA> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#HAMA> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#HAMA> <http://www.w3.org/2000/01/rdf-schema#comment> "Hamilton Anxiety Scale" .
+<https://w3id.org/enigma#HAMA> <http://www.w3.org/2000/01/rdf-schema#label> "HAMA" .
 # 
-# https://w3id.org/enigma#hasAge_Maximum
-<https://w3id.org/enigma#hasAge_Maximum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#HRDS
+<https://w3id.org/enigma#HRDS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#HRDS> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#HRDS> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#HRDS> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#HRDS> <http://www.w3.org/2000/01/rdf-schema#comment> "Hamilton Rating Scale for Depression (or HAM-D)" .
+<https://w3id.org/enigma#HRDS> <http://www.w3.org/2000/01/rdf-schema#label> "HRDS" .
 # 
-# https://w3id.org/enigma#hasAge_Mean
-<https://w3id.org/enigma#hasAge_Mean> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#IDS
+<https://w3id.org/enigma#IDS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#IDS> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#IDS> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#IDS> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#IDS> <http://www.w3.org/2000/01/rdf-schema#comment> "Inventory of Depressive Symptomology" .
+<https://w3id.org/enigma#IDS> <http://www.w3.org/2000/01/rdf-schema#label> "IDS" .
 # 
-# https://w3id.org/enigma#hasAge_Minimum
-<https://w3id.org/enigma#hasAge_Minimum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#ISI
+<https://w3id.org/enigma#ISI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#ISI> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#ISI> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#ISI> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#ISI> <http://www.w3.org/2000/01/rdf-schema#comment> "Insomnia Severity Index" .
+<https://w3id.org/enigma#ISI> <http://www.w3.org/2000/01/rdf-schema#label> "ISI" .
 # 
-# https://w3id.org/enigma#hasAge_StandardDeviation
-<https://w3id.org/enigma#hasAge_StandardDeviation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#KSS
+<https://w3id.org/enigma#KSS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#KSS> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#KSS> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#KSS> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#KSS> <http://www.w3.org/2000/01/rdf-schema#comment> "Karolinska Sleepiness Scale" .
+<https://w3id.org/enigma#KSS> <http://www.w3.org/2000/01/rdf-schema#label> "KSS" .
 # 
-# https://w3id.org/enigma#hasBriefDescription
-<https://w3id.org/enigma#hasBriefDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#MADRS
+<https://w3id.org/enigma#MADRS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#MADRS> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#MADRS> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#MADRS> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#MADRS> <http://www.w3.org/2000/01/rdf-schema#comment> "Montgomery-Asberg Depression Rating Scale" .
+<https://w3id.org/enigma#MADRS> <http://www.w3.org/2000/01/rdf-schema#label> "MADRS" .
 # 
-# https://w3id.org/enigma#hasCohortStatus
-<https://w3id.org/enigma#hasCohortStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#OtherNeuropsychiatricCovariates
+<https://w3id.org/enigma#OtherNeuropsychiatricCovariates> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#OtherNeuropsychiatricCovariates> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#OtherNeuropsychiatricCovariates> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#OtherNeuropsychiatricCovariates> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#OtherNeuropsychiatricCovariates> <http://www.w3.org/2000/01/rdf-schema#label> "Other Neuropsychiatric Covariates" .
 # 
-# https://w3id.org/enigma#hasCollectionSite
-<https://w3id.org/enigma#hasCollectionSite> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#PANNS
+<https://w3id.org/enigma#PANNS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#PANNS> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#PANNS> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#PANNS> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#PANNS> <http://www.w3.org/2000/01/rdf-schema#comment> "Positive and Negative Syndrome Scale" .
+<https://w3id.org/enigma#PANNS> <http://www.w3.org/2000/01/rdf-schema#label> "PANNS" .
 # 
-# https://w3id.org/enigma#hasContentUrl
-<https://w3id.org/enigma#hasContentUrl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#PAS
+<https://w3id.org/enigma#PAS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#PAS> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#PAS> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#PAS> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#PAS> <http://www.w3.org/2000/01/rdf-schema#comment> "Parkinson's Anxiety Scale" .
+<https://w3id.org/enigma#PAS> <http://www.w3.org/2000/01/rdf-schema#label> "PAS" .
 # 
-# https://w3id.org/enigma#hasDataCollectionPeriodEnd
-<https://w3id.org/enigma#hasDataCollectionPeriodEnd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#PDSS
+<https://w3id.org/enigma#PDSS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#PDSS> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#PDSS> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#PDSS> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#PDSS> <http://www.w3.org/2000/01/rdf-schema#comment> "Parkinson's Disease Sleep Scale" .
+<https://w3id.org/enigma#PDSS> <http://www.w3.org/2000/01/rdf-schema#label> "PDSS" .
 # 
-# https://w3id.org/enigma#hasDataCollectionPeriodStart
-<https://w3id.org/enigma#hasDataCollectionPeriodStart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#PPRS
+<https://w3id.org/enigma#PPRS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#PPRS> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#PPRS> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#PPRS> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#PPRS> <http://www.w3.org/2000/01/rdf-schema#comment> "Parkinson's Psychosis Rating Scale" .
+<https://w3id.org/enigma#PPRS> <http://www.w3.org/2000/01/rdf-schema#label> "PPRS" .
 # 
-# https://w3id.org/enigma#hasDescription
-<https://w3id.org/enigma#hasDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#PSQI
+<https://w3id.org/enigma#PSQI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#PSQI> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#PSQI> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#PSQI> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#PSQI> <http://www.w3.org/2000/01/rdf-schema#comment> "Pittsburgh Sleep Quality Index - Note whether you have the 7 component scores" .
+<https://w3id.org/enigma#PSQI> <http://www.w3.org/2000/01/rdf-schema#label> "PSQI" .
 # 
-# https://w3id.org/enigma#hasEthnicGroup
-<https://w3id.org/enigma#hasEthnicGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#QPE
+<https://w3id.org/enigma#QPE> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#QPE> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#QPE> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#QPE> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#QPE> <http://www.w3.org/2000/01/rdf-schema#comment> "Questionnaire for Psychotic Experiences" .
+<https://w3id.org/enigma#QPE> <http://www.w3.org/2000/01/rdf-schema#label> "QPE" .
 # 
-# https://w3id.org/enigma#hasExclusionCriteria
-<https://w3id.org/enigma#hasExclusionCriteria> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#QUIP-rs
+<https://w3id.org/enigma#QUIP-rs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#QUIP-rs> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#QUIP-rs> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#QUIP-rs> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#QUIP-rs> <http://www.w3.org/2000/01/rdf-schema#comment> "Questionnaire for Impulsive-Compulsive Disorders in Parkinson's Disease–Rating Scale" .
+<https://w3id.org/enigma#QUIP-rs> <http://www.w3.org/2000/01/rdf-schema#label> "QUIP-rs" .
 # 
-# https://w3id.org/enigma#hasFundingSource
-<https://w3id.org/enigma#hasFundingSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#RBD1Q
+<https://w3id.org/enigma#RBD1Q> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#RBD1Q> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#RBD1Q> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#RBD1Q> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#RBD1Q> <http://www.w3.org/2000/01/rdf-schema#comment> "REM Sleep Behavior Disorder 1 item screener" .
+<https://w3id.org/enigma#RBD1Q> <http://www.w3.org/2000/01/rdf-schema#label> "RBD1Q" .
 # 
-# https://w3id.org/enigma#hasGroupCriteria
-<https://w3id.org/enigma#hasGroupCriteria> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#RBDSQ
+<https://w3id.org/enigma#RBDSQ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#RBDSQ> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#RBDSQ> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#RBDSQ> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#RBDSQ> <http://www.w3.org/2000/01/rdf-schema#comment> "REM Sleep Behavior Disorder Screening Questionnaire - full screener" .
+<https://w3id.org/enigma#RBDSQ> <http://www.w3.org/2000/01/rdf-schema#label> "RBDSQ" .
 # 
-# https://w3id.org/enigma#hasHomePage
-<https://w3id.org/enigma#hasHomePage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#SAPS-PD
+<https://w3id.org/enigma#SAPS-PD> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#SAPS-PD> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#SAPS-PD> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#SAPS-PD> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#SAPS-PD> <http://www.w3.org/2000/01/rdf-schema#comment> "Schedule for Assessment of Positive Symptoms - PD" .
+<https://w3id.org/enigma#SAPS-PD> <http://www.w3.org/2000/01/rdf-schema#label> "SAPS-PD" .
 # 
-# https://w3id.org/enigma#hasName
-<https://w3id.org/enigma#hasName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#SASDQ
+<https://w3id.org/enigma#SASDQ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#SASDQ> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#SASDQ> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#SASDQ> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#SASDQ> <http://www.w3.org/2000/01/rdf-schema#comment> "Sleep Apnea Scale of the Sleep Disorders Questionnaire" .
+<https://w3id.org/enigma#SASDQ> <http://www.w3.org/2000/01/rdf-schema#label> "SASDQ" .
 # 
-# https://w3id.org/enigma#hasNumberOfFemaleSex
-<https://w3id.org/enigma#hasNumberOfFemaleSex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#SHAPS
+<https://w3id.org/enigma#SHAPS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#SHAPS> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#SHAPS> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#SHAPS> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#SHAPS> <http://www.w3.org/2000/01/rdf-schema#comment> "Snaith Hamilton Rating Scale" .
+<https://w3id.org/enigma#SHAPS> <http://www.w3.org/2000/01/rdf-schema#label> "SHAPS" .
 # 
-# https://w3id.org/enigma#hasNumberOfMaleSex
-<https://w3id.org/enigma#hasNumberOfMaleSex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#STAI
+<https://w3id.org/enigma#STAI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#STAI> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#STAI> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#STAI> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#STAI> <http://www.w3.org/2000/01/rdf-schema#comment> "State-Trait Anxiety Index" .
+<https://w3id.org/enigma#STAI> <http://www.w3.org/2000/01/rdf-schema#label> "STAI" .
 # 
-# https://w3id.org/enigma#hasNumberOfParticipants
-<https://w3id.org/enigma#hasNumberOfParticipants> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#STAXI
+<https://w3id.org/enigma#STAXI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#STAXI> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#STAXI> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#STAXI> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#STAXI> <http://www.w3.org/2000/01/rdf-schema#comment> "State-Trait Anger Expression Inventory" .
+<https://w3id.org/enigma#STAXI> <http://www.w3.org/2000/01/rdf-schema#label> "STAXI" .
 # 
-# https://w3id.org/enigma#hasSpecies
-<https://w3id.org/enigma#hasSpecies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#TAS-20
+<https://w3id.org/enigma#TAS-20> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#TAS-20> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#TAS-20> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#TAS-20> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#TAS-20> <http://www.w3.org/2000/01/rdf-schema#comment> "Toronto Alexithymia Scale" .
+<https://w3id.org/enigma#TAS-20> <http://www.w3.org/2000/01/rdf-schema#label> "TAS-20" .
 # 
-# https://w3id.org/enigma#hasStudyDesign
-<https://w3id.org/enigma#hasStudyDesign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#UM-PDHQ
+<https://w3id.org/enigma#UM-PDHQ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#UM-PDHQ> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#UM-PDHQ> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#UM-PDHQ> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#UM-PDHQ> <http://www.w3.org/2000/01/rdf-schema#comment> "University of Miami Parkinson's Disease Hallucinations Questionnaire" .
+<https://w3id.org/enigma#UM-PDHQ> <http://www.w3.org/2000/01/rdf-schema#label> "UM-PDHQ" .
 # 
-# https://w3id.org/enigma#hasTotalNumberOfParticipants
-<https://w3id.org/enigma#hasTotalNumberOfParticipants> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/enigma#hasTransgenderFtoM
-<https://w3id.org/enigma#hasTransgenderFtoM> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/enigma#hasTransgenderMtoF
-<https://w3id.org/enigma#hasTransgenderMtoF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/enigma#isPublic
-<https://w3id.org/enigma#isPublic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/enigma#usesEncodingFormat
-<https://w3id.org/enigma#usesEncodingFormat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# https://w3id.org/enigma#usesScanner
-<https://w3id.org/enigma#usesScanner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#WOQ
+<https://w3id.org/enigma#WOQ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#WOQ> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#WOQ> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
+<https://w3id.org/enigma#WOQ> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#WOQ> <http://www.w3.org/2000/01/rdf-schema#comment> "Wearing-Off Questionnaires WOQ-9, WOQ-19, WOQ-32" .
+<https://w3id.org/enigma#WOQ> <http://www.w3.org/2000/01/rdf-schema#label> "WOQ" .
 # 
 # 
 # 
@@ -757,6 +903,11 @@ _:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#NeurologicalDisorder> <http://purl.org/vocab/vann/example> "Epilepsy"@en .
 <https://w3id.org/enigma#NeurologicalDisorder> <http://www.w3.org/2000/01/rdf-schema#comment> "Disorders which affect the nervous system"@en .
 <https://w3id.org/enigma#NeurologicalDisorder> <http://www.w3.org/2000/01/rdf-schema#label> "Neurological Disorder"@en .
+# 
+# https://w3id.org/enigma#Neuropsychiatric
+<https://w3id.org/enigma#Neuropsychiatric> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#Neuropsychiatric> <http://www.w3.org/2000/01/rdf-schema#comment> "Neuropsychiatric Covariates measured by each PD cohort" .
+<https://w3id.org/enigma#Neuropsychiatric> <http://www.w3.org/2000/01/rdf-schema#label> "Neuropsychiatric" .
 # 
 # https://w3id.org/enigma#OrganicMedicalDisorder
 <https://w3id.org/enigma#OrganicMedicalDisorder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

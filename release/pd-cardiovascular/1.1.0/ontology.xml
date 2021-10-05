@@ -10,7 +10,7 @@
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/enigma">
-        <owl:versionIRI rdf:resource="https://w3id.org/enigma/cohort/1.1.0"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/enigma/pd-cardiovascular/1.1.0"/>
         <terms:contributor>Agnes McMahon</terms:contributor>
         <terms:contributor>MiHyun Jang</terms:contributor>
         <terms:contributor>Michael Bornstein</terms:contributor>
@@ -25,10 +25,9 @@
         <terms:creator>Yolanda Gil</terms:creator>
         <terms:description xml:lang="en">An ontology to describe cohorts of patients participating in ENIGMA projects.</terms:description>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
-        <terms:title xml:lang="en">The Cohort Ontology</terms:title>
+        <terms:title xml:lang="en">The PD Cardiovascular Ontology</terms:title>
         <vann:preferredNamespacePrefix>enigma</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:resource="https://w3id.org/enigma#"/>
-        <owl:priorVersion>https://w3id.org/enigma/cohort/1.0.0</owl:priorVersion>
         <owl:versionInfo>v1.1.0</owl:versionInfo>
     </owl:Ontology>
     
@@ -262,6 +261,17 @@
         <vann:example xml:lang="en">BipolarCohort hasControlGroup BipolarControlGroup</vann:example>
         <rdfs:comment xml:lang="en">Describes the control group of a cohort</rdfs:comment>
         <rdfs:label xml:lang="en">has control group</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasCovariates -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasCovariates">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Covariates"/>
+        <rdfs:label>has covariates</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -516,6 +526,18 @@
     
 
 
+    <!-- https://w3id.org/enigma#has_neuropsychiatric -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#has_neuropsychiatric">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Neuropsychiatric"/>
+        <rdfs:label>has neuropsychiatric</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/enigma#isPartOfCohort -->
 
 
@@ -630,248 +652,232 @@
     
 
 
-    <!-- https://schema.org/contentUrl -->
+    <!-- https://w3id.org/enigma#AlcoholConsumption -->
 
 
-    <owl:DatatypeProperty rdf:about="https://schema.org/contentUrl"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#AlcoholConsumption">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cardiovascular"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Include info on how this was measured</rdfs:comment>
+        <rdfs:label>Alcohol Consumption</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://schema.org/description -->
+    <!-- https://w3id.org/enigma#AtrialFibrillation -->
 
 
-    <owl:DatatypeProperty rdf:about="https://schema.org/description"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#AtrialFibrillation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cardiovascular"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Atrial Fibrillation: irregular (and often rapid) heart rate caused by poor blood flow that can cause blood clots, strokes, etc.</rdfs:comment>
+        <rdfs:label>Atrial Fibrillation</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://schema.org/encodingFormat -->
+    <!-- https://w3id.org/enigma#BodyMassIndex -->
 
 
-    <owl:DatatypeProperty rdf:about="https://schema.org/encodingFormat"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#BodyMassIndex">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cardiovascular"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label>Body Mass Index</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://schema.org/name -->
+    <!-- https://w3id.org/enigma#CoagulationScreenPerformed -->
 
 
-    <owl:DatatypeProperty rdf:about="https://schema.org/name"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#CoagulationScreenPerformed">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cardiovascular"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label>Coagulation Screen Performed</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#checksum -->
+    <!-- https://w3id.org/enigma#Diabetes -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#checksum"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#Diabetes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cardiovascular"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label>Diabetes</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasAdditionalDemographic -->
+    <!-- https://w3id.org/enigma#FamilyHistoryOfCVDisease -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasAdditionalDemographic"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#FamilyHistoryOfCVDisease">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cardiovascular"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>CV: Cardiovascular Disease</rdfs:comment>
+        <rdfs:label>Family History of CV Disease</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasAge_Group -->
+    <!-- https://w3id.org/enigma#HeartRate -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasAge_Group"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#HeartRate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cardiovascular"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label>Heart Rate</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasAge_Maximum -->
+    <!-- https://w3id.org/enigma#HistoryOfIschamicHeartDisease -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasAge_Maximum"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#HistoryOfIschamicHeartDisease">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cardiovascular"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Ischamic Heart Disease: aka Coronary Heart Disease, heart problems caused by narrowed arteries that supply blood to the heart</rdfs:comment>
+        <rdfs:label>History of Ischamic Heart Disease</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasAge_Mean -->
+    <!-- https://w3id.org/enigma#HistoryOfStrokeOrTransientIschaemicAttack -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasAge_Mean"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#HistoryOfStrokeOrTransientIschaemicAttack">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cardiovascular"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Transient Ischaemic Attack: A &quot;mini stroke&quot; with minor stroke symptoms</rdfs:comment>
+        <rdfs:label>History of Stroke or Transient Ischaemic Attack</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasAge_Minimum -->
+    <!-- https://w3id.org/enigma#Hyperlipidaemia -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasAge_Minimum"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#Hyperlipidaemia">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cardiovascular"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Hyperlipidaemia: High levels of lipids/cholesterol/fats in the blood</rdfs:comment>
+        <rdfs:label>Hyperlipidaemia</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasAge_StandardDeviation -->
+    <!-- https://w3id.org/enigma#Hypertension -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasAge_StandardDeviation"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#Hypertension">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cardiovascular"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Hypertension: high blood pressure</rdfs:comment>
+        <rdfs:label>Hypertension</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasBriefDescription -->
+    <!-- https://w3id.org/enigma#OrthostaticHypertension -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasBriefDescription"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#OrthostaticHypertension">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cardiovascular"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Orthostatic Hypertension: an increase in blood pressure upon assuming an upright position</rdfs:comment>
+        <rdfs:label>Orthostatic Hypertension</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasCohortStatus -->
+    <!-- https://w3id.org/enigma#OtherRelevantCardiovascularMedications -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasCohortStatus"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#OtherRelevantCardiovascularMedications">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cardiovascular"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>e.g. antihypertensives, cholesterol lowering drugs, aspirin, steriods</rdfs:comment>
+        <rdfs:label>Other Relevant Cardiovascular Medications</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasCollectionSite -->
+    <!-- https://w3id.org/enigma#OtherRelevantDiagnoses -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasCollectionSite"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#OtherRelevantDiagnoses">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cardiovascular"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>e.g. chronic kidney disease and stage, migraines, arthritis, lupus</rdfs:comment>
+        <rdfs:label>Other Relevant Diagnoses</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasContentUrl -->
+    <!-- https://w3id.org/enigma#Smoking -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasContentUrl"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#Smoking">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cardiovascular"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label>Smoking</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasDataCollectionPeriodEnd -->
+    <!-- https://w3id.org/enigma#SmokingPackYears -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasDataCollectionPeriodEnd"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#SmokingPackYears">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cardiovascular"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>A &quot;pack year&quot; is defined as twenty cigarettes smoked everyday for one year</rdfs:comment>
+        <rdfs:label>Smoking Pack Years</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasDataCollectionPeriodStart -->
+    <!-- https://w3id.org/enigma#StandingBloodPressure -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasDataCollectionPeriodStart"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#StandingBloodPressure">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cardiovascular"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Standing blood pressure after standing for 3 minutes</rdfs:comment>
+        <rdfs:label>Standing Blood Pressure</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasDescription -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasDescription"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasEthnicGroup -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasEthnicGroup"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasExclusionCriteria -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasExclusionCriteria"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasFundingSource -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasFundingSource"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasGroupCriteria -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasGroupCriteria"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasHomePage -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasHomePage"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasName -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasName"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasNumberOfFemaleSex -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfFemaleSex"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasNumberOfMaleSex -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfMaleSex"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasNumberOfParticipants -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfParticipants"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasSpecies -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasSpecies"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasStudyDesign -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasStudyDesign"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasTotalNumberOfParticipants -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasTotalNumberOfParticipants"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasTransgenderFtoM -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasTransgenderFtoM"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasTransgenderMtoF -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasTransgenderMtoF"/>
-    
-
-
-    <!-- https://w3id.org/enigma#isPublic -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#isPublic"/>
-    
-
-
-    <!-- https://w3id.org/enigma#usesEncodingFormat -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#usesEncodingFormat"/>
-    
-
-
-    <!-- https://w3id.org/enigma#usesScanner -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#usesScanner"/>
+    <!-- https://w3id.org/enigma#SupineBloodPressure -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#SupineBloodPressure">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cardiovascular"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Supine blood pressure after resting for at least 5 minutes</rdfs:comment>
+        <rdfs:label>Supine Blood Pressure</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
@@ -944,6 +950,16 @@
     
 
 
+    <!-- https://w3id.org/enigma#Cardiovascular -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#Cardiovascular">
+        <rdfs:comment>Cardiovascular Covariates measured by each PD cohort</rdfs:comment>
+        <rdfs:label>Cardiovascular</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/enigma#CardiovascularDisorder -->
 
 
@@ -976,6 +992,16 @@
         <vann:example xml:lang="en">Los Angeles</vann:example>
         <rdfs:comment xml:lang="en">City in which a cohort is located</rdfs:comment>
         <rdfs:label xml:lang="en">City</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#Cognitive -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#Cognitive">
+        <rdfs:comment>Cognitive Covariates measured by each PD cohort</rdfs:comment>
+        <rdfs:label>Cognitive</rdfs:label>
     </owl:Class>
     
 
@@ -1192,6 +1218,16 @@
         <vann:example xml:lang="en">Epilepsy</vann:example>
         <rdfs:comment xml:lang="en">Disorders which affect the nervous system</rdfs:comment>
         <rdfs:label xml:lang="en">Neurological Disorder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#Neuropsychiatric -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#Neuropsychiatric">
+        <rdfs:comment>Neuropsychiatric Covariates measured by each cohort</rdfs:comment>
+        <rdfs:label>Neuropsychiatric</rdfs:label>
     </owl:Class>
     
 

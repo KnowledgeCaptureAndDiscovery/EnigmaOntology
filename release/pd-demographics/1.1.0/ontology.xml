@@ -10,7 +10,7 @@
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/enigma">
-        <owl:versionIRI rdf:resource="https://w3id.org/enigma/cohort/1.1.0"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/enigma/pd-demographics/1.1.0"/>
         <terms:contributor>Agnes McMahon</terms:contributor>
         <terms:contributor>MiHyun Jang</terms:contributor>
         <terms:contributor>Michael Bornstein</terms:contributor>
@@ -25,10 +25,9 @@
         <terms:creator>Yolanda Gil</terms:creator>
         <terms:description xml:lang="en">An ontology to describe cohorts of patients participating in ENIGMA projects.</terms:description>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
-        <terms:title xml:lang="en">The Cohort Ontology</terms:title>
+        <terms:title xml:lang="en">The PD Demographics Ontology</terms:title>
         <vann:preferredNamespacePrefix>enigma</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:resource="https://w3id.org/enigma#"/>
-        <owl:priorVersion>https://w3id.org/enigma/cohort/1.0.0</owl:priorVersion>
         <owl:versionInfo>v1.1.0</owl:versionInfo>
     </owl:Ontology>
     
@@ -262,6 +261,17 @@
         <vann:example xml:lang="en">BipolarCohort hasControlGroup BipolarControlGroup</vann:example>
         <rdfs:comment xml:lang="en">Describes the control group of a cohort</rdfs:comment>
         <rdfs:label xml:lang="en">has control group</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasCovariates -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasCovariates">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Covariates"/>
+        <rdfs:label>has covariates</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -516,6 +526,18 @@
     
 
 
+    <!-- https://w3id.org/enigma#has_neuropsychiatric -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#has_neuropsychiatric">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Neuropsychiatric"/>
+        <rdfs:label>has neuropsychiatric</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/enigma#isPartOfCohort -->
 
 
@@ -630,248 +652,201 @@
     
 
 
-    <!-- https://schema.org/contentUrl -->
+    <!-- https://w3id.org/enigma#AES -->
 
 
-    <owl:DatatypeProperty rdf:about="https://schema.org/contentUrl"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#AES">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Neuropsychiatric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Apathy Evaluation Scale - 12 item scale or 18 item scale</rdfs:comment>
+        <rdfs:label>AES</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://schema.org/description -->
+    <!-- https://w3id.org/enigma#DigitSpanBackward -->
 
 
-    <owl:DatatypeProperty rdf:about="https://schema.org/description"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#DigitSpanBackward">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cognitive"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label>Digit Span Backward</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://schema.org/encodingFormat -->
+    <!-- https://w3id.org/enigma#DigitSpanForward -->
 
 
-    <owl:DatatypeProperty rdf:about="https://schema.org/encodingFormat"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#DigitSpanForward">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cognitive"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label>Digit Span Forward</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://schema.org/name -->
+    <!-- https://w3id.org/enigma#MMSE -->
 
 
-    <owl:DatatypeProperty rdf:about="https://schema.org/name"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#MMSE">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cognitive"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Mini Mental State Exam</rdfs:comment>
+        <rdfs:label>MMSE</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#checksum -->
+    <!-- https://w3id.org/enigma#MoCA -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#checksum"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#MoCA">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cognitive"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Montreal Cognitive Assessment</rdfs:comment>
+        <rdfs:label>MoCA</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasAdditionalDemographic -->
+    <!-- https://w3id.org/enigma#OtherCognitiveCovariates -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasAdditionalDemographic"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#OtherCognitiveCovariates">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cognitive"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>Other Cognitive Covariates</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasAge_Group -->
+    <!-- https://w3id.org/enigma#PD_DementiaDiagnosis -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasAge_Group"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#PD_DementiaDiagnosis">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cognitive"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label>PD Dementia Diagnosis</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasAge_Maximum -->
+    <!-- https://w3id.org/enigma#PhonologicalAndSemanticVerbalFluencyTest -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasAge_Maximum"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#PhonologicalAndSemanticVerbalFluencyTest">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cognitive"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label>Phonological (PVF) and Semantic (SVF) Verbal Fluency Test</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasAge_Mean -->
+    <!-- https://w3id.org/enigma#Rey_OsterriethComplexFigureTest -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasAge_Mean"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#Rey_OsterriethComplexFigureTest">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cognitive"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label>Rey-Osterrieth Complex Figure Test</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasAge_Minimum -->
+    <!-- https://w3id.org/enigma#Reys15WordTest -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasAge_Minimum"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#Reys15WordTest">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cognitive"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label>Rey&apos;s 15-word Test - Immediate Recall (RIR) and Delayed Recall (RDR)</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasAge_StandardDeviation -->
+    <!-- https://w3id.org/enigma#SWCT -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasAge_StandardDeviation"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#SWCT">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cognitive"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Stroop Word-Color Test</rdfs:comment>
+        <rdfs:label>SWCT</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasBriefDescription -->
+    <!-- https://w3id.org/enigma#SentencesConstruction -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasBriefDescription"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#SentencesConstruction">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cognitive"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label>Sentences Construction</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasCohortStatus -->
+    <!-- https://w3id.org/enigma#TrialMakingTestA-B -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasCohortStatus"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#TrialMakingTestA-B">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cognitive"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label>Trial Making Test A-B</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasCollectionSite -->
+    <!-- https://w3id.org/enigma#WCST-SF -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasCollectionSite"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#WCST-SF">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cognitive"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Wisconsin Card Sorting Test - Short Form</rdfs:comment>
+        <rdfs:label>WCST-SF</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasContentUrl -->
+    <!-- https://w3id.org/enigma#WordListLearningTask -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasContentUrl"/>
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#WordListLearningTask">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cognitive"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Word List Learning Task: Note the version used</rdfs:comment>
+        <rdfs:label>Word List Learning Task</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
-    <!-- https://w3id.org/enigma#hasDataCollectionPeriodEnd -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasDataCollectionPeriodEnd"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasDataCollectionPeriodStart -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasDataCollectionPeriodStart"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasDescription -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasDescription"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasEthnicGroup -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasEthnicGroup"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasExclusionCriteria -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasExclusionCriteria"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasFundingSource -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasFundingSource"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasGroupCriteria -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasGroupCriteria"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasHomePage -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasHomePage"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasName -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasName"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasNumberOfFemaleSex -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfFemaleSex"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasNumberOfMaleSex -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfMaleSex"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasNumberOfParticipants -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfParticipants"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasSpecies -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasSpecies"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasStudyDesign -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasStudyDesign"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasTotalNumberOfParticipants -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasTotalNumberOfParticipants"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasTransgenderFtoM -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasTransgenderFtoM"/>
-    
-
-
-    <!-- https://w3id.org/enigma#hasTransgenderMtoF -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasTransgenderMtoF"/>
-    
-
-
-    <!-- https://w3id.org/enigma#isPublic -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#isPublic"/>
-    
-
-
-    <!-- https://w3id.org/enigma#usesEncodingFormat -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#usesEncodingFormat"/>
-    
-
-
-    <!-- https://w3id.org/enigma#usesScanner -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#usesScanner"/>
+    <!-- https://w3id.org/enigma#mildCognitiveImpairmentDiagnosis -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#mildCognitiveImpairmentDiagnosis">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cognitive"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label>Mild Cognitive Impairment Diagnosis</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
@@ -976,6 +951,16 @@
         <vann:example xml:lang="en">Los Angeles</vann:example>
         <rdfs:comment xml:lang="en">City in which a cohort is located</rdfs:comment>
         <rdfs:label xml:lang="en">City</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#Cognitive -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#Cognitive">
+        <rdfs:comment>Cognitive Covariates measured by each PD cohort</rdfs:comment>
+        <rdfs:label>Cognitive</rdfs:label>
     </owl:Class>
     
 
@@ -1192,6 +1177,16 @@
         <vann:example xml:lang="en">Epilepsy</vann:example>
         <rdfs:comment xml:lang="en">Disorders which affect the nervous system</rdfs:comment>
         <rdfs:label xml:lang="en">Neurological Disorder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#Neuropsychiatric -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#Neuropsychiatric">
+        <rdfs:comment>Neuropsychiatric Covariates measured by each cohort</rdfs:comment>
+        <rdfs:label>Neuropsychiatric</rdfs:label>
     </owl:Class>
     
 
