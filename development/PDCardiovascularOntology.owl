@@ -10,7 +10,7 @@
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/enigma">
-        <owl:versionIRI rdf:resource="https://w3id.org/enigma/pd-cardiovascular/1.1.0"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/enigma/cohort/1.1.0"/>
         <terms:contributor>Agnes McMahon</terms:contributor>
         <terms:contributor>MiHyun Jang</terms:contributor>
         <terms:contributor>Michael Bornstein</terms:contributor>
@@ -25,9 +25,10 @@
         <terms:creator>Yolanda Gil</terms:creator>
         <terms:description xml:lang="en">An ontology to describe cohorts of patients participating in ENIGMA projects.</terms:description>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
-        <terms:title xml:lang="en">The PD Cardiovascular Ontology</terms:title>
+        <terms:title xml:lang="en">The Cohort Ontology</terms:title>
         <vann:preferredNamespacePrefix>enigma</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:resource="https://w3id.org/enigma#"/>
+        <owl:priorVersion>https://w3id.org/enigma/cohort/1.0.0</owl:priorVersion>
         <owl:versionInfo>v1.1.0</owl:versionInfo>
     </owl:Ontology>
     
@@ -487,6 +488,18 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#Dataset"/>
         <rdfs:comment xml:lang="en">Property used to link a cohort with the summary statistics that may have been  produced after applying a given protocol</rdfs:comment>
         <rdfs:label xml:lang="en">has statistics</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#has_cardiovascular -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#has_cardiovascular">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Cardiovascular"/>
+        <rdfs:comment>Describes cardiovascular covariate properties specific to the PD working group</rdfs:comment>
+        <rdfs:label>has cardiovascular</rdfs:label>
     </owl:ObjectProperty>
     
 
