@@ -496,6 +496,8 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#has_PD_Demographics">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#PDDemographics"/>
         <rdfs:comment>Describes demographics properties specific to the PD working group</rdfs:comment>
         <rdfs:label>has PD demographics</rdfs:label>
     </owl:ObjectProperty>
@@ -1120,6 +1122,15 @@
         <vann:example xml:lang="en">Delirium</vann:example>
         <rdfs:comment xml:lang="en">Disorder characterized by decreased mental function due to a medical or physical disease</rdfs:comment>
         <rdfs:label xml:lang="en">Organic Medical Disorder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#PDDemographics -->
+
+    <owl:Class rdf:about="https://w3id.org/enigma#PDDemographics">
+        <rdfs:comment>PD-specific demographic Covariates measured by each cohort</rdfs:comment>
+        <rdfs:label>PD Demographics</rdfs:label>
     </owl:Class>
     
 
