@@ -95,6 +95,9 @@ This section provides details for each class and property defined by The PD Demo
          <a href="#OrganicMedicalDisorder" title="https://w3id.org/enigma#OrganicMedicalDisorder">Organic Medical Disorder</a>
       </li>
       <li>
+         <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+      </li>
+      <li>
          <a href="#Person" title="https://w3id.org/enigma#Person">Person</a>
       </li>
       <li>
@@ -279,30 +282,6 @@ This section provides details for each class and property defined by The PD Demo
       <div class="comment">
          <span class="markdown">Cognitive Covariates measured by each PD cohort</span>
       </div>
-      <dl class="description">
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#DigitSpanBackward" title="https://w3id.org/enigma#DigitSpanBackward">Digit Span Backward</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#DigitSpanForward" title="https://w3id.org/enigma#DigitSpanForward">Digit Span Forward</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#MMSE" title="https://w3id.org/enigma#MMSE">MMSE</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#mildCognitiveImpairmentDiagnosis"
-               title="https://w3id.org/enigma#mildCognitiveImpairmentDiagnosis">Mild Cognitive Impairment Diagnosis</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#MoCA" title="https://w3id.org/enigma#MoCA">MoCA</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#OtherCognitiveCovariates" title="https://w3id.org/enigma#OtherCognitiveCovariates">Other Cognitive Covariates</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#PD_DementiaDiagnosis" title="https://w3id.org/enigma#PD_DementiaDiagnosis">PD Dementia Diagnosis</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#PhonologicalAndSemanticVerbalFluencyTest"
-               title="https://w3id.org/enigma#PhonologicalAndSemanticVerbalFluencyTest">Phonological (PVF) and Semantic (SVF) Verbal Fluency Test</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#Reys15WordTest" title="https://w3id.org/enigma#Reys15WordTest">Rey's 15-word Test - Immediate Recall (RIR) and Delayed Recall (RDR)</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#Rey_OsterriethComplexFigureTest"
-               title="https://w3id.org/enigma#Rey_OsterriethComplexFigureTest">Rey-Osterrieth Complex Figure Test</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#SWCT" title="https://w3id.org/enigma#SWCT">SWCT</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#SentencesConstruction" title="https://w3id.org/enigma#SentencesConstruction">Sentences Construction</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#TrialMakingTestA-B" title="https://w3id.org/enigma#TrialMakingTestA-B">Trial Making Test A-B</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#WCST-SF" title="https://w3id.org/enigma#WCST-SF">WCST-SF</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#WordListLearningTask" title="https://w3id.org/enigma#WordListLearningTask">Word List Learning Task</a>
-            <sup class="type-dp" title="data property">dp</sup>
-         </dd>
-      </dl>
    </div>
    <div class="entity" id="Cohort">
       <h3>Cohort<sup class="type-c" title="class">c</sup>
@@ -329,7 +308,8 @@ This section provides details for each class and property defined by The PD Demo
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#hasCovariates" title="https://w3id.org/enigma#hasCovariates">has covariates</a>
+            <a href="#has_PD_Demographics" title="https://w3id.org/enigma#has_PD_Demographics">has PD demographics</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasCovariates" title="https://w3id.org/enigma#hasCovariates">has covariates</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#has_neuropsychiatric" title="https://w3id.org/enigma#has_neuropsychiatric">has neuropsychiatric</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasPersonRole_Investigator"
                title="https://w3id.org/enigma#hasPersonRole_Investigator">has person role investigator</a>
@@ -881,11 +861,6 @@ This section provides details for each class and property defined by The PD Demo
          <span class="markdown">Neuropsychiatric Covariates measured by each cohort</span>
       </div>
       <dl class="description">
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#AES" title="https://w3id.org/enigma#AES">AES</a>
-            <sup class="type-dp" title="data property">dp</sup>
-         </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#has_neuropsychiatric" title="https://w3id.org/enigma#has_neuropsychiatric">has neuropsychiatric</a>
@@ -914,6 +889,78 @@ This section provides details for each class and property defined by The PD Demo
          <dd>
             <a href="#Disorder" title="https://w3id.org/enigma#Disorder">Disorder</a>
             <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="PDDemographics">
+      <h3>PD Demographics<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#PDDemographics</p>
+      <div class="comment">
+         <span class="markdown">PD-specific demographic Covariates measured by each cohort</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#AgeOfPDOnset" title="https://w3id.org/enigma#AgeOfPDOnset">Age of Onset PD</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#cityDwelling" title="https://w3id.org/enigma#cityDwelling">City-Dwelling</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#durill" title="https://w3id.org/enigma#durill">DURILL</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#diagnosisConfirmed" title="https://w3id.org/enigma#diagnosisConfirmed">Diagnosis Confirmed</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#education" title="https://w3id.org/enigma#education">Education</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#handedness" title="https://w3id.org/enigma#handedness">Handedness</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#HoehnAndYahrStage" title="https://w3id.org/enigma#HoehnAndYahrStage">Hoehn and Yahr Stage</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#iq" title="https://w3id.org/enigma#iq">IQ</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#LEDDScore" title="https://w3id.org/enigma#LEDDScore">LEDD Score</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#MDS-UPDRSTotal" title="https://w3id.org/enigma#MDS-UPDRSTotal">MDS-UPDRS Total</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#MDS-UPDRS-1" title="https://w3id.org/enigma#MDS-UPDRS-1">MDS-UPDRS-1</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#MDS-UPDRS-2" title="https://w3id.org/enigma#MDS-UPDRS-2">MDS-UPDRS-2</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#MDS-UPDRS-3" title="https://w3id.org/enigma#MDS-UPDRS-3">MDS-UPDRS-3</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#MDS-UPDRS-4" title="https://w3id.org/enigma#MDS-UPDRS-4">MDS-UPDRS-4</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#maritalStatus" title="https://w3id.org/enigma#maritalStatus">Marital Status</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#occupation" title="https://w3id.org/enigma#occupation">Occupation</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#otherDemographics" title="https://w3id.org/enigma#otherDemographics">Other Demographics</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#otherEnvironmentalFactors"
+               title="https://w3id.org/enigma#otherEnvironmentalFactors">Other Environmental Factors</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#OtherMedUseCurrent" title="https://w3id.org/enigma#OtherMedUseCurrent">Other Medication Use Current</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#OtherMedUseLifetime" title="https://w3id.org/enigma#OtherMedUseLifetime">Other Medication Use Lifetime</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#otherMotorEvaluation" title="https://w3id.org/enigma#otherMotorEvaluation">Other Motor Evaluations</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#otherPDDiagnosisData" title="https://w3id.org/enigma#otherPDDiagnosisData">Other PD Diagnosis Data</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#PDMedicationUseCurrent" title="https://w3id.org/enigma#PDMedicationUseCurrent">PD Medication Use Current</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#PDMedicationUseLifetime" title="https://w3id.org/enigma#PDMedicationUseLifetime">PD Medication Use Lifetime</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#PDMotorSubtype" title="https://w3id.org/enigma#PDMotorSubtype">PD Motor Subtype</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#PatientMedicationOnOffDuringUPDRS"
+               title="https://w3id.org/enigma#PatientMedicationOnOffDuringUPDRS">Patient Medication On/Off During UPDRS</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#RBDDiagnosis" title="https://w3id.org/enigma#RBDDiagnosis">RBD Diagnosis</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#RSGE-PD" title="https://w3id.org/enigma#RSGE-PD">RSGE-PD</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#raceEthnicity" title="https://w3id.org/enigma#raceEthnicity">Race/Ethnicity</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#SCOPA-Autonomic" title="https://w3id.org/enigma#SCOPA-Autonomic">SCOPA-Autonomic</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#SCOPA-Cognition" title="https://w3id.org/enigma#SCOPA-Cognition">SCOPA-Cognition</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#SCOPA-Motor" title="https://w3id.org/enigma#SCOPA-Motor">SCOPA-Motor</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#SCOPA-Psychiatric" title="https://w3id.org/enigma#SCOPA-Psychiatric">SCOPA-Psychiatric</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#SCOPA-Sleep" title="https://w3id.org/enigma#SCOPA-Sleep">SCOPA-Sleep</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#SE-ADLS" title="https://w3id.org/enigma#SE-ADLS">SE-ADLS</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#sex" title="https://w3id.org/enigma#sex">Sex</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#SideOfOnset" title="https://w3id.org/enigma#SideOfOnset">Side of Onset</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#subjectSES" title="https://w3id.org/enigma#subjectSES">Subject SES</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#UPDRSTotal" title="https://w3id.org/enigma#UPDRSTotal">UPDRS Total</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#UPDRS-1" title="https://w3id.org/enigma#UPDRS-1">UPDRS-1</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#UPDRS-2" title="https://w3id.org/enigma#UPDRS-2">UPDRS-2</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#UPDRS-3" title="https://w3id.org/enigma#UPDRS-3">UPDRS-3</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#UPDRS-4" title="https://w3id.org/enigma#UPDRS-4">UPDRS-4</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#UPSIT" title="https://w3id.org/enigma#UPSIT">UPSIT</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#age" title="https://w3id.org/enigma#age">age</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#comorbidities" title="https://w3id.org/enigma#comorbidities">comorbidities</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#dx" title="https://w3id.org/enigma#dx">dx</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#subjID" title="https://w3id.org/enigma#subjID">subj ID</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#has_PD_Demographics" title="https://w3id.org/enigma#has_PD_Demographics">has PD demographics</a>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
@@ -1185,6 +1232,9 @@ This section provides details for each class and property defined by The PD Demo
       </li>
       <li>
          <a href="#has_neuropsychiatric" title="https://w3id.org/enigma#has_neuropsychiatric">has neuropsychiatric</a>
+      </li>
+      <li>
+         <a href="#has_PD_Demographics" title="https://w3id.org/enigma#has_PD_Demographics">has PD demographics</a>
       </li>
       <li>
          <a href="#hasPersonRole_Investigator"
@@ -1821,6 +1871,35 @@ This section provides details for each class and property defined by The PD Demo
          </dl>
       </div>
    </div>
+   <div class="entity" id="has_PD_Demographics">
+      <h3>has PD demographics<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#has_PD_Demographics</p>
+      <div class="comment">
+         <span class="markdown">Describes demographics properties specific to the PD working group</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</span>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="hasPersonRole_Investigator">
       <h3>has person role investigator<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -2182,76 +2261,622 @@ This section provides details for each class and property defined by The PD Demo
    <h3 id="dataproperties-headline" class="list">Data Properties</h3>
    <ul class="hlist">
       <li>
-         <a href="#AES" title="https://w3id.org/enigma#AES">AES</a>
+         <a href="#age" title="https://w3id.org/enigma#age">age</a>
       </li>
       <li>
-         <a href="#DigitSpanBackward" title="https://w3id.org/enigma#DigitSpanBackward">Digit Span Backward</a>
+         <a href="#AgeOfPDOnset" title="https://w3id.org/enigma#AgeOfPDOnset">Age of Onset PD</a>
       </li>
       <li>
-         <a href="#DigitSpanForward" title="https://w3id.org/enigma#DigitSpanForward">Digit Span Forward</a>
+         <a href="#cityDwelling" title="https://w3id.org/enigma#cityDwelling">City-Dwelling</a>
       </li>
       <li>
-         <a href="#mildCognitiveImpairmentDiagnosis"
-            title="https://w3id.org/enigma#mildCognitiveImpairmentDiagnosis">Mild Cognitive Impairment Diagnosis</a>
+         <a href="#comorbidities" title="https://w3id.org/enigma#comorbidities">comorbidities</a>
       </li>
       <li>
-         <a href="#MMSE" title="https://w3id.org/enigma#MMSE">MMSE</a>
+         <a href="#diagnosisConfirmed" title="https://w3id.org/enigma#diagnosisConfirmed">Diagnosis Confirmed</a>
       </li>
       <li>
-         <a href="#MoCA" title="https://w3id.org/enigma#MoCA">MoCA</a>
+         <a href="#durill" title="https://w3id.org/enigma#durill">DURILL</a>
       </li>
       <li>
-         <a href="#OtherCognitiveCovariates" title="https://w3id.org/enigma#OtherCognitiveCovariates">Other Cognitive Covariates</a>
+         <a href="#dx" title="https://w3id.org/enigma#dx">
+            <span>dx</span>
+         </a>
       </li>
       <li>
-         <a href="#PD_DementiaDiagnosis" title="https://w3id.org/enigma#PD_DementiaDiagnosis">PD Dementia Diagnosis</a>
+         <a href="#education" title="https://w3id.org/enigma#education">Education</a>
       </li>
       <li>
-         <a href="#PhonologicalAndSemanticVerbalFluencyTest"
-            title="https://w3id.org/enigma#PhonologicalAndSemanticVerbalFluencyTest">Phonological (PVF) and Semantic (SVF) Verbal Fluency Test</a>
+         <a href="#handedness" title="https://w3id.org/enigma#handedness">Handedness</a>
       </li>
       <li>
-         <a href="#Reys15WordTest" title="https://w3id.org/enigma#Reys15WordTest">Rey's 15-word Test - Immediate Recall (RIR) and Delayed Recall (RDR)</a>
+         <a href="#HoehnAndYahrStage" title="https://w3id.org/enigma#HoehnAndYahrStage">Hoehn and Yahr Stage</a>
       </li>
       <li>
-         <a href="#Rey_OsterriethComplexFigureTest"
-            title="https://w3id.org/enigma#Rey_OsterriethComplexFigureTest">Rey-Osterrieth Complex Figure Test</a>
+         <a href="#iq" title="https://w3id.org/enigma#iq">IQ</a>
       </li>
       <li>
-         <a href="#SentencesConstruction" title="https://w3id.org/enigma#SentencesConstruction">Sentences Construction</a>
+         <a href="#LEDDScore" title="https://w3id.org/enigma#LEDDScore">LEDD Score</a>
       </li>
       <li>
-         <a href="#SWCT" title="https://w3id.org/enigma#SWCT">SWCT</a>
+         <a href="#maritalStatus" title="https://w3id.org/enigma#maritalStatus">Marital Status</a>
       </li>
       <li>
-         <a href="#TrialMakingTestA-B" title="https://w3id.org/enigma#TrialMakingTestA-B">Trial Making Test A-B</a>
+         <a href="#MDS-UPDRSTotal" title="https://w3id.org/enigma#MDS-UPDRSTotal">MDS-UPDRS Total</a>
       </li>
       <li>
-         <a href="#WCST-SF" title="https://w3id.org/enigma#WCST-SF">WCST-SF</a>
+         <a href="#MDS-UPDRS-1" title="https://w3id.org/enigma#MDS-UPDRS-1">MDS-UPDRS-1</a>
       </li>
       <li>
-         <a href="#WordListLearningTask" title="https://w3id.org/enigma#WordListLearningTask">Word List Learning Task</a>
+         <a href="#MDS-UPDRS-2" title="https://w3id.org/enigma#MDS-UPDRS-2">MDS-UPDRS-2</a>
+      </li>
+      <li>
+         <a href="#MDS-UPDRS-3" title="https://w3id.org/enigma#MDS-UPDRS-3">MDS-UPDRS-3</a>
+      </li>
+      <li>
+         <a href="#MDS-UPDRS-4" title="https://w3id.org/enigma#MDS-UPDRS-4">MDS-UPDRS-4</a>
+      </li>
+      <li>
+         <a href="#occupation" title="https://w3id.org/enigma#occupation">Occupation</a>
+      </li>
+      <li>
+         <a href="#otherDemographics" title="https://w3id.org/enigma#otherDemographics">Other Demographics</a>
+      </li>
+      <li>
+         <a href="#otherEnvironmentalFactors"
+            title="https://w3id.org/enigma#otherEnvironmentalFactors">Other Environmental Factors</a>
+      </li>
+      <li>
+         <a href="#OtherMedUseCurrent" title="https://w3id.org/enigma#OtherMedUseCurrent">Other Medication Use Current</a>
+      </li>
+      <li>
+         <a href="#OtherMedUseLifetime" title="https://w3id.org/enigma#OtherMedUseLifetime">Other Medication Use Lifetime</a>
+      </li>
+      <li>
+         <a href="#otherMotorEvaluation" title="https://w3id.org/enigma#otherMotorEvaluation">Other Motor Evaluations</a>
+      </li>
+      <li>
+         <a href="#otherPDDiagnosisData" title="https://w3id.org/enigma#otherPDDiagnosisData">Other PD Diagnosis Data</a>
+      </li>
+      <li>
+         <a href="#PatientMedicationOnOffDuringUPDRS"
+            title="https://w3id.org/enigma#PatientMedicationOnOffDuringUPDRS">Patient Medication On/Off During UPDRS</a>
+      </li>
+      <li>
+         <a href="#PDMedicationUseCurrent" title="https://w3id.org/enigma#PDMedicationUseCurrent">PD Medication Use Current</a>
+      </li>
+      <li>
+         <a href="#PDMedicationUseLifetime" title="https://w3id.org/enigma#PDMedicationUseLifetime">PD Medication Use Lifetime</a>
+      </li>
+      <li>
+         <a href="#PDMotorSubtype" title="https://w3id.org/enigma#PDMotorSubtype">PD Motor Subtype</a>
+      </li>
+      <li>
+         <a href="#raceEthnicity" title="https://w3id.org/enigma#raceEthnicity">Race/Ethnicity</a>
+      </li>
+      <li>
+         <a href="#RBDDiagnosis" title="https://w3id.org/enigma#RBDDiagnosis">RBD Diagnosis</a>
+      </li>
+      <li>
+         <a href="#RSGE-PD" title="https://w3id.org/enigma#RSGE-PD">RSGE-PD</a>
+      </li>
+      <li>
+         <a href="#SCOPA-Autonomic" title="https://w3id.org/enigma#SCOPA-Autonomic">SCOPA-Autonomic</a>
+      </li>
+      <li>
+         <a href="#SCOPA-Cognition" title="https://w3id.org/enigma#SCOPA-Cognition">SCOPA-Cognition</a>
+      </li>
+      <li>
+         <a href="#SCOPA-Motor" title="https://w3id.org/enigma#SCOPA-Motor">SCOPA-Motor</a>
+      </li>
+      <li>
+         <a href="#SCOPA-Psychiatric" title="https://w3id.org/enigma#SCOPA-Psychiatric">SCOPA-Psychiatric</a>
+      </li>
+      <li>
+         <a href="#SCOPA-Sleep" title="https://w3id.org/enigma#SCOPA-Sleep">SCOPA-Sleep</a>
+      </li>
+      <li>
+         <a href="#SE-ADLS" title="https://w3id.org/enigma#SE-ADLS">SE-ADLS</a>
+      </li>
+      <li>
+         <a href="#sex" title="https://w3id.org/enigma#sex">Sex</a>
+      </li>
+      <li>
+         <a href="#SideOfOnset" title="https://w3id.org/enigma#SideOfOnset">Side of Onset</a>
+      </li>
+      <li>
+         <a href="#subjID" title="https://w3id.org/enigma#subjID">subj ID</a>
+      </li>
+      <li>
+         <a href="#subjectSES" title="https://w3id.org/enigma#subjectSES">Subject SES</a>
+      </li>
+      <li>
+         <a href="#UPDRSTotal" title="https://w3id.org/enigma#UPDRSTotal">UPDRS Total</a>
+      </li>
+      <li>
+         <a href="#UPDRS-1" title="https://w3id.org/enigma#UPDRS-1">UPDRS-1</a>
+      </li>
+      <li>
+         <a href="#UPDRS-2" title="https://w3id.org/enigma#UPDRS-2">UPDRS-2</a>
+      </li>
+      <li>
+         <a href="#UPDRS-3" title="https://w3id.org/enigma#UPDRS-3">UPDRS-3</a>
+      </li>
+      <li>
+         <a href="#UPDRS-4" title="https://w3id.org/enigma#UPDRS-4">UPDRS-4</a>
+      </li>
+      <li>
+         <a href="#UPSIT" title="https://w3id.org/enigma#UPSIT">UPSIT</a>
       </li>
    </ul>
-   <div class="entity" id="AES">
-      <h3>AES<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="age">
+      <h3>age<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#AES</p>
+         <strong>IRI:</strong> https://w3id.org/enigma#age</p>
       <div class="comment">
-         <span class="markdown">Apathy Evaluation Scale - 12 item scale or 18 item scale</span>
+         <span class="markdown">age of participants</span>
       </div>
       <div class="description">
          <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</span>
-            </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#Neuropsychiatric" title="https://w3id.org/enigma#Neuropsychiatric">Neuropsychiatric</a>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="AgeOfPDOnset">
+      <h3>Age of Onset PD<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#AgeOfPDOnset</p>
+      <div class="comment">
+         <span class="markdown">Age of Onset of Parkinson's Disease</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="cityDwelling">
+      <h3>City-Dwelling<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#cityDwelling</p>
+      <div class="comment">
+         <span class="markdown">If measured subjects in the cohort were city dwelling (pop &gt;100,000)</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="comorbidities">
+      <h3>comorbidities<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#comorbidities</p>
+      <div class="comment">
+         <span class="markdown">If other comorbidities were measured in subjects</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="diagnosisConfirmed">
+      <h3>Diagnosis Confirmed<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#diagnosisConfirmed</p>
+      <div class="comment">
+         <span class="markdown">If PD diagnosis was confirmed in the subject(s)</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="durill">
+      <h3>DURILL<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#durill</p>
+      <div class="comment">
+         <span class="markdown">Duration of Illness</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dx">
+      <h3>dx<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#dx</p>
+      <div class="comment">
+         <span class="markdown">Diagnosis Group</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="education">
+      <h3>Education<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#education</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="handedness">
+      <h3>Handedness<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#handedness</p>
+      <div class="comment">
+         <span class="markdown">dominant hand (left/right) of the subjects</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="HoehnAndYahrStage">
+      <h3>Hoehn and Yahr Stage<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#HoehnAndYahrStage</p>
+      <div class="comment">
+         <span class="markdown">The Stage for Hoehn and Yahr scales used for PD cohorts</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="iq">
+      <h3>IQ<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#iq</p>
+      <div class="comment">
+         <span class="markdown">IQ of participants</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="LEDDScore">
+      <h3>LEDD Score<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#LEDDScore</p>
+      <div class="comment">
+         <span class="markdown">Levodopa Equivalent Doses used to treat Parkinson's Disease</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="maritalStatus">
+      <h3>Marital Status<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#maritalStatus</p>
+      <div class="comment">
+         <span class="markdown">Subjects' marital status</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="MDS-UPDRSTotal">
+      <h3>MDS-UPDRS Total<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#MDS-UPDRSTotal</p>
+      <div class="comment">
+         <span class="markdown">Movement Disorders Society Unified Parkinson's Disease Rating Scale - Total Score</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="MDS-UPDRS-1">
+      <h3>MDS-UPDRS-1<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#MDS-UPDRS-1</p>
+      <div class="comment">
+         <span class="markdown">Movement Disorders Society Unified Parkinson's Disease Rating Scale - 1</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="MDS-UPDRS-2">
+      <h3>MDS-UPDRS-2<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#MDS-UPDRS-2</p>
+      <div class="comment">
+         <span class="markdown">Movement Disorders Society Unified Parkinson's Disease Rating Scale - 2</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="MDS-UPDRS-3">
+      <h3>MDS-UPDRS-3<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#MDS-UPDRS-3</p>
+      <div class="comment">
+         <span class="markdown">Movement Disorders Society Unified Parkinson's Disease Rating Scale - 3</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="MDS-UPDRS-4">
+      <h3>MDS-UPDRS-4<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#MDS-UPDRS-4</p>
+      <div class="comment">
+         <span class="markdown">Movement Disorders Society Unified Parkinson's Disease Rating Scale - 4</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="occupation">
+      <h3>Occupation<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#occupation</p>
+      <div class="comment">
+         <span class="markdown">Occupation of the subjects</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="otherDemographics">
+      <h3>Other Demographics<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#otherDemographics</p>
+      <div class="comment">
+         <span class="markdown">Other Demographics info for PD cohorts</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -2261,153 +2886,21 @@ This section provides details for each class and property defined by The PD Demo
          </dl>
       </div>
    </div>
-   <div class="entity" id="DigitSpanBackward">
-      <h3>Digit Span Backward<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="otherEnvironmentalFactors">
+      <h3>Other Environmental Factors<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#DigitSpanBackward</p>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</span>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Cognitive" title="https://w3id.org/enigma#Cognitive">Cognitive</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="DigitSpanForward">
-      <h3>Digit Span Forward<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#DigitSpanForward</p>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</span>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Cognitive" title="https://w3id.org/enigma#Cognitive">Cognitive</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="mildCognitiveImpairmentDiagnosis">
-      <h3>Mild Cognitive Impairment Diagnosis<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#mildCognitiveImpairmentDiagnosis</p>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</span>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Cognitive" title="https://w3id.org/enigma#Cognitive">Cognitive</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="MMSE">
-      <h3>MMSE<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#MMSE</p>
+         <strong>IRI:</strong> https://w3id.org/enigma#otherEnvironmentalFactors</p>
       <div class="comment">
-         <span class="markdown">Mini Mental State Exam</span>
+         <span class="markdown">Any other environmental factors relating to a PD cohort</span>
       </div>
       <div class="description">
          <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</span>
-            </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#Cognitive" title="https://w3id.org/enigma#Cognitive">Cognitive</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="MoCA">
-      <h3>MoCA<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#MoCA</p>
-      <div class="comment">
-         <span class="markdown">Montreal Cognitive Assessment</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</span>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Cognitive" title="https://w3id.org/enigma#Cognitive">Cognitive</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="OtherCognitiveCovariates">
-      <h3>Other Cognitive Covariates<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#OtherCognitiveCovariates</p>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</span>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Cognitive" title="https://w3id.org/enigma#Cognitive">Cognitive</a>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -2417,150 +2910,21 @@ This section provides details for each class and property defined by The PD Demo
          </dl>
       </div>
    </div>
-   <div class="entity" id="PD_DementiaDiagnosis">
-      <h3>PD Dementia Diagnosis<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="OtherMedUseCurrent">
+      <h3>Other Medication Use Current<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#PD_DementiaDiagnosis</p>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</span>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Cognitive" title="https://w3id.org/enigma#Cognitive">Cognitive</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="PhonologicalAndSemanticVerbalFluencyTest">
-      <h3>Phonological (PVF) and Semantic (SVF) Verbal Fluency Test<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#PhonologicalAndSemanticVerbalFluencyTest</p>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</span>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Cognitive" title="https://w3id.org/enigma#Cognitive">Cognitive</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="Reys15WordTest">
-      <h3>Rey's 15-word Test - Immediate Recall (RIR) and Delayed Recall (RDR)<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#Reys15WordTest</p>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</span>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Cognitive" title="https://w3id.org/enigma#Cognitive">Cognitive</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="Rey_OsterriethComplexFigureTest">
-      <h3>Rey-Osterrieth Complex Figure Test<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#Rey_OsterriethComplexFigureTest</p>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</span>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Cognitive" title="https://w3id.org/enigma#Cognitive">Cognitive</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="SentencesConstruction">
-      <h3>Sentences Construction<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#SentencesConstruction</p>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</span>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Cognitive" title="https://w3id.org/enigma#Cognitive">Cognitive</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="SWCT">
-      <h3>SWCT<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#SWCT</p>
+         <strong>IRI:</strong> https://w3id.org/enigma#OtherMedUseCurrent</p>
       <div class="comment">
-         <span class="markdown">Stroop Word-Color Test</span>
+         <span class="markdown">Other medication currently used</span>
       </div>
       <div class="description">
          <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</span>
-            </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#Cognitive" title="https://w3id.org/enigma#Cognitive">Cognitive</a>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -2570,50 +2934,21 @@ This section provides details for each class and property defined by The PD Demo
          </dl>
       </div>
    </div>
-   <div class="entity" id="TrialMakingTestA-B">
-      <h3>Trial Making Test A-B<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="OtherMedUseLifetime">
+      <h3>Other Medication Use Lifetime<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#TrialMakingTestA-B</p>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</span>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Cognitive" title="https://w3id.org/enigma#Cognitive">Cognitive</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="WCST-SF">
-      <h3>WCST-SF<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#WCST-SF</p>
+         <strong>IRI:</strong> https://w3id.org/enigma#OtherMedUseLifetime</p>
       <div class="comment">
-         <span class="markdown">Wisconsin Card Sorting Test - Short Form</span>
+         <span class="markdown">Other Medication used during their lifetime</span>
       </div>
       <div class="description">
          <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</span>
-            </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#Cognitive" title="https://w3id.org/enigma#Cognitive">Cognitive</a>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -2623,30 +2958,603 @@ This section provides details for each class and property defined by The PD Demo
          </dl>
       </div>
    </div>
-   <div class="entity" id="WordListLearningTask">
-      <h3>Word List Learning Task<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="otherMotorEvaluation">
+      <h3>Other Motor Evaluations<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#WordListLearningTask</p>
+         <strong>IRI:</strong> https://w3id.org/enigma#otherMotorEvaluation</p>
       <div class="comment">
-         <span class="markdown">Word List Learning Task: Note the version used</span>
+         <span class="markdown">Other Motor Evaluations</span>
       </div>
       <div class="description">
          <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</span>
-            </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#Cognitive" title="https://w3id.org/enigma#Cognitive">Cognitive</a>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
                <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="otherPDDiagnosisData">
+      <h3>Other PD Diagnosis Data<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#otherPDDiagnosisData</p>
+      <div class="comment">
+         <span class="markdown">Other Parkinson's Diagnosis Data</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="PatientMedicationOnOffDuringUPDRS">
+      <h3>Patient Medication On/Off During UPDRS<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#PatientMedicationOnOffDuringUPDRS</p>
+      <div class="comment">
+         <span class="markdown">If the patient was on medication during Unified Parkinson's Disease Rating Scale measurements</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="PDMedicationUseCurrent">
+      <h3>PD Medication Use Current<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#PDMedicationUseCurrent</p>
+      <div class="comment">
+         <span class="markdown">Describes if the patient is currently using PD medication</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="PDMedicationUseLifetime">
+      <h3>PD Medication Use Lifetime<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#PDMedicationUseLifetime</p>
+      <div class="comment">
+         <span class="markdown">Describes if the patient used PD medication during their lifetime</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="PDMotorSubtype">
+      <h3>PD Motor Subtype<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#PDMotorSubtype</p>
+      <div class="comment">
+         <span class="markdown">PD Motor Subtypes (mild-motor predominant, intermediate, or diffuse malignant)</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="raceEthnicity">
+      <h3>Race/Ethnicity<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#raceEthnicity</p>
+      <div class="comment">
+         <span class="markdown">race/ethnicity of the subjects</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="RBDDiagnosis">
+      <h3>RBD Diagnosis<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#RBDDiagnosis</p>
+      <div class="comment">
+         <span class="markdown">RBD (REM Sleep Behavior Disorder) Diagnosis</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="RSGE-PD">
+      <h3>RSGE-PD<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#RSGE-PD</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="SCOPA-Autonomic">
+      <h3>SCOPA-Autonomic<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#SCOPA-Autonomic</p>
+      <div class="comment">
+         <span class="markdown">Scales for Outcomes in Parkinson's Disease - Autonomic</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="SCOPA-Cognition">
+      <h3>SCOPA-Cognition<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#SCOPA-Cognition</p>
+      <div class="comment">
+         <span class="markdown">Scales for Outcomes in Parkinson's Disease - Cognition</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="SCOPA-Motor">
+      <h3>SCOPA-Motor<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#SCOPA-Motor</p>
+      <div class="comment">
+         <span class="markdown">Scales for Outcomes in Parkinson's Disease - Motor</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="SCOPA-Psychiatric">
+      <h3>SCOPA-Psychiatric<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#SCOPA-Psychiatric</p>
+      <div class="comment">
+         <span class="markdown">Scales for Outcomes in Parkinson's Disease - Psychiatric</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="SCOPA-Sleep">
+      <h3>SCOPA-Sleep<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#SCOPA-Sleep</p>
+      <div class="comment">
+         <span class="markdown">Scales for Outcomes in Parkinson's Disease - Sleep</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="SE-ADLS">
+      <h3>SE-ADLS<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#SE-ADLS</p>
+      <div class="comment">
+         <span class="markdown">Schwab and England: Activities of Daily Living Scale</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="sex">
+      <h3>Sex<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#sex</p>
+      <div class="comment">
+         <span class="markdown">sex of participants</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="SideOfOnset">
+      <h3>Side of Onset<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#SideOfOnset</p>
+      <div class="comment">
+         <span class="markdown">The side of PD symptoms during PD onset</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="subjID">
+      <h3>subj ID<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#subjID</p>
+      <div class="comment">
+         <span class="markdown">Subject ID</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="subjectSES">
+      <h3>Subject SES<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#subjectSES</p>
+      <div class="comment">
+         <span class="markdown">Subjects' Socioeconomic Status</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="UPDRSTotal">
+      <h3>UPDRS Total<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#UPDRSTotal</p>
+      <div class="comment">
+         <span class="markdown">Unified Parkinson's Disease Rating Scale - Total Score</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="UPDRS-1">
+      <h3>UPDRS-1<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#UPDRS-1</p>
+      <div class="comment">
+         <span class="markdown">Unified Parkinson's Disease Rating Scale - 1</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="UPDRS-2">
+      <h3>UPDRS-2<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#UPDRS-2</p>
+      <div class="comment">
+         <span class="markdown">Unified Parkinson's Disease Rating Scale - 2</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</span>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="UPDRS-3">
+      <h3>UPDRS-3<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#UPDRS-3</p>
+      <div class="comment">
+         <span class="markdown">Unified Parkinson's Disease Rating Scale - 3</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="UPDRS-4">
+      <h3>UPDRS-4<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#UPDRS-4</p>
+      <div class="comment">
+         <span class="markdown">Unified Parkinson's Disease Rating Scale - 4</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="UPSIT">
+      <h3>UPSIT<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#UPSIT</p>
+      <div class="comment">
+         <span class="markdown">University of Pennsylvania Smell Identification Test for Parkinson's Disease</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PDDemographics" title="https://w3id.org/enigma#PDDemographics">PD Demographics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
             </dd>
          </dl>
       </div>

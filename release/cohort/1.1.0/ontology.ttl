@@ -866,7 +866,13 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
 ###  https://w3id.org/enigma#Cohort
 :Cohort rdf:type owl:Class ;
         <http://purl.org/vocab/vann/example> "ADNI: Alzheimer’s Disease Neuroimaging Initiative"@en ;
-        rdfs:comment "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria"@en ;
+        rdfs:comment """A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria.
+
+Cohort Groups: COHORT_grp_NAME
+Example: STELLENBOCH_grp_CN for the control group
+
+Cohort Projects: COHORT_proj_NAME
+Example: STELLENBOCH_proj_FS for the Freesurfer project"""@en ;
         rdfs:label "Cohort"@en .
 
 
@@ -892,6 +898,12 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
          <http://purl.org/vocab/vann/example> "United States"@en ;
          rdfs:comment "Country in which a cohort is located"@en ;
          rdfs:label "Country"@en .
+
+
+###  https://w3id.org/enigma#Covariates
+:Covariates rdf:type owl:Class ;
+            rdfs:comment "A class used to describe covariates information for a cohort or study." ;
+            rdfs:label "Covariates" .
 
 
 ###  https://w3id.org/enigma#DataDownload
