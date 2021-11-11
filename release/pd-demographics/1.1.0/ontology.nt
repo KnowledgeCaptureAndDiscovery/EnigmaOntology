@@ -386,6 +386,14 @@ _:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#hasStatistics> <http://www.w3.org/2000/01/rdf-schema#comment> "Property used to link a cohort with the summary statistics that may have been  produced after applying a given protocol"@en .
 <https://w3id.org/enigma#hasStatistics> <http://www.w3.org/2000/01/rdf-schema#label> "has statistics"@en .
 # 
+# https://w3id.org/enigma#has_PD_Demographics
+<https://w3id.org/enigma#has_PD_Demographics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#has_PD_Demographics> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/enigma#has_PD_Demographics> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cohort> .
+<https://w3id.org/enigma#has_PD_Demographics> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#has_PD_Demographics> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes demographics properties specific to the PD working group" .
+<https://w3id.org/enigma#has_PD_Demographics> <http://www.w3.org/2000/01/rdf-schema#label> "has PD demographics" .
+# 
 # https://w3id.org/enigma#has_neuropsychiatric
 <https://w3id.org/enigma#has_neuropsychiatric> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/enigma#has_neuropsychiatric> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
@@ -482,123 +490,339 @@ _:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 # #################################################################
 # 
 # 
-# https://w3id.org/enigma#AES
-<https://w3id.org/enigma#AES> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#AES> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<https://w3id.org/enigma#AES> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Neuropsychiatric> .
-<https://w3id.org/enigma#AES> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/enigma#AES> <http://www.w3.org/2000/01/rdf-schema#comment> "Apathy Evaluation Scale - 12 item scale or 18 item scale" .
-<https://w3id.org/enigma#AES> <http://www.w3.org/2000/01/rdf-schema#label> "AES" .
+# https://w3id.org/enigma#AgeOfPDOnset
+<https://w3id.org/enigma#AgeOfPDOnset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#AgeOfPDOnset> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#AgeOfPDOnset> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#AgeOfPDOnset> <http://www.w3.org/2000/01/rdf-schema#comment> "Age of Onset of Parkinson's Disease" .
+<https://w3id.org/enigma#AgeOfPDOnset> <http://www.w3.org/2000/01/rdf-schema#label> "Age of Onset PD" .
 # 
-# https://w3id.org/enigma#DigitSpanBackward
-<https://w3id.org/enigma#DigitSpanBackward> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#DigitSpanBackward> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<https://w3id.org/enigma#DigitSpanBackward> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
-<https://w3id.org/enigma#DigitSpanBackward> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
-<https://w3id.org/enigma#DigitSpanBackward> <http://www.w3.org/2000/01/rdf-schema#label> "Digit Span Backward" .
+# https://w3id.org/enigma#HoehnAndYahrStage
+<https://w3id.org/enigma#HoehnAndYahrStage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#HoehnAndYahrStage> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#HoehnAndYahrStage> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#HoehnAndYahrStage> <http://www.w3.org/2000/01/rdf-schema#comment> "The Stage for Hoehn and Yahr scales used for PD cohorts" .
+<https://w3id.org/enigma#HoehnAndYahrStage> <http://www.w3.org/2000/01/rdf-schema#label> "Hoehn and Yahr Stage" .
 # 
-# https://w3id.org/enigma#DigitSpanForward
-<https://w3id.org/enigma#DigitSpanForward> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#DigitSpanForward> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<https://w3id.org/enigma#DigitSpanForward> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
-<https://w3id.org/enigma#DigitSpanForward> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
-<https://w3id.org/enigma#DigitSpanForward> <http://www.w3.org/2000/01/rdf-schema#label> "Digit Span Forward" .
+# https://w3id.org/enigma#LEDDScore
+<https://w3id.org/enigma#LEDDScore> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#LEDDScore> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#LEDDScore> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#LEDDScore> <http://www.w3.org/2000/01/rdf-schema#comment> "Levodopa Equivalent Doses used to treat Parkinson's Disease" .
+<https://w3id.org/enigma#LEDDScore> <http://www.w3.org/2000/01/rdf-schema#label> "LEDD Score" .
 # 
-# https://w3id.org/enigma#MMSE
-<https://w3id.org/enigma#MMSE> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#MMSE> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<https://w3id.org/enigma#MMSE> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
-<https://w3id.org/enigma#MMSE> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
-<https://w3id.org/enigma#MMSE> <http://www.w3.org/2000/01/rdf-schema#comment> "Mini Mental State Exam" .
-<https://w3id.org/enigma#MMSE> <http://www.w3.org/2000/01/rdf-schema#label> "MMSE" .
+# https://w3id.org/enigma#MDS-UPDRS-1
+<https://w3id.org/enigma#MDS-UPDRS-1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#MDS-UPDRS-1> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#MDS-UPDRS-1> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#MDS-UPDRS-1> <http://www.w3.org/2000/01/rdf-schema#comment> "Movement Disorders Society Unified Parkinson's Disease Rating Scale - 1" .
+<https://w3id.org/enigma#MDS-UPDRS-1> <http://www.w3.org/2000/01/rdf-schema#label> "MDS-UPDRS-1" .
 # 
-# https://w3id.org/enigma#MoCA
-<https://w3id.org/enigma#MoCA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#MoCA> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<https://w3id.org/enigma#MoCA> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
-<https://w3id.org/enigma#MoCA> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
-<https://w3id.org/enigma#MoCA> <http://www.w3.org/2000/01/rdf-schema#comment> "Montreal Cognitive Assessment" .
-<https://w3id.org/enigma#MoCA> <http://www.w3.org/2000/01/rdf-schema#label> "MoCA" .
+# https://w3id.org/enigma#MDS-UPDRS-2
+<https://w3id.org/enigma#MDS-UPDRS-2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#MDS-UPDRS-2> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#MDS-UPDRS-2> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#MDS-UPDRS-2> <http://www.w3.org/2000/01/rdf-schema#comment> "Movement Disorders Society Unified Parkinson's Disease Rating Scale - 2" .
+<https://w3id.org/enigma#MDS-UPDRS-2> <http://www.w3.org/2000/01/rdf-schema#label> "MDS-UPDRS-2" .
 # 
-# https://w3id.org/enigma#OtherCognitiveCovariates
-<https://w3id.org/enigma#OtherCognitiveCovariates> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#OtherCognitiveCovariates> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<https://w3id.org/enigma#OtherCognitiveCovariates> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
-<https://w3id.org/enigma#OtherCognitiveCovariates> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/enigma#OtherCognitiveCovariates> <http://www.w3.org/2000/01/rdf-schema#label> "Other Cognitive Covariates" .
+# https://w3id.org/enigma#MDS-UPDRS-3
+<https://w3id.org/enigma#MDS-UPDRS-3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#MDS-UPDRS-3> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#MDS-UPDRS-3> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#MDS-UPDRS-3> <http://www.w3.org/2000/01/rdf-schema#comment> "Movement Disorders Society Unified Parkinson's Disease Rating Scale - 3" .
+<https://w3id.org/enigma#MDS-UPDRS-3> <http://www.w3.org/2000/01/rdf-schema#label> "MDS-UPDRS-3" .
 # 
-# https://w3id.org/enigma#PD_DementiaDiagnosis
-<https://w3id.org/enigma#PD_DementiaDiagnosis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#PD_DementiaDiagnosis> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<https://w3id.org/enigma#PD_DementiaDiagnosis> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
-<https://w3id.org/enigma#PD_DementiaDiagnosis> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
-<https://w3id.org/enigma#PD_DementiaDiagnosis> <http://www.w3.org/2000/01/rdf-schema#label> "PD Dementia Diagnosis" .
+# https://w3id.org/enigma#MDS-UPDRS-4
+<https://w3id.org/enigma#MDS-UPDRS-4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#MDS-UPDRS-4> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#MDS-UPDRS-4> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#MDS-UPDRS-4> <http://www.w3.org/2000/01/rdf-schema#comment> "Movement Disorders Society Unified Parkinson's Disease Rating Scale - 4" .
+<https://w3id.org/enigma#MDS-UPDRS-4> <http://www.w3.org/2000/01/rdf-schema#label> "MDS-UPDRS-4" .
 # 
-# https://w3id.org/enigma#PhonologicalAndSemanticVerbalFluencyTest
-<https://w3id.org/enigma#PhonologicalAndSemanticVerbalFluencyTest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#PhonologicalAndSemanticVerbalFluencyTest> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<https://w3id.org/enigma#PhonologicalAndSemanticVerbalFluencyTest> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
-<https://w3id.org/enigma#PhonologicalAndSemanticVerbalFluencyTest> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
-<https://w3id.org/enigma#PhonologicalAndSemanticVerbalFluencyTest> <http://www.w3.org/2000/01/rdf-schema#label> "Phonological (PVF) and Semantic (SVF) Verbal Fluency Test" .
+# https://w3id.org/enigma#MDS-UPDRSTotal
+<https://w3id.org/enigma#MDS-UPDRSTotal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#MDS-UPDRSTotal> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#MDS-UPDRSTotal> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#MDS-UPDRSTotal> <http://www.w3.org/2000/01/rdf-schema#comment> "Movement Disorders Society Unified Parkinson's Disease Rating Scale - Total Score" .
+<https://w3id.org/enigma#MDS-UPDRSTotal> <http://www.w3.org/2000/01/rdf-schema#label> "MDS-UPDRS Total" .
 # 
-# https://w3id.org/enigma#Rey_OsterriethComplexFigureTest
-<https://w3id.org/enigma#Rey_OsterriethComplexFigureTest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#Rey_OsterriethComplexFigureTest> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<https://w3id.org/enigma#Rey_OsterriethComplexFigureTest> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
-<https://w3id.org/enigma#Rey_OsterriethComplexFigureTest> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
-<https://w3id.org/enigma#Rey_OsterriethComplexFigureTest> <http://www.w3.org/2000/01/rdf-schema#label> "Rey-Osterrieth Complex Figure Test" .
+# https://w3id.org/enigma#OtherMedUseCurrent
+<https://w3id.org/enigma#OtherMedUseCurrent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#OtherMedUseCurrent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#OtherMedUseCurrent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#OtherMedUseCurrent> <http://www.w3.org/2000/01/rdf-schema#comment> "Other medication currently used" .
+<https://w3id.org/enigma#OtherMedUseCurrent> <http://www.w3.org/2000/01/rdf-schema#label> "Other Medication Use Current" .
 # 
-# https://w3id.org/enigma#Reys15WordTest
-<https://w3id.org/enigma#Reys15WordTest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#Reys15WordTest> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<https://w3id.org/enigma#Reys15WordTest> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
-<https://w3id.org/enigma#Reys15WordTest> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
-<https://w3id.org/enigma#Reys15WordTest> <http://www.w3.org/2000/01/rdf-schema#label> "Rey's 15-word Test - Immediate Recall (RIR) and Delayed Recall (RDR)" .
+# https://w3id.org/enigma#OtherMedUseLifetime
+<https://w3id.org/enigma#OtherMedUseLifetime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#OtherMedUseLifetime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#OtherMedUseLifetime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#OtherMedUseLifetime> <http://www.w3.org/2000/01/rdf-schema#comment> "Other Medication used during their lifetime" .
+<https://w3id.org/enigma#OtherMedUseLifetime> <http://www.w3.org/2000/01/rdf-schema#label> "Other Medication Use Lifetime" .
 # 
-# https://w3id.org/enigma#SWCT
-<https://w3id.org/enigma#SWCT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#SWCT> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<https://w3id.org/enigma#SWCT> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
-<https://w3id.org/enigma#SWCT> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
-<https://w3id.org/enigma#SWCT> <http://www.w3.org/2000/01/rdf-schema#comment> "Stroop Word-Color Test" .
-<https://w3id.org/enigma#SWCT> <http://www.w3.org/2000/01/rdf-schema#label> "SWCT" .
+# https://w3id.org/enigma#PDMedicationUseCurrent
+<https://w3id.org/enigma#PDMedicationUseCurrent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#PDMedicationUseCurrent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#PDMedicationUseCurrent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#PDMedicationUseCurrent> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes if the patient is currently using PD medication" .
+<https://w3id.org/enigma#PDMedicationUseCurrent> <http://www.w3.org/2000/01/rdf-schema#label> "PD Medication Use Current" .
 # 
-# https://w3id.org/enigma#SentencesConstruction
-<https://w3id.org/enigma#SentencesConstruction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#SentencesConstruction> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<https://w3id.org/enigma#SentencesConstruction> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
-<https://w3id.org/enigma#SentencesConstruction> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
-<https://w3id.org/enigma#SentencesConstruction> <http://www.w3.org/2000/01/rdf-schema#label> "Sentences Construction" .
+# https://w3id.org/enigma#PDMedicationUseLifetime
+<https://w3id.org/enigma#PDMedicationUseLifetime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#PDMedicationUseLifetime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#PDMedicationUseLifetime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#PDMedicationUseLifetime> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes if the patient used PD medication during their lifetime" .
+<https://w3id.org/enigma#PDMedicationUseLifetime> <http://www.w3.org/2000/01/rdf-schema#label> "PD Medication Use Lifetime" .
 # 
-# https://w3id.org/enigma#TrialMakingTestA-B
-<https://w3id.org/enigma#TrialMakingTestA-B> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#TrialMakingTestA-B> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<https://w3id.org/enigma#TrialMakingTestA-B> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
-<https://w3id.org/enigma#TrialMakingTestA-B> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
-<https://w3id.org/enigma#TrialMakingTestA-B> <http://www.w3.org/2000/01/rdf-schema#label> "Trial Making Test A-B" .
+# https://w3id.org/enigma#PDMotorSubtype
+<https://w3id.org/enigma#PDMotorSubtype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#PDMotorSubtype> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#PDMotorSubtype> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#PDMotorSubtype> <http://www.w3.org/2000/01/rdf-schema#comment> "PD Motor Subtypes (mild-motor predominant, intermediate, or diffuse malignant)" .
+<https://w3id.org/enigma#PDMotorSubtype> <http://www.w3.org/2000/01/rdf-schema#label> "PD Motor Subtype" .
 # 
-# https://w3id.org/enigma#WCST-SF
-<https://w3id.org/enigma#WCST-SF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#WCST-SF> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<https://w3id.org/enigma#WCST-SF> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
-<https://w3id.org/enigma#WCST-SF> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
-<https://w3id.org/enigma#WCST-SF> <http://www.w3.org/2000/01/rdf-schema#comment> "Wisconsin Card Sorting Test - Short Form" .
-<https://w3id.org/enigma#WCST-SF> <http://www.w3.org/2000/01/rdf-schema#label> "WCST-SF" .
+# https://w3id.org/enigma#PatientMedicationOnOffDuringUPDRS
+<https://w3id.org/enigma#PatientMedicationOnOffDuringUPDRS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#PatientMedicationOnOffDuringUPDRS> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#PatientMedicationOnOffDuringUPDRS> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#PatientMedicationOnOffDuringUPDRS> <http://www.w3.org/2000/01/rdf-schema#comment> "If the patient was on medication during Unified Parkinson's Disease Rating Scale measurements" .
+<https://w3id.org/enigma#PatientMedicationOnOffDuringUPDRS> <http://www.w3.org/2000/01/rdf-schema#label> "Patient Medication On/Off During UPDRS" .
 # 
-# https://w3id.org/enigma#WordListLearningTask
-<https://w3id.org/enigma#WordListLearningTask> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#WordListLearningTask> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<https://w3id.org/enigma#WordListLearningTask> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
-<https://w3id.org/enigma#WordListLearningTask> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/enigma#WordListLearningTask> <http://www.w3.org/2000/01/rdf-schema#comment> "Word List Learning Task: Note the version used" .
-<https://w3id.org/enigma#WordListLearningTask> <http://www.w3.org/2000/01/rdf-schema#label> "Word List Learning Task" .
+# https://w3id.org/enigma#RBDDiagnosis
+<https://w3id.org/enigma#RBDDiagnosis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#RBDDiagnosis> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#RBDDiagnosis> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#RBDDiagnosis> <http://www.w3.org/2000/01/rdf-schema#comment> "RBD (REM Sleep Behavior Disorder) Diagnosis" .
+<https://w3id.org/enigma#RBDDiagnosis> <http://www.w3.org/2000/01/rdf-schema#label> "RBD Diagnosis" .
 # 
-# https://w3id.org/enigma#mildCognitiveImpairmentDiagnosis
-<https://w3id.org/enigma#mildCognitiveImpairmentDiagnosis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#mildCognitiveImpairmentDiagnosis> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<https://w3id.org/enigma#mildCognitiveImpairmentDiagnosis> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cognitive> .
-<https://w3id.org/enigma#mildCognitiveImpairmentDiagnosis> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
-<https://w3id.org/enigma#mildCognitiveImpairmentDiagnosis> <http://www.w3.org/2000/01/rdf-schema#label> "Mild Cognitive Impairment Diagnosis" .
+# https://w3id.org/enigma#RSGE-PD
+<https://w3id.org/enigma#RSGE-PD> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#RSGE-PD> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#RSGE-PD> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#RSGE-PD> <http://www.w3.org/2000/01/rdf-schema#label> "RSGE-PD" .
+# 
+# https://w3id.org/enigma#SCOPA-Autonomic
+<https://w3id.org/enigma#SCOPA-Autonomic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#SCOPA-Autonomic> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#SCOPA-Autonomic> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#SCOPA-Autonomic> <http://www.w3.org/2000/01/rdf-schema#comment> "Scales for Outcomes in Parkinson's Disease - Autonomic" .
+<https://w3id.org/enigma#SCOPA-Autonomic> <http://www.w3.org/2000/01/rdf-schema#label> "SCOPA-Autonomic" .
+# 
+# https://w3id.org/enigma#SCOPA-Cognition
+<https://w3id.org/enigma#SCOPA-Cognition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#SCOPA-Cognition> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#SCOPA-Cognition> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#SCOPA-Cognition> <http://www.w3.org/2000/01/rdf-schema#comment> "Scales for Outcomes in Parkinson's Disease - Cognition" .
+<https://w3id.org/enigma#SCOPA-Cognition> <http://www.w3.org/2000/01/rdf-schema#label> "SCOPA-Cognition" .
+# 
+# https://w3id.org/enigma#SCOPA-Motor
+<https://w3id.org/enigma#SCOPA-Motor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#SCOPA-Motor> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#SCOPA-Motor> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#SCOPA-Motor> <http://www.w3.org/2000/01/rdf-schema#comment> "Scales for Outcomes in Parkinson's Disease - Motor" .
+<https://w3id.org/enigma#SCOPA-Motor> <http://www.w3.org/2000/01/rdf-schema#label> "SCOPA-Motor" .
+# 
+# https://w3id.org/enigma#SCOPA-Psychiatric
+<https://w3id.org/enigma#SCOPA-Psychiatric> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#SCOPA-Psychiatric> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#SCOPA-Psychiatric> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#SCOPA-Psychiatric> <http://www.w3.org/2000/01/rdf-schema#comment> "Scales for Outcomes in Parkinson's Disease - Psychiatric" .
+<https://w3id.org/enigma#SCOPA-Psychiatric> <http://www.w3.org/2000/01/rdf-schema#label> "SCOPA-Psychiatric" .
+# 
+# https://w3id.org/enigma#SCOPA-Sleep
+<https://w3id.org/enigma#SCOPA-Sleep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#SCOPA-Sleep> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#SCOPA-Sleep> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#SCOPA-Sleep> <http://www.w3.org/2000/01/rdf-schema#comment> "Scales for Outcomes in Parkinson's Disease - Sleep" .
+<https://w3id.org/enigma#SCOPA-Sleep> <http://www.w3.org/2000/01/rdf-schema#label> "SCOPA-Sleep" .
+# 
+# https://w3id.org/enigma#SE-ADLS
+<https://w3id.org/enigma#SE-ADLS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#SE-ADLS> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#SE-ADLS> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#SE-ADLS> <http://www.w3.org/2000/01/rdf-schema#comment> "Schwab and England: Activities of Daily Living Scale" .
+<https://w3id.org/enigma#SE-ADLS> <http://www.w3.org/2000/01/rdf-schema#label> "SE-ADLS" .
+# 
+# https://w3id.org/enigma#SideOfOnset
+<https://w3id.org/enigma#SideOfOnset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#SideOfOnset> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#SideOfOnset> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#SideOfOnset> <http://www.w3.org/2000/01/rdf-schema#comment> "The side of PD symptoms during PD onset" .
+<https://w3id.org/enigma#SideOfOnset> <http://www.w3.org/2000/01/rdf-schema#label> "Side of Onset" .
+# 
+# https://w3id.org/enigma#UPDRS-1
+<https://w3id.org/enigma#UPDRS-1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#UPDRS-1> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#UPDRS-1> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#UPDRS-1> <http://www.w3.org/2000/01/rdf-schema#comment> "Unified Parkinson's Disease Rating Scale - 1" .
+<https://w3id.org/enigma#UPDRS-1> <http://www.w3.org/2000/01/rdf-schema#label> "UPDRS-1" .
+# 
+# https://w3id.org/enigma#UPDRS-2
+<https://w3id.org/enigma#UPDRS-2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#UPDRS-2> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/enigma#UPDRS-2> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#UPDRS-2> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#UPDRS-2> <http://www.w3.org/2000/01/rdf-schema#comment> "Unified Parkinson's Disease Rating Scale - 2" .
+<https://w3id.org/enigma#UPDRS-2> <http://www.w3.org/2000/01/rdf-schema#label> "UPDRS-2" .
+# 
+# https://w3id.org/enigma#UPDRS-3
+<https://w3id.org/enigma#UPDRS-3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#UPDRS-3> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#UPDRS-3> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#UPDRS-3> <http://www.w3.org/2000/01/rdf-schema#comment> "Unified Parkinson's Disease Rating Scale - 3" .
+<https://w3id.org/enigma#UPDRS-3> <http://www.w3.org/2000/01/rdf-schema#label> "UPDRS-3" .
+# 
+# https://w3id.org/enigma#UPDRS-4
+<https://w3id.org/enigma#UPDRS-4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#UPDRS-4> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#UPDRS-4> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#UPDRS-4> <http://www.w3.org/2000/01/rdf-schema#comment> "Unified Parkinson's Disease Rating Scale - 4" .
+<https://w3id.org/enigma#UPDRS-4> <http://www.w3.org/2000/01/rdf-schema#label> "UPDRS-4" .
+# 
+# https://w3id.org/enigma#UPDRSTotal
+<https://w3id.org/enigma#UPDRSTotal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#UPDRSTotal> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#UPDRSTotal> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#UPDRSTotal> <http://www.w3.org/2000/01/rdf-schema#comment> "Unified Parkinson's Disease Rating Scale - Total Score" .
+<https://w3id.org/enigma#UPDRSTotal> <http://www.w3.org/2000/01/rdf-schema#label> "UPDRS Total" .
+# 
+# https://w3id.org/enigma#UPSIT
+<https://w3id.org/enigma#UPSIT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#UPSIT> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#UPSIT> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#UPSIT> <http://www.w3.org/2000/01/rdf-schema#comment> "University of Pennsylvania Smell Identification Test for Parkinson's Disease" .
+<https://w3id.org/enigma#UPSIT> <http://www.w3.org/2000/01/rdf-schema#label> "UPSIT" .
+# 
+# https://w3id.org/enigma#age
+<https://w3id.org/enigma#age> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#age> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#age> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#age> <http://www.w3.org/2000/01/rdf-schema#comment> "age of participants" .
+<https://w3id.org/enigma#age> <http://www.w3.org/2000/01/rdf-schema#label> "age" .
+# 
+# https://w3id.org/enigma#cityDwelling
+<https://w3id.org/enigma#cityDwelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#cityDwelling> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#cityDwelling> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#cityDwelling> <http://www.w3.org/2000/01/rdf-schema#comment> "If measured subjects in the cohort were city dwelling (pop >100,000)" .
+<https://w3id.org/enigma#cityDwelling> <http://www.w3.org/2000/01/rdf-schema#label> "City-Dwelling" .
+# 
+# https://w3id.org/enigma#comorbidities
+<https://w3id.org/enigma#comorbidities> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#comorbidities> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#comorbidities> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#comorbidities> <http://www.w3.org/2000/01/rdf-schema#comment> "If other comorbidities were measured in subjects" .
+<https://w3id.org/enigma#comorbidities> <http://www.w3.org/2000/01/rdf-schema#label> "comorbidities" .
+# 
+# https://w3id.org/enigma#diagnosisConfirmed
+<https://w3id.org/enigma#diagnosisConfirmed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#diagnosisConfirmed> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#diagnosisConfirmed> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#diagnosisConfirmed> <http://www.w3.org/2000/01/rdf-schema#comment> "If PD diagnosis was confirmed in the subject(s)" .
+<https://w3id.org/enigma#diagnosisConfirmed> <http://www.w3.org/2000/01/rdf-schema#label> "Diagnosis Confirmed" .
+# 
+# https://w3id.org/enigma#durill
+<https://w3id.org/enigma#durill> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#durill> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#durill> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#durill> <http://www.w3.org/2000/01/rdf-schema#comment> "Duration of Illness" .
+<https://w3id.org/enigma#durill> <http://www.w3.org/2000/01/rdf-schema#label> "DURILL" .
+# 
+# https://w3id.org/enigma#dx
+<https://w3id.org/enigma#dx> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#dx> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#dx> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#dx> <http://www.w3.org/2000/01/rdf-schema#comment> "Diagnosis Group" .
+# 
+# https://w3id.org/enigma#education
+<https://w3id.org/enigma#education> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#education> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#education> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#education> <http://www.w3.org/2000/01/rdf-schema#label> "Education" .
+# 
+# https://w3id.org/enigma#handedness
+<https://w3id.org/enigma#handedness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#handedness> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#handedness> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#handedness> <http://www.w3.org/2000/01/rdf-schema#comment> "dominant hand (left/right) of the subjects" .
+<https://w3id.org/enigma#handedness> <http://www.w3.org/2000/01/rdf-schema#label> "Handedness" .
+# 
+# https://w3id.org/enigma#iq
+<https://w3id.org/enigma#iq> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#iq> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#iq> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#iq> <http://www.w3.org/2000/01/rdf-schema#comment> "IQ of participants" .
+<https://w3id.org/enigma#iq> <http://www.w3.org/2000/01/rdf-schema#label> "IQ" .
+# 
+# https://w3id.org/enigma#maritalStatus
+<https://w3id.org/enigma#maritalStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#maritalStatus> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#maritalStatus> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#maritalStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "Subjects' marital status" .
+<https://w3id.org/enigma#maritalStatus> <http://www.w3.org/2000/01/rdf-schema#label> "Marital Status" .
+# 
+# https://w3id.org/enigma#occupation
+<https://w3id.org/enigma#occupation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#occupation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#occupation> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#occupation> <http://www.w3.org/2000/01/rdf-schema#comment> "Occupation of the subjects" .
+<https://w3id.org/enigma#occupation> <http://www.w3.org/2000/01/rdf-schema#label> "Occupation" .
+# 
+# https://w3id.org/enigma#otherDemographics
+<https://w3id.org/enigma#otherDemographics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#otherDemographics> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#otherDemographics> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#otherDemographics> <http://www.w3.org/2000/01/rdf-schema#comment> "Other Demographics info for PD cohorts" .
+<https://w3id.org/enigma#otherDemographics> <http://www.w3.org/2000/01/rdf-schema#label> "Other Demographics" .
+# 
+# https://w3id.org/enigma#otherEnvironmentalFactors
+<https://w3id.org/enigma#otherEnvironmentalFactors> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#otherEnvironmentalFactors> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#otherEnvironmentalFactors> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#otherEnvironmentalFactors> <http://www.w3.org/2000/01/rdf-schema#comment> "Any other environmental factors relating to a PD cohort" .
+<https://w3id.org/enigma#otherEnvironmentalFactors> <http://www.w3.org/2000/01/rdf-schema#label> "Other Environmental Factors" .
+# 
+# https://w3id.org/enigma#otherMotorEvaluation
+<https://w3id.org/enigma#otherMotorEvaluation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#otherMotorEvaluation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#otherMotorEvaluation> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#otherMotorEvaluation> <http://www.w3.org/2000/01/rdf-schema#comment> "Other Motor Evaluations" .
+<https://w3id.org/enigma#otherMotorEvaluation> <http://www.w3.org/2000/01/rdf-schema#label> "Other Motor Evaluations" .
+# 
+# https://w3id.org/enigma#otherPDDiagnosisData
+<https://w3id.org/enigma#otherPDDiagnosisData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#otherPDDiagnosisData> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#otherPDDiagnosisData> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#otherPDDiagnosisData> <http://www.w3.org/2000/01/rdf-schema#comment> "Other Parkinson's Diagnosis Data" .
+<https://w3id.org/enigma#otherPDDiagnosisData> <http://www.w3.org/2000/01/rdf-schema#label> "Other PD Diagnosis Data" .
+# 
+# https://w3id.org/enigma#raceEthnicity
+<https://w3id.org/enigma#raceEthnicity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#raceEthnicity> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#raceEthnicity> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#raceEthnicity> <http://www.w3.org/2000/01/rdf-schema#comment> "race/ethnicity of the subjects" .
+<https://w3id.org/enigma#raceEthnicity> <http://www.w3.org/2000/01/rdf-schema#label> "Race/Ethnicity" .
+# 
+# https://w3id.org/enigma#sex
+<https://w3id.org/enigma#sex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#sex> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#sex> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#sex> <http://www.w3.org/2000/01/rdf-schema#comment> "sex of participants" .
+<https://w3id.org/enigma#sex> <http://www.w3.org/2000/01/rdf-schema#label> "Sex" .
+# 
+# https://w3id.org/enigma#subjID
+<https://w3id.org/enigma#subjID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#subjID> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#subjID> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#subjID> <http://www.w3.org/2000/01/rdf-schema#comment> "Subject ID" .
+<https://w3id.org/enigma#subjID> <http://www.w3.org/2000/01/rdf-schema#label> "subj ID" .
+# 
+# https://w3id.org/enigma#subjectSES
+<https://w3id.org/enigma#subjectSES> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#subjectSES> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#PDDemographics> .
+<https://w3id.org/enigma#subjectSES> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#subjectSES> <http://www.w3.org/2000/01/rdf-schema#comment> "Subjects' Socioeconomic Status" .
+<https://w3id.org/enigma#subjectSES> <http://www.w3.org/2000/01/rdf-schema#label> "Subject SES" .
 # 
 # 
 # 
@@ -799,6 +1023,11 @@ _:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/enigma#OrganicMedicalDisorder> <http://purl.org/vocab/vann/example> "Delirium"@en .
 <https://w3id.org/enigma#OrganicMedicalDisorder> <http://www.w3.org/2000/01/rdf-schema#comment> "Disorder characterized by decreased mental function due to a medical or physical disease"@en .
 <https://w3id.org/enigma#OrganicMedicalDisorder> <http://www.w3.org/2000/01/rdf-schema#label> "Organic Medical Disorder"@en .
+# 
+# https://w3id.org/enigma#PDDemographics
+<https://w3id.org/enigma#PDDemographics> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#PDDemographics> <http://www.w3.org/2000/01/rdf-schema#comment> "PD-specific demographic Covariates measured by each cohort" .
+<https://w3id.org/enigma#PDDemographics> <http://www.w3.org/2000/01/rdf-schema#label> "PD Demographics" .
 # 
 # https://w3id.org/enigma#Person
 <https://w3id.org/enigma#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
