@@ -93,7 +93,13 @@
         <Literal>v1.1.0</Literal>
     </Annotation>
     <Declaration>
+        <Class IRI="#Cohort"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Scores_Covariates"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_scores"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#BAS_TotalScore"/>
@@ -137,6 +143,18 @@
     <Declaration>
         <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
     </Declaration>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_scores"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_scores"/>
+        <Class IRI="#Cohort"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_scores"/>
+        <Class IRI="#Scores_Covariates"/>
+    </ObjectPropertyRange>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
         <Class IRI="#Scores_Covariates"/>
