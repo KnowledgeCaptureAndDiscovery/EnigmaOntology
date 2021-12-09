@@ -1,6 +1,8 @@
 <https://w3id.org/enigma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/enigma/organization/1.1.0> .
+<https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/enigma/medication/1.1.0> .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Agnes McMahon" .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Hernan Vargas" .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Kevin Low" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "MiHyun Jang" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Michael Bornstein" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Ryan Espiritu" .
@@ -11,12 +13,11 @@
 <https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "Neda Jahanshad" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "Wesley Surento" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/creator> "Yolanda Gil" .
-<https://w3id.org/enigma> <http://purl.org/dc/terms/description> "An ontology representing organizations that participate in the ENIGMA consortium."@en .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/description> "An ontology representing medication for the ENIGMA working groups" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> .
-<https://w3id.org/enigma> <http://purl.org/dc/terms/title> "The Organization Ontology" .
-<https://w3id.org/enigma> <http://purl.org/vocab/vann/preferredNamespacePrefix> <https://w3id.org/enigma> .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/title> "The Medication Ontology" .
 <https://w3id.org/enigma> <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma" .
-<https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#priorVersion> <https://w3id.org/enigma/organization/1.1.0> .
+<https://w3id.org/enigma> <http://purl.org/vocab/vann/preferredNamespaceUri> <https://w3id.org/enigma#> .
 <https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionInfo> "v1.1.0" .
 # 
 # 
@@ -42,14 +43,11 @@
 # http://purl.org/dc/terms/title
 <http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
-# http://purl.org/vocab/vann/example
-<http://purl.org/vocab/vann/example> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
 # http://purl.org/vocab/vann/preferredNamespacePrefix
 <http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
-# https://w3id.org/enigma#vann:example
-<https://w3id.org/enigma#vann:example> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # 
 # 
@@ -60,57 +58,12 @@
 # #################################################################
 # 
 # 
-# http://purl.org/dc/terms/isPartOf
-<http://purl.org/dc/terms/isPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://purl.org/dc/terms/isPartOf> <http://www.w3.org/2000/01/rdf-schema#comment> "A related resource in which the described resource is included." .
-<http://purl.org/dc/terms/isPartOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
-<http://purl.org/dc/terms/isPartOf> <http://www.w3.org/2000/01/rdf-schema#label> "is Part of" .
-# 
-# http://www.w3.org/2006/vcard/ns#hasAddress
-<http://www.w3.org/2006/vcard/ns#hasAddress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.w3.org/2006/vcard/ns#hasAddress> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2006/vcard/ns> .
-<http://www.w3.org/2006/vcard/ns#hasAddress> <http://www.w3.org/2000/01/rdf-schema#label> "has Address" .
-# 
-# http://xmlns.com/foaf/0.1/member
-<http://xmlns.com/foaf/0.1/member> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://xmlns.com/foaf/0.1/member> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates member of a group" .
-<http://xmlns.com/foaf/0.1/member> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
-<http://xmlns.com/foaf/0.1/member> <http://www.w3.org/2000/01/rdf-schema#label> "member" .
-# 
-# https://w3id.org/enigma#hasAffiliate
-<https://w3id.org/enigma#hasAffiliate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#hasAffiliate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://xmlns.com/foaf/0.1/member> .
-<https://w3id.org/enigma#hasAffiliate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Organization> .
-<https://w3id.org/enigma#hasAffiliate> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Person> .
-<https://w3id.org/enigma#hasAffiliate> <http://purl.org/vocab/vann/example> "HarvardU hasAffiliate JohnSmith"@en .
-<https://w3id.org/enigma#hasAffiliate> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the organization's affiliates"@en .
-<https://w3id.org/enigma#hasAffiliate> <http://www.w3.org/2000/01/rdf-schema#label> "has affiliate"@en .
-# 
-# https://w3id.org/enigma#hasPrimaryAddress
-<https://w3id.org/enigma#hasPrimaryAddress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#hasPrimaryAddress> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2006/vcard/ns#hasAddress> .
-<https://w3id.org/enigma#hasPrimaryAddress> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
-_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Organization> .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/enigma#Person> .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-<https://w3id.org/enigma#hasPrimaryAddress> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Address> .
-<https://w3id.org/enigma#hasPrimaryAddress> <http://purl.org/vocab/vann/example> "USC hasPrimaryAddress \"123 Admiralty Way\""@en .
-<https://w3id.org/enigma#hasPrimaryAddress> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the primary address of an organization or person"@en .
-<https://w3id.org/enigma#hasPrimaryAddress> <http://www.w3.org/2000/01/rdf-schema#label> "has primary address"@en .
-# 
-# https://w3id.org/enigma#isPartOfOrganization
-<https://w3id.org/enigma#isPartOfOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/enigma#isPartOfOrganization> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/isPartOf> .
-<https://w3id.org/enigma#isPartOfOrganization> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Organization> .
-<https://w3id.org/enigma#isPartOfOrganization> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Organization> .
-<https://w3id.org/enigma#isPartOfOrganization> <http://purl.org/vocab/vann/example> "Department of Psychology, USC isPartOfOrganization USC"@en .
-<https://w3id.org/enigma#isPartOfOrganization> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the parent organization which an organization is a part of. An organization may be part of more than one organizations."@en .
-<https://w3id.org/enigma#isPartOfOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "is part of organization"@en .
+# https://w3id.org/enigma#has_medication
+<https://w3id.org/enigma#has_medication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/enigma#has_medication> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/enigma#has_medication> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cohort> .
+<https://w3id.org/enigma#has_medication> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#has_medication> <http://www.w3.org/2000/01/rdf-schema#label> "has medication" .
 # 
 # 
 # 
@@ -121,72 +74,103 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # #################################################################
 # 
 # 
-# http://www.w3.org/2006/vcard/ns#country-name
-<http://www.w3.org/2006/vcard/ns#country-name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#AntidepressantUseCurrent
+<https://w3id.org/enigma#AntidepressantUseCurrent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#AntidepressantUseCurrent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#AntidepressantUseCurrent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#AntidepressantUseCurrent> <http://www.w3.org/2000/01/rdf-schema#comment> "Use of antidepressants at the time of scanning" .
+<https://w3id.org/enigma#AntidepressantUseCurrent> <http://www.w3.org/2000/01/rdf-schema#label> "Antidepressant Use Current" .
 # 
-# http://www.w3.org/2006/vcard/ns#locality
-<http://www.w3.org/2006/vcard/ns#locality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://www.w3.org/2006/vcard/ns#locality> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Address> .
-<http://www.w3.org/2006/vcard/ns#locality> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://www.w3.org/2006/vcard/ns#locality> <http://www.w3.org/2000/01/rdf-schema#comment> "The locality (e.g. city or town) associated with the address of the object"@en .
-<http://www.w3.org/2006/vcard/ns#locality> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2006/vcard/ns> .
-<http://www.w3.org/2006/vcard/ns#locality> <http://www.w3.org/2000/01/rdf-schema#label> "locality"@en .
+# https://w3id.org/enigma#AntidepressantUseLifetime
+<https://w3id.org/enigma#AntidepressantUseLifetime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#AntidepressantUseLifetime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#AntidepressantUseLifetime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#AntidepressantUseLifetime> <http://www.w3.org/2000/01/rdf-schema#comment> "Use of antidepressants during lifetime" .
+<https://w3id.org/enigma#AntidepressantUseLifetime> <http://www.w3.org/2000/01/rdf-schema#label> "Antidepressant Use Lifetime" .
 # 
-# http://www.w3.org/2006/vcard/ns#postal-code
-<http://www.w3.org/2006/vcard/ns#postal-code> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#AntiepilepticUseCurrent
+<https://w3id.org/enigma#AntiepilepticUseCurrent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#AntiepilepticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#AntiepilepticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#AntiepilepticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#comment> "Use of Antiepileptics at time of scanning" .
+<https://w3id.org/enigma#AntiepilepticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#label> "Antiepileptic Use Current" .
 # 
-# http://www.w3.org/2006/vcard/ns#region
-<http://www.w3.org/2006/vcard/ns#region> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#AntiepilepticUseLifetime
+<https://w3id.org/enigma#AntiepilepticUseLifetime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#AntiepilepticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#AntiepilepticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#AntiepilepticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#comment> "Use of Antiepileptics during lifetime" .
+<https://w3id.org/enigma#AntiepilepticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#label> "Antiepileptic Use Lifetime" .
 # 
-# http://www.w3.org/2006/vcard/ns#street-address
-<http://www.w3.org/2006/vcard/ns#street-address> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# https://w3id.org/enigma#AtypicalAntipsychoticUseCurrent
+<https://w3id.org/enigma#AtypicalAntipsychoticUseCurrent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#AtypicalAntipsychoticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#AtypicalAntipsychoticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#AtypicalAntipsychoticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#comment> "Use of 2nd generation (atypical) antipsychotic at time of scanning" .
+<https://w3id.org/enigma#AtypicalAntipsychoticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#label> "Atypical Antipsychotic Use Current" .
 # 
-# https://w3id.org/enigma#hasCoordinates
-<https://w3id.org/enigma#hasCoordinates> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasCoordinates> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Organization> .
-<https://w3id.org/enigma#hasCoordinates> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/enigma#hasCoordinates> <http://www.w3.org/2000/01/rdf-schema#comment> "The coordinates associated with an organization"@en .
-<https://w3id.org/enigma#hasCoordinates> <http://www.w3.org/2000/01/rdf-schema#label> "has coordinates"@en .
+# https://w3id.org/enigma#AtypicalAntipsychoticUseLifetime
+<https://w3id.org/enigma#AtypicalAntipsychoticUseLifetime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#AtypicalAntipsychoticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#AtypicalAntipsychoticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#AtypicalAntipsychoticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#comment> "Use of 2nd generation (atypical) antipsychotic during lifetime" .
+<https://w3id.org/enigma#AtypicalAntipsychoticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#label> "Atypical Antipsychotic Use Lifetime" .
 # 
-# https://w3id.org/enigma#hasCountry
-<https://w3id.org/enigma#hasCountry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasCountry> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2006/vcard/ns#country-name> .
-<https://w3id.org/enigma#hasCountry> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Address> .
-<https://w3id.org/enigma#hasCountry> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/enigma#hasCountry> <http://www.w3.org/2000/01/rdf-schema#comment> "The country name associated with the address of the object"@en .
-<https://w3id.org/enigma#hasCountry> <http://www.w3.org/2000/01/rdf-schema#label> "has country"@en .
+# https://w3id.org/enigma#LithiumUseCurrent
+<https://w3id.org/enigma#LithiumUseCurrent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#LithiumUseCurrent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#LithiumUseCurrent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#LithiumUseCurrent> <http://www.w3.org/2000/01/rdf-schema#comment> "Use of Lithium at time of scanning" .
+<https://w3id.org/enigma#LithiumUseCurrent> <http://www.w3.org/2000/01/rdf-schema#label> "Lithium Use Current" .
 # 
-# https://w3id.org/enigma#hasKindOfInstitute
-<https://w3id.org/enigma#hasKindOfInstitute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasKindOfInstitute> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Organization> .
-<https://w3id.org/enigma#hasKindOfInstitute> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/enigma#hasKindOfInstitute> <http://purl.org/vocab/vann/example> "Organization kind \"University\""@en .
-<https://w3id.org/enigma#hasKindOfInstitute> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the specific kind/type of an organization"@en .
-<https://w3id.org/enigma#hasKindOfInstitute> <http://www.w3.org/2000/01/rdf-schema#label> "kind of institute"@en .
+# https://w3id.org/enigma#LithiumUseLifetime
+<https://w3id.org/enigma#LithiumUseLifetime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#LithiumUseLifetime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#LithiumUseLifetime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#LithiumUseLifetime> <http://www.w3.org/2000/01/rdf-schema#comment> "Lithium use during lifetime" .
+<https://w3id.org/enigma#LithiumUseLifetime> <http://www.w3.org/2000/01/rdf-schema#label> "Lithium Use Lifetime" .
 # 
-# https://w3id.org/enigma#hasPostalCode
-<https://w3id.org/enigma#hasPostalCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasPostalCode> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2006/vcard/ns#postal-code> .
-<https://w3id.org/enigma#hasPostalCode> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Address> .
-<https://w3id.org/enigma#hasPostalCode> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/enigma#hasPostalCode> <http://www.w3.org/2000/01/rdf-schema#comment> "The postal code associated with the address of the object"@en .
-<https://w3id.org/enigma#hasPostalCode> <http://www.w3.org/2000/01/rdf-schema#label> "has postal code"@en .
+# https://w3id.org/enigma#OtherMedUseCurrent
+<https://w3id.org/enigma#OtherMedUseCurrent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#OtherMedUseCurrent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#OtherMedUseCurrent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#OtherMedUseCurrent> <http://www.w3.org/2000/01/rdf-schema#comment> "Type of other medication used at time of scanning. Please provide the medication names." .
+<https://w3id.org/enigma#OtherMedUseCurrent> <http://www.w3.org/2000/01/rdf-schema#label> "Other Medication Use Current" .
 # 
-# https://w3id.org/enigma#hasRegion
-<https://w3id.org/enigma#hasRegion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasRegion> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2006/vcard/ns#region> .
-<https://w3id.org/enigma#hasRegion> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Address> .
-<https://w3id.org/enigma#hasRegion> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/enigma#hasRegion> <http://www.w3.org/2000/01/rdf-schema#comment> "The region (e.g. state or province) associated with the address of the object"@en .
-<https://w3id.org/enigma#hasRegion> <http://www.w3.org/2000/01/rdf-schema#label> "has region"@en .
+# https://w3id.org/enigma#OtherMedUseLifetime
+<https://w3id.org/enigma#OtherMedUseLifetime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#OtherMedUseLifetime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#OtherMedUseLifetime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#OtherMedUseLifetime> <http://www.w3.org/2000/01/rdf-schema#comment> "Type of other medication used during lifetime. Please provide the medication names." .
+<https://w3id.org/enigma#OtherMedUseLifetime> <http://www.w3.org/2000/01/rdf-schema#label> "Other Medication Use Lifetime" .
 # 
-# https://w3id.org/enigma#hasStreetAddress
-<https://w3id.org/enigma#hasStreetAddress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#hasStreetAddress> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2006/vcard/ns#street-address> .
-<https://w3id.org/enigma#hasStreetAddress> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Address> .
-<https://w3id.org/enigma#hasStreetAddress> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/enigma#hasStreetAddress> <http://www.w3.org/2000/01/rdf-schema#comment> "The street address associated with the address of the object"@en .
-<https://w3id.org/enigma#hasStreetAddress> <http://www.w3.org/2000/01/rdf-schema#label> "has street address"@en .
+# https://w3id.org/enigma#SomaticIllnessCurrent
+<https://w3id.org/enigma#SomaticIllnessCurrent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#SomaticIllnessCurrent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#SomaticIllnessCurrent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#SomaticIllnessCurrent> <http://www.w3.org/2000/01/rdf-schema#comment> "Presence of a somatic illness" .
+<https://w3id.org/enigma#SomaticIllnessCurrent> <http://www.w3.org/2000/01/rdf-schema#label> "Somatic Illness Current" .
+# 
+# https://w3id.org/enigma#SomaticIllnessType
+<https://w3id.org/enigma#SomaticIllnessType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#SomaticIllnessType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#SomaticIllnessType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/enigma#SomaticIllnessType> <http://www.w3.org/2000/01/rdf-schema#comment> "Specific somatic illness measured/found in subjects" .
+<https://w3id.org/enigma#SomaticIllnessType> <http://www.w3.org/2000/01/rdf-schema#label> "Somatic Illness Type" .
+# 
+# https://w3id.org/enigma#TypicalAntipsychoticUseCurrent
+<https://w3id.org/enigma#TypicalAntipsychoticUseCurrent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#TypicalAntipsychoticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#TypicalAntipsychoticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#TypicalAntipsychoticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#comment> "Use of 1st generation (typical) antipsychotics at time of scanning" .
+<https://w3id.org/enigma#TypicalAntipsychoticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#label> "Typical Antipsychotic Use Current" .
+# 
+# https://w3id.org/enigma#TypicalAntipsychoticUseLifetime
+<https://w3id.org/enigma#TypicalAntipsychoticUseLifetime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#TypicalAntipsychoticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#TypicalAntipsychoticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#TypicalAntipsychoticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#comment> "Use of 1st generation (typical) antipsychotics during lifetime" .
+<https://w3id.org/enigma#TypicalAntipsychoticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#label> "Typical Antipsychotic Use Lifetime" .
 # 
 # 
 # 
@@ -197,86 +181,29 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # #################################################################
 # 
 # 
-# http://vivoweb.org/ontology/core#College
-<http://vivoweb.org/ontology/core#College> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vivoweb.org/ontology/core#College> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Organization> .
-<http://vivoweb.org/ontology/core#College> <http://purl.org/vocab/vann/example> "Los Angeles City College"@en .
-<http://vivoweb.org/ontology/core#College> <http://www.w3.org/2000/01/rdf-schema#comment> "A college contributing to a given ENIGMA project"@en .
-<http://vivoweb.org/ontology/core#College> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vivoweb.org/ontology/core> .
-<http://vivoweb.org/ontology/core#College> <http://www.w3.org/2000/01/rdf-schema#label> "College"@en .
+# https://w3id.org/enigma#Cohort
+<https://w3id.org/enigma#Cohort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#Cohort> <http://www.w3.org/2000/01/rdf-schema#comment> "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria" .
+<https://w3id.org/enigma#Cohort> <http://www.w3.org/2000/01/rdf-schema#label> "Cohort" .
 # 
-# http://vivoweb.org/ontology/core#Consortium
-<http://vivoweb.org/ontology/core#Consortium> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vivoweb.org/ontology/core#Consortium> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Organization> .
-<http://vivoweb.org/ontology/core#Consortium> <http://purl.org/vocab/vann/example> "ENIGMA"@en .
-<http://vivoweb.org/ontology/core#Consortium> <http://www.w3.org/2000/01/rdf-schema#comment> "A consortium contributing to a given ENIGMA project"@en .
-<http://vivoweb.org/ontology/core#Consortium> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vivoweb.org/ontology/core> .
-<http://vivoweb.org/ontology/core#Consortium> <http://www.w3.org/2000/01/rdf-schema#label> "Consortium"@en .
+# https://w3id.org/enigma#CohortGroup
+<https://w3id.org/enigma#CohortGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#CohortGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/enigma#Cohort> .
 # 
-# http://vivoweb.org/ontology/core#Department
-<http://vivoweb.org/ontology/core#Department> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vivoweb.org/ontology/core#Department> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Organization> .
-<http://vivoweb.org/ontology/core#Department> <http://purl.org/vocab/vann/example> "Department of Psychology, USC"@en .
-<http://vivoweb.org/ontology/core#Department> <http://www.w3.org/2000/01/rdf-schema#comment> "A department contributing to a given ENIGMA project"@en .
-<http://vivoweb.org/ontology/core#Department> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vivoweb.org/ontology/core> .
-<http://vivoweb.org/ontology/core#Department> <http://www.w3.org/2000/01/rdf-schema#label> "Department"@en .
+# https://w3id.org/enigma#CohortProject
+<https://w3id.org/enigma#CohortProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#CohortProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/enigma#Cohort> .
+<https://w3id.org/enigma#CohortProject> <http://www.w3.org/2000/01/rdf-schema#comment> "The subset of the individuals from a Cohort, which are used as samples for a specific project" .
+<https://w3id.org/enigma#CohortProject> <http://www.w3.org/2000/01/rdf-schema#label> "Cohort Project" .
 # 
-# http://vivoweb.org/ontology/core#Hospital
-<http://vivoweb.org/ontology/core#Hospital> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vivoweb.org/ontology/core#Hospital> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Organization> .
-<http://vivoweb.org/ontology/core#Hospital> <http://purl.org/vocab/vann/example> "Children's Hospital Los Angeles"@en .
-<http://vivoweb.org/ontology/core#Hospital> <http://www.w3.org/2000/01/rdf-schema#comment> "A hospital contributing to a given ENIGMA project"@en .
-<http://vivoweb.org/ontology/core#Hospital> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vivoweb.org/ontology/core> .
-<http://vivoweb.org/ontology/core#Hospital> <http://www.w3.org/2000/01/rdf-schema#label> "Hospital"@en .
+# https://w3id.org/enigma#Covariates
+<https://w3id.org/enigma#Covariates> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#Covariates> <http://www.w3.org/2000/01/rdf-schema#comment> "A class used to describe covariates information for a cohort or study." .
+<https://w3id.org/enigma#Covariates> <http://www.w3.org/2000/01/rdf-schema#label> "Covariates" .
 # 
-# http://vivoweb.org/ontology/core#Institute
-<http://vivoweb.org/ontology/core#Institute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vivoweb.org/ontology/core#Institute> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Organization> .
-<http://vivoweb.org/ontology/core#Institute> <http://purl.org/vocab/vann/example> "Information Sciences Institute"@en .
-<http://vivoweb.org/ontology/core#Institute> <http://www.w3.org/2000/01/rdf-schema#comment> "An institute contributing to a given ENIGMA project"@en .
-<http://vivoweb.org/ontology/core#Institute> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vivoweb.org/ontology/core> .
-<http://vivoweb.org/ontology/core#Institute> <http://www.w3.org/2000/01/rdf-schema#label> "Institute"@en .
-# 
-# http://vivoweb.org/ontology/core#University
-<http://vivoweb.org/ontology/core#University> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vivoweb.org/ontology/core#University> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Organization> .
-<http://vivoweb.org/ontology/core#University> <http://purl.org/vocab/vann/example> "USC"@en .
-<http://vivoweb.org/ontology/core#University> <http://www.w3.org/2000/01/rdf-schema#comment> "A university contributing to a given ENIGMA project"@en .
-<http://vivoweb.org/ontology/core#University> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vivoweb.org/ontology/core> .
-<http://vivoweb.org/ontology/core#University> <http://www.w3.org/2000/01/rdf-schema#label> "University"@en .
-# 
-# http://www.w3.org/2006/vcard/ns#Address
-<http://www.w3.org/2006/vcard/ns#Address> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.w3.org/2006/vcard/ns#Address> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2006/vcard/ns> .
-<http://www.w3.org/2006/vcard/ns#Address> <http://www.w3.org/2000/01/rdf-schema#label> "Address"@en .
-# 
-# http://xmlns.com/foaf/0.1/Organization
-<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/enigma#Organization> .
-<http://xmlns.com/foaf/0.1/Organization> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1> .
-# 
-# https://w3id.org/enigma#Address
-<https://w3id.org/enigma#Address> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/enigma#Address> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2006/vcard/ns#Address> .
-<https://w3id.org/enigma#Address> <http://www.w3.org/2000/01/rdf-schema#comment> "To specify the components of the delivery address for the object"@en .
-<https://w3id.org/enigma#Address> <http://www.w3.org/2000/01/rdf-schema#label> "Address"@en .
-# 
-# https://w3id.org/enigma#Organization
-<https://w3id.org/enigma#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/enigma#Organization> <http://www.w3.org/2000/01/rdf-schema#comment> "An organization belonging to the ENIGMA consortium. Organization can be hospitals, universities, departments, etc."@en .
-<https://w3id.org/enigma#Organization> <http://www.w3.org/2000/01/rdf-schema#label> "Organization"@en .
-<https://w3id.org/enigma#Organization> <https://w3id.org/enigma#vann:example> "Information Sciences Institute" .
-# 
-# https://w3id.org/enigma#Person
-<https://w3id.org/enigma#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/enigma#Person> <http://purl.org/vocab/vann/example> "Theo van Erp"@en .
-<https://w3id.org/enigma#Person> <http://www.w3.org/2000/01/rdf-schema#comment> "A person associated with a given organization"@en .
-<https://w3id.org/enigma#Person> <http://www.w3.org/2000/01/rdf-schema#label> "Person"@en .
-# 
-# https://w3id.org/enigma#WorkingGroup
-<https://w3id.org/enigma#WorkingGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/enigma#WorkingGroup> <http://purl.org/vocab/vann/example> "BipolarWG"@en .
-<https://w3id.org/enigma#WorkingGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "Group of researchers studying a certain topic/disease"@en .
-<https://w3id.org/enigma#WorkingGroup> <http://www.w3.org/2000/01/rdf-schema#label> "Working Group"@en .
+# https://w3id.org/enigma#MedicationCovariates
+<https://w3id.org/enigma#MedicationCovariates> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#MedicationCovariates> <http://www.w3.org/2000/01/rdf-schema#comment> "Medication covariates describing the types of medication (lifetime/current) used by participants in each cohort" .
+<https://w3id.org/enigma#MedicationCovariates> <http://www.w3.org/2000/01/rdf-schema#label> "Medication Covariates" .
 # 
 # Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
