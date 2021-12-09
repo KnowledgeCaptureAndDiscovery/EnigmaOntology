@@ -93,7 +93,19 @@
         <Literal>v1.1.0</Literal>
     </Annotation>
     <Declaration>
+        <Class IRI="#Cohort"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CohortGroup"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CohortProject"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Psychopathology_Covariates"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_psychopathology"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#BD_AgeofOnset"/>
@@ -221,6 +233,26 @@
     <Declaration>
         <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
     </Declaration>
+    <SubClassOf>
+        <Class IRI="#CohortGroup"/>
+        <Class IRI="#Cohort"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CohortProject"/>
+        <Class IRI="#Cohort"/>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_psychopathology"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_psychopathology"/>
+        <Class IRI="#Cohort"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_psychopathology"/>
+        <Class IRI="#Psychopathology_Covariates"/>
+    </ObjectPropertyRange>
     <DataPropertyDomain>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
         <Class IRI="#Psychopathology_Covariates"/>
@@ -571,6 +603,16 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Cohort</IRI>
+        <Literal>A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Cohort</IRI>
+        <Literal>Cohort</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#GAD_AgeofOnset</IRI>
         <Literal>Describes if age of onset of subject&apos;s Generalized Anxiety Disorder is specified.</Literal>
     </AnnotationAssertion>
@@ -718,6 +760,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Psychopathology_Covariates</IRI>
         <Literal>Psychopathology Covariates</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_psychopathology</IRI>
+        <Literal>has psychopathology</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>

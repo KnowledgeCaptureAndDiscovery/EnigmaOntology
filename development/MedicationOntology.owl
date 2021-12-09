@@ -7,7 +7,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="https://w3id.org/enigma"
      versionIRI="https://w3id.org/enigma/medication/1.1.0">
-    <Prefix name="" IRI="https://w3id.org/enigma#"/>
+    <Prefix name="" IRI="https://w3id.org/enigma"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -93,7 +93,64 @@
         <Literal>v1.1.0</Literal>
     </Annotation>
     <Declaration>
+        <Class IRI="#Cohort"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CohortGroup"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CohortProject"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Covariates"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MedicationCovariates"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_medication"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#AntidepressantUseCurrent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#AntidepressantUseLifetime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#AntiepilepticUseCurrent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#AntiepilepticUseLifetime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#AtypicalAntipsychoticUseCurrent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#AtypicalAntipsychoticUseLifetime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#LithiumUseCurrent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#LithiumUseLifetime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#OtherMedUseCurrent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#OtherMedUseLifetime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#SomaticIllnessCurrent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#SomaticIllnessType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#TypicalAntipsychoticUseCurrent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#TypicalAntipsychoticUseLifetime"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="terms:contributor"/>
@@ -116,14 +173,218 @@
     <Declaration>
         <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
     </Declaration>
+    <SubClassOf>
+        <Class IRI="#CohortGroup"/>
+        <Class IRI="#Cohort"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CohortProject"/>
+        <Class IRI="#Cohort"/>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#has_medication"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_medication"/>
+        <Class IRI="#Cohort"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_medication"/>
+        <Class IRI="#MedicationCovariates"/>
+    </ObjectPropertyRange>
     <DataPropertyDomain>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-        <Class IRI="#Covariates"/>
+        <DataProperty IRI="#AntidepressantUseCurrent"/>
+        <Class IRI="#MedicationCovariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#AntidepressantUseLifetime"/>
+        <Class IRI="#MedicationCovariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#AntiepilepticUseCurrent"/>
+        <Class IRI="#MedicationCovariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#AntiepilepticUseLifetime"/>
+        <Class IRI="#MedicationCovariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#AtypicalAntipsychoticUseCurrent"/>
+        <Class IRI="#MedicationCovariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#AtypicalAntipsychoticUseLifetime"/>
+        <Class IRI="#MedicationCovariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#LithiumUseCurrent"/>
+        <Class IRI="#MedicationCovariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#LithiumUseLifetime"/>
+        <Class IRI="#MedicationCovariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#OtherMedUseCurrent"/>
+        <Class IRI="#MedicationCovariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#OtherMedUseLifetime"/>
+        <Class IRI="#MedicationCovariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#SomaticIllnessCurrent"/>
+        <Class IRI="#MedicationCovariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#SomaticIllnessType"/>
+        <Class IRI="#MedicationCovariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#TypicalAntipsychoticUseCurrent"/>
+        <Class IRI="#MedicationCovariates"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#TypicalAntipsychoticUseLifetime"/>
+        <Class IRI="#MedicationCovariates"/>
     </DataPropertyDomain>
     <DataPropertyRange>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+        <DataProperty IRI="#AntidepressantUseCurrent"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#AntidepressantUseLifetime"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#AntiepilepticUseCurrent"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#AntiepilepticUseLifetime"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#AtypicalAntipsychoticUseCurrent"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#AtypicalAntipsychoticUseLifetime"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#LithiumUseCurrent"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#LithiumUseLifetime"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#OtherMedUseCurrent"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#OtherMedUseLifetime"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#SomaticIllnessCurrent"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#SomaticIllnessType"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#TypicalAntipsychoticUseCurrent"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#TypicalAntipsychoticUseLifetime"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AntidepressantUseCurrent</IRI>
+        <Literal>Use of antidepressants at the time of scanning</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AntidepressantUseCurrent</IRI>
+        <Literal>Antidepressant Use Current</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AntidepressantUseLifetime</IRI>
+        <Literal>Use of antidepressants during lifetime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AntidepressantUseLifetime</IRI>
+        <Literal>Antidepressant Use Lifetime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AntiepilepticUseCurrent</IRI>
+        <Literal>Use of Antiepileptics at time of scanning</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AntiepilepticUseCurrent</IRI>
+        <Literal>Antiepileptic Use Current</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AntiepilepticUseLifetime</IRI>
+        <Literal>Use of Antiepileptics during lifetime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AntiepilepticUseLifetime</IRI>
+        <Literal>Antiepileptic Use Lifetime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AtypicalAntipsychoticUseCurrent</IRI>
+        <Literal>Use of 2nd generation (atypical) antipsychotic at time of scanning</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AtypicalAntipsychoticUseCurrent</IRI>
+        <Literal>Atypical Antipsychotic Use Current</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AtypicalAntipsychoticUseLifetime</IRI>
+        <Literal>Use of 2nd generation (atypical) antipsychotic during lifetime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AtypicalAntipsychoticUseLifetime</IRI>
+        <Literal>Atypical Antipsychotic Use Lifetime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Cohort</IRI>
+        <Literal>A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Cohort</IRI>
+        <Literal>Cohort</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CohortProject</IRI>
+        <Literal>The subset of the individuals from a Cohort, which are used as samples for a specific project</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CohortProject</IRI>
+        <Literal>Cohort Project</Literal>
+    </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Covariates</IRI>
@@ -133,6 +394,101 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Covariates</IRI>
         <Literal>Covariates</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LithiumUseCurrent</IRI>
+        <Literal>Use of Lithium at time of scanning</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#LithiumUseCurrent</IRI>
+        <Literal>Lithium Use Current</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LithiumUseLifetime</IRI>
+        <Literal>Lithium use during lifetime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#LithiumUseLifetime</IRI>
+        <Literal>Lithium Use Lifetime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MedicationCovariates</IRI>
+        <Literal>Medication covariates describing the types of medication (lifetime/current) used by participants in each cohort</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MedicationCovariates</IRI>
+        <Literal>Medication Covariates</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OtherMedUseCurrent</IRI>
+        <Literal>Type of other medication used at time of scanning. Please provide the medication names.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OtherMedUseCurrent</IRI>
+        <Literal>Other Medication Use Current</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OtherMedUseLifetime</IRI>
+        <Literal>Type of other medication used during lifetime. Please provide the medication names.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OtherMedUseLifetime</IRI>
+        <Literal>Other Medication Use Lifetime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SomaticIllnessCurrent</IRI>
+        <Literal>Presence of a somatic illness</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SomaticIllnessCurrent</IRI>
+        <Literal>Somatic Illness Current</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SomaticIllnessType</IRI>
+        <Literal>Specific somatic illness measured/found in subjects</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SomaticIllnessType</IRI>
+        <Literal>Somatic Illness Type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TypicalAntipsychoticUseCurrent</IRI>
+        <Literal>Use of 1st generation (typical) antipsychotics at time of scanning</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TypicalAntipsychoticUseCurrent</IRI>
+        <Literal>Typical Antipsychotic Use Current</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TypicalAntipsychoticUseLifetime</IRI>
+        <Literal>Use of 1st generation (typical) antipsychotics during lifetime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TypicalAntipsychoticUseLifetime</IRI>
+        <Literal>Typical Antipsychotic Use Lifetime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_medication</IRI>
+        <Literal>has medication</Literal>
     </AnnotationAssertion>
 </Ontology>
 

@@ -339,6 +339,8 @@ xsd:gYear rdf:type rdfs:Datatype .
 ###  https://w3id.org/enigma#has_PD_Demographics
 :has_PD_Demographics rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdfs:domain :Cohort ;
+                     rdfs:range :PDDemographics ;
                      rdfs:comment "Describes demographics properties specific to the PD working group" ;
                      rdfs:label "has PD demographics" .
 
@@ -421,138 +423,386 @@ xsd:gYear rdf:type rdfs:Datatype .
 #    Data properties
 #################################################################
 
-###  https://w3id.org/enigma#AES
-:AES rdf:type owl:DatatypeProperty ;
-     rdfs:subPropertyOf owl:topDataProperty ;
-     rdfs:domain :Neuropsychiatric ;
-     rdfs:range xsd:string ;
-     rdfs:comment "Apathy Evaluation Scale - 12 item scale or 18 item scale" ;
-     rdfs:label "AES" .
+###  https://w3id.org/enigma#AgeOfPDOnset
+:AgeOfPDOnset rdf:type owl:DatatypeProperty ;
+              rdfs:domain :PDDemographics ;
+              rdfs:range xsd:boolean ;
+              rdfs:comment "Age of Onset of Parkinson's Disease" ;
+              rdfs:label "Age of Onset PD" .
 
 
-###  https://w3id.org/enigma#DigitSpanBackward
-:DigitSpanBackward rdf:type owl:DatatypeProperty ;
-                   rdfs:subPropertyOf owl:topDataProperty ;
-                   rdfs:domain :Cognitive ;
+###  https://w3id.org/enigma#HoehnAndYahrStage
+:HoehnAndYahrStage rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :PDDemographics ;
                    rdfs:range xsd:boolean ;
-                   rdfs:label "Digit Span Backward" .
+                   rdfs:comment "The Stage for Hoehn and Yahr scales used for PD cohorts" ;
+                   rdfs:label "Hoehn and Yahr Stage" .
 
 
-###  https://w3id.org/enigma#DigitSpanForward
-:DigitSpanForward rdf:type owl:DatatypeProperty ;
-                  rdfs:subPropertyOf owl:topDataProperty ;
-                  rdfs:domain :Cognitive ;
-                  rdfs:range xsd:boolean ;
-                  rdfs:label "Digit Span Forward" .
+###  https://w3id.org/enigma#LEDDScore
+:LEDDScore rdf:type owl:DatatypeProperty ;
+           rdfs:domain :PDDemographics ;
+           rdfs:range xsd:boolean ;
+           rdfs:comment "Levodopa Equivalent Doses used to treat Parkinson's Disease" ;
+           rdfs:label "LEDD Score" .
 
 
-###  https://w3id.org/enigma#MMSE
-:MMSE rdf:type owl:DatatypeProperty ;
-      rdfs:subPropertyOf owl:topDataProperty ;
-      rdfs:domain :Cognitive ;
-      rdfs:range xsd:boolean ;
-      rdfs:comment "Mini Mental State Exam" ;
-      rdfs:label "MMSE" .
+###  https://w3id.org/enigma#MDS-UPDRS-1
+:MDS-UPDRS-1 rdf:type owl:DatatypeProperty ;
+             rdfs:domain :PDDemographics ;
+             rdfs:range xsd:boolean ;
+             rdfs:comment "Movement Disorders Society Unified Parkinson's Disease Rating Scale - 1" ;
+             rdfs:label "MDS-UPDRS-1" .
 
 
-###  https://w3id.org/enigma#MoCA
-:MoCA rdf:type owl:DatatypeProperty ;
-      rdfs:subPropertyOf owl:topDataProperty ;
-      rdfs:domain :Cognitive ;
-      rdfs:range xsd:boolean ;
-      rdfs:comment "Montreal Cognitive Assessment" ;
-      rdfs:label "MoCA" .
+###  https://w3id.org/enigma#MDS-UPDRS-2
+:MDS-UPDRS-2 rdf:type owl:DatatypeProperty ;
+             rdfs:domain :PDDemographics ;
+             rdfs:range xsd:boolean ;
+             rdfs:comment "Movement Disorders Society Unified Parkinson's Disease Rating Scale - 2" ;
+             rdfs:label "MDS-UPDRS-2" .
 
 
-###  https://w3id.org/enigma#OtherCognitiveCovariates
-:OtherCognitiveCovariates rdf:type owl:DatatypeProperty ;
-                          rdfs:subPropertyOf owl:topDataProperty ;
-                          rdfs:domain :Cognitive ;
-                          rdfs:range xsd:string ;
-                          rdfs:label "Other Cognitive Covariates" .
+###  https://w3id.org/enigma#MDS-UPDRS-3
+:MDS-UPDRS-3 rdf:type owl:DatatypeProperty ;
+             rdfs:domain :PDDemographics ;
+             rdfs:range xsd:boolean ;
+             rdfs:comment "Movement Disorders Society Unified Parkinson's Disease Rating Scale - 3" ;
+             rdfs:label "MDS-UPDRS-3" .
 
 
-###  https://w3id.org/enigma#PD_DementiaDiagnosis
-:PD_DementiaDiagnosis rdf:type owl:DatatypeProperty ;
-                      rdfs:subPropertyOf owl:topDataProperty ;
-                      rdfs:domain :Cognitive ;
-                      rdfs:range xsd:boolean ;
-                      rdfs:label "PD Dementia Diagnosis" .
+###  https://w3id.org/enigma#MDS-UPDRS-4
+:MDS-UPDRS-4 rdf:type owl:DatatypeProperty ;
+             rdfs:domain :PDDemographics ;
+             rdfs:range xsd:boolean ;
+             rdfs:comment "Movement Disorders Society Unified Parkinson's Disease Rating Scale - 4" ;
+             rdfs:label "MDS-UPDRS-4" .
 
 
-###  https://w3id.org/enigma#PhonologicalAndSemanticVerbalFluencyTest
-:PhonologicalAndSemanticVerbalFluencyTest rdf:type owl:DatatypeProperty ;
-                                          rdfs:subPropertyOf owl:topDataProperty ;
-                                          rdfs:domain :Cognitive ;
-                                          rdfs:range xsd:boolean ;
-                                          rdfs:label "Phonological (PVF) and Semantic (SVF) Verbal Fluency Test" .
-
-
-###  https://w3id.org/enigma#Rey_OsterriethComplexFigureTest
-:Rey_OsterriethComplexFigureTest rdf:type owl:DatatypeProperty ;
-                                 rdfs:subPropertyOf owl:topDataProperty ;
-                                 rdfs:domain :Cognitive ;
-                                 rdfs:range xsd:boolean ;
-                                 rdfs:label "Rey-Osterrieth Complex Figure Test" .
-
-
-###  https://w3id.org/enigma#Reys15WordTest
-:Reys15WordTest rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf owl:topDataProperty ;
-                rdfs:domain :Cognitive ;
+###  https://w3id.org/enigma#MDS-UPDRSTotal
+:MDS-UPDRSTotal rdf:type owl:DatatypeProperty ;
+                rdfs:domain :PDDemographics ;
                 rdfs:range xsd:boolean ;
-                rdfs:label "Rey's 15-word Test - Immediate Recall (RIR) and Delayed Recall (RDR)" .
+                rdfs:comment "Movement Disorders Society Unified Parkinson's Disease Rating Scale - Total Score" ;
+                rdfs:label "MDS-UPDRS Total" .
 
 
-###  https://w3id.org/enigma#SWCT
-:SWCT rdf:type owl:DatatypeProperty ;
-      rdfs:subPropertyOf owl:topDataProperty ;
-      rdfs:domain :Cognitive ;
-      rdfs:range xsd:boolean ;
-      rdfs:comment "Stroop Word-Color Test" ;
-      rdfs:label "SWCT" .
-
-
-###  https://w3id.org/enigma#SentencesConstruction
-:SentencesConstruction rdf:type owl:DatatypeProperty ;
-                       rdfs:subPropertyOf owl:topDataProperty ;
-                       rdfs:domain :Cognitive ;
-                       rdfs:range xsd:boolean ;
-                       rdfs:label "Sentences Construction" .
-
-
-###  https://w3id.org/enigma#TrialMakingTestA-B
-:TrialMakingTestA-B rdf:type owl:DatatypeProperty ;
-                    rdfs:subPropertyOf owl:topDataProperty ;
-                    rdfs:domain :Cognitive ;
+###  https://w3id.org/enigma#OtherMedUseCurrent
+:OtherMedUseCurrent rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :PDDemographics ;
                     rdfs:range xsd:boolean ;
-                    rdfs:label "Trial Making Test A-B" .
+                    rdfs:comment "Other medication currently used" ;
+                    rdfs:label "Other Medication Use Current" .
 
 
-###  https://w3id.org/enigma#WCST-SF
-:WCST-SF rdf:type owl:DatatypeProperty ;
-         rdfs:subPropertyOf owl:topDataProperty ;
-         rdfs:domain :Cognitive ;
+###  https://w3id.org/enigma#OtherMedUseLifetime
+:OtherMedUseLifetime rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :PDDemographics ;
+                     rdfs:range xsd:boolean ;
+                     rdfs:comment "Other Medication used during their lifetime" ;
+                     rdfs:label "Other Medication Use Lifetime" .
+
+
+###  https://w3id.org/enigma#PDMedicationUseCurrent
+:PDMedicationUseCurrent rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :PDDemographics ;
+                        rdfs:range xsd:boolean ;
+                        rdfs:comment "Describes if the patient is currently using PD medication" ;
+                        rdfs:label "PD Medication Use Current" .
+
+
+###  https://w3id.org/enigma#PDMedicationUseLifetime
+:PDMedicationUseLifetime rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :PDDemographics ;
+                         rdfs:range xsd:boolean ;
+                         rdfs:comment "Describes if the patient used PD medication during their lifetime" ;
+                         rdfs:label "PD Medication Use Lifetime" .
+
+
+###  https://w3id.org/enigma#PDMotorSubtype
+:PDMotorSubtype rdf:type owl:DatatypeProperty ;
+                rdfs:domain :PDDemographics ;
+                rdfs:range xsd:boolean ;
+                rdfs:comment "PD Motor Subtypes (mild-motor predominant, intermediate, or diffuse malignant)" ;
+                rdfs:label "PD Motor Subtype" .
+
+
+###  https://w3id.org/enigma#PatientMedicationOnOffDuringUPDRS
+:PatientMedicationOnOffDuringUPDRS rdf:type owl:DatatypeProperty ;
+                                   rdfs:domain :PDDemographics ;
+                                   rdfs:range xsd:boolean ;
+                                   rdfs:comment "If the patient was on medication during Unified Parkinson's Disease Rating Scale measurements" ;
+                                   rdfs:label "Patient Medication On/Off During UPDRS" .
+
+
+###  https://w3id.org/enigma#RBDDiagnosis
+:RBDDiagnosis rdf:type owl:DatatypeProperty ;
+              rdfs:domain :PDDemographics ;
+              rdfs:range xsd:boolean ;
+              rdfs:comment "RBD (REM Sleep Behavior Disorder) Diagnosis" ;
+              rdfs:label "RBD Diagnosis" .
+
+
+###  https://w3id.org/enigma#RSGE-PD
+:RSGE-PD rdf:type owl:DatatypeProperty ;
+         rdfs:domain :PDDemographics ;
          rdfs:range xsd:boolean ;
-         rdfs:comment "Wisconsin Card Sorting Test - Short Form" ;
-         rdfs:label "WCST-SF" .
+         rdfs:label "RSGE-PD" .
 
 
-###  https://w3id.org/enigma#WordListLearningTask
-:WordListLearningTask rdf:type owl:DatatypeProperty ;
-                      rdfs:subPropertyOf owl:topDataProperty ;
-                      rdfs:domain :Cognitive ;
+###  https://w3id.org/enigma#SCOPA-Autonomic
+:SCOPA-Autonomic rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :PDDemographics ;
+                 rdfs:range xsd:boolean ;
+                 rdfs:comment "Scales for Outcomes in Parkinson's Disease - Autonomic" ;
+                 rdfs:label "SCOPA-Autonomic" .
+
+
+###  https://w3id.org/enigma#SCOPA-Cognition
+:SCOPA-Cognition rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :PDDemographics ;
+                 rdfs:range xsd:boolean ;
+                 rdfs:comment "Scales for Outcomes in Parkinson's Disease - Cognition" ;
+                 rdfs:label "SCOPA-Cognition" .
+
+
+###  https://w3id.org/enigma#SCOPA-Motor
+:SCOPA-Motor rdf:type owl:DatatypeProperty ;
+             rdfs:domain :PDDemographics ;
+             rdfs:range xsd:boolean ;
+             rdfs:comment "Scales for Outcomes in Parkinson's Disease - Motor" ;
+             rdfs:label "SCOPA-Motor" .
+
+
+###  https://w3id.org/enigma#SCOPA-Psychiatric
+:SCOPA-Psychiatric rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :PDDemographics ;
+                   rdfs:range xsd:boolean ;
+                   rdfs:comment "Scales for Outcomes in Parkinson's Disease - Psychiatric" ;
+                   rdfs:label "SCOPA-Psychiatric" .
+
+
+###  https://w3id.org/enigma#SCOPA-Sleep
+:SCOPA-Sleep rdf:type owl:DatatypeProperty ;
+             rdfs:domain :PDDemographics ;
+             rdfs:range xsd:boolean ;
+             rdfs:comment "Scales for Outcomes in Parkinson's Disease - Sleep" ;
+             rdfs:label "SCOPA-Sleep" .
+
+
+###  https://w3id.org/enigma#SE-ADLS
+:SE-ADLS rdf:type owl:DatatypeProperty ;
+         rdfs:domain :PDDemographics ;
+         rdfs:range xsd:boolean ;
+         rdfs:comment "Schwab and England: Activities of Daily Living Scale" ;
+         rdfs:label "SE-ADLS" .
+
+
+###  https://w3id.org/enigma#SideOfOnset
+:SideOfOnset rdf:type owl:DatatypeProperty ;
+             rdfs:domain :PDDemographics ;
+             rdfs:range xsd:boolean ;
+             rdfs:comment "The side of PD symptoms during PD onset" ;
+             rdfs:label "Side of Onset" .
+
+
+###  https://w3id.org/enigma#UPDRS-1
+:UPDRS-1 rdf:type owl:DatatypeProperty ;
+         rdfs:domain :PDDemographics ;
+         rdfs:range xsd:boolean ;
+         rdfs:comment "Unified Parkinson's Disease Rating Scale - 1" ;
+         rdfs:label "UPDRS-1" .
+
+
+###  https://w3id.org/enigma#UPDRS-2
+:UPDRS-2 rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :PDDemographics ;
+         rdfs:range xsd:boolean ;
+         rdfs:comment "Unified Parkinson's Disease Rating Scale - 2" ;
+         rdfs:label "UPDRS-2" .
+
+
+###  https://w3id.org/enigma#UPDRS-3
+:UPDRS-3 rdf:type owl:DatatypeProperty ;
+         rdfs:domain :PDDemographics ;
+         rdfs:range xsd:boolean ;
+         rdfs:comment "Unified Parkinson's Disease Rating Scale - 3" ;
+         rdfs:label "UPDRS-3" .
+
+
+###  https://w3id.org/enigma#UPDRS-4
+:UPDRS-4 rdf:type owl:DatatypeProperty ;
+         rdfs:domain :PDDemographics ;
+         rdfs:range xsd:boolean ;
+         rdfs:comment "Unified Parkinson's Disease Rating Scale - 4" ;
+         rdfs:label "UPDRS-4" .
+
+
+###  https://w3id.org/enigma#UPDRSTotal
+:UPDRSTotal rdf:type owl:DatatypeProperty ;
+            rdfs:domain :PDDemographics ;
+            rdfs:range xsd:boolean ;
+            rdfs:comment "Unified Parkinson's Disease Rating Scale - Total Score" ;
+            rdfs:label "UPDRS Total" .
+
+
+###  https://w3id.org/enigma#UPSIT
+:UPSIT rdf:type owl:DatatypeProperty ;
+       rdfs:domain :PDDemographics ;
+       rdfs:range xsd:boolean ;
+       rdfs:comment "University of Pennsylvania Smell Identification Test for Parkinson's Disease" ;
+       rdfs:label "UPSIT" .
+
+
+###  https://w3id.org/enigma#age
+:age rdf:type owl:DatatypeProperty ;
+     rdfs:domain :PDDemographics ;
+     rdfs:range xsd:boolean ;
+     rdfs:comment "age of participants" ;
+     rdfs:label "age" .
+
+
+###  https://w3id.org/enigma#cityDwelling
+:cityDwelling rdf:type owl:DatatypeProperty ;
+              rdfs:domain :PDDemographics ;
+              rdfs:range xsd:boolean ;
+              rdfs:comment "If measured subjects in the cohort were city dwelling (pop >100,000)" ;
+              rdfs:label "City-Dwelling" .
+
+
+###  https://w3id.org/enigma#comorbidities
+:comorbidities rdf:type owl:DatatypeProperty ;
+               rdfs:domain :PDDemographics ;
+               rdfs:range xsd:boolean ;
+               rdfs:comment "If other comorbidities were measured in subjects" ;
+               rdfs:label "comorbidities" .
+
+
+###  https://w3id.org/enigma#diagnosisConfirmed
+:diagnosisConfirmed rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :PDDemographics ;
+                    rdfs:range xsd:boolean ;
+                    rdfs:comment "If PD diagnosis was confirmed in the subject(s)" ;
+                    rdfs:label "Diagnosis Confirmed" .
+
+
+###  https://w3id.org/enigma#durill
+:durill rdf:type owl:DatatypeProperty ;
+        rdfs:domain :PDDemographics ;
+        rdfs:range xsd:boolean ;
+        rdfs:comment "Duration of Illness" ;
+        rdfs:label "DURILL" .
+
+
+###  https://w3id.org/enigma#dx
+:dx rdf:type owl:DatatypeProperty ;
+    rdfs:domain :PDDemographics ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "Diagnosis Group" .
+
+
+###  https://w3id.org/enigma#education
+:education rdf:type owl:DatatypeProperty ;
+           rdfs:domain :PDDemographics ;
+           rdfs:range xsd:boolean ;
+           rdfs:label "Education" .
+
+
+###  https://w3id.org/enigma#handedness
+:handedness rdf:type owl:DatatypeProperty ;
+            rdfs:domain :PDDemographics ;
+            rdfs:range xsd:boolean ;
+            rdfs:comment "dominant hand (left/right) of the subjects" ;
+            rdfs:label "Handedness" .
+
+
+###  https://w3id.org/enigma#iq
+:iq rdf:type owl:DatatypeProperty ;
+    rdfs:domain :PDDemographics ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "IQ of participants" ;
+    rdfs:label "IQ" .
+
+
+###  https://w3id.org/enigma#maritalStatus
+:maritalStatus rdf:type owl:DatatypeProperty ;
+               rdfs:domain :PDDemographics ;
+               rdfs:range xsd:boolean ;
+               rdfs:comment "Subjects' marital status" ;
+               rdfs:label "Marital Status" .
+
+
+###  https://w3id.org/enigma#occupation
+:occupation rdf:type owl:DatatypeProperty ;
+            rdfs:domain :PDDemographics ;
+            rdfs:range xsd:boolean ;
+            rdfs:comment "Occupation of the subjects" ;
+            rdfs:label "Occupation" .
+
+
+###  https://w3id.org/enigma#otherDemographics
+:otherDemographics rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :PDDemographics ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "Other Demographics info for PD cohorts" ;
+                   rdfs:label "Other Demographics" .
+
+
+###  https://w3id.org/enigma#otherEnvironmentalFactors
+:otherEnvironmentalFactors rdf:type owl:DatatypeProperty ;
+                           rdfs:domain :PDDemographics ;
+                           rdfs:range xsd:string ;
+                           rdfs:comment "Any other environmental factors relating to a PD cohort" ;
+                           rdfs:label "Other Environmental Factors" .
+
+
+###  https://w3id.org/enigma#otherMotorEvaluation
+:otherMotorEvaluation rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :PDDemographics ;
                       rdfs:range xsd:string ;
-                      rdfs:comment "Word List Learning Task: Note the version used" ;
-                      rdfs:label "Word List Learning Task" .
+                      rdfs:comment "Other Motor Evaluations" ;
+                      rdfs:label "Other Motor Evaluations" .
 
 
-###  https://w3id.org/enigma#mildCognitiveImpairmentDiagnosis
-:mildCognitiveImpairmentDiagnosis rdf:type owl:DatatypeProperty ;
-                                  rdfs:subPropertyOf owl:topDataProperty ;
-                                  rdfs:domain :Cognitive ;
-                                  rdfs:range xsd:boolean ;
-                                  rdfs:label "Mild Cognitive Impairment Diagnosis" .
+###  https://w3id.org/enigma#otherPDDiagnosisData
+:otherPDDiagnosisData rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :PDDemographics ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "Other Parkinson's Diagnosis Data" ;
+                      rdfs:label "Other PD Diagnosis Data" .
+
+
+###  https://w3id.org/enigma#raceEthnicity
+:raceEthnicity rdf:type owl:DatatypeProperty ;
+               rdfs:domain :PDDemographics ;
+               rdfs:range xsd:boolean ;
+               rdfs:comment "race/ethnicity of the subjects" ;
+               rdfs:label "Race/Ethnicity" .
+
+
+###  https://w3id.org/enigma#sex
+:sex rdf:type owl:DatatypeProperty ;
+     rdfs:domain :PDDemographics ;
+     rdfs:range xsd:boolean ;
+     rdfs:comment "sex of participants" ;
+     rdfs:label "Sex" .
+
+
+###  https://w3id.org/enigma#subjID
+:subjID rdf:type owl:DatatypeProperty ;
+        rdfs:domain :PDDemographics ;
+        rdfs:range xsd:boolean ;
+        rdfs:comment "Subject ID" ;
+        rdfs:label "subj ID" .
+
+
+###  https://w3id.org/enigma#subjectSES
+:subjectSES rdf:type owl:DatatypeProperty ;
+            rdfs:domain :PDDemographics ;
+            rdfs:range xsd:boolean ;
+            rdfs:comment "Subjects' Socioeconomic Status" ;
+            rdfs:label "Subject SES" .
 
 
 #################################################################
@@ -778,6 +1028,12 @@ xsd:gYear rdf:type rdfs:Datatype .
                         <http://purl.org/vocab/vann/example> "Delirium"@en ;
                         rdfs:comment "Disorder characterized by decreased mental function due to a medical or physical disease"@en ;
                         rdfs:label "Organic Medical Disorder"@en .
+
+
+###  https://w3id.org/enigma#PDDemographics
+:PDDemographics rdf:type owl:Class ;
+                rdfs:comment "PD-specific demographic Covariates measured by each cohort" ;
+                rdfs:label "PD Demographics" .
 
 
 ###  https://w3id.org/enigma#Person
