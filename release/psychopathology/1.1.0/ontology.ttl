@@ -61,6 +61,18 @@
 
 
 #################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/enigma#has_psychopathology
+:has_psychopathology rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdfs:domain :Cohort ;
+                     rdfs:range :Psychopathology_Covariates ;
+                     rdfs:label "has psychopathology" .
+
+
+#################################################################
 #    Data properties
 #################################################################
 
@@ -352,6 +364,22 @@ owl:topDataProperty rdfs:domain :Psychopathology_Covariates ;
 #################################################################
 #    Classes
 #################################################################
+
+###  https://w3id.org/enigma#Cohort
+:Cohort rdf:type owl:Class ;
+        rdfs:comment "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria" ;
+        rdfs:label "Cohort" .
+
+
+###  https://w3id.org/enigma#CohortGroup
+:CohortGroup rdf:type owl:Class ;
+             rdfs:subClassOf :Cohort .
+
+
+###  https://w3id.org/enigma#CohortProject
+:CohortProject rdf:type owl:Class ;
+               rdfs:subClassOf :Cohort .
+
 
 ###  https://w3id.org/enigma#Psychopathology_Covariates
 :Psychopathology_Covariates rdf:type owl:Class ;

@@ -7,10 +7,8 @@
 @base <https://w3id.org/enigma> .
 
 <https://w3id.org/enigma> rdf:type owl:Ontology ;
-                           owl:versionIRI <https://w3id.org/enigma/medication/1.1.0> ;
+                           owl:versionIRI <https://w3id.org/enigma/organization/1.1.0> ;
                            <http://purl.org/dc/terms/contributor> "Agnes McMahon" ,
-                                                                  "Hernan Vargas" ,
-                                                                  "Kevin Low" ,
                                                                   "MiHyun Jang" ,
                                                                   "Michael Bornstein" ,
                                                                   "Ryan Espiritu" ;
@@ -21,11 +19,12 @@
                                                               "Neda Jahanshad" ,
                                                               "Wesley Surento" ,
                                                               "Yolanda Gil" ;
-                           <http://purl.org/dc/terms/description> "An ontology representing medication for the ENIGMA working groups" ;
+                           <http://purl.org/dc/terms/description> "An ontology representing organizations that participate in the ENIGMA consortium."@en ;
                            <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/2.0/> ;
-                           <http://purl.org/dc/terms/title> "The Medication Ontology" ;
-                           <http://purl.org/vocab/vann/preferredNamespacePrefix> "enigma" ;
-                           <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
+                           <http://purl.org/dc/terms/title> "The Organization Ontology" ;
+                           <http://purl.org/vocab/vann/preferredNamespacePrefix> <https://w3id.org/enigma> ,
+                                                                                 "enigma" ;
+                           owl:priorVersion <https://w3id.org/enigma/organization/1.1.0> ;
                            owl:versionInfo "v1.1.0" .
 
 #################################################################
@@ -52,31 +51,254 @@
 <http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/vocab/vann/example
+<http://purl.org/vocab/vann/example> rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/vocab/vann/preferredNamespacePrefix
 <http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
 
 
-###  http://purl.org/vocab/vann/preferredNamespaceUri
-<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+###  https://w3id.org/enigma#vann:example
+:vann:example rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/dc/terms/isPartOf
+<http://purl.org/dc/terms/isPartOf> rdf:type owl:ObjectProperty ;
+                                    rdfs:comment "A related resource in which the described resource is included." ;
+                                    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                                    rdfs:label "is Part of" .
+
+
+###  http://www.w3.org/2006/vcard/ns#hasAddress
+<http://www.w3.org/2006/vcard/ns#hasAddress> rdf:type owl:ObjectProperty ;
+                                             rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
+                                             rdfs:label "has Address" .
+
+
+###  http://xmlns.com/foaf/0.1/member
+<http://xmlns.com/foaf/0.1/member> rdf:type owl:ObjectProperty ;
+                                   rdfs:comment "Indicates member of a group" ;
+                                   rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
+                                   rdfs:label "member" .
+
+
+###  https://w3id.org/enigma#hasAffiliate
+:hasAffiliate rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/member> ;
+              rdfs:domain :Organization ;
+              rdfs:range :Person ;
+              <http://purl.org/vocab/vann/example> "HarvardU hasAffiliate JohnSmith"@en ;
+              rdfs:comment "Describes the organization's affiliates"@en ;
+              rdfs:label "has affiliate"@en .
+
+
+###  https://w3id.org/enigma#hasPrimaryAddress
+:hasPrimaryAddress rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf <http://www.w3.org/2006/vcard/ns#hasAddress> ;
+                   rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( :Organization
+                                               :Person
+                                             )
+                               ] ;
+                   rdfs:range :Address ;
+                   <http://purl.org/vocab/vann/example> "USC hasPrimaryAddress \"123 Admiralty Way\""@en ;
+                   rdfs:comment "Describes the primary address of an organization or person"@en ;
+                   rdfs:label "has primary address"@en .
+
+
+###  https://w3id.org/enigma#isPartOfOrganization
+:isPartOfOrganization rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf <http://purl.org/dc/terms/isPartOf> ;
+                      rdfs:domain :Organization ;
+                      rdfs:range :Organization ;
+                      <http://purl.org/vocab/vann/example> "Department of Psychology, USC isPartOfOrganization USC"@en ;
+                      rdfs:comment "Describes the parent organization which an organization is a part of. An organization may be part of more than one organizations."@en ;
+                      rdfs:label "is part of organization"@en .
 
 
 #################################################################
 #    Data properties
 #################################################################
 
-###  http://www.w3.org/2002/07/owl#topDataProperty
-owl:topDataProperty rdfs:domain :Covariates ;
-                    rdfs:range xsd:boolean .
+###  http://www.w3.org/2006/vcard/ns#country-name
+<http://www.w3.org/2006/vcard/ns#country-name> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.w3.org/2006/vcard/ns#locality
+<http://www.w3.org/2006/vcard/ns#locality> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain :Address ;
+                                           rdfs:range xsd:string ;
+                                           rdfs:comment "The locality (e.g. city or town) associated with the address of the object"@en ;
+                                           rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
+                                           rdfs:label "locality"@en .
+
+
+###  http://www.w3.org/2006/vcard/ns#postal-code
+<http://www.w3.org/2006/vcard/ns#postal-code> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.w3.org/2006/vcard/ns#region
+<http://www.w3.org/2006/vcard/ns#region> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.w3.org/2006/vcard/ns#street-address
+<http://www.w3.org/2006/vcard/ns#street-address> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/enigma#hasCoordinates
+:hasCoordinates rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Organization ;
+                rdfs:range xsd:string ;
+                rdfs:comment "The coordinates associated with an organization"@en ;
+                rdfs:label "has coordinates"@en .
+
+
+###  https://w3id.org/enigma#hasCountry
+:hasCountry rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf <http://www.w3.org/2006/vcard/ns#country-name> ;
+            rdfs:domain :Address ;
+            rdfs:range xsd:string ;
+            rdfs:comment "The country name associated with the address of the object"@en ;
+            rdfs:label "has country"@en .
+
+
+###  https://w3id.org/enigma#hasKindOfInstitute
+:hasKindOfInstitute rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Organization ;
+                    rdfs:range xsd:string ;
+                    <http://purl.org/vocab/vann/example> "Organization kind \"University\""@en ;
+                    rdfs:comment "Describes the specific kind/type of an organization"@en ;
+                    rdfs:label "kind of institute"@en .
+
+
+###  https://w3id.org/enigma#hasPostalCode
+:hasPostalCode rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf <http://www.w3.org/2006/vcard/ns#postal-code> ;
+               rdfs:domain :Address ;
+               rdfs:range xsd:string ;
+               rdfs:comment "The postal code associated with the address of the object"@en ;
+               rdfs:label "has postal code"@en .
+
+
+###  https://w3id.org/enigma#hasRegion
+:hasRegion rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf <http://www.w3.org/2006/vcard/ns#region> ;
+           rdfs:domain :Address ;
+           rdfs:range xsd:string ;
+           rdfs:comment "The region (e.g. state or province) associated with the address of the object"@en ;
+           rdfs:label "has region"@en .
+
+
+###  https://w3id.org/enigma#hasStreetAddress
+:hasStreetAddress rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf <http://www.w3.org/2006/vcard/ns#street-address> ;
+                  rdfs:domain :Address ;
+                  rdfs:range xsd:string ;
+                  rdfs:comment "The street address associated with the address of the object"@en ;
+                  rdfs:label "has street address"@en .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  https://w3id.org/enigma#Covariates
-:Covariates rdf:type owl:Class ;
-            rdfs:comment "A class used to describe covariates information for a cohort or study." ;
-            rdfs:label "Covariates" .
+###  http://vivoweb.org/ontology/core#College
+<http://vivoweb.org/ontology/core#College> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> ;
+                                           <http://purl.org/vocab/vann/example> "Los Angeles City College"@en ;
+                                           rdfs:comment "A college contributing to a given ENIGMA project"@en ;
+                                           rdfs:isDefinedBy <http://vivoweb.org/ontology/core> ;
+                                           rdfs:label "College"@en .
+
+
+###  http://vivoweb.org/ontology/core#Consortium
+<http://vivoweb.org/ontology/core#Consortium> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> ;
+                                              <http://purl.org/vocab/vann/example> "ENIGMA"@en ;
+                                              rdfs:comment "A consortium contributing to a given ENIGMA project"@en ;
+                                              rdfs:isDefinedBy <http://vivoweb.org/ontology/core> ;
+                                              rdfs:label "Consortium"@en .
+
+
+###  http://vivoweb.org/ontology/core#Department
+<http://vivoweb.org/ontology/core#Department> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> ;
+                                              <http://purl.org/vocab/vann/example> "Department of Psychology, USC"@en ;
+                                              rdfs:comment "A department contributing to a given ENIGMA project"@en ;
+                                              rdfs:isDefinedBy <http://vivoweb.org/ontology/core> ;
+                                              rdfs:label "Department"@en .
+
+
+###  http://vivoweb.org/ontology/core#Hospital
+<http://vivoweb.org/ontology/core#Hospital> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> ;
+                                            <http://purl.org/vocab/vann/example> "Children's Hospital Los Angeles"@en ;
+                                            rdfs:comment "A hospital contributing to a given ENIGMA project"@en ;
+                                            rdfs:isDefinedBy <http://vivoweb.org/ontology/core> ;
+                                            rdfs:label "Hospital"@en .
+
+
+###  http://vivoweb.org/ontology/core#Institute
+<http://vivoweb.org/ontology/core#Institute> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> ;
+                                             <http://purl.org/vocab/vann/example> "Information Sciences Institute"@en ;
+                                             rdfs:comment "An institute contributing to a given ENIGMA project"@en ;
+                                             rdfs:isDefinedBy <http://vivoweb.org/ontology/core> ;
+                                             rdfs:label "Institute"@en .
+
+
+###  http://vivoweb.org/ontology/core#University
+<http://vivoweb.org/ontology/core#University> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> ;
+                                              <http://purl.org/vocab/vann/example> "USC"@en ;
+                                              rdfs:comment "A university contributing to a given ENIGMA project"@en ;
+                                              rdfs:isDefinedBy <http://vivoweb.org/ontology/core> ;
+                                              rdfs:label "University"@en .
+
+
+###  http://www.w3.org/2006/vcard/ns#Address
+<http://www.w3.org/2006/vcard/ns#Address> rdf:type owl:Class ;
+                                          rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
+                                          rdfs:label "Address"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+<http://xmlns.com/foaf/0.1/Organization> rdf:type owl:Class ;
+                                         owl:equivalentClass :Organization ;
+                                         rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> .
+
+
+###  https://w3id.org/enigma#Address
+:Address rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.w3.org/2006/vcard/ns#Address> ;
+         rdfs:comment "To specify the components of the delivery address for the object"@en ;
+         rdfs:label "Address"@en .
+
+
+###  https://w3id.org/enigma#Organization
+:Organization rdf:type owl:Class ;
+              rdfs:comment "An organization belonging to the ENIGMA consortium. Organization can be hospitals, universities, departments, etc."@en ;
+              rdfs:label "Organization"@en ;
+              :vann:example "Information Sciences Institute" .
+
+
+###  https://w3id.org/enigma#Person
+:Person rdf:type owl:Class ;
+        <http://purl.org/vocab/vann/example> "Theo van Erp"@en ;
+        rdfs:comment "A person associated with a given organization"@en ;
+        rdfs:label "Person"@en .
+
+
+###  https://w3id.org/enigma#WorkingGroup
+:WorkingGroup rdf:type owl:Class ;
+              <http://purl.org/vocab/vann/example> "BipolarWG"@en ;
+              rdfs:comment "Group of researchers studying a certain topic/disease"@en ;
+              rdfs:label "Working Group"@en .
 
 
 ###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/

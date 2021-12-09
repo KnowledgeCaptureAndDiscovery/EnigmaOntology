@@ -61,6 +61,17 @@
 
 
 #################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/enigma#has_use_disorder
+:has_use_disorder rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdfs:domain :Cohort ;
+                  rdfs:range :Disorder_Covariates .
+
+
+#################################################################
 #    Data properties
 #################################################################
 
@@ -143,6 +154,10 @@ owl:topDataProperty rdfs:range xsd:boolean .
 #################################################################
 #    Classes
 #################################################################
+
+###  https://w3id.org/enigma#Cohort
+:Cohort rdf:type owl:Class .
+
 
 ###  https://w3id.org/enigma#Disorder_Covariates
 :Disorder_Covariates rdf:type owl:Class ;

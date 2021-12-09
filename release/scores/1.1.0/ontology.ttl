@@ -61,6 +61,17 @@
 
 
 #################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/enigma#has_scores
+:has_scores rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :Cohort ;
+            rdfs:range :Scores_Covariates .
+
+
+#################################################################
 #    Data properties
 #################################################################
 
@@ -128,6 +139,10 @@ owl:topDataProperty rdfs:domain :Scores_Covariates ;
 #################################################################
 #    Classes
 #################################################################
+
+###  https://w3id.org/enigma#Cohort
+:Cohort rdf:type owl:Class .
+
 
 ###  https://w3id.org/enigma#Scores_Covariates
 :Scores_Covariates rdf:type owl:Class ;
