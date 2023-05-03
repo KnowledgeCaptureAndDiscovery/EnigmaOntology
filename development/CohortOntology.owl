@@ -692,6 +692,7 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#CohortProject"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#Covariates"/>
@@ -733,6 +734,7 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#CohortProject"/>
                 </owl:unionOf>
@@ -742,6 +744,18 @@
         <vann:example xml:lang="en">Cohort1 hasAge_StandardDeviation 5.0</vann:example>
         <rdfs:comment xml:lang="en">Describes the standard deviation of the age of a cohort</rdfs:comment>
         <rdfs:label xml:lang="en">has age standard deviation</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasAlternateName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasAlternateName">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <terms:description>Describes alternate identifying names for the cohort (University, country, study name, etc)</terms:description>
+        <vann:example>UK Biobank, UKBB, UKB</vann:example>
+        <rdfs:label>has alternate name</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -900,6 +914,7 @@
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#CohortProject"/>
                 </owl:unionOf>
             </owl:Class>
@@ -972,13 +987,14 @@
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
                     <rdf:Description rdf:about="https://w3id.org/enigma#CohortProject"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <vann:example xml:lang="en">Cohort1 hasFundingSource &quot;NIMH, 5P50MH080272&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Describes the funding source of the cohort</rdfs:comment>
+        <rdfs:comment xml:lang="en">Describes the funding source of the cohort (oftentimes grant #)</rdfs:comment>
         <rdfs:label xml:lang="en">has funding source</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -1004,9 +1020,15 @@
     <!-- https://w3id.org/enigma#hasInclusionCriteria -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasInclusionCriteria">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortProject"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortProject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>criteria used to include cohort patients</rdfs:comment>
         <rdfs:label>has inclusion criteria</rdfs:label>
@@ -1029,10 +1051,18 @@
     <!-- https://w3id.org/enigma#hasNumberOfFemaleSex -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfFemaleSex">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortProject"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortProject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
         <vann:example xml:lang="en">CohortGroup2 hasNumberOfFemaleSex 16</vann:example>
-        <rdfs:comment xml:lang="en">Describing the number of females in a cohort project</rdfs:comment>
+        <rdfs:comment xml:lang="en">Describes the number of females in a cohort</rdfs:comment>
         <rdfs:label xml:lang="en">has number of females</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -1041,11 +1071,40 @@
     <!-- https://w3id.org/enigma#hasNumberOfMaleSex -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfMaleSex">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortProject"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortProject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
         <vann:example xml:lang="en">CohortGroup2 hasNumberOfMaleSex 12</vann:example>
-        <rdfs:comment xml:lang="en">Describing the number of males in a cohort project</rdfs:comment>
+        <rdfs:comment xml:lang="en">Describes the number of males in a cohort</rdfs:comment>
         <rdfs:label xml:lang="en">has number of males</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#hasNumberOfOtherSex -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasNumberOfOtherSex">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortProject"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Covariates"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <terms:description>Describes the number of other sex in a cohort (self-identified, biological intersex, etc)</terms:description>
+        <vann:example>CohortGroup2 hasNumberOfOtherSex 12</vann:example>
+        <rdfs:label>has number of other sex</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1092,7 +1151,7 @@
     <!-- https://w3id.org/enigma#hasStudyDesign -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasStudyDesign">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <vann:example xml:lang="en">CohortGroup1 hasStudyDesign &quot;Population&quot;</vann:example>
         <rdfs:comment xml:lang="en">Describes the study design of a project (Case/control; Population; Healthy only; Patients only)
@@ -1117,7 +1176,15 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
     <!-- https://w3id.org/enigma#hasTransgenderFtoM -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasTransgenderFtoM">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortProject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
         <vann:example xml:lang="en">CohortGroup2 hasTransgenderFtoM 14</vann:example>
         <rdfs:comment xml:lang="en">Describing the number of female to male transgender individuals in a cohort group</rdfs:comment>
@@ -1129,7 +1196,15 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
     <!-- https://w3id.org/enigma#hasTransgenderMtoF -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasTransgenderMtoF">
-        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortGroup"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortProject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
         <vann:example xml:lang="en">CohortGroup1 hasTransgenderMtoF 20</vann:example>
         <rdfs:comment xml:lang="en">Describing the number of male to female transgender individuals in a cohort group</rdfs:comment>
@@ -1606,8 +1681,8 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</rdfs:comment>
 
     <rdf:Description rdf:about="https://w3id.org/enigma#hasHomePage">
         <rdfs:comment xml:lang="en">Property that describes the home page of a cohort or person</rdfs:comment>
-        <rdfs:label xml:lang="en">has home page</rdfs:label>
         <vaem:rationale xml:lang="en">Property added to facilitate interaction with domain and ranges in the wiki. It&apos;s equivalent to foaf:homePage</vaem:rationale>
+        <rdfs:label xml:lang="en">has home page</rdfs:label>
     </rdf:Description>
 </rdf:RDF>
 
