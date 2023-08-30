@@ -1,34 +1,49 @@
 {
-  "_comment" : "Created with OWL2VOWL (version 0.3.2-SNAPSHOT), http://vowl.visualdataweb.org",
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
   "header" : {
     "languages" : [ "en", "undefined" ],
     "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "https://w3id.org/enigma", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema" ],
     "title" : {
-      "en" : "The Core Ontology"
+      "en" : "The Enigma Core Ontology"
     },
     "iri" : "https://w3id.org/enigma",
     "version" : "v1.1.0",
-    "author" : [ "MiHyun Jang", "Neda Jahanshad", "Ryan Espiritu" ],
+    "author" : [ "Joanna Bright", "Neda Jahanshad", "Hernan Vargas", "Haripriya Dharmala", "Yolanda Gil", "Daniel Garijo", "Wesley Surento", "Josh Boyd" ],
     "description" : {
-      "en" : "A core ontology representing the main concepts of ENIGMA."
+      "en" : "A core ontology representing the main concepts of ENIGMA. This ontology includes general concepts and properties applicable to all ENIGMA working groups."
     },
     "other" : {
-      "priorVersion" : [ {
-        "identifier" : "priorVersion",
-        "language" : "undefined",
-        "value" : "https://w3id.org/enigma/core/1.0.0",
-        "type" : "iri"
-      } ],
       "license" : [ {
         "identifier" : "license",
         "language" : "undefined",
         "value" : "http://creativecommons.org/licenses/by/2.0/",
         "type" : "iri"
       } ],
+      "priorVersion" : [ {
+        "identifier" : "priorVersion",
+        "language" : "undefined",
+        "value" : "https://w3id.org/enigma/core/1.0.0",
+        "type" : "iri"
+      } ],
       "creator" : [ {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "MiHyun Jang",
+        "value" : "Daniel Garijo",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Joanna Bright",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Hernan Vargas",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Wesley Surento",
         "type" : "label"
       }, {
         "identifier" : "creator",
@@ -38,18 +53,38 @@
       }, {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Ryan Espiritu",
+        "value" : "Yolanda Gil",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Josh Boyd",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Haripriya Dharmala",
         "type" : "label"
       } ],
       "contributor" : [ {
         "identifier" : "contributor",
         "language" : "undefined",
-        "value" : "Yolanda Gil",
+        "value" : "Agnes McMahon",
         "type" : "label"
       }, {
         "identifier" : "contributor",
         "language" : "undefined",
-        "value" : "Daniel Garijo",
+        "value" : "MiHyun Jang",
+        "type" : "label"
+      }, {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Michael Bornstein",
+        "type" : "label"
+      }, {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Ryan Espiritu",
         "type" : "label"
       } ],
       "preferredNamespacePrefix" : [ {
@@ -73,18 +108,12 @@
       "title" : [ {
         "identifier" : "title",
         "language" : "en",
-        "value" : "The Core Ontology",
+        "value" : "The Enigma Core Ontology",
         "type" : "label"
       } ]
     }
   },
   "namespace" : [ ],
-  "metrics" : {
-    "classCount" : 6,
-    "objectPropertyCount" : 6,
-    "datatypePropertyCount" : 0,
-    "individualCount" : 0
-  },
   "class" : [ {
     "id" : "3",
     "type" : "owl:Class"
@@ -92,7 +121,7 @@
     "id" : "4",
     "type" : "owl:Class"
   }, {
-    "id" : "7",
+    "id" : "5",
     "type" : "owl:Class"
   }, {
     "id" : "2",
@@ -101,7 +130,7 @@
     "id" : "9",
     "type" : "owl:unionOf"
   }, {
-    "id" : "6",
+    "id" : "7",
     "type" : "owl:Class"
   }, {
     "id" : "1",
@@ -158,7 +187,7 @@
     "comment" : {
       "en" : "Project associated with the cohort"
     },
-    "id" : "7"
+    "id" : "5"
   }, {
     "iri" : "https://w3id.org/enigma#Person",
     "baseIri" : "https://w3id.org/enigma",
@@ -181,8 +210,8 @@
     "id" : "2"
   }, {
     "instances" : 0,
-    "union" : [ "7", "1" ],
-    "attributes" : [ "union", "anonymous" ],
+    "union" : [ "5", "1" ],
+    "attributes" : [ "anonymous", "union" ],
     "id" : "9"
   }, {
     "iri" : "https://w3id.org/enigma#Cohort",
@@ -192,7 +221,7 @@
       "example" : [ {
         "identifier" : "example",
         "language" : "en",
-        "value" : "ADNI: Alzheimer’s Disease Neuroimaging Initiative",
+        "value" : "ADNI: Alzheimerâ€™s Disease Neuroimaging Initiative",
         "type" : "label"
       } ]
     },
@@ -203,7 +232,7 @@
     "comment" : {
       "en" : "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria"
     },
-    "id" : "6"
+    "id" : "7"
   }, {
     "iri" : "https://w3id.org/enigma#WorkingGroup",
     "baseIri" : "https://w3id.org/enigma",
@@ -229,7 +258,7 @@
     "id" : "0",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "5",
+    "id" : "6",
     "type" : "owl:objectProperty"
   }, {
     "id" : "8",
@@ -282,16 +311,16 @@
       "IRI-based" : "hasPersonRole_PrincipalInvestigator",
       "en" : "has PersonRole Principal Investigator"
     },
-    "domain" : "6",
+    "domain" : "7",
     "comment" : {
       "en" : "Describes who the principal investigator of the cohort is"
     },
     "attributes" : [ "object" ],
-    "id" : "5"
+    "id" : "6"
   }, {
     "iri" : "https://w3id.org/enigma#hasCohort",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "6",
+    "range" : "7",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
@@ -326,7 +355,7 @@
       "IRI-based" : "hasImageAcquisitionProtocol",
       "en" : "has acquisition protocol"
     },
-    "domain" : "6",
+    "domain" : "7",
     "comment" : {
       "en" : "Describes the acquisition protocol that was used to scan a cohort"
     },
@@ -357,7 +386,7 @@
   }, {
     "iri" : "https://w3id.org/enigma#hasProject",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "7",
+    "range" : "5",
     "annotations" : {
       "example" : [ {
         "identifier" : "example",
