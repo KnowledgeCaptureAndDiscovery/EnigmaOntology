@@ -1,7 +1,7 @@
 # EnigmaOntology
 Repository for capturing releases and development versions of the ENIGMA ontology
 
-This ontology is currently deployed on https://w3id.org/enigma#
+This ontology is currently deployed on https://w3id.org/enigma
 
 ## Contributing
 
