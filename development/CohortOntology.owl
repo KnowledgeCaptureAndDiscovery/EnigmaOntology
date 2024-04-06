@@ -22,6 +22,7 @@
         <terms:creator>Neda Jahanshad</terms:creator>
         <terms:creator>Wesley Surento</terms:creator>
         <terms:creator>Yolanda Gil</terms:creator>
+        <terms:creator>Hernan Vargas</terms:creator>
         <terms:description xml:lang="en">An ontology to describe cohorts of patients participating in ENIGMA projects.</terms:description>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
         <terms:title xml:lang="en">The Cohort Ontology</terms:title>
@@ -746,6 +747,58 @@
     
 
 
+    <!-- https://w3id.org/enigma#hasAncestry -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasAncestry">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
+                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortProject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>African American</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Asian</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>European</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>Latino</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>Two or More Races</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <vann:example xml:lang="en">Cohort1 hasAncestry &quot;European&quot;</vann:example>
+        <rdfs:comment xml:lang="en">Describes the ancestry of the participants of the cohort</rdfs:comment>
+        <rdfs:label xml:lang="en">has ancestry</rdfs:label>
+    </owl:DatatypeProperty>
+
+
     <!-- https://w3id.org/enigma#hasBriefDescription -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasBriefDescription">
@@ -891,60 +944,6 @@
         <rdfs:label>has description</rdfs:label>
     </owl:DatatypeProperty>
     
-
-
-    <!-- https://w3id.org/enigma#hasGeneticGroup -->
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasGeneticGroup">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/enigma#Cohort"/>
-                    <rdf:Description rdf:about="https://w3id.org/enigma#CohortProject"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:oneOf>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <rdf:first>African American</rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                <rdf:first>Asian</rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                        <rdf:first>European</rdf:first>
-                                        <rdf:rest>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                <rdf:first>Latino</rdf:first>
-                                                <rdf:rest>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                                        <rdf:first>Two or More Races</rdf:first>
-                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                                    </rdf:Description>
-                                                </rdf:rest>
-                                            </rdf:Description>
-                                        </rdf:rest>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </owl:oneOf>
-            </rdfs:Datatype>
-        </rdfs:range>
-        <vann:example xml:lang="en">Cohort1 hasGeneticGroup &quot;European&quot;</vann:example>
-        <rdfs:comment xml:lang="en">Describes the genetic group that the participants of the cohort are in</rdfs:comment>
-        <rdfs:label xml:lang="en">has genetic group</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
 
     <!-- https://w3id.org/enigma#hasExclusionCriteria -->
 
@@ -1605,13 +1604,13 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</rdfs:comment>
      -->
 
     <rdf:Description rdf:about="https://w3id.org/enigma#hasHomePage">
+        <vaem:rationale xml:lang="en">Property added to facilitate interaction with domain and ranges in the wiki. It&apos;s equivalent to foaf:homePage</vaem:rationale>
         <rdfs:comment xml:lang="en">Property that describes the home page of a cohort or person</rdfs:comment>
         <rdfs:label xml:lang="en">has home page</rdfs:label>
-        <vaem:rationale xml:lang="en">Property added to facilitate interaction with domain and ranges in the wiki. It&apos;s equivalent to foaf:homePage</vaem:rationale>
     </rdf:Description>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
 
