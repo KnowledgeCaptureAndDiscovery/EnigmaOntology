@@ -41,6 +41,10 @@
         <Literal>Ryan Espiritu</Literal>
     </Annotation>
     <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:contributor"/>
+        <Literal>Aarya Vakharia</Literal>
+    </Annotation>
+    <Annotation>
         <AnnotationProperty abbreviatedIRI="terms:creator"/>
         <Literal>Daniel Garijo</Literal>
     </Annotation>
@@ -96,6 +100,18 @@
         <Class IRI="#Demographics"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#Age_Of_Onset"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#BMI"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#City_Dwelling"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Handedness"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#IQ"/>
     </Declaration>
     <Declaration>
@@ -106,6 +122,9 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#Marital_status"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Nationality"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#Occupation"/>
@@ -169,6 +188,22 @@
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <DataPropertyDomain>
+        <DataProperty IRI="#Age_Of_Onset"/>
+        <Class IRI="#Demographics"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#BMI"/>
+        <Class IRI="#Demographics"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#City_Dwelling"/>
+        <Class IRI="#Demographics"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Handedness"/>
+        <Class IRI="#Demographics"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#IQ"/>
         <Class IRI="#Demographics"/>
     </DataPropertyDomain>
@@ -182,6 +217,10 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#Marital_status"/>
+        <Class IRI="#Demographics"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Nationality"/>
         <Class IRI="#Demographics"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
@@ -237,6 +276,22 @@
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="#Age_Of_Onset"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#BMI"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#City_Dwelling"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Handedness"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="#IQ"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
@@ -251,6 +306,10 @@
     <DataPropertyRange>
         <DataProperty IRI="#Marital_status"/>
         <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Nationality"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#Occupation"/>
@@ -302,6 +361,36 @@
     </DataPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Age_Of_Onset</IRI>
+        <Literal>Property which states if the subjects age of onset was measure in a cohort</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Age_Of_Onset</IRI>
+        <Literal xml:lang="en">Age Of Onset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BMI</IRI>
+        <Literal>Property which states if the body mass index (BMI) of the subject was measured in a cohort</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#BMI</IRI>
+        <Literal xml:lang="en">BMI</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#City_Dwelling</IRI>
+        <Literal>Propert which measures if the subject were a city dwelling (population &gt; 100,000) in a cohort</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#City_Dwelling</IRI>
+        <Literal xml:lang="en">City Dwelling</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Demographics</IRI>
         <Literal>A class used to describe the demographics covariates of a cohort or study</Literal>
     </AnnotationAssertion>
@@ -309,6 +398,16 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Demographics</IRI>
         <Literal>Demographics</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Handedness</IRI>
+        <Literal>The property which states if the subject&apos;s dominant hand (left/right/ambidextrous) was measured in a cohort</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Handedness</IRI>
+        <Literal xml:lang="en">Handedness</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -349,6 +448,16 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Marital_status</IRI>
         <Literal>marital status</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Nationality</IRI>
+        <Literal>Property which states the subjects nationality in a cohort</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Nationality</IRI>
+        <Literal xml:lang="en">Nationality</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -474,5 +583,5 @@
 
 
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
 
