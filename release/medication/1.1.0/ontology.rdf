@@ -1,0 +1,403 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/enigma#"
+     xml:base="https://w3id.org/enigma"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://w3id.org/enigma">
+        <owl:versionIRI rdf:resource="https://w3id.org/enigma/medication/1.1.0"/>
+        <terms:contributor>Aarya Vakharia</terms:contributor>
+        <terms:contributor>Agnes McMahon</terms:contributor>
+        <terms:contributor>Hernan Vargas</terms:contributor>
+        <terms:contributor>Kevin Low</terms:contributor>
+        <terms:contributor>MiHyun Jang</terms:contributor>
+        <terms:contributor>Michael Bornstein</terms:contributor>
+        <terms:contributor>Ryan Espiritu</terms:contributor>
+        <terms:creator>Daniel Garijo</terms:creator>
+        <terms:creator>Haripriya Dharmala</terms:creator>
+        <terms:creator>Joanna Bright</terms:creator>
+        <terms:creator>Josh Boyd</terms:creator>
+        <terms:creator>Neda Jahanshad</terms:creator>
+        <terms:creator>Wesley Surento</terms:creator>
+        <terms:creator>Yolanda Gil</terms:creator>
+        <terms:description>An ontology representing medication for the ENIGMA working groups</terms:description>
+        <terms:license rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
+        <terms:title>The Medication Ontology</terms:title>
+        <vann:preferredNamespacePrefix>enigma</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri rdf:resource="https://w3id.org/enigma#"/>
+        <owl:versionInfo>v1.1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/enigma#has_medication -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#has_medication">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Medication"/>
+        <rdfs:label>has medication</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/enigma#AntidepressantUseCurrent -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#AntidepressantUseCurrent">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Medication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Use of antidepressants at the time of scanning</rdfs:comment>
+        <rdfs:label>Antidepressant Use Current</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#AntidepressantUseLifetime -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#AntidepressantUseLifetime">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Medication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Use of antidepressants during lifetime</rdfs:comment>
+        <rdfs:label>Antidepressant Use Lifetime</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#AntiepilepticUseCurrent -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#AntiepilepticUseCurrent">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Medication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Use of Antiepileptics at time of scanning</rdfs:comment>
+        <rdfs:label>Antiepileptic Use Current</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#AntiepilepticUseLifetime -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#AntiepilepticUseLifetime">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Medication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Use of Antiepileptics during lifetime</rdfs:comment>
+        <rdfs:label>Antiepileptic Use Lifetime</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#AtypicalAntipsychoticUseCurrent -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#AtypicalAntipsychoticUseCurrent">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Medication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Use of 2nd generation (atypical) antipsychotic at time of scanning</rdfs:comment>
+        <rdfs:label>Atypical Antipsychotic Use Current</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#AtypicalAntipsychoticUseLifetime -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#AtypicalAntipsychoticUseLifetime">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Medication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Use of 2nd generation (atypical) antipsychotic during lifetime</rdfs:comment>
+        <rdfs:label>Atypical Antipsychotic Use Lifetime</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#CPZ_Use_Current -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#CPZ_Use_Current">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Medication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Chlorpromazine use (or its equivalents), a 1st generation antipsychotic at time of study</rdfs:comment>
+        <rdfs:label>CPZ Use Current</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#CPZ_Use_Lifetime -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#CPZ_Use_Lifetime">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Medication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Chlorpromazine use (or its equivalents), a 1st generation antipsychotic during lifetime</rdfs:comment>
+        <rdfs:label>CPZ Use Lifetime</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#LithiumUseCurrent -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#LithiumUseCurrent">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Medication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Use of Lithium at time of scanning</rdfs:comment>
+        <rdfs:label>Lithium Use Current</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#LithiumUseLifetime -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#LithiumUseLifetime">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Medication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Lithium use during lifetime</rdfs:comment>
+        <rdfs:label>Lithium Use Lifetime</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#OtherMedUseCurrent -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#OtherMedUseCurrent">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Medication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Type of other medication used at time of scanning. Please provide the medication names.</rdfs:comment>
+        <rdfs:label>Other Medication Use Current</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#OtherMedUseLifetime -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#OtherMedUseLifetime">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Medication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Type of other medication used during lifetime. Please provide the medication names.</rdfs:comment>
+        <rdfs:label>Other Medication Use Lifetime</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#SomaticIllnessCurrent -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#SomaticIllnessCurrent">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Medication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Presence of a somatic illness at time of study</rdfs:comment>
+        <rdfs:label>Somatic Illness Current</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#SomaticIllnessType -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#SomaticIllnessType">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Medication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specific somatic illness measured/found in subjects</rdfs:comment>
+        <rdfs:label>Somatic Illness Type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#Somatic_Illness_Lifetime -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#Somatic_Illness_Lifetime">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Medication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Presence of a somatic illness during lifetime</rdfs:comment>
+        <rdfs:label>Somatic Illness Lifetime</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#TypicalAntipsychoticUseCurrent -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#TypicalAntipsychoticUseCurrent">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Medication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Use of 1st generation (typical) antipsychotics at time of scanning</rdfs:comment>
+        <rdfs:label>Typical Antipsychotic Use Current</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#TypicalAntipsychoticUseLifetime -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#TypicalAntipsychoticUseLifetime">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Medication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Use of 1st generation (typical) antipsychotics during lifetime</rdfs:comment>
+        <rdfs:label>Typical Antipsychotic Use Lifetime</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/enigma#Cohort -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#Cohort">
+        <rdfs:comment>A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria</rdfs:comment>
+        <rdfs:label>Cohort</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#CohortGroup -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#CohortGroup">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Cohort"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#CohortProject -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#CohortProject">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:comment>The subset of the individuals from a Cohort, which are used as samples for a specific project</rdfs:comment>
+        <rdfs:label>Cohort Project</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#Covariates -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#Covariates">
+        <rdfs:comment>A class used to describe covariates information for a cohort or study.</rdfs:comment>
+        <rdfs:label>Covariates</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/enigma#Medication -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#Medication">
+        <rdfs:comment>Medication covariates describing the types of medication (lifetime/current) used by participants in each cohort</rdfs:comment>
+        <rdfs:label>Medication</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/ -->
+
+

@@ -1,5 +1,6 @@
 <https://w3id.org/enigma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/enigma/medication/1.1.0> .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Aarya Vakharia" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Agnes McMahon" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Hernan Vargas" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Kevin Low" .
@@ -62,7 +63,7 @@
 <https://w3id.org/enigma#has_medication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/enigma#has_medication> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
 <https://w3id.org/enigma#has_medication> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Cohort> .
-<https://w3id.org/enigma#has_medication> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#has_medication> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/enigma#Medication> .
 <https://w3id.org/enigma#has_medication> <http://www.w3.org/2000/01/rdf-schema#label> "has medication" .
 # 
 # 
@@ -76,98 +77,119 @@
 # 
 # https://w3id.org/enigma#AntidepressantUseCurrent
 <https://w3id.org/enigma#AntidepressantUseCurrent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#AntidepressantUseCurrent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#AntidepressantUseCurrent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Medication> .
 <https://w3id.org/enigma#AntidepressantUseCurrent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
 <https://w3id.org/enigma#AntidepressantUseCurrent> <http://www.w3.org/2000/01/rdf-schema#comment> "Use of antidepressants at the time of scanning" .
 <https://w3id.org/enigma#AntidepressantUseCurrent> <http://www.w3.org/2000/01/rdf-schema#label> "Antidepressant Use Current" .
 # 
 # https://w3id.org/enigma#AntidepressantUseLifetime
 <https://w3id.org/enigma#AntidepressantUseLifetime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#AntidepressantUseLifetime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#AntidepressantUseLifetime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Medication> .
 <https://w3id.org/enigma#AntidepressantUseLifetime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
 <https://w3id.org/enigma#AntidepressantUseLifetime> <http://www.w3.org/2000/01/rdf-schema#comment> "Use of antidepressants during lifetime" .
 <https://w3id.org/enigma#AntidepressantUseLifetime> <http://www.w3.org/2000/01/rdf-schema#label> "Antidepressant Use Lifetime" .
 # 
 # https://w3id.org/enigma#AntiepilepticUseCurrent
 <https://w3id.org/enigma#AntiepilepticUseCurrent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#AntiepilepticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#AntiepilepticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Medication> .
 <https://w3id.org/enigma#AntiepilepticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
 <https://w3id.org/enigma#AntiepilepticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#comment> "Use of Antiepileptics at time of scanning" .
 <https://w3id.org/enigma#AntiepilepticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#label> "Antiepileptic Use Current" .
 # 
 # https://w3id.org/enigma#AntiepilepticUseLifetime
 <https://w3id.org/enigma#AntiepilepticUseLifetime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#AntiepilepticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#AntiepilepticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Medication> .
 <https://w3id.org/enigma#AntiepilepticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
 <https://w3id.org/enigma#AntiepilepticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#comment> "Use of Antiepileptics during lifetime" .
 <https://w3id.org/enigma#AntiepilepticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#label> "Antiepileptic Use Lifetime" .
 # 
 # https://w3id.org/enigma#AtypicalAntipsychoticUseCurrent
 <https://w3id.org/enigma#AtypicalAntipsychoticUseCurrent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#AtypicalAntipsychoticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#AtypicalAntipsychoticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Medication> .
 <https://w3id.org/enigma#AtypicalAntipsychoticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
 <https://w3id.org/enigma#AtypicalAntipsychoticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#comment> "Use of 2nd generation (atypical) antipsychotic at time of scanning" .
 <https://w3id.org/enigma#AtypicalAntipsychoticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#label> "Atypical Antipsychotic Use Current" .
 # 
 # https://w3id.org/enigma#AtypicalAntipsychoticUseLifetime
 <https://w3id.org/enigma#AtypicalAntipsychoticUseLifetime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#AtypicalAntipsychoticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#AtypicalAntipsychoticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Medication> .
 <https://w3id.org/enigma#AtypicalAntipsychoticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
 <https://w3id.org/enigma#AtypicalAntipsychoticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#comment> "Use of 2nd generation (atypical) antipsychotic during lifetime" .
 <https://w3id.org/enigma#AtypicalAntipsychoticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#label> "Atypical Antipsychotic Use Lifetime" .
 # 
+# https://w3id.org/enigma#CPZ_Use_Current
+<https://w3id.org/enigma#CPZ_Use_Current> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#CPZ_Use_Current> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Medication> .
+<https://w3id.org/enigma#CPZ_Use_Current> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#CPZ_Use_Current> <http://www.w3.org/2000/01/rdf-schema#comment> "Chlorpromazine use (or its equivalents), a 1st generation antipsychotic at time of study" .
+<https://w3id.org/enigma#CPZ_Use_Current> <http://www.w3.org/2000/01/rdf-schema#label> "CPZ Use Current" .
+# 
+# https://w3id.org/enigma#CPZ_Use_Lifetime
+<https://w3id.org/enigma#CPZ_Use_Lifetime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#CPZ_Use_Lifetime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Medication> .
+<https://w3id.org/enigma#CPZ_Use_Lifetime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#CPZ_Use_Lifetime> <http://www.w3.org/2000/01/rdf-schema#comment> "Chlorpromazine use (or its equivalents), a 1st generation antipsychotic during lifetime" .
+<https://w3id.org/enigma#CPZ_Use_Lifetime> <http://www.w3.org/2000/01/rdf-schema#label> "CPZ Use Lifetime" .
+# 
 # https://w3id.org/enigma#LithiumUseCurrent
 <https://w3id.org/enigma#LithiumUseCurrent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#LithiumUseCurrent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#LithiumUseCurrent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Medication> .
 <https://w3id.org/enigma#LithiumUseCurrent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
 <https://w3id.org/enigma#LithiumUseCurrent> <http://www.w3.org/2000/01/rdf-schema#comment> "Use of Lithium at time of scanning" .
 <https://w3id.org/enigma#LithiumUseCurrent> <http://www.w3.org/2000/01/rdf-schema#label> "Lithium Use Current" .
 # 
 # https://w3id.org/enigma#LithiumUseLifetime
 <https://w3id.org/enigma#LithiumUseLifetime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#LithiumUseLifetime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#LithiumUseLifetime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Medication> .
 <https://w3id.org/enigma#LithiumUseLifetime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
 <https://w3id.org/enigma#LithiumUseLifetime> <http://www.w3.org/2000/01/rdf-schema#comment> "Lithium use during lifetime" .
 <https://w3id.org/enigma#LithiumUseLifetime> <http://www.w3.org/2000/01/rdf-schema#label> "Lithium Use Lifetime" .
 # 
 # https://w3id.org/enigma#OtherMedUseCurrent
 <https://w3id.org/enigma#OtherMedUseCurrent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#OtherMedUseCurrent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#OtherMedUseCurrent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Medication> .
 <https://w3id.org/enigma#OtherMedUseCurrent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/enigma#OtherMedUseCurrent> <http://www.w3.org/2000/01/rdf-schema#comment> "Type of other medication used at time of scanning. Please provide the medication names." .
 <https://w3id.org/enigma#OtherMedUseCurrent> <http://www.w3.org/2000/01/rdf-schema#label> "Other Medication Use Current" .
 # 
 # https://w3id.org/enigma#OtherMedUseLifetime
 <https://w3id.org/enigma#OtherMedUseLifetime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#OtherMedUseLifetime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#OtherMedUseLifetime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Medication> .
 <https://w3id.org/enigma#OtherMedUseLifetime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/enigma#OtherMedUseLifetime> <http://www.w3.org/2000/01/rdf-schema#comment> "Type of other medication used during lifetime. Please provide the medication names." .
 <https://w3id.org/enigma#OtherMedUseLifetime> <http://www.w3.org/2000/01/rdf-schema#label> "Other Medication Use Lifetime" .
 # 
 # https://w3id.org/enigma#SomaticIllnessCurrent
 <https://w3id.org/enigma#SomaticIllnessCurrent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#SomaticIllnessCurrent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#SomaticIllnessCurrent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Medication> .
 <https://w3id.org/enigma#SomaticIllnessCurrent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
-<https://w3id.org/enigma#SomaticIllnessCurrent> <http://www.w3.org/2000/01/rdf-schema#comment> "Presence of a somatic illness" .
+<https://w3id.org/enigma#SomaticIllnessCurrent> <http://www.w3.org/2000/01/rdf-schema#comment> "Presence of a somatic illness at time of study" .
 <https://w3id.org/enigma#SomaticIllnessCurrent> <http://www.w3.org/2000/01/rdf-schema#label> "Somatic Illness Current" .
 # 
 # https://w3id.org/enigma#SomaticIllnessType
 <https://w3id.org/enigma#SomaticIllnessType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#SomaticIllnessType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#SomaticIllnessType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Medication> .
 <https://w3id.org/enigma#SomaticIllnessType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/enigma#SomaticIllnessType> <http://www.w3.org/2000/01/rdf-schema#comment> "Specific somatic illness measured/found in subjects" .
 <https://w3id.org/enigma#SomaticIllnessType> <http://www.w3.org/2000/01/rdf-schema#label> "Somatic Illness Type" .
 # 
+# https://w3id.org/enigma#Somatic_Illness_Lifetime
+<https://w3id.org/enigma#Somatic_Illness_Lifetime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#Somatic_Illness_Lifetime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Medication> .
+<https://w3id.org/enigma#Somatic_Illness_Lifetime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#Somatic_Illness_Lifetime> <http://www.w3.org/2000/01/rdf-schema#comment> "Presence of a somatic illness during lifetime" .
+<https://w3id.org/enigma#Somatic_Illness_Lifetime> <http://www.w3.org/2000/01/rdf-schema#label> "Somatic Illness Lifetime" .
+# 
 # https://w3id.org/enigma#TypicalAntipsychoticUseCurrent
 <https://w3id.org/enigma#TypicalAntipsychoticUseCurrent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#TypicalAntipsychoticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#TypicalAntipsychoticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Medication> .
 <https://w3id.org/enigma#TypicalAntipsychoticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
 <https://w3id.org/enigma#TypicalAntipsychoticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#comment> "Use of 1st generation (typical) antipsychotics at time of scanning" .
 <https://w3id.org/enigma#TypicalAntipsychoticUseCurrent> <http://www.w3.org/2000/01/rdf-schema#label> "Typical Antipsychotic Use Current" .
 # 
 # https://w3id.org/enigma#TypicalAntipsychoticUseLifetime
 <https://w3id.org/enigma#TypicalAntipsychoticUseLifetime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/enigma#TypicalAntipsychoticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#MedicationCovariates> .
+<https://w3id.org/enigma#TypicalAntipsychoticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Medication> .
 <https://w3id.org/enigma#TypicalAntipsychoticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
 <https://w3id.org/enigma#TypicalAntipsychoticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#comment> "Use of 1st generation (typical) antipsychotics during lifetime" .
 <https://w3id.org/enigma#TypicalAntipsychoticUseLifetime> <http://www.w3.org/2000/01/rdf-schema#label> "Typical Antipsychotic Use Lifetime" .
@@ -201,9 +223,9 @@
 <https://w3id.org/enigma#Covariates> <http://www.w3.org/2000/01/rdf-schema#comment> "A class used to describe covariates information for a cohort or study." .
 <https://w3id.org/enigma#Covariates> <http://www.w3.org/2000/01/rdf-schema#label> "Covariates" .
 # 
-# https://w3id.org/enigma#MedicationCovariates
-<https://w3id.org/enigma#MedicationCovariates> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/enigma#MedicationCovariates> <http://www.w3.org/2000/01/rdf-schema#comment> "Medication covariates describing the types of medication (lifetime/current) used by participants in each cohort" .
-<https://w3id.org/enigma#MedicationCovariates> <http://www.w3.org/2000/01/rdf-schema#label> "Medication Covariates" .
+# https://w3id.org/enigma#Medication
+<https://w3id.org/enigma#Medication> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/enigma#Medication> <http://www.w3.org/2000/01/rdf-schema#comment> "Medication covariates describing the types of medication (lifetime/current) used by participants in each cohort" .
+<https://w3id.org/enigma#Medication> <http://www.w3.org/2000/01/rdf-schema#label> "Medication" .
 # 
 # Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/

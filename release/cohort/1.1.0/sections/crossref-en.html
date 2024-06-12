@@ -1,6 +1,6 @@
 <h2 id="crossreference" class="list">Cross reference for The Cohort Ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 This section provides details for each class and property defined by The Cohort Ontology.
-<div id="classes">
+<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
    <h3 id="classes-headline" class="list">Classes</h3>
    <ul class="hlist">
       <li>
@@ -19,9 +19,6 @@ This section provides details for each class and property defined by The Cohort 
          <a href="#CerebrovascularDisorder" title="https://w3id.org/enigma#CerebrovascularDisorder">Cerebrovascular Disorder</a>
       </li>
       <li>
-         <a href="#City" title="https://w3id.org/enigma#City">City</a>
-      </li>
-      <li>
          <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
       </li>
       <li>
@@ -29,9 +26,6 @@ This section provides details for each class and property defined by The Cohort 
       </li>
       <li>
          <a href="#CohortProject" title="https://w3id.org/enigma#CohortProject">Cohort Project</a>
-      </li>
-      <li>
-         <a href="#Country" title="https://w3id.org/enigma#Country">Country</a>
       </li>
       <li>
          <a href="#Covariates" title="https://w3id.org/enigma#Covariates">Covariates</a>
@@ -239,30 +233,6 @@ This section provides details for each class and property defined by The Cohort 
          </dd>
       </dl>
    </div>
-   <div class="entity" id="City">
-      <h3>City<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#City</p>
-      <div class="comment">
-         <span class="markdown">City in which a cohort is located</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>Los Angeles</pre>
-         </dd>
-      </dl>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#Location" title="https://w3id.org/enigma#Location">Location</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
    <div class="entity" id="Cohort">
       <h3>Cohort<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -300,7 +270,8 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#hasCollectionSite" title="https://w3id.org/enigma#hasCollectionSite">has collection site</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#hasCovariates" title="https://w3id.org/enigma#hasCovariates">has covariates</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasInclusionCriteria" title="https://w3id.org/enigma#hasInclusionCriteria">has inclusion criteria</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasPersonRole_Investigator"
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#has_location" title="https://w3id.org/enigma#has_location">has location</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasPersonRole_Investigator"
                title="https://w3id.org/enigma#hasPersonRole_Investigator">has person role investigator</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasPersonRole_PrincipalInvestigator"
                title="https://w3id.org/enigma#hasPersonRole_PrincipalInvestigator">has person role principal investigator</a>
@@ -394,30 +365,6 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             <a href="#hasCohortProject" title="https://w3id.org/enigma#hasCohortProject">has cohort project</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isPartOfCohortProject" title="https://w3id.org/enigma#isPartOfCohortProject">is part of cohort project</a>
             <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Country">
-      <h3>Country<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#Country</p>
-      <div class="comment">
-         <span class="markdown">Country in which a cohort is located</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>United States</pre>
-         </dd>
-      </dl>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#Location" title="https://w3id.org/enigma#Location">Location</a>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -770,11 +717,18 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
          </dd>
       </dl>
       <dl class="description">
-         <dt>has sub-classes</dt>
+         <dt>is in domain of</dt>
          <dd>
-            <a href="#City" title="https://w3id.org/enigma#City">City</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Country" title="https://w3id.org/enigma#Country">Country</a>
-            <sup class="type-c" title="class">c</sup>
+            <a href="#has_city" title="https://w3id.org/enigma#has_city">has city</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#has_country" title="https://w3id.org/enigma#has_country">has country</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#has_latitude" title="https://w3id.org/enigma#has_latitude">has latitude</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#has_longitude" title="https://w3id.org/enigma#has_longitude">has longitude</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#has_location" title="https://w3id.org/enigma#has_location">has location</a>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
@@ -1095,7 +1049,7 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
          </dd>
       </dl>
    </div>
-</div><div id="objectproperties">
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
    <h3 id="properties" class="list">Object Properties</h3>
    <ul class="hlist">
       <li>
@@ -1147,6 +1101,9 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
       <li>
          <a href="#hasImageAcquisitionProtocol"
             title="https://w3id.org/enigma#hasImageAcquisitionProtocol">has image acquisition protocol</a>
+      </li>
+      <li>
+         <a href="#has_location" title="https://w3id.org/enigma#has_location">has location</a>
       </li>
       <li>
          <a href="#hasPersonRole_MainPrincipalInvestigator"
@@ -1674,7 +1631,9 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2002/07/owl#Thing">thing</span>
+               <a href="http://www.w3.org/2002/07/owl#Thing"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#Thing">thing</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is also defined as</dt>
@@ -1715,6 +1674,31 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             <dd>
                <a href="#ImageAcquisitionProtocol"
                   title="https://w3id.org/enigma#ImageAcquisitionProtocol">Image Acquisition Protocol</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="has_location">
+      <h3>has location<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#has_location</p>
+      <div class="comment">
+         <span class="markdown">The location of the cohort</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Location" title="https://w3id.org/enigma#Location">Location</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -2120,7 +2104,7 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
          </dl>
       </div>
    </div>
-</div><div id="dataproperties">
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
    <h3 id="dataproperties-headline" class="list">Data Properties</h3>
    <ul class="hlist">
       <li>
@@ -2148,10 +2132,17 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
          <a href="#hasAge_Group" title="https://w3id.org/enigma#hasAge_Group">has age group</a>
       </li>
       <li>
-         <a href="#hasAge_StandardDeviation" title="https://w3id.org/enigma#hasAge_StandardDeviation">has age standard deviation</a>
+         <a href="#hasAge_StandardDeviation"
+            title="https://w3id.org/enigma#hasAge_StandardDeviation">has age standard deviation</a>
+      </li>
+      <li>
+         <a href="#hasAncestry" title="https://w3id.org/enigma#hasAncestry">has ancestry</a>
       </li>
       <li>
          <a href="#hasBriefDescription" title="https://w3id.org/enigma#hasBriefDescription">has brief description</a>
+      </li>
+      <li>
+         <a href="#has_city" title="https://w3id.org/enigma#has_city">has city</a>
       </li>
       <li>
          <a href="#hasCohortStatus" title="https://w3id.org/enigma#hasCohortStatus">has cohort status</a>
@@ -2161,6 +2152,9 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
       </li>
       <li>
          <a href="#hasContentUrl" title="https://w3id.org/enigma#hasContentUrl">has content URL</a>
+      </li>
+      <li>
+         <a href="#has_country" title="https://w3id.org/enigma#has_country">has country</a>
       </li>
       <li>
          <a href="#hasDataCollectionPeriodEnd"
@@ -2174,9 +2168,6 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
          <a href="#hasDescription" title="https://w3id.org/enigma#hasDescription">has description</a>
       </li>
       <li>
-         <a href="#hasAncestry" title="https://w3id.org/enigma#hasAncestry">has ancestry</a>
-      </li>
-      <li>
          <a href="#hasExclusionCriteria" title="https://w3id.org/enigma#hasExclusionCriteria">has exclusion criteria</a>
       </li>
       <li>
@@ -2187,6 +2178,12 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
       </li>
       <li>
          <a href="#hasInclusionCriteria" title="https://w3id.org/enigma#hasInclusionCriteria">has inclusion criteria</a>
+      </li>
+      <li>
+         <a href="#has_latitude" title="https://w3id.org/enigma#has_latitude">has latitude</a>
+      </li>
+      <li>
+         <a href="#has_longitude" title="https://w3id.org/enigma#has_longitude">has longitude</a>
       </li>
       <li>
          <a href="#hasAge_Maximum" title="https://w3id.org/enigma#hasAge_Maximum">has maximum age</a>
@@ -2262,7 +2259,9 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
             </dd>
          </dl>
       </div>
@@ -2361,7 +2360,9 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
             </dd>
          </dl>
       </div>
@@ -2391,7 +2392,9 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
             </dd>
          </dl>
       </div>
@@ -2424,8 +2427,41 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#double">double</span>
+               <a href="http://www.w3.org/2001/XMLSchema#double"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#double">double</a>
             </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasAncestry">
+      <h3>has ancestry<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#hasAncestry</p>
+      <div class="comment">
+         <span class="markdown">Describes the ancestry of the participants of the cohort</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>Cohort1 hasAncestry "European"</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#CohortProject" title="https://w3id.org/enigma#CohortProject">Cohort Project</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>{ "African American" , "Asian" , "European" , "Latino" , "Two or More Races" }</dd>
          </dl>
       </div>
    </div>
@@ -2470,7 +2506,35 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="has_city">
+      <h3>has city<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#has_city</p>
+      <div class="comment">
+         <span class="markdown">City in which cohort is located</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Location" title="https://w3id.org/enigma#Location">Location</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
             </dd>
          </dl>
       </div>
@@ -2534,7 +2598,9 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
             </dd>
          </dl>
       </div>
@@ -2563,7 +2629,35 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#anyURI">any u r i</span>
+               <a href="http://www.w3.org/2001/XMLSchema#anyURI"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#anyURI">any u r i</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="has_country">
+      <h3>has country<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#has_country</p>
+      <div class="comment">
+         <span class="markdown">Country in which cohort is located</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Location" title="https://w3id.org/enigma#Location">Location</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
             </dd>
          </dl>
       </div>
@@ -2599,7 +2693,9 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#gYear">g year</span>
+               <a href="http://www.w3.org/2001/XMLSchema#gYear"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#gYear">g year</a>
             </dd>
          </dl>
       </div>
@@ -2635,7 +2731,9 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#gYear">g year</span>
+               <a href="http://www.w3.org/2001/XMLSchema#gYear"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#gYear">g year</a>
             </dd>
          </dl>
       </div>
@@ -2664,39 +2762,10 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
             </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasAncestry">
-      <h3>has ancestry<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/enigma#hasAncestry</p>
-      <div class="comment">
-         <span class="markdown">Describes the ancestry of the participants of the cohort</span>
-      </div>
-      <dl>
-         <dt>Example</dt>
-         <dd>
-            <pre>Cohort1 hasAncestry "European"</pre>
-         </dd>
-      </dl>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Cohort" title="https://w3id.org/enigma#Cohort">Cohort</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
-               <a href="#CohortProject" title="https://w3id.org/enigma#CohortProject">Cohort Project</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>{ "African American" , "Asian" , "European" , "Latino" , "Two or More Races" }</dd>
          </dl>
       </div>
    </div>
@@ -2725,7 +2794,9 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
             </dd>
          </dl>
       </div>
@@ -2758,7 +2829,9 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
             </dd>
          </dl>
       </div>
@@ -2782,7 +2855,9 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
             </dd>
          </dl>
       </div>
@@ -2814,7 +2889,61 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="has_latitude">
+      <h3>has latitude<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#has_latitude</p>
+      <div class="comment">
+         <span class="markdown">The latitude of the cohort</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Location" title="https://w3id.org/enigma#Location">Location</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#float"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#float">float</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="has_longitude">
+      <h3>has longitude<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/enigma#has_longitude</p>
+      <div class="comment">
+         <span class="markdown">The longitude of the cohort</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Location" title="https://w3id.org/enigma#Location">Location</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#float"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#float">float</a>
             </dd>
          </dl>
       </div>
@@ -2853,7 +2982,9 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#positiveInteger">positive integer</span>
+               <a href="http://www.w3.org/2001/XMLSchema#positiveInteger"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#positiveInteger">positive integer</a>
             </dd>
          </dl>
       </div>
@@ -2889,7 +3020,9 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#double">double</span>
+               <a href="http://www.w3.org/2001/XMLSchema#double"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#double">double</a>
             </dd>
          </dl>
       </div>
@@ -2928,7 +3061,9 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#positiveInteger">positive integer</span>
+               <a href="http://www.w3.org/2001/XMLSchema#positiveInteger"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#positiveInteger">positive integer</a>
             </dd>
          </dl>
       </div>
@@ -2957,7 +3092,9 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
             </dd>
          </dl>
       </div>
@@ -2987,8 +3124,9 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted"
-                     title="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">non negative integer</span>
+               <a href="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">non negative integer</a>
             </dd>
          </dl>
       </div>
@@ -3018,8 +3156,9 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted"
-                     title="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">non negative integer</span>
+               <a href="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">non negative integer</a>
             </dd>
          </dl>
       </div>
@@ -3052,7 +3191,9 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#int">int</span>
+               <a href="http://www.w3.org/2001/XMLSchema#int"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#int">int</a>
             </dd>
          </dl>
       </div>
@@ -3088,7 +3229,9 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</span>
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
             </dd>
          </dl>
       </div>
@@ -3119,7 +3262,9 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
             </dd>
          </dl>
       </div>
@@ -3149,7 +3294,9 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#positiveInteger">positive integer</span>
+               <a href="http://www.w3.org/2001/XMLSchema#positiveInteger"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#positiveInteger">positive integer</a>
             </dd>
          </dl>
       </div>
@@ -3179,8 +3326,9 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted"
-                     title="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">non negative integer</span>
+               <a href="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">non negative integer</a>
             </dd>
          </dl>
       </div>
@@ -3210,8 +3358,9 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted"
-                     title="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">non negative integer</span>
+               <a href="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">non negative integer</a>
             </dd>
          </dl>
       </div>
@@ -3235,7 +3384,9 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
             </dd>
          </dl>
       </div>
@@ -3271,7 +3422,9 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
             </dd>
          </dl>
       </div>
@@ -3323,7 +3476,9 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
             </dd>
          </dl>
       </div>
@@ -3359,7 +3514,9 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
             </dd>
          </dl>
       </div>

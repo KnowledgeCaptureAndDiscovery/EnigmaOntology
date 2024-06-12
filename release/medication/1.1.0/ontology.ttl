@@ -8,7 +8,8 @@
 
 <https://w3id.org/enigma> rdf:type owl:Ontology ;
                            owl:versionIRI <https://w3id.org/enigma/medication/1.1.0> ;
-                           <http://purl.org/dc/terms/contributor> "Agnes McMahon" ,
+                           <http://purl.org/dc/terms/contributor> "Aarya Vakharia" ,
+                                                                  "Agnes McMahon" ,
                                                                   "Hernan Vargas" ,
                                                                   "Kevin Low" ,
                                                                   "MiHyun Jang" ,
@@ -68,7 +69,7 @@
 :has_medication rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf owl:topObjectProperty ;
                 rdfs:domain :Cohort ;
-                rdfs:range :MedicationCovariates ;
+                rdfs:range :Medication ;
                 rdfs:label "has medication" .
 
 
@@ -78,7 +79,7 @@
 
 ###  https://w3id.org/enigma#AntidepressantUseCurrent
 :AntidepressantUseCurrent rdf:type owl:DatatypeProperty ;
-                          rdfs:domain :MedicationCovariates ;
+                          rdfs:domain :Medication ;
                           rdfs:range xsd:boolean ;
                           rdfs:comment "Use of antidepressants at the time of scanning" ;
                           rdfs:label "Antidepressant Use Current" .
@@ -86,7 +87,7 @@
 
 ###  https://w3id.org/enigma#AntidepressantUseLifetime
 :AntidepressantUseLifetime rdf:type owl:DatatypeProperty ;
-                           rdfs:domain :MedicationCovariates ;
+                           rdfs:domain :Medication ;
                            rdfs:range xsd:boolean ;
                            rdfs:comment "Use of antidepressants during lifetime" ;
                            rdfs:label "Antidepressant Use Lifetime" .
@@ -94,7 +95,7 @@
 
 ###  https://w3id.org/enigma#AntiepilepticUseCurrent
 :AntiepilepticUseCurrent rdf:type owl:DatatypeProperty ;
-                         rdfs:domain :MedicationCovariates ;
+                         rdfs:domain :Medication ;
                          rdfs:range xsd:boolean ;
                          rdfs:comment "Use of Antiepileptics at time of scanning" ;
                          rdfs:label "Antiepileptic Use Current" .
@@ -102,7 +103,7 @@
 
 ###  https://w3id.org/enigma#AntiepilepticUseLifetime
 :AntiepilepticUseLifetime rdf:type owl:DatatypeProperty ;
-                          rdfs:domain :MedicationCovariates ;
+                          rdfs:domain :Medication ;
                           rdfs:range xsd:boolean ;
                           rdfs:comment "Use of Antiepileptics during lifetime" ;
                           rdfs:label "Antiepileptic Use Lifetime" .
@@ -110,7 +111,7 @@
 
 ###  https://w3id.org/enigma#AtypicalAntipsychoticUseCurrent
 :AtypicalAntipsychoticUseCurrent rdf:type owl:DatatypeProperty ;
-                                 rdfs:domain :MedicationCovariates ;
+                                 rdfs:domain :Medication ;
                                  rdfs:range xsd:boolean ;
                                  rdfs:comment "Use of 2nd generation (atypical) antipsychotic at time of scanning" ;
                                  rdfs:label "Atypical Antipsychotic Use Current" .
@@ -118,15 +119,31 @@
 
 ###  https://w3id.org/enigma#AtypicalAntipsychoticUseLifetime
 :AtypicalAntipsychoticUseLifetime rdf:type owl:DatatypeProperty ;
-                                  rdfs:domain :MedicationCovariates ;
+                                  rdfs:domain :Medication ;
                                   rdfs:range xsd:boolean ;
                                   rdfs:comment "Use of 2nd generation (atypical) antipsychotic during lifetime" ;
                                   rdfs:label "Atypical Antipsychotic Use Lifetime" .
 
 
+###  https://w3id.org/enigma#CPZ_Use_Current
+:CPZ_Use_Current rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Medication ;
+                 rdfs:range xsd:boolean ;
+                 rdfs:comment "Chlorpromazine use (or its equivalents), a 1st generation antipsychotic at time of study" ;
+                 rdfs:label "CPZ Use Current" .
+
+
+###  https://w3id.org/enigma#CPZ_Use_Lifetime
+:CPZ_Use_Lifetime rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Medication ;
+                  rdfs:range xsd:boolean ;
+                  rdfs:comment "Chlorpromazine use (or its equivalents), a 1st generation antipsychotic during lifetime" ;
+                  rdfs:label "CPZ Use Lifetime" .
+
+
 ###  https://w3id.org/enigma#LithiumUseCurrent
 :LithiumUseCurrent rdf:type owl:DatatypeProperty ;
-                   rdfs:domain :MedicationCovariates ;
+                   rdfs:domain :Medication ;
                    rdfs:range xsd:boolean ;
                    rdfs:comment "Use of Lithium at time of scanning" ;
                    rdfs:label "Lithium Use Current" .
@@ -134,7 +151,7 @@
 
 ###  https://w3id.org/enigma#LithiumUseLifetime
 :LithiumUseLifetime rdf:type owl:DatatypeProperty ;
-                    rdfs:domain :MedicationCovariates ;
+                    rdfs:domain :Medication ;
                     rdfs:range xsd:boolean ;
                     rdfs:comment "Lithium use during lifetime" ;
                     rdfs:label "Lithium Use Lifetime" .
@@ -142,7 +159,7 @@
 
 ###  https://w3id.org/enigma#OtherMedUseCurrent
 :OtherMedUseCurrent rdf:type owl:DatatypeProperty ;
-                    rdfs:domain :MedicationCovariates ;
+                    rdfs:domain :Medication ;
                     rdfs:range xsd:string ;
                     rdfs:comment "Type of other medication used at time of scanning. Please provide the medication names." ;
                     rdfs:label "Other Medication Use Current" .
@@ -150,7 +167,7 @@
 
 ###  https://w3id.org/enigma#OtherMedUseLifetime
 :OtherMedUseLifetime rdf:type owl:DatatypeProperty ;
-                     rdfs:domain :MedicationCovariates ;
+                     rdfs:domain :Medication ;
                      rdfs:range xsd:string ;
                      rdfs:comment "Type of other medication used during lifetime. Please provide the medication names." ;
                      rdfs:label "Other Medication Use Lifetime" .
@@ -158,23 +175,31 @@
 
 ###  https://w3id.org/enigma#SomaticIllnessCurrent
 :SomaticIllnessCurrent rdf:type owl:DatatypeProperty ;
-                       rdfs:domain :MedicationCovariates ;
+                       rdfs:domain :Medication ;
                        rdfs:range xsd:boolean ;
-                       rdfs:comment "Presence of a somatic illness" ;
+                       rdfs:comment "Presence of a somatic illness at time of study" ;
                        rdfs:label "Somatic Illness Current" .
 
 
 ###  https://w3id.org/enigma#SomaticIllnessType
 :SomaticIllnessType rdf:type owl:DatatypeProperty ;
-                    rdfs:domain :MedicationCovariates ;
+                    rdfs:domain :Medication ;
                     rdfs:range xsd:string ;
                     rdfs:comment "Specific somatic illness measured/found in subjects" ;
                     rdfs:label "Somatic Illness Type" .
 
 
+###  https://w3id.org/enigma#Somatic_Illness_Lifetime
+:Somatic_Illness_Lifetime rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :Medication ;
+                          rdfs:range xsd:boolean ;
+                          rdfs:comment "Presence of a somatic illness during lifetime" ;
+                          rdfs:label "Somatic Illness Lifetime" .
+
+
 ###  https://w3id.org/enigma#TypicalAntipsychoticUseCurrent
 :TypicalAntipsychoticUseCurrent rdf:type owl:DatatypeProperty ;
-                                rdfs:domain :MedicationCovariates ;
+                                rdfs:domain :Medication ;
                                 rdfs:range xsd:boolean ;
                                 rdfs:comment "Use of 1st generation (typical) antipsychotics at time of scanning" ;
                                 rdfs:label "Typical Antipsychotic Use Current" .
@@ -182,7 +207,7 @@
 
 ###  https://w3id.org/enigma#TypicalAntipsychoticUseLifetime
 :TypicalAntipsychoticUseLifetime rdf:type owl:DatatypeProperty ;
-                                 rdfs:domain :MedicationCovariates ;
+                                 rdfs:domain :Medication ;
                                  rdfs:range xsd:boolean ;
                                  rdfs:comment "Use of 1st generation (typical) antipsychotics during lifetime" ;
                                  rdfs:label "Typical Antipsychotic Use Lifetime" .
@@ -216,10 +241,10 @@
             rdfs:label "Covariates" .
 
 
-###  https://w3id.org/enigma#MedicationCovariates
-:MedicationCovariates rdf:type owl:Class ;
-                      rdfs:comment "Medication covariates describing the types of medication (lifetime/current) used by participants in each cohort" ;
-                      rdfs:label "Medication Covariates" .
+###  https://w3id.org/enigma#Medication
+:Medication rdf:type owl:Class ;
+            rdfs:comment "Medication covariates describing the types of medication (lifetime/current) used by participants in each cohort" ;
+            rdfs:label "Medication" .
 
 
 ###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
