@@ -1,5 +1,6 @@
 <https://w3id.org/enigma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <https://w3id.org/enigma> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/enigma/demographic/1.1.0> .
+<https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Aarya Vakharia" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Agnes McMahon" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Hernan Vargas" .
 <https://w3id.org/enigma> <http://purl.org/dc/terms/contributor> "Kevin Low" .
@@ -61,6 +62,34 @@
 # http://www.w3.org/2002/07/owl#topDataProperty
 <http://www.w3.org/2002/07/owl#topDataProperty> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
 # 
+# https://w3id.org/enigma#Age_Of_Onset
+<https://w3id.org/enigma#Age_Of_Onset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#Age_Of_Onset> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Demographics> .
+<https://w3id.org/enigma#Age_Of_Onset> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#Age_Of_Onset> <http://www.w3.org/2000/01/rdf-schema#comment> "Property which states if the subjects age of onset was measure in a cohort" .
+<https://w3id.org/enigma#Age_Of_Onset> <http://www.w3.org/2000/01/rdf-schema#label> "Age Of Onset"@en .
+# 
+# https://w3id.org/enigma#BMI
+<https://w3id.org/enigma#BMI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#BMI> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Demographics> .
+<https://w3id.org/enigma#BMI> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#BMI> <http://www.w3.org/2000/01/rdf-schema#comment> "Property which states if the body mass index (BMI) of the subject was measured in a cohort" .
+<https://w3id.org/enigma#BMI> <http://www.w3.org/2000/01/rdf-schema#label> "BMI"@en .
+# 
+# https://w3id.org/enigma#City_Dwelling
+<https://w3id.org/enigma#City_Dwelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#City_Dwelling> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Demographics> .
+<https://w3id.org/enigma#City_Dwelling> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#City_Dwelling> <http://www.w3.org/2000/01/rdf-schema#comment> "Propert which measures if the subject were a city dwelling (population > 100,000) in a cohort" .
+<https://w3id.org/enigma#City_Dwelling> <http://www.w3.org/2000/01/rdf-schema#label> "City Dwelling"@en .
+# 
+# https://w3id.org/enigma#Handedness
+<https://w3id.org/enigma#Handedness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#Handedness> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Demographics> .
+<https://w3id.org/enigma#Handedness> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#Handedness> <http://www.w3.org/2000/01/rdf-schema#comment> "The property which states if the subject's dominant hand (left/right/ambidextrous) was measured in a cohort" .
+<https://w3id.org/enigma#Handedness> <http://www.w3.org/2000/01/rdf-schema#label> "Handedness"@en .
+# 
 # https://w3id.org/enigma#IQ
 <https://w3id.org/enigma#IQ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/enigma#IQ> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Demographics> .
@@ -89,6 +118,13 @@
 <https://w3id.org/enigma#Marital_status> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/enigma#Marital_status> <http://www.w3.org/2000/01/rdf-schema#comment> "Property which states whether subject's marital status (ie: single, married) is specified." .
 <https://w3id.org/enigma#Marital_status> <http://www.w3.org/2000/01/rdf-schema#label> "marital status" .
+# 
+# https://w3id.org/enigma#Nationality
+<https://w3id.org/enigma#Nationality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/enigma#Nationality> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/enigma#Demographics> .
+<https://w3id.org/enigma#Nationality> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/enigma#Nationality> <http://www.w3.org/2000/01/rdf-schema#comment> "Property which states the subjects nationality in a cohort" .
+<https://w3id.org/enigma#Nationality> <http://www.w3.org/2000/01/rdf-schema#label> "Nationality"@en .
 # 
 # https://w3id.org/enigma#Occupation
 <https://w3id.org/enigma#Occupation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .

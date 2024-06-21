@@ -68,6 +68,13 @@
       rdfs:label "has exclusion criteria"@en ;
       rdfs:range xsd:string .
 
+:Nationality
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Property which states the subjects nationality in a cohort" ;
+      rdfs:domain :Demographics ;
+      rdfs:label "Nationality"@en ;
+      rdfs:range xsd:boolean .
+
 :RespiratoryDisorder
       a       owl:Class ;
       rdfs:comment "Disorders which affect the respiratory system"@en ;
@@ -176,6 +183,12 @@
 <http://xmlns.com/foaf/0.1/member>
       a       owl:ObjectProperty ;
       rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+:BMI  a       owl:DatatypeProperty ;
+      rdfs:comment "Property which states if the body mass index (BMI) of the subject was measured in a cohort" ;
+      rdfs:domain :Demographics ;
+      rdfs:label "BMI"@en ;
+      rdfs:range xsd:boolean .
 
 :socialAnxietyDisorder_Current
       a       owl:DatatypeProperty ;
@@ -352,11 +365,32 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
       rdfs:label "marital status" ;
       rdfs:range xsd:string .
 
+:has_longitude
+      a       owl:DatatypeProperty ;
+      rdfs:comment "The longitude of the cohort" ;
+      rdfs:domain :Location ;
+      rdfs:label "has longitude" ;
+      rdfs:range xsd:float .
+
+:isOverallCohort
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes if a cohort is an \"overall\" cohort, or a top-level cohort without having been separated into its component cohort groups/projects" ;
+      rdfs:domain :Cohort ;
+      rdfs:label "Is Overall Cohort" ;
+      rdfs:range xsd:boolean .
+
 :smokingStatus_Current
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes if the subject is currently smoking." ;
       rdfs:domain :Disorder_Covariates ;
       rdfs:label "smoking status current" ;
+      rdfs:range xsd:boolean .
+
+:Handedness
+      a       owl:DatatypeProperty ;
+      rdfs:comment "The property which states if the subject's dominant hand (left/right/ambidextrous) was measured in a cohort" ;
+      rdfs:domain :Demographics ;
+      rdfs:label "Handedness"@en ;
       rdfs:range xsd:boolean .
 
 :DataType
@@ -434,6 +468,13 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
       rdfs:domain :Project ;
       rdfs:label "is Active"@en ;
       rdfs:range xsd:string .
+
+:has_location
+      a       owl:ObjectProperty ;
+      rdfs:comment "The location of the cohort" ;
+      rdfs:domain :Cohort ;
+      rdfs:label "has location" ;
+      rdfs:range :Location .
 
 :BrainScanDataType
       a       owl:Class ;
@@ -1016,15 +1057,15 @@ xsd:date
       rdfs:comment "Provides a brief description of the working group or project or cohort or image acquisition protocol"@en , "Provides a brief description of the working group or project or cohort"@en ;
       rdfs:domain
               [ a       owl:Class ;
-                owl:unionOf (:Cohort :Project :WorkingGroup)
-              ] ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :Project :WorkingGroup)
-              ] ;
-      rdfs:domain
-              [ a       owl:Class ;
                 owl:unionOf (:Cohort :CohortGroup :CohortProject :ImageAcquisitionProtocol :Project :WorkingGroup)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :Project :WorkingGroup)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :Project :WorkingGroup)
               ] ;
       rdfs:label "has brief description"@en ;
       rdfs:range xsd:string ;
@@ -1552,6 +1593,13 @@ xsd:gYear
       rdfs:label "studies disorder"@en ;
       rdfs:range :Disorder .
 
+:has_city
+      a       owl:DatatypeProperty ;
+      rdfs:comment "City in which cohort is located" ;
+      rdfs:domain :Location ;
+      rdfs:label "has city" ;
+      rdfs:range xsd:string .
+
 :hasName
       a       owl:DatatypeProperty ;
       rdfs:comment "Name of an item" ;
@@ -1659,6 +1707,13 @@ xsd:gYear
               ] ;
       <http://purl.org/vocab/vann/example>
               "Cohort1 hasAncestry \"European\""@en .
+
+:hasInclusionCriteria
+      a       owl:DatatypeProperty ;
+      rdfs:comment "criteria used to include cohort patients" ;
+      rdfs:domain :CohortProject , :CohortGroup , :Cohort ;
+      rdfs:label "has inclusion criteria" ;
+      rdfs:range xsd:string .
 
 <http://purl.org/dc/terms/description>
       a       owl:DatatypeProperty , owl:AnnotationProperty .
@@ -1827,6 +1882,13 @@ owl:topDataProperty
       rdfs:label "OCD current" ;
       rdfs:range xsd:boolean .
 
+:City_Dwelling
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Propert which measures if the subject were a city dwelling (population > 100,000) in a cohort" ;
+      rdfs:domain :Demographics ;
+      rdfs:label "City Dwelling"@en ;
+      rdfs:range xsd:boolean .
+
 :hasDataCollectionPeriodStart
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes the start year of the data collection period of the cohort"@en ;
@@ -1898,6 +1960,13 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project"""@en , "A group of indi
       rdfs:range xsd:string ;
       rdfs:subPropertyOf owl:topDataProperty .
 
+:Age_Of_Onset
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Property which states if the subjects age of onset was measure in a cohort" ;
+      rdfs:domain :Demographics ;
+      rdfs:label "Age Of Onset"@en ;
+      rdfs:range xsd:boolean .
+
 :hasCovariates
       a       owl:ObjectProperty ;
       rdfs:domain :Cohort ;
@@ -1955,6 +2024,13 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project"""@en , "A group of indi
       rdfs:subPropertyOf :hasCohortGroup ;
       <http://purl.org/vocab/vann/example>
               "BipolarCohort hasControlGroup BipolarControlGroup"@en .
+
+:has_latitude
+      a       owl:DatatypeProperty ;
+      rdfs:comment "The latitude of the cohort" ;
+      rdfs:domain :Location ;
+      rdfs:label "has latitude" ;
+      rdfs:range xsd:float .
 
 :TypicalAntipsychoticUseLifetime
       a       owl:DatatypeProperty ;
@@ -2122,6 +2198,13 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project"""@en , "A group of indi
       rdfs:comment "Property which states whether subject's occupation is specified." ;
       rdfs:domain :Demographics ;
       rdfs:label "occupation" ;
+      rdfs:range xsd:string .
+
+:has_country
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Country in which cohort is located" ;
+      rdfs:domain :Location ;
+      rdfs:label "has country" ;
       rdfs:range xsd:string .
 
 :hasDistribution

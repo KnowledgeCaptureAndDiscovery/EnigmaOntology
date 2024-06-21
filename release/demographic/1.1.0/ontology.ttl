@@ -8,7 +8,8 @@
 
 <https://w3id.org/enigma> rdf:type owl:Ontology ;
                            owl:versionIRI <https://w3id.org/enigma/demographic/1.1.0> ;
-                           <http://purl.org/dc/terms/contributor> "Agnes McMahon" ,
+                           <http://purl.org/dc/terms/contributor> "Aarya Vakharia" ,
+                                                                  "Agnes McMahon" ,
                                                                   "Hernan Vargas" ,
                                                                   "Kevin Low" ,
                                                                   "MiHyun Jang" ,
@@ -68,6 +69,38 @@
 owl:topDataProperty rdfs:range xsd:boolean .
 
 
+###  https://w3id.org/enigma#Age_Of_Onset
+:Age_Of_Onset rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Demographics ;
+              rdfs:range xsd:boolean ;
+              rdfs:comment "Property which states if the subjects age of onset was measure in a cohort" ;
+              rdfs:label "Age Of Onset"@en .
+
+
+###  https://w3id.org/enigma#BMI
+:BMI rdf:type owl:DatatypeProperty ;
+     rdfs:domain :Demographics ;
+     rdfs:range xsd:boolean ;
+     rdfs:comment "Property which states if the body mass index (BMI) of the subject was measured in a cohort" ;
+     rdfs:label "BMI"@en .
+
+
+###  https://w3id.org/enigma#City_Dwelling
+:City_Dwelling rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Demographics ;
+               rdfs:range xsd:boolean ;
+               rdfs:comment "Propert which measures if the subject were a city dwelling (population > 100,000) in a cohort" ;
+               rdfs:label "City Dwelling"@en .
+
+
+###  https://w3id.org/enigma#Handedness
+:Handedness rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Demographics ;
+            rdfs:range xsd:boolean ;
+            rdfs:comment "The property which states if the subject's dominant hand (left/right/ambidextrous) was measured in a cohort" ;
+            rdfs:label "Handedness"@en .
+
+
 ###  https://w3id.org/enigma#IQ
 :IQ rdf:type owl:DatatypeProperty ;
     rdfs:domain :Demographics ;
@@ -99,6 +132,14 @@ owl:topDataProperty rdfs:range xsd:boolean .
                 rdfs:range xsd:string ;
                 rdfs:comment "Property which states whether subject's marital status (ie: single, married) is specified." ;
                 rdfs:label "marital status" .
+
+
+###  https://w3id.org/enigma#Nationality
+:Nationality rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Demographics ;
+             rdfs:range xsd:boolean ;
+             rdfs:comment "Property which states the subjects nationality in a cohort" ;
+             rdfs:label "Nationality"@en .
 
 
 ###  https://w3id.org/enigma#Occupation

@@ -267,6 +267,17 @@
     
 
 
+    <!-- https://w3id.org/enigma#hasCovariates -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasCovariates">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Covariates"/>
+        <rdfs:label>has covariates</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/enigma#hasDataType -->
 
 
@@ -513,6 +524,18 @@
         <rdfs:range rdf:resource="https://w3id.org/enigma#Dataset"/>
         <rdfs:comment xml:lang="en">Property used to link a cohort with the summary statistics that may have been  produced after applying a given protocol</rdfs:comment>
         <rdfs:label xml:lang="en">has statistics</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#has_location -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/enigma#has_location">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#Location"/>
+        <rdfs:comment>The location of the cohort</rdfs:comment>
+        <rdfs:label>has location</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1057,6 +1080,20 @@
     
 
 
+    <!-- https://w3id.org/enigma#hasInclusionCriteria -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#hasInclusionCriteria">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortGroup"/>
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#CohortProject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>criteria used to include cohort patients</rdfs:comment>
+        <rdfs:label>has inclusion criteria</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/enigma#hasName -->
 
 
@@ -1186,6 +1223,66 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
         <vann:example xml:lang="en">CohortGroup1 hasTransgenderMtoF 20</vann:example>
         <rdfs:comment xml:lang="en">Describing the number of male to female transgender individuals in a cohort group</rdfs:comment>
         <rdfs:label xml:lang="en">has transgender m to f</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#has_city -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#has_city">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>City in which cohort is located</rdfs:comment>
+        <rdfs:label>has city</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#has_country -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#has_country">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Country in which cohort is located</rdfs:comment>
+        <rdfs:label>has country</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#has_latitude -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#has_latitude">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>The latitude of the cohort</rdfs:comment>
+        <rdfs:label>has latitude</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#has_longitude -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#has_longitude">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>The longitude of the cohort</rdfs:comment>
+        <rdfs:label>has longitude</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/enigma#isOverallCohort -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/enigma#isOverallCohort">
+        <rdfs:domain rdf:resource="https://w3id.org/enigma#Cohort"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Describes if a cohort is an &quot;overall&quot; cohort, or a top-level cohort without having been separated into its component cohort groups/projects</rdfs:comment>
+        <rdfs:label>Is Overall Cohort</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1338,13 +1435,6 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
     
 
 
-    <!-- https://w3id.org/enigma#City -->
-
-
-    <owl:Class rdf:about="https://w3id.org/enigma#City"/>
-    
-
-
     <!-- https://w3id.org/enigma#Cohort -->
 
 
@@ -1383,13 +1473,6 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project</rdfs:comment>
         <rdfs:comment xml:lang="en">The subset of the individuals from a Cohort, which are used as samples for a specific project</rdfs:comment>
         <rdfs:label xml:lang="en">Cohort Project</rdfs:label>
     </owl:Class>
-    
-
-
-    <!-- https://w3id.org/enigma#Country -->
-
-
-    <owl:Class rdf:about="https://w3id.org/enigma#Country"/>
     
 
 

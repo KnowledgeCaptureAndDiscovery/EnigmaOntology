@@ -164,6 +164,13 @@ xsd:gYear rdf:type rdfs:Datatype .
                  rdfs:label "has control group"@en .
 
 
+###  https://w3id.org/enigma#hasCovariates
+:hasCovariates rdf:type owl:ObjectProperty ;
+               rdfs:domain :Cohort ;
+               rdfs:range :Covariates ;
+               rdfs:label "has covariates" .
+
+
 ###  https://w3id.org/enigma#hasDataType
 :hasDataType rdf:type owl:ObjectProperty ;
              rdfs:domain [ rdf:type owl:Class ;
@@ -329,6 +336,14 @@ xsd:gYear rdf:type rdfs:Datatype .
                rdfs:range :Dataset ;
                rdfs:comment "Property used to link a cohort with the summary statistics that may have been  produced after applying a given protocol"@en ;
                rdfs:label "has statistics"@en .
+
+
+###  https://w3id.org/enigma#has_location
+:has_location rdf:type owl:ObjectProperty ;
+              rdfs:domain :Cohort ;
+              rdfs:range :Location ;
+              rdfs:comment "The location of the cohort" ;
+              rdfs:label "has location" .
 
 
 ###  https://w3id.org/enigma#isPartOfCohort
@@ -672,6 +687,16 @@ xsd:gYear rdf:type rdfs:Datatype .
 :hasHomePage rdf:type owl:DatatypeProperty .
 
 
+###  https://w3id.org/enigma#hasInclusionCriteria
+:hasInclusionCriteria rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Cohort ,
+                                  :CohortGroup ,
+                                  :CohortProject ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "criteria used to include cohort patients" ;
+                      rdfs:label "has inclusion criteria" .
+
+
 ###  https://w3id.org/enigma#hasName
 :hasName rdf:type owl:DatatypeProperty ;
          rdfs:subPropertyOf <https://schema.org/name> ;
@@ -761,6 +786,46 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
                     <http://purl.org/vocab/vann/example> "CohortGroup1 hasTransgenderMtoF 20"@en ;
                     rdfs:comment "Describing the number of male to female transgender individuals in a cohort group"@en ;
                     rdfs:label "has transgender m to f"@en .
+
+
+###  https://w3id.org/enigma#has_city
+:has_city rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Location ;
+          rdfs:range xsd:string ;
+          rdfs:comment "City in which cohort is located" ;
+          rdfs:label "has city" .
+
+
+###  https://w3id.org/enigma#has_country
+:has_country rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Location ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Country in which cohort is located" ;
+             rdfs:label "has country" .
+
+
+###  https://w3id.org/enigma#has_latitude
+:has_latitude rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Location ;
+              rdfs:range xsd:float ;
+              rdfs:comment "The latitude of the cohort" ;
+              rdfs:label "has latitude" .
+
+
+###  https://w3id.org/enigma#has_longitude
+:has_longitude rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Location ;
+               rdfs:range xsd:float ;
+               rdfs:comment "The longitude of the cohort" ;
+               rdfs:label "has longitude" .
+
+
+###  https://w3id.org/enigma#isOverallCohort
+:isOverallCohort rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Cohort ;
+                 rdfs:range xsd:boolean ;
+                 rdfs:comment "Describes if a cohort is an \"overall\" cohort, or a top-level cohort without having been separated into its component cohort groups/projects" ;
+                 rdfs:label "Is Overall Cohort" .
 
 
 ###  https://w3id.org/enigma#isPublic
@@ -857,10 +922,6 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
                          rdfs:label "Cerebrovascular Disorder"@en .
 
 
-###  https://w3id.org/enigma#City
-:City rdf:type owl:Class .
-
-
 ###  https://w3id.org/enigma#Cohort
 :Cohort rdf:type owl:Class ;
         <http://purl.org/vocab/vann/example> "ADNI: Alzheimer’s Disease Neuroimaging Initiative"@en ;
@@ -888,10 +949,6 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project"""@en ;
                <http://purl.org/vocab/vann/example> "\"Healthy\" individuals from the ASRB Cohort were sampled to form a Cohort Project of SZCorticol"@en ;
                rdfs:comment "The subset of the individuals from a Cohort, which are used as samples for a specific project"@en ;
                rdfs:label "Cohort Project"@en .
-
-
-###  https://w3id.org/enigma#Country
-:Country rdf:type owl:Class .
 
 
 ###  https://w3id.org/enigma#Covariates
