@@ -910,15 +910,15 @@ xsd:date
       rdfs:comment "Describes which brain scan data types a cohort or project has"@en , "Describes the brain scan data types that were collected for a cohort or project"@en ;
       rdfs:domain
               [ a       owl:Class ;
-                owl:unionOf (:Cohort :CohortGroup :CohortProject :Project)
-              ] ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :CohortGroup :CohortProject :Project)
-              ] ;
-      rdfs:domain
-              [ a       owl:Class ;
                 owl:unionOf (:Cohort :Project)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject :Project)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject :Project)
               ] ;
       rdfs:label "has brain scan data type"@en ;
       rdfs:range :BrainScanDataType ;
@@ -1057,15 +1057,15 @@ xsd:date
       rdfs:comment "Provides a brief description of the working group or project or cohort or image acquisition protocol"@en , "Provides a brief description of the working group or project or cohort"@en ;
       rdfs:domain
               [ a       owl:Class ;
+                owl:unionOf (:Cohort :Project :WorkingGroup)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :Project :WorkingGroup)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
                 owl:unionOf (:Cohort :CohortGroup :CohortProject :ImageAcquisitionProtocol :Project :WorkingGroup)
-              ] ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :Project :WorkingGroup)
-              ] ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :Project :WorkingGroup)
               ] ;
       rdfs:label "has brief description"@en ;
       rdfs:range xsd:string ;
@@ -1909,7 +1909,7 @@ Cohort Groups: COHORT_grp_NAME
 Example: STELLENBOCH_grp_CN for the control group
 
 Cohort Projects: COHORT_proj_NAME
-Example: STELLENBOCH_proj_FS for the Freesurfer project"""@en , "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria" , "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria"@en ;
+Example: STELLENBOCH_proj_FS for the Freesurfer project"""@en , "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria" , "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria."@en ;
       rdfs:label "Cohort" , "Cohort"@en ;
       <http://purl.org/vocab/vann/example>
               "ADNI: Alzheimer’s Disease Neuroimaging Initiative"@en .
@@ -2199,6 +2199,13 @@ Example: STELLENBOCH_proj_FS for the Freesurfer project"""@en , "A group of indi
       rdfs:domain :Demographics ;
       rdfs:label "occupation" ;
       rdfs:range xsd:string .
+
+:has_demographics
+      a       owl:ObjectProperty ;
+      rdfs:comment "Property Linking Cohort with Demographics Covariates measured in the working group" ;
+      rdfs:domain :Cohort ;
+      rdfs:label "has demographics" ;
+      rdfs:range :Demographics .
 
 :has_country
       a       owl:DatatypeProperty ;

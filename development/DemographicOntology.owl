@@ -18,6 +18,10 @@
     <Prefix name="terms" IRI="http://purl.org/dc/terms/"/>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="terms:contributor"/>
+        <Literal>Aarya Vakharia</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:contributor"/>
         <Literal>Agnes McMahon</Literal>
     </Annotation>
     <Annotation>
@@ -39,10 +43,6 @@
     <Annotation>
         <AnnotationProperty abbreviatedIRI="terms:contributor"/>
         <Literal>Ryan Espiritu</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="terms:contributor"/>
-        <Literal>Aarya Vakharia</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="terms:creator"/>
@@ -97,7 +97,13 @@
         <Literal>v1.1.0</Literal>
     </Annotation>
     <Declaration>
+        <Class IRI="#Cohort"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Demographics"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_demographics"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#Age_Of_Onset"/>
@@ -183,6 +189,14 @@
     <Declaration>
         <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
     </Declaration>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_demographics"/>
+        <Class IRI="#Cohort"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_demographics"/>
+        <Class IRI="#Demographics"/>
+    </ObjectPropertyRange>
     <SubDataPropertyOf>
         <DataProperty IRI="#IllnessDuration"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
@@ -391,6 +405,16 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Cohort</IRI>
+        <Literal xml:lang="en">A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Cohort</IRI>
+        <Literal xml:lang="en">Cohort</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Demographics</IRI>
         <Literal>A class used to describe the demographics covariates of a cohort or study</Literal>
     </AnnotationAssertion>
@@ -528,6 +552,16 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#education_Years</IRI>
         <Literal>education years</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#has_demographics</IRI>
+        <Literal>Property Linking Cohort with Demographics Covariates measured in the working group</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#has_demographics</IRI>
+        <Literal>has demographics</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>

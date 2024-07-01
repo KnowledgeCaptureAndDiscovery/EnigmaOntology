@@ -22,6 +22,16 @@
       "creator" : [ {
         "identifier" : "creator",
         "language" : "undefined",
+        "value" : "Haripriya Dharmala",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Neda Jahanshad",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
         "value" : "Joanna Bright",
         "type" : "label"
       }, {
@@ -32,27 +42,17 @@
       }, {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Josh Boyd",
-        "type" : "label"
-      }, {
-        "identifier" : "creator",
-        "language" : "undefined",
-        "value" : "Neda Jahanshad",
-        "type" : "label"
-      }, {
-        "identifier" : "creator",
-        "language" : "undefined",
         "value" : "Yolanda Gil",
         "type" : "label"
       }, {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Haripriya Dharmala",
+        "value" : "Wesley Surento",
         "type" : "label"
       }, {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Wesley Surento",
+        "value" : "Josh Boyd",
         "type" : "label"
       } ],
       "contributor" : [ {
@@ -73,11 +73,6 @@
       }, {
         "identifier" : "contributor",
         "language" : "undefined",
-        "value" : "Ryan Espiritu",
-        "type" : "label"
-      }, {
-        "identifier" : "contributor",
-        "language" : "undefined",
         "value" : "Agnes McMahon",
         "type" : "label"
       }, {
@@ -90,6 +85,11 @@
         "language" : "undefined",
         "value" : "Kevin Low",
         "type" : "label"
+      }, {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Ryan Espiritu",
+        "type" : "label"
       } ],
       "preferredNamespacePrefix" : [ {
         "identifier" : "preferredNamespacePrefix",
@@ -97,17 +97,17 @@
         "value" : "enigma",
         "type" : "label"
       } ],
-      "preferredNamespaceUri" : [ {
-        "identifier" : "preferredNamespaceUri",
-        "language" : "undefined",
-        "value" : "https://w3id.org/enigma#",
-        "type" : "iri"
-      } ],
       "versionInfo" : [ {
         "identifier" : "versionInfo",
         "language" : "undefined",
         "value" : "v1.1.0",
         "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://w3id.org/enigma#",
+        "type" : "iri"
       } ],
       "title" : [ {
         "identifier" : "title",
@@ -155,7 +155,7 @@
     "id" : "33",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "4",
+    "id" : "6",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "34",
@@ -170,7 +170,7 @@
     "id" : "37",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "6",
+    "id" : "4",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "38",
@@ -190,6 +190,9 @@
   }, {
     "id" : "26",
     "type" : "rdfs:Datatype"
+  }, {
+    "id" : "46",
+    "type" : "owl:Class"
   } ],
   "classAttribute" : [ {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
@@ -283,7 +286,7 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "4",
+    "id" : "6",
     "label" : {
       "IRI-based" : "string"
     }
@@ -318,7 +321,7 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "6",
+    "id" : "4",
     "label" : {
       "IRI-based" : "string"
     }
@@ -364,6 +367,18 @@
     "label" : {
       "IRI-based" : "boolean"
     }
+  }, {
+    "iri" : "https://w3id.org/enigma#Cohort",
+    "baseIri" : "https://w3id.org/enigma",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Cohort",
+      "en" : "Cohort"
+    },
+    "comment" : {
+      "en" : "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria."
+    },
+    "id" : "46"
   } ],
   "property" : [ {
     "id" : "0",
@@ -431,6 +446,9 @@
   }, {
     "id" : "45",
     "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "47",
+    "type" : "owl:objectProperty"
   } ],
   "propertyAttribute" : [ {
     "iri" : "https://w3id.org/enigma#education_Category",
@@ -447,23 +465,9 @@
     "attributes" : [ "datatype" ],
     "id" : "0"
   }, {
-    "iri" : "https://w3id.org/enigma#SubjID",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "4",
-    "label" : {
-      "IRI-based" : "SubjID",
-      "undefined" : "subject ID"
-    },
-    "domain" : "1",
-    "comment" : {
-      "undefined" : "Property which states whether the identification code/number of unique subjects is specified."
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "3"
-  }, {
     "iri" : "https://w3id.org/enigma#IQ",
     "baseIri" : "https://w3id.org/enigma",
-    "range" : "6",
+    "range" : "4",
     "label" : {
       "IRI-based" : "IQ",
       "undefined" : "IQ"
@@ -471,6 +475,20 @@
     "domain" : "1",
     "comment" : {
       "undefined" : "Intelligence Quotient measured by different means"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "3"
+  }, {
+    "iri" : "https://w3id.org/enigma#SubjID",
+    "baseIri" : "https://w3id.org/enigma",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "SubjID",
+      "undefined" : "subject ID"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "Property which states whether the identification code/number of unique subjects is specified."
     },
     "attributes" : [ "datatype" ],
     "id" : "5"
@@ -734,7 +752,21 @@
       "IRI-based" : "topDataProperty"
     },
     "domain" : "15",
-    "attributes" : [ "external", "datatype" ],
+    "attributes" : [ "datatype", "external" ],
     "id" : "45"
+  }, {
+    "iri" : "https://w3id.org/enigma#has_demographics",
+    "baseIri" : "https://w3id.org/enigma",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "has_demographics",
+      "undefined" : "has demographics"
+    },
+    "domain" : "46",
+    "comment" : {
+      "undefined" : "Property Linking Cohort with Demographics Covariates measured in the working group"
+    },
+    "attributes" : [ "object" ],
+    "id" : "47"
   } ]
 }

@@ -62,6 +62,18 @@
 
 
 #################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/enigma#has_demographics
+:has_demographics rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Cohort ;
+                  rdfs:range :Demographics ;
+                  rdfs:comment "Property Linking Cohort with Demographics Covariates measured in the working group" ;
+                  rdfs:label "has demographics" .
+
+
+#################################################################
 #    Data properties
 #################################################################
 
@@ -241,6 +253,12 @@ owl:topDataProperty rdfs:range xsd:boolean .
 #################################################################
 #    Classes
 #################################################################
+
+###  https://w3id.org/enigma#Cohort
+:Cohort rdf:type owl:Class ;
+        rdfs:comment "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria."@en ;
+        rdfs:label "Cohort"@en .
+
 
 ###  https://w3id.org/enigma#Demographics
 :Demographics rdf:type owl:Class ;
