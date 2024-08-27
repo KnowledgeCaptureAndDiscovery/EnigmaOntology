@@ -1,27 +1,33 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://w3id.org/enigma#"
      xml:base="https://w3id.org/enigma"
-     xmlns:enigma="https://w3id.org/enigma#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:vann="http://purl.org/vocab/vann/">
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:enigma="https://w3id.org/enigma#">
     <owl:Ontology rdf:about="https://w3id.org/enigma">
         <owl:versionIRI rdf:resource="https://w3id.org/enigma/project/1.1.0"/>
-        <terms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Haripriya Dharmala</terms:contributor>
-        <terms:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yolanda Gil</terms:contributor>
-        <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MiHyun Jang</terms:creator>
-        <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Neda Jahanshad</terms:creator>
-        <terms:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ryan Espiritu</terms:creator>
+        <terms:contributor>Agnes McMahon</terms:contributor>
+        <terms:contributor>MiHyun Jang</terms:contributor>
+        <terms:contributor>Michael Bornstein</terms:contributor>
+        <terms:contributor>Ryan Espiritu</terms:contributor>
+        <terms:creator>Daniel Garijo</terms:creator>
+        <terms:creator>Haripriya Dharmala</terms:creator>
+        <terms:creator>Joanna Bright</terms:creator>
+        <terms:creator>Josh Boyd</terms:creator>
+        <terms:creator>Neda Jahanshad</terms:creator>
+        <terms:creator>Wesley Surento</terms:creator>
+        <terms:creator>Yolanda Gil</terms:creator>
         <terms:description xml:lang="en">An ontology that describes ENIGMA projects and their properties.</terms:description>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
         <terms:title xml:lang="en">The Project Ontology</terms:title>
-        <vann:preferredNamespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string">enigma</vann:preferredNamespacePrefix>
+        <vann:preferredNamespacePrefix>enigma</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:resource="https://w3id.org/enigma#"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">v1.1.0</owl:versionInfo>
+        <owl:versionInfo>v1.1.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -190,7 +196,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#hasDataProcessingProtocol">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Protocol"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#DataProcessingProtocol"/>
         <rdfs:comment xml:lang="en">Describes which data processing protocol was used in a project</rdfs:comment>
         <rdfs:label xml:lang="en">uses data processing protocol</rdfs:label>
     </owl:ObjectProperty>
@@ -267,7 +273,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/enigma#usesProtocol">
         <rdfs:domain rdf:resource="https://w3id.org/enigma#Project"/>
-        <rdfs:range rdf:resource="https://w3id.org/enigma#Protocol"/>
+        <rdfs:range rdf:resource="https://w3id.org/enigma#DataProcessingProtocol"/>
         <vann:example xml:lang="en">BipolarProject usesProtocol ENIGMA-SulciProtocol</vann:example>
         <rdfs:comment xml:lang="en">Describes which protocol was used in a project</rdfs:comment>
         <rdfs:label xml:lang="en">uses protocol</rdfs:label>
@@ -489,6 +495,17 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
     
 
 
+    <!-- https://w3id.org/enigma#DataProcessingProtocol -->
+
+
+    <owl:Class rdf:about="https://w3id.org/enigma#DataProcessingProtocol">
+        <vann:example xml:lang="en">ENIGMA-Sulci Protocol</vann:example>
+        <rdfs:comment xml:lang="en">An image processing or genetic analysis protocol used to extract brain feature data</rdfs:comment>
+        <rdfs:label xml:lang="en">Data Processing Protocol</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/enigma#DataType -->
 
 
@@ -533,17 +550,6 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
     
 
 
-    <!-- https://w3id.org/enigma#Protocol -->
-
-
-    <owl:Class rdf:about="https://w3id.org/enigma#Protocol">
-        <vann:example xml:lang="en">ENIGMA-Sulci Protocol</vann:example>
-        <rdfs:comment xml:lang="en">An image processing or genetic analysis protocol used to extract brain feature data</rdfs:comment>
-        <rdfs:label xml:lang="en">Protocol</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/enigma#WorkingGroup -->
 
 
@@ -556,6 +562,6 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
 
 
 
-<!-- Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/ -->
+<!-- Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/ -->
 
 

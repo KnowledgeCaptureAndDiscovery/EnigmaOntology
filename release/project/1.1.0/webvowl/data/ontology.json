@@ -1,5 +1,5 @@
 {
-  "_comment" : "Created with OWL2VOWL (version 0.3.2-SNAPSHOT), http://vowl.visualdataweb.org",
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
   "header" : {
     "languages" : [ "en", "undefined" ],
     "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "https://w3id.org/enigma", "http://www.w3.org/2002/07/owl", "http://www.w3.org/2000/01/rdf-schema", "http://purl.org/dc/terms", "http://www.w3.org/2001/XMLSchema", "http://purl.org/ontology/bibo" ],
@@ -8,7 +8,7 @@
     },
     "iri" : "https://w3id.org/enigma",
     "version" : "v1.1.0",
-    "author" : [ "MiHyun Jang", "Neda Jahanshad", "Ryan Espiritu" ],
+    "author" : [ "Joanna Bright", "Neda Jahanshad", "Haripriya Dharmala", "Yolanda Gil", "Daniel Garijo", "Wesley Surento", "Josh Boyd" ],
     "description" : {
       "en" : "An ontology that describes ENIGMA projects and their properties."
     },
@@ -22,28 +22,58 @@
       "creator" : [ {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Ryan Espiritu",
-        "type" : "label"
-      }, {
-        "identifier" : "creator",
-        "language" : "undefined",
-        "value" : "MiHyun Jang",
+        "value" : "Yolanda Gil",
         "type" : "label"
       }, {
         "identifier" : "creator",
         "language" : "undefined",
         "value" : "Neda Jahanshad",
         "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Daniel Garijo",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Josh Boyd",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Wesley Surento",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Joanna Bright",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Haripriya Dharmala",
+        "type" : "label"
       } ],
       "contributor" : [ {
         "identifier" : "contributor",
         "language" : "undefined",
-        "value" : "Yolanda Gil",
+        "value" : "Ryan Espiritu",
         "type" : "label"
       }, {
         "identifier" : "contributor",
         "language" : "undefined",
-        "value" : "Haripriya Dharmala",
+        "value" : "MiHyun Jang",
+        "type" : "label"
+      }, {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Agnes McMahon",
+        "type" : "label"
+      }, {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Michael Bornstein",
         "type" : "label"
       } ],
       "preferredNamespacePrefix" : [ {
@@ -52,17 +82,17 @@
         "value" : "enigma",
         "type" : "label"
       } ],
-      "preferredNamespaceUri" : [ {
-        "identifier" : "preferredNamespaceUri",
-        "language" : "undefined",
-        "value" : "https://w3id.org/enigma#",
-        "type" : "iri"
-      } ],
       "versionInfo" : [ {
         "identifier" : "versionInfo",
         "language" : "undefined",
         "value" : "v1.1.0",
         "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://w3id.org/enigma#",
+        "type" : "iri"
       } ],
       "title" : [ {
         "identifier" : "title",
@@ -73,12 +103,6 @@
     }
   },
   "namespace" : [ ],
-  "metrics" : {
-    "classCount" : 12,
-    "objectPropertyCount" : 10,
-    "datatypePropertyCount" : 9,
-    "individualCount" : 0
-  },
   "class" : [ {
     "id" : "0",
     "type" : "owl:Class"
@@ -100,6 +124,9 @@
   }, {
     "id" : "13",
     "type" : "owl:equivalentClass"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
   }, {
     "id" : "16",
     "type" : "owl:Thing"
@@ -125,7 +152,7 @@
     "id" : "43",
     "type" : "owl:unionOf"
   }, {
-    "id" : "29",
+    "id" : "26",
     "type" : "owl:unionOf"
   }, {
     "id" : "19",
@@ -146,7 +173,7 @@
     "id" : "44",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "27",
+    "id" : "28",
     "type" : "owl:unionOf"
   }, {
     "id" : "25",
@@ -156,9 +183,6 @@
     "type" : "owl:Class"
   }, {
     "id" : "46",
-    "type" : "owl:Class"
-  }, {
-    "id" : "5",
     "type" : "owl:Class"
   }, {
     "id" : "7",
@@ -291,6 +315,26 @@
     "attributes" : [ "external", "equivalent" ],
     "id" : "13"
   }, {
+    "iri" : "https://w3id.org/enigma#DataProcessingProtocol",
+    "baseIri" : "https://w3id.org/enigma",
+    "instances" : 0,
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "ENIGMA-Sulci Protocol",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "DataProcessingProtocol",
+      "en" : "Data Processing Protocol"
+    },
+    "comment" : {
+      "en" : "An image processing or genetic analysis protocol used to extract brain feature data"
+    },
+    "id" : "5"
+  }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
     "id" : "16",
@@ -348,22 +392,22 @@
   }, {
     "instances" : 0,
     "union" : [ "4", "6" ],
-    "attributes" : [ "anonymous", "union" ],
+    "attributes" : [ "union", "anonymous" ],
     "id" : "10"
   }, {
     "instances" : 0,
     "union" : [ "7", "4" ],
-    "attributes" : [ "anonymous", "union" ],
+    "attributes" : [ "union", "anonymous" ],
     "id" : "43"
   }, {
     "instances" : 0,
     "union" : [ "7", "4" ],
-    "attributes" : [ "anonymous", "union" ],
-    "id" : "29"
+    "attributes" : [ "union", "anonymous" ],
+    "id" : "26"
   }, {
     "instances" : 0,
     "union" : [ "7", "4", "40" ],
-    "attributes" : [ "anonymous", "union" ],
+    "attributes" : [ "union", "anonymous" ],
     "id" : "19"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
@@ -403,12 +447,12 @@
   }, {
     "instances" : 0,
     "union" : [ "7", "4" ],
-    "attributes" : [ "anonymous", "union" ],
-    "id" : "27"
+    "attributes" : [ "union", "anonymous" ],
+    "id" : "28"
   }, {
     "instances" : 0,
     "union" : [ "4", "40" ],
-    "attributes" : [ "anonymous", "union" ],
+    "attributes" : [ "union", "anonymous" ],
     "id" : "25"
   }, {
     "iri" : "https://w3id.org/enigma#GeneticDataType",
@@ -444,26 +488,6 @@
     },
     "id" : "46"
   }, {
-    "iri" : "https://w3id.org/enigma#Protocol",
-    "baseIri" : "https://w3id.org/enigma",
-    "instances" : 0,
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "en",
-        "value" : "ENIGMA-Sulci Protocol",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Protocol",
-      "en" : "Protocol"
-    },
-    "comment" : {
-      "en" : "An image processing or genetic analysis protocol used to extract brain feature data"
-    },
-    "id" : "5"
-  }, {
     "iri" : "https://w3id.org/enigma#Cohort",
     "baseIri" : "https://w3id.org/enigma",
     "instances" : 0,
@@ -471,7 +495,7 @@
       "example" : [ {
         "identifier" : "example",
         "language" : "en",
-        "value" : "ADNI: Alzheimer’s Disease Neuroimaging Initiative",
+        "value" : "ADNI: Alzheimerâ€™s Disease Neuroimaging Initiative",
         "type" : "label"
       } ]
     },
@@ -510,10 +534,10 @@
     "id" : "24",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "26",
+    "id" : "17",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "17",
+    "id" : "27",
     "type" : "owl:objectProperty"
   }, {
     "id" : "30",
@@ -540,7 +564,7 @@
     "id" : "45",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "28",
+    "id" : "29",
     "type" : "owl:objectProperty"
   }, {
     "id" : "47",
@@ -694,29 +718,6 @@
     "attributes" : [ "object" ],
     "id" : "24"
   }, {
-    "iri" : "https://w3id.org/enigma#hasBrainScanDataType",
-    "baseIri" : "https://w3id.org/enigma",
-    "range" : "1",
-    "annotations" : {
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "en",
-        "value" : "BipolarProject hasBrainScanDataType DiffusionMRI",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "hasBrainScanDataType",
-      "en" : "has brain scan data type"
-    },
-    "superproperty" : [ "28" ],
-    "domain" : "27",
-    "comment" : {
-      "en" : "Describes which brain scan data types a cohort or project has"
-    },
-    "attributes" : [ "object" ],
-    "id" : "26"
-  }, {
     "iri" : "https://w3id.org/enigma#hasPersonRole_ProjectContact",
     "baseIri" : "https://w3id.org/enigma",
     "range" : "8",
@@ -733,16 +734,39 @@
       "en" : "has contact"
     },
     "superproperty" : [ "15" ],
-    "domain" : "29",
+    "domain" : "26",
     "comment" : {
       "en" : "Property that points to the person that is a contact for the project or cohort"
     },
     "attributes" : [ "object" ],
     "id" : "17"
   }, {
+    "iri" : "https://w3id.org/enigma#hasBrainScanDataType",
+    "baseIri" : "https://w3id.org/enigma",
+    "range" : "1",
+    "annotations" : {
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "BipolarProject hasBrainScanDataType DiffusionMRI",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasBrainScanDataType",
+      "en" : "has brain scan data type"
+    },
+    "superproperty" : [ "29" ],
+    "domain" : "28",
+    "comment" : {
+      "en" : "Describes which brain scan data types a cohort or project has"
+    },
+    "attributes" : [ "object" ],
+    "id" : "27"
+  }, {
     "range" : "7",
     "domain" : "6",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "30"
   }, {
     "iri" : "https://w3id.org/enigma#hasProposalForm",
@@ -769,7 +793,7 @@
   }, {
     "range" : "0",
     "domain" : "2",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "33"
   }, {
     "iri" : "https://w3id.org/enigma#hasDate_ProposalApproval",
@@ -793,12 +817,12 @@
       "IRI-based" : "description"
     },
     "domain" : "16",
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "external", "datatype" ],
     "id" : "37"
   }, {
     "range" : "0",
     "domain" : "1",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "39"
   }, {
     "iri" : "https://w3id.org/enigma#hasDate_DataContributionDeadline",
@@ -853,12 +877,12 @@
       "en" : "has data type"
     },
     "domain" : "43",
-    "subproperty" : [ "26" ],
+    "subproperty" : [ "27" ],
     "comment" : {
       "en" : "Describes the data types that a cohort or project collected"
     },
     "attributes" : [ "object" ],
-    "id" : "28"
+    "id" : "29"
   }, {
     "iri" : "https://w3id.org/enigma#hasDate_TargetStart",
     "baseIri" : "https://w3id.org/enigma",

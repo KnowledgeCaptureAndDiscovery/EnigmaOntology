@@ -8,7 +8,8 @@
 
 <https://w3id.org/enigma> rdf:type owl:Ontology ;
                            owl:versionIRI <https://w3id.org/enigma/pd-cognitive/1.1.0> ;
-                           <http://purl.org/dc/terms/contributor> "Agnes McMahon" ,
+                           <http://purl.org/dc/terms/contributor> "Aarya Vakharia" ,
+                                                                  "Agnes McMahon" ,
                                                                   "MiHyun Jang" ,
                                                                   "Michael Bornstein" ,
                                                                   "Ryan Espiritu" ;
@@ -423,6 +424,51 @@ xsd:gYear rdf:type rdfs:Datatype .
 #    Data properties
 #################################################################
 
+###  https://w3id.org/enigma#BentonJudgmentOfLineOrientation
+:BentonJudgmentOfLineOrientation rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf owl:topDataProperty ;
+                                 rdfs:domain :Cognitive ;
+                                 rdfs:range xsd:boolean ;
+                                 rdfs:comment "The Benton Judgment of Line Orientation (JLO) test is a standardized neuropsychological test that measures visuospatial judgment and perception." ;
+                                 rdfs:label "Benton Judgment Of Line Orientation" .
+
+
+###  https://w3id.org/enigma#BostonNamingTest
+:BostonNamingTest rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:domain :Cognitive ;
+                  rdfs:range xsd:boolean ;
+                  rdfs:comment "The Boston Naming Test is a widely used assessment tool that evaluates a person's ability to name objects from line drawings." ;
+                  rdfs:label "Boston Naming Test" .
+
+
+###  https://w3id.org/enigma#BriefVisuospatialMemoryTest
+:BriefVisuospatialMemoryTest rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf owl:topDataProperty ;
+                             rdfs:domain :Cognitive ;
+                             rdfs:range xsd:boolean ;
+                             rdfs:comment "Assessment tool to measure visuospatial learning and memory abilities across research and clinical settings" ;
+                             rdfs:label "Brief Visuospatial Memory Test" .
+
+
+###  https://w3id.org/enigma#DigitNumberSequencing
+:DigitNumberSequencing rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf owl:topDataProperty ;
+                       rdfs:domain :Cognitive ;
+                       rdfs:range xsd:boolean ;
+                       rdfs:comment "A verbal task, with stimuli presented auditorily, and responses spoken by the participant." ;
+                       rdfs:label "Digit Number Sequencing" .
+
+
+###  https://w3id.org/enigma#DigitSpan
+:DigitSpan rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :Cognitive ;
+           rdfs:range xsd:boolean ;
+           rdfs:comment "Digit Span is a test of verbal short-term memory." ;
+           rdfs:label "Digit Span" .
+
+
 ###  https://w3id.org/enigma#DigitSpanBackward
 :DigitSpanBackward rdf:type owl:DatatypeProperty ;
                    rdfs:subPropertyOf owl:topDataProperty ;
@@ -437,6 +483,24 @@ xsd:gYear rdf:type rdfs:Datatype .
                   rdfs:domain :Cognitive ;
                   rdfs:range xsd:boolean ;
                   rdfs:label "Digit Span Forward" .
+
+
+###  https://w3id.org/enigma#FivePointTest
+:FivePointTest rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :Cognitive ;
+               rdfs:range xsd:boolean ;
+               rdfs:comment "Five Point Test (5TT) is a neuropsychological test that assesses figural fluency. A participant is asked to generate as many unique designs as possible in a certain time limit." ;
+               rdfs:label "Five Point Test" .
+
+
+###  https://w3id.org/enigma#LogicalMemoryTest
+:LogicalMemoryTest rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain :Cognitive ;
+                   rdfs:range xsd:boolean ;
+                   rdfs:comment "The Logical Memory (LM) test is a part of the Wechsler Memory Scale, Fourth Edition (WMS-IV) that measures a person's ability to remember narrative stories" ;
+                   rdfs:label "Logical Memory Test" .
 
 
 ###  https://w3id.org/enigma#MMSE
@@ -457,6 +521,15 @@ xsd:gYear rdf:type rdfs:Datatype .
       rdfs:label "MoCA" .
 
 
+###  https://w3id.org/enigma#NART
+:NART rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdfs:domain :Cognitive ;
+      rdfs:range xsd:boolean ;
+      rdfs:comment "The National Adult Reading test in any language" ;
+      rdfs:label "NART (National Adult Reading Test)" .
+
+
 ###  https://w3id.org/enigma#OtherCognitiveCovariates
 :OtherCognitiveCovariates rdf:type owl:DatatypeProperty ;
                           rdfs:subPropertyOf owl:topDataProperty ;
@@ -473,12 +546,39 @@ xsd:gYear rdf:type rdfs:Datatype .
                       rdfs:label "PD Dementia Diagnosis" .
 
 
+###  https://w3id.org/enigma#PhiladelphiaVerbalLearningTest
+:PhiladelphiaVerbalLearningTest rdf:type owl:DatatypeProperty ;
+                                rdfs:subPropertyOf owl:topDataProperty ;
+                                rdfs:domain :Cognitive ;
+                                rdfs:range xsd:boolean ;
+                                rdfs:comment "Assesses learning for a set of 12 words across 5 learning trials" ;
+                                rdfs:label "Philadelphia Verba lLearning Test" .
+
+
 ###  https://w3id.org/enigma#PhonologicalAndSemanticVerbalFluencyTest
 :PhonologicalAndSemanticVerbalFluencyTest rdf:type owl:DatatypeProperty ;
                                           rdfs:subPropertyOf owl:topDataProperty ;
                                           rdfs:domain :Cognitive ;
                                           rdfs:range xsd:boolean ;
                                           rdfs:label "Phonological (PVF) and Semantic (SVF) Verbal Fluency Test" .
+
+
+###  https://w3id.org/enigma#PictureArrangementTest
+:PictureArrangementTest rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf owl:topDataProperty ;
+                        rdfs:domain :Cognitive ;
+                        rdfs:range xsd:boolean ;
+                        rdfs:comment "A psychological test that presents a series of pictures in a random order and asks the subject to arrange them to form a logical story." ;
+                        rdfs:label "Picture Arrangement Test" .
+
+
+###  https://w3id.org/enigma#ReyAuditoryVerbalLearningTest
+:ReyAuditoryVerbalLearningTest rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf owl:topDataProperty ;
+                               rdfs:domain :Cognitive ;
+                               rdfs:range xsd:boolean ;
+                               rdfs:comment "Assessment designed to evaluate verbal memory in patients, 16 years of age and older" ;
+                               rdfs:label "Rey Auditory Verbal Learning Test" .
 
 
 ###  https://w3id.org/enigma#Rey_OsterriethComplexFigureTest
@@ -514,12 +614,75 @@ xsd:gYear rdf:type rdfs:Datatype .
                        rdfs:label "Sentences Construction" .
 
 
+###  https://w3id.org/enigma#TowerOfHanoi
+:TowerOfHanoi rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :Cognitive ;
+              rdfs:range xsd:boolean ;
+              rdfs:comment "This task seeks to measure high-order cognitive problem solving and learning of complex cognitive procedures, providing information about the cognitive abilities mainly related to executive functions such as planning, visual imagery, abstract thinking, working memory and self-monitoring." ;
+              rdfs:label "Tower Of Hanoi" .
+
+
+###  https://w3id.org/enigma#TowerOfLondon
+:TowerOfLondon rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :Cognitive ;
+               rdfs:range xsd:boolean ;
+               rdfs:comment "The Tower of London tests executive planning proficiency, incorporating delineation, organization, and integration of behaviors needed to achieve a goal." ;
+               rdfs:label "Tower Of London" .
+
+
 ###  https://w3id.org/enigma#TrialMakingTestA-B
 :TrialMakingTestA-B rdf:type owl:DatatypeProperty ;
                     rdfs:subPropertyOf owl:topDataProperty ;
                     rdfs:domain :Cognitive ;
                     rdfs:range xsd:boolean ;
                     rdfs:label "Trial Making Test A-B" .
+
+
+###  https://w3id.org/enigma#VerbalOrLexicalFluencyTest
+:VerbalOrLexicalFluencyTest rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf owl:topDataProperty ;
+                            rdfs:domain :Cognitive ;
+                            rdfs:range xsd:boolean ;
+                            rdfs:comment "Verbal fluency tests assess an individual's ability to generate words from a specified letter of the alphabet (e.g. F, A and S) or a semantic category (e.g. animals and fruits)." ;
+                            rdfs:label "Verbal Or Lexical Fluency Test" .
+
+
+###  https://w3id.org/enigma#WAIS_4_PerceptualReasoning
+:WAIS_4_PerceptualReasoning rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf owl:topDataProperty ;
+                            rdfs:domain :Cognitive ;
+                            rdfs:range xsd:boolean ;
+                            rdfs:comment "This index reflects an individual’s ability to accurately interpret, organize and think with visual information on the WAIS 4 (Wechsler Adult Intelligence Scale-IV) scale" ;
+                            rdfs:label "WAIS 4 Perceptual Reasoning Index" .
+
+
+###  https://w3id.org/enigma#WAIS_4_ProcessingSpeed
+:WAIS_4_ProcessingSpeed rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf owl:topDataProperty ;
+                        rdfs:domain :Cognitive ;
+                        rdfs:range xsd:boolean ;
+                        rdfs:comment "This index reflects an individual’s ability to process simple or routine visual information quickly and efficiently on the WAIS 4 (Wechsler Adult Intelligence Scale-IV) scale." ;
+                        rdfs:label "WAIS 4 Processing Speed" .
+
+
+###  https://w3id.org/enigma#WAIS_4_VerbalComprehension
+:WAIS_4_VerbalComprehension rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf owl:topDataProperty ;
+                            rdfs:domain :Cognitive ;
+                            rdfs:range xsd:boolean ;
+                            rdfs:comment "This index reflects an individual’s ability to understand, use and think with spoken language on the WAIS 4 (Wechsler Adult Intelligence Scale-IV) scale" ;
+                            rdfs:label "WAIS 4 Verbal Comprehension" .
+
+
+###  https://w3id.org/enigma#WAIS_4_WorkingMemory
+:WAIS_4_WorkingMemory rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf owl:topDataProperty ;
+                      rdfs:domain :Cognitive ;
+                      rdfs:range xsd:boolean ;
+                      rdfs:comment "This index reflects an individual’s ability to take in and hold information in immediate awareness and then perform a mental operation on that information on the WAIS 4 (Wechsler Adult Intelligence Scale-IV) scale" ;
+                      rdfs:label "WAIS 4 Working Memory Index" .
 
 
 ###  https://w3id.org/enigma#WCST-SF

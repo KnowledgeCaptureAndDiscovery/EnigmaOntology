@@ -5,19 +5,17 @@
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 
-:hasName_Short
-      a       owl:DatatypeProperty ;
-      rdfs:comment "A short name for the working group, in case the working group name is too long"@en ;
-      rdfs:domain :WorkingGroup ;
-      rdfs:label "has short name"@en ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf <http://purl.org/dc/terms/title> ;
-      <http://purl.org/vocab/vann/example>
-              "SchizophreniaWG hasName_Short SZWG"@en .
-
 :isPartOfWorkingGroup
       a       owl:ObjectProperty ;
       rdfs:comment "Property that indicates the cohorts which are a part of a working group"@en ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject)
+              ] ;
       rdfs:domain
               [ a       owl:Class ;
                 owl:unionOf (:Cohort :CohortGroup :CohortProject)
@@ -36,13 +34,24 @@
 :rationale
       a       owl:AnnotationProperty .
 
-<http://www.w3.org/2006/vcard/ns#locality>
+:OrthostaticHypertension
       a       owl:DatatypeProperty ;
-      rdfs:comment "The locality (e.g. city or town) associated with the address of the object"@en ;
-      rdfs:domain :Address ;
-      rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
-      rdfs:label "locality"@en ;
-      rdfs:range xsd:string .
+      rdfs:comment "Orthostatic Hypertension: an increase in blood pressure upon assuming an upright position" ;
+      rdfs:domain :Cardiovascular ;
+      rdfs:label "Orthostatic Hypertension" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:SASDQ
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Sleep Apnea Scale of the Sleep Disorders Questionnaire" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "SASDQ" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+<http://www.linkedmodel.org/schema/vaem#rationale>
+      a       owl:AnnotationProperty .
 
 :hasWorkingGroupMember
       a       owl:ObjectProperty ;
@@ -54,16 +63,12 @@
       <http://purl.org/vocab/vann/example>
               "BipolarWorkingGroup hasWorkingGroupMember JohnSmith"@en , "BipolarWorkingGroup hasWorkingGroupMember JohnSmith --> The bipolar working group has John Smith as a member"@en .
 
-<http://www.linkedmodel.org/schema/vaem#rationale>
-      a       owl:AnnotationProperty .
-
-<http://www.w3.org/2006/vcard/ns#Address>
-      a       owl:Class ;
-      rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
-      rdfs:label "Address"@en .
-
-<http://www.w3.org/2006/vcard/ns#street-address>
-      a       owl:DatatypeProperty .
+:MDS-UPDRSTotal
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Movement Disorders Society Unified Parkinson's Disease Rating Scale - Total Score" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "MDS-UPDRS Total" ;
+      rdfs:range xsd:boolean .
 
 :hasExclusionCriteria
       a       owl:DatatypeProperty ;
@@ -75,18 +80,13 @@
       rdfs:label "has exclusion criteria"@en ;
       rdfs:range xsd:string .
 
-:contributor
-      a       owl:ObjectProperty ;
-      rdfs:comment "Property that indicates who is a contributor to a project or cohort"@en ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:AcademicArticle :Cohort :Project)
-              ] ;
-      rdfs:label "contributor"@en ;
-      rdfs:range :Person ;
-      rdfs:subPropertyOf <http://purl.org/dc/terms/contributor> ;
-      <http://www.linkedmodel.org/schema/vaem#rationale>
-              "Property added to restrict the domain to projects, cohorts and academic articles. This is done for facilitating the interaction with the wiki interface"@en .
+:VerbalOrLexicalFluencyTest
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Verbal fluency tests assess an individual's ability to generate words from a specified letter of the alphabet (e.g. F, A and S) or a semantic category (e.g. animals and fruits)." ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "Verbal Or Lexical Fluency Test" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 :RespiratoryDisorder
       a       owl:Class ;
@@ -101,12 +101,31 @@
       rdfs:isDefinedBy "http://xmlns.com/foaf/0.1/"@en ;
       owl:equivalentClass :Person .
 
-:Protocol
+:Diabetes
+      a       owl:DatatypeProperty ;
+      rdfs:domain :Cardiovascular ;
+      rdfs:label "Diabetes" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:PDDemographics
       a       owl:Class ;
-      rdfs:comment "An image processing or genetic analysis protocol used to extract brain feature data"@en ;
-      rdfs:label "Protocol"@en ;
-      <http://purl.org/vocab/vann/example>
-              "ENIGMA-Sulci Protocol"@en .
+      rdfs:comment "PD-specific demographic Covariates measured by each cohort" ;
+      rdfs:label "PD Demographics" .
+
+:RBDDiagnosis
+      a       owl:DatatypeProperty ;
+      rdfs:comment "RBD (REM Sleep Behavior Disorder) Diagnosis" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "RBD Diagnosis" ;
+      rdfs:range xsd:boolean .
+
+:cityDwelling
+      a       owl:DatatypeProperty ;
+      rdfs:comment "If measured subjects in the cohort were city dwelling (pop >100,000)" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "City-Dwelling" ;
+      rdfs:range xsd:boolean .
 
 :usesScanner
       a       owl:DatatypeProperty ;
@@ -120,35 +139,37 @@
       <http://purl.org/vocab/vann/example>
               "SZCohort usesScanner \"1.5T-GE-Signa\""@en .
 
+:UPDRS-1
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Unified Parkinson's Disease Rating Scale - 1" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "UPDRS-1" ;
+      rdfs:range xsd:boolean .
+
 <https://schema.org/name>
       a       owl:DatatypeProperty ;
       rdfs:isDefinedBy <https://schema.org> .
 
-:Demographics
-      a       owl:Class ;
-      rdfs:comment "A class used to describe the demographics covariates of a cohort or study" ;
-      rdfs:label "Demographics" .
+:Other_Depression_Severity_Total_Score
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Total scores for other depression severity scales" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "Other Depression Severity Total Score" ;
+      rdfs:range xsd:boolean .
 
 :hasWorkingGroupChair
       a       owl:ObjectProperty ;
-      rdfs:comment "Describes the working groups that someone is a chair of"@en , "Describes who the chairs of a working group are"@en ;
+      rdfs:comment "Describes the working groups that someone is a chair of"@en ;
       rdfs:domain :WorkingGroup ;
       rdfs:label "has working group chair"@en ;
       rdfs:range :Person ;
       rdfs:subPropertyOf :hasWorkingGroupMember ;
       <http://purl.org/vocab/vann/example>
-              "BipolarWorkingGroup hasWorkingGroupChair JohnSmith"@en , "SZWorkingGroup hasWorkingGroupChair JohnSmith"@en .
+              "BipolarWorkingGroup hasWorkingGroupChair JohnSmith"@en .
 
 <https://schema.org/contentUrl>
       a       owl:DatatypeProperty ;
       rdfs:isDefinedBy <https://schema.org/> .
-
-:parent_SocioeconomicStatusScale
-      a       owl:DatatypeProperty ;
-      rdfs:comment "The scale used in measuring a parent(s) socioeconomic status." ;
-      rdfs:domain :Demographics ;
-      rdfs:label "parent socioeconomic status scale" ;
-      rdfs:range xsd:string .
 
 :checksum
       a       owl:DatatypeProperty ;
@@ -165,39 +186,62 @@
 
 <http://xmlns.com/foaf/0.1/member>
       a       owl:ObjectProperty ;
-      rdfs:comment "Indicates member of a group"^^xsd:string ;
-      rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/member> , <http://xmlns.com/foaf/0.1/> ;
-      rdfs:label "member"^^xsd:string .
+      rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/member> .
 
-:hasPersonRole_DataAnalyst
-      a       owl:ObjectProperty ;
-      rdfs:comment "Describes what project someone is a data analyst of"@en ;
-      rdfs:domain :Project ;
-      rdfs:label "has data analyst"@en ;
-      rdfs:range :Person ;
-      rdfs:subPropertyOf :contributor ;
-      <http://purl.org/vocab/vann/example>
-              "BipolarProject hasPersonRole_DataAnalyst JohnSmith"@en .
-
-:education_Method
+:UPDRS-2
       a       owl:DatatypeProperty ;
-      rdfs:comment "The method used for coding the Education Category (ie: 1 = some high school, 2 = some college, 3 = some professional degree)" ;
-      rdfs:domain :Demographics ;
-      rdfs:label "education method" ;
-      rdfs:range xsd:string .
+      rdfs:comment "Unified Parkinson's Disease Rating Scale - 2" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "UPDRS-2" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
-:hasPublishedPaper
+:RBD1Q
       a       owl:DatatypeProperty ;
-      rdfs:comment "Describes the links to published papers or the paper title (if link does not exist) for the working group"@en ;
-      rdfs:domain :WorkingGroup ;
-      rdfs:label "has published paper"@en ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf owl:topDataProperty ;
-      <http://purl.org/vocab/vann/example>
-              "WorkingGroup2 hasPublishedPaper \"Article Title\""@en , "WorkingGroup1 hasPublishedPaper www.publishedpaperexample.com"@en .
+      rdfs:comment "REM Sleep Behavior Disorder 1 item screener" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "RBD1Q" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:raceEthnicity
+      a       owl:DatatypeProperty ;
+      rdfs:comment "race/ethnicity of the subjects" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "Race/Ethnicity" ;
+      rdfs:range xsd:boolean .
+
+:PhiladelphiaVerbalLearningTest
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Assesses learning for a set of 12 words across 5 learning trials" ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "Philadelphia Verba lLearning Test" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:CoagulationScreenPerformed
+      a       owl:DatatypeProperty ;
+      rdfs:domain :Cardiovascular ;
+      rdfs:label "Coagulation Screen Performed" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 <http://purl.org/vocab/vann/preferredNamespaceUri>
       a       owl:AnnotationProperty .
+
+:handedness
+      a       owl:DatatypeProperty ;
+      rdfs:comment "dominant hand (left/right) of the subjects" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "Handedness" ;
+      rdfs:range xsd:boolean .
+
+:UPDRS-3
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Unified Parkinson's Disease Rating Scale - 3" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "UPDRS-3" ;
+      rdfs:range xsd:boolean .
 
 :hasStudyDesign
       a       owl:DatatypeProperty ;
@@ -230,11 +274,27 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
               [ a       owl:Class ;
                 owl:unionOf (:Cohort :CohortGroup :CohortProject)
               ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject)
+              ] ;
       rdfs:label "has genetic data type"@en ;
       rdfs:range :GeneticDataType ;
       rdfs:subPropertyOf :hasDataType ;
       <http://purl.org/vocab/vann/example>
               "Cohort1 hasGeneticDataType epigenetic"@en .
+
+:MentalHealthDisorder
+      a       owl:Class ;
+      rdfs:comment "Disorders which can affect mood, behavior, and thinking"@en ;
+      rdfs:label "Mental Health Disorder"@en ;
+      rdfs:subClassOf :Disorder ;
+      <http://purl.org/vocab/vann/example>
+              "OCD"@en .
 
 :isPartOfProject
       a       owl:ObjectProperty ;
@@ -251,16 +311,16 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
               [ a       owl:Class ;
                 owl:unionOf (:CohortGroup :CohortProject)
               ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:CohortGroup :CohortProject)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:CohortGroup :CohortProject)
+              ] ;
       rdfs:label "is part of project"@en ;
       rdfs:range :Project .
-
-:MentalHealthDisorder
-      a       owl:Class ;
-      rdfs:comment "Disorders which can affect mood, behavior, and thinking"@en ;
-      rdfs:label "Mental Health Disorder"@en ;
-      rdfs:subClassOf :Disorder ;
-      <http://purl.org/vocab/vann/example>
-              "OCD"@en .
 
 :hasContentUrl
       a       owl:DatatypeProperty ;
@@ -302,40 +362,92 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
       rdfs:label "has data contribution deadline date"@en ;
       rdfs:range xsd:date .
 
-<http://vivoweb.org/ontology/core#College>
-      a       owl:Class ;
-      rdfs:comment "A college contributing to a given ENIGMA project"@en ;
-      rdfs:isDefinedBy <http://vivoweb.org/ontology/core> ;
-      rdfs:label "College"@en ;
-      rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> ;
-      <http://purl.org/vocab/vann/example>
-              "Los Angeles City College"@en .
-
-:hasCountry
+:HistoryOfStrokeOrTransientIschaemicAttack
       a       owl:DatatypeProperty ;
-      rdfs:comment "The country name associated with the address of the object"@en ;
-      rdfs:domain :Address ;
-      rdfs:label "has country"@en ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf <http://www.w3.org/2006/vcard/ns#country-name> .
+      rdfs:comment "Transient Ischaemic Attack: A \"mini stroke\" with minor stroke symptoms" ;
+      rdfs:domain :Cardiovascular ;
+      rdfs:label "History of Stroke or Transient Ischaemic Attack" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
-:Address
-      a       owl:Class ;
-      rdfs:comment "To specify the components of the delivery address for the object"@en ;
-      rdfs:label "Address"@en ;
-      rdfs:subClassOf <http://www.w3.org/2006/vcard/ns#Address> .
-
-:Marital_status
+:Reys15WordTest
       a       owl:DatatypeProperty ;
-      rdfs:comment "Property which states whether subject's marital status (ie: single, married) is specified." ;
-      rdfs:domain :Demographics ;
-      rdfs:label "marital status" ;
-      rdfs:range xsd:string .
+      rdfs:domain :Cognitive ;
+      rdfs:label "Rey's 15-word Test - Immediate Recall (RIR) and Delayed Recall (RDR)" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:has_longitude
+      a       owl:DatatypeProperty ;
+      rdfs:comment "The longitude of the cohort" ;
+      rdfs:domain :Location ;
+      rdfs:label "has longitude" ;
+      rdfs:range xsd:float .
+
+:SCOPA-Autonomic
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Scales for Outcomes in Parkinson's Disease - Autonomic" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "SCOPA-Autonomic" ;
+      rdfs:range xsd:boolean .
+
+:isOverallCohort
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes if a cohort is an \"overall\" cohort, or a top-level cohort without having been separated into its component cohort groups/projects" ;
+      rdfs:domain :Cohort ;
+      rdfs:label "Is Overall Cohort" ;
+      rdfs:range xsd:boolean .
 
 :DataType
       a       owl:Class ;
       rdfs:comment "Specifies the kinds of data collected"@en ;
       rdfs:label "Data Type"@en .
+
+:KSS  a       owl:DatatypeProperty ;
+      rdfs:comment "Karolinska Sleepiness Scale" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "KSS" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:RBDSQ
+      a       owl:DatatypeProperty ;
+      rdfs:comment "REM Sleep Behavior Disorder Screening Questionnaire - full screener" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "RBDSQ" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:WordListLearningTask
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Word List Learning Task: Note the version used" ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "Word List Learning Task" ;
+      rdfs:range xsd:string ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:SCOPA-Motor
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Scales for Outcomes in Parkinson's Disease - Motor" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "SCOPA-Motor" ;
+      rdfs:range xsd:boolean .
+
+:HAMA
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Hamilton Anxiety Scale" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "HAMA" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:has_cardiovascular
+      a       owl:ObjectProperty ;
+      rdfs:comment "Describes cardiovascular covariate properties specific to the PD working group" ;
+      rdfs:domain :Cohort ;
+      rdfs:label "has cardiovascular" ;
+      rdfs:range :Cardiovascular ;
+      rdfs:subPropertyOf owl:topObjectProperty .
 
 <http://xmlns.com/foaf/0.1/Organization>
       a       owl:Class ;
@@ -364,8 +476,7 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
       a       owl:AnnotationProperty .
 
 <http://purl.org/dc/terms/contributor>
-      a       owl:AnnotationProperty , owl:ObjectProperty ;
-      rdfs:isDefinedBy <http://purl.org/dc/terms/contributor> .
+      a       owl:AnnotationProperty .
 
 :hasSpecies
       a       owl:DatatypeProperty ;
@@ -379,15 +490,20 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
       <http://purl.org/vocab/vann/example>
               "Cohort1 hasSpecies \"humans\""@en .
 
-:hasPersonRole_ProtocolRunner
-      a       owl:ObjectProperty ;
-      rdfs:comment "Describes who ran a protocol for a given cohort"@en ;
-      rdfs:domain :Project ;
-      rdfs:label "has protocol runner"@en ;
-      rdfs:range :Person ;
-      rdfs:subPropertyOf :contributor ;
-      <http://purl.org/vocab/vann/example>
-              "BipolarProject hasPersonRole_ProtocolRunner JohnSmith"@en .
+:STAI
+      a       owl:DatatypeProperty ;
+      rdfs:comment "State-Trait Anxiety Index" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "STAI" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:DigitSpanForward
+      a       owl:DatatypeProperty ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "Digit Span Forward" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 :isActive
       a       owl:DatatypeProperty ;
@@ -395,6 +511,13 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
       rdfs:domain :Project ;
       rdfs:label "is Active"@en ;
       rdfs:range xsd:string .
+
+:has_location
+      a       owl:ObjectProperty ;
+      rdfs:comment "The location of the cohort" ;
+      rdfs:domain :Cohort ;
+      rdfs:label "has location" ;
+      rdfs:range :Location .
 
 :BrainScanDataType
       a       owl:Class ;
@@ -419,17 +542,39 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
               [ a       owl:Class ;
                 owl:unionOf (:Cohort :CohortProject)
               ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortProject)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortProject)
+              ] ;
       rdfs:label "has dataset"@en ;
       rdfs:range :Dataset .
+
+:education
+      a       owl:DatatypeProperty ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "Education" ;
+      rdfs:range xsd:boolean .
 
 :usesProtocol
       a       owl:ObjectProperty ;
       rdfs:comment "Describes which protocol was used in a project"@en ;
       rdfs:domain :Project ;
       rdfs:label "uses protocol"@en ;
-      rdfs:range :Protocol ;
+      rdfs:range :DataProcessingProtocol ;
       <http://purl.org/vocab/vann/example>
               "BipolarProject usesProtocol ENIGMA-SulciProtocol"@en .
+
+:SupineBloodPressure
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Supine blood pressure after resting for at least 5 minutes" ;
+      rdfs:domain :Cardiovascular ;
+      rdfs:label "Supine Blood Pressure" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 :ImageAcquisitionProtocol
       a       owl:Class ;
@@ -441,25 +586,25 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
 xsd:date
       a       rdfs:Datatype .
 
-<http://vivoweb.org/ontology/core#University>
-      a       owl:Class ;
-      rdfs:comment "A university contributing to a given ENIGMA project"@en ;
-      rdfs:isDefinedBy <http://vivoweb.org/ontology/core> ;
-      rdfs:label "University"@en ;
-      rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> ;
-      <http://purl.org/vocab/vann/example>
-              "USC"@en .
+:CDSS
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Calgary Depression Symptom Scale" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "CDSS" ;
+      rdfs:range xsd:boolean .
+
+:DigitSpanBackward
+      a       owl:DatatypeProperty ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "Digit Span Backward" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 :Dataset
       a       owl:Class ;
       rdfs:comment "A dataset containing information about an ENIGMA project cohort"@en ;
       rdfs:label "Dataset"@en ;
       rdfs:subClassOf <http://schema.org/Dataset> .
-
-:AcademicArticle
-      a       owl:Class ;
-      rdfs:comment "An academic article, submitted as a result of the work in an ENIGMA project"@en ;
-      rdfs:label "Academic article"@en .
 
 :hasContact
       a       owl:ObjectProperty ;
@@ -476,10 +621,23 @@ xsd:date
               [ a       owl:Class ;
                 owl:unionOf (:Cohort :CohortGroup :CohortProject)
               ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject)
+              ] ;
       rdfs:label "has contact"@en ;
       rdfs:range :Person ;
       <http://purl.org/vocab/vann/example>
               "BipolarCohort hasContact JohnSmith"@en .
+
+:AcademicArticle
+      a       owl:Class ;
+      rdfs:comment "An academic article, submitted as a result of the work in an ENIGMA project"@en ;
+      rdfs:label "Academic article"@en .
 
 :hasEmail
       a       owl:ObjectProperty ;
@@ -500,6 +658,37 @@ xsd:date
       rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/familyName> ;
       <http://www.linkedmodel.org/schema/vaem#rationale>
               "Property added to restrict the domain to enigma:Person. This is done for facilitating the interaction with the wiki interface"@en .
+
+:SCOPA-Sleep
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Scales for Outcomes in Parkinson's Disease - Sleep" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "SCOPA-Sleep" ;
+      rdfs:range xsd:boolean .
+
+:STAXI
+      a       owl:DatatypeProperty ;
+      rdfs:comment "State-Trait Anger Expression Inventory" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "STAXI" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:FamilyHistoryOfCVDisease
+      a       owl:DatatypeProperty ;
+      rdfs:comment "CV: Cardiovascular Disease" ;
+      rdfs:domain :Cardiovascular ;
+      rdfs:label "Family History of CV Disease" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:BostonNamingTest
+      a       owl:DatatypeProperty ;
+      rdfs:comment "The Boston Naming Test is a widely used assessment tool that evaluates a person's ability to name objects from line drawings." ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "Boston Naming Test" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 :ConflictOfInterest
       a       owl:Class ;
@@ -537,21 +726,41 @@ xsd:date
       <http://purl.org/vocab/vann/example>
               "CohortGroup1 hasCohortStatus published"@en .
 
-<http://vivoweb.org/ontology/core#Institute>
-      a       owl:Class ;
-      rdfs:comment "An institute contributing to a given ENIGMA project"@en ;
-      rdfs:isDefinedBy <http://vivoweb.org/ontology/core> ;
-      rdfs:label "Institute"@en ;
-      rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> ;
-      <http://purl.org/vocab/vann/example>
-              "Information Sciences Institute"@en .
-
-:subject_SocioeconomicStatus
+:subjectSES
       a       owl:DatatypeProperty ;
-      rdfs:comment "The scale used in measuring a subject’s socioeconomic status." ;
-      rdfs:domain :Demographics ;
-      rdfs:label "subject socioeconomic status" ;
-      rdfs:range xsd:string .
+      rdfs:comment "Subjects' Socioeconomic Status" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "Subject SES" ;
+      rdfs:range xsd:boolean .
+
+:BAI  a       owl:DatatypeProperty ;
+      rdfs:comment "Beck's Anxiety Index" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "BAI" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:PatientMedicationOnOffDuringUPDRS
+      a       owl:DatatypeProperty ;
+      rdfs:comment "If the patient was on medication during Unified Parkinson's Disease Rating Scale measurements" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "Patient Medication On/Off During UPDRS" ;
+      rdfs:range xsd:boolean .
+
+:OtherNeuropsychiatricCovariates
+      a       owl:DatatypeProperty ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "Other Neuropsychiatric Covariates" ;
+      rdfs:range xsd:string ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:SHAPS
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Snaith Hamilton Rating Scale" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "SHAPS" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 :EndocrineDisorder
       a       owl:Class ;
@@ -582,32 +791,12 @@ xsd:date
       <http://purl.org/vocab/vann/example>
               "BipolarCohort hasInvestigator JohnSmith"@en .
 
-:hasPersonRole_DataCollector
-      a       owl:ObjectProperty ;
-      rdfs:comment "Describes what project someone collected data for"@en ;
-      rdfs:domain :Project ;
-      rdfs:label "has data collector"@en ;
-      rdfs:range :Person ;
-      rdfs:subPropertyOf :contributor ;
-      <http://purl.org/vocab/vann/example>
-              "BipolarProject hasPersonRole_DataCollector JohnSmith"@en .
-
-:hasSubmittedPaper
+:SCOPA-Cognition
       a       owl:DatatypeProperty ;
-      rdfs:comment "Describes the titles of the submitted papers of a working group"@en ;
-      rdfs:domain :WorkingGroup ;
-      rdfs:label "has submitted paper"@en ;
-      rdfs:range xsd:string ;
-      <http://purl.org/vocab/vann/example>
-              "WorkingGroup1 hasSubmittedPaper \"Paper title\""@en .
-
-:hasStreetAddress
-      a       owl:DatatypeProperty ;
-      rdfs:comment "The street address associated with the address of the object"@en ;
-      rdfs:domain :Address ;
-      rdfs:label "has street address"@en ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf <http://www.w3.org/2006/vcard/ns#street-address> .
+      rdfs:comment "Scales for Outcomes in Parkinson's Disease - Cognition" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "SCOPA-Cognition" ;
+      rdfs:range xsd:boolean .
 
 :hasPersonRole_PrincipalInvestigator
       a       owl:ObjectProperty ;
@@ -619,20 +808,42 @@ xsd:date
       <http://purl.org/vocab/vann/example>
               "Cohort1 hasPrincipalInvestigator JohnSmith"@en , "Cohort1 hasPrincipalInvestigator John --> the principal investigator of Cohort1 is John"@en .
 
+:durill
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Duration of Illness" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "DURILL" ;
+      rdfs:range xsd:boolean .
+
+:otherDemographics
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Other Demographics info for PD cohorts" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "Other Demographics" ;
+      rdfs:range xsd:string .
+
 :hasHomePage
       a       owl:DatatypeProperty , owl:ObjectProperty ;
       rdfs:comment "Property that describes the home page of a cohort or person"@en , "Homepage URL of the Person or Cohort"@en ;
       rdfs:domain
               [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject :Person)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject :Person)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject :Person)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject :Person)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
                 owl:unionOf (:Cohort :Person)
-              ] ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :CohortGroup :CohortProject :Person)
-              ] ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :CohortGroup :CohortProject :Person)
               ] ;
       rdfs:domain
               [ a       owl:Class ;
@@ -643,20 +854,24 @@ xsd:date
       <http://www.linkedmodel.org/schema/vaem#rationale>
               "Property added to facilitate interaction with domain and ranges in the wiki. It's equivalent to foaf:homePage"@en .
 
+:AES  a       owl:DatatypeProperty ;
+      rdfs:comment "Apathy Evaluation Scale - 12 item scale or 18 item scale" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "AES" ;
+      rdfs:range xsd:string ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
 :Covariates
       a       owl:Class ;
       rdfs:comment "A class used to describe covariates information for a cohort or study." ;
       rdfs:label "Covariates" .
 
-:hasName_Full
+:otherMotorEvaluation
       a       owl:DatatypeProperty ;
-      rdfs:comment "Describes the full name of the working group"@en ;
-      rdfs:domain :WorkingGroup ;
-      rdfs:label "has full name"@en ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf <http://purl.org/dc/terms/title> ;
-      <http://purl.org/vocab/vann/example>
-              "SchizophreniaWG hasName_Full SchizophreniaWorkingGroup"@en .
+      rdfs:comment "Other Motor Evaluations" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "Other Motor Evaluations" ;
+      rdfs:range xsd:string .
 
 :hasDataCollectionPeriodEnd
       a       owl:DatatypeProperty ;
@@ -670,6 +885,20 @@ xsd:date
       <http://purl.org/vocab/vann/example>
               "Cohort1 hasDataCollectionPeriodEnd 2008"@en .
 
+:BDI  a       owl:DatatypeProperty ;
+      rdfs:comment "Beck's Depression Inventory" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "BDI" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:UPDRS-4
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Unified Parkinson's Disease Rating Scale - 4" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "UPDRS-4" ;
+      rdfs:range xsd:boolean .
+
 :hasTransgenderMtoF
       a       owl:DatatypeProperty ;
       rdfs:comment "Describing the number of male to female transgender individuals in a cohort group"@en ;
@@ -679,9 +908,25 @@ xsd:date
       <http://purl.org/vocab/vann/example>
               "CohortGroup1 hasTransgenderMtoF 20"@en .
 
+:MoCA
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Montreal Cognitive Assessment" ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "MoCA" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
 :hasPopulationGroup
       a       owl:ObjectProperty ;
       rdfs:comment "Describes the population group of a population-based cohort"@en ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject)
+              ] ;
       rdfs:domain
               [ a       owl:Class ;
                 owl:unionOf (:Cohort :CohortGroup :CohortProject)
@@ -713,12 +958,6 @@ xsd:date
       <http://purl.org/vocab/vann/example>
               "Cohort1 hasAge_Group \"22-45\""@en .
 
-:HealthyVariation
-      a       owl:Class ;
-      rdfs:comment "Working groups that are not disease focused"@en ;
-      rdfs:label "Healthy Variation"@en ;
-      rdfs:subClassOf :WorkingGroup .
-
 :CerebrovascularDisorder
       a       owl:Class ;
       rdfs:comment "A subset of vascular disorders affecting blood vessels of the brain and cerebral circulation"@en ;
@@ -727,18 +966,18 @@ xsd:date
       <http://purl.org/vocab/vann/example>
               "Stroke"@en .
 
-:hasPersonRole_FirstDraftContributor
-      a       owl:ObjectProperty ;
-      rdfs:comment "Property designed to distinguish who collaborated in the creation of the first draft of a publication"@en ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:AcademicArticle :Project)
-              ] ;
-      rdfs:label "first draft contributor"@en ;
-      rdfs:range :Person ;
-      rdfs:subPropertyOf :contributor ;
-      <http://purl.org/vocab/vann/example>
-              "BipolarProject hasPersonRole_FirstDraftContributor JohnSmith"@en .
+:Neuropsychiatric
+      a       owl:Class ;
+      rdfs:comment "Neuropsychiatric Covariates measured by each cohort" , "Neuropsychiatric Covariates measured by each PD cohort" ;
+      rdfs:label "Neuropsychiatric" .
+
+:WAIS_4_VerbalComprehension
+      a       owl:DatatypeProperty ;
+      rdfs:comment "This index reflects an individual’s ability to understand, use and think with spoken language on the WAIS 4 (Wechsler Adult Intelligence Scale-IV) scale" ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "WAIS 4 Verbal Comprehension" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 :hasGroupCriteria
       a       owl:DatatypeProperty ;
@@ -747,28 +986,43 @@ xsd:date
       rdfs:label "has group criteria"@en ;
       rdfs:range xsd:string .
 
-:hasPostalCode
+:BodyMassIndex
       a       owl:DatatypeProperty ;
-      rdfs:comment "The postal code associated with the address of the object"@en ;
-      rdfs:domain :Address ;
-      rdfs:label "has postal code"@en ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf <http://www.w3.org/2006/vcard/ns#postal-code> .
+      rdfs:domain :Cardiovascular ;
+      rdfs:label "Body Mass Index" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:LogicalMemoryTest
+      a       owl:DatatypeProperty ;
+      rdfs:comment "The Logical Memory (LM) test is a part of the Wechsler Memory Scale, Fourth Edition (WMS-IV) that measures a person's ability to remember narrative stories" ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "Logical Memory Test" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 :hasBrainScanDataType
       a       owl:ObjectProperty ;
       rdfs:comment "Describes which brain scan data types a cohort or project has"@en , "Describes the brain scan data types that were collected for a cohort or project"@en ;
       rdfs:domain
               [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject :Project)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject :Project)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject :Project)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject :Project)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
                 owl:unionOf (:Cohort :Project)
-              ] ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :CohortGroup :CohortProject :Project)
-              ] ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :CohortGroup :CohortProject :Project)
               ] ;
       rdfs:domain
               [ a       owl:Class ;
@@ -788,12 +1042,6 @@ xsd:date
       <http://purl.org/vocab/vann/example>
               "Cystic Fibrosis"@en .
 
-:Sex  a       owl:DatatypeProperty ;
-      rdfs:comment "Property to state whether subject's sex (male, female, other) is specified or not." ;
-      rdfs:domain :Demographics ;
-      rdfs:label "sex" ;
-      rdfs:range xsd:string .
-
 :Project
       a       owl:Class ;
       rdfs:comment "Project encompassing cohort"@en , "Project associated with the cohort"@en ;
@@ -801,13 +1049,19 @@ xsd:date
       <http://purl.org/vocab/vann/example>
               "SZPositiveSymptoms"@en .
 
+:MMSE
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Mini Mental State Exam" ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "MMSE" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
 <http://purl.org/dc/terms/license>
       a       owl:AnnotationProperty .
 
 <http://purl.org/dc/terms/title>
-      a       owl:DatatypeProperty , owl:AnnotationProperty ;
-      rdfs:isDefinedBy <http://purl.org/dc/terms/title> ;
-      rdfs:range rdfs:Literal .
+      a       owl:AnnotationProperty .
 
 :Country
       a       owl:Class ;
@@ -817,16 +1071,26 @@ xsd:date
       <http://purl.org/vocab/vann/example>
               "United States"@en .
 
-<http://www.w3.org/2006/vcard/ns#hasAddress>
-      a       owl:ObjectProperty ;
-      rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
-      rdfs:label "has Address"^^xsd:string .
+:OtherCognitiveCovariates
+      a       owl:DatatypeProperty ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "Other Cognitive Covariates" ;
+      rdfs:range xsd:string ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
-:IQ   a       owl:DatatypeProperty ;
-      rdfs:comment "Intelligence Quotient measured by different means" ;
-      rdfs:domain :Demographics ;
+:WCST-SF
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Wisconsin Card Sorting Test - Short Form" ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "WCST-SF" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:iq   a       owl:DatatypeProperty ;
+      rdfs:comment "IQ of participants" ;
+      rdfs:domain :PDDemographics ;
       rdfs:label "IQ" ;
-      rdfs:range xsd:string .
+      rdfs:range xsd:boolean .
 
 :hasTransgenderFtoM
       a       owl:DatatypeProperty ;
@@ -837,19 +1101,32 @@ xsd:date
       <http://purl.org/vocab/vann/example>
               "CohortGroup2 hasTransgenderFtoM 14"@en .
 
-:parent_SocioeconomicStatus
+:TowerOfLondon
       a       owl:DatatypeProperty ;
-      rdfs:comment "Highest level of parental socioeconomic status either based on education, occupation or both." ;
-      rdfs:domain :Demographics ;
-      rdfs:label "parent socioeconomic status" ;
-      rdfs:range xsd:string .
+      rdfs:comment "The Tower of London tests executive planning proficiency, incorporating delineation, organization, and integration of behaviors needed to achieve a goal." ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "Tower Of London" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
-:IQ_method
+:UPDRSTotal
       a       owl:DatatypeProperty ;
-      rdfs:comment "The IQ scale used for each subject/group (ie: WISC-IV, WAIS-IV, WASI-II)." ;
-      rdfs:domain :Demographics ;
-      rdfs:label "IQ method" ;
-      rdfs:range xsd:string .
+      rdfs:comment "Unified Parkinson's Disease Rating Scale - Total Score" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "UPDRS Total" ;
+      rdfs:range xsd:boolean .
+
+:Cognitive
+      a       owl:Class ;
+      rdfs:comment "Cognitive Covariates measured by each PD cohort" ;
+      rdfs:label "Cognitive" .
+
+:maritalStatus
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Subjects' marital status" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "Marital Status" ;
+      rdfs:range xsd:boolean .
 
 :hasAge_Maximum
       a       owl:DatatypeProperty ;
@@ -863,55 +1140,44 @@ xsd:date
       <http://purl.org/vocab/vann/example>
               "CohortGroup1 hasAge_Maximum 60"@en .
 
-:SubjID
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Property which states whether the identification code/number of unique subjects is specified." ;
-      rdfs:domain :Demographics ;
-      rdfs:label "subject ID" ;
-      rdfs:range xsd:string .
-
 <http://schema.org/Dataset>
       a       owl:Class ;
       rdfs:comment "Dataset" ;
       rdfs:isDefinedBy <http://schema.org> ;
       rdfs:label "Dataset" .
 
-:education_Category
+:AlcoholConsumption
       a       owl:DatatypeProperty ;
-      rdfs:comment "Subject's education coded as categories (ie: a range from 1-5)" ;
-      rdfs:domain :Demographics ;
-      rdfs:label "education category" ;
-      rdfs:range xsd:string .
-
-:hasKindOfInstitute
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Describes the specific kind/type of an organization"@en ;
-      rdfs:domain :Organization ;
-      rdfs:label "kind of institute"@en ;
+      rdfs:comment "Include info on how this was measured" ;
+      rdfs:domain :Cardiovascular ;
+      rdfs:label "Alcohol Consumption" ;
       rdfs:range xsd:string ;
-      <http://purl.org/vocab/vann/example>
-              "Organization kind \"University\""@en .
+      rdfs:subPropertyOf owl:topDataProperty .
 
 :hasBriefDescription
       a       owl:DatatypeProperty ;
       rdfs:comment "Provides a brief description of the working group or project or cohort or image acquisition protocol"@en , "Provides a brief description of the working group or project or cohort"@en ;
       rdfs:domain
               [ a       owl:Class ;
-                owl:unionOf (:Cohort :Project :WorkingGroup)
-              ] ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :Project :WorkingGroup)
-              ] ;
-      rdfs:domain
-              [ a       owl:Class ;
                 owl:unionOf (:Cohort :CohortGroup :CohortProject :ImageAcquisitionProtocol :Project :WorkingGroup)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :Project :WorkingGroup)
               ] ;
       rdfs:label "has brief description"@en ;
       rdfs:range xsd:string ;
       rdfs:subPropertyOf <http://purl.org/dc/terms/description> ;
       <http://purl.org/vocab/vann/example>
-              "SZWG hasBriefDescription \"finds correlations between schizophrenia and other conditions\""@en , "SZCohort hasBriefDescription \"finds correlations between schizophrenia and other conditions\""@en , "ProjectSZ hasBriefDescription \"reports effect size for corticol thickness\""@en .
+              "SZCohort hasBriefDescription \"finds correlations between schizophrenia and other conditions\""@en , "ProjectSZ hasBriefDescription \"reports effect size for corticol thickness\""@en .
+
+:PSQI
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Pittsburgh Sleep Quality Index - Note whether you have the 7 component scores" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "PSQI" ;
+      rdfs:range xsd:string ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 :hasCohort
       a       owl:ObjectProperty ;
@@ -924,14 +1190,10 @@ xsd:date
               [ a       owl:Class ;
                 owl:unionOf (:Project :WorkingGroup)
               ] ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Project :WorkingGroup)
-              ] ;
       rdfs:label "has cohort"@en ;
       rdfs:range :Cohort ;
       <http://purl.org/vocab/vann/example>
-              "BipolarProject hasCohort AmsterdamBipolarCohort --> Bipolar Project includes the Amsterdam Bipolar Cohort"@en , "BipolarWorkingGroup hasCohort AmsterdamBipolarCohort --> Bipolar Working Group includes the Amsterdam Bipolar Cohort"@en , "BipolarProject hasCohort AmsterdamBipolarCohort"@en .
+              "BipolarProject hasCohort AmsterdamBipolarCohort --> Bipolar Project includes the Amsterdam Bipolar Cohort"@en , "BipolarProject hasCohort AmsterdamBipolarCohort"@en .
 
 :hasFundingSource
       a       owl:DatatypeProperty ;
@@ -944,6 +1206,14 @@ xsd:date
       rdfs:range xsd:string ;
       <http://purl.org/vocab/vann/example>
               "Cohort1 hasFundingSource \"NIMH, 5P50MH080272\""@en .
+
+:FivePointTest
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Five Point Test (5TT) is a neuropsychological test that assesses figural fluency. A participant is asked to generate as many unique designs as possible in a certain time limit." ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "Five Point Test" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 :GeneticDataType
       a       owl:Class ;
@@ -964,16 +1234,20 @@ xsd:date
 
 :Organization
       a       owl:Class ;
-      rdfs:comment "An organization belonging to the ENIGMA consortium. Organization can be hospitals, universities, departments, etc."^^xsd:string , "An organization belonging to the ENIGMA consortium. Organization can be hospitals, universities, departments, etc."@en , "An organization contributing to a given ENIGMA project"@en ;
-      rdfs:isDefinedBy <http://xmlns.com/foaf/0.1> ;
-      rdfs:label "Organization"@en ;
-      <http://purl.org/vocab/vann/example>
-              "Information Sciences Institute"@en ;
-      :example "Information Sciences Institute"^^xsd:string .
+      rdfs:comment "An organization belonging to the ENIGMA consortium. Organization can be hospitals, universities, departments, etc." , "An organization belonging to the ENIGMA consortium. Organization can be hospitals, universities, departments, etc."@en ;
+      rdfs:label "Organization"@en .
 
 :hasDiagnosticGroup
       a       owl:ObjectProperty ;
       rdfs:comment "Describes the patient group of a cohort"@en ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortProject)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortProject)
+              ] ;
       rdfs:domain
               [ a       owl:Class ;
                 owl:unionOf (:Cohort :CohortProject)
@@ -991,6 +1265,20 @@ xsd:date
       rdfs:subPropertyOf :hasCohortGroup ;
       <http://purl.org/vocab/vann/example>
               "BipolarCohort hasPatientGroup BipolarPatientGroup"@en .
+
+:TAS-20
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Toronto Alexithymia Scale" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "TAS-20" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:sex  a       owl:DatatypeProperty ;
+      rdfs:comment "sex of participants" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "Sex" ;
+      rdfs:range xsd:boolean .
 
 :isPublic
       a       owl:DatatypeProperty ;
@@ -1019,49 +1307,91 @@ xsd:date
               [ a       owl:Class ;
                 owl:unionOf (:Cohort :CohortGroup :CohortProject)
               ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject)
+              ] ;
       rdfs:label "has main person role principal investigator"@en ;
       rdfs:range :Person ;
       rdfs:subPropertyOf :hasPersonRole_PrincipalInvestigator ;
       <http://purl.org/vocab/vann/example>
               "Cohort1 hasMainPrincipalInvestigatorof JohnSmith"@en .
 
-:subject_SocioeconomicStatusScale
+:PANSS
       a       owl:DatatypeProperty ;
-      rdfs:comment "The highest level of subject's socioeconomic status based on education, occupation or both." ;
-      rdfs:domain :Demographics ;
-      rdfs:label "subject socioeconomic status" ;
-      rdfs:range xsd:string .
+      rdfs:comment "Positive and Negative Syndrome Scale" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "PANSS" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:SideOfOnset
+      a       owl:DatatypeProperty ;
+      rdfs:comment "The side of PD symptoms during PD onset" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "Side of Onset" ;
+      rdfs:range xsd:boolean .
+
+:BriefVisuospatialMemoryTest
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Assessment tool to measure visuospatial learning and memory abilities across research and clinical settings" ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "Brief Visuospatial Memory Test" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 <https://w3id.org/enigma>
-      a       owl:Ontology , owl:NamedIndividual ;
-      rdfs:comment "An ontology for describing people's roles in ENIGMA projects."^^xsd:string ;
+      a       owl:Ontology ;
       <http://purl.org/dc/terms/contributor>
-              "Kevin Low" , "Haripriya Dharmala"^^xsd:string , "Michael Bornstein" , "Ryan Espiritu" , "Yolanda Gil"^^xsd:string , "MiHyun Jang" , "Hernan Vargas" , "Agnes McMahon"^^xsd:string , "Agnes McMahon" , "Daniel Garijo"^^xsd:string ;
+              "Haripriya Dharmala"^^xsd:string , "Michael Bornstein" , "Ryan Espiritu" , "Yolanda Gil"^^xsd:string , "MiHyun Jang" , "Aarya Vakharia" , "Agnes McMahon" ;
       <http://purl.org/dc/terms/creator>
-              "Josh Boyd" , "Ryan Espiritu"^^xsd:string , "Yolanda Gil" , "Daniel Garijo" , "Daniel Garijo"^^xsd:string , "Kevin Low" , "Haripriya Dharmala"^^xsd:string , "Haripriya Dharmala" , "Joanna Bright" , "Wesley Surento" , "MiHyun Jang"^^xsd:string , "Neda Jahanshad" , "Neda Jahanshad"^^xsd:string ;
+              "Kevin Low" , "Haripriya Dharmala" , "Joanna Bright" , "Josh Boyd" , "Wesley Surento" , "Ryan Espiritu"^^xsd:string , "Yolanda Gil" , "MiHyun Jang"^^xsd:string , "Hernan Vargas" , "Daniel Garijo" , "Neda Jahanshad" , "Neda Jahanshad"^^xsd:string ;
       <http://purl.org/dc/terms/description>
-              "An ontology representing demographics for the ENIGMA working groups" , "An ontology to describe cohorts of patients participating in ENIGMA projects."@en , "An ontology representing roles different persons play in ENIGMA projects, organizations, papers, or working groups."@en , "A core ontology representing the main concepts of ENIGMA."@en , "An ontology that describes ENIGMA projects and their properties."@en , "An ontology representing organizations that participate in the ENIGMA consortium."@en , "An ontology representing Working Groups that participate in the ENIGMA consortium."@en , "A cohort ontology that describes persons participating in ENIGMA and their properties."@en ;
+              "An ontology to describe cohorts of patients participating in ENIGMA projects."@en , "An ontology that describes ENIGMA projects and their properties."@en , "A core ontology representing the main concepts of ENIGMA. This ontology includes general concepts and properties applicable to all ENIGMA working groups."@en , "A cohort ontology that describes persons participating in ENIGMA and their properties."@en ;
       <http://purl.org/dc/terms/license>
               <http://creativecommons.org/licenses/by/2.0/> ;
       <http://purl.org/dc/terms/title>
-              "The Core Ontology"@en , "The Project Ontology"@en , "The Roles Ontology"@en , "The Cohort Ontology"@en , "The Person Ontology"^^xsd:string , "The Demographic Ontology" , "The Organization Ontology"^^xsd:string , "The Working Group Ontology"@en ;
+              "The Enigma Core Ontology"@en , "The PD Cognitive Ontology"@en , "The Neuropsychiatric Ontology"@en , "The Project Ontology"@en , "The Cohort Ontology"@en , "The PD Cardiovascular Ontology"@en , "The Person Ontology"^^xsd:string , "The PD Demographics Ontology"@en ;
       <http://purl.org/vocab/vann/preferredNamespacePrefix>
-              "enigma" , "enigma"^^xsd:string , <https://w3id.org/enigma> ;
+              "enigma" , "enigma"^^xsd:string ;
       <http://purl.org/vocab/vann/preferredNamespaceUri>
               : ;
-      owl:priorVersion <https://w3id.org/enigma/roles/1.0.0> , <https://w3id.org/enigma/organization/1.1.0> , "https://w3id.org/enigma/cohort/1.0.0" , <https://w3id.org/enigma/core/1.0.0> , <https://w3id.org/enigma/wg/1.0.0> , <https://w3id.org/enigma/person/1.0.0> ;
-      owl:versionIRI <https://w3id.org/enigma/cohort/1.1.0> , <https://w3id.org/enigma/roles/1.1.0> , <https://w3id.org/enigma/core/1.1.0> , <https://w3id.org/enigma/organization/1.1.0> , <https://w3id.org/enigma/project/1.1.0> , <https://w3id.org/enigma/person/1.1.0> , <https://w3id.org/enigma/demographic/1.1.0> , <https://w3id.org/enigma/wg/1.1.0> ;
+      owl:priorVersion "https://w3id.org/enigma/cohort/1.0.0" , <https://w3id.org/enigma/core/1.0.0> , <https://w3id.org/enigma/person/1.0.0> ;
+      owl:versionIRI <https://w3id.org/enigma/cohort/1.1.0> , <https://w3id.org/enigma/pd-cognitive/1.1.0> , <https://w3id.org/enigma/core/1.1.0> , <https://w3id.org/enigma/project/1.1.0> , <https://w3id.org/enigma/person/1.1.0> , <https://w3id.org/enigma/pd-cardiovascular/1.1.0> , <https://w3id.org/enigma/pd-demographics/1.1.0> , <https://w3id.org/enigma/neuropsychiatric/1.1.0> ;
       owl:versionInfo "v1.1.0" , "v1.1.0"^^xsd:string .
 
-:hasPersonRole_ProjectLead
-      a       owl:ObjectProperty ;
-      rdfs:comment "Describes what project someone is a project lead of"@en ;
-      rdfs:domain :Project ;
-      rdfs:label "has project lead"@en ;
-      rdfs:range :Person ;
-      rdfs:subPropertyOf owl:topObjectProperty ;
-      <http://purl.org/vocab/vann/example>
-              "BipolarProject hasPersonRole_ProjectLead JohnSmith"@en .
+:HeartRate
+      a       owl:DatatypeProperty ;
+      rdfs:domain :Cardiovascular ;
+      rdfs:label "Heart Rate" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:Rey_OsterriethComplexFigureTest
+      a       owl:DatatypeProperty ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "Rey-Osterrieth Complex Figure Test" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:IDS  a       owl:DatatypeProperty ;
+      rdfs:comment "Inventory of Depressive Symptomology" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "IDS" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:MADRS
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Montgomery-Asberg Depression Rating Scale" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "MADRS" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 :MoodDisorder
       a       owl:Class ;
@@ -1071,17 +1401,13 @@ xsd:date
       <http://purl.org/vocab/vann/example>
               "Bipolar Disorder"@en .
 
-:Methodology
-      a       owl:Class ;
-      rdfs:comment "Working groups that develop protocols (imaging or genetics)"@en ;
-      rdfs:label "Methodology"@en ;
-      rdfs:subClassOf :WorkingGroup .
-
-<http://purl.org/dc/terms/isPartOf>
-      a       owl:ObjectProperty ;
-      rdfs:comment "A related resource in which the described resource is included."^^xsd:string ;
-      rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
-      rdfs:label "is Part of"^^xsd:string .
+:PictureArrangementTest
+      a       owl:DatatypeProperty ;
+      rdfs:comment "A psychological test that presents a series of pictures in a random order and asks the subject to arrange them to form a logical story." ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "Picture Arrangement Test" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 <http://schema.org/DataDownload>
       a       owl:Class ;
@@ -1095,15 +1421,17 @@ xsd:date
       rdfs:label "has publication"@en ;
       rdfs:range :AcademicArticle .
 
-:ClinicalPopulation
-      a       owl:Class ;
-      rdfs:comment "Working groups that study clinical populations"@en ;
-      rdfs:label "Clinical Population"@en ;
-      rdfs:subClassOf :WorkingGroup .
-
 :hasCohortGroup
       a       owl:ObjectProperty ;
       rdfs:comment "Property that indicates the cohort groups part of a cohort"@en ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortProject)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortProject)
+              ] ;
       rdfs:domain
               [ a       owl:Class ;
                 owl:unionOf (:Cohort :CohortProject)
@@ -1139,20 +1467,6 @@ xsd:date
       <http://purl.org/vocab/vann/example>
               "Los Angeles, California"@en .
 
-:IllnessDuration
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Property which states if the Duration of Illness was measured in a cohort. Often abbreviated \"DURILL\"" ;
-      rdfs:domain :Demographics ;
-      rdfs:label "Illness Duration" ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf owl:topDataProperty .
-
-:GeneticStudy
-      a       owl:Class ;
-      rdfs:comment "Working groups dedicated to genetic analysis"@en ;
-      rdfs:label "Genetic study"@en ;
-      rdfs:subClassOf :WorkingGroup .
-
 :CohortProject
       a       owl:Class ;
       rdfs:comment "The subset of the individuals from a Cohort, which are used as samples for a specific project"@en ;
@@ -1176,17 +1490,25 @@ xsd:date
               [ a       owl:Class ;
                 owl:unionOf (:Cohort :CohortGroup :ImageAcquisitionProtocol)
               ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :ImageAcquisitionProtocol)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :ImageAcquisitionProtocol)
+              ] ;
       rdfs:label "has cohort project"@en ;
       rdfs:range :CohortProject ;
       <http://purl.org/vocab/vann/example>
               "BipolarCohort hasCohortProject BipolarBarcelonaCohort"@en .
 
-:diagnosisGroup
+:PDMotorSubtype
       a       owl:DatatypeProperty ;
-      rdfs:comment "Property which states whether the diagnostic group each subject is associated with (control vs. experimental) is specified." ;
-      rdfs:domain :Demographics ;
-      rdfs:label "diagnosis group" ;
-      rdfs:range xsd:string .
+      rdfs:comment "PD Motor Subtypes (mild-motor predominant, intermediate, or diffuse malignant)" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "PD Motor Subtype" ;
+      rdfs:range xsd:boolean .
 
 :hasGrant
       a       owl:DatatypeProperty ;
@@ -1203,9 +1525,6 @@ xsd:date
       rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
       rdfs:isDefinedBy "http://xmlns.com/foaf/0.1/"@en ;
       rdfs:range owl:Thing .
-
-<http://www.w3.org/2006/vcard/ns#country-name>
-      a       owl:DatatypeProperty .
 
 :City
       a       owl:Class ;
@@ -1232,8 +1551,13 @@ xsd:date
       <http://purl.org/vocab/vann/example>
               "CohortGroup2 hasNumberOfFemaleSex 16"@en .
 
-<http://www.w3.org/2006/vcard/ns#region>
-      a       owl:DatatypeProperty .
+:OtherRelevantDiagnoses
+      a       owl:DatatypeProperty ;
+      rdfs:comment "e.g. chronic kidney disease and stage, migraines, arthritis, lupus" ;
+      rdfs:domain :Cardiovascular ;
+      rdfs:label "Other Relevant Diagnoses" ;
+      rdfs:range xsd:string ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 :hasAdditionalDemographic
       a       owl:DatatypeProperty ;
@@ -1244,6 +1568,21 @@ xsd:date
       <http://purl.org/vocab/vann/example>
               "CohortGroup1 hasAdditionalDemographic \"handedness, IQ\""@en .
 
+:NART
+      a       owl:DatatypeProperty ;
+      rdfs:comment "The National Adult Reading test in any language" ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "NART (National Adult Reading Test)" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:subjID
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Subject ID" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "subj ID" ;
+      rdfs:range xsd:boolean .
+
 :hasCollectionSite
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes where the data of the cohort was collected"@en ;
@@ -1252,6 +1591,13 @@ xsd:date
       rdfs:range xsd:string ;
       <http://purl.org/vocab/vann/example>
               "Cohort1 hasCollectionSite Toronto"@en .
+
+:ISI  a       owl:DatatypeProperty ;
+      rdfs:comment "Insomnia Severity Index" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "ISI" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 :WorkingGroup
       a       owl:Class ;
@@ -1271,6 +1617,14 @@ xsd:date
 xsd:gYear
       a       rdfs:Datatype .
 
+:AtrialFibrillation
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Atrial Fibrillation: irregular (and often rapid) heart rate caused by poor blood flow that can cause blood clots, strokes, etc." ;
+      rdfs:domain :Cardiovascular ;
+      rdfs:label "Atrial Fibrillation" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
 :hasNumberOfParticipants
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes the number of participants in a cohort group or cohort project"@en ;
@@ -1283,23 +1637,12 @@ xsd:gYear
       <http://purl.org/vocab/vann/example>
               "CohortGroup2 hasNumberOfParticipants 200"@en .
 
-<http://vivoweb.org/ontology/core#Hospital>
-      a       owl:Class ;
-      rdfs:comment "A hospital contributing to a given ENIGMA project"@en ;
-      rdfs:isDefinedBy <http://vivoweb.org/ontology/core> ;
-      rdfs:label "Hospital"@en ;
-      rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> ;
-      <http://purl.org/vocab/vann/example>
-              "Children's Hospital Los Angeles"@en .
-
-:hasMemorandumOfUnderstanding
+:OtherMedUseLifetime
       a       owl:DatatypeProperty ;
-      rdfs:comment "Describes the memorandum of understanding links of the working group"@en ;
-      rdfs:domain :WorkingGroup ;
-      rdfs:label "has memorandum of understanding"@en ;
-      rdfs:range xsd:string ;
-      <http://purl.org/vocab/vann/example>
-              "WorkingGroup1 hasMemorandumOfUnderstanding www.mouexample.com"@en .
+      rdfs:comment "Other Medication used during their lifetime" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "Other Medication Use Lifetime" ;
+      rdfs:range xsd:boolean .
 
 <http://xmlns.com/foaf/0.1/givenName>
       a       owl:DatatypeProperty ;
@@ -1315,6 +1658,13 @@ xsd:gYear
       rdfs:range xsd:string ;
       <http://purl.org/vocab/vann/example>
               "JohnSmith hasDegree PhD"@en .
+
+:diagnosisConfirmed
+      a       owl:DatatypeProperty ;
+      rdfs:comment "If PD diagnosis was confirmed in the subject(s)" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "Diagnosis Confirmed" ;
+      rdfs:range xsd:boolean .
 
 :hasDate_ProposalApproval
       a       owl:DatatypeProperty ;
@@ -1338,13 +1688,6 @@ xsd:gYear
       rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
       rdfs:label "homepage" .
 
-:race_ethnicity
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Subject's race/ethnicity." ;
-      rdfs:domain :Demographics ;
-      rdfs:label "race ethnicity" ;
-      rdfs:range xsd:string .
-
 :requiresDataType
       a       owl:ObjectProperty ;
       rdfs:comment "Describes which data type is required by a project"@en ;
@@ -1366,14 +1709,12 @@ xsd:gYear
       <http://purl.org/vocab/vann/example>
               "Consensus Consultant Diagnosis"@en .
 
-<http://vivoweb.org/ontology/core#Consortium>
-      a       owl:Class ;
-      rdfs:comment "A consortium contributing to a given ENIGMA project"@en ;
-      rdfs:isDefinedBy <http://vivoweb.org/ontology/core> ;
-      rdfs:label "Consortium"@en ;
-      rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> ;
-      <http://purl.org/vocab/vann/example>
-              "ENIGMA"@en .
+:PAS  a       owl:DatatypeProperty ;
+      rdfs:comment "Parkinson's Anxiety Scale" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "PAS" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 :hasPersonRole_ProjectContact
       a       owl:ObjectProperty ;
@@ -1387,6 +1728,14 @@ xsd:gYear
       rdfs:subPropertyOf owl:topObjectProperty ;
       <http://purl.org/vocab/vann/example>
               "BipolarCohort hasPersonRole_ProjectContact JohnSmith"@en .
+
+:SWCT
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Stroop Word-Color Test" ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "SWCT" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 :studiesDisorder
       a       owl:ObjectProperty ;
@@ -1403,8 +1752,23 @@ xsd:gYear
               [ a       owl:Class ;
                 owl:unionOf (:Project :WorkingGroup)
               ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Project :WorkingGroup)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Project :WorkingGroup)
+              ] ;
       rdfs:label "studies disorder"@en ;
       rdfs:range :Disorder .
+
+:has_city
+      a       owl:DatatypeProperty ;
+      rdfs:comment "City in which cohort is located" ;
+      rdfs:domain :Location ;
+      rdfs:label "has city" ;
+      rdfs:range xsd:string .
 
 :hasName
       a       owl:DatatypeProperty ;
@@ -1414,14 +1778,12 @@ xsd:gYear
       rdfs:range xsd:string ;
       rdfs:subPropertyOf <https://schema.org/name> .
 
-<http://vivoweb.org/ontology/core#Department>
-      a       owl:Class ;
-      rdfs:comment "A department contributing to a given ENIGMA project"@en ;
-      rdfs:isDefinedBy <http://vivoweb.org/ontology/core> ;
-      rdfs:label "Department"@en ;
-      rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> ;
-      <http://purl.org/vocab/vann/example>
-              "Department of Psychology, USC"@en .
+:SE-ADLS
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Schwab and England: Activities of Daily Living Scale" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "SE-ADLS" ;
+      rdfs:range xsd:boolean .
 
 :hasDate_TargetStart
       a       owl:DatatypeProperty ;
@@ -1430,6 +1792,13 @@ xsd:gYear
       rdfs:label "has target start date"@en ;
       rdfs:range xsd:date .
 
+:MDS-UPDRS-3
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Movement Disorders Society Unified Parkinson's Disease Rating Scale - 3" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "MDS-UPDRS-3" ;
+      rdfs:range xsd:boolean .
+
 :CohortGroup
       a       owl:Class ;
       rdfs:comment "A subset of Cohort, which either forms the patient group or control group"@en ;
@@ -1437,6 +1806,20 @@ xsd:gYear
       rdfs:subClassOf :Cohort ;
       <http://purl.org/vocab/vann/example>
               "AMCControlGroup is a control cohort group of the AMC cohort"@en .
+
+:otherPDDiagnosisData
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Other Parkinson's Diagnosis Data" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "Other PD Diagnosis Data" ;
+      rdfs:range xsd:string .
+
+:DataProcessingProtocol
+      a       owl:Class ;
+      rdfs:comment "An image processing or genetic analysis protocol used to extract brain feature data"@en ;
+      rdfs:label "Data Processing Protocol"@en ;
+      <http://purl.org/vocab/vann/example>
+              "ENIGMA-Sulci Protocol"@en .
 
 :Disorder
       a       owl:Class ;
@@ -1460,14 +1843,107 @@ xsd:gYear
       <http://purl.org/vocab/vann/example>
               "Coronary Artery Disease"@en .
 
-<http://www.w3.org/2006/vcard/ns#postal-code>
-      a       owl:DatatypeProperty .
+:has_PD_Demographics
+      a       owl:ObjectProperty ;
+      rdfs:comment "Describes demographics properties specific to the PD working group" ;
+      rdfs:domain :Cohort ;
+      rdfs:label "has PD demographics" ;
+      rdfs:range :PDDemographics ;
+      rdfs:subPropertyOf owl:topObjectProperty .
+
+:hasAncestry
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes the ancestry of the participants of the cohort"@en ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortProject)
+              ] ;
+      rdfs:label "has ancestry"@en ;
+      rdfs:range
+              [ a       rdfs:Datatype ;
+                owl:oneOf
+                        [ a       rdf:List ;
+                          rdf:first "African American" ;
+                          rdf:rest
+                                  [ a       rdf:List ;
+                                    rdf:first "Asian" ;
+                                    rdf:rest
+                                            [ a       rdf:List ;
+                                              rdf:first "European" ;
+                                              rdf:rest
+                                                      [ a       rdf:List ;
+                                                        rdf:first "Latino" ;
+                                                        rdf:rest
+                                                                [ a       rdf:List ;
+                                                                  rdf:first "Two or More Races" ;
+                                                                  rdf:rest ()
+                                                                ]
+                                                      ]
+                                            ]
+                                  ]
+                        ]
+              ] ;
+      <http://purl.org/vocab/vann/example>
+              "Cohort1 hasAncestry \"European\""@en .
+
+:MDS-UPDRS-2
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Movement Disorders Society Unified Parkinson's Disease Rating Scale - 2" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "MDS-UPDRS-2" ;
+      rdfs:range xsd:boolean .
+
+:DigitNumberSequencing
+      a       owl:DatatypeProperty ;
+      rdfs:comment "A verbal task, with stimuli presented auditorily, and responses spoken by the participant." ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "Digit Number Sequencing" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:hasInclusionCriteria
+      a       owl:DatatypeProperty ;
+      rdfs:comment "criteria used to include cohort patients" ;
+      rdfs:domain :CohortProject , :CohortGroup , :Cohort ;
+      rdfs:label "has inclusion criteria" ;
+      rdfs:range xsd:string .
 
 <http://purl.org/dc/terms/description>
       a       owl:DatatypeProperty , owl:AnnotationProperty .
 
+:SmokingPackYears
+      a       owl:DatatypeProperty ;
+      rdfs:comment "A \"pack year\" is defined as twenty cigarettes smoked everyday for one year" ;
+      rdfs:domain :Cardiovascular ;
+      rdfs:label "Smoking Pack Years" ;
+      rdfs:range xsd:string ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:Hyperlipidaemia
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Hyperlipidaemia: High levels of lipids/cholesterol/fats in the blood" ;
+      rdfs:domain :Cardiovascular ;
+      rdfs:label "Hyperlipidaemia" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
 <http://purl.org/vocab/vann/example>
       a       owl:AnnotationProperty .
+
+:PDSS
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Parkinson's Disease Sleep Scale" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "PDSS" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:PD_DementiaDiagnosis
+      a       owl:DatatypeProperty ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "PD Dementia Diagnosis" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 :hasProjectResults
       a       owl:ObjectProperty ;
@@ -1491,13 +1967,25 @@ xsd:gYear
       rdfs:label "has statistics"@en ;
       rdfs:range :Dataset .
 
-:example
-      a       owl:AnnotationProperty .
+:occupation
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Occupation of the subjects" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "Occupation" ;
+      rdfs:range xsd:boolean .
 
 :hasImageAcquisitionProtocol
       a       owl:ObjectProperty ;
       rdfs:comment "Describes the acquisition protocol that was used to scan the data of a cohort"@en , "Describes the acquisition protocol that was used to scan a cohort"@en ;
       rdfs:domain :Cohort ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject)
+              ] ;
       rdfs:domain
               [ a       owl:Class ;
                 owl:unionOf (:Cohort :CohortGroup :CohortProject)
@@ -1525,8 +2013,19 @@ xsd:gYear
       <http://purl.org/vocab/vann/example>
               "Harvard hasAffiliate JohnSmith"@en , "HarvardU hasAffiliate JohnSmith"@en .
 
-owl:topDataProperty
+:MDS-UPDRS-1
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Movement Disorders Society Unified Parkinson's Disease Rating Scale - 1" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "MDS-UPDRS-1" ;
       rdfs:range xsd:boolean .
+
+:mildCognitiveImpairmentDiagnosis
+      a       owl:DatatypeProperty ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "Mild Cognitive Impairment Diagnosis" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 :hasDescription
       a       owl:DatatypeProperty ;
@@ -1555,41 +2054,6 @@ owl:topDataProperty
       <http://www.linkedmodel.org/schema/vaem#rationale>
               "Property added to restrict the domain to enigma:Person. This is done for facilitating the interaction with the wiki interface"@en .
 
-:hasEthnicGroup
-      a       owl:DatatypeProperty ;
-      rdfs:comment "Describes the ethnic group that the participants of the cohort are in"@en ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :CohortProject)
-              ] ;
-      rdfs:label "has ethnic group"@en ;
-      rdfs:range
-              [ a       rdfs:Datatype ;
-                owl:oneOf
-                        [ a       rdf:List ;
-                          rdf:first "African American" ;
-                          rdf:rest
-                                  [ a       rdf:List ;
-                                    rdf:first "Asian" ;
-                                    rdf:rest
-                                            [ a       rdf:List ;
-                                              rdf:first "European" ;
-                                              rdf:rest
-                                                      [ a       rdf:List ;
-                                                        rdf:first "Latino" ;
-                                                        rdf:rest
-                                                                [ a       rdf:List ;
-                                                                  rdf:first "Two or More Races" ;
-                                                                  rdf:rest ()
-                                                                ]
-                                                      ]
-                                            ]
-                                  ]
-                        ]
-              ] ;
-      <http://purl.org/vocab/vann/example>
-              "Cohort1 hasEthnicGroup \"European\""@en .
-
 :SignificantGeneralMedicalCondition
       a       owl:Class ;
       rdfs:comment "Blanket term ecompassing serious medical condtions"@en ;
@@ -1606,32 +2070,87 @@ owl:topDataProperty
       <http://purl.org/vocab/vann/example>
               "Coronary Artery Disease"@en .
 
-:hasPersonRole_Reviewer
+:otherEnvironmentalFactors
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Any other environmental factors relating to a PD cohort" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "Other Environmental Factors" ;
+      rdfs:range xsd:string .
+
+:ReyAuditoryVerbalLearningTest
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Assessment designed to evaluate verbal memory in patients, 16 years of age and older" ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "Rey Auditory Verbal Learning Test" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:comorbidities
+      a       owl:DatatypeProperty ;
+      rdfs:comment "If other comorbidities were measured in subjects" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "comorbidities" ;
+      rdfs:range xsd:boolean .
+
+:ESS  a       owl:DatatypeProperty ;
+      rdfs:comment "Epworth Sleepiness Scale" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "ESS" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:BentonJudgmentOfLineOrientation
+      a       owl:DatatypeProperty ;
+      rdfs:comment "The Benton Judgment of Line Orientation (JLO) test is a standardized neuropsychological test that measures visuospatial judgment and perception." ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "Benton Judgment Of Line Orientation" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:WAIS_4_PerceptualReasoning
+      a       owl:DatatypeProperty ;
+      rdfs:comment "This index reflects an individual’s ability to accurately interpret, organize and think with visual information on the WAIS 4 (Wechsler Adult Intelligence Scale-IV) scale" ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "WAIS 4 Perceptual Reasoning Index" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:has_cognitive
       a       owl:ObjectProperty ;
-      rdfs:comment "Property that indicates who contributed to the paper reviewing the initial drafts and providing comments"@en ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:AcademicArticle :Project)
-              ] ;
-      rdfs:label "has reviewer"@en ;
-      rdfs:range :Person ;
-      rdfs:subPropertyOf :contributor ;
-      <http://purl.org/vocab/vann/example>
-              "BipolarProject hasPersonRole_Reviewer JohnSmith"@en .
+      rdfs:comment "Describes cogitive covariate properties specific to the PD working group" ;
+      rdfs:domain :Cohort ;
+      rdfs:label "has cognitive" ;
+      rdfs:range :Cognitive ;
+      rdfs:subPropertyOf owl:topObjectProperty .
+
+:SAPS-PD
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Schedule for Assessment of Positive Symptoms - PD" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "SAPS-PD" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 :hasDataProcessingProtocol
       a       owl:ObjectProperty ;
       rdfs:comment "Describes which data processing protocol was used in a project"@en ;
       rdfs:domain :Project ;
       rdfs:label "uses data processing protocol"@en ;
-      rdfs:range :Protocol .
+      rdfs:range :DataProcessingProtocol .
 
-:hasCoordinates
+:SentencesConstruction
       a       owl:DatatypeProperty ;
-      rdfs:comment "The coordinates associated with an organization"@en ;
-      rdfs:domain :Organization ;
-      rdfs:label "has coordinates"@en ;
-      rdfs:range xsd:string .
+      rdfs:domain :Cognitive ;
+      rdfs:label "Sentences Construction" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:PhonologicalAndSemanticVerbalFluencyTest
+      a       owl:DatatypeProperty ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "Phonological (PVF) and Semantic (SVF) Verbal Fluency Test" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 :hasDataCollectionPeriodStart
       a       owl:DatatypeProperty ;
@@ -1647,10 +2166,29 @@ owl:topDataProperty
 
 :Cohort
       a       owl:Class ;
-      rdfs:comment "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria"@en ;
+      rdfs:comment """A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria.
+
+Cohort Groups: COHORT_grp_NAME
+Example: STELLENBOCH_grp_CN for the control group
+
+Cohort Projects: COHORT_proj_NAME
+Example: STELLENBOCH_proj_FS for the Freesurfer project"""@en , "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria"@en ;
       rdfs:label "Cohort"@en ;
       <http://purl.org/vocab/vann/example>
               "ADNI: Alzheimer’s Disease Neuroimaging Initiative"@en .
+
+:Cardiovascular
+      a       owl:Class ;
+      rdfs:comment "Cardiovascular Covariates measured by each PD cohort" ;
+      rdfs:label "Cardiovascular" .
+
+:QUIP-rs
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Questionnaire for Impulsive-Compulsive Disorders in Parkinson's Disease–Rating Scale" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "QUIP-rs" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 :isPartOfCohort
       a       owl:ObjectProperty ;
@@ -1667,13 +2205,49 @@ owl:topDataProperty
               [ a       owl:Class ;
                 owl:unionOf (:Cohort :CohortGroup :CohortProject)
               ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject)
+              ] ;
       rdfs:label "is part of cohort"@en ;
       rdfs:range :Cohort .
+
+:WOQ  a       owl:DatatypeProperty ;
+      rdfs:comment "Wearing-Off Questionnaires WOQ-9, WOQ-19, WOQ-32" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "WOQ" ;
+      rdfs:range xsd:string ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 <http://purl.org/ontology/bibo/AcademicArticle>
       a       owl:Class ;
       rdfs:isDefinedBy <http://purl.org/ontology/bibo/AcademicArticle> ;
       owl:equivalentClass :AcademicArticle .
+
+:HistoryOfIschamicHeartDisease
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Ischamic Heart Disease: aka Coronary Heart Disease, heart problems caused by narrowed arteries that supply blood to the heart" ;
+      rdfs:domain :Cardiovascular ;
+      rdfs:label "History of Ischamic Heart Disease" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:TrialMakingTestA-B
+      a       owl:DatatypeProperty ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "Trial Making Test A-B" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:hasCovariates
+      a       owl:ObjectProperty ;
+      rdfs:domain :Cohort ;
+      rdfs:label "has covariates" ;
+      rdfs:range :Covariates .
 
 :hasOrcidId
       a       owl:ObjectProperty ;
@@ -1684,9 +2258,33 @@ owl:topDataProperty
       <http://www.linkedmodel.org/schema/vaem#rationale>
               "Property added to facilitate interaction with the wiki, making domains and ranges explicit"@en .
 
+:OtherRelevantCardiovascularMedications
+      a       owl:DatatypeProperty ;
+      rdfs:comment "e.g. antihypertensives, cholesterol lowering drugs, aspirin, steriods" ;
+      rdfs:domain :Cardiovascular ;
+      rdfs:label "Other Relevant Cardiovascular Medications" ;
+      rdfs:range xsd:string ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:has_neuropsychiatric
+      a       owl:ObjectProperty ;
+      rdfs:comment "Describes the neuropsychiatric covariates of the PD working group" ;
+      rdfs:domain :Cohort ;
+      rdfs:label "has neuropsychiatric" ;
+      rdfs:range :Neuropsychiatric ;
+      rdfs:subPropertyOf owl:topObjectProperty .
+
 :hasDataType
       a       owl:ObjectProperty ;
       rdfs:comment "Describes the data types that a cohort or project collected"@en ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :Project)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :Project)
+              ] ;
       rdfs:domain
               [ a       owl:Class ;
                 owl:unionOf (:Cohort :Project)
@@ -1708,19 +2306,31 @@ owl:topDataProperty
       <http://purl.org/vocab/vann/example>
               "BipolarProject hasDataType MRIImage"@en , "Cohort1 hasDataType dataType1"@en .
 
-:isPartOfOrganization
-      a       owl:ObjectProperty ;
-      rdfs:comment "Describes the parent organization which an organization is a part of. An organization may be part of more than one organizations."@en ;
-      rdfs:domain :Organization ;
-      rdfs:label "is part of organization"@en ;
-      rdfs:range :Organization ;
-      rdfs:subPropertyOf <http://purl.org/dc/terms/isPartOf> ;
-      <http://purl.org/vocab/vann/example>
-              "Department of Psychology, USC isPartOfOrganization USC"@en .
+:Other_Depression_Severity_Tests
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Test names for other depression severity scales/measures" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "Other Depression Severity Tests" ;
+      rdfs:range xsd:boolean .
+
+:SCOPA-Psychiatric
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Scales for Outcomes in Parkinson's Disease - Psychiatric" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "SCOPA-Psychiatric" ;
+      rdfs:range xsd:boolean .
 
 :hasControlGroup
       a       owl:ObjectProperty ;
       rdfs:comment "Describes the control group of a cohort"@en ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortProject)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortProject)
+              ] ;
       rdfs:domain
               [ a       owl:Class ;
                 owl:unionOf (:Cohort :CohortProject)
@@ -1739,12 +2349,19 @@ owl:topDataProperty
       <http://purl.org/vocab/vann/example>
               "BipolarCohort hasControlGroup BipolarControlGroup"@en .
 
-:education_Years
+:has_latitude
       a       owl:DatatypeProperty ;
-      rdfs:comment "Property to state whether subject's education in years is specified." ;
-      rdfs:domain :Demographics ;
-      rdfs:label "education years" ;
-      rdfs:range xsd:string .
+      rdfs:comment "The latitude of the cohort" ;
+      rdfs:domain :Location ;
+      rdfs:label "has latitude" ;
+      rdfs:range xsd:float .
+
+:AS   a       owl:DatatypeProperty ;
+      rdfs:comment "Starkstein's Apathy Scale" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "AS" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 :author
       a       owl:ObjectProperty ;
@@ -1763,7 +2380,7 @@ owl:topDataProperty
 
 :Person
       a       owl:Class ;
-      rdfs:comment "A person associated with a given organization"@en , "Individual involved with the cohort"@en ;
+      rdfs:comment "Individual involved with the cohort"@en ;
       rdfs:label "Person"@en ;
       <http://purl.org/vocab/vann/example>
               "Theo van Erp"@en .
@@ -1785,21 +2402,41 @@ owl:topDataProperty
       rdfs:range xsd:string ;
       rdfs:subPropertyOf <https://schema.org/encodingFormat> .
 
+:HRDS
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Hamilton Rating Scale for Depression (or HAM-D)" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "HRDS" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:RSGE-PD
+      a       owl:DatatypeProperty ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "RSGE-PD" ;
+      rdfs:range xsd:boolean .
+
+:AgeOfPDOnset
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Age of Onset of Parkinson's Disease" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "Age of Onset PD" ;
+      rdfs:range xsd:boolean .
+
 <https://schema.org/encodingFormat>
       a       owl:DatatypeProperty ;
       rdfs:isDefinedBy <https://schema.org/> .
 
-:hasRegion
-      a       owl:DatatypeProperty ;
-      rdfs:comment "The region (e.g. state or province) associated with the address of the object"@en ;
-      rdfs:domain :Address ;
-      rdfs:label "has region"@en ;
-      rdfs:range xsd:string ;
-      rdfs:subPropertyOf <http://www.w3.org/2006/vcard/ns#region> .
-
 <https://schema.org/distribution>
       a       owl:ObjectProperty ;
       rdfs:isDefinedBy <https://schema.org/> .
+
+:GDI  a       owl:DatatypeProperty ;
+      rdfs:comment "Geriatric Depression Index" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "GDI" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 :hasAge_Mean
       a       owl:DatatypeProperty ;
@@ -1820,6 +2457,13 @@ owl:topDataProperty
       rdfs:subClassOf :Disorder ;
       <http://purl.org/vocab/vann/example>
               "CNS Cancer"@en .
+
+:UPSIT
+      a       owl:DatatypeProperty ;
+      rdfs:comment "University of Pennsylvania Smell Identification Test for Parkinson's Disease" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "UPSIT" ;
+      rdfs:range xsd:boolean .
 
 :hasAge_Minimum
       a       owl:DatatypeProperty ;
@@ -1848,10 +2492,37 @@ owl:topDataProperty
               [ a       owl:Class ;
                 owl:unionOf (:CohortGroup :CohortProject)
               ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:CohortGroup :CohortProject)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:CohortGroup :CohortProject)
+              ] ;
       rdfs:label "has diagnostic instrument"@en ;
       rdfs:range :DiagnosticInstrument ;
       <http://purl.org/vocab/vann/example>
               "Cohort1 hasDiagnosticInstrument miniInternationalNeuropychiatricInterview --> The members of Cohort1 are diagnosed with Mini International Neuropychiatric Interview"@en .
+
+:dx   a       owl:DatatypeProperty ;
+      rdfs:comment "Diagnosis Group" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:range xsd:boolean .
+
+:age  a       owl:DatatypeProperty ;
+      rdfs:comment "age of participants" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "age" ;
+      rdfs:range xsd:boolean .
+
+:UM-PDHQ
+      a       owl:DatatypeProperty ;
+      rdfs:comment "University of Miami Parkinson's Disease Hallucinations Questionnaire" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "UM-PDHQ" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 :hasDate_TargetEnd
       a       owl:DatatypeProperty ;
@@ -1862,11 +2533,11 @@ owl:topDataProperty
       <http://purl.org/vocab/vann/example>
               "BipolarProject hasDate_TargetEnd 2020-03-12"@en .
 
-:Occupation
+:has_country
       a       owl:DatatypeProperty ;
-      rdfs:comment "Property which states whether subject's occupation is specified." ;
-      rdfs:domain :Demographics ;
-      rdfs:label "occupation" ;
+      rdfs:comment "Country in which cohort is located" ;
+      rdfs:domain :Location ;
+      rdfs:label "has country" ;
       rdfs:range xsd:string .
 
 :hasDistribution
@@ -1877,22 +2548,54 @@ owl:topDataProperty
       rdfs:range :DataDownload ;
       rdfs:subPropertyOf <https://schema.org/distribution> .
 
-:hasPrimaryAddress
-      a       owl:ObjectProperty ;
-      rdfs:comment "Describes the primary address of an organization or person"@en ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Organization :Person)
-              ] ;
-      rdfs:label "has primary address"@en ;
-      rdfs:range :Address ;
-      rdfs:subPropertyOf <http://www.w3.org/2006/vcard/ns#hasAddress> ;
-      <http://purl.org/vocab/vann/example>
-              "USC hasPrimaryAddress \"123 Admiralty Way\""@en .
+:TowerOfHanoi
+      a       owl:DatatypeProperty ;
+      rdfs:comment "This task seeks to measure high-order cognitive problem solving and learning of complex cognitive procedures, providing information about the cognitive abilities mainly related to executive functions such as planning, visual imagery, abstract thinking, working memory and self-monitoring." ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "Tower Of Hanoi" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
 
 <http://purl.org/dc/terms/creator>
       a       owl:AnnotationProperty , owl:ObjectProperty ;
       rdfs:isDefinedBy <http://purl.org/dc/terms/creator> .
+
+:PDMedicationUseLifetime
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes if the patient used PD medication during their lifetime" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "PD Medication Use Lifetime" ;
+      rdfs:range xsd:boolean .
+
+:WAIS_4_WorkingMemory
+      a       owl:DatatypeProperty ;
+      rdfs:comment "This index reflects an individual’s ability to take in and hold information in immediate awareness and then perform a mental operation on that information on the WAIS 4 (Wechsler Adult Intelligence Scale-IV) scale" ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "WAIS 4 Working Memory Index" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:StandingBloodPressure
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Standing blood pressure after standing for 3 minutes" ;
+      rdfs:domain :Cardiovascular ;
+      rdfs:label "Standing Blood Pressure" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:LEDDScore
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Levodopa Equivalent Doses used to treat Parkinson's Disease" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "LEDD Score" ;
+      rdfs:range xsd:boolean .
+
+:MDS-UPDRS-4
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Movement Disorders Society Unified Parkinson's Disease Rating Scale - 4" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "MDS-UPDRS-4" ;
+      rdfs:range xsd:boolean .
 
 :isPartOfCohortProject
       a       owl:ObjectProperty ;
@@ -1900,3 +2603,70 @@ owl:topDataProperty
       rdfs:domain :CohortGroup ;
       rdfs:label "is part of cohort project"@en ;
       rdfs:range :CohortProject .
+
+:HoehnAndYahrStage
+      a       owl:DatatypeProperty ;
+      rdfs:comment "The Stage for Hoehn and Yahr scales used for PD cohorts" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "Hoehn and Yahr Stage" ;
+      rdfs:range xsd:boolean .
+
+:PDMedicationUseCurrent
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Describes if the patient is currently using PD medication" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "PD Medication Use Current" ;
+      rdfs:range xsd:boolean .
+
+:DigitSpan
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Digit Span is a test of verbal short-term memory." ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "Digit Span" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:Smoking
+      a       owl:DatatypeProperty ;
+      rdfs:domain :Cardiovascular ;
+      rdfs:label "Smoking" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:OtherMedUseCurrent
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Other medication currently used" ;
+      rdfs:domain :PDDemographics ;
+      rdfs:label "Other Medication Use Current" ;
+      rdfs:range xsd:boolean .
+
+:Hypertension
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Hypertension: high blood pressure" ;
+      rdfs:domain :Cardiovascular ;
+      rdfs:label "Hypertension" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:PPRS
+      a       owl:DatatypeProperty ;
+      rdfs:comment "Parkinson's Psychosis Rating Scale" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "PPRS" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:QPE  a       owl:DatatypeProperty ;
+      rdfs:comment "Questionnaire for Psychotic Experiences" ;
+      rdfs:domain :Neuropsychiatric ;
+      rdfs:label "QPE" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+:WAIS_4_ProcessingSpeed
+      a       owl:DatatypeProperty ;
+      rdfs:comment "This index reflects an individual’s ability to process simple or routine visual information quickly and efficiently on the WAIS 4 (Wechsler Adult Intelligence Scale-IV) scale." ;
+      rdfs:domain :Cognitive ;
+      rdfs:label "WAIS 4 Processing Speed" ;
+      rdfs:range xsd:boolean ;
+      rdfs:subPropertyOf owl:topDataProperty .

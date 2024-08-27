@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ENIGMA ontology documentation</title>
+    <link
+      rel="stylesheet"
+      href="vocab/themes/blue/style.css"
+      type="text/css"
+      media="print, projection, screen"
+    />
+    <script src="vocab/js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="vocab/js/bootstrap.js"></script>
+    <script type="text/javascript" id="js">
+      $(document).ready(function () {
+        $("#tablesorter-demo").tablesorter();
+        $("#tablesorter-demo").stickyTableHeaders();
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+
+    <!-- Le styles -->
+    <link href="vocab/css/bootstrap.css" rel="stylesheet" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="vocab/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Jumbotron -->
+      <div class="jumbotron">
+        <h1>ENIGMA Ontology</h1>
+        <p class="lead">
+          In this page you will find the detailed the documentation of all
+          classes, properties, data properties and individuals present in the
+          different modules of the ENIGMA ontology.
+        </p>
+      </div>
+      <hr />
+      <div class="row"></div>
+      <br />
+      <table
+        id="tablesorter-demo"
+        class="tablesorter table table-hover table-responsive"
+      >
+        <thead>
+          <tr>
+            <th class="col-md-3">Ontology</th>
+            <th class="col-md-1">Serialization</th>
+            <th class="col-md-2">License</th>
+            <th class="col-md-6">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="tr6">
+            <td>
+              <a href="core/1.1.0/index-en.html" target="_blank"
+                >The Enigma Core Ontology</a
+              >
+            </td>
+            <td>
+              <a href="core/1.1.0/ontology.ttl"
+                ><span class="label label-primary">Turtle</span></a
+              >
+            </td>
+            <td>
+              <a
+                href="http://creativecommons.org/licenses/by/2.0/"
+                target="_blank"
+              >
+                <span class="label label-success">CC-BY 2.0.</span>
+              </a>
+            </td>
+            <td>
+              Represent main concepts of the ENIGMA consortium and its datasets
+            </td>
+          </tr>
+          <tr id="tr1">
+            <td>
+              <a href="cohort/1.1.0/index-en.html" target="_blank"
+                >The Cohort Ontology</a
+              >
+            </td>
+            <td>
+              <a href="cohort/1.1.0/ontology.ttl"
+                ><span class="label label-primary">Turtle</span></a
+              >
+            </td>
+            <td>
+              <a
+                href="http://creativecommons.org/licenses/by/2.0/"
+                target="_blank"
+              >
+                <span class="label label-success">CC-BY 2.0.</span>
+              </a>
+            </td>
+            <td>
+              Describe cohorts of patients
+            </td>
+          </tr>
+          <tr id="tr2">
+            <td>
+              <a href="organization/1.1.0/index-en.html" target="_blank"
+                >The Organization Ontology</a
+              >
+            </td>
+            <td>
+              <a href="organization/1.1.0/ontology.ttl"
+                ><span class="label label-primary">Turtle</span></a
+              >
+            </td>
+            <td>
+              <a
+                href="http://creativecommons.org/licenses/by/2.0/"
+                target="_blank"
+              >
+                <span class="label label-success">CC-BY 2.0.</span>
+              </a>
+            </td>
+            <td>
+              Represent organizations that participate in the ENIGMA consortium
+            </td>
+          </tr>
+          <tr id="tr3">
+            <td>
+              <a href="person/1.1.0/index-en.html" target="_blank"
+                >The Person Ontology</a
+              >
+            </td>
+            <td>
+              <a href="person/1.1.0/ontology.ttl"
+                ><span class="label label-primary">Turtle</span></a
+              >
+            </td>
+            <td>
+              <a
+                href="http://creativecommons.org/licenses/by/2.0/"
+                target="_blank"
+              >
+                <span class="label label-success">CC-BY 2.0.</span>
+              </a>
+            </td>
+            <td>
+              Represent the scientists that participate in ENIGMA working groups and projects
+            </td>
+          </tr>
+          <tr id="tr4">
+            <td>
+              <a href="project/1.1.0/index-en.html" target="_blank"
+                >The Project Ontology</a
+              >
+            </td>
+            <td>
+              <a href="project/1.1.0/ontology.ttl"
+                ><span class="label label-primary">Turtle</span></a
+              >
+            </td>
+            <td>
+              <a
+                href="http://creativecommons.org/licenses/by/2.0/"
+                target="_blank"
+              >
+                <span class="label label-success">CC-BY 2.0.</span>
+              </a>
+            </td>
+            <td>
+              Represent projects undertaken by ENIGMA working groups
+            </td>
+          </tr>
+          <!--<tr id="tr5">
+    <td><a href = "scanner/1.0.0/index-en.html" target="_blank">The Scanner Ontology</a> </td><td>
+    <a href="scanner/1.0.0/ontology.ttl"><span class="label label-primary">Turtle</span></a>
+    </td>
+    <td><a href="http://creativecommons.org/licenses/by/2.0/" target="_blank"> <span class="label label-success">CC-BY 2.0.</span> </a></td>
+    <td> An ontology representing scanners and instruments used to make the measurements in ENIGMA</td>
+</tr>-->
+          <tr id="tr7">
+            <td>
+              <a href="workingGroup/1.1.0/index-en.html" target="_blank"
+                >The Working Group Ontology</a
+              >
+            </td>
+            <td>
+              <a href="workingGroup/1.1.0/ontology.ttl"
+                ><span class="label label-primary">Turtle</span></a
+              >
+            </td>
+            <td>
+              <a
+                href="http://creativecommons.org/licenses/by/2.0/"
+                target="_blank"
+              >
+                <span class="label label-success">CC-BY 2.0.</span>
+              </a>
+            </td>
+            <td>
+              Represent working groups that participate in the ENIGMA consortium
+            </td>
+          </tr>
+          <tr id="tr8">
+            <td>
+              <a href="roles/1.1.0/index-en.html" target="_blank"
+                >The Roles Ontology</a
+              >
+            </td>
+            <td>
+              <a href="roles/1.1.0/ontology.ttl"
+                ><span class="label label-primary">Turtle</span></a
+              >
+            </td>
+            <td>
+              <a
+                href="http://creativecommons.org/licenses/by/2.0/"
+                target="_blank"
+              >
+                <span class="label label-success">CC-BY 2.0.</span>
+              </a>
+            </td>
+            <td>
+              Represent roles of persons in ENIGMA projects, organizations, papers or working groups
+            </td>
+          </tr>
+
+          <tr id="tr9">
+            <td>
+              <a href="demographic/1.1.0/index-en.html" target="_blank"
+                >The Demographic Ontology</a
+              >
+            </td>
+            <td>
+              <a href="demographic/1.1.0/ontology.ttl"
+                ><span class="label label-primary">Turtle</span></a
+              >
+            </td>
+            <td>
+              <a
+                href="http://creativecommons.org/licenses/by/2.0/"
+                target="_blank"
+              >
+                <span class="label label-success">CC-BY 2.0.</span>
+              </a>
+            </td>
+            <td>
+              Represent demographics for cohort datasets
+            </td>
+          </tr>
+
+          <tr id="tr10">
+            <td>
+              <a href="disorder/1.1.0/index-en.html" target="_blank"
+                >The Disorder Ontology</a
+              >
+            </td>
+            <td>
+              <a href="disorder/1.1.0/ontology.ttl"
+                ><span class="label label-primary">Turtle</span></a
+              >
+            </td>
+            <td>
+              <a
+                href="http://creativecommons.org/licenses/by/2.0/"
+                target="_blank"
+              >
+                <span class="label label-success">CC-BY 2.0.</span>
+              </a>
+            </td>
+            <td>
+              Represent mental health disorders for cohort datasets
+            </td>
+          </tr>
+
+          <tr id="tr11">
+            <td>
+              <a href="medication/1.1.0/index-en.html" target="_blank"
+                >The Medication Ontology</a
+              >
+            </td>
+            <td>
+              <a href="medication/1.1.0/ontology.ttl"
+                ><span class="label label-primary">Turtle</span></a
+              >
+            </td>
+            <td>
+              <a
+                href="http://creativecommons.org/licenses/by/2.0/"
+                target="_blank"
+              >
+                <span class="label label-success">CC-BY 2.0.</span>
+              </a>
+            </td>
+            <td>
+              Represent medications for cohort datasets
+            </td>
+          </tr>
+
+          <tr id="tr12">
+            <td>
+              <a href="psychopathology/1.1.0/index-en.html" target="_blank"
+                >The Psychopathology Ontology</a
+              >
+            </td>
+            <td>
+              <a href="psychopathology/1.1.0/ontology.ttl"
+                ><span class="label label-primary">Turtle</span></a
+              >
+            </td>
+            <td>
+              <a
+                href="http://creativecommons.org/licenses/by/2.0/"
+                target="_blank"
+              >
+                <span class="label label-success">CC-BY 2.0.</span>
+              </a>
+            </td>
+            <td>
+              Represent psychopathology information for cohort datasets
+            </td>
+          </tr>
+
+          <tr id="tr13">
+            <td>
+              <a href="neuropsychiatric/1.1.0/index-en.html" target="_blank"
+                >The Neuropsychiatric Ontology</a
+              >
+            </td>
+            <td>
+              <a href="neuropsychiatric/1.1.0/ontology.ttl"
+                ><span class="label label-primary">Turtle</span></a
+              >
+            </td>
+            <td>
+              <a
+                href="http://creativecommons.org/licenses/by/2.0/"
+                target="_blank"
+              >
+                <span class="label label-success">CC-BY 2.0.</span>
+              </a>
+            </td>
+            <td>
+              Represent neuropsychiatric information for cohort datasets
+            </td>
+          </tr>
+
+          <tr id="tr14">
+            <td>
+              <a href="scores/1.1.0/index-en.html" target="_blank"
+                >The Scores Ontology</a
+              >
+            </td>
+            <td>
+              <a href="scores/1.1.0/ontology.ttl"
+                ><span class="label label-primary">Turtle</span></a
+              >
+            </td>
+            <td>
+              <a
+                href="http://creativecommons.org/licenses/by/2.0/"
+                target="_blank"
+              >
+                <span class="label label-success">CC-BY 2.0.</span>
+              </a>
+            </td>
+            <td>
+              Represent questionnaire and test scores for cohort datasets
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr />
+
+      <h2>Accessing the ENIGMA Ontology</h2>
+
+      <ul>
+        <li>
+          Turtle
+          <ul>
+            <li>
+              <code
+                >curl -sH "Accept: text/turtle" -L
+                https://w3id.org/enigma#</code
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          RDF/XML
+          <ul>
+            <li>
+              <code
+                >curl -sH "Accept: application/rdf+xml" -L
+                https://w3id.org/enigma#</code
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+<p><a href="#A">A</a> | <a href="#B">B</a> | <a href="#C">C</a> | <a href="#D">D</a> | <a href="#E">E</a> | <a href="#F">F</a> | <a href="#G">G</a> | <a href="#H">H</a> | <a href="#I">I</a> | <a href="#K">K</a> | <a href="#L">L</a> | <a href="#M">M</a> | <a href="#N">N</a> | <a href="#O">O</a> | <a href="#P">P</a> | <a href="#Q">Q</a> | <a href="#R">R</a> | <a href="#S">S</a> | <a href="#T">T</a> | <a href="#U">U</a> | <a href="#V">V</a> | <a href="#W">W</a> | </p>
+
+<h2 id="A">A</h2>
+<h3 id="AcademicArticle">AcademicArticle</h3>
+<p>An academic article, submitted as a result of the work in an ENIGMA project</p> 
+<p>Defined in: <a href="person/1.1.0/index-en.html#AcademicArticle">The Person Ontology</a></p>
+<h3 id="AES">AES</h3>
+<p>Apathy Evaluation Scale - 12 item scale or 18 item scale</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#AES">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="age">age</h3>
+<p>age of participants</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#age">The PD Demographic Ontology</a></p>
+<h3 id="AgeOfPDOnset">AgeOfPDOnset</h3>
+<p>Age of Onset of Parkinson's Disease</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#AgeOfPDOnset">The PD Demographic Ontology</a></p>
+<h3 id="AlcoholConsumption">AlcoholConsumption</h3>
+<p>Include info on how this was measured</p> 
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#AlcoholConsumption">The PD Cardiovascular Ontology</a></p>
+<h3 id="AnxietyDisorder">AnxietyDisorder</h3>
+<p>A mental health disorder defined by feelings of anxiety, fear, or worry</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#AnxietyDisorder">The Cohort Ontology</a></p>
+<h3 id="AS">AS</h3>
+<p>Starkstein's Apathy Scale</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#AS">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="AtrialFibrillation">AtrialFibrillation</h3>
+<p>Atrial Fibrillation: irregular (and often rapid) heart rate caused by poor blood flow that can cause blood clots, strokes, etc.</p> 
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#AtrialFibrillation">The PD Cardiovascular Ontology</a></p>
+<h3 id="author">author</h3>
+<p>Property to describe the author of a publication in the context of an ENIGMA project</p> 
+<p>Defined in: <a href="person/1.1.0/index-en.html#author">The Person Ontology</a></p>
+
+<h2 id="B">B</h2>
+<h3 id="BAI">BAI</h3>
+<p>Beck's Anxiety Index</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#BAI">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="BDI">BDI</h3>
+<p>Beck's Depression Inventory</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#BDI">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="BentonJudgmentOfLineOrientation">BentonJudgmentOfLineOrientation</h3>
+<p>The Benton Judgment of Line Orientation (JLO) test is a standardized neuropsychological test that measures visuospatial judgment and perception.</p> 
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#BentonJudgmentOfLineOrientation">The PD Cognitive Ontology</a></p>
+<h3 id="BodyMassIndex">BodyMassIndex</h3>
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#BodyMassIndex">The PD Cardiovascular Ontology</a></p>
+<h3 id="BostonNamingTest">BostonNamingTest</h3>
+<p>The Boston Naming Test is a widely used assessment tool that evaluates a person's ability to name objects from line drawings.</p> 
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#BostonNamingTest">The PD Cognitive Ontology</a></p>
+<h3 id="BrainScanDataType">BrainScanDataType</h3>
+<p>Specifies the kinds of brain scan data collected</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#BrainScanDataType">The Cohort Ontology</a></p>
+<h3 id="BriefVisuospatialMemoryTest">BriefVisuospatialMemoryTest</h3>
+<p>Assessment tool to measure visuospatial learning and memory abilities across research and clinical settings</p> 
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#BriefVisuospatialMemoryTest">The PD Cognitive Ontology</a></p>
+
+<h2 id="C">C</h2>
+<h3 id="Cancer">Cancer</h3>
+<p>A disease characterized by abnormal cell division and growth</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#Cancer">The Cohort Ontology</a></p>
+<h3 id="Cardiovascular">Cardiovascular</h3>
+<p>Cardiovascular Covariates measured by each PD cohort</p> 
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#Cardiovascular">The PD Cardiovascular Ontology</a></p>
+<h3 id="CardiovascularDisorder">CardiovascularDisorder</h3>
+<p>A subset of vascular disorders affecting the heart</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#CardiovascularDisorder">The Cohort Ontology</a></p>
+<h3 id="CDSS">CDSS</h3>
+<p>Calgary Depression Symptom Scale</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#CDSS">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="CerebrovascularDisorder">CerebrovascularDisorder</h3>
+<p>A subset of vascular disorders affecting blood vessels of the brain and cerebral circulation</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#CerebrovascularDisorder">The Cohort Ontology</a></p>
+<h3 id="checksum">checksum</h3>
+<p>checksum of data file to check if there are modifications</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#checksum">The Cohort Ontology</a></p>
+<h3 id="City">City</h3>
+<p>City in which a cohort is located</p> 
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#City">The PD Cardiovascular Ontology</a></p>
+<h3 id="cityDwelling">cityDwelling</h3>
+<p>If measured subjects in the cohort were city dwelling (pop >100,000)</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#cityDwelling">The PD Demographic Ontology</a></p>
+<h3 id="CoagulationScreenPerformed">CoagulationScreenPerformed</h3>
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#CoagulationScreenPerformed">The PD Cardiovascular Ontology</a></p>
+<h3 id="Cognitive">Cognitive</h3>
+<p>Cognitive Covariates measured by each PD cohort</p> 
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#Cognitive">The PD Cardiovascular Ontology</a></p>
+<h3 id="Cohort">Cohort</h3>
+<p>A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria.
+
+Cohort Groups: COHORT_grp_NAME
+Example: STELLENBOCH_grp_CN for the control group
+
+Cohort Projects: COHORT_proj_NAME
+Example: STELLENBOCH_proj_FS for the Freesurfer project</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#Cohort">The Cohort Ontology</a></p>
+<h3 id="CohortGroup">CohortGroup</h3>
+<p>A subset of Cohort, which either forms the patient group or control group</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#CohortGroup">The Cohort Ontology</a></p>
+<h3 id="CohortProject">CohortProject</h3>
+<p>The subset of the individuals from a Cohort, which are used as samples for a specific project</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#CohortProject">The Cohort Ontology</a></p>
+<h3 id="comorbidities">comorbidities</h3>
+<p>If other comorbidities were measured in subjects</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#comorbidities">The PD Demographic Ontology</a></p>
+<h3 id="ConflictOfInterest">ConflictOfInterest</h3>
+<p>Concept used to represent a conflict of interest of an author in a paper</p> 
+<p>Defined in: <a href="project/1.1.0/index-en.html#ConflictOfInterest">The Project Ontology</a></p>
+<h3 id="Country">Country</h3>
+<p>Country in which a cohort is located</p> 
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#Country">The PD Cardiovascular Ontology</a></p>
+<h3 id="Covariates">Covariates</h3>
+<p>A class used to describe covariates information for a cohort or study.</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#Covariates">The Cohort Ontology</a></p>
+
+<h2 id="D">D</h2>
+<h3 id="DataDownload">DataDownload</h3>
+<p>Dataset in downloadable form</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#DataDownload">The Cohort Ontology</a></p>
+<h3 id="DataProcessingProtocol">DataProcessingProtocol</h3>
+<p>An image processing or genetic analysis protocol used to extract brain feature data</p> 
+<p>Defined in: <a href="project/1.1.0/index-en.html#DataProcessingProtocol">The Project Ontology</a></p>
+<h3 id="Dataset">Dataset</h3>
+<p>A dataset containing information about an ENIGMA project cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#Dataset">The Cohort Ontology</a></p>
+<h3 id="DataType">DataType</h3>
+<p>Specifies the kinds of data collected</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#DataType">The Cohort Ontology</a></p>
+<h3 id="Diabetes">Diabetes</h3>
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#Diabetes">The PD Cardiovascular Ontology</a></p>
+<h3 id="diagnosisConfirmed">diagnosisConfirmed</h3>
+<p>If PD diagnosis was confirmed in the subject(s)</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#diagnosisConfirmed">The PD Demographic Ontology</a></p>
+<h3 id="DiagnosticInstrument">DiagnosticInstrument</h3>
+<p>The method used to diagnose individuals in a Cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#DiagnosticInstrument">The Cohort Ontology</a></p>
+<h3 id="DigitNumberSequencing">DigitNumberSequencing</h3>
+<p>A verbal task, with stimuli presented auditorily, and responses spoken by the participant.</p> 
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#DigitNumberSequencing">The PD Cognitive Ontology</a></p>
+<h3 id="DigitSpan">DigitSpan</h3>
+<p>Digit Span is a test of verbal short-term memory.</p> 
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#DigitSpan">The PD Cognitive Ontology</a></p>
+<h3 id="DigitSpanBackward">DigitSpanBackward</h3>
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#DigitSpanBackward">The PD Cognitive Ontology</a></p>
+<h3 id="DigitSpanForward">DigitSpanForward</h3>
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#DigitSpanForward">The PD Cognitive Ontology</a></p>
+<h3 id="Disorder">Disorder</h3>
+<p>A disorder/disease experienced by members of a cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#Disorder">The Cohort Ontology</a></p>
+<h3 id="durill">durill</h3>
+<p>Duration of Illness</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#durill">The PD Demographic Ontology</a></p>
+<h3 id="dx">dx</h3>
+<p>Diagnosis Group</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#dx">The PD Demographic Ontology</a></p>
+
+<h2 id="E">E</h2>
+<h3 id="education">education</h3>
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#education">The PD Demographic Ontology</a></p>
+<h3 id="EndocrineDisorder">EndocrineDisorder</h3>
+<p>Disorders which affect the endocrine system</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#EndocrineDisorder">The Cohort Ontology</a></p>
+<h3 id="ESS">ESS</h3>
+<p>Epworth Sleepiness Scale</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#ESS">The PD Neuropsychiatric Ontology</a></p>
+
+<h2 id="F">F</h2>
+<h3 id="FamilyHistoryOfCVDisease">FamilyHistoryOfCVDisease</h3>
+<p>CV: Cardiovascular Disease</p> 
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#FamilyHistoryOfCVDisease">The PD Cardiovascular Ontology</a></p>
+<h3 id="FivePointTest">FivePointTest</h3>
+<p>Five Point Test (5TT) is a neuropsychological test that assesses figural fluency. A participant is asked to generate as many unique designs as possible in a certain time limit.</p> 
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#FivePointTest">The PD Cognitive Ontology</a></p>
+
+<h2 id="G">G</h2>
+<h3 id="GDI">GDI</h3>
+<p>Geriatric Depression Index</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#GDI">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="GeneticDataType">GeneticDataType</h3>
+<p>Specifies the kinds of genetic data collected</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#GeneticDataType">The Cohort Ontology</a></p>
+<h3 id="GeneticDisorder">GeneticDisorder</h3>
+<p>Disorders which are inherited and caused by abnormalities in the genome</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#GeneticDisorder">The Cohort Ontology</a></p>
+
+<h2 id="H">H</h2>
+<h3 id="HAMA">HAMA</h3>
+<p>Hamilton Anxiety Scale</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#HAMA">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="handedness">handedness</h3>
+<p>dominant hand (left/right) of the subjects</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#handedness">The PD Demographic Ontology</a></p>
+<h3 id="has_cardiovascular">has_cardiovascular</h3>
+<p>Describes cardiovascular covariate properties specific to the PD working group</p> 
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#has_cardiovascular">The PD Cardiovascular Ontology</a></p>
+<h3 id="has_city">has_city</h3>
+<p>City in which cohort is located</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#has_city">The Cohort Ontology</a></p>
+<h3 id="has_cognitive">has_cognitive</h3>
+<p>Describes cogitive covariate properties specific to the PD working group</p> 
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#has_cognitive">The PD Cognitive Ontology</a></p>
+<h3 id="has_country">has_country</h3>
+<p>Country in which cohort is located</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#has_country">The Cohort Ontology</a></p>
+<h3 id="has_latitude">has_latitude</h3>
+<p>The latitude of the cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#has_latitude">The Cohort Ontology</a></p>
+<h3 id="has_location">has_location</h3>
+<p>The location of the cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#has_location">The Cohort Ontology</a></p>
+<h3 id="has_longitude">has_longitude</h3>
+<p>The longitude of the cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#has_longitude">The Cohort Ontology</a></p>
+<h3 id="has_neuropsychiatric">has_neuropsychiatric</h3>
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#has_neuropsychiatric">The PD Cardiovascular Ontology</a></p>
+<h3 id="has_PD_Demographics">has_PD_Demographics</h3>
+<p>Describes demographics properties specific to the PD working group</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#has_PD_Demographics">The PD Demographic Ontology</a></p>
+<h3 id="hasAdditionalDemographic">hasAdditionalDemographic</h3>
+<p>Describes the additional demographics defining a given cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasAdditionalDemographic">The Cohort Ontology</a></p>
+<h3 id="hasAffiliate">hasAffiliate</h3>
+<p>Describes the organization's affiliates</p> 
+<p>Defined in: <a href="person/1.1.0/index-en.html#hasAffiliate">The Person Ontology</a></p>
+<h3 id="hasAge_Group">hasAge_Group</h3>
+<p>Describes the age groupings of individuals within a cohort group</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasAge_Group">The Cohort Ontology</a></p>
+<h3 id="hasAge_Maximum">hasAge_Maximum</h3>
+<p>Describes inclusion criteria for maximum age of participants in a Cohort, CohortProject or CohortGroup</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasAge_Maximum">The Cohort Ontology</a></p>
+<h3 id="hasAge_Mean">hasAge_Mean</h3>
+<p>Describes the mean age of the cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasAge_Mean">The Cohort Ontology</a></p>
+<h3 id="hasAge_Minimum">hasAge_Minimum</h3>
+<p>Describes inclusion criteria for minimum age of participants in a Cohort, CohortProject or CohortGroup</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasAge_Minimum">The Cohort Ontology</a></p>
+<h3 id="hasAge_StandardDeviation">hasAge_StandardDeviation</h3>
+<p>Describes the standard deviation of the age of a cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasAge_StandardDeviation">The Cohort Ontology</a></p>
+<h3 id="hasAncestry">hasAncestry</h3>
+<p>Describes the ancestry of the participants of the cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasAncestry">The Cohort Ontology</a></p>
+<h3 id="hasBrainScanDataType">hasBrainScanDataType</h3>
+<p>Describes the brain scan data types that were collected for a cohort or project</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasBrainScanDataType">The Cohort Ontology</a></p>
+<h3 id="hasBriefDescription">hasBriefDescription</h3>
+<p>Provides a brief description of the working group or project or cohort or image acquisition protocol</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasBriefDescription">The Cohort Ontology</a></p>
+<h3 id="hasCohort">hasCohort</h3>
+<p>Describes what cohorts are part of a project or working group</p> 
+<p>Defined in: <a href="project/1.1.0/index-en.html#hasCohort">The Project Ontology</a></p>
+<h3 id="hasCohortGroup">hasCohortGroup</h3>
+<p>Property that indicates the cohort groups part of a cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasCohortGroup">The Cohort Ontology</a></p>
+<h3 id="hasCohortProject">hasCohortProject</h3>
+<p>Describes the subcohorts, specific to a given project, that are part of that cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasCohortProject">The Cohort Ontology</a></p>
+<h3 id="hasCohortStatus">hasCohortStatus</h3>
+<p>Describes the current status of a cohort, cohort group or cohort project</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasCohortStatus">The Cohort Ontology</a></p>
+<h3 id="hasCollectionSite">hasCollectionSite</h3>
+<p>Describes where the data of the cohort was collected</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasCollectionSite">The Cohort Ontology</a></p>
+<h3 id="hasConflictOfInterest">hasConflictOfInterest</h3>
+<p>Property linking an author with a conflict of interest that the author has on a paper</p> 
+<p>Defined in: <a href="project/1.1.0/index-en.html#hasConflictOfInterest">The Project Ontology</a></p>
+<h3 id="hasContact">hasContact</h3>
+<p>Property that points to the person that is a contact for the project or cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasContact">The Cohort Ontology</a></p>
+<h3 id="hasContentUrl">hasContentUrl</h3>
+<p>Points to a media object, like an image or video file</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasContentUrl">The Cohort Ontology</a></p>
+<h3 id="hasControlGroup">hasControlGroup</h3>
+<p>Describes the control group of a cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasControlGroup">The Cohort Ontology</a></p>
+<h3 id="hasCovariates">hasCovariates</h3>
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasCovariates">The Cohort Ontology</a></p>
+<h3 id="hasCurrentJobTitle">hasCurrentJobTitle</h3>
+<p>Data property that aims to capture the current job title of a person. Examples are student, faculty, staff, postdoc, etc.</p> 
+<p>Defined in: <a href="person/1.1.0/index-en.html#hasCurrentJobTitle">The Person Ontology</a></p>
+<h3 id="hasDataCollectionPeriodEnd">hasDataCollectionPeriodEnd</h3>
+<p>Describes the end year of the data collection period of the cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasDataCollectionPeriodEnd">The Cohort Ontology</a></p>
+<h3 id="hasDataCollectionPeriodStart">hasDataCollectionPeriodStart</h3>
+<p>Describes the start year of the data collection period of the cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasDataCollectionPeriodStart">The Cohort Ontology</a></p>
+<h3 id="hasDataProcessingProtocol">hasDataProcessingProtocol</h3>
+<p>Describes which data processing protocol was used in a project</p> 
+<p>Defined in: <a href="project/1.1.0/index-en.html#hasDataProcessingProtocol">The Project Ontology</a></p>
+<h3 id="hasDataset">hasDataset</h3>
+<p>Property that links a cohort project with the data being described.</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasDataset">The Cohort Ontology</a></p>
+<h3 id="hasDataType">hasDataType</h3>
+<p>Describes the data types that a cohort or project collected</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasDataType">The Cohort Ontology</a></p>
+<h3 id="hasDate_DataContributionDeadline">hasDate_DataContributionDeadline</h3>
+<p>Describes the deadline date for data contribution of a project</p> 
+<p>Defined in: <a href="project/1.1.0/index-en.html#hasDate_DataContributionDeadline">The Project Ontology</a></p>
+<h3 id="hasDate_ProposalApproval">hasDate_ProposalApproval</h3>
+<p>Describes the date the proposal for a project was approved</p> 
+<p>Defined in: <a href="project/1.1.0/index-en.html#hasDate_ProposalApproval">The Project Ontology</a></p>
+<h3 id="hasDate_TargetEnd">hasDate_TargetEnd</h3>
+<p>Describes the end date of the target period of the project</p> 
+<p>Defined in: <a href="project/1.1.0/index-en.html#hasDate_TargetEnd">The Project Ontology</a></p>
+<h3 id="hasDate_TargetStart">hasDate_TargetStart</h3>
+<p>Describes the start date of the target period of the project</p> 
+<p>Defined in: <a href="project/1.1.0/index-en.html#hasDate_TargetStart">The Project Ontology</a></p>
+<h3 id="hasDegree">hasDegree</h3>
+<p>Describes what degree a person has (e.g., BsC, PhD, etc.)</p> 
+<p>Defined in: <a href="person/1.1.0/index-en.html#hasDegree">The Person Ontology</a></p>
+<h3 id="hasDescription">hasDescription</h3>
+<p>Description of an item</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasDescription">The Cohort Ontology</a></p>
+<h3 id="hasDiagnosticGroup">hasDiagnosticGroup</h3>
+<p>Describes the patient group of a cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasDiagnosticGroup">The Cohort Ontology</a></p>
+<h3 id="hasDiagnosticInstrument">hasDiagnosticInstrument</h3>
+<p>Describes what instrument is used to diagnose the members of the cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasDiagnosticInstrument">The Cohort Ontology</a></p>
+<h3 id="hasDistribution">hasDistribution</h3>
+<p>Indicates a downloadable form of a dataset at a specific location</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasDistribution">The Cohort Ontology</a></p>
+<h3 id="hasEmail">hasEmail</h3>
+<p>Property that indicates which is the email of a person</p> 
+<p>Defined in: <a href="person/1.1.0/index-en.html#hasEmail">The Person Ontology</a></p>
+<h3 id="hasExclusionCriteria">hasExclusionCriteria</h3>
+<p>Criteria used to exclude cohort patients</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasExclusionCriteria">The Cohort Ontology</a></p>
+<h3 id="hasFamilyName">hasFamilyName</h3>
+<p>The family name of some person.</p> 
+<p>Defined in: <a href="person/1.1.0/index-en.html#hasFamilyName">The Person Ontology</a></p>
+<h3 id="hasFundingSource">hasFundingSource</h3>
+<p>Describes the funding source of the cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasFundingSource">The Cohort Ontology</a></p>
+<h3 id="hasGeneticDataType">hasGeneticDataType</h3>
+<p>Describes the genetic data types that were collected for a cohort or project</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasGeneticDataType">The Cohort Ontology</a></p>
+<h3 id="hasGivenName">hasGivenName</h3>
+<p>The given name of some person.</p> 
+<p>Defined in: <a href="person/1.1.0/index-en.html#hasGivenName">The Person Ontology</a></p>
+<h3 id="hasGrant">hasGrant</h3>
+<p>Data property that aims to capture the grants that have been obtained by a person, in order to properly list them in the acknowledgements of the corresponding publication</p> 
+<p>Defined in: <a href="person/1.1.0/index-en.html#hasGrant">The Person Ontology</a></p>
+<h3 id="hasGroupCriteria">hasGroupCriteria</h3>
+<p>Criteria used to define group of cohort patients</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasGroupCriteria">The Cohort Ontology</a></p>
+<h3 id="hasHomePage">hasHomePage</h3>
+<p>Property that describes the home page of a cohort or person</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasHomePage">The Cohort Ontology</a></p>
+<h3 id="hasImageAcquisitionProtocol">hasImageAcquisitionProtocol</h3>
+<p>Describes the acquisition protocol that was used to scan the data of a cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasImageAcquisitionProtocol">The Cohort Ontology</a></p>
+<h3 id="hasInclusionCriteria">hasInclusionCriteria</h3>
+<p>criteria used to include cohort patients</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasInclusionCriteria">The Cohort Ontology</a></p>
+<h3 id="hasMiddleInitial">hasMiddleInitial</h3>
+<p>Describes middle initial of a person</p> 
+<p>Defined in: <a href="person/1.1.0/index-en.html#hasMiddleInitial">The Person Ontology</a></p>
+<h3 id="hasName">hasName</h3>
+<p>Name of an item</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasName">The Cohort Ontology</a></p>
+<h3 id="hasNumberOfFemaleSex">hasNumberOfFemaleSex</h3>
+<p>Describing the number of females in a cohort project</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasNumberOfFemaleSex">The Cohort Ontology</a></p>
+<h3 id="hasNumberOfMaleSex">hasNumberOfMaleSex</h3>
+<p>Describing the number of males in a cohort project</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasNumberOfMaleSex">The Cohort Ontology</a></p>
+<h3 id="hasNumberOfParticipants">hasNumberOfParticipants</h3>
+<p>Describes the number of participants in a cohort group or cohort project</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasNumberOfParticipants">The Cohort Ontology</a></p>
+<h3 id="hasOrcidId">hasOrcidId</h3>
+<p>ORCID Id of a Person</p> 
+<p>Defined in: <a href="person/1.1.0/index-en.html#hasOrcidId">The Person Ontology</a></p>
+<h3 id="hasPersonRole_Investigator">hasPersonRole_Investigator</h3>
+<p>Describe the investigators of a cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasPersonRole_Investigator">The Cohort Ontology</a></p>
+<h3 id="hasPersonRole_MainPrincipalInvestigator">hasPersonRole_MainPrincipalInvestigator</h3>
+<p>Describes which cohorts somone is a main PI of</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasPersonRole_MainPrincipalInvestigator">The Cohort Ontology</a></p>
+<h3 id="hasPersonRole_PrincipalInvestigator">hasPersonRole_PrincipalInvestigator</h3>
+<p>Describes the principal investigator of the cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasPersonRole_PrincipalInvestigator">The Cohort Ontology</a></p>
+<h3 id="hasPersonRole_ProjectContact">hasPersonRole_ProjectContact</h3>
+<p>Property that points to the person that is a contact for the project or cohort</p> 
+<p>Defined in: <a href="project/1.1.0/index-en.html#hasPersonRole_ProjectContact">The Project Ontology</a></p>
+<h3 id="hasPopulationGroup">hasPopulationGroup</h3>
+<p>Describes the population group of a population-based cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasPopulationGroup">The Cohort Ontology</a></p>
+<h3 id="hasProject">hasProject</h3>
+<p>Describes what projects are worked on by a specific working group</p> 
+<p>Defined in: <a href="core/1.1.0/index-en.html#hasProject">The Core Ontology</a></p>
+<h3 id="hasProjectResults">hasProjectResults</h3>
+<p>Property to link project results to a Cohort Project</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasProjectResults">The Cohort Ontology</a></p>
+<h3 id="hasProposalForm">hasProposalForm</h3>
+<p>Describes the approved proposal form link of a project</p> 
+<p>Defined in: <a href="project/1.1.0/index-en.html#hasProposalForm">The Project Ontology</a></p>
+<h3 id="hasPublication">hasPublication</h3>
+<p>Property that links a project to a publication that resulted from it.</p> 
+<p>Defined in: <a href="project/1.1.0/index-en.html#hasPublication">The Project Ontology</a></p>
+<h3 id="hasResearchInterest">hasResearchInterest</h3>
+<p>Describes a research interest of a person</p> 
+<p>Defined in: <a href="person/1.1.0/index-en.html#hasResearchInterest">The Person Ontology</a></p>
+<h3 id="hasSpecies">hasSpecies</h3>
+<p>Describes the species of the subjects of a cohort (Humans, Chimps, Mice, etc.)</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasSpecies">The Cohort Ontology</a></p>
+<h3 id="hasStatistics">hasStatistics</h3>
+<p>Property used to link a cohort with the summary statistics that may have been  produced after applying a given protocol</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasStatistics">The Cohort Ontology</a></p>
+<h3 id="hasStudyDesign">hasStudyDesign</h3>
+<p>Describes the study design of a project (Case/control; Population; Healthy only; Patients only)
+NOTE: study design options are mutually exclusive for Cohort Groups but not Projects</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasStudyDesign">The Cohort Ontology</a></p>
+<h3 id="hasTotalNumberOfParticipants">hasTotalNumberOfParticipants</h3>
+<p>Describes the total number of participants in the cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasTotalNumberOfParticipants">The Cohort Ontology</a></p>
+<h3 id="hasTransgenderFtoM">hasTransgenderFtoM</h3>
+<p>Describing the number of female to male transgender individuals in a cohort group</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasTransgenderFtoM">The Cohort Ontology</a></p>
+<h3 id="hasTransgenderMtoF">hasTransgenderMtoF</h3>
+<p>Describing the number of male to female transgender individuals in a cohort group</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#hasTransgenderMtoF">The Cohort Ontology</a></p>
+<h3 id="hasWorkingGroupChair">hasWorkingGroupChair</h3>
+<p>Describes the working groups that someone is a chair of</p> 
+<p>Defined in: <a href="person/1.1.0/index-en.html#hasWorkingGroupChair">The Person Ontology</a></p>
+<h3 id="hasWorkingGroupMember">hasWorkingGroupMember</h3>
+<p>Describes what working group a person is a member of</p> 
+<p>Defined in: <a href="person/1.1.0/index-en.html#hasWorkingGroupMember">The Person Ontology</a></p>
+<h3 id="HeartRate">HeartRate</h3>
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#HeartRate">The PD Cardiovascular Ontology</a></p>
+<h3 id="HistoryOfIschamicHeartDisease">HistoryOfIschamicHeartDisease</h3>
+<p>Ischamic Heart Disease: aka Coronary Heart Disease, heart problems caused by narrowed arteries that supply blood to the heart</p> 
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#HistoryOfIschamicHeartDisease">The PD Cardiovascular Ontology</a></p>
+<h3 id="HistoryOfStrokeOrTransientIschaemicAttack">HistoryOfStrokeOrTransientIschaemicAttack</h3>
+<p>Transient Ischaemic Attack: A "mini stroke" with minor stroke symptoms</p> 
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#HistoryOfStrokeOrTransientIschaemicAttack">The PD Cardiovascular Ontology</a></p>
+<h3 id="HoehnAndYahrStage">HoehnAndYahrStage</h3>
+<p>The Stage for Hoehn and Yahr scales used for PD cohorts</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#HoehnAndYahrStage">The PD Demographic Ontology</a></p>
+<h3 id="HRDS">HRDS</h3>
+<p>Hamilton Rating Scale for Depression (or HAM-D)</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#HRDS">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="Hyperlipidaemia">Hyperlipidaemia</h3>
+<p>Hyperlipidaemia: High levels of lipids/cholesterol/fats in the blood</p> 
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#Hyperlipidaemia">The PD Cardiovascular Ontology</a></p>
+<h3 id="Hypertension">Hypertension</h3>
+<p>Hypertension: high blood pressure</p> 
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#Hypertension">The PD Cardiovascular Ontology</a></p>
+
+<h2 id="I">I</h2>
+<h3 id="IDS">IDS</h3>
+<p>Inventory of Depressive Symptomology</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#IDS">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="ImageAcquisitionProtocol">ImageAcquisitionProtocol</h3>
+<p>Procedure used to collect image data within the cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#ImageAcquisitionProtocol">The Cohort Ontology</a></p>
+<h3 id="InfectiousDisorder">InfectiousDisorder</h3>
+<p>A disease or disorder caused by the invasion of microorganisms</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#InfectiousDisorder">The Cohort Ontology</a></p>
+<h3 id="iq">iq</h3>
+<p>IQ of participants</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#iq">The PD Demographic Ontology</a></p>
+<h3 id="isActive">isActive</h3>
+<p>Describes whether a project is active</p> 
+<p>Defined in: <a href="project/1.1.0/index-en.html#isActive">The Project Ontology</a></p>
+<h3 id="ISI">ISI</h3>
+<p>Insomnia Severity Index</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#ISI">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="isOverallCohort">isOverallCohort</h3>
+<p>Describes if a cohort is an "overall" cohort, or a top-level cohort without having been separated into its component cohort groups/projects</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#isOverallCohort">The Cohort Ontology</a></p>
+<h3 id="isPartOfCohort">isPartOfCohort</h3>
+<p>Property that indicates the cohort groups and cohort projects which are part of a cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#isPartOfCohort">The Cohort Ontology</a></p>
+<h3 id="isPartOfCohortGroup">isPartOfCohortGroup</h3>
+<p>Property that indicates the projects which are part of a cohort group</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#isPartOfCohortGroup">The Cohort Ontology</a></p>
+<h3 id="isPartOfCohortProject">isPartOfCohortProject</h3>
+<p>Property that indicates the cohort groups which are part of a cohort project</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#isPartOfCohortProject">The Cohort Ontology</a></p>
+<h3 id="isPartOfProject">isPartOfProject</h3>
+<p>Property that indicates the cohort groups specific to a project</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#isPartOfProject">The Cohort Ontology</a></p>
+<h3 id="isPartOfWorkingGroup">isPartOfWorkingGroup</h3>
+<p>Property that indicates the cohorts which are a part of a working group</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#isPartOfWorkingGroup">The Cohort Ontology</a></p>
+<h3 id="isPublic">isPublic</h3>
+<p>Describes if a cohort's data is publicly available</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#isPublic">The Cohort Ontology</a></p>
+
+<h2 id="K">K</h2>
+<h3 id="KSS">KSS</h3>
+<p>Karolinska Sleepiness Scale</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#KSS">The PD Neuropsychiatric Ontology</a></p>
+
+<h2 id="L">L</h2>
+<h3 id="LEDDScore">LEDDScore</h3>
+<p>Levodopa Equivalent Doses used to treat Parkinson's Disease</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#LEDDScore">The PD Demographic Ontology</a></p>
+<h3 id="Location">Location</h3>
+<p>Geographic location of the cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#Location">The Cohort Ontology</a></p>
+<h3 id="LogicalMemoryTest">LogicalMemoryTest</h3>
+<p>The Logical Memory (LM) test is a part of the Wechsler Memory Scale, Fourth Edition (WMS-IV) that measures a person's ability to remember narrative stories</p> 
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#LogicalMemoryTest">The PD Cognitive Ontology</a></p>
+
+<h2 id="M">M</h2>
+<h3 id="MADRS">MADRS</h3>
+<p>Montgomery-Asberg Depression Rating Scale</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#MADRS">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="maritalStatus">maritalStatus</h3>
+<p>Subjects' marital status</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#maritalStatus">The PD Demographic Ontology</a></p>
+<h3 id="MDS-UPDRS-1">MDS-UPDRS-1</h3>
+<p>Movement Disorders Society Unified Parkinson's Disease Rating Scale - 1</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#MDS-UPDRS-1">The PD Demographic Ontology</a></p>
+<h3 id="MDS-UPDRS-2">MDS-UPDRS-2</h3>
+<p>Movement Disorders Society Unified Parkinson's Disease Rating Scale - 2</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#MDS-UPDRS-2">The PD Demographic Ontology</a></p>
+<h3 id="MDS-UPDRS-3">MDS-UPDRS-3</h3>
+<p>Movement Disorders Society Unified Parkinson's Disease Rating Scale - 3</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#MDS-UPDRS-3">The PD Demographic Ontology</a></p>
+<h3 id="MDS-UPDRS-4">MDS-UPDRS-4</h3>
+<p>Movement Disorders Society Unified Parkinson's Disease Rating Scale - 4</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#MDS-UPDRS-4">The PD Demographic Ontology</a></p>
+<h3 id="MDS-UPDRSTotal">MDS-UPDRSTotal</h3>
+<p>Movement Disorders Society Unified Parkinson's Disease Rating Scale - Total Score</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#MDS-UPDRSTotal">The PD Demographic Ontology</a></p>
+<h3 id="MentalHealthDisorder">MentalHealthDisorder</h3>
+<p>Disorders which can affect mood, behavior, and thinking</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#MentalHealthDisorder">The Cohort Ontology</a></p>
+<h3 id="mildCognitiveImpairmentDiagnosis">mildCognitiveImpairmentDiagnosis</h3>
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#mildCognitiveImpairmentDiagnosis">The PD Cognitive Ontology</a></p>
+<h3 id="MMSE">MMSE</h3>
+<p>Mini Mental State Exam</p> 
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#MMSE">The PD Cognitive Ontology</a></p>
+<h3 id="MoCA">MoCA</h3>
+<p>Montreal Cognitive Assessment</p> 
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#MoCA">The PD Cognitive Ontology</a></p>
+<h3 id="MoodDisorder">MoodDisorder</h3>
+<p>A mental health disorder defined by mood or behavioral swings</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#MoodDisorder">The Cohort Ontology</a></p>
+
+<h2 id="N">N</h2>
+<h3 id="NART">NART</h3>
+<p>The National Adult Reading test in any language</p> 
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#NART">The PD Cognitive Ontology</a></p>
+<h3 id="NeurologicalDisorder">NeurologicalDisorder</h3>
+<p>Disorders which affect the nervous system</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#NeurologicalDisorder">The Cohort Ontology</a></p>
+<h3 id="Neuropsychiatric">Neuropsychiatric</h3>
+<p>Neuropsychiatric Covariates measured by each cohort</p> 
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#Neuropsychiatric">The PD Cardiovascular Ontology</a></p>
+
+<h2 id="O">O</h2>
+<h3 id="occupation">occupation</h3>
+<p>Occupation of the subjects</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#occupation">The PD Demographic Ontology</a></p>
+<h3 id="OrganicMedicalDisorder">OrganicMedicalDisorder</h3>
+<p>Disorder characterized by decreased mental function due to a medical or physical disease</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#OrganicMedicalDisorder">The Cohort Ontology</a></p>
+<h3 id="Organization">Organization</h3>
+<p>An organization belonging to the ENIGMA consortium. Organization can be hospitals, universities, departments, etc.</p> 
+<p>Defined in: <a href="person/1.1.0/index-en.html#Organization">The Person Ontology</a></p>
+<h3 id="OrthostaticHypertension">OrthostaticHypertension</h3>
+<p>Orthostatic Hypertension: an increase in blood pressure upon assuming an upright position</p> 
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#OrthostaticHypertension">The PD Cardiovascular Ontology</a></p>
+<h3 id="Other_Depression_Severity_Tests">Other_Depression_Severity_Tests</h3>
+<p>Test names for other depression severity scales/measures</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#Other_Depression_Severity_Tests">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="Other_Depression_Severity_Total_Score">Other_Depression_Severity_Total_Score</h3>
+<p>Total scores for other depression severity scales</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#Other_Depression_Severity_Total_Score">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="OtherCognitiveCovariates">OtherCognitiveCovariates</h3>
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#OtherCognitiveCovariates">The PD Cognitive Ontology</a></p>
+<h3 id="otherDemographics">otherDemographics</h3>
+<p>Other Demographics info for PD cohorts</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#otherDemographics">The PD Demographic Ontology</a></p>
+<h3 id="otherEnvironmentalFactors">otherEnvironmentalFactors</h3>
+<p>Any other environmental factors relating to a PD cohort</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#otherEnvironmentalFactors">The PD Demographic Ontology</a></p>
+<h3 id="OtherMedUseCurrent">OtherMedUseCurrent</h3>
+<p>Other medication currently used</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#OtherMedUseCurrent">The PD Demographic Ontology</a></p>
+<h3 id="OtherMedUseLifetime">OtherMedUseLifetime</h3>
+<p>Other Medication used during their lifetime</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#OtherMedUseLifetime">The PD Demographic Ontology</a></p>
+<h3 id="otherMotorEvaluation">otherMotorEvaluation</h3>
+<p>Other Motor Evaluations</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#otherMotorEvaluation">The PD Demographic Ontology</a></p>
+<h3 id="OtherNeuropsychiatricCovariates">OtherNeuropsychiatricCovariates</h3>
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#OtherNeuropsychiatricCovariates">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="otherPDDiagnosisData">otherPDDiagnosisData</h3>
+<p>Other Parkinson's Diagnosis Data</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#otherPDDiagnosisData">The PD Demographic Ontology</a></p>
+<h3 id="OtherRelevantCardiovascularMedications">OtherRelevantCardiovascularMedications</h3>
+<p>e.g. antihypertensives, cholesterol lowering drugs, aspirin, steriods</p> 
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#OtherRelevantCardiovascularMedications">The PD Cardiovascular Ontology</a></p>
+<h3 id="OtherRelevantDiagnoses">OtherRelevantDiagnoses</h3>
+<p>e.g. chronic kidney disease and stage, migraines, arthritis, lupus</p> 
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#OtherRelevantDiagnoses">The PD Cardiovascular Ontology</a></p>
+
+<h2 id="P">P</h2>
+<h3 id="PANSS">PANSS</h3>
+<p>Positive and Negative Syndrome Scale</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#PANSS">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="PAS">PAS</h3>
+<p>Parkinson's Anxiety Scale</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#PAS">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="PatientMedicationOnOffDuringUPDRS">PatientMedicationOnOffDuringUPDRS</h3>
+<p>If the patient was on medication during Unified Parkinson's Disease Rating Scale measurements</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#PatientMedicationOnOffDuringUPDRS">The PD Demographic Ontology</a></p>
+<h3 id="PD_DementiaDiagnosis">PD_DementiaDiagnosis</h3>
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#PD_DementiaDiagnosis">The PD Cognitive Ontology</a></p>
+<h3 id="PDDemographics">PDDemographics</h3>
+<p>PD-specific demographic Covariates measured by each cohort</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#PDDemographics">The PD Demographic Ontology</a></p>
+<h3 id="PDMedicationUseCurrent">PDMedicationUseCurrent</h3>
+<p>Describes if the patient is currently using PD medication</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#PDMedicationUseCurrent">The PD Demographic Ontology</a></p>
+<h3 id="PDMedicationUseLifetime">PDMedicationUseLifetime</h3>
+<p>Describes if the patient used PD medication during their lifetime</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#PDMedicationUseLifetime">The PD Demographic Ontology</a></p>
+<h3 id="PDMotorSubtype">PDMotorSubtype</h3>
+<p>PD Motor Subtypes (mild-motor predominant, intermediate, or diffuse malignant)</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#PDMotorSubtype">The PD Demographic Ontology</a></p>
+<h3 id="PDSS">PDSS</h3>
+<p>Parkinson's Disease Sleep Scale</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#PDSS">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="Person">Person</h3>
+<p>Individual involved with the cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#Person">The Cohort Ontology</a></p>
+<h3 id="PhiladelphiaVerbalLearningTest">PhiladelphiaVerbalLearningTest</h3>
+<p>Assesses learning for a set of 12 words across 5 learning trials</p> 
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#PhiladelphiaVerbalLearningTest">The PD Cognitive Ontology</a></p>
+<h3 id="PhonologicalAndSemanticVerbalFluencyTest">PhonologicalAndSemanticVerbalFluencyTest</h3>
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#PhonologicalAndSemanticVerbalFluencyTest">The PD Cognitive Ontology</a></p>
+<h3 id="PictureArrangementTest">PictureArrangementTest</h3>
+<p>A psychological test that presents a series of pictures in a random order and asks the subject to arrange them to form a logical story.</p> 
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#PictureArrangementTest">The PD Cognitive Ontology</a></p>
+<h3 id="PPRS">PPRS</h3>
+<p>Parkinson's Psychosis Rating Scale</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#PPRS">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="Project">Project</h3>
+<p>Project associated with the cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#Project">The Cohort Ontology</a></p>
+<h3 id="PSQI">PSQI</h3>
+<p>Pittsburgh Sleep Quality Index - Note whether you have the 7 component scores</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#PSQI">The PD Neuropsychiatric Ontology</a></p>
+
+<h2 id="Q">Q</h2>
+<h3 id="QPE">QPE</h3>
+<p>Questionnaire for Psychotic Experiences</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#QPE">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="QUIP-rs">QUIP-rs</h3>
+<p>Questionnaire for Impulsive-Compulsive Disorders in Parkinson's Disease–Rating Scale</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#QUIP-rs">The PD Neuropsychiatric Ontology</a></p>
+
+<h2 id="R">R</h2>
+<h3 id="raceEthnicity">raceEthnicity</h3>
+<p>race/ethnicity of the subjects</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#raceEthnicity">The PD Demographic Ontology</a></p>
+<h3 id="rationale">rationale</h3>
+<p>Defined in: <a href="project/1.1.0/index-en.html#rationale">The Project Ontology</a></p>
+<h3 id="RBD1Q">RBD1Q</h3>
+<p>REM Sleep Behavior Disorder 1 item screener</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#RBD1Q">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="RBDDiagnosis">RBDDiagnosis</h3>
+<p>RBD (REM Sleep Behavior Disorder) Diagnosis</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#RBDDiagnosis">The PD Demographic Ontology</a></p>
+<h3 id="RBDSQ">RBDSQ</h3>
+<p>REM Sleep Behavior Disorder Screening Questionnaire - full screener</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#RBDSQ">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="requiresDataType">requiresDataType</h3>
+<p>Describes which data type is required by a project</p> 
+<p>Defined in: <a href="project/1.1.0/index-en.html#requiresDataType">The Project Ontology</a></p>
+<h3 id="RespiratoryDisorder">RespiratoryDisorder</h3>
+<p>Disorders which affect the respiratory system</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#RespiratoryDisorder">The Cohort Ontology</a></p>
+<h3 id="Rey_OsterriethComplexFigureTest">Rey_OsterriethComplexFigureTest</h3>
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#Rey_OsterriethComplexFigureTest">The PD Cognitive Ontology</a></p>
+<h3 id="ReyAuditoryVerbalLearningTest">ReyAuditoryVerbalLearningTest</h3>
+<p>Assessment designed to evaluate verbal memory in patients, 16 years of age and older</p> 
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#ReyAuditoryVerbalLearningTest">The PD Cognitive Ontology</a></p>
+<h3 id="Reys15WordTest">Reys15WordTest</h3>
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#Reys15WordTest">The PD Cognitive Ontology</a></p>
+<h3 id="RSGE-PD">RSGE-PD</h3>
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#RSGE-PD">The PD Demographic Ontology</a></p>
+
+<h2 id="S">S</h2>
+<h3 id="SAPS-PD">SAPS-PD</h3>
+<p>Schedule for Assessment of Positive Symptoms - PD</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#SAPS-PD">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="SASDQ">SASDQ</h3>
+<p>Sleep Apnea Scale of the Sleep Disorders Questionnaire</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#SASDQ">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="SCOPA-Autonomic">SCOPA-Autonomic</h3>
+<p>Scales for Outcomes in Parkinson's Disease - Autonomic</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#SCOPA-Autonomic">The PD Demographic Ontology</a></p>
+<h3 id="SCOPA-Cognition">SCOPA-Cognition</h3>
+<p>Scales for Outcomes in Parkinson's Disease - Cognition</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#SCOPA-Cognition">The PD Demographic Ontology</a></p>
+<h3 id="SCOPA-Motor">SCOPA-Motor</h3>
+<p>Scales for Outcomes in Parkinson's Disease - Motor</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#SCOPA-Motor">The PD Demographic Ontology</a></p>
+<h3 id="SCOPA-Psychiatric">SCOPA-Psychiatric</h3>
+<p>Scales for Outcomes in Parkinson's Disease - Psychiatric</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#SCOPA-Psychiatric">The PD Demographic Ontology</a></p>
+<h3 id="SCOPA-Sleep">SCOPA-Sleep</h3>
+<p>Scales for Outcomes in Parkinson's Disease - Sleep</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#SCOPA-Sleep">The PD Demographic Ontology</a></p>
+<h3 id="SE-ADLS">SE-ADLS</h3>
+<p>Schwab and England: Activities of Daily Living Scale</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#SE-ADLS">The PD Demographic Ontology</a></p>
+<h3 id="SentencesConstruction">SentencesConstruction</h3>
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#SentencesConstruction">The PD Cognitive Ontology</a></p>
+<h3 id="sex">sex</h3>
+<p>sex of participants</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#sex">The PD Demographic Ontology</a></p>
+<h3 id="SHAPS">SHAPS</h3>
+<p>Snaith Hamilton Rating Scale</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#SHAPS">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="SideOfOnset">SideOfOnset</h3>
+<p>The side of PD symptoms during PD onset</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#SideOfOnset">The PD Demographic Ontology</a></p>
+<h3 id="SignificantGeneralMedicalCondition">SignificantGeneralMedicalCondition</h3>
+<p>Blanket term ecompassing serious medical condtions</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#SignificantGeneralMedicalCondition">The Cohort Ontology</a></p>
+<h3 id="Smoking">Smoking</h3>
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#Smoking">The PD Cardiovascular Ontology</a></p>
+<h3 id="SmokingPackYears">SmokingPackYears</h3>
+<p>A "pack year" is defined as twenty cigarettes smoked everyday for one year</p> 
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#SmokingPackYears">The PD Cardiovascular Ontology</a></p>
+<h3 id="STAI">STAI</h3>
+<p>State-Trait Anxiety Index</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#STAI">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="StandingBloodPressure">StandingBloodPressure</h3>
+<p>Standing blood pressure after standing for 3 minutes</p> 
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#StandingBloodPressure">The PD Cardiovascular Ontology</a></p>
+<h3 id="STAXI">STAXI</h3>
+<p>State-Trait Anger Expression Inventory</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#STAXI">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="studiesDisorder">studiesDisorder</h3>
+<p>Property that indicates which project/working group studies which disorder</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#studiesDisorder">The Cohort Ontology</a></p>
+<h3 id="subjectSES">subjectSES</h3>
+<p>Subjects' Socioeconomic Status</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#subjectSES">The PD Demographic Ontology</a></p>
+<h3 id="subjID">subjID</h3>
+<p>Subject ID</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#subjID">The PD Demographic Ontology</a></p>
+<h3 id="SubstanceAbuse">SubstanceAbuse</h3>
+<p>A mental health disorder defined by the overusage or abuse of a substance</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#SubstanceAbuse">The Cohort Ontology</a></p>
+<h3 id="SubstanceDependence">SubstanceDependence</h3>
+<p>A subset of substance abuse in which symptoms of withdrawal may appeared after reduction of substance use</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#SubstanceDependence">The Cohort Ontology</a></p>
+<h3 id="SupineBloodPressure">SupineBloodPressure</h3>
+<p>Supine blood pressure after resting for at least 5 minutes</p> 
+<p>Defined in: <a href="pd-cardiovascular/1.1.0/index-en.html#SupineBloodPressure">The PD Cardiovascular Ontology</a></p>
+<h3 id="SWCT">SWCT</h3>
+<p>Stroop Word-Color Test</p> 
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#SWCT">The PD Cognitive Ontology</a></p>
+
+<h2 id="T">T</h2>
+<h3 id="TAS-20">TAS-20</h3>
+<p>Toronto Alexithymia Scale</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#TAS-20">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="TowerOfHanoi">TowerOfHanoi</h3>
+<p>This task seeks to measure high-order cognitive problem solving and learning of complex cognitive procedures, providing information about the cognitive abilities mainly related to executive functions such as planning, visual imagery, abstract thinking, working memory and self-monitoring.</p> 
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#TowerOfHanoi">The PD Cognitive Ontology</a></p>
+<h3 id="TowerOfLondon">TowerOfLondon</h3>
+<p>The Tower of London tests executive planning proficiency, incorporating delineation, organization, and integration of behaviors needed to achieve a goal.</p> 
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#TowerOfLondon">The PD Cognitive Ontology</a></p>
+<h3 id="TrialMakingTestA-B">TrialMakingTestA-B</h3>
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#TrialMakingTestA-B">The PD Cognitive Ontology</a></p>
+
+<h2 id="U">U</h2>
+<h3 id="UM-PDHQ">UM-PDHQ</h3>
+<p>University of Miami Parkinson's Disease Hallucinations Questionnaire</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#UM-PDHQ">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="UPDRS-1">UPDRS-1</h3>
+<p>Unified Parkinson's Disease Rating Scale - 1</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#UPDRS-1">The PD Demographic Ontology</a></p>
+<h3 id="UPDRS-2">UPDRS-2</h3>
+<p>Unified Parkinson's Disease Rating Scale - 2</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#UPDRS-2">The PD Demographic Ontology</a></p>
+<h3 id="UPDRS-3">UPDRS-3</h3>
+<p>Unified Parkinson's Disease Rating Scale - 3</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#UPDRS-3">The PD Demographic Ontology</a></p>
+<h3 id="UPDRS-4">UPDRS-4</h3>
+<p>Unified Parkinson's Disease Rating Scale - 4</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#UPDRS-4">The PD Demographic Ontology</a></p>
+<h3 id="UPDRSTotal">UPDRSTotal</h3>
+<p>Unified Parkinson's Disease Rating Scale - Total Score</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#UPDRSTotal">The PD Demographic Ontology</a></p>
+<h3 id="UPSIT">UPSIT</h3>
+<p>University of Pennsylvania Smell Identification Test for Parkinson's Disease</p> 
+<p>Defined in: <a href="pd-demographics/1.1.0/index-en.html#UPSIT">The PD Demographic Ontology</a></p>
+<h3 id="usesEncodingFormat">usesEncodingFormat</h3>
+<p>Encoding format of an item</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#usesEncodingFormat">The Cohort Ontology</a></p>
+<h3 id="usesProtocol">usesProtocol</h3>
+<p>Describes which protocol was used in a project</p> 
+<p>Defined in: <a href="project/1.1.0/index-en.html#usesProtocol">The Project Ontology</a></p>
+<h3 id="usesScanner">usesScanner</h3>
+<p>Describes the scanner used by the cohort</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#usesScanner">The Cohort Ontology</a></p>
+
+<h2 id="V">V</h2>
+<h3 id="VascularDisorder">VascularDisorder</h3>
+<p>Disorder which affects the body's network of blood vessels</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#VascularDisorder">The Cohort Ontology</a></p>
+<h3 id="VerbalOrLexicalFluencyTest">VerbalOrLexicalFluencyTest</h3>
+<p>Verbal fluency tests assess an individual's ability to generate words from a specified letter of the alphabet (e.g. F, A and S) or a semantic category (e.g. animals and fruits).</p> 
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#VerbalOrLexicalFluencyTest">The PD Cognitive Ontology</a></p>
+
+<h2 id="W">W</h2>
+<h3 id="WAIS_4_PerceptualReasoning">WAIS_4_PerceptualReasoning</h3>
+<p>This index reflects an individual’s ability to accurately interpret, organize and think with visual information on the WAIS 4 (Wechsler Adult Intelligence Scale-IV) scale</p> 
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#WAIS_4_PerceptualReasoning">The PD Cognitive Ontology</a></p>
+<h3 id="WAIS_4_ProcessingSpeed">WAIS_4_ProcessingSpeed</h3>
+<p>This index reflects an individual’s ability to process simple or routine visual information quickly and efficiently on the WAIS 4 (Wechsler Adult Intelligence Scale-IV) scale.</p> 
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#WAIS_4_ProcessingSpeed">The PD Cognitive Ontology</a></p>
+<h3 id="WAIS_4_VerbalComprehension">WAIS_4_VerbalComprehension</h3>
+<p>This index reflects an individual’s ability to understand, use and think with spoken language on the WAIS 4 (Wechsler Adult Intelligence Scale-IV) scale</p> 
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#WAIS_4_VerbalComprehension">The PD Cognitive Ontology</a></p>
+<h3 id="WAIS_4_WorkingMemory">WAIS_4_WorkingMemory</h3>
+<p>This index reflects an individual’s ability to take in and hold information in immediate awareness and then perform a mental operation on that information on the WAIS 4 (Wechsler Adult Intelligence Scale-IV) scale</p> 
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#WAIS_4_WorkingMemory">The PD Cognitive Ontology</a></p>
+<h3 id="WCST-SF">WCST-SF</h3>
+<p>Wisconsin Card Sorting Test - Short Form</p> 
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#WCST-SF">The PD Cognitive Ontology</a></p>
+<h3 id="WOQ">WOQ</h3>
+<p>Wearing-Off Questionnaires WOQ-9, WOQ-19, WOQ-32</p> 
+<p>Defined in: <a href="neuropsychiatric/1.1.0/index-en.html#WOQ">The PD Neuropsychiatric Ontology</a></p>
+<h3 id="WordListLearningTask">WordListLearningTask</h3>
+<p>Word List Learning Task: Note the version used</p> 
+<p>Defined in: <a href="pd-cognitive/1.1.0/index-en.html#WordListLearningTask">The PD Cognitive Ontology</a></p>
+<h3 id="WorkingGroup">WorkingGroup</h3>
+<p>Group of researchers studying a certain topic/disease</p> 
+<p>Defined in: <a href="cohort/1.1.0/index-en.html#WorkingGroup">The Cohort Ontology</a></p>
+

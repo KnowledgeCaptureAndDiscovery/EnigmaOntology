@@ -83,13 +83,6 @@
       <http://purl.org/vocab/vann/example>
               "Asthma"@en .
 
-:Protocol
-      a       owl:Class ;
-      rdfs:comment "An image processing or genetic analysis protocol used to extract brain feature data"@en ;
-      rdfs:label "Protocol"@en ;
-      <http://purl.org/vocab/vann/example>
-              "ENIGMA-Sulci Protocol"@en .
-
 :panicDisorder_Lifetime
       a       owl:DatatypeProperty ;
       rdfs:comment "Describes if the subject had Panic Disorder during their lifetime." ;
@@ -503,7 +496,7 @@ NOTE: study design options are mutually exclusive for Cohort Groups but not Proj
       rdfs:comment "Describes which protocol was used in a project"@en ;
       rdfs:domain :Project ;
       rdfs:label "uses protocol"@en ;
-      rdfs:range :Protocol ;
+      rdfs:range :DataProcessingProtocol ;
       <http://purl.org/vocab/vann/example>
               "BipolarProject usesProtocol ENIGMA-SulciProtocol"@en .
 
@@ -910,15 +903,15 @@ xsd:date
       rdfs:comment "Describes which brain scan data types a cohort or project has"@en , "Describes the brain scan data types that were collected for a cohort or project"@en ;
       rdfs:domain
               [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject :Project)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
+                owl:unionOf (:Cohort :CohortGroup :CohortProject :Project)
+              ] ;
+      rdfs:domain
+              [ a       owl:Class ;
                 owl:unionOf (:Cohort :Project)
-              ] ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :CohortGroup :CohortProject :Project)
-              ] ;
-      rdfs:domain
-              [ a       owl:Class ;
-                owl:unionOf (:Cohort :CohortGroup :CohortProject :Project)
               ] ;
       rdfs:label "has brain scan data type"@en ;
       rdfs:range :BrainScanDataType ;
@@ -1204,7 +1197,7 @@ xsd:date
 <https://w3id.org/enigma>
       a       owl:Ontology , owl:NamedIndividual ;
       <http://purl.org/dc/terms/contributor>
-              "Kevin Low" , "Haripriya Dharmala"^^xsd:string , "Michael Bornstein" , "Ryan Espiritu" , "Yolanda Gil"^^xsd:string , "MiHyun Jang" , "Aarya Vakharia" , "Hernan Vargas" , "Agnes McMahon" , "Agnes McMahon"^^xsd:string , "Daniel Garijo"^^xsd:string ;
+              "Kevin Low" , "Michael Bornstein" , "Ryan Espiritu" , "Yolanda Gil"^^xsd:string , "MiHyun Jang" , "Aarya Vakharia" , "Hernan Vargas" , "Agnes McMahon" , "Agnes McMahon"^^xsd:string , "Daniel Garijo"^^xsd:string ;
       <http://purl.org/dc/terms/creator>
               "Josh Boyd" , "Ryan Espiritu"^^xsd:string , "Yolanda Gil" , "Daniel Garijo" , "Kevin Low" , "Haripriya Dharmala" , "Haripriya Dharmala"^^xsd:string , "Joanna Bright" , "Wesley Surento" , "MiHyun Jang"^^xsd:string , "Hernan Vargas" , "Neda Jahanshad" , "Neda Jahanshad"^^xsd:string ;
       <http://purl.org/dc/terms/description>
@@ -1644,6 +1637,13 @@ xsd:gYear
       <http://purl.org/vocab/vann/example>
               "AMCControlGroup is a control cohort group of the AMC cohort"@en .
 
+:DataProcessingProtocol
+      a       owl:Class ;
+      rdfs:comment "An image processing or genetic analysis protocol used to extract brain feature data"@en ;
+      rdfs:label "Data Processing Protocol"@en ;
+      <http://purl.org/vocab/vann/example>
+              "ENIGMA-Sulci Protocol"@en .
+
 :Disorder
       a       owl:Class ;
       rdfs:comment "A disorder/disease experienced by members of a cohort"@en ;
@@ -1873,7 +1873,7 @@ owl:topDataProperty
       rdfs:comment "Describes which data processing protocol was used in a project"@en ;
       rdfs:domain :Project ;
       rdfs:label "uses data processing protocol"@en ;
-      rdfs:range :Protocol .
+      rdfs:range :DataProcessingProtocol .
 
 :OCD_Current
       a       owl:DatatypeProperty ;
@@ -1909,7 +1909,7 @@ Cohort Groups: COHORT_grp_NAME
 Example: STELLENBOCH_grp_CN for the control group
 
 Cohort Projects: COHORT_proj_NAME
-Example: STELLENBOCH_proj_FS for the Freesurfer project"""@en , "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria" , "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria."@en ;
+Example: STELLENBOCH_proj_FS for the Freesurfer project"""@en , "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria" , "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria."@en , "A group of individuals studied by a working group, limited by certain inclusion and exclusion criteria"@en ;
       rdfs:label "Cohort" , "Cohort"@en ;
       <http://purl.org/vocab/vann/example>
               "ADNI: Alzheimer’s Disease Neuroimaging Initiative"@en .
