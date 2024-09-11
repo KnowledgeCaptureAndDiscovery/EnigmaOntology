@@ -40,7 +40,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git diff --name-only HEAD HEAD~1 ./development > updated_files.txt
+          git diff --name-only HEAD HEAD~1 -- ./development > updated_files.txt
           while read p; do
             xmllint $p --xpath "//*[local-name()='RDF']/*[local-name()='Ontology']/*[local-name()='versionInfo']/text()";
             echo "$p" | sed s/Ontology.owl//g | sed s/development\\///g | sed s/PD/pd-/g | tr '[:upper:]' '[:lower:]';
