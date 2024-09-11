@@ -47,11 +47,12 @@ jobs:
         run: |
           while read p; do
             newFolder="$(echo "$p" | sed s/Ontology.owl//g | sed s/development\\///g | sed s/PD/pd-/g | tr '[:upper:]' '[:lower:]')/$(xmllint $p --xpath "//*[local-name()='RDF']/*[local-name()='Ontology']/*[local-name()='versionInfo']/text()" | sed s/v//g )"
+            ontology="$(echo $p | sed s/development\\///g)"
             docker run --rm \
-              -v `pwd`:/usr/local/widoco/in:Z \
+              -v `pwd`/development:/usr/local/widoco/in:Z \
               -v `pwd`/release:/usr/local/widoco/out:Z \
               ghcr.io/dgarijo/widoco:latest -ontFile $p -outFolder $newFolder -noPlaceHolderText
-            echo "$p -> $newFolder"
+            echo "$ontology -> $newFolder"
           done < updated_files.txt
 
       # What files were changed:
