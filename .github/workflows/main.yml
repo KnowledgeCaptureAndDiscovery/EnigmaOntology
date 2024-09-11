@@ -52,7 +52,7 @@ jobs:
             docker run --rm \
               -v `pwd`/development:/usr/local/widoco/in:Z \
               -v `pwd`/release:/usr/local/widoco/out:Z \
-              ghcr.io/dgarijo/widoco:latest -ontFile $ontology -outFolder $newFolder -noPlaceHolderText
+              ghcr.io/dgarijo/widoco:latest -ontFile in/$ontology -outFolder out/$newFolder -noPlaceHolderText
           done < updated_files.txt
 
       # What files were changed:
