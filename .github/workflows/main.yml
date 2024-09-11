@@ -49,9 +49,9 @@ jobs:
       - name: Create docs
         shell: bash
         run: |
-          mkdir -p tmp
-          chmod 777 tmp
           while read p; do 
+            mkdir -p tmp
+            chmod 777 tmp
             newFolder="$(echo "release/$p" | sed s/Ontology.owl//g | sed s/development\\///g | sed s/PD/pd-/g | tr '[:upper:]' '[:lower:]')/$(xmllint $p --xpath "//*[local-name()='RDF']/*[local-name()='Ontology']/*[local-name()='versionInfo']/text()" | sed s/v//g )"
             ontology="$(echo $p | sed s/development\\///g)"
             echo "$ontology -> $newFolder"
@@ -61,7 +61,10 @@ jobs:
               -v `pwd`/tmp:/usr/local/widoco/out:Z \
               ghcr.io/dgarijo/widoco:latest -ontFile in/$ontology -outFolder out -noPlaceHolderText
             ls -la tmp
+            chmod -R 755 tmp
+            chown -R runner:docker tmp 
             mv tmp/* $newFolder
+            rmdir tmp
           done < updated_files.txt
 
       # What files were changed:
