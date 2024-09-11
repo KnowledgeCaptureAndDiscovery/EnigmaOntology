@@ -60,7 +60,8 @@ jobs:
               -v `pwd`/tmp:/usr/local/widoco/out:Z \
               ghcr.io/dgarijo/widoco:latest -ontFile in/$ontology -outFolder out -noPlaceHolderText
             ls -la tmp
-            mv tmp newFolder
+            mv tmp $newFolder
+            chmod 664 $newFolder
           done < updated_files.txt
 
       # What files were changed:
@@ -70,7 +71,7 @@ jobs:
           cat updated_files.txt
           git status
           git diff
-          tree
+          tree release
 
         #env:
         #  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
