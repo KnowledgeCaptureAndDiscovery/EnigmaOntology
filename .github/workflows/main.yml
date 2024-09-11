@@ -63,8 +63,8 @@ jobs:
             echo "$ontology -> $newFolder"
             ls -la $newFolder/$version
             ls -la $version
+            rm -rf $newFolder/$version
             mv $version $newFolder
-            rmdir tmp
           done < updated_files.txt
 
       # What files were changed:
