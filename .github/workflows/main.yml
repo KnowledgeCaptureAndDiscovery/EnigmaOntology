@@ -60,7 +60,7 @@ jobs:
               -v `pwd`/tmp:/usr/local/widoco/out:Z \
               ghcr.io/dgarijo/widoco:latest -ontFile in/$ontology -outFolder out -noPlaceHolderText
             ls -la tmp
-            mv tmp $newFolder
+            mv tmp/* $newFolder
           done < updated_files.txt
 
       # What files were changed:
