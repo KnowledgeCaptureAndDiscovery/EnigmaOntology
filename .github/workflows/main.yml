@@ -45,7 +45,7 @@ jobs:
       - name: Create docs
         shell: bash
         run: |
-          while read p; do
+          while read p; do 
             newFolder="$(echo "$p" | sed s/Ontology.owl//g | sed s/development\\///g | sed s/PD/pd-/g | tr '[:upper:]' '[:lower:]')/$(xmllint $p --xpath "//*[local-name()='RDF']/*[local-name()='Ontology']/*[local-name()='versionInfo']/text()" | sed s/v//g )"
             ontology="$(echo $p | sed s/development\\///g)"
             echo "$ontology -> $newFolder"
