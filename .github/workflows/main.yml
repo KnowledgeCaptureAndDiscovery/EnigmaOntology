@@ -70,7 +70,10 @@ jobs:
       - uses: tradeshift/actions-setup-java@master
         with:
           java-version: 8
-      - run: |
+
+      - name: Create ontologies for wiki
+        shell: bash
+        run: |
           cd wiki_configs;
           wget https://github.com/KnowledgeCaptureAndDiscovery/enigma_index_creator/releases/download/0.5/DictionaryIndexCreator-1.0-jar-with-dependencies.jar
           for f in *.csv; do; java -jar DictionaryIndexCreator-1.0-jar-with-dependencies.jar $f; done;
