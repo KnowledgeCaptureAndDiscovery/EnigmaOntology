@@ -66,7 +66,18 @@ jobs:
             rm -rf $newFolder/$version
             mv $version $newFolder
           done < updated_files.txt
+      # What files were changed:
+      - name: Check documentation and upload
+        shell: bash
+        run: |
+          cat updated_files.txt
+          git status
 
+        #env:
+        #  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  wikis:
+    runs-on: ubuntu-latest
+    steps:
       - uses: tradeshift/actions-setup-java@master
         with:
           java-version: 8
@@ -78,13 +89,3 @@ jobs:
           wget https://github.com/KnowledgeCaptureAndDiscovery/enigma_index_creator/releases/download/0.5/DictionaryIndexCreator-1.0-jar-with-dependencies.jar
           for f in *.csv; do; java -jar DictionaryIndexCreator-1.0-jar-with-dependencies.jar $f; done;
           git status;
-
-      # What files were changed:
-      - name: Check documentation and upload
-        shell: bash
-        run: |
-          cat updated_files.txt
-          git status
-
-        #env:
-        #  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
