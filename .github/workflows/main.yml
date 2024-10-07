@@ -75,17 +75,17 @@ jobs:
 
         #env:
         #  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  wikis:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: tradeshift/actions-setup-java@master
-        with:
-          java-version: 8
+  #wikis:
+  #  runs-on: ubuntu-latest
+  #  steps:
+  #    - uses: tradeshift/actions-setup-java@master
+  #      with:
+  #        java-version: 8
 
-      - name: Create ontologies for wiki
-        shell: bash
-        run: |
-          cd wiki_configs;
-          wget https://github.com/KnowledgeCaptureAndDiscovery/enigma_index_creator/releases/download/0.5/DictionaryIndexCreator-1.0-jar-with-dependencies.jar
-          for f in *.csv; do; java -jar DictionaryIndexCreator-1.0-jar-with-dependencies.jar $f; done;
-          git status;
+  #    - name: Create ontologies for wiki
+  #      shell: bash
+  #      run: |
+  #        cd wiki_configs;
+  #        wget https://github.com/KnowledgeCaptureAndDiscovery/enigma_index_creator/releases/download/0.5/DictionaryIndexCreator-1.0-jar-with-dependencies.jar
+  #        for f in *.csv; do; java -jar DictionaryIndexCreator-1.0-jar-with-dependencies.jar $f; done;
+  #        git status;
