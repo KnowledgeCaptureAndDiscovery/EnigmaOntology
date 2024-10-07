@@ -12,7 +12,7 @@ on:
     branches:
       - main
       - test
-    #paths: [ development/*.owl ]
+    #paths: [ development/*.owl, wiki_configs/*.csv ]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -84,7 +84,12 @@ jobs:
           cd wiki_configs;
           wget https://github.com/KnowledgeCaptureAndDiscovery/enigma_index_creator/releases/download/0.5/DictionaryIndexCreator-1.0-jar-with-dependencies.jar
           for f in *.csv; do
+            NAME=${f%.*}
             java -jar DictionaryIndexCreator-1.0-jar-with-dependencies.jar $f
+            mv index-$NAME.html _a.html;
+            cat head.html _a.html tail.html > index-$NAME.html
+            rm _a.html
+            mv ontology_$NAME.owl ontology_$NAME.ttl index-$NAME.html ../release/
           done
           git status;
 
