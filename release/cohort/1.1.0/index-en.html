@@ -2,17 +2,28 @@
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
- <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>The Cohort Ontology</title>
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+<link rel="icon" type="image/png" href="resources/rdf.icon"/> <title>The Cohort Ontology</title>
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/enigma#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/enigma#","name":"The Cohort Ontology", "headline":"An ontology to describe cohorts of patients participating in ENIGMA projects.", "datePublished":"Fri Jun 21 18:40:47 CLT 2024", "version":"v1.1.0", "license":"http://creativecommons.org/licenses/by/2.0/", "author":[{"@type":"Person","name":"Daniel Garijo"},{"@type":"Person","name":"Haripriya Dharmala"},{"@type":"Person","name":"Hernan Vargas"},{"@type":"Person","name":"Joanna Bright"},{"@type":"Person","name":"Josh Boyd"},{"@type":"Person","name":"Neda Jahanshad"},{"@type":"Person","name":"Wesley Surento"},{"@type":"Person","name":"Yolanda Gil"}], "contributor":[{"@type":"Person","name":"Aarya Vakharia"},{"@type":"Person","name":"Agnes McMahon"},{"@type":"Person","name":"MiHyun Jang"},{"@type":"Person","name":"Michael Bornstein"},{"@type":"Person","name":"Ryan Espiritu"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/enigma#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/enigma#","name":"The Cohort Ontology", "headline":"Document describing the ontology https://w3id.org/enigma#", "dateReleased":"Mon Oct 14 20:27:10 UTC 2024", "version":"v1.1.0", "license":"http://creativecommons.org/licenses/by/2.0/", "author":[{"@type":"Person","name":"Daniel Garijo"},{"@type":"Person","name":"Haripriya Dharmala"},{"@type":"Person","name":"Hernan Vargas"},{"@type":"Person","name":"Joanna Bright"},{"@type":"Person","name":"Josh Boyd"},{"@type":"Person","name":"Neda Jahanshad"},{"@type":"Person","name":"Wesley Surento"},{"@type":"Person","name":"Yolanda Gil"}], "contributor":[{"@type":"Person","name":"Aarya M Vakharia"},{"@type":"Person","name":"Agnes McMahon"},{"@type":"Person","name":"MiHyun Jang"},{"@type":"Person","name":"Michael Bornstein"},{"@type":"Person","name":"Ryan Espiritu"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
     <script> 
 function loadHash() {
-  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
 	var hash = location.hash;
 	if($(hash).offset()!=null){
 	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
@@ -45,9 +56,8 @@ function loadTOC(){
  $.fn.ignore = function(sel){
         return this.clone().find(sel||">*").remove().end();
  };    $(function(){
-      $("#abstract").load("sections/abstract-en.html"); 
-      $("#introduction").load("sections/introduction-en.html"); 
       $("#overview").load("sections/overview-en.html"); 
+      $("#description").load("sections/description-en.html"); 
       $("#crossref").load("sections/crossref-en.html", null, loadHash); 
     });
     </script> 
@@ -63,8 +73,6 @@ function loadTOC(){
 <dl>
 <dt>This version:</dt>
 <dd><a href="https://w3id.org/enigma/cohort/1.1.0">https://w3id.org/enigma/cohort/1.1.0</a></dd>
-<dt>Latest version:</dt>
-<dd><a href="https://w3id.org/enigma#">https://w3id.org/enigma#</a></dd>
 <dt>Previous version:</dt>
 <dd><a href="https://w3id.org/enigma/cohort/1.0.0">https://w3id.org/enigma/cohort/1.0.0</a></dd>
 <dt>Revision:</dt>
@@ -73,23 +81,22 @@ function loadTOC(){
 <dd>Daniel Garijo</dd><dd>Haripriya Dharmala</dd><dd>Hernan Vargas</dd><dd>Joanna Bright</dd><dd>Josh Boyd</dd><dd>Neda Jahanshad</dd><dd>Wesley Surento</dd><dd>Yolanda Gil</dd>
 
 <dt>Contributors:</dt>
-<dd>Aarya Vakharia</dd><dd>Agnes McMahon</dd><dd>MiHyun Jang</dd><dd>Michael Bornstein</dd><dd>Ryan Espiritu</dd>
+<dd>Aarya M Vakharia</dd><dd>Agnes McMahon</dd><dd>MiHyun Jang</dd><dd>Michael Bornstein</dd><dd>Ryan Espiritu</dd>
 
-<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="http://creativecommons.org/licenses/by/2.0/" target="_blank"><img src="https://img.shields.io/badge/License-http://creativecommons.org/licenses/by/2.0/-blue.svg" alt="http://creativecommons.org/licenses/by/2.0/" /></a>
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://creativecommons.org/licenses/by/2.0/" target="_blank"><img src="https://img.shields.io/badge/License-http://creativecommons.org/licenses/by/2.0/-blue.svg" alt="http://creativecommons.org/licenses/by/2.0/" /></a>
 </dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
-<!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>Daniel Garijo,Haripriya Dharmala,Hernan Vargas,Joanna Bright,Josh Boyd,Neda Jahanshad,Wesley Surento,Yolanda Gil. The Cohort Ontology. Revision: v1.1.0. Retrieved from: https://w3id.org/enigma/cohort/1.1.0</dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Daniel Garijo, Haripriya Dharmala, Hernan Vargas, Joanna Bright, Josh Boyd, Neda Jahanshad, Wesley Surento, Yolanda Gil. The Cohort Ontology. Revision: v1.1.0. Retrieved from: https://w3id.org/enigma/cohort/1.1.0</dd>
 </dl>
 
-<hr/>
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
 </div>
 <div class="status">
 <div>
 <span>Ontology Specification Draft</span>
 </div>
-</div>     <div id="abstract"></div>
-<div id="toc"></div>     <div id="introduction"></div>
-     <div id="overview"></div>
+</div><div id="toc"></div>     <div id="overview"></div>
+     <div id="description"></div>
      <div id="crossref"></div>
      <div id="changelog"></div>
 <div id="acknowledgments">
