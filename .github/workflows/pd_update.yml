@@ -1,0 +1,50 @@
+# Generate documentation and Release
+name: PD Update
+
+permissions:
+  contents: write
+  pull-requests: write
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push on development folder
+  push:
+    branches:
+      - main
+      - test
+    #paths: [ ../../release/ontology_pd.ttl ]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    env:
+      WIKI_URL: https://www.organicdatacuration.org/enigma_pd/
+      USER: ${{ secrets.WIKI_USER }}
+      PASSWORD: ${{ secrets.WIKI_PASSWORD }}
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 3
+
+      - name: Login
+        shell: bash
+        run: |
+          TOKEN=`curl --cookie-jar cjar -X POST "$WIKI_URL/api.php?action=login&lgname=$USER" --data "lgpassword=$PASSWORD" | grep '"token":' | sed 's/.*"token": "//g' | sed 's/\+.*$//'`
+          curl -D - -b cjar -c cjar2 -X POST "$WIKI_URL/api.php?action=login&lgname=$USER" --data "&lgpassword=$PASSWORD&lgtoken=$TOKEN%2B%5C"
+          
+      - name: Bootstrap ontology
+        shell: bash
+        run: |
+          curl -D - -b cjar2 -X POST "$WIKI_URL/index.php/Special:WTBootstrap" --data-raw 'op=bootstrap&onturl=https%3A%2F%2Fraw.githubusercontent.com%2FKnowledgeCaptureAndDiscovery%2FEnigmaOntology%2Fmaster%2Frelease%2Fontology_pd.ttl'
+          
+      - name: Rebuild wiki data
+        shell: bash
+        run: |
+          curl -D - -b cjar2 -X POST "$WIKI_URL/index.php" --data-raw 'title=Special%3ASemanticMediaWiki&action=refreshstore&rfsure=yes'
