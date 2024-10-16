@@ -71,16 +71,6 @@ jobs:
             mv $version $newFolder
           done < updated_files.txt
 
-      # What files were changed:
-      - name: Check documentation and upload
-        shell: bash
-        run: |
-          cat updated_files.txt
-          git config --global user.name 'Github Action'
-          git config --global user.email 'git-action@users.noreply.github.com'
-          git commit -am "Automated: Documentation Creation"
-          git push
-
       - name: Create ontologies for wiki
         shell: bash
         run: |
@@ -95,6 +85,16 @@ jobs:
             mv ontology_$NAME.owl ontology_$NAME.ttl index-$NAME.html ../release/
           done
           git status;
+
+      # What files were changed:
+      - name: Check documentation and upload
+        shell: bash
+        run: |
+          cat updated_files.txt
+          git config --global user.name 'Github Action'
+          git config --global user.email 'git-action@users.noreply.github.com'
+          git commit -am "Automated: Documentation Creation"
+          git push
 
         #env:
         #  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
